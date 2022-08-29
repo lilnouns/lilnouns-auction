@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.1] - 2022-08-29
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump eslint from 8.22.0 to 8.23.0
+
 ## [1.0.0-alpha.0] - 2022-08-29
 
 ### <!-- 04 -->Refactor
