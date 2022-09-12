@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.2] - 2022-09-12
+
+### <!-- 04 -->Refactor
+
+- Add basic sitemap configuration
+- Add default seo config and information
+
+### <!-- 07 -->Continuous Integrations
+
+- Replace `yarn` by `pnpm` over `build` workflow
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump next from 12.2.5 to 12.3.0
+- Bump eslint-config-next from 12.2.5 to 12.3.0
+- Enable pre and post scripts running by `pnpm`
+- Solve warning regard to experimental images optimization
+
 ## [1.0.0-alpha.1] - 2022-08-29
 
 ### <!-- 08 -->Miscellaneous Tasks
