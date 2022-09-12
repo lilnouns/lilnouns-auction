@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "start": "next start",
+    "prestart": "npm run export",
+    "start": "wrangler pages dev out",
     "lint": "next lint",
     "preexport": "npm run build",
     "export": "next export"
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "eslint": "8.23.0",
-    "eslint-config-next": "12.3.0"
+    "eslint-config-next": "12.3.0",
+    "wrangler": "^2.0.29"
   }
 }
