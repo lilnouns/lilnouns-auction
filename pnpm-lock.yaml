@@ -5,6 +5,7 @@ specifiers:
   eslint: 8.23.0
   eslint-config-next: 12.3.0
   next: 12.3.0
+  next-seo: ^5.5.0
   next-sitemap: ^3.1.22
   postcss: ^8.4.16
   react: 18.2.0
@@ -14,6 +15,7 @@ specifiers:
 dependencies:
   autoprefixer: 10.4.8_postcss@8.4.16
   next: 12.3.0_biqbaboplfbrettd7655fr4n2y
+  next-seo: 5.5.0_c3hne4hwj64hb7tofigd3bvkji
   next-sitemap: 3.1.22_next@12.3.0
   postcss: 8.4.16
   react: 18.2.0
@@ -1453,6 +1455,18 @@ packages:
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
+
+  /next-seo/5.5.0_c3hne4hwj64hb7tofigd3bvkji:
+    resolution: {integrity: sha512-5ouBHFtx8YrSDW44lj0qIEQ+oMcz6stgoITB+SqHUZbhgizoJsyLmq73gJ0lxtEKpcN8vG2QgRIJfdb8OAPChw==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 12.3.0_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /next-sitemap/3.1.22_next@12.3.0:
     resolution: {integrity: sha512-aykbwYTNJ2GKSuxYpXgKK7m/a1Qao03ekUlsNLHvO8XuTTVZDAOe2hGcJtr2vQfXnLeZuSpNUs2IP6hCr4xVZA==}
