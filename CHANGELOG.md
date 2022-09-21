@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.3] - 2022-09-21
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump pnpm/action-setup from 2.0.1 to 2.2.2
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Add `wrangler` for develop and serve functions
+- Bump eslint-config-next from 12.3.0 to 12.3.1
+- Bump next from 12.3.0 to 12.3.1
+
 ## [1.0.0-alpha.2] - 2022-09-12
 
 ### <!-- 04 -->Refactor
