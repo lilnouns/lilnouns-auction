@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.4] - 2022-11-04
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump actions/setup-node from 3.4.1 to 3.5.0
+- Bump pnpm/action-setup from 2.2.2 to 2.2.3
+- Bump actions/checkout from 3.0.2 to 3.1.0
+- Bump actions/cache from 3.0.8 to 3.0.11
+- Bump actions/setup-node from 3.5.0 to 3.5.1
+- Bump pnpm/action-setup from 2.2.3 to 2.2.4
+- Add a new `pnpm` workflow to update lock file
+- Update and improve the `build` workflow
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Enable `auto-install-peers` and disable `strict-peer-dependencies`
+- Bump eslint from 8.23.0 to 8.26.0
+- Bump next from 12.3.1 to 13.0.2
+- Bump eslint-config-next from 12.3.1 to 13.0.2
+
 ## [1.0.0-alpha.3] - 2022-09-21
 
 ### <!-- 07 -->Continuous Integrations
