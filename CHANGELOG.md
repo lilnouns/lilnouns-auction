@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.5] - 2023-01-02
+
+### <!-- 07 -->Continuous Integrations
+
+- Setup stale bot to closes abandoned issues
+- Add a new `release` workflow to create releases
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump next from 13.0.2 to 13.0.3 ([#27](https://github.com/orhun/git-cliff/issues/27))
+
 ## [1.0.0-alpha.4] - 2022-11-04
 
 ### <!-- 07 -->Continuous Integrations
