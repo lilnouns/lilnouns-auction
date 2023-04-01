@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "eslint": "8.37.0",
-    "eslint-config-next": "13.0.2",
+    "eslint-config-next": "13.2.4",
     "wrangler": "^2.0.29"
   }
 }
