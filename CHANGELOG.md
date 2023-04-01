@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.6] - 2023-04-01
+
+### <!-- 05 -->Documentation
+
+- Change the project license to`APLv2`
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump orhun/git-cliff-action from 2.0.1 to 2.0.4 ([#42](https://github.com/orhun/git-cliff/issues/42))
+- Bump actions/cache from 3.0.11 to 3.2.5 ([#44](https://github.com/orhun/git-cliff/issues/44))
+- Bump actions/checkout from 3.1.0 to 3.4.0 ([#48](https://github.com/orhun/git-cliff/issues/48))
+- Bump orhun/git-cliff-action from 2.0.4 to 2.0.5 ([#49](https://github.com/orhun/git-cliff/issues/49))
+- Bump actions/checkout from 3.4.0 to 3.5.0 ([#50](https://github.com/orhun/git-cliff/issues/50))
+- Bump actions/cache from 3.2.5 to 3.3.1 ([#51](https://github.com/orhun/git-cliff/issues/51))
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump eslint from 8.26.0 to 8.32.0 ([#38](https://github.com/orhun/git-cliff/issues/38))
+- Bump next from 13.0.3 to 13.1.6 ([#43](https://github.com/orhun/git-cliff/issues/43))
+- Bump next from 13.1.6 to 13.2.4 ([#52](https://github.com/orhun/git-cliff/issues/52))
+- Bump eslint from 8.32.0 to 8.37.0 ([#53](https://github.com/orhun/git-cliff/issues/53))
+- Bump next-sitemap from 3.1.55 to 4.0.6 ([#54](https://github.com/orhun/git-cliff/issues/54))
+- Bump eslint-config-next from 13.0.2 to 13.2.4 ([#55](https://github.com/orhun/git-cliff/issues/55))
+
 ## [1.0.0-alpha.5] - 2023-01-02
 
 ### <!-- 07 -->Continuous Integrations
