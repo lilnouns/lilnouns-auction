@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.8",
-    "next": "13.2.4",
-    "next-seo": "^5.5.0",
+    "next": "13.3.1",
+    "next-seo": "^6.0.0",
     "next-sitemap": "^4.0.6",
     "postcss": "^8.4.16",
     "react": "18.2.0",
@@ -23,8 +23,8 @@
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
-    "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.1",
     "wrangler": "^2.0.29"
   }
 }
