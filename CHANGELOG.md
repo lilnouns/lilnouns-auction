@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.8] - 2023-05-18
+
+### <!-- 07 -->Continuous Integrations
+
+- Change `open-pull-requests-limit` from 10 to 20
+- Add node version 20 on `build` workflow
+- Bump orhun/git-cliff-action from 2.0.5 to 2.0.6 
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump eslint-config-next from 13.3.1 to 13.3.4 
+- Bump next from 13.3.1 to 13.4.1 
+- Bump eslint from 8.39.0 to 8.40.0 
+- Bump eslint-config-next from 13.3.4 to 13.4.1 
+
 ## [1.0.0-alpha.7] - 2023-04-24
 
 ### <!-- 07 -->Continuous Integrations
