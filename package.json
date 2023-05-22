@@ -23,7 +23,7 @@
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
-    "eslint": "8.40.0",
+    "eslint": "8.41.0",
     "eslint-config-next": "13.4.1",
     "wrangler": "^2.0.29"
   }
