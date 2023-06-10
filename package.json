@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.9",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,8 +23,8 @@
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
-    "eslint": "8.40.0",
+    "eslint": "8.42.0",
     "eslint-config-next": "13.4.1",
-    "wrangler": "^2.0.29"
+    "wrangler": "^3.1.0"
   }
 }

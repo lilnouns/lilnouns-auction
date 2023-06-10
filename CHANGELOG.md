@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.9] - 2023-06-10
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Bump eslint from 8.40.0 to 8.42.0 
+- Bump wrangler from 2.20.0 to 3.1.0 
+
 ## [1.0.0-alpha.8] - 2023-05-18
 
 ### <!-- 07 -->Continuous Integrations
