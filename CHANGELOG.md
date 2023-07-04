@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.10] - 2023-07-04
+
+### <!-- 05 -->Documentation
+
+- Add funding to the packge configs
+- Set sponsorships configuration for github
+
+### <!-- 07 -->Continuous Integrations
+
+- Switch `package-ecosystem` from `npm` to `pnpm` for Dependabot
+- Change `package-ecosystem` back to `npm` on Dependabot configs
+- Update matrix `node-version` on build workflow
+
+### <!-- 08 -->Miscellaneous Tasks
+
+- Update `pnpm` lockfile state
+- Bump next-sitemap from 4.0.6 to 4.1.8 
+- Bump eslint from 8.42.0 to 8.44.0 
+- Bump next from 13.4.1 to 13.4.8 
+- Bump eslint-config-next from 13.4.1 to 13.4.8 
+
 ## [1.0.0-alpha.9] - 2023-06-10
 
 ### <!-- 08 -->Miscellaneous Tasks
