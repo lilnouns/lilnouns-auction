@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "eslint": "8.44.0",
-    "eslint-config-next": "13.4.9",
+    "eslint-config-next": "14.2.5",
     "wrangler": "^3.1.2"
   },
   "funding": [
