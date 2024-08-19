@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.8",
-    "next": "13.4.9",
+    "next": "14.2.5",
     "next-seo": "^6.0.0",
     "next-sitemap": "^4.1.8",
     "postcss": "^8.4.25",
