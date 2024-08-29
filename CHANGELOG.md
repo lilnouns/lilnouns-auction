@@ -2,177 +2,99 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.11] - 2024-08-29
+
+### Miscellaneous Tasks
+
+- Fix indentation in YAML config
+- Add initial commit check and build enhancements
+- Add workflow for automated PR creation
+- Add initial template cleanup workflow
+- Add GitHub issue templates
+- Update config and enhance parsing rules
+
 ## [1.0.0-alpha.10] - 2023-07-04
 
-### <!-- 05 -->Documentation
+### Documentation
 
 - Add funding to the packge configs
 - Set sponsorships configuration for github
 
-### <!-- 07 -->Continuous Integrations
+### Miscellaneous Tasks
 
 - Switch `package-ecosystem` from `npm` to `pnpm` for Dependabot
 - Change `package-ecosystem` back to `npm` on Dependabot configs
 - Update matrix `node-version` on build workflow
 
-### <!-- 08 -->Miscellaneous Tasks
-
-- Update `pnpm` lockfile state
-- Bump next-sitemap from 4.0.6 to 4.1.8 
-- Bump eslint from 8.42.0 to 8.44.0 
-- Bump next from 13.4.1 to 13.4.8 
-- Bump eslint-config-next from 13.4.1 to 13.4.8 
-
-## [1.0.0-alpha.9] - 2023-06-10
-
-### <!-- 08 -->Miscellaneous Tasks
-
-- Bump eslint from 8.40.0 to 8.42.0 
-- Bump wrangler from 2.20.0 to 3.1.0 
-
 ## [1.0.0-alpha.8] - 2023-05-18
 
-### <!-- 07 -->Continuous Integrations
+### Miscellaneous Tasks
 
 - Change `open-pull-requests-limit` from 10 to 20
 - Add node version 20 on `build` workflow
-- Bump orhun/git-cliff-action from 2.0.5 to 2.0.6 
-
-### <!-- 08 -->Miscellaneous Tasks
-
-- Bump eslint-config-next from 13.3.1 to 13.3.4 
-- Bump next from 13.3.1 to 13.4.1 
-- Bump eslint from 8.39.0 to 8.40.0 
-- Bump eslint-config-next from 13.3.4 to 13.4.1 
 
 ## [1.0.0-alpha.7] - 2023-04-24
 
-### <!-- 07 -->Continuous Integrations
+### Miscellaneous Tasks
 
-- Bump actions/checkout from 3.5.0 to 3.5.1 
-- Bump actions/checkout from 3.5.1 to 3.5.2 
 - Bump `pnpm` version from 7 to 8 on `pnpm` workflow
-
-### <!-- 08 -->Miscellaneous Tasks
-
-- Bump next-seo from 5.15.0 to 6.0.0 
-- Bump next from 13.2.4 to 13.3.0 
-- Bump eslint-config-next from 13.2.4 to 13.3.0 
-- Bump eslint from 8.37.0 to 8.38.0 
-- Bump next from 13.3.0 to 13.3.1 
-- Bump eslint from 8.38.0 to 8.39.0 
-- Bump eslint-config-next from 13.3.0 to 13.3.1 
 
 ## [1.0.0-alpha.6] - 2023-04-01
 
-### <!-- 05 -->Documentation
+### Documentation
 
 - Change the project license to`APLv2`
 
-### <!-- 07 -->Continuous Integrations
-
-- Bump orhun/git-cliff-action from 2.0.1 to 2.0.4 
-- Bump actions/cache from 3.0.11 to 3.2.5 
-- Bump actions/checkout from 3.1.0 to 3.4.0 
-- Bump orhun/git-cliff-action from 2.0.4 to 2.0.5 
-- Bump actions/checkout from 3.4.0 to 3.5.0 
-- Bump actions/cache from 3.2.5 to 3.3.1 
-
-### <!-- 08 -->Miscellaneous Tasks
-
-- Bump eslint from 8.26.0 to 8.32.0 
-- Bump next from 13.0.3 to 13.1.6 
-- Bump next from 13.1.6 to 13.2.4 
-- Bump eslint from 8.32.0 to 8.37.0 
-- Bump next-sitemap from 3.1.55 to 4.0.6 
-- Bump eslint-config-next from 13.0.2 to 13.2.4 
-
 ## [1.0.0-alpha.5] - 2023-01-02
 
-### <!-- 07 -->Continuous Integrations
+### Miscellaneous Tasks
 
 - Setup stale bot to closes abandoned issues
 - Add a new `release` workflow to create releases
 
-### <!-- 08 -->Miscellaneous Tasks
-
-- Bump next from 13.0.2 to 13.0.3 
-
 ## [1.0.0-alpha.4] - 2022-11-04
 
-### <!-- 07 -->Continuous Integrations
+### Miscellaneous Tasks
 
-- Bump actions/setup-node from 3.4.1 to 3.5.0
-- Bump pnpm/action-setup from 2.2.2 to 2.2.3
-- Bump actions/checkout from 3.0.2 to 3.1.0
-- Bump actions/cache from 3.0.8 to 3.0.11
-- Bump actions/setup-node from 3.5.0 to 3.5.1
-- Bump pnpm/action-setup from 2.2.3 to 2.2.4
+- Enable `auto-install-peers` and disable `strict-peer-dependencies`
 - Add a new `pnpm` workflow to update lock file
 - Update and improve the `build` workflow
 
-### <!-- 08 -->Miscellaneous Tasks
-
-- Enable `auto-install-peers` and disable `strict-peer-dependencies`
-- Bump eslint from 8.23.0 to 8.26.0
-- Bump next from 12.3.1 to 13.0.2
-- Bump eslint-config-next from 12.3.1 to 13.0.2
-
 ## [1.0.0-alpha.3] - 2022-09-21
 
-### <!-- 07 -->Continuous Integrations
-
-- Bump pnpm/action-setup from 2.0.1 to 2.2.2
-
-### <!-- 08 -->Miscellaneous Tasks
+### Miscellaneous Tasks
 
 - Add `wrangler` for develop and serve functions
-- Bump eslint-config-next from 12.3.0 to 12.3.1
-- Bump next from 12.3.0 to 12.3.1
 
 ## [1.0.0-alpha.2] - 2022-09-12
 
-### <!-- 04 -->Refactor
+### Refactor
 
 - Add basic sitemap configuration
 - Add default seo config and information
 
-### <!-- 07 -->Continuous Integrations
+### Miscellaneous Tasks
 
-- Replace `yarn` by `pnpm` over `build` workflow
-
-### <!-- 08 -->Miscellaneous Tasks
-
-- Bump next from 12.2.5 to 12.3.0
-- Bump eslint-config-next from 12.2.5 to 12.3.0
 - Enable pre and post scripts running by `pnpm`
 - Solve warning regard to experimental images optimization
-
-## [1.0.0-alpha.1] - 2022-08-29
-
-### <!-- 08 -->Miscellaneous Tasks
-
-- Bump eslint from 8.22.0 to 8.23.0
+- Replace `yarn` by `pnpm` over `build` workflow
 
 ## [1.0.0-alpha.0] - 2022-08-29
 
-### <!-- 04 -->Refactor
+### Refactor
 
 - Cleanup home page and styles
 - Add `londrina-solid` font from google as default
 
-### <!-- 05 -->Documentation
+### Documentation
 
 - Cleanup the project main readme file
 
-### <!-- 07 -->Continuous Integrations
-
-- Add a configuration file for `dependabot`
-- Add new `build` github worklfow to run on pushs
-
-### <!-- 08 -->Miscellaneous Tasks
+### Miscellaneous Tasks
 
 - Create new next project using creator
+- Add a configuration file for `dependabot`
+- Add new `build` github worklfow to run on pushs
 - Add `export` to the package scripts
 - Configure `unoptimized` in next configs
 - Remove api folder due to static generation
