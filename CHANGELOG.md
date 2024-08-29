@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.12] - 2024-08-29
+
+### Miscellaneous Tasks
+
+- Add `.editorconfig` for consistent coding styles
+- Update linting config and plugins
+- Add `.eslintignore` file to exclude configs
+- Update `start` script with compatibility flag
+- Remove unused `preexport` and `export` scripts
+- Add lint-staged config for pre-commit hooks
+- Add pre-commit hook to run linters and tests
+
 ## [1.0.0-alpha.11] - 2024-08-29
 
 ### Miscellaneous Tasks
