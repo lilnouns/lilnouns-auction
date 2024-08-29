@@ -29,7 +29,6 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.1",
     "@cloudflare/workers-types": "4.20240821.1",
-    "wrangler": "3.72.3",
     "@lingui/cli": "4.5.0",
     "@lingui/conf": "4.5.0",
     "@lingui/format-po": "4.5.0",
@@ -56,6 +55,7 @@
     "prettier-plugin-packagejson": "2.5.2",
     "prettier-plugin-toml": "2.0.1",
     "prettier-plugin-tailwindcss": "0.6.6"
+    "wrangler": "3.72.3"
   },
   "funding": [
     {
