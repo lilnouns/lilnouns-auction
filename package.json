@@ -7,7 +7,7 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "prestart": "npm run export",
-    "start": "wrangler pages dev out",
+    "start": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
     "lint": "next lint",
     "preexport": "npm run build",
     "export": "next export"
