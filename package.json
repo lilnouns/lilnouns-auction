@@ -15,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@heroicons/react": "2.1.5",
     "@lingui/core": "4.5.0",
     "@lingui/detect-locale": "4.5.0",
     "@lingui/react": "4.5.0",
