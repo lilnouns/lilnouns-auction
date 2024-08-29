@@ -14,6 +14,9 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@lingui/core": "4.5.0",
+    "@lingui/detect-locale": "4.5.0",
+    "@lingui/react": "4.5.0",
     "autoprefixer": "10.4.20",
     "next": "14.2.7",
     "next-seo": "6.5.0",
@@ -27,6 +30,12 @@
     "@cloudflare/next-on-pages": "1.13.1",
     "@cloudflare/workers-types": "4.20240821.1",
     "wrangler": "3.72.3",
+    "@lingui/cli": "4.5.0",
+    "@lingui/conf": "4.5.0",
+    "@lingui/format-po": "4.5.0",
+    "@lingui/loader": "4.5.0",
+    "@lingui/macro": "4.5.0",
+    "@lingui/swc-plugin": "4.0.6",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "9.1.0",
