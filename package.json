@@ -15,8 +15,8 @@
   "dependencies": {
     "autoprefixer": "10.4.20",
     "next": "14.2.7",
-    "next-seo": "^6.5.0",
     "next-sitemap": "^4.2.3",
+    "next-seo": "6.5.0",
     "postcss": "8.4.41",
     "react": "18.3.1",
     "react-dom": "18.3.1",
