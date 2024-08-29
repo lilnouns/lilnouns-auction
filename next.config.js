@@ -2,7 +2,33 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {},
-};
+  output: 'standalone',
+  images: {
+    unoptimized: true,
+  },
+  experimental: {
+    webpackBuildWorker: true,
+    swcPlugins: [
+      [
+        '@lingui/swc-plugin',
+        {
+          // the same options as in .swcrc
+        },
+      ],
+    ],
+  },
+  webpack: (config) => {
+    config.resolve.fallback = {
+      // if you miss it, all the other options in fallback, specified
+      // by next.js will be dropped.
+      ...config.resolve.fallback,
 
-module.exports = nextConfig;
+      fs: false,
+    }
+
+    // Important: return the modified config
+    return config
+  },
+}
+
+module.exports = nextConfig
