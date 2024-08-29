@@ -9,8 +9,6 @@
     "prestart": "next-on-pages",
     "start": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
     "lint": "next lint",
-    "preexport": "npm run build",
-    "export": "next export"
     "test": "jest --passWithNoTests",
     "type-check": "tsc --noEmit",
     "prepare": "husky"
