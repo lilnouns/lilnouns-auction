@@ -11,6 +11,8 @@
     "lint": "next lint",
     "preexport": "npm run build",
     "export": "next export"
+    "test": "jest --passWithNoTests",
+    "type-check": "tsc --noEmit",
     "prepare": "husky"
   },
   "dependencies": {
