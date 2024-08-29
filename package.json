@@ -23,6 +23,7 @@
     "tailwindcss": "3.4.10"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "1.13.1",
     "@cloudflare/workers-types": "4.20240821.1",
     "wrangler": "3.72.3",
     "eslint": "8.57.0",
