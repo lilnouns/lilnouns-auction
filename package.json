@@ -36,6 +36,7 @@
     "@lingui/loader": "4.5.0",
     "@lingui/macro": "4.5.0",
     "@lingui/swc-plugin": "4.0.6",
+    "@types/eslint": "8.56.10",
     "@types/eslint-config-prettier": "6.11.3",
     "@types/jest": "29.5.12",
     "@types/langs": "2.0.5",
