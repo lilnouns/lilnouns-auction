@@ -42,3 +42,7 @@ next-env.d.ts
 
 # swc
 .swc
+
+# next sitemap
+public/sitemap*
+public/robots.txt
