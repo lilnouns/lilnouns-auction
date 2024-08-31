@@ -16,20 +16,29 @@ interface GraphQLResponse {
   errors?: Array<{ message: string }>
 }
 
+interface Seed {
+  background: number
+  body: number
+  accessory: number
+  head: number
+  glasses: number
+}
+
+interface SeedResult {
+  blockNumber: number
+  seed: Seed | undefined
+}
+
 export async function GET(
   request: NextRequest,
   { params: { noun } }: { params: { noun: number } },
 ) {
   const { env } = getRequestContext()
-
   const subgraphUrl = env?.ETHEREUM_BLOCKS_SUBGRAPH_URL
 
   const { searchParams } = request.nextUrl
-  const limitParam = searchParams.get('limit') ?? '1000'
-  const offsetParam = searchParams.get('offset') ?? '0'
-
-  const limit = Number.parseInt(limitParam, 10)
-  const offset = Number.parseInt(offsetParam, 10)
+  const limit = Number(searchParams.get('limit') ?? '100')
+  const offset = Number(searchParams.get('offset') ?? '0')
 
   const query = `
     query GetBlocks($skip: Int!, $first: Int!) {
@@ -45,23 +54,15 @@ export async function GET(
     }
   `
 
-  const variables = {
-    skip: offset,
-    first: limit,
-  }
+  const variables = { skip: offset, first: limit }
 
   try {
-    // Implementing a timeout for the fetch request (e.g., 10 seconds)
     const controller = new AbortController()
-    const timeout = setTimeout(() => {
-      controller.abort()
-    }, 10_000) // 10,000 ms = 10 seconds
+    const timeout = setTimeout(() => controller.abort(), 10_000)
 
     const response = await fetch(subgraphUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, variables }),
       signal: controller.signal,
     })
@@ -77,39 +78,52 @@ export async function GET(
 
     const data: GraphQLResponse = await response.json()
 
-    if (data.errors && data.errors.length > 0) {
+    if (data.errors?.length) {
       console.error('GraphQL errors:', data.errors)
       return new Response('Error fetching blocks', { status: 500 })
     }
 
-    if (!data.data?.blocks) {
-      console.error('Invalid data structure received:', data)
-      return new Response('Invalid data structure received', { status: 500 })
+    const blocks: Block[] = data.data?.blocks || []
+
+    const filterParams: Partial<Seed> = {
+      background: searchParams.get('background')
+        ? Number(searchParams.get('background'))
+        : undefined,
+      body: searchParams.get('body')
+        ? Number(searchParams.get('body'))
+        : undefined,
+      accessory: searchParams.get('accessory')
+        ? Number(searchParams.get('accessory'))
+        : undefined,
+      head: searchParams.get('head')
+        ? Number(searchParams.get('head'))
+        : undefined,
+      glasses: searchParams.get('glasses')
+        ? Number(searchParams.get('glasses'))
+        : undefined,
     }
 
-    const blocks: Block[] = data.data.blocks
-
-    // Process seeds concurrently if possible
-    const seeds = await Promise.all(
+    const seedResults = await Promise.all(
       blocks.map(async (block) => {
         try {
           const seed = getNounSeedFromBlockHash(noun, block.id)
-          return {
-            blockNumber: block.number,
-            seed,
-          }
-        } catch (seedError) {
-          console.error(
-            `Error generating seed for block ${block.id}:`,
-            seedError,
+          const isMatching = Object.entries(filterParams).every(
+            ([key, value]) =>
+              value === undefined || seed[key as keyof Seed] === value,
           )
-          return {
-            blockNumber: block.number,
-            // eslint-disable-next-line unicorn/no-null
-            seed: null,
-          }
+
+          return isMatching
+            ? { blockNumber: block.number, seed }
+            : { blockNumber: block.number, seed: undefined }
+        } catch (error) {
+          console.error(`Error generating seed for block ${block.id}:`, error)
+          return { blockNumber: block.number, seed: undefined }
         }
       }),
+    )
+
+    const seeds: SeedResult[] = seedResults.filter(
+      (result): result is SeedResult => result.seed !== undefined,
     )
 
     return new Response(JSON.stringify({ noun, seeds }), {
