@@ -80,49 +80,44 @@ export default function Home() {
       <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <section className="mt-16 py-8">
           <div className="container">
-            <div className="mx-auto max-w-xl">
-              <h1 className="mb-4 text-center text-4xl font-bold leading-tight text-gray-900 dark:text-white">
-                <Trans>Building a Multi-Lingual Website</Trans>
-              </h1>
-              <p className="mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
-                <Trans>
-                  Welcome to our Next.js and Lingui demo site! Discover the
-                  power of combining Next.js, a powerful React framework for
-                  building server-side rendered applications, with Lingui, the
-                  ultimate solution for multi-lingual support in your web
-                  projects.
-                </Trans>
-              </p>
-              <div className="mb-4 flex justify-between text-center">
-                <ThemeSwitcher className="rounded-full border-2 border-gray-900 p-1 text-gray-900 dark:border-white dark:text-white" />
-                <LocaleSwitcher className="rounded-full border-2 border-gray-900 p-1 text-gray-900 dark:border-white dark:text-white" />
-              </div>
-              {/* Display Noun Seeds */}
-              <div>
-                {error ? (
-                  <div className="text-red-500">Error: {error}</div>
-                ) : (
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {seedsData.map(({ blockNumber, seed }) => {
-                      const { parts, background } = getNounData(seed)
-                      const svgBinary = buildSVG(parts, palette, background)
-                      const svgBase64 = btoa(svgBinary)
+            <h1 className="mb-4 text-center text-4xl font-bold leading-tight text-gray-900 dark:text-white">
+              <Trans>Building a Multi-Lingual Website</Trans>
+            </h1>
+            <p className="mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
+              <Trans>
+                Welcome to our Next.js and Lingui demo site! Discover the power
+                of combining Next.js, a powerful React framework for building
+                server-side rendered applications, with Lingui, the ultimate
+                solution for multi-lingual support in your web projects.
+              </Trans>
+            </p>
+            <div className="mb-4 flex justify-between text-center">
+              <ThemeSwitcher className="rounded-full border-2 border-gray-900 p-1 text-gray-900 dark:border-white dark:text-white" />
+              <LocaleSwitcher className="rounded-full border-2 border-gray-900 p-1 text-gray-900 dark:border-white dark:text-white" />
+            </div>
+            {/* Display Noun Seeds */}
+            <div>
+              {error ? (
+                <div className="text-red-500">Error: {error}</div>
+              ) : (
+                <div className="grid grid-cols-1 gap-4 text-gray-900 md:grid-cols-2 lg:grid-cols-6 dark:border-white dark:text-white">
+                  {seedsData.map(({ blockNumber, seed }) => {
+                    const { parts, background } = getNounData(seed)
+                    const svgBinary = buildSVG(parts, palette, background)
+                    const svgBase64 = btoa(svgBinary)
 
-                      return (
-                        <div
-                          key={blockNumber} // Use blockNumber as a unique key
-                          className="rounded border p-4 text-center shadow-sm"
-                        >
-                          <SVGImage svgBase64={svgBase64} />
-                          <div className="mt-2">
-                            Block Number: {blockNumber}
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-                )}
-              </div>
+                    return (
+                      <div
+                        key={blockNumber} // Use blockNumber as a unique key
+                        className="rounded border p-4 text-center shadow-sm"
+                      >
+                        <SVGImage svgBase64={svgBase64} />
+                        <div className="mt-2">Block Number: {blockNumber}</div>
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           </div>
         </section>
