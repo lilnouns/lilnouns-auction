@@ -135,52 +135,61 @@ const Home: React.FC = () => {
                 <select
                   value={selectedBackground}
                   onChange={(e) => setSelectedBackground(e.target.value)}
-                  className="form-select"
                 >
                   <option value="">Select Background</option>
-                  <option value="1">Background 1</option>
-                  <option value="2">Background 2</option>
-                  {/* Add more options as needed */}
+                  {ImageData.bgcolors.map((color, index) => (
+                    <option key={index} value={index.toString()}>
+                      {color}
+                    </option>
+                  ))}
                 </select>
+
                 <select
                   value={selectedBody}
                   onChange={(e) => setSelectedBody(e.target.value)}
-                  className="form-select"
                 >
                   <option value="">Select Body</option>
-                  <option value="1">Body 1</option>
-                  <option value="2">Body 2</option>
-                  {/* Add more options as needed */}
+                  {ImageData.images.bodies.map((body, index) => (
+                    <option key={index} value={index.toString()}>
+                      {body.filename}
+                    </option>
+                  ))}
                 </select>
+
                 <select
                   value={selectedAccessory}
                   onChange={(e) => setSelectedAccessory(e.target.value)}
-                  className="form-select"
                 >
                   <option value="">Select Accessory</option>
-                  <option value="1">Accessory 1</option>
-                  <option value="2">Accessory 2</option>
-                  {/* Add more options as needed */}
+                  {ImageData.images.accessories.map((accessory, index) => (
+                    <option key={index} value={index.toString()}>
+                      {accessory.filename}
+                    </option>
+                  ))}
                 </select>
+
                 <select
                   value={selectedHead}
                   onChange={(e) => setSelectedHead(e.target.value)}
-                  className="form-select"
                 >
                   <option value="">Select Head</option>
-                  <option value="1">Head 1</option>
-                  <option value="2">Head 2</option>
-                  {/* Add more options as needed */}
+                  {ImageData.images.heads.map((head, index) => (
+                    <option key={index} value={index.toString()}>
+                      {head.filename}
+                    </option>
+                  ))}
                 </select>
+
                 <select
                   value={selectedGlasses}
                   onChange={(e) => setSelectedGlasses(e.target.value)}
-                  className="form-select"
                 >
                   <option value="">Select Glasses</option>
-                  <option value="1">Glasses 1</option>
-                  <option value="2">Glasses 2</option>
-                  {/* Add more options as needed */}
+                  {ImageData.images.glasses.map((glasses, index) => (
+                    <option key={index} value={index.toString()}>
+                      {glasses.filename}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
