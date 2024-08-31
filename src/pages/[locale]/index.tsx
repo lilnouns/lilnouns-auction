@@ -6,7 +6,7 @@ import { useLingui } from '@lingui/react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 const { palette } = ImageData
 
@@ -52,31 +52,50 @@ const Home: React.FC = () => {
     return btoa(svgBinary)
   }, [])
 
-  useEffect(() => {
+  // Fetch data function
+  const fetchData = async () => {
     if (!nounId) return
 
-    const fetchData = async () => {
-      setIsLoading(true)
-      try {
-        const response = await fetch(`/api/seeds/${nounId}`)
-        if (!response.ok) {
-          throw new Error('Failed to fetch seed data')
-        }
-
-        const data: ApiResponse = await response.json()
-        setSeedsData(data.seeds)
-      } catch (error_) {
-        if (error_ instanceof Error) {
-          setError(error_.message)
-        } else {
-          setError('An unexpected error occurred')
-        }
-      } finally {
-        setIsLoading(false)
+    setIsLoading(true)
+    try {
+      const response = await fetch(`/api/seeds/${nounId}`)
+      if (!response.ok) {
+        throw new Error('Failed to fetch seed data')
       }
-    }
 
+      const data: ApiResponse = await response.json()
+
+      // Add new seeds to the existing seedsData
+      setSeedsData((prevSeeds) => {
+        // Filter out any duplicates
+        const newSeeds = data.seeds.filter(
+          (newSeed) =>
+            !prevSeeds.some(
+              (existingSeed) =>
+                existingSeed.blockNumber === newSeed.blockNumber,
+            ),
+        )
+        return [...prevSeeds, ...newSeeds]
+      })
+    } catch (error_) {
+      if (error_ instanceof Error) {
+        setError(error_.message)
+      } else {
+        setError('An unexpected error occurred')
+      }
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
     fetchData()
+
+    const intervalId = setInterval(() => {
+      fetchData()
+    }, 12_000) // Fetch data every 12 seconds
+
+    return () => clearInterval(intervalId) // Cleanup interval on component unmount or when nounId changes
   }, [nounId])
 
   return (
@@ -150,7 +169,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export async function getStaticPaths() {
   return {
     paths: availableLocales.map((locale) => ({ params: { locale } })),
-    fallback: false, // Revert to false to comply with next-on-pages restrictions
+    fallback: false, // Revert too false to comply with next-on-pages restrictions
   }
 }
 
