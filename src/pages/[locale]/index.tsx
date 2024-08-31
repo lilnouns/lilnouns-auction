@@ -6,21 +6,32 @@ import { Trans, t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { GetStaticPropsContext } from 'next'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 const { palette } = ImageData
 
-interface SeedData {
-  blockNumber: number
-  seed: {
-    accessory: number
-    background: number
-    body: number
-    glasses: number
-    head: number
-  }
+// Define the Seed interface
+interface Seed {
+  accessory: number
+  background: number
+  body: number
+  glasses: number
+  head: number
 }
 
+// Define the SeedData interface
+interface SeedData {
+  blockNumber: number
+  seed: Seed
+}
+
+// Define the API response interface
+interface ApiResponse {
+  seeds: SeedData[]
+}
+
+// SVGImage component to display the SVG
 function SVGImage({ svgBase64 }: { svgBase64: string }) {
   return <img src={`data:image/svg+xml;base64,${svgBase64}`} alt="Noun SVG" />
 }
@@ -28,25 +39,36 @@ function SVGImage({ svgBase64 }: { svgBase64: string }) {
 export default function Home() {
   const { i18n } = useLingui()
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
-  // eslint-disable-next-line unicorn/no-null
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | undefined>() // Use undefined instead of null
+  const router = useRouter()
+  const { nounId } = router.query // Dynamically get the nounId from the URL
 
   useEffect(() => {
+    // Ensure nounId is a single string
+    if (!nounId || Array.isArray(nounId)) return
+
     async function fetchData() {
       try {
-        const response = await fetch('/api/seeds/8023')
+        const response = await fetch(`/api/seeds/${nounId}`)
         if (!response.ok) {
           throw new Error('Failed to fetch seed data')
         }
-        const data = await response.json()
+
+        // Explicitly type the response data
+        const data: ApiResponse = await response.json()
         setSeedsData(data.seeds)
       } catch (error_) {
-        setError(error_.message)
+        // Explicitly handle the error type
+        if (error_ instanceof Error) {
+          setError(error_.message)
+        } else {
+          setError('An unexpected error occurred')
+        }
       }
     }
 
     fetchData()
-  }, [])
+  }, [nounId])
 
   return (
     <>
@@ -55,9 +77,7 @@ export default function Home() {
           {t(i18n)`Next.js & Lingui: Building a Multi-Lingual Website`}
         </title>
       </Head>
-      <div
-        className={`flex min-h-screen flex-col items-center justify-between p-24`}
-      >
+      <div className="flex min-h-screen flex-col items-center justify-between p-24">
         <section className="mt-16 py-8">
           <div className="container">
             <div className="mx-auto max-w-xl">
@@ -83,14 +103,14 @@ export default function Home() {
                   <div className="text-red-500">Error: {error}</div>
                 ) : (
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {seedsData.map(({ blockNumber, seed }, index) => {
+                    {seedsData.map(({ blockNumber, seed }) => {
                       const { parts, background } = getNounData(seed)
-                      const svgBinary = buildSVG(parts, palette, background) // Pass the correct palette if necessary
+                      const svgBinary = buildSVG(parts, palette, background)
                       const svgBase64 = btoa(svgBinary)
 
                       return (
                         <div
-                          key={index}
+                          key={blockNumber} // Use blockNumber as a unique key
                           className="rounded border p-4 text-center shadow-sm"
                         >
                           <SVGImage svgBase64={svgBase64} />
