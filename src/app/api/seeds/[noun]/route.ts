@@ -29,7 +29,7 @@ interface SeedResult {
   seed: Seed | undefined
 }
 
-async function fetchBlocks(limit: number, offset: number): Promise<Block[]> {
+async function fetchBlocks(offset: number): Promise<Block[]> {
   const { env } = getRequestContext()
   const subgraphUrl = env?.ETHEREUM_BLOCKS_SUBGRAPH_URL
 
@@ -51,7 +51,7 @@ async function fetchBlocks(limit: number, offset: number): Promise<Block[]> {
     }
   `
 
-  const variables = { skip: offset, first: limit }
+  const variables = { skip: offset, first: 1000 } // Always use 1000 as the limit for blocks
 
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 10_000)
@@ -101,8 +101,9 @@ export async function GET(
   { params: { noun } }: { params: { noun: number } },
 ) {
   const { searchParams } = request.nextUrl
-  const limit = Number(searchParams.get('limit') ?? '100')
-  let offset = Number(searchParams.get('offset') ?? '0')
+  const seedLimit = Number(searchParams.get('limit') ?? '100')
+  let seedOffset = Number(searchParams.get('offset') ?? '0')
+  let blockOffset = 0
   let totalFetchedBlocks = 0
   const poolSize = 1_000_000
 
@@ -124,8 +125,8 @@ export async function GET(
     let seedResults: SeedResult[] = []
     let moreBlocksAvailable = true
 
-    while (seedResults.length < limit && moreBlocksAvailable) {
-      const blocks = await fetchBlocks(limit, offset)
+    while (seedResults.length < seedLimit && moreBlocksAvailable) {
+      const blocks = await fetchBlocks(blockOffset)
 
       totalFetchedBlocks += blocks.length
 
@@ -169,11 +170,14 @@ export async function GET(
           (result): result is SeedResult => result.seed !== undefined,
         ),
       ]
-      offset += limit
+      blockOffset += 1000 // Move to the next batch of blocks
     }
 
     return new Response(
-      JSON.stringify({ noun, seeds: seedResults.slice(0, limit) }),
+      JSON.stringify({
+        noun,
+        seeds: seedResults.slice(seedOffset, seedOffset + seedLimit),
+      }),
       {
         headers: { 'Content-Type': 'application/json' },
       },
