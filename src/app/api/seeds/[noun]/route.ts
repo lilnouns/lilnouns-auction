@@ -29,16 +29,13 @@ interface SeedResult {
   seed: Seed | undefined
 }
 
-export async function GET(
-  request: NextRequest,
-  { params: { noun } }: { params: { noun: number } },
-) {
+async function fetchBlocks(limit: number, offset: number): Promise<Block[]> {
   const { env } = getRequestContext()
   const subgraphUrl = env?.ETHEREUM_BLOCKS_SUBGRAPH_URL
 
-  const { searchParams } = request.nextUrl
-  const limit = Number(searchParams.get('limit') ?? '100')
-  const offset = Number(searchParams.get('offset') ?? '0')
+  if (!subgraphUrl) {
+    throw new Error('Ethereum Blocks Subgraph URL is not configured')
+  }
 
   const query = `
     query GetBlocks($skip: Int!, $first: Int!) {
@@ -56,10 +53,10 @@ export async function GET(
 
   const variables = { skip: offset, first: limit }
 
-  try {
-    const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), 10_000)
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 10_000)
 
+  try {
     const response = await fetch(subgraphUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -73,17 +70,42 @@ export async function GET(
       console.error(
         `Failed to fetch blocks: ${response.status} ${response.statusText}`,
       )
-      return new Response('Failed to fetch blocks', { status: 500 })
+      throw new Error('Failed to fetch blocks')
     }
 
     const data: GraphQLResponse = await response.json()
 
     if (data.errors?.length) {
       console.error('GraphQL errors:', data.errors)
-      return new Response('Error fetching blocks', { status: 500 })
+      throw new Error('Error fetching blocks')
     }
 
-    const blocks: Block[] = data.data?.blocks || []
+    return data.data?.blocks || []
+  } catch (error) {
+    if (error instanceof Error) {
+      if (error.name === 'AbortError') {
+        console.error('Fetch request timed out')
+        throw new Error('Request timed out')
+      }
+      console.error('Error fetching blocks:', error.message)
+      throw new Error('Error fetching blocks')
+    } else {
+      console.error('An unknown error occurred:', error)
+      throw new Error('Unknown error occurred')
+    }
+  }
+}
+
+export async function GET(
+  request: NextRequest,
+  { params: { noun } }: { params: { noun: number } },
+) {
+  const { searchParams } = request.nextUrl
+  const limit = Number(searchParams.get('limit') ?? '100')
+  const offset = Number(searchParams.get('offset') ?? '0')
+
+  try {
+    const blocks = await fetchBlocks(limit, offset)
 
     const filterParams: Partial<Seed> = {
       background: searchParams.get('background')
@@ -116,7 +138,17 @@ export async function GET(
             ? { blockNumber: block.number, seed }
             : { blockNumber: block.number, seed: undefined }
         } catch (error) {
-          console.error(`Error generating seed for block ${block.id}:`, error)
+          if (error instanceof Error) {
+            console.error(
+              `Error generating seed for block ${block.id}:`,
+              error.message,
+            )
+          } else {
+            console.error(
+              `An unknown error occurred while generating seed for block ${block.id}:`,
+              error,
+            )
+          }
           return { blockNumber: block.number, seed: undefined }
         }
       }),
@@ -129,12 +161,10 @@ export async function GET(
     return new Response(JSON.stringify({ noun, seeds }), {
       headers: { 'Content-Type': 'application/json' },
     })
-  } catch (error: any) {
-    if (error.name === 'AbortError') {
-      console.error('Fetch request timed out:', error)
+  } catch (error) {
+    if (error instanceof Error && error.message === 'Request timed out') {
       return new Response('Request timed out', { status: 504 })
     }
-    console.error('Error fetching blocks or generating seeds:', error)
     return new Response('Internal Server Error', { status: 500 })
   }
 }
