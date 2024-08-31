@@ -46,3 +46,6 @@ next-env.d.ts
 # next sitemap
 public/sitemap*
 public/robots.txt
+
+# cloudflare
+.wrangler
