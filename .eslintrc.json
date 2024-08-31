@@ -5,10 +5,11 @@
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended",
     "plugin:unicorn/recommended",
+    "plugin:eslint-plugin-next-on-pages/recommended",
     "prettier"
   ],
   "rules": {
     "unicorn/prevent-abbreviations": "off"
   },
-  "plugins": ["lingui"]
+  "plugins": ["lingui", "eslint-plugin-next-on-pages"]
 }
