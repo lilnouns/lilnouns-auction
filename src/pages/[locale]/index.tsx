@@ -84,18 +84,8 @@ const Home: React.FC = () => {
 
       const data: ApiResponse = await response.json()
 
-      // Add new seeds to the existing seedsData
-      setSeedsData((prevSeeds) => {
-        // Filter out any duplicates
-        const newSeeds = data.seeds.filter(
-          (newSeed) =>
-            !prevSeeds.some(
-              (existingSeed) =>
-                existingSeed.blockNumber === newSeed.blockNumber,
-            ),
-        )
-        return [...prevSeeds, ...newSeeds]
-      })
+      // Replace existing seedsData with new data
+      setSeedsData(data.seeds)
     } catch (error_) {
       if (error_ instanceof Error) {
         setError(error_.message)
