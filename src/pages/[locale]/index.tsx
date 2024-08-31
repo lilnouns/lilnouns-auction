@@ -90,13 +90,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     fetchData()
-
-    const intervalId = setInterval(() => {
-      fetchData()
-    }, 12_000) // Fetch data every 12 seconds
-
-    return () => clearInterval(intervalId) // Cleanup interval on component unmount or when nounId changes
-  }, [fetchData, nounId])
+  }, [nounId])
 
   return (
     <>
