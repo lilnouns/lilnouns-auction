@@ -102,65 +102,82 @@ export async function GET(
 ) {
   const { searchParams } = request.nextUrl
   const limit = Number(searchParams.get('limit') ?? '100')
-  const offset = Number(searchParams.get('offset') ?? '0')
+  let offset = Number(searchParams.get('offset') ?? '0')
+  let totalFetchedBlocks = 0
+  const poolSize = 1_000_000
 
   try {
-    const blocks = await fetchBlocks(limit, offset)
-
     const filterParams: Partial<Seed> = {
       background: searchParams.get('background')
-        ? Number(searchParams.get('background'))
+        ? +searchParams.get('background')!
         : undefined,
-      body: searchParams.get('body')
-        ? Number(searchParams.get('body'))
-        : undefined,
+      body: searchParams.get('body') ? +searchParams.get('body')! : undefined,
       accessory: searchParams.get('accessory')
-        ? Number(searchParams.get('accessory'))
+        ? +searchParams.get('accessory')!
         : undefined,
-      head: searchParams.get('head')
-        ? Number(searchParams.get('head'))
-        : undefined,
+      head: searchParams.get('head') ? +searchParams.get('head')! : undefined,
       glasses: searchParams.get('glasses')
-        ? Number(searchParams.get('glasses'))
+        ? +searchParams.get('glasses')!
         : undefined,
     }
 
-    const seedResults = await Promise.all(
-      blocks.map(async (block) => {
-        try {
-          const seed = getNounSeedFromBlockHash(noun, block.id)
-          const isMatching = Object.entries(filterParams).every(
-            ([key, value]) =>
-              value === undefined || seed[key as keyof Seed] === value,
-          )
+    let seedResults: SeedResult[] = []
+    let moreBlocksAvailable = true
 
-          return isMatching
-            ? { blockNumber: block.number, seed }
-            : { blockNumber: block.number, seed: undefined }
-        } catch (error) {
-          if (error instanceof Error) {
-            console.error(
-              `Error generating seed for block ${block.id}:`,
-              error.message,
+    while (seedResults.length < limit && moreBlocksAvailable) {
+      const blocks = await fetchBlocks(limit, offset)
+
+      totalFetchedBlocks += blocks.length
+
+      if (blocks.length === 0 || totalFetchedBlocks >= poolSize) {
+        moreBlocksAvailable = false
+        break
+      }
+
+      const newSeedResults = await Promise.all(
+        blocks.map(async (block) => {
+          try {
+            const seed = getNounSeedFromBlockHash(noun, block.id)
+            const isMatching = Object.entries(filterParams).every(
+              ([key, value]) =>
+                value === undefined || seed[key as keyof Seed] === value,
             )
-          } else {
-            console.error(
-              `An unknown error occurred while generating seed for block ${block.id}:`,
-              error,
-            )
+
+            return isMatching
+              ? { blockNumber: block.number, seed }
+              : { blockNumber: block.number, seed: undefined }
+          } catch (error) {
+            if (error instanceof Error) {
+              console.error(
+                `Error generating seed for block ${block.id}:`,
+                error.message,
+              )
+            } else {
+              console.error(
+                `An unknown error occurred while generating seed for block ${block.id}:`,
+                error,
+              )
+            }
+            return { blockNumber: block.number, seed: undefined }
           }
-          return { blockNumber: block.number, seed: undefined }
-        }
-      }),
-    )
+        }),
+      )
 
-    const seeds: SeedResult[] = seedResults.filter(
-      (result): result is SeedResult => result.seed !== undefined,
-    )
+      seedResults = [
+        ...seedResults,
+        ...newSeedResults.filter(
+          (result): result is SeedResult => result.seed !== undefined,
+        ),
+      ]
+      offset += limit
+    }
 
-    return new Response(JSON.stringify({ noun, seeds }), {
-      headers: { 'Content-Type': 'application/json' },
-    })
+    return new Response(
+      JSON.stringify({ noun, seeds: seedResults.slice(0, limit) }),
+      {
+        headers: { 'Content-Type': 'application/json' },
+      },
+    )
   } catch (error) {
     if (error instanceof Error && error.message === 'Request timed out') {
       return new Response('Request timed out', { status: 504 })
