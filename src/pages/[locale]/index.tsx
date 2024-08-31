@@ -96,7 +96,7 @@ const Home: React.FC = () => {
     }, 12_000) // Fetch data every 12 seconds
 
     return () => clearInterval(intervalId) // Cleanup interval on component unmount or when nounId changes
-  }, [nounId])
+  }, [fetchData, nounId])
 
   return (
     <>
