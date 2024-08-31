@@ -6,7 +6,7 @@ import { useLingui } from '@lingui/react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 const { palette } = ImageData
 
@@ -30,13 +30,6 @@ interface ApiResponse {
   seeds: SeedData[]
 }
 
-// Function to render the SVG
-const renderSVG = (seed: Seed) => {
-  const { parts, background } = getNounData(seed)
-  const svgBinary = buildSVG(parts, palette, background)
-  return btoa(svgBinary)
-}
-
 // SVGImage component to display the SVG
 const SVGImage: React.FC<{ svgBase64: string }> = ({ svgBase64 }) => (
   <img src={`data:image/svg+xml;base64,${svgBase64}`} alt="Noun SVG" />
@@ -48,10 +41,19 @@ const Home: React.FC = () => {
   const [error, setError] = useState<string | undefined>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const router = useRouter()
-  const { nounId } = router.query
+  const nounId = Array.isArray(router.query.nounId)
+    ? router.query.nounId[0]
+    : router.query.nounId
+
+  // Function to render the SVG, memoized for performance
+  const renderSVG = useCallback((seed: Seed) => {
+    const { parts, background } = getNounData(seed)
+    const svgBinary = buildSVG(parts, palette, background)
+    return btoa(svgBinary)
+  }, [])
 
   useEffect(() => {
-    if (!nounId || Array.isArray(nounId)) return
+    if (!nounId) return
 
     const fetchData = async () => {
       setIsLoading(true)
@@ -81,26 +83,44 @@ const Home: React.FC = () => {
     <>
       <Head>
         <title>
-          {t(i18n)`Next.js & Lingui: Building a Multi-Lingual Website`}
+          {nounId
+            ? t(
+                i18n,
+              )`Noun ${nounId} | Building a Multi-Lingual Website with Next.js & Lingui`
+            : t(i18n)`Building a Multi-Lingual Website with Next.js & Lingui`}
         </title>
+        <meta
+          name="description"
+          content={
+            nounId
+              ? `Explore the details and seeds of Noun ${nounId} on our multi-lingual website built with Next.js and Lingui. Discover the power of decentralized creativity.`
+              : `Learn how to build a multi-lingual website using Next.js and Lingui. This demo site showcases the seamless integration of these powerful tools.`
+          }
+        />
       </Head>
-      <div className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-24 dark:bg-gray-900">
         <section className="p-8">
           <div className="container">
             <div>
               {isLoading ? (
-                <div>Loading...</div>
+                <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
+                  Loading...
+                </div>
               ) : error ? (
-                <div className="text-red-500">Error: {error}</div>
+                <div className="text-red-600 dark:text-red-400">
+                  Error: {error}
+                </div>
               ) : (
-                <div className="grid grid-cols-1 gap-4 text-gray-900 md:grid-cols-2 lg:grid-cols-6 dark:border-white dark:text-white">
+                <div className="grid grid-cols-1 gap-4 text-gray-900 md:grid-cols-2 lg:grid-cols-6 dark:text-gray-200">
                   {seedsData.map(({ blockNumber, seed }) => (
                     <div
                       key={blockNumber}
-                      className="rounded border p-4 text-center shadow-sm"
+                      className="rounded border border-gray-200 bg-white p-4 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800"
                     >
                       <SVGImage svgBase64={renderSVG(seed)} />
-                      <div className="mt-2">Block Number: {blockNumber}</div>
+                      <div className="mt-2 text-gray-700 dark:text-gray-300">
+                        Block Number: {blockNumber}
+                      </div>
                     </div>
                   ))}
                 </div>
