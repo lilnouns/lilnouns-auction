@@ -2,6 +2,76 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.13] - 2024-08-31
+
+### Features
+
+- Enable dark mode and update content paths
+- Add locale utilities for i18n support
+- Add Vazirmatn font and global styles
+- Add localization hooks
+- Add `Layout`, `ThemeSwitcher`, and `LocaleSwitcher` components
+- Add `_app.tsx` for global setup
+- Add custom `_document` for locale support
+- Add locale-based redirection on home page
+- Add multi-lingual support with Lingui
+- Add `GET` method to seeds route
+- Add seeds endpoint for noun processing
+- Fetch and display noun seed data
+- Filter `Seed` results based on query params
+- Dynamically fetch noun data by ID
+- Add cache control to seeds endpoint response
+- Add customizable seed query filters
+
+### Bug Fixes
+
+- Add missing dependency in useEffect
+- Remove redundant interval in `useEffect`
+
+### Testing
+
+- Add unit tests for `Home`
+
+### Refactor
+
+- Migrate `tailwind.config.js` to `.ts`
+- Convert config to ES module
+- Extract block fetching logic
+- Improve block fetching logic
+- Simplify block fetching logic
+- Improve SVG rendering and error handling
+- Optimize SVG rendering with `useCallback`
+- Enhance data fetching logic
+- Remove unused `seeds` route
+- Update messages for Next.js & Lingui site
+- Simplify seed data update logic
+- Populate selects dynamically from `ImageData`
+
+### Miscellaneous Tasks
+
+- Update pre-commit hook for language files
+- Remove redundant Next.js pages
+- Add cssnano for production builds
+- Add `lingui` for localization
+- Add initial Jest config
+- Optimize images and enable standalone output
+- Update TypeScript config for bundler
+- Rename and export `next.config.mjs`
+- Update ignored files for sitemap
+- Update `types` field
+- Add `setupDevPlatform` for dev environment
+- Add `wrangler.toml` for configuration
+- Add `CloudflareEnv` interface
+- Add `eslint-plugin-next-on-pages` to eslint
+- Update Next.js configuration
+- Update `NODE_VERSION` to 22.3.0
+- Update for cloudflare setup
+
+### Styling
+
+- Refine layout and theme styles
+- Disable eslint for SVG `img` tag
+
 ## [1.0.0-alpha.12] - 2024-08-29
 
 ### Miscellaneous Tasks
