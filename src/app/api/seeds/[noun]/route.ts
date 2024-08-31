@@ -179,7 +179,10 @@ export async function GET(
         seeds: seedResults.slice(seedOffset, seedOffset + seedLimit),
       }),
       {
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-store',
+        },
       },
     )
   } catch (error) {
