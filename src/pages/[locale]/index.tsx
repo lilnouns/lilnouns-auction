@@ -40,6 +40,15 @@ const Home: React.FC = () => {
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [selectedBackground, setSelectedBackground] = useState<
+    string | undefined
+  >()
+  const [selectedBody, setSelectedBody] = useState<string | undefined>()
+  const [selectedAccessory, setSelectedAccessory] = useState<
+    string | undefined
+  >()
+  const [selectedHead, setSelectedHead] = useState<string | undefined>()
+  const [selectedGlasses, setSelectedGlasses] = useState<string | undefined>()
   const router = useRouter()
   const nounId = Array.isArray(router.query.nounId)
     ? router.query.nounId[0]
@@ -58,7 +67,17 @@ const Home: React.FC = () => {
 
     setIsLoading(true)
     try {
-      const response = await fetch(`/api/seeds/${nounId}`)
+      const queryParams = new URLSearchParams()
+      if (selectedBackground)
+        queryParams.append('background', selectedBackground)
+      if (selectedBody) queryParams.append('body', selectedBody)
+      if (selectedAccessory) queryParams.append('accessory', selectedAccessory)
+      if (selectedHead) queryParams.append('head', selectedHead)
+      if (selectedGlasses) queryParams.append('glasses', selectedGlasses)
+
+      const response = await fetch(
+        `/api/seeds/${nounId}?${queryParams.toString()}`,
+      )
       if (!response.ok) {
         throw new Error('Failed to fetch seed data')
       }
@@ -90,7 +109,14 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     fetchData()
-  }, [nounId])
+  }, [
+    nounId,
+    selectedBackground,
+    selectedBody,
+    selectedAccessory,
+    selectedHead,
+    selectedGlasses,
+  ])
 
   return (
     <>
@@ -114,6 +140,60 @@ const Home: React.FC = () => {
       <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-24 dark:bg-gray-900">
         <section className="p-8">
           <div className="container">
+            <div className="mb-4">
+              <div className="grid grid-cols-2 gap-4">
+                <select
+                  value={selectedBackground}
+                  onChange={(e) => setSelectedBackground(e.target.value)}
+                  className="form-select"
+                >
+                  <option value="">Select Background</option>
+                  <option value="1">Background 1</option>
+                  <option value="2">Background 2</option>
+                  {/* Add more options as needed */}
+                </select>
+                <select
+                  value={selectedBody}
+                  onChange={(e) => setSelectedBody(e.target.value)}
+                  className="form-select"
+                >
+                  <option value="">Select Body</option>
+                  <option value="1">Body 1</option>
+                  <option value="2">Body 2</option>
+                  {/* Add more options as needed */}
+                </select>
+                <select
+                  value={selectedAccessory}
+                  onChange={(e) => setSelectedAccessory(e.target.value)}
+                  className="form-select"
+                >
+                  <option value="">Select Accessory</option>
+                  <option value="1">Accessory 1</option>
+                  <option value="2">Accessory 2</option>
+                  {/* Add more options as needed */}
+                </select>
+                <select
+                  value={selectedHead}
+                  onChange={(e) => setSelectedHead(e.target.value)}
+                  className="form-select"
+                >
+                  <option value="">Select Head</option>
+                  <option value="1">Head 1</option>
+                  <option value="2">Head 2</option>
+                  {/* Add more options as needed */}
+                </select>
+                <select
+                  value={selectedGlasses}
+                  onChange={(e) => setSelectedGlasses(e.target.value)}
+                  className="form-select"
+                >
+                  <option value="">Select Glasses</option>
+                  <option value="1">Glasses 1</option>
+                  <option value="2">Glasses 2</option>
+                  {/* Add more options as needed */}
+                </select>
+              </div>
+            </div>
             <div>
               {isLoading ? (
                 <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
