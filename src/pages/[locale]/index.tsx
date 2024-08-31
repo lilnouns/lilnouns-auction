@@ -32,6 +32,7 @@ interface ApiResponse {
 
 // SVGImage component to display the SVG
 const SVGImage: React.FC<{ svgBase64: string }> = ({ svgBase64 }) => (
+  // eslint-disable-next-line @next/next/no-img-element
   <img src={`data:image/svg+xml;base64,${svgBase64}`} alt="Noun SVG" />
 )
 
