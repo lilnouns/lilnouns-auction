@@ -22,6 +22,7 @@
     "@lingui/core": "4.5.0",
     "@lingui/detect-locale": "4.5.0",
     "@lingui/react": "4.5.0",
+    "@tanstack/react-query": "^5.52.2",
     "autoprefixer": "10.4.20",
     "clsx": "2.1.1",
     "cssnano": "7.0.5",
