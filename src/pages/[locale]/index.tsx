@@ -138,6 +138,7 @@ const Home: React.FC = () => {
     setIsLoading(true)
     try {
       const queryParams = new URLSearchParams()
+      queryParams.append('limit', '12')
       if (selectedBackground)
         queryParams.append('background', selectedBackground)
       if (selectedBody) queryParams.append('body', selectedBody)
