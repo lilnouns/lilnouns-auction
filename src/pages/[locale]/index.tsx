@@ -50,6 +50,7 @@ const Home: React.FC = () => {
   >()
   const [selectedHead, setSelectedHead] = useState<string | undefined>()
   const [selectedGlasses, setSelectedGlasses] = useState<string | undefined>()
+  const [limit, setLimit] = useState<number>(12) // Add state for limit
 
   const { data } = useReadContract({
     address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
@@ -138,7 +139,7 @@ const Home: React.FC = () => {
     setIsLoading(true)
     try {
       const queryParams = new URLSearchParams()
-      queryParams.append('limit', '12')
+      queryParams.append('limit', limit.toString()) // Use the limit state
       if (selectedBackground)
         queryParams.append('background', selectedBackground)
       if (selectedBody) queryParams.append('body', selectedBody)
@@ -177,6 +178,7 @@ const Home: React.FC = () => {
     selectedAccessory,
     selectedHead,
     selectedGlasses,
+    limit, // Add limit to the dependencies
   ])
 
   return (
@@ -262,6 +264,14 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
+
+                <input
+                  type="number"
+                  value={limit}
+                  onChange={(e) => setLimit(Number(e.target.value))}
+                  placeholder="Limit"
+                  className="rounded border p-2"
+                />
               </div>
             </div>
             <div>
