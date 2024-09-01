@@ -4,6 +4,7 @@ on:
   push: # When we push the changes.
     branches: # Only for these branches.
       - master
+      - develop
       - bugfix/*
       - hotfix/*
       - release/*
@@ -50,7 +51,7 @@ jobs:
 
     strategy: # Allows you to create a matrix for job configuration.
       matrix:
-        node-version: [18.x, 19.x, 20.x, 21.x] # Running tests across different environments.
+        node-version: [18.x, 19.x, 20.x, 21.x, 22.x] # Running tests across different environments.
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps: # The sequence of tasks that make up a job.
@@ -66,7 +67,6 @@ jobs:
         uses: pnpm/action-setup@v4.0.0 # Action for setting up pnpm.
         id: pnpm-install
         with:
-          version: ^9
           run_install: false
 
       - name: Capture pnpm store directory
