@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.16] - 2024-09-01
+
+### Features
+
+- Integrate Wagmi and React Query providers
+- Integrate `useReadContract` for noun data
+
+### Bug Fixes
+
+- Add `limit` parameter to query params
+
+### Refactor
+
+- Move `WagmiProvider` and `QueryClientProvider`
+
+### Miscellaneous Tasks
+
+- Update workflow for develop and Node.js v22
+
 ## [1.0.0-alpha.15] - 2024-09-01
 
 ### Miscellaneous Tasks
