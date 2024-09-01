@@ -50,9 +50,10 @@ const Home: React.FC = () => {
   >()
   const [selectedHead, setSelectedHead] = useState<string | undefined>()
   const [selectedGlasses, setSelectedGlasses] = useState<string | undefined>()
-  const [limit, setLimit] = useState<number>(12) // Add state for limit
+  const [limit, setLimit] = useState<number>(12)
+  const [nounId, setNounId] = useState<bigint | undefined>()
 
-  const { data } = useReadContract({
+  const { data, refetch } = useReadContract({
     address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
     abi: [
       {
@@ -123,7 +124,13 @@ const Home: React.FC = () => {
     ],
     functionName: 'fetchNextNoun',
   })
-  const [nounId] = data || []
+
+  useEffect(() => {
+    if (data) {
+      const [newNounId] = data
+      setNounId(newNounId)
+    }
+  }, [data])
 
   // Function to render the SVG, memoized for performance
   const renderSVG = useCallback((seed: Seed) => {
@@ -170,6 +177,7 @@ const Home: React.FC = () => {
   }
 
   useEffect(() => {
+    refetch()
     fetchData()
   }, [
     nounId,
@@ -178,7 +186,7 @@ const Home: React.FC = () => {
     selectedAccessory,
     selectedHead,
     selectedGlasses,
-    limit, // Add limit to the dependencies
+    limit,
   ])
 
   return (
