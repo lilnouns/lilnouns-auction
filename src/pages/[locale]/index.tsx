@@ -180,7 +180,6 @@ const Home: React.FC = () => {
     refetch()
     fetchData()
   }, [
-    nounId,
     selectedBackground,
     selectedBody,
     selectedAccessory,
