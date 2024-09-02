@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.18] - 2024-09-02
+
+### Features
+
+- Add dynamic RPC URLs for wagmi chains
+
+### Bug Fixes
+
+- Improve error and loading states
+- Handle auction error in `useReadContract`
+
+### Styling
+
+- Enhance form inputs with consistent styling
+
 ## [1.0.0-alpha.17] - 2024-09-02
 
 ### Features
