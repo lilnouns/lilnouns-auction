@@ -10,13 +10,16 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiProvider, createConfig, http } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
 
+const mainnetRpcUrl = process.env.NEXT_PUBLIC_MAINNET_RPC_URL
+const sepoliaRpcUrl = process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL
+
 const queryClient = new QueryClient()
 
 const config = createConfig({
   chains: [mainnet, sepolia],
   transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
+    [mainnet.id]: http(mainnetRpcUrl),
+    [sepolia.id]: http(sepoliaRpcUrl),
   },
 })
 
