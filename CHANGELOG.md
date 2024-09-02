@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.17] - 2024-09-02
+
+### Features
+
+- Add support for customizable limit
+- Add `nounId` state and `refetch` logic
+
+### Refactor
+
+- Remove unused `nounId` dependency
+
 ## [1.0.0-alpha.16] - 2024-09-01
 
 ### Features
