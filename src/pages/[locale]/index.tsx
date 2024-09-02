@@ -40,7 +40,7 @@ const Home: React.FC = () => {
   const { i18n } = useLingui()
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isPageLoading, setIsPageLoading] = useState<boolean>(false)
   const [selectedBackground, setSelectedBackground] = useState<
     string | undefined
   >()
@@ -53,7 +53,13 @@ const Home: React.FC = () => {
   const [limit, setLimit] = useState<number>(12)
   const [nounId, setNounId] = useState<bigint | undefined>()
 
-  const { data, refetch } = useReadContract({
+  const {
+    data,
+    refetch,
+    isLoading,
+    isError,
+    error: auctionError,
+  } = useReadContract({
     address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
     abi: [
       {
@@ -126,11 +132,11 @@ const Home: React.FC = () => {
   })
 
   useEffect(() => {
-    if (data) {
+    if (!isLoading && !isError && data) {
       const [newNounId] = data
       setNounId(newNounId)
     }
-  }, [data])
+  }, [data, isLoading, isError])
 
   // Function to render the SVG, memoized for performance
   const renderSVG = useCallback((seed: Seed) => {
@@ -143,7 +149,7 @@ const Home: React.FC = () => {
   const fetchData = async () => {
     if (!nounId) return
 
-    setIsLoading(true)
+    setIsPageLoading(true)
     try {
       const queryParams = new URLSearchParams()
       queryParams.append('limit', limit.toString()) // Use the limit state
@@ -172,7 +178,7 @@ const Home: React.FC = () => {
         setError('An unexpected error occurred')
       }
     } finally {
-      setIsLoading(false)
+      setIsPageLoading(false)
     }
   }
 
@@ -180,6 +186,7 @@ const Home: React.FC = () => {
     refetch()
     fetchData()
   }, [
+    nounId,
     selectedBackground,
     selectedBody,
     selectedAccessory,
@@ -211,10 +218,11 @@ const Home: React.FC = () => {
         <section className="p-8">
           <div className="container">
             <div className="mb-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
                 <select
                   value={selectedBackground}
                   onChange={(e) => setSelectedBackground(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Background</option>
                   {ImageData.bgcolors.map((color, index) => (
@@ -223,10 +231,10 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   value={selectedBody}
                   onChange={(e) => setSelectedBody(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Body</option>
                   {ImageData.images.bodies.map((body, index) => (
@@ -235,10 +243,10 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   value={selectedAccessory}
                   onChange={(e) => setSelectedAccessory(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Accessory</option>
                   {ImageData.images.accessories.map((accessory, index) => (
@@ -247,10 +255,10 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   value={selectedHead}
                   onChange={(e) => setSelectedHead(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Head</option>
                   {ImageData.images.heads.map((head, index) => (
@@ -259,10 +267,10 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   value={selectedGlasses}
                   onChange={(e) => setSelectedGlasses(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Glasses</option>
                   {ImageData.images.glasses.map((glasses, index) => (
@@ -271,18 +279,17 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <input
                   type="number"
                   value={limit}
                   onChange={(e) => setLimit(Number(e.target.value))}
                   placeholder="Limit"
-                  className="rounded border p-2"
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
               </div>
             </div>
             <div>
-              {isLoading ? (
+              {isPageLoading ? (
                 <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
                   Loading...
                 </div>
