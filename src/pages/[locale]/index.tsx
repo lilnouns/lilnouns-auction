@@ -53,7 +53,13 @@ const Home: React.FC = () => {
   const [limit, setLimit] = useState<number>(12)
   const [nounId, setNounId] = useState<bigint | undefined>()
 
-  const { data, refetch, isLoading, isError } = useReadContract({
+  const {
+    data,
+    refetch,
+    isLoading,
+    isError,
+    error: auctionError,
+  } = useReadContract({
     address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
     abi: [
       {
@@ -180,6 +186,7 @@ const Home: React.FC = () => {
     refetch()
     fetchData()
   }, [
+    nounId,
     selectedBackground,
     selectedBody,
     selectedAccessory,
