@@ -218,10 +218,11 @@ const Home: React.FC = () => {
         <section className="p-8">
           <div className="container">
             <div className="mb-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
                 <select
                   value={selectedBackground}
                   onChange={(e) => setSelectedBackground(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Background</option>
                   {ImageData.bgcolors.map((color, index) => (
@@ -230,10 +231,10 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   value={selectedBody}
                   onChange={(e) => setSelectedBody(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Body</option>
                   {ImageData.images.bodies.map((body, index) => (
@@ -242,10 +243,10 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   value={selectedAccessory}
                   onChange={(e) => setSelectedAccessory(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Accessory</option>
                   {ImageData.images.accessories.map((accessory, index) => (
@@ -254,10 +255,10 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   value={selectedHead}
                   onChange={(e) => setSelectedHead(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Head</option>
                   {ImageData.images.heads.map((head, index) => (
@@ -266,10 +267,10 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <select
                   value={selectedGlasses}
                   onChange={(e) => setSelectedGlasses(e.target.value)}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Glasses</option>
                   {ImageData.images.glasses.map((glasses, index) => (
@@ -278,13 +279,12 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
-
                 <input
                   type="number"
                   value={limit}
                   onChange={(e) => setLimit(Number(e.target.value))}
                   placeholder="Limit"
-                  className="rounded border p-2"
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
               </div>
             </div>
