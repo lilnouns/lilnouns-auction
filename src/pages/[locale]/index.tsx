@@ -50,8 +50,10 @@ const Home: React.FC = () => {
   >()
   const [selectedHead, setSelectedHead] = useState<string | undefined>()
   const [selectedGlasses, setSelectedGlasses] = useState<string | undefined>()
+  const [limit, setLimit] = useState<number>(12)
+  const [nounId, setNounId] = useState<bigint | undefined>()
 
-  const { data } = useReadContract({
+  const { data, refetch } = useReadContract({
     address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
     abi: [
       {
@@ -122,7 +124,13 @@ const Home: React.FC = () => {
     ],
     functionName: 'fetchNextNoun',
   })
-  const [nounId] = data || []
+
+  useEffect(() => {
+    if (data) {
+      const [newNounId] = data
+      setNounId(newNounId)
+    }
+  }, [data])
 
   // Function to render the SVG, memoized for performance
   const renderSVG = useCallback((seed: Seed) => {
@@ -138,7 +146,7 @@ const Home: React.FC = () => {
     setIsLoading(true)
     try {
       const queryParams = new URLSearchParams()
-      queryParams.append('limit', '12')
+      queryParams.append('limit', limit.toString()) // Use the limit state
       if (selectedBackground)
         queryParams.append('background', selectedBackground)
       if (selectedBody) queryParams.append('body', selectedBody)
@@ -169,14 +177,15 @@ const Home: React.FC = () => {
   }
 
   useEffect(() => {
+    refetch()
     fetchData()
   }, [
-    nounId,
     selectedBackground,
     selectedBody,
     selectedAccessory,
     selectedHead,
     selectedGlasses,
+    limit,
   ])
 
   return (
@@ -262,6 +271,14 @@ const Home: React.FC = () => {
                     </option>
                   ))}
                 </select>
+
+                <input
+                  type="number"
+                  value={limit}
+                  onChange={(e) => setLimit(Number(e.target.value))}
+                  placeholder="Limit"
+                  className="rounded border p-2"
+                />
               </div>
             </div>
             <div>
