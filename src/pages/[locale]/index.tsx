@@ -40,7 +40,7 @@ const Home: React.FC = () => {
   const { i18n } = useLingui()
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isPageLoading, setIsPageLoading] = useState<boolean>(false)
   const [selectedBackground, setSelectedBackground] = useState<
     string | undefined
   >()
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
   const [limit, setLimit] = useState<number>(12)
   const [nounId, setNounId] = useState<bigint | undefined>()
 
-  const { data, refetch } = useReadContract({
+  const { data, refetch, isLoading, isError } = useReadContract({
     address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
     abi: [
       {
@@ -126,11 +126,11 @@ const Home: React.FC = () => {
   })
 
   useEffect(() => {
-    if (data) {
+    if (!isLoading && !isError && data) {
       const [newNounId] = data
       setNounId(newNounId)
     }
-  }, [data])
+  }, [data, isLoading, isError])
 
   // Function to render the SVG, memoized for performance
   const renderSVG = useCallback((seed: Seed) => {
@@ -143,7 +143,7 @@ const Home: React.FC = () => {
   const fetchData = async () => {
     if (!nounId) return
 
-    setIsLoading(true)
+    setIsPageLoading(true)
     try {
       const queryParams = new URLSearchParams()
       queryParams.append('limit', limit.toString()) // Use the limit state
@@ -172,7 +172,7 @@ const Home: React.FC = () => {
         setError('An unexpected error occurred')
       }
     } finally {
-      setIsLoading(false)
+      setIsPageLoading(false)
     }
   }
 
@@ -282,7 +282,7 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div>
-              {isLoading ? (
+              {isPageLoading ? (
                 <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
                   Loading...
                 </div>
