@@ -11,7 +11,6 @@ import { useReadContract } from 'wagmi'
 
 const { palette } = ImageData
 
-// Define the Seed interface
 interface Seed {
   accessory: number
   background: number
@@ -20,32 +19,27 @@ interface Seed {
   head: number
 }
 
-// Define the SeedData interface
 interface SeedData {
   blockNumber: number
   seed: Seed
 }
 
-// Define the API response interface
 interface ApiResponse {
   seeds: SeedData[]
 }
 
 function formatTraitName(traitName: string): string {
-  // Define the list of trait prefixes
   const prefixes = new Set(['head', 'accessory', 'glasses', 'body'])
 
-  // Process the trait name using Remeda functions
   return pipe(
     traitName,
-    split('-'), // Split the string by '-'
-    (parts) => (prefixes.has(parts[0]) ? parts.slice(1) : parts), // Drop the prefix if it exists
-    map((part) => part.charAt(0).toUpperCase() + part.slice(1)), // Manually capitalize each part
-    join(' '), // Join parts with a space
+    split('-'),
+    (parts) => (prefixes.has(parts[0]) ? parts.slice(1) : parts),
+    map((part) => part.charAt(0).toUpperCase() + part.slice(1)),
+    join(' '),
   )
 }
 
-// SVGImage component to display the SVG
 const SVGImage: React.FC<{ svgBase64: string }> = ({ svgBase64 }) => (
   // eslint-disable-next-line @next/next/no-img-element
   <img src={`data:image/svg+xml;base64,${svgBase64}`} alt="Noun SVG" />
@@ -66,15 +60,10 @@ const Home: React.FC = () => {
   const [selectedHead, setSelectedHead] = useState<string | undefined>()
   const [selectedGlasses, setSelectedGlasses] = useState<string | undefined>()
   const [limit, setLimit] = useState<number>(8)
+  const [isLimitDisabled, setIsLimitDisabled] = useState<boolean>(false)
   const [nounId, setNounId] = useState<bigint | undefined>()
 
-  const {
-    data,
-    refetch,
-    isLoading,
-    isError,
-    error: auctionError,
-  } = useReadContract({
+  const { data, refetch, isLoading, isError } = useReadContract({
     address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
     abi: [
       {
@@ -153,21 +142,19 @@ const Home: React.FC = () => {
     }
   }, [data, isLoading, isError])
 
-  // Function to render the SVG, memoized for performance
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
     const svgBinary = buildSVG(parts, palette, background)
     return btoa(svgBinary)
   }, [])
 
-  // Fetch data function
   const fetchData = async () => {
     if (!nounId) return
 
     setIsPageLoading(true)
     try {
       const queryParams = new URLSearchParams()
-      queryParams.append('limit', limit.toString()) // Use the limit state
+      queryParams.append('limit', limit.toString())
       if (selectedBackground)
         queryParams.append('background', selectedBackground)
       if (selectedBody) queryParams.append('body', selectedBody)
@@ -183,8 +170,6 @@ const Home: React.FC = () => {
       }
 
       const data: ApiResponse = await response.json()
-
-      // Replace existing seedsData with new data
       setSeedsData(data.seeds)
     } catch (error_) {
       if (error_ instanceof Error) {
@@ -208,6 +193,30 @@ const Home: React.FC = () => {
     selectedHead,
     selectedGlasses,
     limit,
+  ])
+
+  useEffect(() => {
+    const selectedValues = [
+      selectedBackground,
+      selectedBody,
+      selectedAccessory,
+      selectedHead,
+      selectedGlasses,
+    ].filter(Boolean)
+
+    if (selectedValues.length > 1) {
+      setLimit(1)
+      setIsLimitDisabled(true)
+    } else {
+      setLimit(8)
+      setIsLimitDisabled(false)
+    }
+  }, [
+    selectedBackground,
+    selectedBody,
+    selectedAccessory,
+    selectedHead,
+    selectedGlasses,
   ])
 
   return (
@@ -296,6 +305,7 @@ const Home: React.FC = () => {
                   type="number"
                   value={limit}
                   onChange={(e) => setLimit(Number(e.target.value))}
+                  disabled={isLimitDisabled}
                   placeholder="Limit"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
@@ -360,7 +370,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export async function getStaticPaths() {
   return {
     paths: availableLocales.map((locale) => ({ params: { locale } })),
-    fallback: false, // Revert too false to comply with next-on-pages restrictions
+    fallback: false,
   }
 }
 
