@@ -39,6 +39,18 @@ const SVGImage: React.FC<{ svgBase64: string }> = ({ svgBase64 }) => (
   <img src={`data:image/svg+xml;base64,${svgBase64}`} alt="Noun SVG" />
 )
 
+const SkeletonCard: React.FC = () => (
+  <div className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white p-0 text-center shadow dark:border-gray-700 dark:bg-gray-800">
+    <div className="flex flex-1 animate-pulse flex-col items-center p-6">
+      <div className="size-24 rounded bg-gray-300 dark:bg-gray-700"></div>
+      <div className="mt-4 h-4 w-32 rounded bg-gray-300 dark:bg-gray-700"></div>
+    </div>
+    <div className="flex">
+      <div className="h-10 w-full rounded-b-lg bg-green-50 dark:bg-green-800"></div>
+    </div>
+  </div>
+)
+
 interface AuctionProps {
   nounId?: bigint | undefined
 }
@@ -214,8 +226,10 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
             </div>
             <div>
               {isPageLoading ? (
-                <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-                  Loading...
+                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 dark:text-gray-200">
+                  {Array.from({ length: limit }).map((_, index) => (
+                    <SkeletonCard key={index} />
+                  ))}
                 </div>
               ) : error ? (
                 <div className="text-red-600 dark:text-red-400">
