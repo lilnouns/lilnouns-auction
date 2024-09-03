@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.23] - 2024-09-03
+
+### Features
+
+- Add search button and simplify dependencies
+- Add reset button to clear filters
+
+### Bug Fixes
+
+- Update project name in locales
+
+### Refactor
+
+- Rename state variables for clarity
+
 ## [1.0.0-alpha.22] - 2024-09-03
 
 ### Features
