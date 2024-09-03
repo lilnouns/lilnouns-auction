@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.22] - 2024-09-03
+
+### Features
+
+- Disable limit input when multiple filters selected
+- Add skeleton loading cards
+
+### Refactor
+
+- Extract auction component
+- Abstract auction contract object
+
+### Styling
+
+- Improve layout and responsiveness
+- Wrap main content in responsive container
+
 ## [1.0.0-alpha.21] - 2024-09-03
 
 ### Features
