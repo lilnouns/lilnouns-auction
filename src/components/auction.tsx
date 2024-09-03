@@ -36,14 +36,18 @@ function formatTraitName(traitName: string): string {
 
 const SVGImage: React.FC<{ svgBase64: string }> = ({ svgBase64 }) => (
   // eslint-disable-next-line @next/next/no-img-element
-  <img src={`data:image/svg+xml;base64,${svgBase64}`} alt="Noun SVG" />
+  <img
+    src={`data:image/svg+xml;base64,${svgBase64}`}
+    alt="Noun SVG"
+    className="w-full"
+  />
 )
 
 const SkeletonCard: React.FC = () => (
   <div className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white p-0 text-center shadow dark:border-gray-700 dark:bg-gray-800">
     <div className="flex flex-1 animate-pulse flex-col items-center p-6">
-      <div className="size-24 rounded bg-gray-300 dark:bg-gray-700"></div>
-      <div className="mt-4 h-4 w-32 rounded bg-gray-300 dark:bg-gray-700"></div>
+      <div className="size-24 w-full rounded bg-gray-300 dark:bg-gray-700"></div>
+      <div className="mt-4 h-4 w-full rounded bg-gray-300 dark:bg-gray-700"></div>
     </div>
     <div className="flex">
       <div className="h-10 w-full rounded-b-lg bg-green-50 dark:bg-green-800"></div>
@@ -150,8 +154,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
   return (
     <>
       <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-1 py-5 dark:bg-gray-900">
-        <section className="p-1">
-          <div className="container">
+        <section className="w-full p-1">
+          <div className="container mx-auto">
             <div className="mb-4">
               <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
                 <select
@@ -226,7 +230,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
             </div>
             <div>
               {isPageLoading ? (
-                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 dark:text-gray-200">
+                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
                   {Array.from({ length: limit }).map((_, index) => (
                     <SkeletonCard key={index} />
                   ))}
@@ -236,7 +240,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                   Error: {error}
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 dark:text-gray-200">
+                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
                   {seedsData.map(({ blockNumber, seed }) => (
                     <div
                       key={blockNumber}
