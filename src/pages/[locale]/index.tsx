@@ -113,17 +113,19 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      {isLoading ? (
-        <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-          Loading...
-        </div>
-      ) : isError ? (
-        <div className="text-red-600 dark:text-red-400">
-          Error: {error.toString()}
-        </div>
-      ) : (
-        <Auction nounId={nounId} />
-      )}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {isLoading ? (
+          <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
+            Loading...
+          </div>
+        ) : isError ? (
+          <div className="text-red-600 dark:text-red-400">
+            Error: {error.toString()}
+          </div>
+        ) : (
+          <Auction nounId={nounId} />
+        )}
+      </div>
     </>
   )
 }
