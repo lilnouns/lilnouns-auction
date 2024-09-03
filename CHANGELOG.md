@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.21] - 2024-09-03
+
+### Features
+
+- Improve seed card layout and add button
+
+### Bug Fixes
+
+- Reduce initial `limit` state to 8
+
+### Styling
+
+- Add vertical padding to main container
+
 ## [1.0.0-alpha.20] - 2024-09-03
 
 ### Features
