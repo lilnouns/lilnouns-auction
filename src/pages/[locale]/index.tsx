@@ -227,7 +227,7 @@ const Home: React.FC = () => {
           }
         />
       </Head>
-      <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-1 dark:bg-gray-900">
+      <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-1 py-5 dark:bg-gray-900">
         <section className="p-1">
           <div className="container">
             <div className="mb-4">
