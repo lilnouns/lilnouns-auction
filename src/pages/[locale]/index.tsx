@@ -5,81 +5,86 @@ import { useLingui } from '@lingui/react'
 import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import { Address } from 'viem'
 import { useReadContract } from 'wagmi'
+
+const auctionContract = {
+  address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D' as Address,
+  abi: [
+    {
+      inputs: [],
+      name: 'fetchNextNoun',
+      outputs: [
+        {
+          internalType: 'uint256',
+          name: 'nounId',
+          type: 'uint256',
+        },
+        {
+          components: [
+            {
+              internalType: 'uint48',
+              name: 'background',
+              type: 'uint48',
+            },
+            {
+              internalType: 'uint48',
+              name: 'body',
+              type: 'uint48',
+            },
+            {
+              internalType: 'uint48',
+              name: 'accessory',
+              type: 'uint48',
+            },
+            {
+              internalType: 'uint48',
+              name: 'head',
+              type: 'uint48',
+            },
+            {
+              internalType: 'uint48',
+              name: 'glasses',
+              type: 'uint48',
+            },
+          ],
+          internalType: 'struct INounsSeeder.Seed',
+          name: 'seed',
+          type: 'tuple',
+        },
+        {
+          internalType: 'string',
+          name: 'svg',
+          type: 'string',
+        },
+        {
+          internalType: 'uint256',
+          name: 'price',
+          type: 'uint256',
+        },
+        {
+          internalType: 'bytes32',
+          name: 'hash',
+          type: 'bytes32',
+        },
+        {
+          internalType: 'uint256',
+          name: 'blockNumber',
+          type: 'uint256',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
+  ] as const,
+}
 
 const Home: NextPage = () => {
   const { i18n } = useLingui()
   const [nounId, setNounId] = useState<bigint | undefined>()
 
   const { data, isLoading, isError, error } = useReadContract({
-    address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
-    abi: [
-      {
-        inputs: [],
-        name: 'fetchNextNoun',
-        outputs: [
-          {
-            internalType: 'uint256',
-            name: 'nounId',
-            type: 'uint256',
-          },
-          {
-            components: [
-              {
-                internalType: 'uint48',
-                name: 'background',
-                type: 'uint48',
-              },
-              {
-                internalType: 'uint48',
-                name: 'body',
-                type: 'uint48',
-              },
-              {
-                internalType: 'uint48',
-                name: 'accessory',
-                type: 'uint48',
-              },
-              {
-                internalType: 'uint48',
-                name: 'head',
-                type: 'uint48',
-              },
-              {
-                internalType: 'uint48',
-                name: 'glasses',
-                type: 'uint48',
-              },
-            ],
-            internalType: 'struct INounsSeeder.Seed',
-            name: 'seed',
-            type: 'tuple',
-          },
-          {
-            internalType: 'string',
-            name: 'svg',
-            type: 'string',
-          },
-          {
-            internalType: 'uint256',
-            name: 'price',
-            type: 'uint256',
-          },
-          {
-            internalType: 'bytes32',
-            name: 'hash',
-            type: 'bytes32',
-          },
-          {
-            internalType: 'uint256',
-            name: 'blockNumber',
-            type: 'uint256',
-          },
-        ],
-        stateMutability: 'view',
-        type: 'function',
-      },
-    ],
+    ...auctionContract,
     functionName: 'fetchNextNoun',
   })
 
