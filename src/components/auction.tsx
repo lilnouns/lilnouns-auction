@@ -114,6 +114,15 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
     fetchData()
   }
 
+  const handleReset = () => {
+    setSeedBackground('')
+    setSeedBody('')
+    setSeedAccessory('')
+    setSeedHead('')
+    setSeedGlasses('')
+    setLimit(8)
+  }
+
   useEffect(() => {
     fetchData()
   }, [nounId])
@@ -201,6 +210,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                     </option>
                   ))}
                 </select>
+                <span />
                 <input
                   type="number"
                   value={limit}
@@ -209,11 +219,24 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                   placeholder="Limit"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
+                <input
+                  type="number"
+                  value={Number(nounId)}
+                  placeholder="Noun"
+                  disabled={true}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
+                />
                 <button
                   onClick={handleSearch}
                   className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
                 >
                   Search
+                </button>
+                <button
+                  onClick={handleReset}
+                  className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
+                >
+                  Reset
                 </button>
               </div>
             </div>
