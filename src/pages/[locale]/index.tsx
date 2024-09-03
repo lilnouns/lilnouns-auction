@@ -65,7 +65,7 @@ const Home: React.FC = () => {
   >()
   const [selectedHead, setSelectedHead] = useState<string | undefined>()
   const [selectedGlasses, setSelectedGlasses] = useState<string | undefined>()
-  const [limit, setLimit] = useState<number>(12)
+  const [limit, setLimit] = useState<number>(8)
   const [nounId, setNounId] = useState<bigint | undefined>()
 
   const {
