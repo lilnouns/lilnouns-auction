@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.20] - 2024-09-03
+
+### Features
+
+- Enhance trait name formatting
+
 ## [1.0.0-alpha.19] - 2024-09-03
 
 ### Refactor
