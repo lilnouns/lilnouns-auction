@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.19] - 2024-09-03
+
+### Refactor
+
+- Fetch blocks concurrently
+- Increase `blockOffset` batch size
+
+### Documentation
+
+- Update dev server command to `pnpm`
+
+### Styling
+
+- Shorten page padding and update text
+
 ## [1.0.0-alpha.18] - 2024-09-02
 
 ### Features

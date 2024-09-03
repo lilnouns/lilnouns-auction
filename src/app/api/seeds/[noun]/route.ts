@@ -37,63 +37,61 @@ async function fetchBlocks(offset: number): Promise<Block[]> {
     throw new Error('Ethereum Blocks Subgraph URL is not configured')
   }
 
-  const query = `
-    query GetBlocks($skip: Int!, $first: Int!) {
-      blocks(
-        skip: $skip
-        first: $first
-        orderBy: number
-        orderDirection: desc
-      ) {
-        id
-        number
+  const queries = Array.from({ length: 10 }, (_, i) => {
+    const query = `
+      query GetBlocks($skip: Int!, $first: Int!) {
+        blocks(
+          skip: $skip
+          first: $first
+          orderBy: number
+          orderDirection: desc
+        ) {
+          id
+          number
+        }
       }
-    }
-  `
+    `
 
-  const variables = { skip: offset, first: 1000 } // Always use 1000 as the limit for blocks
+    const variables = { skip: offset + i * 1000, first: 1000 }
 
-  const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), 10_000)
-
-  try {
-    const response = await fetch(subgraphUrl, {
+    return fetch(subgraphUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, variables }),
-      signal: controller.signal,
+      signal: new AbortController().signal,
     })
+      .then(async (response) => {
+        if (!response.ok) {
+          console.error(
+            `Failed to fetch blocks: ${response.status} ${response.statusText}`,
+          )
+          throw new Error('Failed to fetch blocks')
+        }
 
-    clearTimeout(timeout)
+        const data: GraphQLResponse = await response.json()
 
-    if (!response.ok) {
-      console.error(
-        `Failed to fetch blocks: ${response.status} ${response.statusText}`,
-      )
-      throw new Error('Failed to fetch blocks')
-    }
+        if (data.errors?.length) {
+          console.error('GraphQL errors:', data.errors)
+          throw new Error('Error fetching blocks')
+        }
 
-    const data: GraphQLResponse = await response.json()
+        return data.data?.blocks || []
+      })
+      .catch((error) => {
+        if (error instanceof Error && error.name === 'AbortError') {
+          console.error('Fetch request timed out')
+          throw new Error('Request timed out')
+        }
+        console.error('Error fetching blocks:', error.message)
+        throw new Error('Error fetching blocks')
+      })
+  })
 
-    if (data.errors?.length) {
-      console.error('GraphQL errors:', data.errors)
-      throw new Error('Error fetching blocks')
-    }
+  // Run all fetch requests concurrently and collect the results
+  const results = await Promise.all(queries)
 
-    return data.data?.blocks || []
-  } catch (error) {
-    if (error instanceof Error) {
-      if (error.name === 'AbortError') {
-        console.error('Fetch request timed out')
-        throw new Error('Request timed out')
-      }
-      console.error('Error fetching blocks:', error.message)
-      throw new Error('Error fetching blocks')
-    } else {
-      console.error('An unknown error occurred:', error)
-      throw new Error('Unknown error occurred')
-    }
-  }
+  // Flatten the results into a single array of blocks
+  return results.flat()
 }
 
 export async function GET(
@@ -170,7 +168,7 @@ export async function GET(
           (result): result is SeedResult => result.seed !== undefined,
         ),
       ]
-      blockOffset += 1000 // Move to the next batch of blocks
+      blockOffset += 10_000 // Move to the next batch of blocks
     }
 
     return new Response(

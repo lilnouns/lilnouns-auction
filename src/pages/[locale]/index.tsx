@@ -200,22 +200,20 @@ const Home: React.FC = () => {
       <Head>
         <title>
           {nounId
-            ? t(
-                i18n,
-              )`Noun ${nounId} | Building a Multi-Lingual Website with Next.js & Lingui`
-            : t(i18n)`Building a Multi-Lingual Website with Next.js & Lingui`}
+            ? t(i18n)`Noun ${nounId} | Lil Nouns Pool`
+            : t(i18n)`Lil Nouns Pool`}
         </title>
         <meta
           name="description"
           content={
             nounId
-              ? `Explore the details and seeds of Noun ${nounId} on our multi-lingual website built with Next.js and Lingui. Discover the power of decentralized creativity.`
-              : `Learn how to build a multi-lingual website using Next.js and Lingui. This demo site showcases the seamless integration of these powerful tools.`
+              ? `Explore the seeds of Noun ${nounId}. Discover the power of decentralized creativity.`
+              : `This demo site showcases the seamless integration of these powerful tools.`
           }
         />
       </Head>
-      <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-24 dark:bg-gray-900">
-        <section className="p-8">
+      <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-1 dark:bg-gray-900">
+        <section className="p-1">
           <div className="container">
             <div className="mb-4">
               <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
