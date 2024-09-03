@@ -311,15 +311,25 @@ const Home: React.FC = () => {
                   Error: {error}
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-4 text-gray-900 md:grid-cols-2 lg:grid-cols-6 dark:text-gray-200">
+                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 dark:text-gray-200">
                   {seedsData.map(({ blockNumber, seed }) => (
                     <div
                       key={blockNumber}
-                      className="rounded border border-gray-200 bg-white p-4 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800"
+                      className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white p-0 text-center shadow dark:border-gray-700 dark:bg-gray-800"
                     >
-                      <SVGImage svgBase64={renderSVG(seed)} />
-                      <div className="mt-2 text-gray-700 dark:text-gray-300">
-                        Block Number: {blockNumber}
+                      <div className="flex flex-1 flex-col items-center p-6">
+                        <SVGImage svgBase64={renderSVG(seed)} />
+                        <div className="mt-4 text-sm font-medium text-gray-900 dark:text-gray-300">
+                          Block Number: {blockNumber}
+                        </div>
+                      </div>
+                      <div className="flex">
+                        <button
+                          onClick={() => blockNumber}
+                          className="relative inline-flex w-full justify-center rounded-b-lg border border-transparent bg-green-50 py-3 text-sm font-semibold text-gray-900 hover:bg-green-100 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
+                        >
+                          Buy Now
+                        </button>
                       </div>
                     </div>
                   ))}
