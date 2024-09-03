@@ -62,18 +62,14 @@ interface AuctionProps {
 const Auction: React.FC<AuctionProps> = ({ nounId }) => {
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
-  const [isPageLoading, setIsPageLoading] = useState<boolean>(false)
-  const [selectedBackground, setSelectedBackground] = useState<
-    string | undefined
-  >()
-  const [selectedBody, setSelectedBody] = useState<string | undefined>()
-  const [selectedAccessory, setSelectedAccessory] = useState<
-    string | undefined
-  >()
-  const [selectedHead, setSelectedHead] = useState<string | undefined>()
-  const [selectedGlasses, setSelectedGlasses] = useState<string | undefined>()
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  const [seedBackground, setSeedBackground] = useState<string | undefined>()
+  const [seedBody, setSeedBody] = useState<string | undefined>()
+  const [seedAccessory, setSeedAccessory] = useState<string | undefined>()
+  const [seedHead, setSeedHead] = useState<string | undefined>()
+  const [seedGlasses, setSeedGlasses] = useState<string | undefined>()
   const [limit, setLimit] = useState<number>(8)
-  const [isLimitDisabled, setIsLimitDisabled] = useState<boolean>(false)
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -84,16 +80,15 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
   const fetchData = async () => {
     if (!nounId) return
 
-    setIsPageLoading(true)
+    setIsLoading(true)
     try {
       const queryParams = new URLSearchParams()
       queryParams.append('limit', limit.toString())
-      if (selectedBackground)
-        queryParams.append('background', selectedBackground)
-      if (selectedBody) queryParams.append('body', selectedBody)
-      if (selectedAccessory) queryParams.append('accessory', selectedAccessory)
-      if (selectedHead) queryParams.append('head', selectedHead)
-      if (selectedGlasses) queryParams.append('glasses', selectedGlasses)
+      if (seedBackground) queryParams.append('background', seedBackground)
+      if (seedBody) queryParams.append('body', seedBody)
+      if (seedAccessory) queryParams.append('accessory', seedAccessory)
+      if (seedHead) queryParams.append('head', seedHead)
+      if (seedGlasses) queryParams.append('glasses', seedGlasses)
 
       const response = await fetch(
         `/api/seeds/${nounId}?${queryParams.toString()}`,
@@ -111,45 +106,42 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
         setError('An unexpected error occurred')
       }
     } finally {
-      setIsPageLoading(false)
+      setIsLoading(false)
     }
+  }
+
+  const handleSearch = () => {
+    fetchData()
+  }
+
+  const handleReset = () => {
+    setSeedBackground('')
+    setSeedBody('')
+    setSeedAccessory('')
+    setSeedHead('')
+    setSeedGlasses('')
+    setLimit(8)
   }
 
   useEffect(() => {
     fetchData()
-  }, [
-    nounId,
-    selectedBackground,
-    selectedBody,
-    selectedAccessory,
-    selectedHead,
-    selectedGlasses,
-    limit,
-  ])
+  }, [nounId])
 
   useEffect(() => {
     const selectedValues = [
-      selectedBackground,
-      selectedBody,
-      selectedAccessory,
-      selectedHead,
-      selectedGlasses,
+      seedBackground,
+      seedBody,
+      seedAccessory,
+      seedHead,
+      seedGlasses,
     ].filter(Boolean)
 
     if (selectedValues.length > 1) {
       setLimit(1)
-      setIsLimitDisabled(true)
     } else {
       setLimit(8)
-      setIsLimitDisabled(false)
     }
-  }, [
-    selectedBackground,
-    selectedBody,
-    selectedAccessory,
-    selectedHead,
-    selectedGlasses,
-  ])
+  }, [seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
 
   return (
     <>
@@ -159,8 +151,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
             <div className="mb-4">
               <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
                 <select
-                  value={selectedBackground}
-                  onChange={(e) => setSelectedBackground(e.target.value)}
+                  value={seedBackground}
+                  onChange={(e) => setSeedBackground(e.target.value)}
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Background</option>
@@ -171,8 +163,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                   ))}
                 </select>
                 <select
-                  value={selectedBody}
-                  onChange={(e) => setSelectedBody(e.target.value)}
+                  value={seedBody}
+                  onChange={(e) => setSeedBody(e.target.value)}
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Body</option>
@@ -183,8 +175,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                   ))}
                 </select>
                 <select
-                  value={selectedAccessory}
-                  onChange={(e) => setSelectedAccessory(e.target.value)}
+                  value={seedAccessory}
+                  onChange={(e) => setSeedAccessory(e.target.value)}
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Accessory</option>
@@ -195,8 +187,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                   ))}
                 </select>
                 <select
-                  value={selectedHead}
-                  onChange={(e) => setSelectedHead(e.target.value)}
+                  value={seedHead}
+                  onChange={(e) => setSeedHead(e.target.value)}
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Head</option>
@@ -207,8 +199,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                   ))}
                 </select>
                 <select
-                  value={selectedGlasses}
-                  onChange={(e) => setSelectedGlasses(e.target.value)}
+                  value={seedGlasses}
+                  onChange={(e) => setSeedGlasses(e.target.value)}
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Glasses</option>
@@ -218,18 +210,38 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                     </option>
                   ))}
                 </select>
+                <span />
                 <input
                   type="number"
                   value={limit}
+                  min={1}
                   onChange={(e) => setLimit(Number(e.target.value))}
-                  disabled={isLimitDisabled}
                   placeholder="Limit"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
+                <input
+                  type="number"
+                  value={Number(nounId)}
+                  placeholder="Noun"
+                  disabled={true}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
+                />
+                <button
+                  onClick={handleSearch}
+                  className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
+                >
+                  Search
+                </button>
+                <button
+                  onClick={handleReset}
+                  className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
+                >
+                  Reset
+                </button>
               </div>
             </div>
             <div>
-              {isPageLoading ? (
+              {isLoading ? (
                 <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
                   {Array.from({ length: limit }).map((_, index) => (
                     <SkeletonCard key={index} />

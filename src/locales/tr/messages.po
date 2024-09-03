@@ -14,11 +14,11 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/pages/[locale]/index.tsx
-msgid "Building a Multi-Lingual Website with Next.js & Lingui"
+msgid "Lil Nouns Pool"
 msgstr ""
 
 #: src/pages/[locale]/index.tsx
-msgid "Noun {nounId} | Building a Multi-Lingual Website with Next.js & Lingui"
+msgid "Noun {nounId} | Lil Nouns Pool"
 msgstr ""
 
 #: src/components/locale-switcher.tsx
