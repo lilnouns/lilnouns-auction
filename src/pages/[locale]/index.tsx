@@ -6,6 +6,7 @@ import { useLingui } from '@lingui/react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React, { useCallback, useEffect, useState } from 'react'
+import { join, map, pipe, split } from 'remeda'
 import { useReadContract } from 'wagmi'
 
 const { palette } = ImageData
@@ -28,6 +29,20 @@ interface SeedData {
 // Define the API response interface
 interface ApiResponse {
   seeds: SeedData[]
+}
+
+function formatTraitName(traitName: string): string {
+  // Define the list of trait prefixes
+  const prefixes = new Set(['head', 'accessory', 'glasses', 'body'])
+
+  // Process the trait name using Remeda functions
+  return pipe(
+    traitName,
+    split('-'), // Split the string by '-'
+    (parts) => (prefixes.has(parts[0]) ? parts.slice(1) : parts), // Drop the prefix if it exists
+    map((part) => part.charAt(0).toUpperCase() + part.slice(1)), // Manually capitalize each part
+    join(' '), // Join parts with a space
+  )
 }
 
 // SVGImage component to display the SVG
@@ -237,7 +252,7 @@ const Home: React.FC = () => {
                   <option value="">Select Body</option>
                   {ImageData.images.bodies.map((body, index) => (
                     <option key={index} value={index.toString()}>
-                      {body.filename}
+                      {formatTraitName(body.filename)}
                     </option>
                   ))}
                 </select>
@@ -249,7 +264,7 @@ const Home: React.FC = () => {
                   <option value="">Select Accessory</option>
                   {ImageData.images.accessories.map((accessory, index) => (
                     <option key={index} value={index.toString()}>
-                      {accessory.filename}
+                      {formatTraitName(accessory.filename)}
                     </option>
                   ))}
                 </select>
@@ -261,7 +276,7 @@ const Home: React.FC = () => {
                   <option value="">Select Head</option>
                   {ImageData.images.heads.map((head, index) => (
                     <option key={index} value={index.toString()}>
-                      {head.filename}
+                      {formatTraitName(head.filename)}
                     </option>
                   ))}
                 </select>
@@ -273,7 +288,7 @@ const Home: React.FC = () => {
                   <option value="">Select Glasses</option>
                   {ImageData.images.glasses.map((glasses, index) => (
                     <option key={index} value={index.toString()}>
-                      {glasses.filename}
+                      {formatTraitName(glasses.filename)}
                     </option>
                   ))}
                 </select>
