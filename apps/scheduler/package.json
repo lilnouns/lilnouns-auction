@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "prisma": "5.19.1",
+    "wrangler": "3.72.1",
     "typescript-eslint": "8.2.0",
     "vitest": "1.5.3"
   }
