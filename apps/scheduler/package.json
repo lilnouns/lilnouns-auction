@@ -3,5 +3,7 @@
   "description": "",
   "scripts": {},
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "vitest": "1.5.3"
+  }
 }
