@@ -1,5 +1,6 @@
 {
   "name": "lilnouns-auction",
+  "version": "1.0.0-alpha.24",
   "private": true,
   "scripts": {
     "dev": "turbo run dev",
