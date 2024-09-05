@@ -1,7 +1,9 @@
 {
   "name": "scheduler",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "test": "vitest run"
+  },
   "dependencies": {
     "type-fest": "4.25.0"
   },
