@@ -2,7 +2,9 @@
   "name": "scheduler",
   "description": "",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "type-fest": "4.25.0"
+  },
   "devDependencies": {
     "vitest": "1.5.3"
   }
