@@ -2,6 +2,15 @@
   "name": "scheduler",
   "description": "",
   "scripts": {
+    "prebuild": "prisma generate",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "cf-typegen": "wrangler types",
+    "predeploy": "pnpm run build",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --test-scheduled",
+    "lint": "eslint",
+    "prepare": "husky",
+    "pretest": "pnpm run build",
     "test": "vitest run"
   },
   "dependencies": {
