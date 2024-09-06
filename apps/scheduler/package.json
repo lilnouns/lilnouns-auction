@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "prisma": "5.19.1",
+    "@cloudflare/vitest-pool-workers": "0.4.24",
     "@cloudflare/workers-types": "4.20240821.1",
     "@eslint/js": "9.9.0",
     "@types/node": "22.5.0",
