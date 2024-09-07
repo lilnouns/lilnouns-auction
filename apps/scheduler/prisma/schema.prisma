@@ -10,3 +10,23 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Block {
+  id               String  @id
+  number           BigInt
+  timestamp        BigInt
+  parentHash       String?
+  author           String?
+  difficulty       BigInt
+  totalDifficulty  BigInt
+  gasUsed          BigInt
+  gasLimit         BigInt
+  receiptsRoot     String
+  transactionsRoot String
+  stateRoot        String
+  size             BigInt
+  unclesHash       String
+
+  @@index([number])
+  @@index([timestamp])
+}
