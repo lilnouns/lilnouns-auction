@@ -14,28 +14,24 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "cron-time-generator": "2.0.3",
     "@prisma/adapter-d1": "5.18.0",
     "@prisma/client": "5.18.0",
+    "cron-time-generator": "2.0.3",
     "remeda": "2.11.0",
     "type-fest": "4.25.0"
   },
   "devDependencies": {
-    "prisma": "5.19.1",
     "@cloudflare/vitest-pool-workers": "0.4.24",
     "@cloudflare/workers-types": "4.20240821.1",
     "@eslint/js": "9.9.0",
+    "@shared/services": "workspace:*",
     "@types/node": "22.5.0",
-    "eslint": "9.9.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-jsdoc": "50.2.2",
-    "eslint-plugin-prettier": "5.2.1",
-    "eslint-plugin-regexp": "2.6.0",
-    "eslint-plugin-unicorn": "55.0.0",
-    "eslint-plugin-vitest": "0.5.4",
-    "wrangler": "3.72.1",
+    "@typescript-eslint/eslint-plugin": "8.2.0",
+    "@typescript-eslint/parser": "8.2.0",
+    "prisma": "5.19.1",
     "typescript": "5.5.4",
     "typescript-eslint": "8.2.0",
-    "vitest": "1.5.3"
+    "vitest": "1.5.3",
+    "wrangler": "3.72.1"
   }
 }
