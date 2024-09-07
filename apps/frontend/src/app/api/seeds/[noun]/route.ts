@@ -1,6 +1,6 @@
 import { getRequestContext } from '@cloudflare/next-on-pages'
 import { getNounSeedFromBlockHash } from '@lilnounsdao/assets'
-import { fetchBlocks } from '@shared/services/dist'
+import { fetchBlocks } from '@shared/services'
 import { type NextRequest } from 'next/server'
 
 export const runtime = 'edge'
