@@ -11,11 +11,35 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Seed {
+  id         Int    @id @default(autoincrement())
+  background BigInt
+  body       BigInt
+  accessory  BigInt
+  head       BigInt
+  glasses    BigInt
+
+  nounId  BigInt
+  blockId String
+
+  block Block @relation(fields: [blockId], references: [id])
+
+  @@index([background])
+  @@index([body])
+  @@index([accessory])
+  @@index([head])
+  @@index([glasses])
+  @@index([nounId])
+  @@index([blockId])
+}
+
 model Block {
   id        String @id
   number    BigInt
   timestamp BigInt
+  seeds     Seed[]
 
+  @@index([id])
   @@index([number])
   @@index([timestamp])
 }
