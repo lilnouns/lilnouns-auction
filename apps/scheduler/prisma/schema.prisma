@@ -24,6 +24,7 @@ model Seed {
 
   block Block @relation(fields: [blockId], references: [id])
 
+  @@unique([nounId, blockId])
   @@index([background])
   @@index([body])
   @@index([accessory])
