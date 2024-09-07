@@ -22,8 +22,10 @@ crons = ["* * * * *"] # * * * * * = run every minute
 # - https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 # Note: Use secrets to store sensitive data.
 # - https://developers.cloudflare.com/workers/configuration/secrets/
-# [vars]
+[vars]
 # MY_VARIABLE = "production_value"
+CHAIN_ID = 1
+CONTRACT_AUCTION = "0xA2587b1e2626904c8575640512b987Bd3d3B592D"
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#workers-ai
