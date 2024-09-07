@@ -1,2 +1,2 @@
-export { fetchBlocks } from './blocks/index'
+export { fetchBlocks } from './blocks/'
 export type { Block } from './blocks/types'
