@@ -6,6 +6,6 @@
     "rootDir": "src", // Root directory for source files
     "isolatedModules": true
   },
-  "include": ["src"],
+  "include": ["src", "../../**/worker-configuration.d.ts"],
   "exclude": ["node_modules"]
 }
