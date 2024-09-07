@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "dist", // Output directory for compiled code
+    "declaration": true, // Generate .d.ts files
+    "declarationMap": true, // Enable source maps for declarations
+    "rootDir": "src", // Root directory for source files
+    "isolatedModules": true
+  },
+  "include": ["src", "../../**/worker-configuration.d.ts"],
+  "exclude": ["node_modules"]
+}

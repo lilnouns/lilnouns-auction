@@ -1,9 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/eslintrc",
   "root": true,
-  "extends": ["plugin:unicorn/recommended", "prettier"],
+  "extends": [
+    "plugin:jsdoc/recommended",
+    "plugin:unicorn/recommended",
+    "prettier"
+  ],
   "rules": {
     "unicorn/prevent-abbreviations": "off"
   },
-  "plugins": []
+  "plugins": ["unicorn", "jsdoc", "regexp"],
+  "env": { "es2024": true },
+  "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" }
 }
