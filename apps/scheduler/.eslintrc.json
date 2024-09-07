@@ -1,7 +1,12 @@
 {
-  "extends": ["../../.eslintrc.json"],
+  "extends": [
+    "../../.eslintrc.json",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
     "unicorn/prevent-abbreviations": "off"
   },
-  "plugins": []
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"]
 }
