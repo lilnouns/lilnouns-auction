@@ -15,6 +15,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@lilnounsdao/assets": "0.5.15",
     "@prisma/adapter-d1": "5.18.0",
     "@prisma/client": "5.18.0",
     "cron-time-generator": "2.0.3",

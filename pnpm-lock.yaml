@@ -230,6 +230,9 @@ importers:
 
   apps/scheduler:
     dependencies:
+      '@lilnounsdao/assets':
+        specifier: 0.5.15
+        version: 0.5.15
       '@prisma/adapter-d1':
         specifier: 5.18.0
         version: 5.18.0
