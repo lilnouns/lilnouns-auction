@@ -12,7 +12,7 @@ import worker from '../src'
 it('calls scheduled handler', async () => {
   const ctrl = createScheduledController({
     scheduledTime: new Date(1000),
-    cron: '* * * * *',
+    cron: '0 * * * *',
   })
   const ctx = createExecutionContext()
   // @ts-ignore
