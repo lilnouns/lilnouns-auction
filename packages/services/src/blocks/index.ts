@@ -26,6 +26,18 @@ export async function fetchBlocks(
         ) {
           id
           number
+          timestamp
+          parentHash
+          author
+          difficulty
+          totalDifficulty
+          gasUsed
+          gasLimit
+          receiptsRoot
+          transactionsRoot
+          stateRoot
+          size
+          unclesHash
         }
       }
     `
