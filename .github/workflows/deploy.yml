@@ -54,9 +54,11 @@ jobs:
           preCommands: pnpm run build
           command: deploy
           secrets: |
+            ALCHEMY_API_KEY
             ETHEREUM_BLOCKS_SUBGRAPH_URL
         env:
-          WARPCAST_ACCESS_TOKEN: ${{ secrets.ETHEREUM_BLOCKS_SUBGRAPH_URL }}
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          ETHEREUM_BLOCKS_SUBGRAPH_URL: ${{ secrets.ETHEREUM_BLOCKS_SUBGRAPH_URL }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
