@@ -11,6 +11,7 @@
     "lint": "eslint",
     "prepare": "husky",
     "pretest": "pnpm run build",
+    "start": "wrangler dev --test-scheduled",
     "test": "vitest run"
   },
   "dependencies": {
