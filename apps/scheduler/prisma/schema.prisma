@@ -12,20 +12,9 @@ datasource db {
 }
 
 model Block {
-  id               String  @id
-  number           BigInt
-  timestamp        BigInt
-  parentHash       String?
-  author           String?
-  difficulty       BigInt
-  totalDifficulty  BigInt
-  gasUsed          BigInt
-  gasLimit         BigInt
-  receiptsRoot     String
-  transactionsRoot String
-  stateRoot        String
-  size             BigInt
-  unclesHash       String
+  id        String @id
+  number    BigInt
+  timestamp BigInt
 
   @@index([number])
   @@index([timestamp])
