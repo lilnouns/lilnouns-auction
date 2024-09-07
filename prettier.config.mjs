@@ -10,6 +10,7 @@ export default {
     'prettier-plugin-organize-attributes',
     'prettier-plugin-jsdoc',
     'prettier-plugin-tailwindcss',
+    'prettier-plugin-prisma',
   ],
   tailwindFunctions: ['clsx', 'clsxm'],
 }
