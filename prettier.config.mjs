@@ -1,5 +1,5 @@
 /** @type {import('prettier').Config} */
-module.exports = {
+export default {
   semi: false,
   trailingComma: 'all',
   singleQuote: true,
@@ -10,6 +10,7 @@ module.exports = {
     'prettier-plugin-organize-attributes',
     'prettier-plugin-jsdoc',
     'prettier-plugin-tailwindcss',
+    'prettier-plugin-prisma',
   ],
   tailwindFunctions: ['clsx', 'clsxm'],
 }

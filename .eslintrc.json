@@ -2,14 +2,14 @@
   "$schema": "https://json.schemastore.org/eslintrc",
   "root": true,
   "extends": [
-    "next/core-web-vitals",
-    "plugin:tailwindcss/recommended",
+    "plugin:jsdoc/recommended",
     "plugin:unicorn/recommended",
-    "plugin:eslint-plugin-next-on-pages/recommended",
     "prettier"
   ],
   "rules": {
     "unicorn/prevent-abbreviations": "off"
   },
-  "plugins": ["lingui", "eslint-plugin-next-on-pages"]
+  "plugins": ["unicorn", "jsdoc", "regexp"],
+  "env": { "es2024": true },
+  "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" }
 }
