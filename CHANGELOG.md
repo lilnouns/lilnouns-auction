@@ -2,6 +2,79 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.25] - 2024-09-07
+
+### Features
+
+- Add scheduled handler support
+- Add `Block` table and indexes
+- Add `fetchBlocks` function and types
+- Extend `Block` type with additional fields
+- Add `blockHandler` for minute-based cron
+- Add new `Seed` model and `Block` relation
+- Add unique constraint to `Seed`
+- Add public and wallet client creation
+- Export `fetchNextNoun` function
+- Add `seedHandler` to scheduled tasks
+
+### Testing
+
+- Add test for `scheduled` handler
+- Update cron expression in test
+
+### Refactor
+
+- Update and restructure lint-staged config
+- Use shared `fetchBlocks` utility
+- Remove unused fields from `Block`
+- Move `fetchBlocks` to a new file
+
+### Documentation
+
+- Add JSDoc comments to `blockHandler`
+
+### Miscellaneous Tasks
+
+- Reorganize project files for clarity
+- Update ignore patterns for consistency
+- Add ESLint configuration
+- Add pnpm workspace configuration
+- Add turbo configuration
+- Rename and convert `prettier.config.js` to ESM
+- Update dependencies and project name
+- Update ESLint configuration
+- Update start script dependencies
+- Move `.npmrc` to root
+- Update `wrangler.toml` config
+- Add preliminary `package.json` file
+- Add initial dependencies structure
+- Add `test` script for vitest
+- Add build and deploy scripts
+- Add `.gitignore` for `node_modules` and `.env`
+- Add initial Prisma schema
+- Enable `driverAdapters` preview feature
+- Add initial wrangler configuration
+- Enable D1 database binding
+- Add `prettier-plugin-prisma` to config
+- Update `wrangler.toml` with `nodejs_compat`
+- Add `vitest.config` for worker tests
+- Add `dist` to `.gitignore`
+- Add TypeScript definitions for Env
+- Add `tsconfig.json` for TypeScript setup
+- Update ESLint configuration
+- Add `.eslintrc.json` config
+- Add tsconfig.json for TypeScript setup
+- Add ESLint configuration
+- Update ESLint config with TypeScript support
+- Add `start` script for local dev
+- Update worker configuration types
+- Update `fetchBlocks` import for better modularity
+- Add GitHub Actions workflow for deployment
+- Update ESLint configuration
+- Update env variables for config
+- Update `tsconfig` includes
+- Add `ALCHEMY_API_KEY` to deployment secrets
+
 ## [1.0.0-alpha.24] - 2024-09-05
 
 ### Bug Fixes
