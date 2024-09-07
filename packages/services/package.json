@@ -5,6 +5,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "viem": "2.21.3",
     "graphql-request": "7.1.0"
   },
   "devDependencies": {
