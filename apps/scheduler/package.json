@@ -34,7 +34,7 @@
     "typescript": "5.5.4",
     "typescript-eslint": "8.2.0",
     "vitest": "1.5.3",
-    "wrangler": "3.72.1",
+    "wrangler": "3.75.0",
     "remeda": "2.12.0"
   }
 }
