@@ -77,6 +77,7 @@ export async function GET(
         where: { nounId: noun, ...filterParams },
         take: seedLimit,
         include: { block: true },
+        orderBy: { block: { number: 'desc' } },
       })
 
       seedResults = pipe(
