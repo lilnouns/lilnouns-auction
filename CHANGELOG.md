@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.28] - 2024-09-08
+
+### Miscellaneous Tasks
+
+- Update production database config
+
 ## [1.0.0-alpha.27] - 2024-09-08
 
 ### Features
