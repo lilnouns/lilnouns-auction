@@ -2,6 +2,7 @@ import { ImageData, getNounData } from '@lilnounsdao/assets'
 import { buildSVG } from '@lilnounsdao/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { join, map, pipe, split } from 'remeda'
+import { formatEther } from 'viem'
 
 const { palette } = ImageData
 
@@ -22,6 +23,13 @@ interface ApiResponse {
   seeds: SeedData[]
 }
 
+/**
+ * Formats the given trait name by capitalizing each part of the name and
+ * removing specific prefixes if present.
+ *
+ * @param traitName - The trait name to format.
+ * @returns The formatted trait name.
+ */
 function formatTraitName(traitName: string): string {
   const prefixes = new Set(['head', 'accessory', 'glasses', 'body'])
 
@@ -57,9 +65,10 @@ const SkeletonCard: React.FC = () => (
 
 interface AuctionProps {
   nounId?: bigint | undefined
+  price?: bigint | undefined
 }
 
-const Auction: React.FC<AuctionProps> = ({ nounId }) => {
+const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -70,6 +79,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
   const [seedHead, setSeedHead] = useState<string | undefined>()
   const [seedGlasses, setSeedGlasses] = useState<string | undefined>()
   const [limit, setLimit] = useState<number>(8)
+  const [cache, setCache] = useState<number>(0)
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -83,6 +93,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
     setIsLoading(true)
     try {
       const queryParams = new URLSearchParams()
+      queryParams.append('cache', String(cache))
       queryParams.append('limit', limit.toString())
       if (seedBackground) queryParams.append('background', seedBackground)
       if (seedBody) queryParams.append('body', seedBody)
@@ -143,6 +154,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
     }
   }, [seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
 
+  // @ts-ignore
   return (
     <>
       <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-1 py-5 dark:bg-gray-900">
@@ -210,7 +222,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                     </option>
                   ))}
                 </select>
-                <span />
                 <input
                   type="number"
                   value={limit}
@@ -219,11 +230,32 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                   placeholder="Limit"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
+                <select
+                  value={cache}
+                  onChange={(e) => setCache(Number(e.target.value))}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
+                >
+                  <option value="">Select Glasses</option>
+                  <option key={0} value={0}>
+                    No
+                  </option>
+                  <option key={1} value={1}>
+                    Yes
+                  </option>
+                </select>
+                <span />
                 <input
                   type="number"
                   value={Number(nounId)}
                   placeholder="Noun"
                   disabled={true}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
+                />
+                <input
+                  type="number"
+                  value={formatEther(BigInt(price ?? 0))}
+                  disabled={true}
+                  placeholder="Price"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
                 <button
