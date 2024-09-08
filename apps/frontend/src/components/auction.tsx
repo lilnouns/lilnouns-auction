@@ -22,6 +22,13 @@ interface ApiResponse {
   seeds: SeedData[]
 }
 
+/**
+ * Formats the given trait name by capitalizing each part of the name and
+ * removing specific prefixes if present.
+ *
+ * @param traitName - The trait name to format.
+ * @returns The formatted trait name.
+ */
 function formatTraitName(traitName: string): string {
   const prefixes = new Set(['head', 'accessory', 'glasses', 'body'])
 
