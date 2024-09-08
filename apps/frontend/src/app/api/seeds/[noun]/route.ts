@@ -42,12 +42,14 @@ export async function GET(
   const { env } = getRequestContext()
 
   const { searchParams } = request.nextUrl
-  const seedCache = Boolean(searchParams.get('cache'))
+  const seedCache = Boolean(Number(searchParams.get('cache')))
   const seedLimit = Number(searchParams.get('limit') ?? '100')
   let seedOffset = Number(searchParams.get('offset') ?? '0')
   let blockOffset = 0
   let totalFetchedBlocks = 0
   const poolSize = 1_000_000
+
+  console.log(seedCache)
 
   try {
     const filterParams: Partial<Seed> = {

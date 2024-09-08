@@ -92,6 +92,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     setIsLoading(true)
     try {
       const queryParams = new URLSearchParams()
+      queryParams.append('cache', String(0))
       queryParams.append('limit', limit.toString())
       if (seedBackground) queryParams.append('background', seedBackground)
       if (seedBody) queryParams.append('body', seedBody)
