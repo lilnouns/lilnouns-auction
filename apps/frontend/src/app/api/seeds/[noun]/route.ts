@@ -42,6 +42,7 @@ export async function GET(
   const { env } = getRequestContext()
 
   const { searchParams } = request.nextUrl
+  const seedCache = Boolean(searchParams.get('cache'))
   const seedLimit = Number(searchParams.get('limit') ?? '100')
   let seedOffset = Number(searchParams.get('offset') ?? '0')
   let blockOffset = 0
@@ -64,54 +65,57 @@ export async function GET(
     }
 
     let seedResults: SeedResult[] = []
-    let moreBlocksAvailable = true
 
-    while (seedResults.length < seedLimit && moreBlocksAvailable) {
-      const blocks = await fetchBlocks(env, blockOffset)
+    if (!seedCache) {
+      let moreBlocksAvailable = true
 
-      totalFetchedBlocks += blocks.length
+      while (seedResults.length < seedLimit && moreBlocksAvailable) {
+        const blocks = await fetchBlocks(env, blockOffset)
 
-      if (blocks.length === 0 || totalFetchedBlocks >= poolSize) {
-        moreBlocksAvailable = false
-        break
-      }
+        totalFetchedBlocks += blocks.length
 
-      const newSeedResults = await Promise.all(
-        blocks.map(async (block) => {
-          try {
-            const seed = getNounSeedFromBlockHash(noun, block.id)
-            const isMatching = Object.entries(filterParams).every(
-              ([key, value]) =>
-                value === undefined || seed[key as keyof Seed] === value,
-            )
+        if (blocks.length === 0 || totalFetchedBlocks >= poolSize) {
+          moreBlocksAvailable = false
+          break
+        }
 
-            return isMatching
-              ? { blockNumber: block.number, seed }
-              : { blockNumber: block.number, seed: undefined }
-          } catch (error) {
-            if (error instanceof Error) {
-              console.error(
-                `Error generating seed for block ${block.id}:`,
-                error.message,
+        const newSeedResults = await Promise.all(
+          blocks.map(async (block) => {
+            try {
+              const seed = getNounSeedFromBlockHash(noun, block.id)
+              const isMatching = Object.entries(filterParams).every(
+                ([key, value]) =>
+                  value === undefined || seed[key as keyof Seed] === value,
               )
-            } else {
-              console.error(
-                `An unknown error occurred while generating seed for block ${block.id}:`,
-                error,
-              )
+
+              return isMatching
+                ? { blockNumber: block.number, seed }
+                : { blockNumber: block.number, seed: undefined }
+            } catch (error) {
+              if (error instanceof Error) {
+                console.error(
+                  `Error generating seed for block ${block.id}:`,
+                  error.message,
+                )
+              } else {
+                console.error(
+                  `An unknown error occurred while generating seed for block ${block.id}:`,
+                  error,
+                )
+              }
+              return { blockNumber: block.number, seed: undefined }
             }
-            return { blockNumber: block.number, seed: undefined }
-          }
-        }),
-      )
+          }),
+        )
 
-      seedResults = [
-        ...seedResults,
-        ...newSeedResults.filter(
-          (result): result is SeedResult => result.seed !== undefined,
-        ),
-      ]
-      blockOffset += 10_000 // Move to the next batch of blocks
+        seedResults = [
+          ...seedResults,
+          ...newSeedResults.filter(
+            (result): result is SeedResult => result.seed !== undefined,
+          ),
+        ]
+        blockOffset += 10_000 // Move to the next batch of blocks
+      }
     }
 
     return new Response(
