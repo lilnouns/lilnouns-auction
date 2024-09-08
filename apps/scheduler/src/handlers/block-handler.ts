@@ -5,22 +5,23 @@ import { pick } from 'remeda'
 
 /**
  * Handles the processing and upserting of Ethereum blocks.
+ *
  * @param {Env} env - The environment configuration object which includes:
  *
  *   - ETHEREUM_BLOCKS_SUBGRAPH_URL: String URL for fetching Ethereum blocks.
  *   - DB: The database connection string for Prisma.
+ *
  * @returns {Promise<void>} A promise that resolves when the block handling is
  *   complete.
  */
-export async function blockHandler(env: Env) {
-  const subgraphUrl = env?.ETHEREUM_BLOCKS_SUBGRAPH_URL
+export async function blockHandler(env: Env): Promise<void> {
   const blockOffset = 0
 
   const adapter = new PrismaD1(env.DB)
   const prisma = new PrismaClient({ adapter })
 
   // Fetch only the first 100 blocks
-  const rawBlocks = await fetchBlocks(subgraphUrl, blockOffset)
+  const rawBlocks = await fetchBlocks(env, blockOffset)
   const blocks = rawBlocks.slice(0, 100)
 
   const processedBlocks = blocks.map((block) =>

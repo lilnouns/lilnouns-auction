@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.26] - 2024-09-08
+
+### Bug Fixes
+
+- Use correct parameter for `fetchBlocks`
+- Update `fetchBlocks` parameters
+
+### Testing
+
+- Add `@ts-expect-error` for `worker.scheduled`
+
+### Refactor
+
+- Use generic `Env` type for config
+- Update `scheduledHandler` return type
+- Update ESLint command and path handling
+
+### Miscellaneous Tasks
+
+- Add `vite.config.ts` for build setup
+- Update tsconfig to strict settings
+- Remove `pnpm test` from pre-commit hook
+- Update ESLint configs with `jsdoc` plugin
+
 ## [1.0.0-alpha.25] - 2024-09-07
 
 ### Features

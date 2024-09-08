@@ -16,25 +16,25 @@
   },
   "dependencies": {
     "@lilnounsdao/assets": "0.5.15",
-    "@prisma/adapter-d1": "5.18.0",
-    "@prisma/client": "5.18.0",
+    "@prisma/adapter-d1": "5.19.1",
+    "@prisma/client": "5.19.1",
     "cron-time-generator": "2.0.3",
-    "remeda": "2.11.0",
-    "type-fest": "4.25.0"
+    "remeda": "2.12.0",
+    "type-fest": "4.26.1"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "0.4.24",
-    "@cloudflare/workers-types": "4.20240821.1",
-    "@eslint/js": "9.9.0",
+    "@cloudflare/vitest-pool-workers": "0.4.29",
+    "@cloudflare/workers-types": "4.20240903.0",
+    "@eslint/js": "9.10.0",
     "@shared/services": "workspace:*",
-    "@types/node": "22.5.0",
-    "@typescript-eslint/eslint-plugin": "8.2.0",
-    "@typescript-eslint/parser": "8.2.0",
+    "@types/node": "22.5.4",
+    "@typescript-eslint/eslint-plugin": "8.4.0",
+    "@typescript-eslint/parser": "8.4.0",
     "prisma": "5.19.1",
+    "remeda": "2.12.0",
     "typescript": "5.5.4",
-    "typescript-eslint": "8.2.0",
+    "typescript-eslint": "8.4.0",
     "vitest": "1.5.3",
-    "wrangler": "3.72.1",
-    "remeda": "2.12.0"
+    "wrangler": "3.75.0"
   }
 }

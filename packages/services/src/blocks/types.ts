@@ -1,3 +1,7 @@
+export interface Env {
+  ETHEREUM_BLOCKS_SUBGRAPH_URL: string
+}
+
 export interface Block {
   id: string
   number: number

@@ -4,4 +4,3 @@ changed_files=$(git diff --name-only --staged | grep -E '\.(js|jsx|ts|tsx|mdx)$'
    && git add ./**/*.po
 
 pnpm lint-staged
-pnpm test

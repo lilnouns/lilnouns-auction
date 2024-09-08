@@ -1,12 +1,14 @@
 import { getPublicClient } from './index'
+import { Env } from './types'
 
 /**
  * Fetches the next noun from the contract.
+ *
  * @param env - The environment object.
  * @returns - A promise that resolves to an object containing the nounId, seed,
  *   and price.
  */
-export async function fetchNextNoun(env: Env) {
+export async function fetchNextNoun<T extends Env>(env: T) {
   const { CHAIN_ID: chainId, CONTRACT_AUCTION: auction } = env
 
   const client = getPublicClient(env, chainId)

@@ -1,4 +1,4 @@
-import { Block } from './types'
+import { Block, Env } from './types'
 
 interface GraphQLResponse {
   data?: {
@@ -8,13 +8,20 @@ interface GraphQLResponse {
 }
 
 /**
- * @param subgraphUrl
- * @param offset
+ * Fetches Ethereum blocks from a subgraph.
+ *
+ * @param {T} env - The environment configuration containing the subgraph URL.
+ * @param {number} offset - The starting point for fetching blocks to handle
+ *   pagination.
+ * @returns {Promise<Block[]>} A promise that resolves to an array of Ethereum
+ *   blocks.
  */
-export async function fetchBlocks(
-  subgraphUrl: string,
+export async function fetchBlocks<T extends Env>(
+  env: T,
   offset: number,
 ): Promise<Block[]> {
+  const { ETHEREUM_BLOCKS_SUBGRAPH_URL: subgraphUrl } = env
+
   if (!subgraphUrl) {
     throw new Error('Ethereum Blocks Subgraph URL is not configured')
   }

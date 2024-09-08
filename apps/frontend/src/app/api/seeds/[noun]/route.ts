@@ -51,7 +51,7 @@ export async function GET(
     let moreBlocksAvailable = true
 
     while (seedResults.length < seedLimit && moreBlocksAvailable) {
-      const blocks = await fetchBlocks(subgraphUrl, blockOffset)
+      const blocks = await fetchBlocks(env, blockOffset)
 
       totalFetchedBlocks += blocks.length
 

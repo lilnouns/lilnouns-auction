@@ -4,6 +4,7 @@ import CronTime from 'cron-time-generator'
 
 /**
  * Handles scheduled tasks based on predefined cron schedules.
+ *
  * @param {ScheduledController} controller - The controller that holds the cron
  *   schedule information.
  * @param {Env} env - The environment settings and configurations necessary for
@@ -14,7 +15,7 @@ import CronTime from 'cron-time-generator'
 export async function scheduledHandler(
   controller: ScheduledController,
   env: Env,
-) {
+): Promise<void> {
   switch (controller.cron) {
     case CronTime.everyMinute(): {
       await blockHandler(env)
