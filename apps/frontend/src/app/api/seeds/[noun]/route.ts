@@ -40,7 +40,6 @@ export async function GET(
   { params: { noun } }: SeedParams,
 ) {
   const { env } = getRequestContext()
-  const subgraphUrl = env?.ETHEREUM_BLOCKS_SUBGRAPH_URL
 
   const { searchParams } = request.nextUrl
   const seedLimit = Number(searchParams.get('limit') ?? '100')
