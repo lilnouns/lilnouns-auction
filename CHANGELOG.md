@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.27] - 2024-09-08
+
+### Features
+
+- Add Prisma schema configuration
+- Add `cache` parameter to seeds route
+- Add `formatTraitName` utility function
+- Add price display to auction component
+- Add `DB` to `CloudflareEnv`
+- Integrate Prisma with seed route
+- Add `cache` state and dropdown
+
+### Bug Fixes
+
+- Correct seed cache type conversion
+
+### Refactor
+
+- Remove unused `subgraphUrl` variable
+
+### Documentation
+
+- Update JSDoc for `GET` function in seeds API
+
+### Miscellaneous Tasks
+
+- Add new database configuration
+- Add `prisma generate` script to prebuild
+
 ## [1.0.0-alpha.26] - 2024-09-08
 
 ### Bug Fixes
