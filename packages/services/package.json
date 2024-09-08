@@ -1,14 +1,17 @@
 {
   "name": "@shared/services",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "vite build",
+    "dev": "vite"
   },
   "dependencies": {
     "viem": "2.21.3",
     "graphql-request": "7.1.0"
   },
   "devDependencies": {
+    "vite": "5.4.3",
     "typescript": "5.5.4",
     "@typescript-eslint/eslint-plugin": "8.2.0",
     "@typescript-eslint/parser": "8.2.0",
