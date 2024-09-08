@@ -82,6 +82,7 @@ const auctionContract = {
 const Home: NextPage = () => {
   const { i18n } = useLingui()
   const [nounId, setNounId] = useState<bigint | undefined>()
+  const [price, setPrice] = useState<bigint | undefined>()
 
   const { data, isLoading, isError, error } = useReadContract({
     ...auctionContract,
@@ -90,8 +91,9 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (!isLoading && !isError && data) {
-      const [newNounId] = data
+      const [newNounId, , , newPrice] = data
       setNounId(newNounId)
+      setPrice(BigInt(newPrice))
     }
   }, [data, isLoading, isError])
 
@@ -123,7 +125,7 @@ const Home: NextPage = () => {
             Error: {error.toString()}
           </div>
         ) : (
-          <Auction nounId={nounId} />
+          <Auction nounId={nounId} price={price} />
         )}
       </div>
     </>

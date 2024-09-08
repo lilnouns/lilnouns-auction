@@ -2,6 +2,7 @@ import { ImageData, getNounData } from '@lilnounsdao/assets'
 import { buildSVG } from '@lilnounsdao/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { join, map, pipe, split } from 'remeda'
+import { formatEther } from 'viem'
 
 const { palette } = ImageData
 
@@ -64,9 +65,10 @@ const SkeletonCard: React.FC = () => (
 
 interface AuctionProps {
   nounId?: bigint | undefined
+  price?: bigint | undefined
 }
 
-const Auction: React.FC<AuctionProps> = ({ nounId }) => {
+const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -150,6 +152,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
     }
   }, [seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
 
+  // @ts-ignore
   return (
     <>
       <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-1 py-5 dark:bg-gray-900">
@@ -217,7 +220,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                     </option>
                   ))}
                 </select>
-                <span />
                 <input
                   type="number"
                   value={limit}
@@ -231,6 +233,13 @@ const Auction: React.FC<AuctionProps> = ({ nounId }) => {
                   value={Number(nounId)}
                   placeholder="Noun"
                   disabled={true}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
+                />
+                <input
+                  type="number"
+                  value={formatEther(BigInt(price ?? 0))}
+                  disabled={true}
+                  placeholder="Price"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
                 <button
