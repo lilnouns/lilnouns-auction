@@ -1,11 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/eslintrc",
   "root": true,
-  "extends": [
-    "plugin:jsdoc/recommended",
-    "plugin:unicorn/recommended",
-    "prettier"
-  ],
+  "extends": ["plugin:unicorn/recommended", "prettier"],
   "rules": {
     "unicorn/prevent-abbreviations": "off"
   },
