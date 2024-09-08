@@ -24,3 +24,9 @@ mode = "smart"
 [env.production.vars]
 NEXT_PUBLIC_SITE_URL = "https://lilnouns.auction"
 NODE_VERSION = "22.3.0"
+
+[[env.production.d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "lilnouns-auction"
+database_id = "06298801-490c-44de-8890-52a45679930d"
+
