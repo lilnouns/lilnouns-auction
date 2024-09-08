@@ -79,6 +79,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [seedHead, setSeedHead] = useState<string | undefined>()
   const [seedGlasses, setSeedGlasses] = useState<string | undefined>()
   const [limit, setLimit] = useState<number>(8)
+  const [cache, setCache] = useState<number>(0)
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -92,7 +93,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     setIsLoading(true)
     try {
       const queryParams = new URLSearchParams()
-      queryParams.append('cache', String(0))
+      queryParams.append('cache', String(cache))
       queryParams.append('limit', limit.toString())
       if (seedBackground) queryParams.append('background', seedBackground)
       if (seedBody) queryParams.append('body', seedBody)
@@ -229,6 +230,20 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   placeholder="Limit"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
+                <select
+                  value={cache}
+                  onChange={(e) => setCache(Number(e.target.value))}
+                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
+                >
+                  <option value="">Select Glasses</option>
+                  <option key={0} value={0}>
+                    No
+                  </option>
+                  <option key={1} value={1}>
+                    Yes
+                  </option>
+                </select>
+                <span />
                 <input
                   type="number"
                   value={Number(nounId)}
