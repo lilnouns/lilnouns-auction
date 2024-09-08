@@ -1,7 +1,10 @@
 import { getRequestContext } from '@cloudflare/next-on-pages'
 import { getNounSeedFromBlockHash } from '@lilnounsdao/assets'
+import { PrismaD1 } from '@prisma/adapter-d1'
+import { PrismaClient } from '@prisma/client'
 import { fetchBlocks } from '@shared/services'
 import { type NextRequest } from 'next/server'
+import { map, pipe } from 'remeda'
 
 export const runtime = 'edge'
 
@@ -49,8 +52,6 @@ export async function GET(
   let totalFetchedBlocks = 0
   const poolSize = 1_000_000
 
-  console.log(seedCache)
-
   try {
     const filterParams: Partial<Seed> = {
       background: searchParams.get('background')
@@ -68,7 +69,30 @@ export async function GET(
 
     let seedResults: SeedResult[] = []
 
-    if (!seedCache) {
+    if (seedCache) {
+      const adapter = new PrismaD1(env.DB)
+      const prisma = new PrismaClient({ adapter })
+
+      const seeds = await prisma.seed.findMany({
+        where: { nounId: noun, ...filterParams },
+        take: seedLimit,
+        include: { block: true },
+      })
+
+      seedResults = pipe(
+        seeds,
+        map((seed) => ({
+          blockNumber: Number(seed.block.number),
+          seed: {
+            background: Number(seed.background),
+            body: Number(seed.body),
+            accessory: Number(seed.accessory),
+            head: Number(seed.head),
+            glasses: Number(seed.glasses),
+          },
+        })),
+      )
+    } else {
       let moreBlocksAvailable = true
 
       while (seedResults.length < seedLimit && moreBlocksAvailable) {
