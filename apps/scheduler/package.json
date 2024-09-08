@@ -20,7 +20,7 @@
     "@prisma/client": "5.18.0",
     "cron-time-generator": "2.0.3",
     "remeda": "2.11.0",
-    "type-fest": "4.25.0"
+    "type-fest": "4.26.1"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "0.4.24",

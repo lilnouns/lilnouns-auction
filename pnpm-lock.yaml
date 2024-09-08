@@ -250,8 +250,8 @@ importers:
         specifier: 2.11.0
         version: 2.11.0
       type-fest:
-        specifier: 4.25.0
-        version: 4.25.0
+        specifier: 4.26.1
+        version: 4.26.1
     devDependencies:
       '@cloudflare/vitest-pool-workers':
         specifier: 0.4.24
@@ -8360,6 +8360,10 @@ packages:
     resolution: {integrity: sha512-bRkIGlXsnGBRBQRAY56UXBm//9qH4bmJfFvq83gSz41N282df+fjy8ofcEgc1sM8geNt5cl6mC2g9Fht1cs8Aw==}
     engines: {node: '>=16'}
 
+  type-fest@4.26.1:
+    resolution: {integrity: sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==}
+    engines: {node: '>=16'}
+
   typed-array-buffer@1.0.2:
     resolution: {integrity: sha512-gEymJYKZtKXzzBzM4jqa9w6Q1Jjm7x2d+sh19AdsD4wqnMPDYyvwpsIc2Q/835kHuo3BEQ7CjelGhfTsoBb2MQ==}
     engines: {node: '>= 0.4'}
@@ -11166,7 +11170,7 @@ snapshots:
       string-length: 6.0.0
       strip-ansi: 7.1.0
       ts-toolbelt: 9.6.0
-      type-fest: 4.25.0
+      type-fest: 4.26.1
       zod: 3.23.8
 
   '@molt/types@0.2.0':
@@ -18145,7 +18149,7 @@ snapshots:
 
   remeda@2.11.0:
     dependencies:
-      type-fest: 4.25.0
+      type-fest: 4.26.1
 
   remeda@2.12.0:
     dependencies:
@@ -19052,6 +19056,8 @@ snapshots:
   type-fest@0.8.1: {}
 
   type-fest@4.25.0: {}
+
+  type-fest@4.26.1: {}
 
   typed-array-buffer@1.0.2:
     dependencies:
