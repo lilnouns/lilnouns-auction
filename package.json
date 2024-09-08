@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha.25",
   "private": true,
   "scripts": {
+    "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
@@ -36,7 +37,8 @@
     "prettier-plugin-packagejson": "2.5.2",
     "prettier-plugin-prisma": "5.0.0",
     "prettier-plugin-tailwindcss": "0.6.6",
-    "prettier-plugin-toml": "2.0.1"
+    "prettier-plugin-toml": "2.0.1",
+    "rimraf": "6.0.1"
   },
   "resolutions": {
     "@babel/traverse": ">=7.23.2"
