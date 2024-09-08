@@ -18,9 +18,26 @@ interface SeedResult {
   seed: Seed | undefined
 }
 
+interface SeedParams {
+  params: { noun: number }
+}
+
+/**
+ * Handles GET requests to fetch a list of noun seeds based on specific
+ * filtering criteria. Fetches blocks in batches and extracts seeds from block
+ * hashes based on the provided parameters.
+ *
+ * @param request - The incoming request object.
+ * @param params.params
+ * @param params - An object containing route parameters.
+ * @param params.noun - The noun parameter used to generate seeds.
+ * @param params.params.noun
+ * @returns A promise that resolves to a Response object containing the list of
+ *   seeds matching the filter criteria.
+ */
 export async function GET(
   request: NextRequest,
-  { params: { noun } }: { params: { noun: number } },
+  { params: { noun } }: SeedParams,
 ) {
   const { env } = getRequestContext()
   const subgraphUrl = env?.ETHEREUM_BLOCKS_SUBGRAPH_URL
