@@ -1,11 +1,8 @@
 import { gql, request } from 'graphql-request'
 import { Block, Env } from './types'
 
-interface GraphQLResponse {
-  data?: {
-    blocks?: Block[]
-  }
-  errors?: Array<{ message: string }>
+interface BlockData {
+  blocks?: Block[]
 }
 
 /**
@@ -70,15 +67,8 @@ export async function fetchBlocks<T extends Env>(
       before,
     }
 
-    return request<GraphQLResponse>(subgraphUrl, query, variables)
-      .then((data) => {
-        if (data.errors?.length) {
-          console.error('GraphQL errors:', data.errors)
-          throw new Error('Error fetching blocks')
-        }
-
-        return data.data?.blocks ?? []
-      })
+    return request<BlockData>(subgraphUrl, query, variables)
+      .then((data) => data?.blocks ?? [])
       .catch((error) => {
         if (error instanceof Error) {
           if (error.name === 'AbortError') {
