@@ -35,15 +35,15 @@ export async function fetchBlocks<T extends Env>(
       query GetBlocks(
         $skip: Int!
         $first: Int!
-        $after: BigInt
-        $before: BigInt
+        ${after ? '$after: BigInt' : ''}
+        ${before ? '$before: BigInt' : ''}
       ) {
         blocks(
           skip: $skip
           first: $first
           orderBy: number
           orderDirection: desc
-          where: { number_gt: $after, number_lt: $before }
+          where: { ${after ? 'number_gt: $after,' : ''} ${before ? 'number_lt: $before' : ''} }
         ) {
           id
           number
@@ -66,8 +66,8 @@ export async function fetchBlocks<T extends Env>(
     const variables = {
       skip: offset + i * 1000,
       first: 1000,
-      ...(after && { after }),
-      ...(before && { before }),
+      after,
+      before,
     }
 
     return request<GraphQLResponse>(subgraphUrl, query, variables)
