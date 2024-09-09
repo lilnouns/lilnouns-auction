@@ -2,30 +2,29 @@ import { fetchBlocks } from '@shared/services'
 import { pick } from 'remeda'
 
 /**
- * Handles the processing and upserting of Ethereum blocks.
+ * Handles the Ethereum blocks by fetching them, processing, and sending them in
+ * batches to a queue.
  *
- * @param env - The environment configuration object which includes:
- *
- *   - ETHEREUM_BLOCKS_SUBGRAPH_URL: String URL for fetching Ethereum blocks.
- *   - DB: The database connection string for Prisma.
- *
- * @returns A promise that resolves when the block handling is complete.
+ * @param env - The environment configuration object.
+ * @returns A promise representing the completion of the block handling process.
  */
 export async function blockHandler(env: Env): Promise<void> {
-  const blockOffset = 0
+  try {
+    const blockOffset = 0
+    const blocks = await fetchBlocks(env, blockOffset)
+    const chunkSize = 500 // Split into batches of 500 records
 
-  // Fetch only the first 100 blocks
-  const blocks = await fetchBlocks(env, blockOffset)
+    const blocksData = blocks.map((block) =>
+      pick(block, ['id', 'number', 'timestamp']),
+    )
 
-  const blocksData = blocks.map((block) =>
-    pick(block, ['id', 'number', 'timestamp']),
-  )
+    for (let i = 0; i < blocksData.length; i += chunkSize) {
+      const chunk = blocksData.slice(i, i + chunkSize)
 
-  const chunkSize = 500 // Split into batches of 500 records
-  for (let i = 0; i < blocksData.length; i += chunkSize) {
-    const chunk = blocksData.slice(i, i + chunkSize)
-
-    // Send each chunk as a separate message to the queue
-    await env.QUEUE.send({ type: 'blocks', data: { blocks: chunk } })
+      // Send each chunk as a separate message to the queue
+      await env.QUEUE.send({ type: 'blocks', data: { blocks: chunk } })
+    }
+  } catch (error) {
+    console.error('Error processing Ethereum blocks:', error)
   }
 }
