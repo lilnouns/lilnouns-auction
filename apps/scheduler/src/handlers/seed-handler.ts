@@ -27,7 +27,7 @@ export async function seedHandler(env: Env): Promise<void> {
         orderBy: {
           number: 'desc',
         },
-        take: 100,
+        take: 100_000,
       })
       .catch((error) => {
         console.error('Error retrieving blocks from database:', error)
