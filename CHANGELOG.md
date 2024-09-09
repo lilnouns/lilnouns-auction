@@ -2,6 +2,56 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.29] - 2024-09-09
+
+### Features
+
+- Add queue producer to config
+- Process seeds in smaller batches
+- Add block pagination and pool size limit
+- Add GraphQL schema for `Block` entity
+- Add filtering parameters for `fetchBlocks`
+- Add `fetchLastBlock` to get latest Ethereum block
+- Add lilnouns GraphQL schema
+- Add types for lilnouns integration
+- Add `fetchLastAuction` function for lilnouns
+- Add `fetchLastAuction` export
+
+### Bug Fixes
+
+- Add order by `block.number` to seed query
+- Add retry on upsert error
+- Add error handling for seeding process
+- Add error handling for blocks fetching
+- Serialize `bigint` before queue send
+- Increase block retrieval limit to 100,000
+- Update `fetchNextNoun` to `fetchLastAuction`
+- Increment noun ID correctly
+
+### Refactor
+
+- Streamline block processing
+- Rename variable for clarity
+- Add error handling to `blockHandler`
+- Simplify block processing loop
+- Enhance block fetching error logs
+- Streamline `fetchBlocks` with `request`
+- Simplify `after` and `before` usage
+- Simplify GraphQL response handling
+- Simplify GraphQL response handling
+
+### Miscellaneous Tasks
+
+- Update Wrangler-generated types
+- Update `CloudflareEnv` typings
+- Add `prettier-plugin-toml` to plugins list
+- Configure queue bindings
+- Update `Env` interface to include `QUEUE`
+
+### Performance
+
+- Reduce `chunkSize` in block and seed handlers
+
 ## [1.0.0-alpha.28] - 2024-09-08
 
 ### Miscellaneous Tasks
