@@ -24,7 +24,7 @@
     "@prisma/adapter-d1": "5.19.1",
     "@prisma/client": "5.19.1",
     "@shared/services": "workspace:*",
-    "@tanstack/react-query": "5.55.0",
+    "@tanstack/react-query": "5.55.2",
     "autoprefixer": "10.4.20",
     "clsx": "2.1.1",
     "cssnano": "7.0.6",
