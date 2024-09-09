@@ -22,23 +22,17 @@ export async function queueHandler(batch: MessageBatch, env: Env) {
       if (type === 'blocks') {
         const { blocks } = data
 
-        // Process blocks in smaller batches to avoid overwhelming SQLite
-        const batchSize = 5
-        for (let i = 0; i < blocks.length; i += batchSize) {
-          const batch = blocks.slice(i, i + batchSize)
-
-          for (const block of batch) {
-            try {
-              const result = await prisma.block.upsert({
-                where: { id: block.id },
-                update: {},
-                create: block,
-              })
-              console.log(`Upserted block ${block.number} with result:`, result)
-            } catch (error) {
-              console.error(`Error upserting block ${block.number}:`, error)
-              message.retry()
-            }
+        for (const block of blocks) {
+          try {
+            const result = await prisma.block.upsert({
+              where: { id: block.id },
+              update: {},
+              create: block,
+            })
+            console.log(`Upserted block ${block.number} with result:`, result)
+          } catch (error) {
+            console.error(`Error upserting block ${block.number}:`, error)
+            message.retry()
           }
         }
       } else if (type == 'seeds') {
