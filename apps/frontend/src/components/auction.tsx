@@ -3,6 +3,7 @@ import { buildSVG } from '@lilnounsdao/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { join, map, pipe, split } from 'remeda'
 import { formatEther } from 'viem'
+import { useWriteContract } from 'wagmi'
 
 const { palette } = ImageData
 
@@ -154,6 +155,37 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     }
   }, [seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
 
+  const { writeContract } = useWriteContract()
+
+  const handleBuy = (blockNumber: number) => {
+    writeContract({
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: 'uint256',
+              name: 'expectedBlockNumber',
+              type: 'uint256',
+            },
+            {
+              internalType: 'uint256',
+              name: 'expectedNounId',
+              type: 'uint256',
+            },
+          ],
+          name: 'buyNow',
+          outputs: [],
+          stateMutability: 'payable',
+          type: 'function',
+        },
+      ] as const,
+      address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
+      functionName: 'buyNow',
+      args: [BigInt(blockNumber), BigInt(nounId ?? 0)],
+      value: price,
+    })
+  }
+
   // @ts-ignore
   return (
     <>
@@ -298,7 +330,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                       </div>
                       <div className="flex">
                         <button
-                          onClick={() => blockNumber}
+                          onClick={() => handleBuy(blockNumber)}
                           className="relative inline-flex w-full justify-center rounded-b-lg border border-transparent bg-green-50 py-3 text-sm font-semibold text-gray-900 hover:bg-green-100 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
                         >
                           Buy Now
