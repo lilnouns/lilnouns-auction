@@ -37,6 +37,7 @@ export async function queueHandler(batch: MessageBatch, env: Env) {
               console.log(`Upserted block ${block.number} with result:`, result)
             } catch (error) {
               console.error(`Error upserting block ${block.number}:`, error)
+              message.retry()
             }
           }
         }
@@ -64,6 +65,7 @@ export async function queueHandler(batch: MessageBatch, env: Env) {
               console.log(`Upserted seed with result:`, result)
             } catch (error) {
               console.error(`Error upserting seed:`, error)
+              message.retry()
             }
           }
         }
