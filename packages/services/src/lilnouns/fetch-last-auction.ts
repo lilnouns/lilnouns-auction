@@ -1,6 +1,6 @@
-import { Auction, Env } from '@/lilnouns/types'
 import { gql, request } from 'graphql-request'
 import { pipe } from 'remeda'
+import { Auction, Env } from './types'
 
 interface AuctionData {
   auctions?: Auction[]
