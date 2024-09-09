@@ -54,7 +54,17 @@ export async function seedHandler(env: Env): Promise<void> {
 
       try {
         // Send each chunk as a separate message to the queue
-        await env.QUEUE.send({ type: 'seeds', data: { seeds: chunk } })
+        const serializedSeeds = JSON.stringify(
+          {
+            seeds: chunk,
+          },
+          (key, value) => (typeof value === 'bigint' ? Number(value) : value),
+        )
+
+        await env.QUEUE.send({
+          type: 'seeds',
+          data: JSON.parse(serializedSeeds),
+        })
       } catch (error) {
         console.error('Error sending seeds to queue:', error)
         throw error
