@@ -1,4 +1,5 @@
 import Auction from '@/components/auction'
+import { WalletOptions } from '@/components/wallet-options'
 import { availableLocales, loadCatalog } from '@/utils'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
@@ -6,7 +7,7 @@ import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { Address } from 'viem'
-import { useReadContract } from 'wagmi'
+import { useAccount, useReadContract } from 'wagmi'
 
 const auctionContract = {
   address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D' as Address,
@@ -81,6 +82,9 @@ const auctionContract = {
 
 const Home: NextPage = () => {
   const { i18n } = useLingui()
+
+  const { isConnected } = useAccount()
+
   const [nounId, setNounId] = useState<bigint | undefined>()
   const [price, setPrice] = useState<bigint | undefined>()
 
@@ -116,16 +120,26 @@ const Home: NextPage = () => {
       </Head>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {isLoading ? (
-          <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-            Loading...
-          </div>
-        ) : isError ? (
-          <div className="text-red-600 dark:text-red-400">
-            Error: {error.toString()}
-          </div>
+        {isConnected ? (
+          <>
+            {isLoading ? (
+              <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
+                Loading...
+              </div>
+            ) : isError ? (
+              <div className="text-red-600 dark:text-red-400">
+                Error: {error.toString()}
+              </div>
+            ) : (
+              <Auction nounId={nounId} price={price} />
+            )}
+          </>
         ) : (
-          <Auction nounId={nounId} price={price} />
+          <>
+            <div className="mt-3">
+              <WalletOptions />
+            </div>
+          </>
         )}
       </div>
     </>
