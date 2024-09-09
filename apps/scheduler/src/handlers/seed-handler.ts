@@ -7,12 +7,12 @@ import { fetchNextNoun } from '@shared/services'
  * Handles seeding of blocks in the database. It fetches the next noun,
  * retrieves a list of blocks, processes them in smaller batches to avoid
  * overwhelming SQLite, and then upserts seeds into the database.
- * @param {Env} env - An environment object containing configuration and
- *   database connection details.
- * @returns {Promise<void>} A promise that resolves when the seeding process is
- *   complete.
+ *
+ * @param env - An environment object containing configuration and database
+ *   connection details.
+ * @returns A promise that resolves when the seeding process is complete.
  */
-export async function seedHandler(env: Env) {
+export async function seedHandler(env: Env): Promise<void> {
   const adapter = new PrismaD1(env.DB)
   const prisma = new PrismaClient({ adapter })
 
@@ -25,30 +25,19 @@ export async function seedHandler(env: Env) {
     take: 100,
   })
 
-  // Process blocks in smaller batches to avoid overwhelming SQLite
-  const batchSize = 5 // Smaller batch size for SQLite
-  for (let i = 0; i < blocks.length; i += batchSize) {
-    const batch = blocks.slice(i, i + batchSize)
+  const chunkSize = 500 // Split into batches of 500 records
+  for (let i = 0; i < blocks.length; i += chunkSize) {
+    const chunk = blocks.slice(i, i + chunkSize)
+    const seeds = []
 
-    for (const block of batch) {
+    for (const block of blocks) {
       const blockId = block.id
       const seed = getNounSeedFromBlockHash(nounId, blockId)
 
-      try {
-        const result = await prisma.seed.upsert({
-          where: {
-            nounId_blockId: {
-              nounId,
-              blockId,
-            },
-          },
-          update: {},
-          create: { ...seed, nounId, blockId },
-        })
-        console.log(`Upserted seed with result:`, result)
-      } catch (error) {
-        console.error(`Error upserting seed:`, error)
-      }
+      seeds.push({ ...seed, nounId, blockId })
     }
+
+    // Send each chunk as a separate message to the queue
+    await env.QUEUE.send({ type: 'seeds', data: { seeds: chunk } })
   }
 }

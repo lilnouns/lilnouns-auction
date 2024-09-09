@@ -40,6 +40,33 @@ export async function queueHandler(batch: MessageBatch, env: Env) {
             }
           }
         }
+      } else if (type == 'seeds') {
+        const { seeds } = data
+
+        // Process blocks in smaller batches to avoid overwhelming SQLite
+        const batchSize = 5
+        for (let i = 0; i < seeds.length; i += batchSize) {
+          const batch = seeds.slice(i, i + batchSize)
+
+          for (const seed of batch) {
+            const { nounId, blockId } = seed
+            try {
+              const result = await prisma.seed.upsert({
+                where: {
+                  nounId_blockId: {
+                    nounId,
+                    blockId,
+                  },
+                },
+                update: {},
+                create: seed,
+              })
+              console.log(`Upserted seed with result:`, result)
+            } catch (error) {
+              console.error(`Error upserting seed:`, error)
+            }
+          }
+        }
       }
     }
   } catch (error) {
