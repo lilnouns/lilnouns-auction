@@ -11,9 +11,13 @@ import { pick } from 'remeda'
 export async function blockHandler(env: Env): Promise<void> {
   try {
     const blockOffset = 0
-    const blocks = await fetchBlocks(env, blockOffset)
-    const chunkSize = 500 // Split into batches of 500 records
 
+    const blocks = await fetchBlocks(env, blockOffset).catch((error) => {
+      console.error('Error fetching blocks:', error)
+      throw error
+    })
+
+    const chunkSize = 500 // Split into batches of 500 records
     const blocksData = blocks.map((block) =>
       pick(block, ['id', 'number', 'timestamp']),
     )
@@ -21,8 +25,13 @@ export async function blockHandler(env: Env): Promise<void> {
     for (let i = 0; i < blocksData.length; i += chunkSize) {
       const chunk = blocksData.slice(i, i + chunkSize)
 
-      // Send each chunk as a separate message to the queue
-      await env.QUEUE.send({ type: 'blocks', data: { blocks: chunk } })
+      try {
+        // Send each chunk as a separate message to the queue
+        await env.QUEUE.send({ type: 'blocks', data: { blocks: chunk } })
+      } catch (error) {
+        console.error('Error sending blocks to queue:', error)
+        throw error
+      }
     }
   } catch (error) {
     console.error('Error processing Ethereum blocks:', error)
