@@ -9,16 +9,18 @@ import { pick } from 'remeda'
  * @returns A promise representing the completion of the block handling process.
  */
 export async function blockHandler(env: Env): Promise<void> {
-  try {
-    const poolSize = 100_000
-    let blockOffset = 0
-    let totalFetchedBlocks = 0
-    let moreBlocksAvailable = true
+  const poolSize = 100_000
+  let blockOffset = 0
+  let totalFetchedBlocks = 0
+  let moreBlocksAvailable = true
 
+  try {
     while (moreBlocksAvailable) {
       const blocks = await fetchBlocks(env, blockOffset).catch((error) => {
         console.error('Error fetching blocks:', error)
-        throw error
+        throw new Error(
+          `Error fetching blocks at offset ${blockOffset}: ${error.message}`,
+        )
       })
 
       totalFetchedBlocks += blocks.length
@@ -48,6 +50,11 @@ export async function blockHandler(env: Env): Promise<void> {
       blockOffset += blocks.length
     }
   } catch (error) {
-    console.error('Error processing Ethereum blocks:', error)
+    console.error(
+      'Detailed error processing Ethereum blocks at offset:',
+      blockOffset,
+      'Error:',
+      error,
+    )
   }
 }
