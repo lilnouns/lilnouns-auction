@@ -2,11 +2,8 @@ import { Auction, Env } from '@/lilnouns/types'
 import { gql, request } from 'graphql-request'
 import { pipe } from 'remeda'
 
-interface GraphQLResponse {
-  data?: {
-    auctions?: Auction[]
-  }
-  errors?: Array<{ message: string }>
+interface AuctionData {
+  auctions?: Auction[]
 }
 
 /** @param env */
@@ -42,9 +39,9 @@ export async function fetchLastAuction<T extends Env>(
   `
 
   try {
-    const response = await request<GraphQLResponse>(subgraphUrl, query)
+    const data = await request<AuctionData>(subgraphUrl, query)
 
-    return pipe(response.data?.auctions ?? [], (auctions) =>
+    return pipe(data?.auctions ?? [], (auctions) =>
       auctions.length > 0 ? auctions[0] : undefined,
     )
   } catch (error) {
