@@ -17,13 +17,13 @@ export async function blockHandler(env: Env): Promise<void> {
   // Fetch only the first 100 blocks
   const blocks = await fetchBlocks(env, blockOffset)
 
-  const processedBlocks = blocks.map((block) =>
+  const blocksData = blocks.map((block) =>
     pick(block, ['id', 'number', 'timestamp']),
   )
 
   const chunkSize = 500 // Split into batches of 500 records
-  for (let i = 0; i < processedBlocks.length; i += chunkSize) {
-    const chunk = processedBlocks.slice(i, i + chunkSize)
+  for (let i = 0; i < blocksData.length; i += chunkSize) {
+    const chunk = blocksData.slice(i, i + chunkSize)
 
     // Send each chunk as a separate message to the queue
     await env.QUEUE.send({ type: 'blocks', data: { blocks: chunk } })
