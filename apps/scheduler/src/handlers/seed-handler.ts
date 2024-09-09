@@ -18,11 +18,13 @@ export async function seedHandler(env: Env): Promise<void> {
     const prisma = new PrismaClient({ adapter })
 
     const {
-      noun: { id: nounId },
+      noun: { id: lastNounId },
     } = await fetchLastAuction(env).catch((error) => {
       console.error('Error fetching next noun:', error)
       throw error
     })
+
+    const nounId = lastNounId + 1
 
     const blocks = await prisma.block
       .findMany({
