@@ -1,7 +1,7 @@
 import { getNounSeedFromBlockHash } from '@lilnounsdao/assets'
 import { PrismaD1 } from '@prisma/adapter-d1'
 import { PrismaClient } from '@prisma/client'
-import { fetchNextNoun } from '@shared/services'
+import { fetchLastAuction } from '@shared/services'
 
 /**
  * Handles seeding of blocks in the database. It fetches the next noun,
@@ -17,7 +17,9 @@ export async function seedHandler(env: Env): Promise<void> {
     const adapter = new PrismaD1(env.DB)
     const prisma = new PrismaClient({ adapter })
 
-    const { nounId } = await fetchNextNoun(env).catch((error) => {
+    const {
+      noun: { id: nounId },
+    } = await fetchLastAuction(env).catch((error) => {
       console.error('Error fetching next noun:', error)
       throw error
     })
