@@ -1,4 +1,4 @@
-import { gql } from 'graphql-request'
+import { gql, request } from 'graphql-request'
 import { Block, Env } from './types'
 
 interface GraphQLResponse {
@@ -70,36 +70,27 @@ export async function fetchBlocks<T extends Env>(
       ...(before && { before }),
     }
 
-    return fetch(subgraphUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query, variables }),
-      signal: new AbortController().signal,
-    })
-      .then(async (response) => {
-        if (!response.ok) {
-          console.error(
-            `Failed to fetch blocks: ${response.status} ${response.statusText}`,
-          )
-          throw new Error('Failed to fetch blocks')
-        }
-
-        const data: GraphQLResponse = await response.json()
-
+    return request<GraphQLResponse>(subgraphUrl, query, variables)
+      .then((data) => {
         if (data.errors?.length) {
           console.error('GraphQL errors:', data.errors)
           throw new Error('Error fetching blocks')
         }
 
-        return data.data?.blocks || []
+        return data.data?.blocks ?? []
       })
       .catch((error) => {
-        if (error instanceof Error && error.name === 'AbortError') {
-          console.error('Fetch request timed out')
-          throw new Error('Request timed out')
+        if (error instanceof Error) {
+          if (error.name === 'AbortError') {
+            console.error('Fetch request timed out')
+            throw new Error('Request timed out')
+          }
+          console.error('Error fetching blocks:', error.message)
+          throw new Error('Error fetching blocks')
+        } else {
+          console.error('Unknown error occurred during fetch')
+          throw new Error('Unknown error occurred')
         }
-        console.error('Error fetching blocks:', error.message)
-        throw new Error('Error fetching blocks')
       })
   })
 
