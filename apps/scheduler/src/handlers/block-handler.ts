@@ -17,7 +17,7 @@ export async function blockHandler(env: Env): Promise<void> {
       throw error
     })
 
-    const chunkSize = 500 // Split into batches of 500 records
+    const chunkSize = 50
     const blocksData = blocks.map((block) =>
       pick(block, ['id', 'number', 'timestamp']),
     )

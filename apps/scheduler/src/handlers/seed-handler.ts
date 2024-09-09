@@ -34,7 +34,7 @@ export async function seedHandler(env: Env): Promise<void> {
         throw error
       })
 
-    const chunkSize = 500 // Split into batches of 500 records
+    const chunkSize = 50
     for (let i = 0; i < blocks.length; i += chunkSize) {
       const chunk = blocks.slice(i, i + chunkSize)
       const seeds = []
