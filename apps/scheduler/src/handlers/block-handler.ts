@@ -1,49 +1,60 @@
-import { PrismaD1 } from '@prisma/adapter-d1'
-import { PrismaClient } from '@prisma/client'
 import { fetchBlocks } from '@shared/services'
 import { pick } from 'remeda'
 
 /**
- * Handles the processing and upserting of Ethereum blocks.
+ * Handles the Ethereum blocks by fetching them, processing, and sending them in
+ * batches to a queue.
  *
- * @param {Env} env - The environment configuration object which includes:
- *
- *   - ETHEREUM_BLOCKS_SUBGRAPH_URL: String URL for fetching Ethereum blocks.
- *   - DB: The database connection string for Prisma.
- *
- * @returns {Promise<void>} A promise that resolves when the block handling is
- *   complete.
+ * @param env - The environment configuration object.
+ * @returns A promise representing the completion of the block handling process.
  */
 export async function blockHandler(env: Env): Promise<void> {
-  const blockOffset = 0
+  const poolSize = 100_000
+  let blockOffset = 0
+  let totalFetchedBlocks = 0
+  let moreBlocksAvailable = true
 
-  const adapter = new PrismaD1(env.DB)
-  const prisma = new PrismaClient({ adapter })
+  try {
+    while (moreBlocksAvailable) {
+      const blocks = await fetchBlocks(env, blockOffset).catch((error) => {
+        console.error('Error fetching blocks:', error)
+        throw new Error(
+          `Error fetching blocks at offset ${blockOffset}: ${error.message}`,
+        )
+      })
 
-  // Fetch only the first 100 blocks
-  const rawBlocks = await fetchBlocks(env, blockOffset)
-  const blocks = rawBlocks.slice(0, 100)
+      totalFetchedBlocks += blocks.length
 
-  const processedBlocks = blocks.map((block) =>
-    pick(block, ['id', 'number', 'timestamp']),
-  )
-
-  // Process blocks in smaller batches to avoid overwhelming SQLite
-  const batchSize = 5 // Smaller batch size for SQLite
-  for (let i = 0; i < processedBlocks.length; i += batchSize) {
-    const batch = processedBlocks.slice(i, i + batchSize)
-
-    for (const block of batch) {
-      try {
-        const result = await prisma.block.upsert({
-          where: { id: block.id },
-          update: {},
-          create: block,
-        })
-        console.log(`Upserted block ${block.number} with result:`, result)
-      } catch (error) {
-        console.error(`Error upserting block ${block.number}:`, error)
+      if (blocks.length === 0 || totalFetchedBlocks >= poolSize) {
+        moreBlocksAvailable = false
+        break
       }
+
+      const chunkSize = 50
+      const blocksData = blocks.map((block) =>
+        pick(block, ['id', 'number', 'timestamp']),
+      )
+
+      for (let i = 0; i < blocksData.length; i += chunkSize) {
+        const chunk = blocksData.slice(i, i + chunkSize)
+
+        try {
+          // Send each chunk as a separate message to the queue
+          await env.QUEUE.send({ type: 'blocks', data: { blocks: chunk } })
+        } catch (error) {
+          console.error('Error sending blocks to queue:', error)
+          throw error
+        }
+      }
+
+      blockOffset += blocks.length
     }
+  } catch (error) {
+    console.error(
+      'Detailed error processing Ethereum blocks at offset:',
+      blockOffset,
+      'Error:',
+      error,
+    )
   }
 }

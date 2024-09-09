@@ -1,24 +1,25 @@
+import { gql, request } from 'graphql-request'
 import { Block, Env } from './types'
 
-interface GraphQLResponse {
-  data?: {
-    blocks?: Block[]
-  }
-  errors?: Array<{ message: string }>
+interface BlockData {
+  blocks?: Block[]
 }
 
 /**
- * Fetches Ethereum blocks from a subgraph.
+ * Fetches a set of Ethereum blocks from a subgraph defined in the environment.
  *
- * @param {T} env - The environment configuration containing the subgraph URL.
- * @param {number} offset - The starting point for fetching blocks to handle
- *   pagination.
- * @returns {Promise<Block[]>} A promise that resolves to an array of Ethereum
- *   blocks.
+ * @param env - The environment configuration object containing the subgraph
+ *   URL.
+ * @param offset - The starting point for fetching blocks.
+ * @param [after] - Fetch blocks with number greater than this value (optional).
+ * @param [before] - Fetch blocks with number less than this value (optional).
+ * @returns A promise that resolves to an array of fetched blocks.
  */
 export async function fetchBlocks<T extends Env>(
   env: T,
   offset: number,
+  after?: number,
+  before?: number,
 ): Promise<Block[]> {
   const { ETHEREUM_BLOCKS_SUBGRAPH_URL: subgraphUrl } = env
 
@@ -27,13 +28,19 @@ export async function fetchBlocks<T extends Env>(
   }
 
   const queries = Array.from({ length: 10 }, (_, i) => {
-    const query = `
-      query GetBlocks($skip: Int!, $first: Int!) {
+    const query = gql`
+      query GetBlocks(
+        $skip: Int!
+        $first: Int!
+        ${after ? '$after: BigInt' : ''}
+        ${before ? '$before: BigInt' : ''}
+      ) {
         blocks(
           skip: $skip
           first: $first
           orderBy: number
           orderDirection: desc
+          where: { ${after ? 'number_gt: $after,' : ''} ${before ? 'number_lt: $before' : ''} }
         ) {
           id
           number
@@ -53,38 +60,27 @@ export async function fetchBlocks<T extends Env>(
       }
     `
 
-    const variables = { skip: offset + i * 1000, first: 1000 }
+    const variables = {
+      skip: offset + i * 1000,
+      first: 1000,
+      after,
+      before,
+    }
 
-    return fetch(subgraphUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query, variables }),
-      signal: new AbortController().signal,
-    })
-      .then(async (response) => {
-        if (!response.ok) {
-          console.error(
-            `Failed to fetch blocks: ${response.status} ${response.statusText}`,
-          )
-          throw new Error('Failed to fetch blocks')
-        }
-
-        const data: GraphQLResponse = await response.json()
-
-        if (data.errors?.length) {
-          console.error('GraphQL errors:', data.errors)
-          throw new Error('Error fetching blocks')
-        }
-
-        return data.data?.blocks || []
-      })
+    return request<BlockData>(subgraphUrl, query, variables)
+      .then((data) => data?.blocks ?? [])
       .catch((error) => {
-        if (error instanceof Error && error.name === 'AbortError') {
-          console.error('Fetch request timed out')
-          throw new Error('Request timed out')
+        if (error instanceof Error) {
+          if (error.name === 'AbortError') {
+            console.error('Fetch request timed out')
+            throw new Error('Request timed out')
+          }
+          console.error('Error fetching blocks:', error.message)
+          throw new Error('Error fetching blocks')
+        } else {
+          console.error('Unknown error occurred during fetch')
+          throw new Error('Unknown error occurred')
         }
-        console.error('Error fetching blocks:', error.message)
-        throw new Error('Error fetching blocks')
       })
   })
 

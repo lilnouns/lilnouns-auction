@@ -11,6 +11,7 @@ export default {
     'prettier-plugin-jsdoc',
     'prettier-plugin-tailwindcss',
     'prettier-plugin-prisma',
+    'prettier-plugin-toml',
   ],
   tailwindFunctions: ['clsx', 'clsxm'],
 }

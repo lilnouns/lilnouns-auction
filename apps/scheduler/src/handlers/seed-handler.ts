@@ -1,54 +1,81 @@
 import { getNounSeedFromBlockHash } from '@lilnounsdao/assets'
 import { PrismaD1 } from '@prisma/adapter-d1'
 import { PrismaClient } from '@prisma/client'
-import { fetchNextNoun } from '@shared/services'
+import { fetchLastAuction } from '@shared/services'
 
 /**
  * Handles seeding of blocks in the database. It fetches the next noun,
  * retrieves a list of blocks, processes them in smaller batches to avoid
  * overwhelming SQLite, and then upserts seeds into the database.
- * @param {Env} env - An environment object containing configuration and
- *   database connection details.
- * @returns {Promise<void>} A promise that resolves when the seeding process is
- *   complete.
+ *
+ * @param env - An environment object containing configuration and database
+ *   connection details.
+ * @returns A promise that resolves when the seeding process is complete.
  */
-export async function seedHandler(env: Env) {
-  const adapter = new PrismaD1(env.DB)
-  const prisma = new PrismaClient({ adapter })
+export async function seedHandler(env: Env): Promise<void> {
+  try {
+    const adapter = new PrismaD1(env.DB)
+    const prisma = new PrismaClient({ adapter })
 
-  const { nounId } = await fetchNextNoun(env)
+    const {
+      noun: { id: lastNounId },
+    } = await fetchLastAuction(env).catch((error) => {
+      console.error('Error fetching next noun:', error)
+      throw error
+    })
 
-  const blocks = await prisma.block.findMany({
-    orderBy: {
-      number: 'desc',
-    },
-    take: 100,
-  })
+    const nounId = lastNounId + 1
 
-  // Process blocks in smaller batches to avoid overwhelming SQLite
-  const batchSize = 5 // Smaller batch size for SQLite
-  for (let i = 0; i < blocks.length; i += batchSize) {
-    const batch = blocks.slice(i, i + batchSize)
+    const blocks = await prisma.block
+      .findMany({
+        orderBy: {
+          number: 'desc',
+        },
+        take: 100_000,
+      })
+      .catch((error) => {
+        console.error('Error retrieving blocks from database:', error)
+        throw error
+      })
 
-    for (const block of batch) {
-      const blockId = block.id
-      const seed = getNounSeedFromBlockHash(nounId, blockId)
+    const chunkSize = 50
+    for (let i = 0; i < blocks.length; i += chunkSize) {
+      const chunk = blocks.slice(i, i + chunkSize)
+      const seeds = []
+      for (const block of chunk) {
+        try {
+          const blockId = block.id
+          const seed = getNounSeedFromBlockHash(nounId, blockId)
+          seeds.push({ ...seed, nounId, blockId })
+        } catch (error) {
+          console.error(
+            `Error generating seed for block ID ${block.id}:`,
+            error,
+          )
+          continue // Skip this block and continue with the next one
+        }
+      }
 
       try {
-        const result = await prisma.seed.upsert({
-          where: {
-            nounId_blockId: {
-              nounId,
-              blockId,
-            },
+        // Send each chunk as a separate message to the queue
+        const serializedSeeds = JSON.stringify(
+          {
+            seeds: chunk,
           },
-          update: {},
-          create: { ...seed, nounId, blockId },
+          (key, value) => (typeof value === 'bigint' ? Number(value) : value),
+        )
+
+        await env.QUEUE.send({
+          type: 'seeds',
+          data: JSON.parse(serializedSeeds),
         })
-        console.log(`Upserted seed with result:`, result)
       } catch (error) {
-        console.error(`Error upserting seed:`, error)
+        console.error('Error sending seeds to queue:', error)
+        throw error
       }
     }
+  } catch (error) {
+    console.error('Seeding process failed:', error)
+    throw error
   }
 }
