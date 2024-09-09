@@ -1,3 +1,4 @@
+import { gql } from 'graphql-request'
 import { Block, Env } from './types'
 
 interface GraphQLResponse {
@@ -8,17 +9,20 @@ interface GraphQLResponse {
 }
 
 /**
- * Fetches Ethereum blocks from a subgraph.
+ * Fetches a set of Ethereum blocks from a subgraph defined in the environment.
  *
- * @param {T} env - The environment configuration containing the subgraph URL.
- * @param {number} offset - The starting point for fetching blocks to handle
- *   pagination.
- * @returns {Promise<Block[]>} A promise that resolves to an array of Ethereum
- *   blocks.
+ * @param env - The environment configuration object containing the subgraph
+ *   URL.
+ * @param offset - The starting point for fetching blocks.
+ * @param [after] - Fetch blocks with number greater than this value (optional).
+ * @param [before] - Fetch blocks with number less than this value (optional).
+ * @returns A promise that resolves to an array of fetched blocks.
  */
 export async function fetchBlocks<T extends Env>(
   env: T,
   offset: number,
+  after?: number,
+  before?: number,
 ): Promise<Block[]> {
   const { ETHEREUM_BLOCKS_SUBGRAPH_URL: subgraphUrl } = env
 
@@ -27,13 +31,19 @@ export async function fetchBlocks<T extends Env>(
   }
 
   const queries = Array.from({ length: 10 }, (_, i) => {
-    const query = `
-      query GetBlocks($skip: Int!, $first: Int!) {
+    const query = gql`
+      query GetBlocks(
+        $skip: Int!
+        $first: Int!
+        $after: BigInt
+        $before: BigInt
+      ) {
         blocks(
           skip: $skip
           first: $first
           orderBy: number
           orderDirection: desc
+          where: { number_gt: $after, number_lt: $before }
         ) {
           id
           number
@@ -53,7 +63,12 @@ export async function fetchBlocks<T extends Env>(
       }
     `
 
-    const variables = { skip: offset + i * 1000, first: 1000 }
+    const variables = {
+      skip: offset + i * 1000,
+      first: 1000,
+      ...(after && { after }),
+      ...(before && { before }),
+    }
 
     return fetch(subgraphUrl, {
       method: 'POST',
