@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.30] - 2024-09-10
+
+### Features
+
+- Add wallet connectors to `WagmiProvider`
+- Add wallet options component
+- Add wallet connection check
+- Add `buyNow` contract interaction
+- Add additional cron trigger
+- Add cron job for every 30 minutes
+- Add `LILNOUNS_SUBGRAPH_URL` to `Env`
+
+### Bug Fixes
+
+- Acknowledge messages after processing
+- Reduce `queries` array length to 1
+- Adjust `blockOffset` calculation logic
+- Update cron interval to 10 minutes
+
+### Refactor
+
+- Simplify `blockHandler` process
+- Handle missing auction, code cleanup
+
+### Miscellaneous Tasks
+
+- Update import paths for types
+- Add `delivery_delay` and `retry_delay`
+- Add new cron trigger for every 10 minutes
+
 ## [1.0.0-alpha.29] - 2024-09-09
 
 ### Features
