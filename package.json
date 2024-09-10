@@ -10,7 +10,7 @@
     "test": "turbo run test",
     "prepare": "husky",
     "cf-typegen": "wrangler types",
-    "postinstall": "pnpm run build"
+    "postinstall": "[ \"$CF_PAGES\" ] && pnpm run build"
   },
   "workspaces": [
     "apps/*",
