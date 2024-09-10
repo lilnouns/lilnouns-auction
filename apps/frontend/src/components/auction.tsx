@@ -1,5 +1,5 @@
-import { ImageData, getNounData } from '@lilnounsdao/assets'
 import { buildSVG } from '@lilnounsdao/sdk'
+import { ImageData, getNounData } from '@shared/utilities'
 import React, { useCallback, useEffect, useState } from 'react'
 import { join, map, pipe, split } from 'remeda'
 import { formatEther } from 'viem'
