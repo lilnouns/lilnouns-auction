@@ -16,7 +16,7 @@ export async function scheduledHandler(
   env: Env,
 ): Promise<void> {
   switch (controller.cron) {
-    case CronTime.everyMinute(): {
+    case CronTime.every(10).minutes(): {
       await seedHandler(env)
       break
     }
