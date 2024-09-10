@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.34] - 2024-09-10
+
+### Refactor
+
+- Change cron schedule to 3 hours
+
+### Miscellaneous Tasks
+
+- Update cron schedule to run every 3 hours
+
+### Revert
+
+- Remove `pages_build_output_dir`
+
 ## [1.0.0-alpha.33] - 2024-09-10
 
 ### Miscellaneous Tasks
