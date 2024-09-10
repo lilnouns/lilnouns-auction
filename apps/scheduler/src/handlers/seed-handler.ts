@@ -17,31 +17,31 @@ export async function seedHandler(env: Env): Promise<void> {
     const adapter = new PrismaD1(env.DB)
     const prisma = new PrismaClient({ adapter })
 
+    const auction = await fetchLastAuction(env)
+    if (!auction) {
+      console.error('Auction not found.')
+      return
+    }
+
     const {
       noun: { id: lastNounId },
-    } = await fetchLastAuction(env).catch((error) => {
-      console.error('Error fetching next noun:', error)
-      throw error
+    } = auction
+    const nounId = Number(lastNounId) + 1
+
+    const blocks = await prisma.block.findMany({
+      orderBy: { number: 'desc' },
+      take: 100_000,
     })
-
-    const nounId = lastNounId + 1
-
-    const blocks = await prisma.block
-      .findMany({
-        orderBy: {
-          number: 'desc',
-        },
-        take: 100_000,
-      })
-      .catch((error) => {
-        console.error('Error retrieving blocks from database:', error)
-        throw error
-      })
 
     const chunkSize = 50
     for (let i = 0; i < blocks.length; i += chunkSize) {
       const chunk = blocks.slice(i, i + chunkSize)
-      const seeds = []
+      const seeds: Array<{
+        nounId: number
+        blockId: string
+        [key: string]: unknown
+      }> = []
+
       for (const block of chunk) {
         try {
           const blockId = block.id
@@ -52,15 +52,14 @@ export async function seedHandler(env: Env): Promise<void> {
             `Error generating seed for block ID ${block.id}:`,
             error,
           )
-          continue // Skip this block and continue with the next one
+          continue
         }
       }
 
       try {
-        // Send each chunk as a separate message to the queue
         const serializedSeeds = JSON.stringify(
           {
-            seeds: chunk,
+            seeds,
           },
           (key, value) => (typeof value === 'bigint' ? Number(value) : value),
         )

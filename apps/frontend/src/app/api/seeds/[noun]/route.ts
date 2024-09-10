@@ -141,7 +141,7 @@ export async function GET(
             (result): result is SeedResult => result.seed !== undefined,
           ),
         ]
-        blockOffset += 10_000 // Move to the next batch of blocks
+        blockOffset += blocks.length
       }
     }
 

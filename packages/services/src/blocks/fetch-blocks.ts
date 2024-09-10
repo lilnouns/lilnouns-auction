@@ -27,7 +27,7 @@ export async function fetchBlocks<T extends Env>(
     throw new Error('Ethereum Blocks Subgraph URL is not configured')
   }
 
-  const queries = Array.from({ length: 10 }, (_, i) => {
+  const queries = Array.from({ length: 1 }, (_, i) => {
     const query = gql`
       query GetBlocks(
         $skip: Int!

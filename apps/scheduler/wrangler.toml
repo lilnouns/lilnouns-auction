@@ -8,7 +8,7 @@ compatibility_flags = ["nodejs_compat"]
 # Docs: https://developers.cloudflare.com/workers/platform/triggers/cron-triggers/
 # Configuration: https://developers.cloudflare.com/workers/wrangler/configuration/#triggers
 [triggers]
-crons = ["* * * * *"] # * * * * * = run every minute
+crons = ["* * * * *", "*/10 * * * *", "*/30 * * * *"]
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Worker, running it closer to your back-end infrastructure
@@ -91,11 +91,13 @@ database_id = "06298801-490c-44de-8890-52a45679930d"
 [[queues.producers]]
 binding = "QUEUE"
 queue = "lilnouns-auction"
+delivery_delay = 60
 
 # Bind a Queue consumer. Queue Consumers can retrieve tasks scheduled by Producers to act on them.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#queues
 [[queues.consumers]]
 queue = "lilnouns-auction"
+retry_delay = 300
 
 # Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#r2-buckets
