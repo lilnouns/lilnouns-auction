@@ -269,10 +269,13 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                 >
                   <option value="">Select Glasses</option>
                   <option key={0} value={0}>
-                    No
+                    No Cache
                   </option>
                   <option key={1} value={1}>
-                    Yes
+                    Full Cache
+                  </option>
+                  <option key={2} value={2}>
+                    Block Cache
                   </option>
                 </select>
                 <span />
