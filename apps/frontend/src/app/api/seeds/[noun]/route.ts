@@ -1,8 +1,8 @@
 import { getRequestContext } from '@cloudflare/next-on-pages'
-import { getNounSeedFromBlockHash } from '@lilnounsdao/assets'
 import { PrismaD1 } from '@prisma/adapter-d1'
 import { PrismaClient } from '@prisma/client'
 import { fetchBlocks } from '@shared/services'
+import { getNounSeedFromBlockHash } from '@shared/utilities'
 import { type NextRequest } from 'next/server'
 import { map, pipe } from 'remeda'
 
