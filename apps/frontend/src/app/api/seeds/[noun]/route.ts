@@ -45,7 +45,7 @@ export async function GET(
   const { env } = getRequestContext()
 
   const { searchParams } = request.nextUrl
-  const seedCache = Boolean(Number(searchParams.get('cache')))
+  const seedCache = Number(searchParams.get('cache'))
   const seedLimit = Number(searchParams.get('limit') ?? '100')
   let seedOffset = Number(searchParams.get('offset') ?? '0')
   let blockOffset = 0
@@ -69,45 +69,98 @@ export async function GET(
 
     let seedResults: SeedResult[] = []
 
-    if (seedCache) {
-      const adapter = new PrismaD1(env.DB)
-      const prisma = new PrismaClient({ adapter })
+    switch (seedCache) {
+      case 0: {
+        let moreBlocksAvailable = true
 
-      const seeds = await prisma.seed.findMany({
-        where: { nounId: noun, ...filterParams },
-        take: seedLimit,
-        include: { block: true },
-        orderBy: { block: { number: 'desc' } },
-      })
+        while (seedResults.length < seedLimit && moreBlocksAvailable) {
+          const blocks = await fetchBlocks(env, blockOffset)
 
-      seedResults = pipe(
-        seeds,
-        map((seed) => ({
-          blockNumber: Number(seed.block.number),
-          seed: {
-            background: Number(seed.background),
-            body: Number(seed.body),
-            accessory: Number(seed.accessory),
-            head: Number(seed.head),
-            glasses: Number(seed.glasses),
-          },
-        })),
-      )
-    } else {
-      let moreBlocksAvailable = true
+          totalFetchedBlocks += blocks.length
 
-      while (seedResults.length < seedLimit && moreBlocksAvailable) {
-        const blocks = await fetchBlocks(env, blockOffset)
+          if (blocks.length === 0 || totalFetchedBlocks >= poolSize) {
+            moreBlocksAvailable = false
+            break
+          }
 
-        totalFetchedBlocks += blocks.length
+          const newSeedResults = await Promise.all(
+            blocks.map(async (block) => {
+              try {
+                const seed = getNounSeedFromBlockHash(noun, block.id)
+                const isMatching = Object.entries(filterParams).every(
+                  ([key, value]) =>
+                    value === undefined || seed[key as keyof Seed] === value,
+                )
 
-        if (blocks.length === 0 || totalFetchedBlocks >= poolSize) {
-          moreBlocksAvailable = false
-          break
+                return isMatching
+                  ? { blockNumber: block.number, seed }
+                  : { blockNumber: block.number, seed: undefined }
+              } catch (error) {
+                if (error instanceof Error) {
+                  console.error(
+                    `Error generating seed for block ${block.id}:`,
+                    error.message,
+                  )
+                } else {
+                  console.error(
+                    `An unknown error occurred while generating seed for block ${block.id}:`,
+                    error,
+                  )
+                }
+                return { blockNumber: block.number, seed: undefined }
+              }
+            }),
+          )
+
+          seedResults = [
+            ...seedResults,
+            ...newSeedResults.filter(
+              (result): result is SeedResult => result.seed !== undefined,
+            ),
+          ]
+          blockOffset += blocks.length
         }
+
+        break
+      }
+      case 1: {
+        const adapter = new PrismaD1(env.DB)
+        const prisma = new PrismaClient({ adapter })
+
+        const seeds = await prisma.seed.findMany({
+          where: { nounId: noun, ...filterParams },
+          take: seedLimit,
+          include: { block: true },
+          orderBy: { block: { number: 'desc' } },
+        })
+
+        seedResults = pipe(
+          seeds,
+          map((seed) => ({
+            blockNumber: Number(seed.block.number),
+            seed: {
+              background: Number(seed.background),
+              body: Number(seed.body),
+              accessory: Number(seed.accessory),
+              head: Number(seed.head),
+              glasses: Number(seed.glasses),
+            },
+          })),
+        )
+
+        break
+      }
+      case 2: {
+        const adapter = new PrismaD1(env.DB)
+        const prisma = new PrismaClient({ adapter })
+
+        const blocks = await prisma.block.findMany({
+          orderBy: { number: 'desc' },
+        })
 
         const newSeedResults = await Promise.all(
           blocks.map(async (block) => {
+            const blockNumber = Number(block.number)
             try {
               const seed = getNounSeedFromBlockHash(noun, block.id)
               const isMatching = Object.entries(filterParams).every(
@@ -116,8 +169,8 @@ export async function GET(
               )
 
               return isMatching
-                ? { blockNumber: block.number, seed }
-                : { blockNumber: block.number, seed: undefined }
+                ? { blockNumber, seed }
+                : { blockNumber, seed: undefined }
             } catch (error) {
               if (error instanceof Error) {
                 console.error(
@@ -130,7 +183,7 @@ export async function GET(
                   error,
                 )
               }
-              return { blockNumber: block.number, seed: undefined }
+              return { blockNumber, seed: undefined }
             }
           }),
         )
@@ -141,7 +194,8 @@ export async function GET(
             (result): result is SeedResult => result.seed !== undefined,
           ),
         ]
-        blockOffset += blocks.length
+
+        break
       }
     }
 

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.31] - 2024-09-10
+
+### Features
+
+- Update auction cache options
+
+### Bug Fixes
+
+- Handle `seedCache` states effectively
+
+### Miscellaneous Tasks
+
+- Update ignore list
+
 ## [1.0.0-alpha.30] - 2024-09-10
 
 ### Features
