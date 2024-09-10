@@ -1,5 +1,4 @@
 import { blockHandler } from '@/handlers/block-handler'
-import { seedHandler } from '@/handlers/seed-handler'
 import CronTime from 'cron-time-generator'
 
 /**
@@ -16,11 +15,7 @@ export async function scheduledHandler(
   env: Env,
 ): Promise<void> {
   switch (controller.cron) {
-    case CronTime.every(10).minutes(): {
-      await seedHandler(env)
-      break
-    }
-    case CronTime.every(30).minutes(): {
+    case CronTime.every(3).hours(): {
       await blockHandler(env)
       break
     }
