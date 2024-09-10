@@ -1,7 +1,12 @@
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [],
+  plugins: [
+    dts({
+      insertTypesEntry: true, // Ensure the entry is generated
+    }),
+  ],
   build: {
     lib: {
       entry: './src/index.ts', // Main entry file
