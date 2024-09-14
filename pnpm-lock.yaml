@@ -190,8 +190,8 @@ importers:
         specifier: 4.5.0
         version: 4.5.0(@lingui/react@4.5.0(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.2)
       '@lingui/swc-plugin':
-        specifier: 4.0.8
-        version: 4.0.8(@lingui/macro@4.5.0(@lingui/react@4.5.0(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.2))(next@14.2.11(@babel/core@7.25.2)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: 4.0.9
+        version: 4.0.9(@lingui/macro@4.5.0(@lingui/react@4.5.0(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.2))(next@14.2.11(@babel/core@7.25.2)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@testing-library/jest-dom':
         specifier: 6.5.0
         version: 6.5.0
@@ -1144,10 +1144,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-shared@0.4.1':
-    resolution: {integrity: sha512-nYh4r8JwOOjYIdH2zub++CmIKlkYFlpxI1nBHimoiHcytJXD/b7ldJ21TtfzUZMCgI78mxVlymMHA/ReaOxKlA==}
-    engines: {node: '>=16.7.0'}
-
   '@cloudflare/workers-shared@0.5.0':
     resolution: {integrity: sha512-qLJzGKwl2SiaaieoCFdj2q85hthPgmF5KjRaZzsPdMKtP+PQnzSWfARsd5mZh71ut5/0grYkUCYWedFe4bY++g==}
     engines: {node: '>=16.7.0'}
@@ -1849,8 +1845,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@lingui/swc-plugin@4.0.8':
-    resolution: {integrity: sha512-zWvfFAvo2NOV+yFAjTbuEE0x53XEJlBS3EQ1R4xswjWSgpXWbLg45Rg37Ai2Ud0qeQkQLZnL93yt7dOwstX5eQ==}
+  '@lingui/swc-plugin@4.0.9':
+    resolution: {integrity: sha512-FsNW9QSn2+aXxiqm9xitReJM5NKp1kfXbMGmTd1RPd/Yr3RjtZcdUh0qAn5jysaE8ND3luoMClVDG3dugnnkdw==}
     peerDependencies:
       '@lingui/macro': '4'
       '@swc/core': '*'
@@ -6469,11 +6465,6 @@ packages:
     engines: {node: '>=16.13'}
     hasBin: true
 
-  miniflare@3.20240821.2:
-    resolution: {integrity: sha512-mgWekp437zD5l2Rz/in/OGBAISNB3rWr69DhR5Iq3WoToUNeAnkbW/CWPBpJiw5WHzZfHHOT+sVjSksAGRJitg==}
-    engines: {node: '>=16.13'}
-    hasBin: true
-
   miniflare@3.20240909.0:
     resolution: {integrity: sha512-20eJCCToBvxohLW0vWZHPRL6JPbqJQ4nkCK6MelgTRkw4CLd7MUYbY70M8olJjTuBDK/84/1CkNC4Q/OrbHIDA==}
     engines: {node: '>=16.13'}
@@ -8987,16 +8978,6 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@3.76.0:
-    resolution: {integrity: sha512-HQWJm5/RUHVr+Vg2KM55pjDSbcEh5WxR6Swcpz1jQ5o+ytoLoj31IHMsl4cJFfM/JtzjBXSpRbS00lDnGfFc2A==}
-    engines: {node: '>=16.17.0'}
-    hasBin: true
-    peerDependencies:
-      '@cloudflare/workers-types': ^4.20240821.1
-    peerDependenciesMeta:
-      '@cloudflare/workers-types':
-        optional: true
-
   wrangler@3.77.0:
     resolution: {integrity: sha512-XdzStAdB6c87cc9CJRinMzAAFqqSZ19pQ+m6Gzx5fHeWXSclrOFsfD2iSmil8C3/LsrtwoIXghibK98FN0HhhQ==}
     engines: {node: '>=16.17.0'}
@@ -10188,8 +10169,6 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20240909.0':
     optional: true
 
-  '@cloudflare/workers-shared@0.4.1': {}
-
   '@cloudflare/workers-shared@0.5.0':
     dependencies:
       mime: 3.0.0
@@ -11098,7 +11077,7 @@ snapshots:
       '@lingui/core': 4.5.0
       react: 18.3.1
 
-  '@lingui/swc-plugin@4.0.8(@lingui/macro@4.5.0(@lingui/react@4.5.0(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.2))(next@14.2.11(@babel/core@7.25.2)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@lingui/swc-plugin@4.0.9(@lingui/macro@4.5.0(@lingui/react@4.5.0(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.2))(next@14.2.11(@babel/core@7.25.2)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@lingui/macro': 4.5.0(@lingui/react@4.5.0(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.2)
     optionalDependencies:
@@ -17245,25 +17224,6 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  miniflare@3.20240821.2(bufferutil@4.0.8)(utf-8-validate@5.0.10):
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      acorn: 8.12.1
-      acorn-walk: 8.3.4
-      capnp-ts: 0.7.0
-      exit-hook: 2.2.1
-      glob-to-regexp: 0.4.1
-      stoppable: 1.1.0
-      undici: 5.28.4
-      workerd: 1.20240821.1
-      ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
-      youch: 3.3.3
-      zod: 3.23.8
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-
   miniflare@3.20240909.0(bufferutil@4.0.8)(utf-8-validate@5.0.10):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
@@ -19870,34 +19830,6 @@ snapshots:
       '@cloudflare/workerd-linux-64': 1.20240909.0
       '@cloudflare/workerd-linux-arm64': 1.20240909.0
       '@cloudflare/workerd-windows-64': 1.20240909.0
-
-  wrangler@3.76.0(@cloudflare/workers-types@4.20240909.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10):
-    dependencies:
-      '@cloudflare/kv-asset-handler': 0.3.4
-      '@cloudflare/workers-shared': 0.4.1
-      '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
-      '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
-      blake3-wasm: 2.1.5
-      chokidar: 3.6.0
-      date-fns: 3.6.0
-      esbuild: 0.17.19
-      miniflare: 3.20240821.2(bufferutil@4.0.8)(utf-8-validate@5.0.10)
-      nanoid: 3.3.7
-      path-to-regexp: 6.2.2
-      resolve: 1.22.8
-      resolve.exports: 2.0.2
-      selfsigned: 2.4.1
-      source-map: 0.6.1
-      unenv: unenv-nightly@2.0.0-1724863496.70db6f1
-      workerd: 1.20240821.1
-      xxhash-wasm: 1.0.2
-    optionalDependencies:
-      '@cloudflare/workers-types': 4.20240909.0
-      fsevents: 2.3.3
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
 
   wrangler@3.77.0(@cloudflare/workers-types@4.20240909.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10):
     dependencies:
