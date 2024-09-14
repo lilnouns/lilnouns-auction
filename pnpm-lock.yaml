@@ -266,8 +266,8 @@ importers:
         version: 4.26.1
     devDependencies:
       '@cloudflare/vitest-pool-workers':
-        specifier: 0.4.30
-        version: 0.4.30(@cloudflare/workers-types@4.20240909.0)(@vitest/runner@1.5.3)(@vitest/snapshot@1.5.3)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vitest@1.5.3(@edge-runtime/vm@3.2.0)(@types/node@22.5.4)(jsdom@20.0.3(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.32.0))
+        specifier: 0.4.31
+        version: 0.4.31(@cloudflare/workers-types@4.20240909.0)(@vitest/runner@1.5.3)(@vitest/snapshot@1.5.3)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vitest@1.5.3(@edge-runtime/vm@3.2.0)(@types/node@22.5.4)(jsdom@20.0.3(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.32.0))
       '@cloudflare/workers-types':
         specifier: 4.20240909.0
         version: 4.20240909.0
@@ -1077,8 +1077,8 @@ packages:
       '@cloudflare/workers-types':
         optional: true
 
-  '@cloudflare/vitest-pool-workers@0.4.30':
-    resolution: {integrity: sha512-+Hw/I7dDLvxhKfgRIMrguxeeNjI33Pl/vS1cOi3rltuRofTafciVwSV+n4UA24bHKJNKNFy5n3fJGh97oDV82A==}
+  '@cloudflare/vitest-pool-workers@0.4.31':
+    resolution: {integrity: sha512-DHvpfJ7FCvRoj8Hog12XcLJ4331dar4FpLKi88btFcfZ6EpPVcLD450sL6dQ8A2AmActi3lsnAMpwSCzT+5P8w==}
     peerDependencies:
       '@vitest/runner': 1.3.x - 1.5.x
       '@vitest/snapshot': 1.3.x - 1.5.x
@@ -10136,7 +10136,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@cloudflare/vitest-pool-workers@0.4.30(@cloudflare/workers-types@4.20240909.0)(@vitest/runner@1.5.3)(@vitest/snapshot@1.5.3)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vitest@1.5.3(@edge-runtime/vm@3.2.0)(@types/node@22.5.4)(jsdom@20.0.3(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.32.0))':
+  '@cloudflare/vitest-pool-workers@0.4.31(@cloudflare/workers-types@4.20240909.0)(@vitest/runner@1.5.3)(@vitest/snapshot@1.5.3)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vitest@1.5.3(@edge-runtime/vm@3.2.0)(@types/node@22.5.4)(jsdom@20.0.3(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.32.0))':
     dependencies:
       '@vitest/runner': 1.5.3
       '@vitest/snapshot': 1.5.3
@@ -10144,10 +10144,10 @@ snapshots:
       cjs-module-lexer: 1.4.0
       devalue: 4.3.3
       esbuild: 0.17.19
-      miniflare: 3.20240821.2(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+      miniflare: 3.20240909.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       semver: 7.6.3
       vitest: 1.5.3(@edge-runtime/vm@3.2.0)(@types/node@22.5.4)(jsdom@20.0.3(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.32.0)
-      wrangler: 3.76.0(@cloudflare/workers-types@4.20240909.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+      wrangler: 3.77.0(@cloudflare/workers-types@4.20240909.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       zod: 3.23.8
     transitivePeerDependencies:
       - '@cloudflare/workers-types'
