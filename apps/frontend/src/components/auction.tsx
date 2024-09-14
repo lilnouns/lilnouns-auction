@@ -79,8 +79,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [seedAccessory, setSeedAccessory] = useState<string | undefined>()
   const [seedHead, setSeedHead] = useState<string | undefined>()
   const [seedGlasses, setSeedGlasses] = useState<string | undefined>()
-  const [limit, setLimit] = useState<number>(8)
-  const [cache, setCache] = useState<number>(0)
+  // const [limit, setLimit] = useState<number>(8)
+  // const [cache, setCache] = useState<number>(0)
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -94,8 +94,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     setIsLoading(true)
     try {
       const queryParams = new URLSearchParams()
-      queryParams.append('cache', String(cache))
-      queryParams.append('limit', limit.toString())
+      // queryParams.append('cache', String(cache))
+      // queryParams.append('limit', limit.toString())
       if (seedBackground) queryParams.append('background', seedBackground)
       if (seedBody) queryParams.append('body', seedBody)
       if (seedAccessory) queryParams.append('accessory', seedAccessory)
@@ -132,28 +132,28 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     setSeedAccessory('')
     setSeedHead('')
     setSeedGlasses('')
-    setLimit(8)
+    // setLimit(8)
   }
 
   useEffect(() => {
     fetchData()
   }, [nounId])
 
-  useEffect(() => {
-    const selectedValues = [
-      seedBackground,
-      seedBody,
-      seedAccessory,
-      seedHead,
-      seedGlasses,
-    ].filter(Boolean)
-
-    if (selectedValues.length > 1) {
-      setLimit(1)
-    } else {
-      setLimit(8)
-    }
-  }, [seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
+  // useEffect(() => {
+  //   const selectedValues = [
+  //     seedBackground,
+  //     seedBody,
+  //     seedAccessory,
+  //     seedHead,
+  //     seedGlasses,
+  //   ].filter(Boolean)
+  //
+  //   if (selectedValues.length > 1) {
+  //     setLimit(1)
+  //   } else {
+  //     setLimit(8)
+  //   }
+  // }, [seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
 
   const { writeContract } = useWriteContract()
 
@@ -254,15 +254,15 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                     </option>
                   ))}
                 </select>
-                <input
+                {/*<input
                   type="number"
                   value={limit}
                   min={1}
                   onChange={(e) => setLimit(Number(e.target.value))}
                   placeholder="Limit"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                />
-                <select
+                />*/}
+                {/*<select
                   value={cache}
                   onChange={(e) => setCache(Number(e.target.value))}
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
@@ -277,7 +277,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   <option key={2} value={2}>
                     Block Cache
                   </option>
-                </select>
+                </select>*/}
                 <span />
                 <input
                   type="number"
@@ -289,7 +289,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                 <input
                   type="number"
                   value={formatEther(BigInt(price ?? 0))}
-                  disabled={true}
+                  readOnly={true}
                   placeholder="Price"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
@@ -310,7 +310,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
             <div>
               {isLoading ? (
                 <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
-                  {Array.from({ length: limit }).map((_, index) => (
+                  {Array.from({ length: 12 }).map((_, index) => (
                     <SkeletonCard key={index} />
                   ))}
                 </div>
