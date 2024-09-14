@@ -74,7 +74,7 @@ export async function GET(
         let moreBlocksAvailable = true
 
         while (seedResults.length < seedLimit && moreBlocksAvailable) {
-          const blocks = await fetchBlocks(env, blockOffset)
+          const blocks = (await fetchBlocks(env, blockOffset)).slice(0, 256)
 
           totalFetchedBlocks += blocks.length
 
