@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.35] - 2024-09-14
+
+### Bug Fixes
+
+- Limit blocks fetched to 256
+
 ## [1.0.0-alpha.34] - 2024-09-10
 
 ### Refactor
