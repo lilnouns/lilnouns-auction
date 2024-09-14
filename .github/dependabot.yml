@@ -83,3 +83,6 @@ updates:
       - dependency-name: 'eslint'
         update-types:
           - version-update:semver-major
+      - dependency-name: 'vitest'
+        update-types:
+          - version-update:semver-major
