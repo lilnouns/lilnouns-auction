@@ -156,6 +156,7 @@ export async function GET(
 
         const blocks = await prisma.block.findMany({
           orderBy: { number: 'desc' },
+          take: 200,
         })
 
         const newSeedResults = await Promise.all(
