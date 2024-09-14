@@ -9,7 +9,7 @@ export default function Home() {
     router.replace(`/${getLocale()}`)
   }, [router])
 
-  return
+  return <></>
 }
 
 export const getStaticProps = async () => {
