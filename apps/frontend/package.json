@@ -13,7 +13,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@headlessui/react": "2.1.7",
+    "@headlessui/react": "2.1.8",
     "@heroicons/react": "2.1.5",
     "@lilnounsdao/assets": "0.5.15",
     "@lilnounsdao/contracts": "0.3.5",
