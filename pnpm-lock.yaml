@@ -153,8 +153,8 @@ importers:
         specifier: 17.5.1
         version: 17.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       remeda:
-        specifier: 2.12.0
-        version: 2.12.0
+        specifier: 2.12.1
+        version: 2.12.1
       tailwind-merge:
         specifier: 2.5.2
         version: 2.5.2
@@ -259,8 +259,8 @@ importers:
         specifier: 2.0.3
         version: 2.0.3
       remeda:
-        specifier: 2.12.0
-        version: 2.12.0
+        specifier: 2.12.1
+        version: 2.12.1
       type-fest:
         specifier: 4.26.1
         version: 4.26.1
@@ -308,8 +308,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0(graphql@16.9.0)
       remeda:
-        specifier: 2.12.0
-        version: 2.12.0
+        specifier: 2.12.1
+        version: 2.12.1
       viem:
         specifier: 2.21.6
         version: 2.21.6(bufferutil@4.0.8)(typescript@5.6.2)(utf-8-validate@5.0.10)(zod@3.23.8)
@@ -7644,8 +7644,8 @@ packages:
   remeda@1.61.0:
     resolution: {integrity: sha512-caKfSz9rDeSKBQQnlJnVW3mbVdFgxgGWQKq1XlFokqjf+hQD5gxutLGTTY2A/x24UxVyJe9gH5fAkFI63ULw4A==}
 
-  remeda@2.12.0:
-    resolution: {integrity: sha512-VAlyhh1os8boCA9/7yN9sXzo0tfCeOwScGXztwBspS0DXQmbIN8xTBfEABvbAW8rMJMPzqxQ1UymHquuESh/pg==}
+  remeda@2.12.1:
+    resolution: {integrity: sha512-hKFAbxbQe8PMd4+CYO1DYCrCbcZsUSa7e21g7+4co91GBy7BD+Ub6JdaLy76yPOp7PCPTAXRz/9NXtZ9w15jbg==}
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -18350,7 +18350,7 @@ snapshots:
 
   remeda@1.61.0: {}
 
-  remeda@2.12.0:
+  remeda@2.12.1:
     dependencies:
       type-fest: 4.26.1
 
