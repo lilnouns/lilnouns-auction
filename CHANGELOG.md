@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.37] - 2024-09-14
+
+### Refactor
+
+- Comment out `limit` and `cache` settings
+
+### Miscellaneous Tasks
+
+- Ignore update `vitest` to latest major version
+
 ## [1.0.0-alpha.36] - 2024-09-14
 
 ### Features
