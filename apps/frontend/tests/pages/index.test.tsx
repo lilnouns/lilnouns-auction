@@ -2,23 +2,25 @@ import Home, { getStaticProps } from '@/pages/index'
 import { getLocale, loadCatalog } from '@/utils/locales'
 import { act, render } from '@testing-library/react'
 import { useRouter } from 'next/router'
+import type { Mock } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-jest.mock('next/router', () => ({
+vi.mock('next/router', () => ({
   __esModule: true,
-  useRouter: jest.fn(),
+  useRouter: vi.fn(),
 }))
 
-jest.mock('@/utils/locales', () => ({
+vi.mock('@/utils/locales', () => ({
   __esModule: true,
-  getLocale: jest.fn(),
-  loadCatalog: jest.fn(),
+  getLocale: vi.fn(),
+  loadCatalog: vi.fn(),
 }))
 
 describe('Home', () => {
-  const mockReplace = jest.fn()
-  const useRouterMock: jest.Mock = useRouter as jest.Mock
-  const getLocaleMock: jest.Mock = getLocale as jest.Mock
-  const loadCatalogMock: jest.Mock = loadCatalog as jest.Mock
+  const mockReplace = vi.fn()
+  const useRouterMock = useRouter as unknown as Mock
+  const getLocaleMock = getLocale as unknown as Mock
+  const loadCatalogMock = loadCatalog as unknown as Mock
 
   beforeEach(() => {
     useRouterMock.mockReturnValue({
@@ -28,7 +30,7 @@ describe('Home', () => {
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('redirects to locale-specific page on mount', () => {
