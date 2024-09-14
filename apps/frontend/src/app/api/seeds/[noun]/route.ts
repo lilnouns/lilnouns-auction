@@ -49,8 +49,6 @@ export async function GET(
   const seedLimit = Number(searchParams.get('limit') ?? '100')
   let seedOffset = Number(searchParams.get('offset') ?? '0')
   let blockOffset = 0
-  let totalFetchedBlocks = 0
-  const poolSize = 1_000_000
 
   try {
     const filterParams: Partial<Seed> = {
@@ -71,55 +69,43 @@ export async function GET(
 
     switch (seedCache) {
       case 0: {
-        let moreBlocksAvailable = true
+        const blocks = await fetchBlocks(env, blockOffset)
 
-        while (seedResults.length < seedLimit && moreBlocksAvailable) {
-          const blocks = (await fetchBlocks(env, blockOffset)).slice(0, 256)
+        const newSeedResults = await Promise.all(
+          blocks.slice(0, 256).map(async (block) => {
+            try {
+              const seed = getNounSeedFromBlockHash(noun, block.id)
+              const isMatching = Object.entries(filterParams).every(
+                ([key, value]) =>
+                  value === undefined || seed[key as keyof Seed] === value,
+              )
 
-          totalFetchedBlocks += blocks.length
-
-          if (blocks.length === 0 || totalFetchedBlocks >= poolSize) {
-            moreBlocksAvailable = false
-            break
-          }
-
-          const newSeedResults = await Promise.all(
-            blocks.map(async (block) => {
-              try {
-                const seed = getNounSeedFromBlockHash(noun, block.id)
-                const isMatching = Object.entries(filterParams).every(
-                  ([key, value]) =>
-                    value === undefined || seed[key as keyof Seed] === value,
+              return isMatching
+                ? { blockNumber: block.number, seed }
+                : { blockNumber: block.number, seed: undefined }
+            } catch (error) {
+              if (error instanceof Error) {
+                console.error(
+                  `Error generating seed for block ${block.id}:`,
+                  error.message,
                 )
-
-                return isMatching
-                  ? { blockNumber: block.number, seed }
-                  : { blockNumber: block.number, seed: undefined }
-              } catch (error) {
-                if (error instanceof Error) {
-                  console.error(
-                    `Error generating seed for block ${block.id}:`,
-                    error.message,
-                  )
-                } else {
-                  console.error(
-                    `An unknown error occurred while generating seed for block ${block.id}:`,
-                    error,
-                  )
-                }
-                return { blockNumber: block.number, seed: undefined }
+              } else {
+                console.error(
+                  `An unknown error occurred while generating seed for block ${block.id}:`,
+                  error,
+                )
               }
-            }),
-          )
+              return { blockNumber: block.number, seed: undefined }
+            }
+          }),
+        )
 
-          seedResults = [
-            ...seedResults,
-            ...newSeedResults.filter(
-              (result): result is SeedResult => result.seed !== undefined,
-            ),
-          ]
-          blockOffset += blocks.length
-        }
+        seedResults = [
+          ...seedResults,
+          ...newSeedResults.filter(
+            (result): result is SeedResult => result.seed !== undefined,
+          ),
+        ]
 
         break
       }
@@ -156,6 +142,7 @@ export async function GET(
 
         const blocks = await prisma.block.findMany({
           orderBy: { number: 'desc' },
+          take: 200,
         })
 
         const newSeedResults = await Promise.all(
