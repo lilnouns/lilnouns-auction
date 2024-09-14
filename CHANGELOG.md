@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.36] - 2024-09-14
+
+### Features
+
+- Limit blocks query to 200
+
+### Refactor
+
+- Streamline seed fetching logic
+
+### Miscellaneous Tasks
+
+- Comment out unused cron triggers
+
 ## [1.0.0-alpha.35] - 2024-09-14
 
 ### Bug Fixes
