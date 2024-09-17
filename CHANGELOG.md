@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.40] - 2024-09-17
+
+### Revert
+
+- Bump @lingui/swc-plugin in the lingui group (#221)
+
 ## [1.0.0-alpha.39] - 2024-09-17
 
 ### Bug Fixes
