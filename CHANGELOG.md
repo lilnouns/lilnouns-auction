@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.38] - 2024-09-17
+
+### Testing
+
+- Switch test runner from jest to vitest
+- Replace `jest` with `vitest` in tests
+
+### Refactor
+
+- Update `index.ts` to `index.tsx`
+
+### Miscellaneous Tasks
+
+- Migrate from Jest to Vitest
+
 ## [1.0.0-alpha.37] - 2024-09-14
 
 ### Refactor
