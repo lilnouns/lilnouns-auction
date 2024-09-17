@@ -9,7 +9,7 @@
     "start": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
     "lingui:extract": "lingui extract --clean",
     "lint": "next lint",
-    "test": "jest --passWithNoTests",
+    "test": "vitest run",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
@@ -36,10 +36,10 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-use": "17.5.1",
-    "remeda": "2.12.0",
+    "remeda": "2.12.1",
     "tailwind-merge": "2.5.2",
     "tailwindcss": "3.4.11",
-    "viem": "2.21.6",
+    "viem": "2.21.7",
     "wagmi": "2.12.11"
   },
   "devDependencies": {
@@ -51,22 +51,22 @@
     "@lingui/loader": "4.5.0",
     "@lingui/macro": "4.5.0",
     "@lingui/swc-plugin": "4.0.9",
+    "@vitejs/plugin-react": "4.3.1",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
     "@testing-library/user-event": "14.5.2",
     "@types/eslint": "8.56.10",
     "@types/eslint-config-prettier": "6.11.3",
-    "@types/jest": "29.5.13",
     "@types/langs": "2.0.5",
     "@types/lint-staged": "13.3.0",
-    "@types/node": "22.5.4",
+    "@types/node": "22.5.5",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
     "is-ci": "3.0.1",
-    "jest": "29.7.0",
-    "jest-environment-jsdom": "29.7.0",
+    "jsdom": "25.0.0",
     "prisma": "5.19.1",
     "typescript": "5.6.2",
-    "wrangler": "3.77.0"
+    "vitest": "2.1.1",
+    "wrangler": "3.78.2"
   }
 }
