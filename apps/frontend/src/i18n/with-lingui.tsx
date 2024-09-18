@@ -1,4 +1,4 @@
-import { getI18nInstance } from '@/app-router-i18n'
+import { getI18nInstance } from '@/i18n/app-router-i18n'
 import { setI18n } from '@lingui/react/server'
 import React, { ReactNode } from 'react'
 

@@ -1,5 +1,5 @@
 import linguiConfig from '@/../lingui.config'
-import { loadCatalog } from '@/pages-router-i18n'
+import { loadCatalog } from '@/i18n/pages-router-i18n'
 import type { GetStaticPaths } from 'next'
 import { GetStaticProps } from 'next'
 

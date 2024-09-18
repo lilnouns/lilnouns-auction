@@ -1,7 +1,7 @@
 import linguiConfig from '@/../lingui.config'
-import { allMessages, getI18nInstance } from '@/app-router-i18n'
 import { LinguiClientProvider } from '@/components/lingui-client-provider'
-import { PageLangParam, withLinguiLayout } from '@/with-lingui'
+import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
+import { PageLangParam, withLinguiLayout } from '@/i18n/with-lingui'
 import { t } from '@lingui/macro'
 
 /**
