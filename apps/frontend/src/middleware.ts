@@ -9,6 +9,7 @@ import linguiConfig from '../lingui.config'
 
 const { locales } = linguiConfig
 
+/** @param request */
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
@@ -26,11 +27,18 @@ export function middleware(request: NextRequest) {
   return NextResponse.redirect(request.nextUrl)
 }
 
+/**
+ * Determines the locale from the given request headers.
+ *
+ * @param requestHeaders - The headers from the incoming request.
+ * @returns The locale determined from the request headers, or a default locale
+ *   if none is found.
+ */
 function getRequestLocale(requestHeaders: Headers): string {
   const langHeader = requestHeaders.get('accept-language') || undefined
   const languages = new Negotiator({
     headers: { 'accept-language': langHeader },
-  }).languages(locales.slice())
+  }).languages([...locales])
 
   const activeLocale = languages[0] || locales[0] || 'en'
 
