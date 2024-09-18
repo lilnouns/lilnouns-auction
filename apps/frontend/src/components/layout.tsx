@@ -1,11 +1,11 @@
 import { vazirmatn } from '@/styles/fonts'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 interface LayoutProps {
   children: ReactNode
 }
 
-const Layout = ({ children }: LayoutProps) => (
+const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => (
   <>
     <style jsx global>{`
       html {
