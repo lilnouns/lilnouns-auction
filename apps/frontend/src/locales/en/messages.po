@@ -13,11 +13,11 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 "Plural-Forms: \n"
 
-#: src/pages/[locale]/index.tsx
+#: src/components/home-page.tsx
 msgid "Lil Nouns Pool"
 msgstr "Lil Nouns Pool"
 
-#: src/pages/[locale]/index.tsx
+#: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Pool"
 msgstr "Noun {nounId} | Lil Nouns Pool"
 
@@ -32,3 +32,7 @@ msgstr "Switch to dark theme"
 #: src/components/theme-switcher.tsx
 msgid "Switch to light theme"
 msgstr "Switch to light theme"
+
+#: src/app/[lang]/layout.tsx
+msgid "Translation Demo"
+msgstr "Translation Demo"
