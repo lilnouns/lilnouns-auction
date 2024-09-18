@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.43] - 2024-09-18
+
+### Features
+
+- Update document title and meta desc
+
+### Revert
+
+- Update regex pattern for route exclusion
+
 ## [1.0.0-alpha.42] - 2024-09-18
 
 ### Bug Fixes
