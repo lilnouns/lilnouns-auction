@@ -100,21 +100,27 @@ export const HomePage: NextPage = () => {
     }
   }, [data, isLoading, isError])
 
+  useEffect(() => {
+    if (nounId) {
+      document.title = t(i18n)`Noun ${nounId} | Lil Nouns Pool`
+
+      const metaDescription = document.querySelector('meta[name="description"]')
+      if (metaDescription) {
+        metaDescription.setAttribute(
+          'content',
+          `Explore the seeds of Noun ${nounId}. Discover the power of decentralized creativity.`,
+        )
+      }
+    }
+  }, [nounId, i18n])
+
   return (
     <>
       <Head>
-        <title>
-          {nounId
-            ? t(i18n)`Noun ${nounId} | Lil Nouns Pool`
-            : t(i18n)`Lil Nouns Pool`}
-        </title>
+        <title>{t(i18n)`Lil Nouns Pool`}</title>
         <meta
           name="description"
-          content={
-            nounId
-              ? `Explore the seeds of Noun ${nounId}. Discover the power of decentralized creativity.`
-              : `This demo site showcases the seamless integration of these powerful tools.`
-          }
+          content={`This demo site showcases the seamless integration of these powerful tools.`}
         />
       </Head>
 
