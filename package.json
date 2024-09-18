@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.0.0-alpha.41",
+  "version": "1.0.0-alpha.42",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -10,7 +10,7 @@
     "test": "turbo run test",
     "prepare": "husky",
     "cf-typegen": "wrangler types",
-    "postinstall": "[ \"$CF_PAGES\" ] && pnpm run build"
+    "postinstall": "[ \"$CF_PAGES\" ] && pnpm run build || true"
   },
   "workspaces": [
     "apps/*",
