@@ -16,13 +16,12 @@ export async function generateStaticParams() {
 }
 
 /**
- * Generates metadata for a given page based on the specified language
- * parameters.
+ * Generates metadata for a page based on the provided language parameters.
  *
  * @param params.params
- * @param params - The parameters for the page.
- * @param params.lang - The language code to be used for translations.
- * @returns Metadata object including the translated title.
+ * @param params - The parameters object.
+ * @param params.lang - The language code to be used for translation.
+ * @returns An object containing the translated title for the page.
  */
 export function generateMetadata({ params }: PageLangParam) {
   const i18n = getI18nInstance(params.lang)
