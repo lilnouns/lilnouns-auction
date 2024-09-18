@@ -9,7 +9,15 @@ import linguiConfig from '../lingui.config'
 
 const { locales } = linguiConfig
 
-/** @param request */
+/**
+ * Middleware function to handle locale-based redirection in the incoming
+ * request URL. It checks if the URL path includes a valid locale, if not, it
+ * redirects to a URL with the default locale.
+ *
+ * @param request - The incoming HTTP request object.
+ * @returns - Returns a redirection response if the URL path lacks a locale,
+ *   otherwise returns undefined.
+ */
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
