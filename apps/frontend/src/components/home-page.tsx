@@ -93,7 +93,8 @@ export const HomePage: NextPage = () => {
 
   useEffect(() => {
     if (!isLoading && !isError && data) {
-      const [newNounId, , , newPrice] = data
+      const newNounId = data[0]
+      const newPrice = data[3]
       setNounId(newNounId)
       setPrice(BigInt(newPrice))
     }
