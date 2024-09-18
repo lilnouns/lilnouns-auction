@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Connector, useConnect } from 'wagmi'
 
-export function WalletOptions() {
+export const WalletOptions = () => {
   const { connectors, connect } = useConnect()
 
   return connectors.map((connector) => (
@@ -13,23 +13,13 @@ export function WalletOptions() {
   ))
 }
 
-/**
- * Renders a wallet option button which is enabled if the wallet provider is
- * ready.
- *
- * @param param0 - The function parameters.
- * @param param0.connector - The wallet connector object.
- * @param param0.onClick - The function to call when the button is clicked.
- * @returns A button element that shows the connector name and triggers onClick
- *   when pressed.
- */
-function WalletOption({
+const WalletOption = ({
   connector,
   onClick,
 }: {
   connector: Connector
   onClick: () => void
-}) {
+}) => {
   const [ready, setReady] = useState(false)
 
   useEffect(() => {

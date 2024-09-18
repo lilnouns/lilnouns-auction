@@ -13,7 +13,7 @@ const { Dark, Light } = Theme
 
 type ThemeSwitcherProps = { className?: string }
 
-export default function ThemeSwitcher({ className }: ThemeSwitcherProps) {
+const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const [localTheme, setLocalTheme] = useLocalStorage<Theme>('theme', Light)
   const [theme, setTheme] = useState<Theme>(localTheme!)
 
@@ -56,3 +56,5 @@ export default function ThemeSwitcher({ className }: ThemeSwitcherProps) {
     </div>
   )
 }
+
+export default ThemeSwitcher
