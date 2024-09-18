@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.42] - 2024-09-18
+
+### Bug Fixes
+
+- Ensure build step always runs
+
+### Revert
+
+- Bump @lingui/swc-plugin in the lingui group (#230)
+
 ## [1.0.0-alpha.41] - 2024-09-18
 
 ### Features
