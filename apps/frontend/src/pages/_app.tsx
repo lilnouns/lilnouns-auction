@@ -1,6 +1,6 @@
 import { Layout } from '@/components'
 import { useLanguageAndDirection } from '@/hooks/use-language-and-direction'
-import { useLinguiInit } from '@/hooks/use-lingui-init'
+import { useLinguiInit } from '@/pages-router-i18n'
 import '@/styles/globals.css'
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
