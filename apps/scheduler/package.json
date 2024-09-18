@@ -19,7 +19,7 @@
     "@prisma/adapter-d1": "5.19.1",
     "@prisma/client": "5.19.1",
     "cron-time-generator": "2.0.3",
-    "remeda": "2.12.1",
+    "remeda": "2.13.0",
     "type-fest": "4.26.1"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "8.6.0",
     "@typescript-eslint/parser": "8.6.0",
     "prisma": "5.19.1",
-    "remeda": "2.12.1",
+    "remeda": "2.13.0",
     "typescript": "5.6.2",
     "typescript-eslint": "8.5.0",
     "vitest": "2.1.1",
