@@ -1,7 +1,7 @@
 import 'server-only'
 
+import linguiConfig from '@/../lingui.config'
 import { I18n, Messages, setupI18n } from '@lingui/core'
-import linguiConfig from '../lingui.config'
 
 const { locales } = linguiConfig
 // optionally use a stricter union type
@@ -10,7 +10,7 @@ type SupportedLocales = string
 async function loadCatalog(locale: SupportedLocales): Promise<{
   [k: string]: Messages
 }> {
-  const { messages } = await import(`./locales/${locale}/messages.po`)
+  const { messages } = await import(`../locales/${locale}/messages.po`)
   return {
     [locale]: messages,
   }
