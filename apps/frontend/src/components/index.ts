@@ -10,4 +10,5 @@ const ThemeSwitcher = dynamic(() => import('./theme-switcher'), {
   ssr: false,
 })
 
+export { HomePage } from '@/components/home-page'
 export { LocaleSwitcher, ThemeSwitcher }
