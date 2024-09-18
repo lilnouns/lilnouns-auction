@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.44] - 2024-09-18
+
+### Miscellaneous Tasks
+
+- Add ESLint directive to middleware path
+
 ## [1.0.0-alpha.43] - 2024-09-18
 
 ### Features
