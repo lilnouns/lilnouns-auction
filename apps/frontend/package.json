@@ -30,16 +30,17 @@
     "clsx": "2.1.1",
     "cssnano": "7.0.6",
     "langs": "2.0.0",
-    "next": "14.2.11",
+    "negotiator": "0.6.3",
+    "next": "14.2.12",
     "next-sitemap": "4.2.3",
     "postcss": "8.4.47",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-use": "17.5.1",
-    "remeda": "2.12.1",
+    "remeda": "2.14.0",
     "tailwind-merge": "2.5.2",
-    "tailwindcss": "3.4.11",
-    "viem": "2.21.8",
+    "tailwindcss": "3.4.12",
+    "viem": "2.21.9",
     "wagmi": "2.12.12"
   },
   "devDependencies": {
@@ -50,7 +51,7 @@
     "@lingui/format-po": "4.11.4",
     "@lingui/loader": "4.11.4",
     "@lingui/macro": "4.11.4",
-    "@lingui/swc-plugin": "4.0.9",
+    "@lingui/swc-plugin": "4.0.10",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
     "@testing-library/user-event": "14.5.2",
@@ -58,6 +59,7 @@
     "@types/eslint-config-prettier": "6.11.3",
     "@types/langs": "2.0.5",
     "@types/lint-staged": "13.3.0",
+    "@types/negotiator": "0.6.3",
     "@types/node": "22.5.5",
     "@types/react": "18.3.7",
     "@types/react-dom": "18.3.0",
@@ -67,6 +69,6 @@
     "prisma": "5.19.1",
     "typescript": "5.6.2",
     "vitest": "2.1.1",
-    "wrangler": "3.78.3"
+    "wrangler": "3.78.4"
   }
 }

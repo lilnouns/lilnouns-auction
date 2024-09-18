@@ -1,9 +1,8 @@
 import Auction from '@/components/auction'
 import { WalletOptions } from '@/components/wallet-options'
-import { availableLocales, loadCatalog } from '@/utils'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { Address } from 'viem'
@@ -79,8 +78,7 @@ const auctionContract = {
     },
   ] as const,
 }
-
-const Home: NextPage = () => {
+export const HomePage: NextPage = () => {
   const { i18n } = useLingui()
 
   const { isConnected } = useAccount()
@@ -95,7 +93,8 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (!isLoading && !isError && data) {
-      const [newNounId, , , newPrice] = data
+      const newNounId = data[0]
+      const newPrice = data[3]
       setNounId(newNounId)
       setPrice(BigInt(newPrice))
     }
@@ -145,26 +144,3 @@ const Home: NextPage = () => {
     </>
   )
 }
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  const locale = context.params?.locale as string | undefined
-
-  if (!locale) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return {
-    props: { translation: await loadCatalog(locale) },
-  }
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: availableLocales.map((locale) => ({ params: { locale } })),
-    fallback: false,
-  }
-}
-
-export default Home

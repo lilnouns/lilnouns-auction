@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.41] - 2024-09-18
+
+### Features
+
+- Add i18n support for routing
+- Add i18n support for app routing
+- Add support for loading `.po` files
+- Add `pseudo` locale and fallback config
+- Add `withLingui` HOC for language support
+- Add locale detection middleware
+- Add HomePage component
+- Add `LinguiClientProvider` component
+- Add multilingual page layout
+- Update pattern to include API routes
+
+### Bug Fixes
+
+- Handle potential `undefined` in `traitName`
+- Update regex pattern for route exclusion
+- Reorder import of `linguiConfig`
+
+### Refactor
+
+- Update `useLinguiInit` import path
+- Convert functions to arrow functions
+- Add `React.FC` to component types
+- Reorganize i18n utilities for clarity
+- Update import paths for `lingui.config`
+- Use `mapToObj` for loading catalogs
+- Simplify data destructuring
+- Enhance locale detection logic
+
+### Documentation
+
+- Enhance middleware JSDoc comments
+- Refine JSDoc comments for clarity
+
+### Miscellaneous Tasks
+
+- Update TypeScript config settings
+- Add pseudo and update translations
+
+### Styling
+
+- Add JSDoc tag line rule
+
 ## [1.0.0-alpha.40] - 2024-09-17
 
 ### Revert

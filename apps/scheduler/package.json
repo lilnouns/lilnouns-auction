@@ -19,11 +19,11 @@
     "@prisma/adapter-d1": "5.19.1",
     "@prisma/client": "5.19.1",
     "cron-time-generator": "2.0.3",
-    "remeda": "2.12.1",
+    "remeda": "2.14.0",
     "type-fest": "4.26.1"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "0.5.3",
+    "@cloudflare/vitest-pool-workers": "0.5.4",
     "@cloudflare/workers-types": "4.20240909.0",
     "@eslint/js": "9.10.0",
     "@shared/services": "workspace:*",
@@ -31,10 +31,10 @@
     "@typescript-eslint/eslint-plugin": "8.6.0",
     "@typescript-eslint/parser": "8.6.0",
     "prisma": "5.19.1",
-    "remeda": "2.12.1",
+    "remeda": "2.14.0",
     "typescript": "5.6.2",
-    "typescript-eslint": "8.5.0",
+    "typescript-eslint": "8.6.0",
     "vitest": "2.1.1",
-    "wrangler": "3.78.3"
+    "wrangler": "3.78.4"
   }
 }

@@ -37,8 +37,8 @@ function formatTraitName(traitName: string): string {
   return pipe(
     traitName,
     split('-'),
-    (parts) => (prefixes.has(parts[0]) ? parts.slice(1) : parts),
-    map((part) => part.charAt(0).toUpperCase() + part.slice(1)),
+    (parts) => (prefixes.has(parts[0] ?? '') ? parts.slice(1) : parts),
+    map((part) => (part ? part.charAt(0).toUpperCase() + part.slice(1) : '')),
     join(' '),
   )
 }

@@ -1,7 +1,7 @@
-import linguiConfig from '../../lingui.config'
 import { detect, fromPath } from '@lingui/detect-locale'
 import langs from 'langs'
 import { ParsedUrlQuery } from 'node:querystring'
+import linguiConfig from '../../lingui.config'
 
 export type Locale = (typeof linguiConfig.locales)[number]
 

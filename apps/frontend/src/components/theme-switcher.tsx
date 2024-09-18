@@ -1,7 +1,7 @@
 import { clsxm } from '@/utils'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import { t } from '@lingui/macro'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocalStorage } from 'react-use'
 
 enum Theme {
@@ -13,7 +13,9 @@ const { Dark, Light } = Theme
 
 type ThemeSwitcherProps = { className?: string }
 
-export default function ThemeSwitcher({ className }: ThemeSwitcherProps) {
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
+  className,
+}: ThemeSwitcherProps) => {
   const [localTheme, setLocalTheme] = useLocalStorage<Theme>('theme', Light)
   const [theme, setTheme] = useState<Theme>(localTheme!)
 
@@ -56,3 +58,5 @@ export default function ThemeSwitcher({ className }: ThemeSwitcherProps) {
     </div>
   )
 }
+
+export default ThemeSwitcher

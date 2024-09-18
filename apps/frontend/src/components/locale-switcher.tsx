@@ -9,7 +9,7 @@ import { Fragment } from 'react'
 
 type LocalSwitcherProps = { className?: string }
 
-export default function LocaleSwitcher({ className }: LocalSwitcherProps) {
+const LocaleSwitcher = ({ className }: LocalSwitcherProps) => {
   const { changeLocale } = useLocaleSwitcher()
 
   return (
@@ -38,7 +38,7 @@ export default function LocaleSwitcher({ className }: LocalSwitcherProps) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute z-10 mt-2 w-32 rounded-md border border-gray-900 ring-1 ring-black/5 focus:outline-none dark:border-white ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+        <Menu.Items className="absolute z-10 mt-2 w-32 rounded-md border border-gray-900 ring-1 ring-black/5 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left dark:border-white">
           <div className="py-1">
             {availableLocales.map((locale) => (
               <Menu.Item key={locale}>
@@ -66,3 +66,5 @@ export default function LocaleSwitcher({ className }: LocalSwitcherProps) {
     </Menu>
   )
 }
+
+export default LocaleSwitcher
