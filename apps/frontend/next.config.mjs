@@ -25,6 +25,13 @@ const nextConfig = {
       fs: false,
     }
 
+    config.module.rules.push({
+      test: /\.po$/,
+      use: {
+        loader: '@lingui/loader',
+      },
+    })
+
     // Important: return the modified config
     return config
   },
