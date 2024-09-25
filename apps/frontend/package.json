@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.2",
-    "@cloudflare/workers-types": "4.20240909.0",
+    "@cloudflare/workers-types": "4.20240924.0",
     "@lingui/cli": "4.11.4",
     "@lingui/conf": "4.11.4",
     "@lingui/format-po": "4.11.4",
