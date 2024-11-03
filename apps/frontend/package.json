@@ -38,7 +38,7 @@
     "react-dom": "18.3.1",
     "react-use": "17.5.1",
     "remeda": "2.14.0",
-    "tailwind-merge": "2.5.2",
+    "tailwind-merge": "2.5.4",
     "tailwindcss": "3.4.14",
     "viem": "2.21.40",
     "wagmi": "2.12.25"
