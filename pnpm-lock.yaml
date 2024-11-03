@@ -9,6 +9,7 @@ overrides:
   secp256k1: '>=5.0.1'
   path-to-regexp: '>=6.3.0'
   rollup: '>=4.22.4'
+  semver: '>=7.5.2'
   ws: '>=7.5.10'
 
 importers:
@@ -12532,28 +12533,6 @@ packages:
       }
     engines: { node: '>=10' }
 
-  semver@5.7.2:
-    resolution:
-      {
-        integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==,
-      }
-    hasBin: true
-
-  semver@6.3.1:
-    resolution:
-      {
-        integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==,
-      }
-    hasBin: true
-
-  semver@7.3.5:
-    resolution:
-      {
-        integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==,
-      }
-    engines: { node: '>=10' }
-    hasBin: true
-
   semver@7.5.4:
     resolution:
       {
@@ -14693,7 +14672,7 @@ snapshots:
       debug: 4.3.7
       gensync: 1.0.0-beta.2
       json5: 2.2.3
-      semver: 6.3.1
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -14729,7 +14708,7 @@ snapshots:
       '@babel/helper-validator-option': 7.24.8
       browserslist: 4.23.3
       lru-cache: 5.1.1
-      semver: 6.3.1
+      semver: 7.6.3
 
   '@babel/helper-compilation-targets@7.25.7':
     dependencies:
@@ -14737,7 +14716,7 @@ snapshots:
       '@babel/helper-validator-option': 7.25.7
       browserslist: 4.24.2
       lru-cache: 5.1.1
-      semver: 6.3.1
+      semver: 7.6.3
 
   '@babel/helper-create-class-features-plugin@7.25.7(@babel/core@7.25.2)':
     dependencies:
@@ -14748,7 +14727,7 @@ snapshots:
       '@babel/helper-replace-supers': 7.25.7(@babel/core@7.25.2)
       '@babel/helper-skip-transparent-expression-wrappers': 7.25.7
       '@babel/traverse': 7.25.6
-      semver: 6.3.1
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -14757,7 +14736,7 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/helper-annotate-as-pure': 7.25.7
       regexpu-core: 6.1.1
-      semver: 6.3.1
+      semver: 7.6.3
 
   '@babel/helper-define-polyfill-provider@0.6.2(@babel/core@7.25.2)':
     dependencies:
@@ -15402,7 +15381,7 @@ snapshots:
       babel-plugin-polyfill-corejs2: 0.4.11(@babel/core@7.25.2)
       babel-plugin-polyfill-corejs3: 0.10.6(@babel/core@7.25.2)
       babel-plugin-polyfill-regenerator: 0.6.2(@babel/core@7.25.2)
-      semver: 6.3.1
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -15553,7 +15532,7 @@ snapshots:
       babel-plugin-polyfill-corejs3: 0.10.6(@babel/core@7.25.2)
       babel-plugin-polyfill-regenerator: 0.6.2(@babel/core@7.25.2)
       core-js-compat: 3.38.1
-      semver: 6.3.1
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -17301,7 +17280,7 @@ snapshots:
       import-lazy: 4.0.0
       jju: 1.4.0
       resolve: 1.22.8
-      semver: 7.5.4
+      semver: 7.6.3
     optionalDependencies:
       '@types/node': 22.8.5
 
@@ -17864,7 +17843,7 @@ snapshots:
       node-fetch: 2.6.7
       path-match: 1.2.4
       promisepipe: 3.0.0
-      semver: 7.3.5
+      semver: 7.6.3
       stat-mode: 0.3.0
       stream-to-promise: 2.2.0
       tar: 4.4.18
@@ -17957,7 +17936,7 @@ snapshots:
       '@vercel/nft': 0.27.3
       '@vercel/routing-utils': 3.1.0
       '@vercel/static-config': 3.0.0
-      semver: 6.3.1
+      semver: 7.6.3
       ts-morph: 12.0.0
     transitivePeerDependencies:
       - encoding
@@ -18841,7 +18820,7 @@ snapshots:
       '@babel/compat-data': 7.25.7
       '@babel/core': 7.25.2
       '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.25.2)
-      semver: 6.3.1
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -20142,7 +20121,7 @@ snapshots:
       object.fromentries: 2.0.8
       object.groupby: 1.0.3
       object.values: 1.2.0
-      semver: 6.3.1
+      semver: 7.6.3
       tsconfig-paths: 3.15.0
     optionalDependencies:
       '@typescript-eslint/parser': 8.12.2(eslint@8.57.1)(typescript@5.6.2)
@@ -20234,7 +20213,7 @@ snapshots:
       object.values: 1.2.0
       prop-types: 15.8.1
       resolve: 2.0.0-next.5
-      semver: 6.3.1
+      semver: 7.6.3
       string.prototype.matchall: 4.0.11
       string.prototype.repeat: 1.0.0
 
@@ -21649,11 +21628,11 @@ snapshots:
   make-dir@2.1.0:
     dependencies:
       pify: 4.0.1
-      semver: 5.7.2
+      semver: 7.6.3
 
   make-dir@3.1.0:
     dependencies:
-      semver: 6.3.1
+      semver: 7.6.3
 
   make-error@1.3.6: {}
 
@@ -22255,7 +22234,7 @@ snapshots:
     dependencies:
       hosted-git-info: 2.8.9
       resolve: 1.22.8
-      semver: 5.7.2
+      semver: 7.6.3
       validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
@@ -23369,14 +23348,6 @@ snapshots:
     dependencies:
       '@types/node-forge': 1.3.11
       node-forge: 1.3.1
-
-  semver@5.7.2: {}
-
-  semver@6.3.1: {}
-
-  semver@7.3.5:
-    dependencies:
-      lru-cache: 6.0.0
 
   semver@7.5.4:
     dependencies:
