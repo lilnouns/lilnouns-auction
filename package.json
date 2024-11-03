@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.0.0-alpha.48",
+  "version": "1.0.0-alpha.49",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -17,16 +17,16 @@
     "packages/*"
   ],
   "devDependencies": {
-    "turbo": "2.1.2",
+    "turbo": "2.2.3",
     "husky": "9.1.6",
     "lint-staged": "15.2.10",
     "eslint": "8.57.1",
     "eslint-config-next": "14.2.16",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-lingui": "0.3.0",
+    "eslint-plugin-lingui": "0.6.0",
     "eslint-plugin-next-on-pages": "1.13.5",
     "eslint-plugin-prettier": "5.2.1",
-    "eslint-plugin-tailwindcss": "3.17.4",
+    "eslint-plugin-tailwindcss": "3.17.5",
     "eslint-plugin-unicorn": "55.0.0",
     "eslint-plugin-jsdoc": "50.4.3",
     "eslint-plugin-regexp": "2.6.0",
@@ -37,7 +37,7 @@
     "prettier-plugin-organize-imports": "4.0.0",
     "prettier-plugin-packagejson": "2.5.3",
     "prettier-plugin-prisma": "5.0.0",
-    "prettier-plugin-tailwindcss": "0.6.6",
+    "prettier-plugin-tailwindcss": "0.6.8",
     "prettier-plugin-toml": "2.0.1",
     "rimraf": "6.0.1"
   },
