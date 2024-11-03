@@ -42,7 +42,8 @@
     "rimraf": "6.0.1"
   },
   "resolutions": {
-    "@babel/traverse": ">=7.23.2"
+    "@babel/traverse": ">=7.23.2",
+    "secp256k1": ">=5.0.1"
   },
   "funding": [
     {
