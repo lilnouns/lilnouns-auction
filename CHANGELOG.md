@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.47] - 2024-11-03
+
+### Miscellaneous Tasks
+
+- Comment out Jest test execution step
+
 ## [1.0.0-alpha.46] - 2024-11-03
 
 ### Miscellaneous Tasks
