@@ -6,13 +6,14 @@ settings:
 
 overrides:
   '@babel/traverse': '>=7.23.2'
-  secp256k1: '>=5.0.1'
+  cookie: '>=0.7.0'
+  debug: '>=4.3.1'
+  elliptic: '>=6.6.0'
   path-to-regexp: '>=6.3.0'
   rollup: '>=4.22.4'
+  secp256k1: '>=5.0.1'
   semver: '>=7.5.2'
   tar: '>=6.2.1'
-  elliptic: '>=6.6.0'
-  cookie: '>=0.7.0'
   ws: '>=7.5.10'
 
 importers:
@@ -195,7 +196,7 @@ importers:
         version: 4.11.4(typescript@5.6.2)
       '@lingui/loader':
         specifier: 4.11.4
-        version: 4.11.4(typescript@5.6.2)(webpack@5.94.0(esbuild@0.17.19))
+        version: 4.11.4(typescript@5.6.2)(webpack@5.94.0)
       '@lingui/macro':
         specifier: 4.11.4
         version: 4.11.4(@lingui/react@4.11.4(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.2)
@@ -6569,40 +6570,6 @@ packages:
         integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==,
       }
 
-  debug@2.6.9:
-    resolution:
-      {
-        integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==,
-      }
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
-  debug@3.2.7:
-    resolution:
-      {
-        integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==,
-      }
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
-  debug@4.1.1:
-    resolution:
-      {
-        integrity: sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==,
-      }
-    deprecated: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
   debug@4.3.7:
     resolution:
       {
@@ -10399,12 +10366,6 @@ packages:
         integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==,
       }
     engines: { node: '>=4' }
-
-  ms@2.0.0:
-    resolution:
-      {
-        integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==,
-      }
 
   ms@2.1.1:
     resolution:
@@ -16369,12 +16330,12 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@lingui/loader@4.11.4(typescript@5.6.2)(webpack@5.94.0(esbuild@0.17.19))':
+  '@lingui/loader@4.11.4(typescript@5.6.2)(webpack@5.94.0)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@lingui/cli': 4.11.4(typescript@5.6.2)
       '@lingui/conf': 4.11.4(typescript@5.6.2)
-      webpack: 5.94.0(esbuild@0.17.19)
+      webpack: 5.94.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -17125,7 +17086,7 @@ snapshots:
       chrome-launcher: 0.15.2
       chromium-edge-launcher: 0.2.0
       connect: 3.7.0
-      debug: 2.6.9
+      debug: 4.3.7
       node-fetch: 2.7.0
       nullthrows: 1.1.1
       open: 7.4.2
@@ -17800,7 +17761,7 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       async-listen: 1.2.0
-      debug: 4.1.1
+      debug: 4.3.7
       execa: 3.2.0
       fs-extra: 8.1.0
       generic-pool: 3.4.2
@@ -19172,7 +19133,7 @@ snapshots:
       accepts: 1.3.8
       bytes: 3.0.0
       compressible: 2.0.18
-      debug: 2.6.9
+      debug: 4.3.7
       on-headers: 1.0.2
       safe-buffer: 5.1.2
       vary: 1.1.2
@@ -19187,7 +19148,7 @@ snapshots:
 
   connect@3.7.0:
     dependencies:
-      debug: 2.6.9
+      debug: 4.3.7
       finalhandler: 1.1.2
       parseurl: 1.3.3
       utils-merge: 1.0.1
@@ -19406,18 +19367,6 @@ snapshots:
   dayjs@1.11.13: {}
 
   de-indent@1.0.2: {}
-
-  debug@2.6.9:
-    dependencies:
-      ms: 2.0.0
-
-  debug@3.2.7:
-    dependencies:
-      ms: 2.1.3
-
-  debug@4.1.1:
-    dependencies:
-      ms: 2.1.3
 
   debug@4.3.7:
     dependencies:
@@ -20020,7 +19969,7 @@ snapshots:
 
   eslint-import-resolver-node@0.3.9:
     dependencies:
-      debug: 3.2.7
+      debug: 4.3.7
       is-core-module: 2.15.1
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -20047,7 +19996,7 @@ snapshots:
 
   eslint-module-utils@2.11.0(@typescript-eslint/parser@8.12.2(eslint@8.57.1)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@8.12.2(eslint@8.57.1)(typescript@5.6.2))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.30.0(@typescript-eslint/parser@8.12.2(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
-      debug: 3.2.7
+      debug: 4.3.7
     optionalDependencies:
       '@typescript-eslint/parser': 8.12.2(eslint@8.57.1)(typescript@5.6.2)
       eslint: 8.57.1
@@ -20063,7 +20012,7 @@ snapshots:
       array.prototype.findlastindex: 1.2.5
       array.prototype.flat: 1.3.2
       array.prototype.flatmap: 1.3.2
-      debug: 3.2.7
+      debug: 4.3.7
       doctrine: 2.1.0
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
@@ -20503,7 +20452,7 @@ snapshots:
 
   finalhandler@1.1.2:
     dependencies:
-      debug: 2.6.9
+      debug: 4.3.7
       encodeurl: 1.0.2
       escape-html: 1.0.3
       on-finished: 2.3.0
@@ -21408,7 +21357,7 @@ snapshots:
 
   lighthouse-logger@1.4.2:
     dependencies:
-      debug: 2.6.9
+      debug: 4.3.7
       marky: 1.2.5
     transitivePeerDependencies:
       - supports-color
@@ -21668,7 +21617,7 @@ snapshots:
   metro-file-map@0.80.12:
     dependencies:
       anymatch: 3.1.3
-      debug: 2.6.9
+      debug: 4.3.7
       fb-watchman: 2.0.2
       flow-enums-runtime: 0.0.6
       graceful-fs: 4.2.11
@@ -21767,7 +21716,7 @@ snapshots:
       chalk: 4.1.2
       ci-info: 2.0.0
       connect: 3.7.0
-      debug: 2.6.9
+      debug: 4.3.7
       denodeify: 1.2.1
       error-stack-parser: 2.1.4
       flow-enums-runtime: 0.0.6
@@ -22054,8 +22003,6 @@ snapshots:
       '@motionone/vue': 10.16.4
 
   mri@1.2.0: {}
-
-  ms@2.0.0: {}
 
   ms@2.1.1: {}
 
@@ -23298,7 +23245,7 @@ snapshots:
 
   send@0.19.0:
     dependencies:
-      debug: 2.6.9
+      debug: 4.3.7
       depd: 2.0.0
       destroy: 1.2.0
       encodeurl: 1.0.2
@@ -23767,16 +23714,14 @@ snapshots:
     dependencies:
       rimraf: 2.6.3
 
-  terser-webpack-plugin@5.3.10(esbuild@0.17.19)(webpack@5.94.0(esbuild@0.17.19)):
+  terser-webpack-plugin@5.3.10(webpack@5.94.0):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.36.0
-      webpack: 5.94.0(esbuild@0.17.19)
-    optionalDependencies:
-      esbuild: 0.17.19
+      webpack: 5.94.0
 
   terser@5.36.0:
     dependencies:
@@ -24374,7 +24319,7 @@ snapshots:
 
   webpack-sources@3.2.3: {}
 
-  webpack@5.94.0(esbuild@0.17.19):
+  webpack@5.94.0:
     dependencies:
       '@types/estree': 1.0.6
       '@webassemblyjs/ast': 1.12.1
@@ -24396,7 +24341,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(esbuild@0.17.19)(webpack@5.94.0(esbuild@0.17.19))
+      terser-webpack-plugin: 5.3.10(webpack@5.94.0)
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
