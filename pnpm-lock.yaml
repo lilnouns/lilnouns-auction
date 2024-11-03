@@ -7,6 +7,7 @@ settings:
 overrides:
   '@babel/traverse': '>=7.23.2'
   secp256k1: '>=5.0.1'
+  path-to-regexp: '>=6.3.0'
   rollup: '>=4.22.4'
 
 importers:
@@ -9232,12 +9233,6 @@ packages:
       }
     engines: { node: '>=18' }
 
-  isarray@0.0.1:
-    resolution:
-      {
-        integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==,
-      }
-
   isarray@1.0.0:
     resolution:
       {
@@ -11111,24 +11106,6 @@ packages:
         integrity: sha512-ypGJsmGtdXUOeM5u93TyeIEfEhM6s+ljAhrk5vAvSx8uyY/02OvrZnA0YNGUrPXfpJMgI1ODd3nwz8Npx4O4cg==,
       }
     engines: { node: 20 || >=22 }
-
-  path-to-regexp@1.9.0:
-    resolution:
-      {
-        integrity: sha512-xIp7/apCFJuUHdDLWe8O1HIkb0kQrOMb/0u6FXQjemHn/ii5LrIzU6bdECnsiTF/GjZkMEKg1xdiZwNqDYlZ6g==,
-      }
-
-  path-to-regexp@6.1.0:
-    resolution:
-      {
-        integrity: sha512-h9DqehX3zZZDCEm+xbfU0ZmwCGFCAAraPJWMXJ4+v32NjZJilVg3k1TcKsRgIb8IQ/izZSaydDc1OhJCZvs2Dw==,
-      }
-
-  path-to-regexp@6.2.1:
-    resolution:
-      {
-        integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==,
-      }
 
   path-to-regexp@6.3.0:
     resolution:
@@ -18026,7 +18003,7 @@ snapshots:
       esbuild: 0.14.47
       etag: 1.8.1
       node-fetch: 2.6.9
-      path-to-regexp: 6.2.1
+      path-to-regexp: 6.3.0
       ts-morph: 12.0.0
       ts-node: 10.9.1(@types/node@16.18.11)(typescript@4.9.5)
       typescript: 4.9.5
@@ -18062,7 +18039,7 @@ snapshots:
 
   '@vercel/routing-utils@3.1.0':
     dependencies:
-      path-to-regexp: 6.1.0
+      path-to-regexp: 6.3.0
     optionalDependencies:
       ajv: 6.12.6
 
@@ -21292,8 +21269,6 @@ snapshots:
     dependencies:
       system-architecture: 0.1.0
 
-  isarray@0.0.1: {}
-
   isarray@1.0.0: {}
 
   isarray@2.0.5: {}
@@ -22586,7 +22561,7 @@ snapshots:
   path-match@1.2.4:
     dependencies:
       http-errors: 1.4.0
-      path-to-regexp: 1.9.0
+      path-to-regexp: 6.3.0
 
   path-parse@1.0.7: {}
 
@@ -22599,14 +22574,6 @@ snapshots:
     dependencies:
       lru-cache: 11.0.1
       minipass: 7.1.2
-
-  path-to-regexp@1.9.0:
-    dependencies:
-      isarray: 0.0.1
-
-  path-to-regexp@6.1.0: {}
-
-  path-to-regexp@6.2.1: {}
 
   path-to-regexp@6.3.0: {}
 

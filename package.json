@@ -44,6 +44,7 @@
   "resolutions": {
     "@babel/traverse": ">=7.23.2",
     "secp256k1": ">=5.0.1",
+    "path-to-regexp": ">=6.3.0",
     "rollup": ">=4.22.4"
   },
   "funding": [
