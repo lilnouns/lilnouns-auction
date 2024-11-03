@@ -7,8 +7,8 @@
     "dev": "vite"
   },
   "dependencies": {
-    "graphql-request": "7.1.0",
-    "viem": "2.21.37",
+    "graphql-request": "7.1.2",
+    "viem": "2.21.40",
     "remeda": "2.14.0"
   },
   "devDependencies": {
@@ -16,6 +16,6 @@
     "@typescript-eslint/parser": "8.12.2",
     "typescript": "5.6.2",
     "typescript-eslint": "8.12.2",
-    "vite": "5.4.6"
+    "vite": "5.4.10"
   }
 }
