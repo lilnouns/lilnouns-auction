@@ -7,7 +7,7 @@
     "dev": "vite"
   },
   "dependencies": {
-    "graphql-request": "7.1.0",
+    "graphql-request": "7.1.2",
     "viem": "2.21.40",
     "remeda": "2.14.0"
   },
