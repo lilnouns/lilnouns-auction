@@ -64,6 +64,10 @@ updates:
       lingui:
         patterns:
           - '@lingui/*'
+      prisma:
+        patterns:
+          - 'prisma'
+          - '@prisma/*'
       next:
         patterns:
           - 'next'
