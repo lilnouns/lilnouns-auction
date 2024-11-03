@@ -21,7 +21,7 @@
     "@lingui/core": "4.11.4",
     "@lingui/detect-locale": "4.11.4",
     "@lingui/react": "4.11.4",
-    "@prisma/adapter-d1": "5.19.1",
+    "@prisma/adapter-d1": "5.21.1",
     "@prisma/client": "5.19.1",
     "@shared/services": "workspace:*",
     "@shared/utilities": "workspace:*",
