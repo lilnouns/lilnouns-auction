@@ -17,7 +17,7 @@
   "dependencies": {
     "@lilnounsdao/assets": "0.5.15",
     "@prisma/adapter-d1": "5.19.1",
-    "@prisma/client": "5.19.1",
+    "@prisma/client": "5.21.1",
     "cron-time-generator": "2.0.3",
     "remeda": "2.14.0",
     "type-fest": "4.26.1"
