@@ -64,6 +64,10 @@ updates:
       lingui:
         patterns:
           - '@lingui/*'
+      prisma:
+        patterns:
+          - 'prisma'
+          - '@prisma/*'
       next:
         patterns:
           - 'next'
@@ -83,18 +87,22 @@ updates:
     ignore:
       - dependency-name: 'eslint'
         update-types:
-          - 'version-update:semver-major'
+          - version-update:semver-major
       - dependency-name: 'next'
         update-types:
-          - 'version-update:semver-major'
+          - version-update:semver-major
       - dependency-name: '@next/*'
         update-types:
-          - 'version-update:semver-major'
+          - version-update:semver-major
+      - dependency-name: '@lingui/*'
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
       - dependency-name: 'eslint-config-next'
         update-types:
-          - 'version-update:semver-major'
+          - version-update:semver-major
       - dependency-name: '@cloudflare/next-on-pages'
         update-types:
-          - 'version-update:semver-major'
-          - 'version-update:semver-minor'
-          - 'version-update:semver-patch'
+          - version-update:semver-major
+          - version-update:semver-minor
+          - version-update:semver-patch

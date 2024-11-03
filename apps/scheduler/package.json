@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@lilnounsdao/assets": "0.5.15",
-    "@prisma/adapter-d1": "5.19.1",
-    "@prisma/client": "5.19.1",
+    "@prisma/adapter-d1": "5.21.1",
+    "@prisma/client": "5.21.1",
     "cron-time-generator": "2.0.3",
     "remeda": "2.14.0",
     "type-fest": "4.26.1"
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "0.5.23",
     "@cloudflare/workers-types": "4.20240909.0",
-    "@eslint/js": "9.13.0",
+    "@eslint/js": "9.14.0",
     "@shared/services": "workspace:*",
     "@types/node": "22.8.5",
     "@typescript-eslint/eslint-plugin": "8.12.2",
@@ -34,7 +34,7 @@
     "remeda": "2.14.0",
     "typescript": "5.6.2",
     "typescript-eslint": "8.12.2",
-    "vitest": "2.1.1",
+    "vitest": "2.1.4",
     "wrangler": "3.84.0"
   }
 }
