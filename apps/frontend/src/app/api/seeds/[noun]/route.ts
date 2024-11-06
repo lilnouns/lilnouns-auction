@@ -42,7 +42,7 @@ export async function GET(
   const { env } = getRequestContext()
 
   const { searchParams } = request.nextUrl
-  const seedCache = Number(searchParams.get('cache'))
+  Number(searchParams.get('cache'))
   const seedLimit = Number(searchParams.get('limit') ?? '256')
   let seedOffset = Number(searchParams.get('offset') ?? '0')
   let blockOffset = 0
