@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "graphql-request": "7.1.2",
-    "viem": "2.21.40",
+    "viem": "2.21.42",
     "remeda": "2.16.0"
   },
   "devDependencies": {
