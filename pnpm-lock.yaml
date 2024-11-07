@@ -182,10 +182,10 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.5
-        version: 1.13.5(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vercel@37.4.2)(wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10))
+        version: 1.13.5(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vercel@37.4.2)(wrangler@3.84.1(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
-        specifier: 4.20241022.0
-        version: 4.20241022.0
+        specifier: 4.20241106.0
+        version: 4.20241106.0
       '@lingui/cli':
         specifier: 4.11.4
         version: 4.11.4(typescript@5.6.3)
@@ -257,7 +257,7 @@ importers:
         version: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(jsdom@25.0.0(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.36.0)
       wrangler:
         specifier: 3.84.1
-        version: 3.84.1(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+        version: 3.84.1(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
 
   apps/scheduler:
     dependencies:
@@ -282,10 +282,10 @@ importers:
     devDependencies:
       '@cloudflare/vitest-pool-workers':
         specifier: 0.5.24
-        version: 0.5.24(@cloudflare/workers-types@4.20241022.0)(@vitest/runner@2.1.4)(@vitest/snapshot@2.1.4)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vitest@2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(jsdom@25.0.0(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.36.0))
+        version: 0.5.24(@cloudflare/workers-types@4.20241106.0)(@vitest/runner@2.1.4)(@vitest/snapshot@2.1.4)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vitest@2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(jsdom@25.0.0(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.36.0))
       '@cloudflare/workers-types':
-        specifier: 4.20241022.0
-        version: 4.20241022.0
+        specifier: 4.20241106.0
+        version: 4.20241106.0
       '@eslint/js':
         specifier: 9.14.0
         version: 9.14.0
@@ -315,7 +315,7 @@ importers:
         version: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(jsdom@25.0.0(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.36.0)
       wrangler:
         specifier: 3.84.1
-        version: 3.84.1(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+        version: 3.84.1(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
 
   packages/services:
     dependencies:
@@ -1150,8 +1150,8 @@ packages:
   '@cloudflare/workers-types@4.20240614.0':
     resolution: {integrity: sha512-fnV3uXD1Hpq5EWnY7XYb+smPcjzIoUFiZpTSV/Tk8qKL3H+w6IqcngZwXQBZ/2U/DwYkDilXHW3FfPhnyD7FZA==}
 
-  '@cloudflare/workers-types@4.20241022.0':
-    resolution: {integrity: sha512-1zOAw5QIDKItzGatzCrEpfLOB1AuMTwVqKmbw9B9eBfCUGRFNfJYMrJxIwcse9EmKahsQt2GruqU00pY/GyXgg==}
+  '@cloudflare/workers-types@4.20241106.0':
+    resolution: {integrity: sha512-pI4ivacmp+vgNO/siHDsZ6BdITR0LC4Mh/1+yzVLcl9U75pt5DUDCOWOiqIRFXRq6H65DPnJbEPFo3x9UfgofQ==}
 
   '@coinbase/wallet-sdk@3.9.3':
     resolution: {integrity: sha512-N/A2DRIf0Y3PHc1XAMvbBUu4zisna6qAdqABMZwBMNEfWrXpAwx16pZGkYCLGE+Rvv1edbcB2LYDRnACNcmCiw==}
@@ -9618,7 +9618,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.5(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vercel@37.4.2)(wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.5(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vercel@37.4.2)(wrangler@3.84.1(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.12.1
       ast-types: 0.14.2
@@ -9633,15 +9633,15 @@ snapshots:
       pcre-to-regexp: 1.1.0
       semver: 7.6.3
       vercel: 37.4.2
-      wrangler: 3.84.1(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+      wrangler: 3.84.1(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241022.0
+      '@cloudflare/workers-types': 4.20241106.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
 
-  '@cloudflare/vitest-pool-workers@0.5.24(@cloudflare/workers-types@4.20241022.0)(@vitest/runner@2.1.4)(@vitest/snapshot@2.1.4)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vitest@2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(jsdom@25.0.0(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.36.0))':
+  '@cloudflare/vitest-pool-workers@0.5.24(@cloudflare/workers-types@4.20241106.0)(@vitest/runner@2.1.4)(@vitest/snapshot@2.1.4)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vitest@2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(jsdom@25.0.0(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.36.0))':
     dependencies:
       '@vitest/runner': 2.1.4
       '@vitest/snapshot': 2.1.4
@@ -9652,7 +9652,7 @@ snapshots:
       miniflare: 3.20241022.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       semver: 7.6.3
       vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(jsdom@25.0.0(bufferutil@4.0.8)(utf-8-validate@5.0.10))(terser@5.36.0)
-      wrangler: 3.84.1(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+      wrangler: 3.84.1(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       zod: 3.23.8
     transitivePeerDependencies:
       - '@cloudflare/workers-types'
@@ -9682,7 +9682,7 @@ snapshots:
 
   '@cloudflare/workers-types@4.20240614.0': {}
 
-  '@cloudflare/workers-types@4.20241022.0': {}
+  '@cloudflare/workers-types@4.20241106.0': {}
 
   '@coinbase/wallet-sdk@3.9.3':
     dependencies:
@@ -18566,7 +18566,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20241022.0
       '@cloudflare/workerd-windows-64': 1.20241022.0
 
-  wrangler@3.84.1(@cloudflare/workers-types@4.20241022.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10):
+  wrangler@3.84.1(@cloudflare/workers-types@4.20241106.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@cloudflare/workers-shared': 0.7.0
@@ -18588,7 +18588,7 @@ snapshots:
       workerd: 1.20241022.0
       xxhash-wasm: 1.0.2
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20241022.0
+      '@cloudflare/workers-types': 4.20241106.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
