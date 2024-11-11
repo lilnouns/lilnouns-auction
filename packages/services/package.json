@@ -9,7 +9,7 @@
   "dependencies": {
     "graphql-request": "7.1.2",
     "viem": "2.21.43",
-    "remeda": "2.16.0"
+    "remeda": "2.17.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "8.13.0",
