@@ -202,8 +202,8 @@ importers:
         specifier: 4.11.4
         version: 4.11.4(@lingui/react@4.11.4(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.3)
       '@lingui/swc-plugin':
-        specifier: 4.0.9
-        version: 4.0.9(@lingui/macro@4.11.4(@lingui/react@4.11.4(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.3))(next@14.2.18(@babel/core@7.25.2)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: 4.0.10
+        version: 4.0.10(@lingui/macro@4.11.4(@lingui/react@4.11.4(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.3))(next@14.2.18(@babel/core@7.25.2)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@testing-library/jest-dom':
         specifier: 6.6.3
         version: 6.6.3
@@ -1826,8 +1826,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@lingui/swc-plugin@4.0.9':
-    resolution: {integrity: sha512-FsNW9QSn2+aXxiqm9xitReJM5NKp1kfXbMGmTd1RPd/Yr3RjtZcdUh0qAn5jysaE8ND3luoMClVDG3dugnnkdw==}
+  '@lingui/swc-plugin@4.0.10':
+    resolution: {integrity: sha512-CPZkywUdG8HsEIxsRAAvx30KZmfxzh126yCvHq0suyvZZRLOVoNdlrUw1N9MfsB7YJsPLgD+XLGjRkeyo7ZduQ==}
     peerDependencies:
       '@lingui/macro': '4'
       '@swc/core': '*'
@@ -4943,8 +4943,8 @@ packages:
   flow-enums-runtime@0.0.6:
     resolution: {integrity: sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==}
 
-  flow-parser@0.252.0:
-    resolution: {integrity: sha512-z8hKPUjZ33VLn4HVntifqmEhmolUMopysnMNzazoDqo1GLUkBsreLNsxETlKJMPotUWStQnen6SGvUNe1j4Hlg==}
+  flow-parser@0.253.0:
+    resolution: {integrity: sha512-EbxtzRIzp8dDSzTloPhsc6uOvrEFIyu08cqQzXBWLAgxK+i2d/5qOos9ryQHRmk+RyDDXfnz/7qteh3jnAlc4w==}
     engines: {node: '>=0.4.0'}
 
   for-each@0.3.3:
@@ -10401,7 +10401,7 @@ snapshots:
       '@lingui/core': 4.11.4
       react: 18.3.1
 
-  '@lingui/swc-plugin@4.0.9(@lingui/macro@4.11.4(@lingui/react@4.11.4(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.3))(next@14.2.18(@babel/core@7.25.2)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@lingui/swc-plugin@4.0.10(@lingui/macro@4.11.4(@lingui/react@4.11.4(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.3))(next@14.2.18(@babel/core@7.25.2)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@lingui/macro': 4.11.4(@lingui/react@4.11.4(react@18.3.1))(babel-plugin-macros@3.1.0)(typescript@5.6.3)
     optionalDependencies:
@@ -14468,7 +14468,7 @@ snapshots:
 
   flow-enums-runtime@0.0.6: {}
 
-  flow-parser@0.252.0: {}
+  flow-parser@0.253.0: {}
 
   for-each@0.3.3:
     dependencies:
@@ -15194,7 +15194,7 @@ snapshots:
       '@babel/register': 7.25.9(@babel/core@7.25.2)
       babel-core: 7.0.0-bridge.0(@babel/core@7.25.2)
       chalk: 4.1.2
-      flow-parser: 0.252.0
+      flow-parser: 0.253.0
       graceful-fs: 4.2.11
       micromatch: 4.0.8
       neo-async: 2.6.2
