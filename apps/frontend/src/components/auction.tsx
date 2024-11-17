@@ -5,6 +5,7 @@ import {
   getNounSeedFromBlockHash,
 } from '@shared/utilities'
 import { gql, request } from 'graphql-request'
+import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useIdle } from 'react-use'
 import { join, map, pipe, split } from 'remeda'
@@ -256,7 +257,12 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     }
   }, [fetchData, isIdle])
 
-  const { writeContract } = useWriteContract()
+  const router = useRouter()
+  const { writeContract } = useWriteContract({
+    mutation: {
+      onSuccess: () => router.reload(),
+    },
+  })
 
   const handleBuy = (blockNumber: number) => {
     const args: readonly [bigint, bigint] = [
