@@ -174,27 +174,17 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       let blockOffset = 0
       let blockLimit = 256
 
+      const parseSeedParameter = (seedParam?: string): number | undefined =>
+        seedParam && !Number.isNaN(Number(seedParam))
+          ? Number(seedParam)
+          : undefined
+
       const filterParams: Partial<Seed> = {
-        background:
-          seedBackground && !Number.isNaN(Number(seedBackground))
-            ? Number(seedBackground)
-            : undefined,
-        body:
-          seedBody && !Number.isNaN(Number(seedBody))
-            ? Number(seedBody)
-            : undefined,
-        accessory:
-          seedAccessory && !Number.isNaN(Number(seedAccessory))
-            ? Number(seedAccessory)
-            : undefined,
-        head:
-          seedHead && !Number.isNaN(Number(seedHead))
-            ? Number(seedHead)
-            : undefined,
-        glasses:
-          seedGlasses && !Number.isNaN(Number(seedGlasses))
-            ? Number(seedGlasses)
-            : undefined,
+        background: parseSeedParameter(seedBackground),
+        body: parseSeedParameter(seedBody),
+        accessory: parseSeedParameter(seedAccessory),
+        head: parseSeedParameter(seedHead),
+        glasses: parseSeedParameter(seedGlasses),
       }
 
       let seedResults: SeedData[] = []
