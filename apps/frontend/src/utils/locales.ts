@@ -22,7 +22,8 @@ export async function loadCatalog(locale: Locale): Promise<object> {
 }
 
 export function getLocale(query?: ParsedUrlQuery): Locale {
-  const localFromPath = typeof window === 'undefined' ? undefined : fromPath(0)
+  const isClient = globalThis.window !== undefined
+  const localFromPath = isClient ? fromPath(0) : undefined
   const localeFromQuery = query?.locale
 
   const detectedLocale = detect(localFromPath, localeFromQuery)

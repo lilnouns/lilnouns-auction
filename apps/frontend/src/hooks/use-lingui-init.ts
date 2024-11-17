@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 export function useLinguiInit(messages: Messages) {
   const locale = useLocale()
-  const isClient = typeof window !== 'undefined'
+  const isClient = globalThis.window !== undefined
 
   if (!isClient && locale !== i18n.locale) {
     // there is single instance of i18n on the server
