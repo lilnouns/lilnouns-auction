@@ -168,26 +168,27 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
 
   const fetchData = useCallback(async () => {
     if (!nounId) return
-
     setIsLoading(false)
+
+    let blockOffset = 0
+    let blockLimit = 256
+
+    const parseSeedParameter = (seedParam?: string): number | undefined =>
+      seedParam && !Number.isNaN(Number(seedParam))
+        ? Number(seedParam)
+        : undefined
+
+    const filterParams: Partial<Seed> = {
+      background: parseSeedParameter(seedBackground),
+      body: parseSeedParameter(seedBody),
+      accessory: parseSeedParameter(seedAccessory),
+      head: parseSeedParameter(seedHead),
+      glasses: parseSeedParameter(seedGlasses),
+    }
+
+    let seedResults: SeedData[] = []
+
     try {
-      let blockOffset = 0
-      let blockLimit = 256
-
-      const parseSeedParameter = (seedParam?: string): number | undefined =>
-        seedParam && !Number.isNaN(Number(seedParam))
-          ? Number(seedParam)
-          : undefined
-
-      const filterParams: Partial<Seed> = {
-        background: parseSeedParameter(seedBackground),
-        body: parseSeedParameter(seedBody),
-        accessory: parseSeedParameter(seedAccessory),
-        head: parseSeedParameter(seedHead),
-        glasses: parseSeedParameter(seedGlasses),
-      }
-
-      let seedResults: SeedData[] = []
       const blocks = await fetchBlocks(blockOffset, blockLimit)
       const newSeedResults = await Promise.all(
         blocks.map(async (block) => {
