@@ -6,6 +6,7 @@ import {
 } from '@shared/utilities'
 import { gql, request } from 'graphql-request'
 import React, { useCallback, useEffect, useState } from 'react'
+import { useIdle } from 'react-use'
 import { join, map, pipe, split } from 'remeda'
 import { formatEther } from 'viem'
 import { useWriteContract } from 'wagmi'
@@ -146,6 +147,9 @@ interface AuctionProps {
 }
 
 const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
+  // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
+  const isIdle = useIdle(600_000)
+
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -258,14 +262,20 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     // Initial fetch on component mount
     fetchData()
 
-    // Setting up interval for fetching data every 12 seconds
-    const intervalId = setInterval(fetchData, 12_000)
+    // Declaring intervalId to use in cleanup and visibility/idleness checking
+    let intervalId: NodeJS.Timeout | null
 
+    // Setting up interval for fetching data every 12 seconds
+    if (!isIdle) {
+      intervalId = setInterval(fetchData, 12_000)
+    }
     // Cleanup function
     return () => {
-      clearInterval(intervalId)
+      if (intervalId) {
+        clearInterval(intervalId)
+      }
     }
-  }, [fetchData])
+  }, [fetchData, isIdle])
 
   const { writeContract } = useWriteContract()
 
