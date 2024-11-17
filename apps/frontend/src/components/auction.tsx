@@ -259,6 +259,12 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const { writeContract } = useWriteContract()
 
   const handleBuy = (blockNumber: number) => {
+    const args: readonly [bigint, bigint] = [
+      BigInt(blockNumber),
+      BigInt(nounId ?? 0),
+    ]
+    const value = price
+
     writeContract({
       abi: [
         {
@@ -282,8 +288,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       ] as const,
       address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
       functionName: 'buyNow',
-      args: [BigInt(blockNumber), BigInt(nounId ?? 0)],
-      value: price,
+      args,
+      value,
     })
   }
 
