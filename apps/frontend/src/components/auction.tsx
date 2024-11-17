@@ -237,18 +237,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     }
   }, [nounId, seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
 
-  const handleSearch = () => {
-    fetchData()
-  }
-
-  const handleReset = () => {
-    setSeedBackground('')
-    setSeedBody('')
-    setSeedAccessory('')
-    setSeedHead('')
-    setSeedGlasses('')
-  }
-
   useEffect(() => {
     // Initial fetch on component mount
     fetchData()
@@ -367,30 +355,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                     </option>
                   ))}
                 </select>
-                {/*<input
-                  type="number"
-                  value={limit}
-                  min={1}
-                  onChange={(e) => setLimit(Number(e.target.value))}
-                  placeholder="Limit"
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                />*/}
-                {/*<select
-                  value={cache}
-                  onChange={(e) => setCache(Number(e.target.value))}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Glasses</option>
-                  <option key={0} value={0}>
-                    No Cache
-                  </option>
-                  <option key={1} value={1}>
-                    Full Cache
-                  </option>
-                  <option key={2} value={2}>
-                    Block Cache
-                  </option>
-                </select>*/}
                 <span />
                 <input
                   type="number"
@@ -406,18 +370,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   placeholder="Price"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
-                {/*<button
-                  onClick={handleSearch}
-                  className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
-                >
-                  Search
-                </button>
-                <button
-                  onClick={handleReset}
-                  className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
-                >
-                  Reset
-                </button>*/}
               </div>
             </div>
             <div>
