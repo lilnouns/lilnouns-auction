@@ -83,6 +83,7 @@ const auctionContract = {
     },
   ] as const,
 }
+
 export const HomePage: NextPage = () => {
   const { i18n } = useLingui()
 
