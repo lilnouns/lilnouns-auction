@@ -22,7 +22,6 @@
     "@lingui/react": "4.11.4",
     "@prisma/adapter-d1": "5.22.0",
     "@prisma/client": "5.22.0",
-    "@shared/services": "workspace:*",
     "@shared/utilities": "workspace:*",
     "@tanstack/react-query": "5.60.5",
     "autoprefixer": "10.4.20",
