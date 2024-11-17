@@ -1,10 +1,7 @@
 import { getRequestContext } from '@cloudflare/next-on-pages'
-import { PrismaD1 } from '@prisma/adapter-d1'
-import { PrismaClient } from '@prisma/client'
 import { fetchBlocks } from '@shared/services'
 import { getNounSeedFromBlockHash } from '@shared/utilities'
 import { type NextRequest } from 'next/server'
-import { map, pipe } from 'remeda'
 
 export const runtime = 'edge'
 
@@ -45,7 +42,7 @@ export async function GET(
   const { env } = getRequestContext()
 
   const { searchParams } = request.nextUrl
-  const seedCache = Number(searchParams.get('cache'))
+  Number(searchParams.get('cache'))
   const seedLimit = Number(searchParams.get('limit') ?? '256')
   let seedOffset = Number(searchParams.get('offset') ?? '0')
   let blockOffset = 0
@@ -66,125 +63,40 @@ export async function GET(
     }
 
     let seedResults: SeedResult[] = []
-
-    switch (seedCache) {
-      case 0: {
-        const blocks = await fetchBlocks(env, blockOffset)
-
-        const newSeedResults = await Promise.all(
-          blocks.slice(0, 256).map(async (block) => {
-            try {
-              const seed = getNounSeedFromBlockHash(noun, block.id)
-              const isMatching = Object.entries(filterParams).every(
-                ([key, value]) =>
-                  value === undefined || seed[key as keyof Seed] === value,
-              )
-
-              return isMatching
-                ? { blockNumber: block.number, seed }
-                : { blockNumber: block.number, seed: undefined }
-            } catch (error) {
-              if (error instanceof Error) {
-                console.error(
-                  `Error generating seed for block ${block.id}:`,
-                  error.message,
-                )
-              } else {
-                console.error(
-                  `An unknown error occurred while generating seed for block ${block.id}:`,
-                  error,
-                )
-              }
-              return { blockNumber: block.number, seed: undefined }
-            }
-          }),
-        )
-
-        seedResults = [
-          ...seedResults,
-          ...newSeedResults.filter(
-            (result): result is SeedResult => result.seed !== undefined,
-          ),
-        ]
-
-        break
-      }
-      case 1: {
-        const adapter = new PrismaD1(env.DB)
-        const prisma = new PrismaClient({ adapter })
-
-        const seeds = await prisma.seed.findMany({
-          where: { nounId: noun, ...filterParams },
-          take: seedLimit,
-          include: { block: true },
-          orderBy: { block: { number: 'desc' } },
-        })
-
-        seedResults = pipe(
-          seeds,
-          map((seed) => ({
-            blockNumber: Number(seed.block.number),
-            seed: {
-              background: Number(seed.background),
-              body: Number(seed.body),
-              accessory: Number(seed.accessory),
-              head: Number(seed.head),
-              glasses: Number(seed.glasses),
-            },
-          })),
-        )
-
-        break
-      }
-      case 2: {
-        const adapter = new PrismaD1(env.DB)
-        const prisma = new PrismaClient({ adapter })
-
-        const blocks = await prisma.block.findMany({
-          orderBy: { number: 'desc' },
-          take: 200,
-        })
-
-        const newSeedResults = await Promise.all(
-          blocks.map(async (block) => {
-            const blockNumber = Number(block.number)
-            try {
-              const seed = getNounSeedFromBlockHash(noun, block.id)
-              const isMatching = Object.entries(filterParams).every(
-                ([key, value]) =>
-                  value === undefined || seed[key as keyof Seed] === value,
-              )
-
-              return isMatching
-                ? { blockNumber, seed }
-                : { blockNumber, seed: undefined }
-            } catch (error) {
-              if (error instanceof Error) {
-                console.error(
-                  `Error generating seed for block ${block.id}:`,
-                  error.message,
-                )
-              } else {
-                console.error(
-                  `An unknown error occurred while generating seed for block ${block.id}:`,
-                  error,
-                )
-              }
-              return { blockNumber, seed: undefined }
-            }
-          }),
-        )
-
-        seedResults = [
-          ...seedResults,
-          ...newSeedResults.filter(
-            (result): result is SeedResult => result.seed !== undefined,
-          ),
-        ]
-
-        break
-      }
-    }
+    const blocks = await fetchBlocks(env, blockOffset)
+    const newSeedResults = await Promise.all(
+      blocks.slice(0, 256).map(async (block) => {
+        try {
+          const seed = getNounSeedFromBlockHash(noun, block.id)
+          const isMatching = Object.entries(filterParams).every(
+            ([key, value]) =>
+              value === undefined || seed[key as keyof Seed] === value,
+          )
+          return isMatching
+            ? { blockNumber: block.number, seed }
+            : { blockNumber: block.number, seed: undefined }
+        } catch (error) {
+          if (error instanceof Error) {
+            console.error(
+              `Error generating seed for block ${block.id}:`,
+              error.message,
+            )
+          } else {
+            console.error(
+              `An unknown error occurred while generating seed for block ${block.id}:`,
+              error,
+            )
+          }
+          return { blockNumber: block.number, seed: undefined }
+        }
+      }),
+    )
+    seedResults = [
+      ...seedResults,
+      ...newSeedResults.filter(
+        (result): result is SeedResult => result.seed !== undefined,
+      ),
+    ]
 
     return new Response(
       JSON.stringify({
