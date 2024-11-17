@@ -1,12 +1,17 @@
-import Auction from '@/components/auction'
 import { WalletOptions } from '@/components/wallet-options'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { Address } from 'viem'
 import { useAccount, useReadContract } from 'wagmi'
+
+// Dynamically import Auction component
+const Auction = dynamic(() => import('@/components/auction'), {
+  suspense: true,
+})
 
 const auctionContract = {
   address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D' as Address,

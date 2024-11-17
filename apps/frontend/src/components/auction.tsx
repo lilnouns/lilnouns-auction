@@ -1,11 +1,38 @@
 import { buildSVG } from '@lilnounsdao/sdk'
-import { ImageData, getNounData } from '@shared/utilities'
+import {
+  ImageData,
+  getNounData,
+  getNounSeedFromBlockHash,
+} from '@shared/utilities'
+import { gql, request } from 'graphql-request'
 import React, { useCallback, useEffect, useState } from 'react'
+import { useIdle } from 'react-use'
 import { join, map, pipe, split } from 'remeda'
 import { formatEther } from 'viem'
 import { useWriteContract } from 'wagmi'
 
 const { palette } = ImageData
+
+interface BlockData {
+  blocks?: Block[]
+}
+
+export interface Block {
+  id: string
+  number: number
+  timestamp: number
+  parentHash?: string
+  author?: string
+  difficulty: bigint
+  totalDifficulty: bigint
+  gasUsed: bigint
+  gasLimit: bigint
+  receiptsRoot: string
+  transactionsRoot: string
+  stateRoot: string
+  size: bigint
+  unclesHash: string
+}
 
 interface Seed {
   accessory: number
@@ -20,8 +47,58 @@ interface SeedData {
   seed: Seed
 }
 
-interface ApiResponse {
-  seeds: SeedData[]
+export async function fetchBlocks(
+  offset: number,
+  limit: number,
+  after?: number,
+  before?: number,
+): Promise<Block[]> {
+  let subgraphUrl = process.env.NEXT_PUBLIC_ETHEREUM_BLOCKS_SUBGRAPH_URL
+
+  if (!subgraphUrl) {
+    throw new Error('Ethereum Blocks Subgraph URL is not configured')
+  }
+
+  const query = gql`
+    query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
+      blocks(
+        skip: $skip
+        first: $first
+        orderBy: number
+        orderDirection: desc
+        where: $filter
+      ) {
+        id
+        number
+        timestamp
+        parentHash
+        author
+        difficulty
+        totalDifficulty
+        gasUsed
+        gasLimit
+        receiptsRoot
+        transactionsRoot
+        stateRoot
+        size
+        unclesHash
+      }
+    }
+  `
+
+  const filter: Record<string, unknown> = {}
+  if (after !== null) filter.number_gt = after
+  if (before !== null) filter.number_lt = before
+
+  const variables = {
+    skip: offset,
+    first: limit,
+    filter,
+  }
+
+  const { blocks } = await request<BlockData>(subgraphUrl, query, variables)
+
+  return blocks ?? []
 }
 
 /**
@@ -70,6 +147,9 @@ interface AuctionProps {
 }
 
 const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
+  // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
+  const isIdle = useIdle(600_000)
+
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -79,8 +159,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [seedAccessory, setSeedAccessory] = useState<string | undefined>()
   const [seedHead, setSeedHead] = useState<string | undefined>()
   const [seedGlasses, setSeedGlasses] = useState<string | undefined>()
-  // const [limit, setLimit] = useState<number>(8)
-  // const [cache, setCache] = useState<number>(0)
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -88,29 +166,75 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     return btoa(svgBinary)
   }, [])
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     if (!nounId) return
 
-    setIsLoading(true)
+    setIsLoading(false)
     try {
-      const queryParams = new URLSearchParams()
-      // queryParams.append('cache', String(cache))
-      // queryParams.append('limit', limit.toString())
-      if (seedBackground) queryParams.append('background', seedBackground)
-      if (seedBody) queryParams.append('body', seedBody)
-      if (seedAccessory) queryParams.append('accessory', seedAccessory)
-      if (seedHead) queryParams.append('head', seedHead)
-      if (seedGlasses) queryParams.append('glasses', seedGlasses)
+      let blockOffset = 0
+      let blockLimit = 256
 
-      const response = await fetch(
-        `/api/seeds/${nounId}?${queryParams.toString()}`,
-      )
-      if (!response.ok) {
-        throw new Error('Failed to fetch seed data')
+      const filterParams: Partial<Seed> = {
+        background:
+          seedBackground && !Number.isNaN(Number(seedBackground))
+            ? Number(seedBackground)
+            : undefined,
+        body:
+          seedBody && !Number.isNaN(Number(seedBody))
+            ? Number(seedBody)
+            : undefined,
+        accessory:
+          seedAccessory && !Number.isNaN(Number(seedAccessory))
+            ? Number(seedAccessory)
+            : undefined,
+        head:
+          seedHead && !Number.isNaN(Number(seedHead))
+            ? Number(seedHead)
+            : undefined,
+        glasses:
+          seedGlasses && !Number.isNaN(Number(seedGlasses))
+            ? Number(seedGlasses)
+            : undefined,
       }
 
-      const data: ApiResponse = await response.json()
-      setSeedsData(data.seeds)
+      let seedResults: SeedData[] = []
+      const blocks = await fetchBlocks(blockOffset, blockLimit)
+      const newSeedResults = await Promise.all(
+        blocks.map(async (block) => {
+          try {
+            const seed = getNounSeedFromBlockHash(Number(nounId), block.id)
+            const isMatching = Object.entries(filterParams).every(
+              ([key, value]) =>
+                value === undefined || seed[key as keyof Seed] === value,
+            )
+            return isMatching
+              ? { blockNumber: block.number, seed }
+              : { blockNumber: block.number, seed: undefined }
+          } catch (error) {
+            if (error instanceof Error) {
+              console.error(
+                `Error generating seed for block ${block.id}:`,
+                error.message,
+              )
+            } else {
+              console.error(
+                `An unknown error occurred while generating seed for block ${block.id}:`,
+                error,
+              )
+            }
+            return { blockNumber: block.number, seed: undefined }
+          }
+        }),
+      )
+
+      seedResults = [
+        ...seedResults,
+        ...newSeedResults.filter(
+          (result): result is SeedData => result.seed !== undefined,
+        ),
+      ]
+
+      setSeedsData(seedResults)
     } catch (error_) {
       if (error_ instanceof Error) {
         setError(error_.message)
@@ -120,7 +244,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [nounId, seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
 
   const handleSearch = () => {
     fetchData()
@@ -132,28 +256,26 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     setSeedAccessory('')
     setSeedHead('')
     setSeedGlasses('')
-    // setLimit(8)
   }
 
   useEffect(() => {
+    // Initial fetch on component mount
     fetchData()
-  }, [nounId])
 
-  // useEffect(() => {
-  //   const selectedValues = [
-  //     seedBackground,
-  //     seedBody,
-  //     seedAccessory,
-  //     seedHead,
-  //     seedGlasses,
-  //   ].filter(Boolean)
-  //
-  //   if (selectedValues.length > 1) {
-  //     setLimit(1)
-  //   } else {
-  //     setLimit(8)
-  //   }
-  // }, [seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
+    // Declaring intervalId to use in cleanup and visibility/idleness checking
+    let intervalId: NodeJS.Timeout | null
+
+    // Setting up interval for fetching data every 12 seconds
+    if (!isIdle) {
+      intervalId = setInterval(fetchData, 12_000)
+    }
+    // Cleanup function
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId)
+      }
+    }
+  }, [fetchData, isIdle])
 
   const { writeContract } = useWriteContract()
 
@@ -293,7 +415,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   placeholder="Price"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
-                <button
+                {/*<button
                   onClick={handleSearch}
                   className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
                 >
@@ -304,7 +426,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
                 >
                   Reset
-                </button>
+                </button>*/}
               </div>
             </div>
             <div>
