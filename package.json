@@ -37,7 +37,7 @@
     "prettier-plugin-organize-imports": "4.0.0",
     "prettier-plugin-packagejson": "2.5.3",
     "prettier-plugin-prisma": "5.0.0",
-    "prettier-plugin-tailwindcss": "0.6.8",
+    "prettier-plugin-tailwindcss": "0.6.9",
     "prettier-plugin-toml": "2.0.1",
     "rimraf": "6.0.1"
   },
