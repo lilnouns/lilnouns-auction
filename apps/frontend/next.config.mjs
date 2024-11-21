@@ -1,5 +1,5 @@
 import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev'
-/** @type {import('next').NextConfig} */
+
 const nextConfig = {
   swcMinify: true,
   images: {
@@ -35,6 +35,12 @@ const nextConfig = {
     // Important: return the modified config
     return config
   },
+  rewrites: () => [
+    {
+      source: '/subgraphs/blocks',
+      destination: process.env.ETHEREUM_BLOCKS_SUBGRAPH_URL,
+    },
+  ],
 }
 
 if (process.env.NODE_ENV === 'development') {
