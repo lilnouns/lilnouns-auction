@@ -313,7 +313,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Background</option>
-                  {ImageData.bgcolors.map((color, index) => (
+                  {ImageData.bgcolors.map((color: string, index: number) => (
                     <option key={index} value={index.toString()}>
                       {color}
                     </option>
@@ -325,7 +325,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Body</option>
-                  {ImageData.images.bodies.map((body, index) => (
+                  {ImageData.images.bodies.map((body: any, index: number) => (
                     <option key={index} value={index.toString()}>
                       {formatTraitName(body.filename)}
                     </option>
@@ -337,11 +337,13 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Accessory</option>
-                  {ImageData.images.accessories.map((accessory, index) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(accessory.filename)}
-                    </option>
-                  ))}
+                  {ImageData.images.accessories.map(
+                    (accessory: any, index: number) => (
+                      <option key={index} value={index.toString()}>
+                        {formatTraitName(accessory.filename)}
+                      </option>
+                    ),
+                  )}
                 </select>
                 <select
                   value={seedHead}
@@ -349,7 +351,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Head</option>
-                  {ImageData.images.heads.map((head, index) => (
+                  {ImageData.images.heads.map((head: any, index: number) => (
                     <option key={index} value={index.toString()}>
                       {formatTraitName(head.filename)}
                     </option>
@@ -361,11 +363,13 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Glasses</option>
-                  {ImageData.images.glasses.map((glasses, index) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(glasses.filename)}
-                    </option>
-                  ))}
+                  {ImageData.images.glasses.map(
+                    (glasses: any, index: number) => (
+                      <option key={index} value={index.toString()}>
+                        {formatTraitName(glasses.filename)}
+                      </option>
+                    ),
+                  )}
                 </select>
                 <span />
                 <input
