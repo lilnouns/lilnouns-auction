@@ -48,13 +48,14 @@ interface SeedData {
   seed: Seed
 }
 
-export async function fetchBlocks(
+async function fetchBlocks(
   offset: number,
   limit: number,
   after?: number,
   before?: number,
 ): Promise<Block[]> {
-  let subgraphUrl = '/subgraphs/blocks'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''
+  const subgraphUrl = `${baseUrl}/subgraphs/blocks`
 
   const query = gql`
     query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
@@ -146,6 +147,8 @@ interface AuctionProps {
 const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
   const isIdle = useIdle(600_000)
+
+  const router = useRouter()
 
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
@@ -253,7 +256,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     }
   }, [fetchData, isIdle])
 
-  const router = useRouter()
   const { writeContract } = useWriteContract({
     mutation: {
       onSuccess: () => router.reload(),
