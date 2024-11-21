@@ -56,10 +56,6 @@ export async function fetchBlocks(
 ): Promise<Block[]> {
   let subgraphUrl = '/subgraphs/blocks'
 
-  if (!subgraphUrl) {
-    throw new Error('Ethereum Blocks Subgraph URL is not configured')
-  }
-
   const query = gql`
     query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
       blocks(
