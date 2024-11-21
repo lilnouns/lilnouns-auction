@@ -54,7 +54,7 @@ export async function fetchBlocks(
   after?: number,
   before?: number,
 ): Promise<Block[]> {
-  let subgraphUrl = process.env.NEXT_PUBLIC_ETHEREUM_BLOCKS_SUBGRAPH_URL
+  let subgraphUrl = '/subgraphs/blocks'
 
   if (!subgraphUrl) {
     throw new Error('Ethereum Blocks Subgraph URL is not configured')
