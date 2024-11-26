@@ -18,8 +18,8 @@ msgid "Lil Nouns Auction"
 msgstr "Lil Nouns Auction"
 
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Pool"
-msgstr "Noun {nounId} | Lil Nouns Pool"
+msgid "Noun {nounId} | Lil Nouns Auction"
+msgstr "Noun {nounId} | Lil Nouns Auction"
 
 #: src/components/locale-switcher.tsx
 msgid "Open options"
