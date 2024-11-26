@@ -123,10 +123,10 @@ export const HomePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{t(i18n)`Lil Nouns Pool`}</title>
+        <title>{t(i18n)`Lil Nouns Auction`}</title>
         <meta
           name="description"
-          content={`This demo site showcases the seamless integration of these powerful tools.`}
+          content={`Lil Nouns Auction: your chance to choose the perfect traits from a pool of 256 Lil Nouns!`}
         />
       </Head>
 
