@@ -14,7 +14,7 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 
 #: src/components/home-page.tsx
-msgid "Lil Nouns Pool"
+msgid "Lil Nouns Auction"
 msgstr ""
 
 #: src/components/home-page.tsx
