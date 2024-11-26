@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.54] - 2024-11-26
+
+### Bug Fixes
+
+- Update document title for noun page
+- Update translation for auction title
+
 ## [1.0.0-alpha.53] - 2024-11-26
 
 ### Bug Fixes
