@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.52] - 2024-11-26
+
+### Bug Fixes
+
+- Update title and meta description
+
 ## [1.0.0-alpha.51] - 2024-11-26
 
 ### Features
