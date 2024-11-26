@@ -108,7 +108,7 @@ export const HomePage: NextPage = () => {
 
   useEffect(() => {
     if (nounId) {
-      document.title = t(i18n)`Noun ${nounId} | Lil Nouns Pool`
+      document.title = t(i18n)`Noun ${nounId} | Lil Nouns Auction`
 
       const metaDescription = document.querySelector('meta[name="description"]')
       if (metaDescription) {
