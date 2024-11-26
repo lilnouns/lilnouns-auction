@@ -14,8 +14,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/components/home-page.tsx
-msgid "Lil Nouns Pool"
-msgstr "Lil Nouns Pool"
+msgid "Lil Nouns Auction"
+msgstr "Lil Nouns Auction"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Pool"
