@@ -10,13 +10,13 @@ const buildEslintCommand = (filenames) => {
 export default {
   // Run Next.js lint only on files in the Next.js app
   'apps/frontend/**/*.{js,jsx,ts,tsx}': [
-    buildEslintCommand,
     'prettier --write',
+    buildEslintCommand,
   ],
 
   // Use ESLint and Prettier only on apps (excluding frontend) and all packages
-  'apps/!(frontend)/**/*.{js,jsx,ts,tsx}': ['eslint --fix', 'prettier --write'],
-  'packages/**/*.{js,jsx,ts,tsx}': ['eslint --fix', 'prettier --write'],
+  'apps/!(frontend)/**/*.{js,jsx,ts,tsx}': ['prettier --write', 'eslint --fix'],
+  'packages/**/*.{js,jsx,ts,tsx}': ['prettier --write', 'eslint --fix'],
 
   '*.{md,mdx}': ['prettier --write'],
   '*.{json,yaml,yml}': ['prettier --write'],

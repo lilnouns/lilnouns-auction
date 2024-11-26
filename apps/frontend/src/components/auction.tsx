@@ -1,11 +1,39 @@
 import { buildSVG } from '@lilnounsdao/sdk'
-import { ImageData, getNounData } from '@shared/utilities'
+import {
+  ImageData,
+  getNounData,
+  getNounSeedFromBlockHash,
+} from '@shared/utilities'
+import { gql, request } from 'graphql-request'
+import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
+import { useIdle } from 'react-use'
 import { join, map, pipe, split } from 'remeda'
 import { formatEther } from 'viem'
 import { useWriteContract } from 'wagmi'
 
 const { palette } = ImageData
+
+interface BlockData {
+  blocks?: Block[]
+}
+
+export interface Block {
+  id: string
+  number: number
+  timestamp: number
+  parentHash?: string
+  author?: string
+  difficulty: bigint
+  totalDifficulty: bigint
+  gasUsed: bigint
+  gasLimit: bigint
+  receiptsRoot: string
+  transactionsRoot: string
+  stateRoot: string
+  size: bigint
+  unclesHash: string
+}
 
 interface Seed {
   accessory: number
@@ -20,8 +48,58 @@ interface SeedData {
   seed: Seed
 }
 
-interface ApiResponse {
-  seeds: SeedData[]
+export async function fetchBlocks(
+  offset: number,
+  limit: number,
+  after?: number,
+  before?: number,
+): Promise<Block[]> {
+  let subgraphUrl = process.env.NEXT_PUBLIC_ETHEREUM_BLOCKS_SUBGRAPH_URL
+
+  if (!subgraphUrl) {
+    throw new Error('Ethereum Blocks Subgraph URL is not configured')
+  }
+
+  const query = gql`
+    query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
+      blocks(
+        skip: $skip
+        first: $first
+        orderBy: number
+        orderDirection: desc
+        where: $filter
+      ) {
+        id
+        number
+        timestamp
+        parentHash
+        author
+        difficulty
+        totalDifficulty
+        gasUsed
+        gasLimit
+        receiptsRoot
+        transactionsRoot
+        stateRoot
+        size
+        unclesHash
+      }
+    }
+  `
+
+  const filter: Record<string, unknown> = {}
+  if (after !== null) filter.number_gt = after
+  if (before !== null) filter.number_lt = before
+
+  const variables = {
+    skip: offset,
+    first: limit,
+    filter,
+  }
+
+  const { blocks } = await request<BlockData>(subgraphUrl, query, variables)
+
+  return blocks ?? []
 }
 
 /**
@@ -70,6 +148,9 @@ interface AuctionProps {
 }
 
 const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
+  // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
+  const isIdle = useIdle(600_000)
+
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [error, setError] = useState<string | undefined>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -79,8 +160,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [seedAccessory, setSeedAccessory] = useState<string | undefined>()
   const [seedHead, setSeedHead] = useState<string | undefined>()
   const [seedGlasses, setSeedGlasses] = useState<string | undefined>()
-  // const [limit, setLimit] = useState<number>(8)
-  // const [cache, setCache] = useState<number>(0)
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -88,29 +167,66 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     return btoa(svgBinary)
   }, [])
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     if (!nounId) return
+    setIsLoading(false)
 
-    setIsLoading(true)
+    let blockOffset = 0
+    let blockLimit = 256
+
+    const parseSeedParameter = (seedParam?: string): number | undefined =>
+      seedParam && !Number.isNaN(Number(seedParam))
+        ? Number(seedParam)
+        : undefined
+
+    const filterParams: Partial<Seed> = {
+      background: parseSeedParameter(seedBackground),
+      body: parseSeedParameter(seedBody),
+      accessory: parseSeedParameter(seedAccessory),
+      head: parseSeedParameter(seedHead),
+      glasses: parseSeedParameter(seedGlasses),
+    }
+
+    let seedResults: SeedData[] = []
+
     try {
-      const queryParams = new URLSearchParams()
-      // queryParams.append('cache', String(cache))
-      // queryParams.append('limit', limit.toString())
-      if (seedBackground) queryParams.append('background', seedBackground)
-      if (seedBody) queryParams.append('body', seedBody)
-      if (seedAccessory) queryParams.append('accessory', seedAccessory)
-      if (seedHead) queryParams.append('head', seedHead)
-      if (seedGlasses) queryParams.append('glasses', seedGlasses)
-
-      const response = await fetch(
-        `/api/seeds/${nounId}?${queryParams.toString()}`,
+      const blocks = await fetchBlocks(blockOffset, blockLimit)
+      const newSeedResults = await Promise.all(
+        blocks.map(async (block) => {
+          try {
+            const seed = getNounSeedFromBlockHash(Number(nounId), block.id)
+            const isMatching = Object.entries(filterParams).every(
+              ([key, value]) =>
+                value === undefined || seed[key as keyof Seed] === value,
+            )
+            return isMatching
+              ? { blockNumber: block.number, seed }
+              : { blockNumber: block.number, seed: undefined }
+          } catch (error) {
+            if (error instanceof Error) {
+              console.error(
+                `Error generating seed for block ${block.id}:`,
+                error.message,
+              )
+            } else {
+              console.error(
+                `An unknown error occurred while generating seed for block ${block.id}:`,
+                error,
+              )
+            }
+            return { blockNumber: block.number, seed: undefined }
+          }
+        }),
       )
-      if (!response.ok) {
-        throw new Error('Failed to fetch seed data')
-      }
 
-      const data: ApiResponse = await response.json()
-      setSeedsData(data.seeds)
+      seedResults = [
+        ...seedResults,
+        ...newSeedResults.filter(
+          (result): result is SeedData => result.seed !== undefined,
+        ),
+      ]
+
+      setSeedsData(seedResults)
     } catch (error_) {
       if (error_ instanceof Error) {
         setError(error_.message)
@@ -120,44 +236,41 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     } finally {
       setIsLoading(false)
     }
-  }
-
-  const handleSearch = () => {
-    fetchData()
-  }
-
-  const handleReset = () => {
-    setSeedBackground('')
-    setSeedBody('')
-    setSeedAccessory('')
-    setSeedHead('')
-    setSeedGlasses('')
-    // setLimit(8)
-  }
+  }, [nounId, seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
 
   useEffect(() => {
+    // Initial fetch on component mount
     fetchData()
-  }, [nounId])
 
-  // useEffect(() => {
-  //   const selectedValues = [
-  //     seedBackground,
-  //     seedBody,
-  //     seedAccessory,
-  //     seedHead,
-  //     seedGlasses,
-  //   ].filter(Boolean)
-  //
-  //   if (selectedValues.length > 1) {
-  //     setLimit(1)
-  //   } else {
-  //     setLimit(8)
-  //   }
-  // }, [seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
+    // Declaring intervalId to use in cleanup and visibility/idleness checking
+    let intervalId: NodeJS.Timeout | null
 
-  const { writeContract } = useWriteContract()
+    // Setting up interval for fetching data every 12 seconds
+    if (!isIdle) {
+      intervalId = setInterval(fetchData, 12_000)
+    }
+    // Cleanup function
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId)
+      }
+    }
+  }, [fetchData, isIdle])
+
+  const router = useRouter()
+  const { writeContract } = useWriteContract({
+    mutation: {
+      onSuccess: () => router.reload(),
+    },
+  })
 
   const handleBuy = (blockNumber: number) => {
+    const args: readonly [bigint, bigint] = [
+      BigInt(blockNumber),
+      BigInt(nounId ?? 0),
+    ]
+    const value = price
+
     writeContract({
       abi: [
         {
@@ -181,8 +294,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       ] as const,
       address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
       functionName: 'buyNow',
-      args: [BigInt(blockNumber), BigInt(nounId ?? 0)],
-      value: price,
+      args,
+      value,
     })
   }
 
@@ -200,7 +313,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Background</option>
-                  {ImageData.bgcolors.map((color, index) => (
+                  {ImageData.bgcolors.map((color: string, index: number) => (
                     <option key={index} value={index.toString()}>
                       {color}
                     </option>
@@ -212,7 +325,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Body</option>
-                  {ImageData.images.bodies.map((body, index) => (
+                  {ImageData.images.bodies.map((body: any, index: number) => (
                     <option key={index} value={index.toString()}>
                       {formatTraitName(body.filename)}
                     </option>
@@ -224,11 +337,13 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Accessory</option>
-                  {ImageData.images.accessories.map((accessory, index) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(accessory.filename)}
-                    </option>
-                  ))}
+                  {ImageData.images.accessories.map(
+                    (accessory: any, index: number) => (
+                      <option key={index} value={index.toString()}>
+                        {formatTraitName(accessory.filename)}
+                      </option>
+                    ),
+                  )}
                 </select>
                 <select
                   value={seedHead}
@@ -236,7 +351,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Head</option>
-                  {ImageData.images.heads.map((head, index) => (
+                  {ImageData.images.heads.map((head: any, index: number) => (
                     <option key={index} value={index.toString()}>
                       {formatTraitName(head.filename)}
                     </option>
@@ -248,36 +363,14 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 >
                   <option value="">Select Glasses</option>
-                  {ImageData.images.glasses.map((glasses, index) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(glasses.filename)}
-                    </option>
-                  ))}
+                  {ImageData.images.glasses.map(
+                    (glasses: any, index: number) => (
+                      <option key={index} value={index.toString()}>
+                        {formatTraitName(glasses.filename)}
+                      </option>
+                    ),
+                  )}
                 </select>
-                {/*<input
-                  type="number"
-                  value={limit}
-                  min={1}
-                  onChange={(e) => setLimit(Number(e.target.value))}
-                  placeholder="Limit"
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                />*/}
-                {/*<select
-                  value={cache}
-                  onChange={(e) => setCache(Number(e.target.value))}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Glasses</option>
-                  <option key={0} value={0}>
-                    No Cache
-                  </option>
-                  <option key={1} value={1}>
-                    Full Cache
-                  </option>
-                  <option key={2} value={2}>
-                    Block Cache
-                  </option>
-                </select>*/}
                 <span />
                 <input
                   type="number"
@@ -293,18 +386,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   placeholder="Price"
                   className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
                 />
-                <button
-                  onClick={handleSearch}
-                  className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
-                >
-                  Search
-                </button>
-                <button
-                  onClick={handleReset}
-                  className="w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
-                >
-                  Reset
-                </button>
               </div>
             </div>
             <div>

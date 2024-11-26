@@ -14,11 +14,11 @@
     "@lilnounsdao/assets": "0.5.15",
     "@lilnounsdao/sdk": "0.3.15",
     "@ethersproject/solidity": "5.7.0",
-    "viem": "2.21.40"
+    "viem": "2.21.50"
   },
   "devDependencies": {
-    "typescript": "5.6.3",
-    "vite": "5.4.10",
+    "typescript": "5.7.2",
+    "vite": "5.4.11",
     "vite-plugin-dts": "4.3.0"
   }
 }

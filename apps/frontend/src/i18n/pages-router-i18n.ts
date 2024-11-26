@@ -10,7 +10,7 @@ export async function loadCatalog(locale: string) {
 }
 
 export function useLinguiInit(messages: Messages) {
-  const isClient = typeof window !== 'undefined'
+  const isClient = globalThis.window !== undefined
   const pathname = usePathname()
   const locale = pathname?.split('/')[1] ?? 'en'
 

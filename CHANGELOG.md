@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.51] - 2024-11-26
+
+### Features
+
+- Add GraphQL schema for `blocks`
+- Add block fetching and filtering
+- Add idle state detection and pause data fetch
+- Reload page on contract write success
+
+### Refactor
+
+- Use `globalThis.window` for client check
+- Remove Prisma integration
+- Simplify seed generation logic
+- Remove unused variable `seedCache`
+- Dynamically import `Auction` component
+- Remove deprecated noun seed route
+- Simplify seed parameter parsing
+- Simplify `fetchData` logic
+- Remove unused search and reset handlers
+- Optimize `handleBuy` arguments
+- Add types to `map` function parameters
+
+### Documentation
+
+- Switch license from Apache to GPL
+- Update badges and add project status
+
+### Miscellaneous Tasks
+
+- Update ESLint rules
+- Remove scheduler service
+- Remove deploy workflow
+- Remove `prebuild` script
+- Remove services package and files
+
+### Styling
+
+- Reorder lint commands
+- Add spacing for readability
+
 ## [1.0.0-alpha.50] - 2024-11-04
 
 ### Bug Fixes

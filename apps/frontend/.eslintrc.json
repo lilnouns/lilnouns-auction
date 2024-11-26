@@ -2,13 +2,18 @@
   "extends": [
     "next",
     "next/core-web-vitals",
+    "plugin:lingui/recommended",
     "plugin:tailwindcss/recommended",
     "plugin:jsdoc/recommended-typescript",
     "plugin:eslint-plugin-next-on-pages/recommended",
     "../../.eslintrc.json"
   ],
   "rules": {
-    "jsdoc/tag-lines": ["warn", "always", { "startLines": 1 }],
+    "jsdoc/check-param-names": "off",
+    "jsdoc/require-jsdoc": "off",
+    "jsdoc/require-param-description": "off",
+    "jsdoc/require-returns": "off",
+    "jsdoc/tag-lines": "off",
     "unicorn/prevent-abbreviations": "off"
   },
   "plugins": ["lingui", "eslint-plugin-next-on-pages"]
