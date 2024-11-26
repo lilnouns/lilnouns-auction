@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.53] - 2024-11-26
+
+### Bug Fixes
+
+- Update translation text to `Lil Nouns Auction`
+
 ## [1.0.0-alpha.52] - 2024-11-26
 
 ### Bug Fixes
