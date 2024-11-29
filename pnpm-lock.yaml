@@ -33,8 +33,8 @@ importers:
         specifier: 50.6.0
         version: 50.6.0(eslint@8.57.1)
       eslint-plugin-lingui:
-        specifier: 0.8.0
-        version: 0.8.0(eslint@8.57.1)(typescript@5.7.2)
+        specifier: 0.8.1
+        version: 0.8.1(eslint@8.57.1)(typescript@5.7.2)
       eslint-plugin-next-on-pages:
         specifier: 1.13.5
         version: 1.13.5(eslint@8.57.1)
@@ -4521,8 +4521,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-lingui@0.8.0:
-    resolution: {integrity: sha512-GUg3hHkzc08DHqW49Oydti5SKNAlOFlSmLGigTTieXjUntjyYDT3WFyrhHRZKEHik34zTbrPjEHnvQdGyjNynA==}
+  eslint-plugin-lingui@0.8.1:
+    resolution: {integrity: sha512-z9ohxNkdaEzr0UCtZQGYF/7UgHmdTraylw2dabSzbbGovEPnsLZf1LOu9mOhGh5r0BDm5MsQyZjeTCTlFWAA8g==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: ^8.37.0 || ^9.0.0
@@ -13888,7 +13888,7 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.0
 
-  eslint-plugin-lingui@0.8.0(eslint@8.57.1)(typescript@5.7.2):
+  eslint-plugin-lingui@0.8.1(eslint@8.57.1)(typescript@5.7.2):
     dependencies:
       '@typescript-eslint/utils': 8.14.0(eslint@8.57.1)(typescript@5.7.2)
       eslint: 8.57.1
