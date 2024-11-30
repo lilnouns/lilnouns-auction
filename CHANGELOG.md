@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.55] - 2024-11-30
+
+### Miscellaneous Tasks
+
+- Include semver-patch in dependabot config
+- Add `prestart` and `start` commands
+
 ## [1.0.0-alpha.54] - 2024-11-26
 
 ### Bug Fixes
