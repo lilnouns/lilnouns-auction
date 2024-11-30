@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.0.0-alpha.55",
+  "version": "1.0.0-alpha.56",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -23,10 +23,8 @@
     "husky": "9.1.7",
     "lint-staged": "15.2.10",
     "eslint": "8.57.1",
-    "eslint-config-next": "14.2.18",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-lingui": "0.8.1",
-    "eslint-plugin-next-on-pages": "1.13.6",
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-tailwindcss": "3.17.5",
     "eslint-plugin-unicorn": "56.0.1",

@@ -43,7 +43,7 @@
     "wagmi": "2.13.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.13.5",
+    "@cloudflare/next-on-pages": "1.13.6",
     "@cloudflare/workers-types": "4.20241127.0",
     "@lingui/cli": "4.11.4",
     "@lingui/conf": "4.11.4",
@@ -63,6 +63,8 @@
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "@vitejs/plugin-react": "4.3.4",
+    "eslint-config-next": "14.2.18",
+    "eslint-plugin-next-on-pages": "1.13.6",
     "is-ci": "3.0.1",
     "jsdom": "25.0.0",
     "prisma": "6.0.0",
