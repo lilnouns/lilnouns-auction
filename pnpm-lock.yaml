@@ -174,8 +174,8 @@ importers:
         version: 2.13.0(@tanstack/query-core@5.61.5)(@tanstack/react-query@5.61.5(react@18.3.1))(@types/react@18.3.12)(bufferutil@4.0.8)(react-dom@18.3.1(react@18.3.1))(react-native@0.75.4(@babel/core@7.26.0)(@babel/preset-env@7.25.7(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(react@18.3.1)(typescript@5.7.2)(utf-8-validate@5.0.10))(react@18.3.1)(typescript@5.7.2)(utf-8-validate@5.0.10)(viem@2.21.50(bufferutil@4.0.8)(typescript@5.7.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8)
     devDependencies:
       '@cloudflare/next-on-pages':
-        specifier: 1.13.2
-        version: 1.13.2(@cloudflare/workers-types@4.20241127.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vercel@37.4.2)(wrangler@3.91.0(@cloudflare/workers-types@4.20241127.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10))
+        specifier: 1.13.6
+        version: 1.13.6(@cloudflare/workers-types@4.20241127.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vercel@37.4.2)(wrangler@3.91.0(@cloudflare/workers-types@4.20241127.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
         specifier: 4.20241127.0
         version: 4.20241127.0
@@ -1409,10 +1409,10 @@ packages:
       }
     engines: { node: '>=16.13' }
 
-  '@cloudflare/next-on-pages@1.13.2':
+  '@cloudflare/next-on-pages@1.13.6':
     resolution:
       {
-        integrity: sha512-lIri+zuxj6SKqIlewOoC9g9dD5+GbUMAXRrkhApmWGekE0PFlEAR7tHHDkbMXix4ctp7K4lPBY/wWUd8oh+VtQ==,
+        integrity: sha512-7SrvJ5x5+gKYXRGaKqJU8uE205snzQ07mzYLoauL0+yUQo5AJ6ZdRuwg4OVa+duKdDsoGbaD7pMEn7SDK7XAxg==,
       }
     hasBin: true
     peerDependencies:
@@ -15220,7 +15220,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.2(@cloudflare/workers-types@4.20241127.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vercel@37.4.2)(wrangler@3.91.0(@cloudflare/workers-types@4.20241127.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.6(@cloudflare/workers-types@4.20241127.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10)(vercel@37.4.2)(wrangler@3.91.0(@cloudflare/workers-types@4.20241127.0)(bufferutil@4.0.8)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.14.0
       ast-types: 0.14.2
