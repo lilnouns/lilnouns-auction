@@ -61,7 +61,8 @@ export async function fetchBlocks(
   after?: number,
   before?: number,
 ): Promise<Block[]> {
-  let subgraphUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/subgraphs/blocks`
+  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? globalThis.location.origin
+  let subgraphUrl = `${siteUrl}/subgraphs/blocks`
 
   const query = gql`
     query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
@@ -129,7 +130,7 @@ const SVGImage: React.FC<{ svgBase64: string }> = ({ svgBase64 }) => (
   <img
     src={`data:image/svg+xml;base64,${svgBase64}`}
     alt="Noun SVG"
-    className="w-full"
+    className="w-full rounded-t-lg bg-gray-50"
   />
 )
 
@@ -411,7 +412,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                       key={blockNumber}
                       className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white p-0 text-center shadow dark:border-gray-700 dark:bg-gray-800"
                     >
-                      <div className="flex flex-1 flex-col items-center p-6">
+                      <div className="flex flex-1 flex-col items-center pb-6">
                         <SVGImage svgBase64={renderSVG(seed)} />
                         <div className="mt-4 text-sm font-medium text-gray-900 dark:text-gray-300">
                           Block Number: {blockNumber}
