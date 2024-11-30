@@ -5,6 +5,8 @@
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
     "dev": "turbo run dev",
+    "prestart": "pnpm run build",
+    "start": "pnpm run --recursive --parallel --if-present start",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
