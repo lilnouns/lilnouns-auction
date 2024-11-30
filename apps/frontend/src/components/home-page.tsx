@@ -85,6 +85,8 @@ const auctionContract = {
 }
 
 export const HomePage: NextPage = () => {
+  const [isClient, setIsClient] = useState(false)
+
   const { i18n } = useLingui()
 
   const { isConnected } = useAccount()
@@ -119,6 +121,12 @@ export const HomePage: NextPage = () => {
       }
     }
   }, [nounId, i18n])
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (!isClient) return
 
   return (
     <>
