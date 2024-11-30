@@ -35,6 +35,12 @@ const nextConfig = {
     // Important: return the modified config
     return config
   },
+  rewrites: async () => [
+    {
+      source: "/subgraphs/blocks",
+      destination: process.env.BLOCKS_SUBGRAPH_URL,
+    }
+  ]
 }
 
 if (process.env.NODE_ENV === 'development') {
