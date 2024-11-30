@@ -16,7 +16,7 @@ const sepoliaRpcUrl = process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL
 
 const queryClient = new QueryClient()
 
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ?? ''
+const projectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID ?? ''
 
 const config = createConfig({
   chains: [mainnet, sepolia],
