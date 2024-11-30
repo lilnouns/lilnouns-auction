@@ -2,13 +2,15 @@
 name = "lilnouns-auction"
 pages_build_output_dir = ".vercel/output/static"
 compatibility_date = "2024-11-11"
-compatibility_flags = [ "nodejs_compat" ]
+compatibility_flags = ["nodejs_compat"]
 
 [placement]
 mode = "off"
 
 [vars]
 NODE_VERSION = "22.3.0"
+NEXT_PUBLIC_SITE_URL = "http://localhost:8788"
+NEXT_PUBLIC_CHAIN_ID = 11155111
 
 [env.preview]
 compatibility_date = "2024-11-11"
@@ -19,7 +21,7 @@ mode = "smart"
 [env.preview.vars]
 NODE_VERSION = "22.3.0"
 NEXT_PUBLIC_SITE_URL = "https://sepolia.lilnouns.auction"
-NEXT_PUBLIC_CHAIN_ID=11155111
+NEXT_PUBLIC_CHAIN_ID = 11155111
 
 [env.production]
 compatibility_date = "2024-11-11"
@@ -30,4 +32,4 @@ mode = "smart"
 [env.production.vars]
 NODE_VERSION = "22.3.0"
 NEXT_PUBLIC_SITE_URL = "https://lilnouns.auction"
-NEXT_PUBLIC_CHAIN_ID=1
+NEXT_PUBLIC_CHAIN_ID = 1
