@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.61] - 2024-11-30
+
+### Bug Fixes
+
+- Handle undefined `NEXT_PUBLIC_SITE_URL`
+
+### Miscellaneous Tasks
+
+- Update deployment variables for preview
+- Add `type` field to `package.json`
+
+### Styling
+
+- Improve card header styling
+- Refine image presentation and layout
+
 ## [1.0.0-alpha.60] - 2024-11-30
 
 ### Miscellaneous Tasks
