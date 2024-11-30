@@ -54,11 +54,7 @@ export async function fetchBlocks(
   after?: number,
   before?: number,
 ): Promise<Block[]> {
-  let subgraphUrl = process.env.NEXT_PUBLIC_BLOCKS_SUBGRAPH_URL
-
-  if (!subgraphUrl) {
-    throw new Error('Ethereum Blocks Subgraph URL is not configured')
-  }
+  let subgraphUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/subgraphs/blocks`
 
   const query = gql`
     query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
