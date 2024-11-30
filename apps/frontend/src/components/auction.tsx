@@ -8,11 +8,18 @@ import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useIdle } from 'react-use'
-import { join, map, pipe, split } from 'remeda'
-import { formatEther } from 'viem'
+import { join, map, pipe, prop, split } from 'remeda'
+import { Address, formatEther } from 'viem'
 import { useWriteContract } from 'wagmi'
+import { mainnet, sepolia } from 'wagmi/chains'
 
 const { palette } = ImageData
+
+const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
+const activeChainContracts: Record<number, Address> = {
+  [mainnet.id]: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
+  [sepolia.id]: '0x0d8c4d18765AB8808ab6CEE4d7A760e8b93AB20c',
+}
 
 interface BlockData {
   blocks?: Block[]
@@ -54,11 +61,7 @@ export async function fetchBlocks(
   after?: number,
   before?: number,
 ): Promise<Block[]> {
-  let subgraphUrl = process.env.NEXT_PUBLIC_ETHEREUM_BLOCKS_SUBGRAPH_URL
-
-  if (!subgraphUrl) {
-    throw new Error('Ethereum Blocks Subgraph URL is not configured')
-  }
+  let subgraphUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/subgraphs/blocks`
 
   const query = gql`
     query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
@@ -292,7 +295,9 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
           type: 'function',
         },
       ] as const,
-      address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
+      address:
+        prop(activeChainContracts, activeChainId) ??
+        activeChainContracts[sepolia.id],
       functionName: 'buyNow',
       args,
       value,

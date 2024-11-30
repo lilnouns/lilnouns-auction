@@ -43,7 +43,7 @@
     "wagmi": "2.13.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.13.2",
+    "@cloudflare/next-on-pages": "1.13.6",
     "@cloudflare/workers-types": "4.20241127.0",
     "@lingui/cli": "4.11.4",
     "@lingui/conf": "4.11.4",
