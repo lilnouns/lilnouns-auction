@@ -5,8 +5,10 @@ import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useAccount, useReadContract } from 'wagmi'
+import { mainnet, sepolia } from 'wagmi/chains'
 
 // Dynamically import Auction component
 const Auction = dynamic(() => import('@/components/auction'), {
@@ -14,8 +16,16 @@ const Auction = dynamic(() => import('@/components/auction'), {
   suspense: true,
 })
 
+const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
+const activeChainContracts: Record<number, Address> = {
+  [mainnet.id]: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
+  [sepolia.id]: '0x0d8c4d18765AB8808ab6CEE4d7A760e8b93AB20c',
+}
+
 const auctionContract = {
-  address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D' as Address,
+  address:
+    prop(activeChainContracts, activeChainId) ??
+    activeChainContracts[sepolia.id],
   abi: [
     {
       inputs: [],
