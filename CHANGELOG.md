@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.58] - 2024-11-30
+
+### Features
+
+- Add client-side rendering check
+- Disable SSR for `Auction` component
+- Add URL rewrites for subgraphs
+- Enhance chain configuration
+- Support dynamic contract addresses
+- Extend path pattern to include `subgraphs`
+
+### Bug Fixes
+
+- Update environment variable name
+- Update project ID environment variable
+- Update `subgraphUrl` with correct path
+
+### Miscellaneous Tasks
+
+- Update `compatibility_date` and add env configs
+- Add local env files to ignore
+
+### Revert
+
+- Downgrade `@cloudflare/next-on-pages`
+
 ## [1.0.0-alpha.57] - 2024-11-30
 
 ### Bug Fixes
