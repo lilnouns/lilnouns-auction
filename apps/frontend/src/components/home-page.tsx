@@ -10,6 +10,7 @@ import { useAccount, useReadContract } from 'wagmi'
 
 // Dynamically import Auction component
 const Auction = dynamic(() => import('@/components/auction'), {
+  ssr: false,
   suspense: true,
 })
 
