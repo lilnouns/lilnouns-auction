@@ -61,7 +61,8 @@ export async function fetchBlocks(
   after?: number,
   before?: number,
 ): Promise<Block[]> {
-  let subgraphUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/subgraphs/blocks`
+  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? globalThis.location.origin
+  let subgraphUrl = `${siteUrl}/subgraphs/blocks`
 
   const query = gql`
     query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
