@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.60] - 2024-11-30
+
+### Miscellaneous Tasks
+
+- Update configs on `wrangler.toml`
+- Remove placement configuration from envs
+- Remove `wrangler.toml` config
+- Add `wrangler.toml` for deployment config
+
 ## [1.0.0-alpha.59] - 2024-11-30
 
 ### Miscellaneous Tasks
