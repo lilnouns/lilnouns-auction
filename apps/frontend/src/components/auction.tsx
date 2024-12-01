@@ -8,11 +8,18 @@ import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useIdle } from 'react-use'
-import { join, map, pipe, split } from 'remeda'
-import { formatEther } from 'viem'
+import { join, map, pipe, prop, split } from 'remeda'
+import { Address, formatEther } from 'viem'
 import { useWriteContract } from 'wagmi'
+import { mainnet, sepolia } from 'wagmi/chains'
 
 const { palette } = ImageData
+
+const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
+const activeChainContracts: Record<number, Address> = {
+  [mainnet.id]: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
+  [sepolia.id]: '0x0d8c4d18765AB8808ab6CEE4d7A760e8b93AB20c',
+}
 
 interface BlockData {
   blocks?: Block[]
@@ -54,11 +61,8 @@ export async function fetchBlocks(
   after?: number,
   before?: number,
 ): Promise<Block[]> {
-  let subgraphUrl = process.env.NEXT_PUBLIC_BLOCKS_SUBGRAPH_URL
-
-  if (!subgraphUrl) {
-    throw new Error('Ethereum Blocks Subgraph URL is not configured')
-  }
+  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? globalThis.location.origin
+  let subgraphUrl = `${siteUrl}/subgraphs/blocks`
 
   const query = gql`
     query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
@@ -126,7 +130,7 @@ const SVGImage: React.FC<{ svgBase64: string }> = ({ svgBase64 }) => (
   <img
     src={`data:image/svg+xml;base64,${svgBase64}`}
     alt="Noun SVG"
-    className="w-full"
+    className="w-full rounded-t-lg bg-gray-50"
   />
 )
 
@@ -292,7 +296,9 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
           type: 'function',
         },
       ] as const,
-      address: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
+      address:
+        prop(activeChainContracts, activeChainId) ??
+        activeChainContracts[sepolia.id],
       functionName: 'buyNow',
       args,
       value,
@@ -406,7 +412,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                       key={blockNumber}
                       className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white p-0 text-center shadow dark:border-gray-700 dark:bg-gray-800"
                     >
-                      <div className="flex flex-1 flex-col items-center p-6">
+                      <div className="flex flex-1 flex-col items-center pb-6">
                         <SVGImage svgBase64={renderSVG(seed)} />
                         <div className="mt-4 text-sm font-medium text-gray-900 dark:text-gray-300">
                           Block Number: {blockNumber}

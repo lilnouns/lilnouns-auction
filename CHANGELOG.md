@@ -2,6 +2,63 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.61] - 2024-11-30
+
+### Bug Fixes
+
+- Handle undefined `NEXT_PUBLIC_SITE_URL`
+
+### Miscellaneous Tasks
+
+- Update deployment variables for preview
+- Add `type` field to `package.json`
+
+### Styling
+
+- Improve card header styling
+- Refine image presentation and layout
+
+## [1.0.0-alpha.60] - 2024-11-30
+
+### Miscellaneous Tasks
+
+- Update configs on `wrangler.toml`
+- Remove placement configuration from envs
+- Remove `wrangler.toml` config
+- Add `wrangler.toml` for deployment config
+
+## [1.0.0-alpha.59] - 2024-11-30
+
+### Miscellaneous Tasks
+
+- Remove unused configs from `wrangler.toml`
+
+## [1.0.0-alpha.58] - 2024-11-30
+
+### Features
+
+- Add client-side rendering check
+- Disable SSR for `Auction` component
+- Add URL rewrites for subgraphs
+- Enhance chain configuration
+- Support dynamic contract addresses
+- Extend path pattern to include `subgraphs`
+
+### Bug Fixes
+
+- Update environment variable name
+- Update project ID environment variable
+- Update `subgraphUrl` with correct path
+
+### Miscellaneous Tasks
+
+- Update `compatibility_date` and add env configs
+- Add local env files to ignore
+
+### Revert
+
+- Downgrade `@cloudflare/next-on-pages`
+
 ## [1.0.0-alpha.57] - 2024-11-30
 
 ### Bug Fixes
