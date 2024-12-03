@@ -3,6 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["BLOCKS_SUBGRAPH_URL"],
       "outputs": ["apps/**/.next/**", "packages/**/dist/**"]
     },
     "dev": {
