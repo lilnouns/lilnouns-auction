@@ -1,3 +1,4 @@
+import AuctionCombobox from '@/components/auction-combobox'
 import { buildSVG } from '@lilnounsdao/sdk'
 import {
   ImageData,
@@ -304,70 +305,37 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
           <div className="container mx-auto">
             <div className="mb-4">
               <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
-                <select
-                  value={seedBackground}
-                  onChange={(e) => setSeedBackground(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Background</option>
-                  {ImageData.bgcolors.map((color: string, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {color}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedBody}
-                  onChange={(e) => setSeedBody(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Body</option>
-                  {ImageData.images.bodies.map((body: any, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(body.filename)}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedAccessory}
-                  onChange={(e) => setSeedAccessory(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Accessory</option>
-                  {ImageData.images.accessories.map(
-                    (accessory: any, index: number) => (
-                      <option key={index} value={index.toString()}>
-                        {formatTraitName(accessory.filename)}
-                      </option>
-                    ),
-                  )}
-                </select>
-                <select
-                  value={seedHead}
-                  onChange={(e) => setSeedHead(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Head</option>
-                  {ImageData.images.heads.map((head: any, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(head.filename)}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedGlasses}
-                  onChange={(e) => setSeedGlasses(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Glasses</option>
-                  {ImageData.images.glasses.map(
-                    (glasses: any, index: number) => (
-                      <option key={index} value={index.toString()}>
-                        {formatTraitName(glasses.filename)}
-                      </option>
-                    ),
-                  )}
-                </select>
+                <AuctionCombobox
+                  items={ImageData.bgcolors}
+                  label="Choose a background"
+                  onChange={(_, index) => setSeedBackground(index?.toString())}
+                  placeholder="Search backgrounds..."
+                />
+                <AuctionCombobox
+                  items={ImageData.images.bodies}
+                  label="Choose a body"
+                  onChange={(_, index) => setSeedBody(index?.toString())}
+                  placeholder="Search bodies..."
+                />
+                <AuctionCombobox
+                  items={ImageData.images.accessories}
+                  label="Choose an accessory"
+                  onChange={(_, index) => setSeedAccessory(index?.toString())}
+                  placeholder="Search accessories..."
+                />
+                <AuctionCombobox
+                  items={ImageData.images.heads}
+                  label="Choose a head"
+                  onChange={(_, index) => setSeedHead(index?.toString())}
+                  placeholder="Search heads..."
+                />
+                <AuctionCombobox
+                  items={ImageData.images.glasses}
+                  label="Choose a glasses"
+                  onChange={(_, index) => setSeedGlasses(index?.toString())}
+                  placeholder="Search glasses..."
+                />
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label
