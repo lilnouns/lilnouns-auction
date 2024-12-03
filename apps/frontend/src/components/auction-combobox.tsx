@@ -84,6 +84,7 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
                 : selectedItem.filename),
           )
 
+    // Deselect if the same option is clicked
     if (index === selectedIndex) {
       setSelectedIndex(undefined)
       onChange()
@@ -117,6 +118,7 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
         <ComboboxInput
           className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           onChange={(event) => setQuery(event.target.value)}
+          onBlur={() => setQuery('')}
           displayValue={(item: AuctionItem | undefined) =>
             item && typeof item !== 'string' && item.filename === 'None'
               ? ''
