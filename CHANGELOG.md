@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.1] - 2024-12-03
+
+### Bug Fixes
+
+- Validate `BLOCKS_SUBGRAPH_URL` in rewrites
+
+### Refactor
+
+- Remove unnecessary `env.d.ts`
+
+### Miscellaneous Tasks
+
+- Add `BLOCKS_SUBGRAPH_URL` to environment
+- Set `BLOCKS_SUBGRAPH_URL` env for build step
+- Set `BLOCKS_SUBGRAPH_URL` at workflow level
+- Add `BLOCKS_SUBGRAPH_URL` to build env
+
 ## [1.0.0-beta.0] - 2024-12-03
 
 ### Bug Fixes
