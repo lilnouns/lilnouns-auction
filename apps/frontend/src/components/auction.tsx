@@ -194,7 +194,48 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     let seedResults: SeedData[] = []
 
     try {
-      const blocks = await fetchBlocks(blockOffset, blockLimit)
+      let subgraphUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/subgraphs/blocks`
+
+      const query = gql`
+        query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
+          blocks(
+            skip: $skip
+            first: $first
+            orderBy: number
+            orderDirection: desc
+            where: $filter
+          ) {
+            id
+            number
+            timestamp
+            parentHash
+            author
+            difficulty
+            totalDifficulty
+            gasUsed
+            gasLimit
+            receiptsRoot
+            transactionsRoot
+            stateRoot
+            size
+            unclesHash
+          }
+        }
+      `
+
+      const filter: Record<string, unknown> = {}
+      // if (after !== null) filter.number_gt = after
+      // if (before !== null) filter.number_lt = before
+
+      const variables = {
+        skip: blockOffset,
+        first: blockLimit,
+        filter,
+      }
+
+      let { blocks } = await request<BlockData>(subgraphUrl, query, variables)
+      blocks = blocks ?? []
+
       const newSeedResults = await Promise.all(
         blocks.map(async (block) => {
           try {
