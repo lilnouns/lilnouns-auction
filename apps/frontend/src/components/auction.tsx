@@ -9,7 +9,7 @@ import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useIdle } from 'react-use'
-import { join, map, pipe, prop, split } from 'remeda'
+import { prop } from 'remeda'
 import { Address, formatEther } from 'viem'
 import { useWriteContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
@@ -105,25 +105,6 @@ export async function fetchBlocks(
   const { blocks } = await request<BlockData>(subgraphUrl, query, variables)
 
   return blocks ?? []
-}
-
-/**
- * Formats the given trait name by capitalizing each part of the name and
- * removing specific prefixes if present.
- *
- * @param traitName - The trait name to format.
- * @returns The formatted trait name.
- */
-function formatTraitName(traitName: string): string {
-  const prefixes = new Set(['head', 'accessory', 'glasses', 'body'])
-
-  return pipe(
-    traitName,
-    split('-'),
-    (parts) => (prefixes.has(parts[0] ?? '') ? parts.slice(1) : parts),
-    map((part) => (part ? part.charAt(0).toUpperCase() + part.slice(1) : '')),
-    join(' '),
-  )
 }
 
 const SkeletonCard: React.FC = () => (
