@@ -368,21 +368,47 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                     ),
                   )}
                 </select>
-                <span />
-                <input
-                  type="number"
-                  value={Number(nounId)}
-                  placeholder="Noun"
-                  disabled={true}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                />
-                <input
-                  type="number"
-                  value={formatEther(BigInt(price ?? 0))}
-                  readOnly={true}
-                  placeholder="Price"
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                />
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      htmlFor="noun-id"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Noun ID
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="noun-id"
+                        name="noun-id"
+                        type="number"
+                        value={Number(nounId)}
+                        placeholder="Noun"
+                        disabled={true}
+                        className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="price"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Price
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="price"
+                        name="price"
+                        type="number"
+                        value={formatEther(BigInt(price ?? 0))}
+                        placeholder="Noun"
+                        disabled={true}
+                        className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div>
