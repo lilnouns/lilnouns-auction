@@ -13,6 +13,9 @@ on:
   pull_request: # Also on pull request events.
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab.
 
+env:
+  BLOCKS_SUBGRAPH_URL: ${{ secrets.BLOCKS_SUBGRAPH_URL }}
+
 jobs:
   check:
     name: State Verifier
