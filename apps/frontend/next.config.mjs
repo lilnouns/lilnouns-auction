@@ -35,12 +35,20 @@ const nextConfig = {
     // Important: return the modified config
     return config
   },
-  rewrites: async () => [
-    {
-      source: "/subgraphs/blocks",
-      destination: process.env.BLOCKS_SUBGRAPH_URL,
+  rewrites: async () => {
+    const blocksSubgraphUrl = process.env.BLOCKS_SUBGRAPH_URL
+
+    if (!blocksSubgraphUrl) {
+      throw new Error('BLOCKS_SUBGRAPH_URL is not defined.')
     }
-  ]
+
+    return [
+      {
+        source: '/subgraphs/blocks',
+        destination: blocksSubgraphUrl,
+      },
+    ]
+  },
 }
 
 if (process.env.NODE_ENV === 'development') {
