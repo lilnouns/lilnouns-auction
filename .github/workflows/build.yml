@@ -46,8 +46,6 @@ jobs:
     name: Build & Test
     if: needs.check.outputs.skip_ci != 'true'
     runs-on: ubuntu-latest # The type of machine to run the job on.
-    env:
-      BLOCKS_SUBGRAPH_URL: ${{ secrets.BLOCKS_SUBGRAPH_URL }}
 
     needs: [check]
 
@@ -91,6 +89,8 @@ jobs:
       # This compiles the application in optimized production mode and output it to the build folder.
       - name: Build the application and export it
         run: pnpm run build
+        env:
+          BLOCKS_SUBGRAPH_URL: ${{ secrets.BLOCKS_SUBGRAPH_URL }}
 
       # Runs unit tests for the application using Jest.
   #      - name: Execute tests using Jest
