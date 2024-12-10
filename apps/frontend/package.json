@@ -64,7 +64,7 @@
     "@types/react-dom": "19.0.1",
     "@vitejs/plugin-react": "4.3.4",
     "eslint-config-next": "14.2.20",
-    "eslint-plugin-next-on-pages": "1.13.6",
+    "eslint-plugin-next-on-pages": "1.13.7",
     "is-ci": "4.1.0",
     "jsdom": "25.0.0",
     "prisma": "6.0.1",
