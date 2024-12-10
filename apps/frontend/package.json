@@ -23,7 +23,7 @@
     "@prisma/adapter-d1": "6.0.1",
     "@prisma/client": "6.0.1",
     "@shared/utilities": "workspace:*",
-    "@tanstack/react-query": "5.62.2",
+    "@tanstack/react-query": "5.62.3",
     "autoprefixer": "10.4.20",
     "clsx": "2.1.1",
     "cssnano": "7.0.6",
@@ -35,12 +35,12 @@
     "postcss": "8.4.49",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-use": "17.5.1",
+    "react-use": "17.6.0",
     "remeda": "2.17.4",
     "tailwind-merge": "2.5.5",
     "tailwindcss": "3.4.16",
     "viem": "2.21.54",
-    "wagmi": "2.13.3"
+    "wagmi": "2.13.5"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.6",
@@ -60,16 +60,16 @@
     "@types/lint-staged": "13.3.0",
     "@types/negotiator": "0.6.3",
     "@types/node": "22.10.1",
-    "@types/react": "19.0.0",
-    "@types/react-dom": "19.0.0",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
     "@vitejs/plugin-react": "4.3.4",
     "eslint-config-next": "14.2.20",
-    "eslint-plugin-next-on-pages": "1.13.6",
-    "is-ci": "3.0.1",
+    "eslint-plugin-next-on-pages": "1.13.7",
+    "is-ci": "4.1.0",
     "jsdom": "25.0.0",
     "prisma": "6.0.1",
     "typescript": "5.7.2",
     "vitest": "2.1.8",
-    "wrangler": "3.92.0"
+    "wrangler": "3.94.0"
   }
 }
