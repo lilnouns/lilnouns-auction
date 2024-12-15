@@ -5,6 +5,7 @@ import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import { BarLoader } from 'react-spinners'
 import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useAccount, useReadContract } from 'wagmi'
@@ -153,8 +154,8 @@ export const HomePage: NextPage = () => {
         {isConnected ? (
           <>
             {isLoading ? (
-              <div className="flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-                Loading...
+              <div className="mt-3 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
+                <BarLoader color={'#10b981'} loading={isLoading} width={100} />
               </div>
             ) : isError ? (
               <div className="text-red-600 dark:text-red-400">
