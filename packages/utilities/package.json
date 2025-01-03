@@ -19,7 +19,7 @@
   "devDependencies": {
     "typescript": "5.7.2",
     "vite": "6.0.7",
-    "vite-plugin-dts": "4.3.0"
+    "vite-plugin-dts": "4.4.0"
   },
   "type": "module"
 }
