@@ -31,8 +31,8 @@ importers:
         specifier: 50.6.0
         version: 50.6.0(eslint@8.57.1)
       eslint-plugin-lingui:
-        specifier: 0.8.3
-        version: 0.8.3(eslint@8.57.1)(typescript@5.7.2)
+        specifier: 0.9.0
+        version: 0.9.0(eslint@8.57.1)(typescript@5.7.2)
       eslint-plugin-prettier:
         specifier: 5.2.1
         version: 5.2.1(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.1))(eslint@8.57.1)(prettier@3.4.2)
@@ -3776,8 +3776,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-lingui@0.8.3:
-    resolution: {integrity: sha512-CKEW2bIfAMwGzWqNJ3dUIMPJGHC0i++DXaWVhAyxIBUv338JKKHXb5USv2PZwFcI93T8Omx1ovOr216nF37t/A==}
+  eslint-plugin-lingui@0.9.0:
+    resolution: {integrity: sha512-mGc7MUqJP28WOrXysxf6suCvAUoIvU7v0F1cvvRk/aPzaTRXVzDdIl62/CJk9NurUFazXC70sbafe/5d8V8tYA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: ^8.37.0 || ^9.0.0
@@ -11490,7 +11490,7 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.0
 
-  eslint-plugin-lingui@0.8.3(eslint@8.57.1)(typescript@5.7.2):
+  eslint-plugin-lingui@0.9.0(eslint@8.57.1)(typescript@5.7.2):
     dependencies:
       '@typescript-eslint/utils': 8.14.0(eslint@8.57.1)(typescript@5.7.2)
       eslint: 8.57.1
