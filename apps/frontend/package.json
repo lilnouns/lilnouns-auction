@@ -71,6 +71,6 @@
     "prisma": "6.2.0",
     "typescript": "5.7.2",
     "vitest": "2.1.8",
-    "wrangler": "3.99.0"
+    "wrangler": "3.100.0"
   }
 }
