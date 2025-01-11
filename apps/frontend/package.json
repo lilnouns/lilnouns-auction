@@ -67,7 +67,7 @@
     "eslint-config-next": "14.2.23",
     "eslint-plugin-next-on-pages": "1.13.7",
     "is-ci": "4.1.0",
-    "jsdom": "25.0.0",
+    "jsdom": "26.0.0",
     "prisma": "6.2.1",
     "typescript": "5.7.3",
     "vitest": "2.1.8",
