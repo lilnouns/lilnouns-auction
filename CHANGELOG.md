@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.0] - 2025-01-13
+
+### Features
+
+- Improve loading indicator with `BarLoader`
+
 ## [1.0.0-beta.4] - 2024-12-10
 
 ### Bug Fixes
