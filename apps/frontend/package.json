@@ -2,6 +2,7 @@
   "name": "frontend",
   "private": true,
   "scripts": {
+    "dev": "next dev --turbopack",
     "build": "next build",
     "dev": "next dev",
     "lingui:extract": "lingui extract --clean",
