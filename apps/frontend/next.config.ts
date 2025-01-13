@@ -1,6 +1,7 @@
 import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev'
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
   swcMinify: true,
   images: {
     unoptimized: true,
