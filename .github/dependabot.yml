@@ -88,29 +88,11 @@ updates:
       - dependency-name: 'eslint'
         update-types:
           - version-update:semver-major
-      - dependency-name: 'next'
-        update-types:
-          - version-update:semver-major
-      - dependency-name: 'react'
-        update-types:
-          - version-update:semver-major
-      - dependency-name: 'react-dom'
-        update-types:
-          - version-update:semver-major
-      - dependency-name: '@types/react-dom'
-        update-types:
-          - version-update:semver-major
-      - dependency-name: '@next/*'
-        update-types:
-          - version-update:semver-major
       - dependency-name: '@lingui/*'
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
           - version-update:semver-patch
-      - dependency-name: 'eslint-config-next'
-        update-types:
-          - version-update:semver-major
       - dependency-name: '@cloudflare/next-on-pages'
         update-types:
           - version-update:semver-major
