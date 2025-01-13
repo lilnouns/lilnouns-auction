@@ -19,6 +19,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@vitest/eslint-plugin": "1.1.25",
     "eslint": "9.18.0",
     "eslint-config-prettier": "10.0.1",
     "eslint-plugin-jsdoc": "50.6.3",
