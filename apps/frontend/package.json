@@ -2,7 +2,7 @@
   "name": "frontend",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "prestart": "next-on-pages",
     "start": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
