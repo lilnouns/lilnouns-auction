@@ -16,7 +16,6 @@ import { mainnet, sepolia } from 'wagmi/chains'
 // Dynamically import Auction component
 const Auction = dynamic(() => import('@/components/auction'), {
   ssr: false,
-  suspense: true,
 })
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
