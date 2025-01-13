@@ -67,6 +67,7 @@
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "4.0.6",
     "@cloudflare/workers-types": "4.20250124.3",
+    "@eslint/eslintrc": "3.2.0",
     "@lingui/cli": "5.1.2",
     "@lingui/conf": "5.1.2",
     "@lingui/format-po": "5.1.2",
