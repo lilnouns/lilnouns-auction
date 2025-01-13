@@ -1,7 +1,7 @@
 import flowbite from 'flowbite-react/tailwind'
 import type { Config } from 'tailwindcss'
 
-const config: Config = {
+export default {
   darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,15 +11,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
       },
     },
   },
 
   // eslint-disable-next-line unicorn/prefer-module
-  plugins: [flowbite.plugin(), require('flowbite-typography')],
-}
-export default config
+  plugins: [flowbite.plugin()],
+} satisfies Config
