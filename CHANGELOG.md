@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.1] - 2025-01-13
+
+### Miscellaneous Tasks
+
+- Update task config for `lint` and `test`
+
 ## [1.1.0-alpha.0] - 2025-01-13
 
 ### Features

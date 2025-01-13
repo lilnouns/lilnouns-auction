@@ -14,10 +14,10 @@
       "cache": false
     },
     "lint": {
-      "outputs": []
+      "dependsOn": []
     },
     "test": {
-      "outputs": []
+      "dependsOn": []
     }
   }
 }
