@@ -11,7 +11,6 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { useState } from 'react'
 import { join, map, pipe, split } from 'remeda'
 
-// Union type for item formats
 type AuctionItem = string | { filename: string; data: string | undefined }
 
 interface AuctionListboxProps {
@@ -67,7 +66,7 @@ const AuctionListbox: React.FC<AuctionListboxProps> = ({
       selectedItem.filename === 'None'
     ) {
       setSelectedIndex(undefined)
-      setQuery('') // Explicitly reset query
+      setQuery('')
       onChange()
       return
     }
@@ -109,17 +108,21 @@ const AuctionListbox: React.FC<AuctionListboxProps> = ({
       value={selectedIndex === undefined ? undefined : items[selectedIndex]}
       onChange={(item) => handleChange(item ?? undefined)}
     >
-      <Label className="block text-sm font-medium leading-6 text-gray-900">
+      <Label className="block text-sm/6 font-medium text-gray-900">
         {label}
       </Label>
       <div className="relative mt-2">
-        <ListboxButton className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          {getValidSelectedItem()
-            ? getItemDisplayValue(getValidSelectedItem()!)
-            : placeholder}
+        <ListboxButton className="grid w-full cursor-default grid-cols-1 rounded-md bg-white py-1.5 pl-3 pr-2 text-left text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+          <span className="col-start-1 row-start-1 flex items-center gap-3 pr-6">
+            <span className="block truncate">
+              {getValidSelectedItem()
+                ? getItemDisplayValue(getValidSelectedItem()!)
+                : placeholder}
+            </span>
+          </span>
           <ChevronUpDownIcon
-            className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 text-gray-400"
             aria-hidden="true"
+            className="col-start-1 row-start-1 size-5 self-center justify-self-end text-gray-500 sm:size-4"
           />
         </ListboxButton>
 
