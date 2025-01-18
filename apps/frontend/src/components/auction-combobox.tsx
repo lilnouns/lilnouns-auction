@@ -62,14 +62,13 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
         ]
 
   const handleChange = (selectedItem: AuctionItem | undefined) => {
-    // Handle the "None" option explicitly
     if (
       selectedItem &&
       typeof selectedItem !== 'string' &&
       selectedItem.filename === 'None'
     ) {
       setSelectedIndex(undefined)
-      setQuery('') // Reset input
+      setQuery('') // Explicitly reset query
       onChange()
       return
     }
@@ -85,7 +84,6 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
                 : selectedItem.filename),
           )
 
-    // Deselect if the same option is clicked
     if (index === selectedIndex) {
       setSelectedIndex(undefined)
       onChange()
@@ -109,8 +107,8 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
   return (
     <Combobox
       as="div"
-      value={getValidSelectedItem()}
-      onChange={(item) => handleChange(item ?? undefined)} // Convert null to undefined
+      value={selectedIndex === undefined ? undefined : items[selectedIndex]}
+      onChange={(item) => handleChange(item ?? undefined)}
     >
       <Label className="block text-sm font-medium leading-6 text-gray-900">
         {label}
