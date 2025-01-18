@@ -13,7 +13,7 @@ import { useState } from 'react'
 import { join, map, pipe, split } from 'remeda'
 
 // Union type for item formats
-type AuctionItem = string | { filename: string; data: string }
+type AuctionItem = string | { filename: string; data: string | undefined }
 
 interface AuctionComboboxProps {
   items: AuctionItem[]
@@ -52,13 +52,28 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
 
   const filteredItems =
     query === ''
-      ? items
-      : items.filter((item) => {
-          const value = getItemDisplayValue(item)
-          return value.toLowerCase().includes(query.toLowerCase())
-        })
+      ? [{ filename: 'None', data: undefined }, ...items]
+      : [
+          { filename: 'None', data: undefined },
+          ...items.filter((item) => {
+            const value = getItemDisplayValue(item)
+            return value.toLowerCase().includes(query.toLowerCase())
+          }),
+        ]
 
   const handleChange = (selectedItem: AuctionItem | undefined) => {
+    // Handle the "None" option explicitly
+    if (
+      selectedItem &&
+      typeof selectedItem !== 'string' &&
+      selectedItem.filename === 'None'
+    ) {
+      setSelectedIndex(undefined)
+      setQuery('') // Reset input
+      onChange()
+      return
+    }
+
     const index =
       selectedItem === undefined
         ? undefined
@@ -95,7 +110,11 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
           onChange={(event) => setQuery(event.target.value)}
           onBlur={() => setQuery('')}
           displayValue={(item: AuctionItem | undefined) =>
-            item ? getItemDisplayValue(item) : ''
+            item && typeof item !== 'string' && item.filename === 'None'
+              ? ''
+              : item
+                ? getItemDisplayValue(item)
+                : ''
           }
           placeholder={placeholder}
         />
