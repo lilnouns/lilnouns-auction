@@ -1,4 +1,4 @@
-import AuctionCombobox from '@/components/auction-combobox'
+import AuctionListbox from '@/components/auction-combobox'
 import { buildSVG } from '@lilnounsdao/sdk'
 import {
   ImageData,
@@ -286,31 +286,31 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
           <div className="container mx-auto">
             <div className="mb-4">
               <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
-                <AuctionCombobox
+                <AuctionListbox
                   items={ImageData.bgcolors}
                   label="Choose a background"
                   onChange={(_, index) => setSeedBackground(index?.toString())}
                   placeholder="Search backgrounds..."
                 />
-                <AuctionCombobox
+                <AuctionListbox
                   items={ImageData.images.bodies}
                   label="Choose a body"
                   onChange={(_, index) => setSeedBody(index?.toString())}
                   placeholder="Search bodies..."
                 />
-                <AuctionCombobox
+                <AuctionListbox
                   items={ImageData.images.accessories}
                   label="Choose an accessory"
                   onChange={(_, index) => setSeedAccessory(index?.toString())}
                   placeholder="Search accessories..."
                 />
-                <AuctionCombobox
+                <AuctionListbox
                   items={ImageData.images.heads}
                   label="Choose a head"
                   onChange={(_, index) => setSeedHead(index?.toString())}
                   placeholder="Search heads..."
                 />
-                <AuctionCombobox
+                <AuctionListbox
                   items={ImageData.images.glasses}
                   label="Choose a glasses"
                   onChange={(_, index) => setSeedGlasses(index?.toString())}
