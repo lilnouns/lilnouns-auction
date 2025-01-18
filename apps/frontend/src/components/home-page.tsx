@@ -1,4 +1,4 @@
-import { WalletOptions } from '@/components/wallet-options'
+import Navbar from '@/components/navbar'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
@@ -150,27 +150,19 @@ export const HomePage: NextPage = () => {
         />
       </Head>
 
+      <Navbar />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {isConnected ? (
-          <>
-            {isLoading ? (
-              <div className="mt-3 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-                <BarLoader color={'#10b981'} loading={isLoading} width={100} />
-              </div>
-            ) : isError ? (
-              <div className="text-red-600 dark:text-red-400">
-                Error: {error.toString()}
-              </div>
-            ) : (
-              <Auction nounId={nounId} price={price} />
-            )}
-          </>
+        {isLoading ? (
+          <div className="mt-3 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
+            <BarLoader color={'#10b981'} loading={isLoading} width={100} />
+          </div>
+        ) : isError ? (
+          <div className="text-red-600 dark:text-red-400">
+            Error: {error.toString()}
+          </div>
         ) : (
-          <>
-            <div className="mt-3">
-              <WalletOptions />
-            </div>
-          </>
+          <Auction nounId={nounId} price={price} />
         )}
       </div>
     </>

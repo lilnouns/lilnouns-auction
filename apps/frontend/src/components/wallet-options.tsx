@@ -1,3 +1,4 @@
+import { MenuItem } from '@headlessui/react'
 import { useEffect, useState } from 'react'
 import { Connector, useConnect } from 'wagmi'
 
@@ -30,12 +31,14 @@ const WalletOption = ({
   }, [connector])
 
   return (
-    <button
-      disabled={!ready}
-      onClick={onClick}
-      className="m-1 w-full rounded bg-green-50 py-2 text-sm font-semibold text-gray-900 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
-    >
-      {connector.name}
-    </button>
+    <MenuItem>
+      <a
+        onClick={onClick}
+        href="#"
+        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
+      >
+        {connector.name}
+      </a>
+    </MenuItem>
   )
 }
