@@ -95,10 +95,21 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
     }
   }
 
+  const getValidSelectedItem = () => {
+    if (
+      selectedIndex === undefined ||
+      selectedIndex < 0 ||
+      selectedIndex >= items.length
+    ) {
+      return
+    }
+    return items[selectedIndex]
+  }
+
   return (
     <Combobox
       as="div"
-      value={selectedIndex === undefined ? undefined : items[selectedIndex]}
+      value={getValidSelectedItem()}
       onChange={(item) => handleChange(item ?? undefined)} // Convert null to undefined
     >
       <Label className="block text-sm font-medium leading-6 text-gray-900">
@@ -108,7 +119,6 @@ const AuctionCombobox: React.FC<AuctionComboboxProps> = ({
         <ComboboxInput
           className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           onChange={(event) => setQuery(event.target.value)}
-          onBlur={() => setQuery('')}
           displayValue={(item: AuctionItem | undefined) =>
             item && typeof item !== 'string' && item.filename === 'None'
               ? ''
