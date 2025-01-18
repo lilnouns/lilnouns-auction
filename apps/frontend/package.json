@@ -53,7 +53,7 @@
     "@lingui/macro": "4.11.4",
     "@lingui/swc-plugin": "4.0.9",
     "@testing-library/jest-dom": "6.6.3",
-    "@testing-library/react": "16.1.0",
+    "@testing-library/react": "16.2.0",
     "@testing-library/user-event": "14.6.0",
     "@types/eslint": "8.56.10",
     "@types/eslint-config-prettier": "6.11.3",
