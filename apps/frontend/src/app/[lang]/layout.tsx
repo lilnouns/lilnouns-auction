@@ -1,9 +1,11 @@
 import linguiConfig from '@/../lingui.config'
+import ErrorFallback from '@/components/error-fallback'
 import { LinguiClientProvider } from '@/components/lingui-client-provider'
 import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
 import { PageLangParam, withLinguiLayout } from '@/i18n/with-lingui'
 import { t } from '@lingui/macro'
 import { ThemeModeScript } from 'flowbite-react'
+import { ErrorBoundary } from 'react-error-boundary'
 
 /**
  * Generates an array of parameter objects for static site generation, where
@@ -47,7 +49,9 @@ export default withLinguiLayout(function RootLayout({
             initialLocale={lang}
             initialMessages={allMessages[lang]!}
           >
-            {children}
+            <ErrorBoundary FallbackComponent={ErrorFallback}>
+              {children}
+            </ErrorBoundary>
           </LinguiClientProvider>
         </main>
       </body>

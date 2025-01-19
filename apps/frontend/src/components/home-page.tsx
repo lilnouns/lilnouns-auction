@@ -6,6 +6,7 @@ import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import { useErrorBoundary } from 'react-error-boundary'
 import { BarLoader } from 'react-spinners'
 import { prop } from 'remeda'
 import { Address } from 'viem'
@@ -107,10 +108,18 @@ export const HomePage: NextPage = () => {
   const [nounId, setNounId] = useState<bigint | undefined>()
   const [price, setPrice] = useState<bigint | undefined>()
 
+  const { showBoundary } = useErrorBoundary()
+
   const { data, isLoading, isError, error } = useReadContract({
     ...auctionContract,
     functionName: 'fetchNextNoun',
   })
+
+  useEffect(() => {
+    if (isError) {
+      showBoundary(error.cause)
+    }
+  }, [error, isError, showBoundary])
 
   useEffect(() => {
     if (!isLoading && !isError && data) {
