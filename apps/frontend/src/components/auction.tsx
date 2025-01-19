@@ -293,8 +293,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
         <section className="w-full p-1">
           <div className="container mx-auto">
-            <div className="mb-4">
-              <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
+            <div className="mb-4 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+              <div className="grid grid-cols-2 gap-4 p-4">
                 <div>
                   <label
                     htmlFor="background"
@@ -408,41 +408,37 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   <div>
                     <label
                       htmlFor="noun-id"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Noun ID
                     </label>
-                    <div className="mt-2">
-                      <input
-                        id="noun-id"
-                        name="noun-id"
-                        type="number"
-                        value={Number(nounId)}
-                        placeholder="Noun"
-                        disabled={true}
-                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                      />
-                    </div>
+                    <input
+                      id="noun-id"
+                      name="noun-id"
+                      type="number"
+                      value={Number(nounId)}
+                      placeholder="Noun"
+                      disabled={true}
+                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    />
                   </div>
 
                   <div>
                     <label
                       htmlFor="price"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Price
                     </label>
-                    <div className="mt-2">
-                      <input
-                        id="price"
-                        name="price"
-                        type="number"
-                        value={formatEther(BigInt(price ?? 0))}
-                        placeholder="Noun"
-                        disabled={true}
-                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                      />
-                    </div>
+                    <input
+                      id="price"
+                      name="price"
+                      type="number"
+                      value={formatEther(BigInt(price ?? 0))}
+                      placeholder="Noun"
+                      disabled={true}
+                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    />
                   </div>
                 </div>
               </div>
