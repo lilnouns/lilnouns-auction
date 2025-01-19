@@ -117,7 +117,7 @@ export const HomePage: NextPage = () => {
 
   useEffect(() => {
     if (isError) {
-      showBoundary(error.cause)
+      showBoundary(error)
     }
   }, [error, isError, showBoundary])
 
