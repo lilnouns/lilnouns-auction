@@ -1,4 +1,5 @@
 import { buildSVG } from '@lilnounsdao/sdk'
+import { t } from '@lingui/macro'
 import {
   ImageData,
   getNounData,
@@ -293,70 +294,115 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
           <div className="container mx-auto">
             <div className="mb-4">
               <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
-                <select
-                  value={seedBackground}
-                  onChange={(e) => setSeedBackground(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Background</option>
-                  {ImageData.bgcolors.map((color: string, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {color}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedBody}
-                  onChange={(e) => setSeedBody(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Body</option>
-                  {ImageData.images.bodies.map((body: any, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(body.filename)}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedAccessory}
-                  onChange={(e) => setSeedAccessory(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Accessory</option>
-                  {ImageData.images.accessories.map(
-                    (accessory: any, index: number) => (
+                <div>
+                  <label
+                    htmlFor="background"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select background`}
+                  </label>
+                  <select
+                    id="background"
+                    value={seedBackground}
+                    onChange={(e) => setSeedBackground(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">All backgrounds</option>
+                    {ImageData.bgcolors.map((color: string, index: number) => (
                       <option key={index} value={index.toString()}>
-                        {formatTraitName(accessory.filename)}
+                        {color}
                       </option>
-                    ),
-                  )}
-                </select>
-                <select
-                  value={seedHead}
-                  onChange={(e) => setSeedHead(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Head</option>
-                  {ImageData.images.heads.map((head: any, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(head.filename)}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedGlasses}
-                  onChange={(e) => setSeedGlasses(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Glasses</option>
-                  {ImageData.images.glasses.map(
-                    (glasses: any, index: number) => (
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="body"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select body`}
+                  </label>
+                  <select
+                    id="body"
+                    value={seedBody}
+                    onChange={(e) => setSeedBody(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">{t`All bodies`}</option>
+                    {ImageData.images.bodies.map((body: any, index: number) => (
                       <option key={index} value={index.toString()}>
-                        {formatTraitName(glasses.filename)}
+                        {formatTraitName(body.filename)}
                       </option>
-                    ),
-                  )}
-                </select>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="accessory"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select accessory`}
+                  </label>
+                  <select
+                    id="accessory"
+                    value={seedAccessory}
+                    onChange={(e) => setSeedAccessory(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">All accessories</option>
+                    {ImageData.images.accessories.map(
+                      (accessory: any, index: number) => (
+                        <option key={index} value={index.toString()}>
+                          {formatTraitName(accessory.filename)}
+                        </option>
+                      ),
+                    )}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="head"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select head`}
+                  </label>
+                  <select
+                    id="head"
+                    value={seedHead}
+                    onChange={(e) => setSeedHead(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">All heads</option>
+                    {ImageData.images.heads.map((head: any, index: number) => (
+                      <option key={index} value={index.toString()}>
+                        {formatTraitName(head.filename)}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="glasses"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select glasses`}
+                  </label>
+                  <select
+                    id="glasses"
+                    value={seedGlasses}
+                    onChange={(e) => setSeedGlasses(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">All glasses</option>
+                    {ImageData.images.glasses.map(
+                      (glasses: any, index: number) => (
+                        <option key={index} value={index.toString()}>
+                          {formatTraitName(glasses.filename)}
+                        </option>
+                      ),
+                    )}
+                  </select>
+                </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label
@@ -373,7 +419,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                         value={Number(nounId)}
                         placeholder="Noun"
                         disabled={true}
-                        className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                       />
                     </div>
                   </div>
@@ -393,7 +439,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                         value={formatEther(BigInt(price ?? 0))}
                         placeholder="Noun"
                         disabled={true}
-                        className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                       />
                     </div>
                   </div>
