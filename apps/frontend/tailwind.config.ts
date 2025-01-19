@@ -1,5 +1,4 @@
 import flowbite from 'flowbite-react/tailwind'
-import flowbiteTypography from 'flowbite-typography'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -20,6 +19,7 @@ const config: Config = {
     },
   },
 
-  plugins: [flowbite.plugin(), flowbiteTypography],
+  // eslint-disable-next-line unicorn/prefer-module
+  plugins: [flowbite.plugin(), require('flowbite-typography')],
 }
 export default config
