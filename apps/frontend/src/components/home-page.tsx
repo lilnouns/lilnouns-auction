@@ -1,3 +1,4 @@
+import Navbar from '@/components/navbar'
 import { WalletOptions } from '@/components/wallet-options'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
@@ -149,6 +150,8 @@ export const HomePage: NextPage = () => {
           content={`Lil Nouns Auction: your chance to choose the perfect traits from a pool of 256 Lil Nouns!`}
         />
       </Head>
+
+      <Navbar />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {isConnected ? (
