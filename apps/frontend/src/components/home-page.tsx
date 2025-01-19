@@ -167,7 +167,7 @@ export const HomePage: NextPage = () => {
           </>
         ) : (
           <>
-            <div className="mt-3">
+            <div className="mx-auto mt-10 max-w-sm">
               <WalletOptions />
             </div>
           </>
