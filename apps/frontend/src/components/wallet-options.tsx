@@ -1,3 +1,4 @@
+import { t } from '@lingui/macro'
 import { useEffect, useState } from 'react'
 import { Connector, useConnect } from 'wagmi'
 
@@ -11,8 +12,7 @@ export const WalletOptions = () => {
           Connect wallet
         </h5>
         <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
-          Connect with one of our available wallet providers or create a new
-          one.
+          {t`Connect with one of our available wallet providers.`}
         </p>
         <ul className="my-4 space-y-3">
           {connectors.map((connector) => (
@@ -23,7 +23,7 @@ export const WalletOptions = () => {
             />
           ))}
         </ul>
-        <div>
+        {/*<div>
           <a
             href="#"
             className="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400"
@@ -45,7 +45,7 @@ export const WalletOptions = () => {
             </svg>
             Why do I need to connect with my wallet?
           </a>
-        </div>
+        </div>*/}
       </div>
     </>
   )
