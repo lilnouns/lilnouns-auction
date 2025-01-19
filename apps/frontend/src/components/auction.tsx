@@ -413,7 +413,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
             </div>
             <div>
               {isLoading ? (
-                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
+                <div className="grid grid-cols-1 gap-6 text-gray-900 dark:text-gray-200 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
                   {Array.from({ length: 12 }).map((_, index) => (
                     <SkeletonCard key={index} />
                   ))}
@@ -423,7 +423,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   Error: {error}
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
+                <div className="grid grid-cols-1 gap-6 text-gray-900 dark:text-gray-200 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
                   {seedsData.map(({ blockNumber, seed }) => (
                     <div className="group relative" key={blockNumber}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
