@@ -1,4 +1,5 @@
 import { buildSVG } from '@lilnounsdao/sdk'
+import { t } from '@lingui/macro'
 import {
   ImageData,
   getNounData,
@@ -76,17 +77,6 @@ export async function fetchBlocks(
         id
         number
         timestamp
-        parentHash
-        author
-        difficulty
-        totalDifficulty
-        gasUsed
-        gasLimit
-        receiptsRoot
-        transactionsRoot
-        stateRoot
-        size
-        unclesHash
       }
     }
   `
@@ -125,15 +115,6 @@ function formatTraitName(traitName: string): string {
   )
 }
 
-const SVGImage: React.FC<{ svgBase64: string }> = ({ svgBase64 }) => (
-  // eslint-disable-next-line @next/next/no-img-element
-  <img
-    src={`data:image/svg+xml;base64,${svgBase64}`}
-    alt="Noun SVG"
-    className="w-full rounded-t-lg bg-gray-50"
-  />
-)
-
 const SkeletonCard: React.FC = () => (
   <div className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white p-0 text-center shadow dark:border-gray-700 dark:bg-gray-800">
     <div className="flex flex-1 animate-pulse flex-col items-center p-6">
@@ -167,6 +148,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
+    // @ts-ignore
     const svgBinary = buildSVG(parts, palette, background)
     return btoa(svgBinary)
   }, [])
@@ -244,7 +226,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
 
   useEffect(() => {
     // Initial fetch on component mount
-    fetchData()
+    fetchData().then(() => {})
 
     // Declaring intervalId to use in cleanup and visibility/idleness checking
     let intervalId: NodeJS.Timeout | null
@@ -308,90 +290,157 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   // @ts-ignore
   return (
     <>
-      <div className="flex min-h-screen flex-col items-center justify-between bg-gray-50 p-1 py-5 dark:bg-gray-900">
-        <section className="w-full p-1">
+      <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
+        <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
-            <div className="mb-4">
-              <div className="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 shadow-md dark:bg-gray-800">
-                <select
-                  value={seedBackground}
-                  onChange={(e) => setSeedBackground(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Background</option>
-                  {ImageData.bgcolors.map((color: string, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {color}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedBody}
-                  onChange={(e) => setSeedBody(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Body</option>
-                  {ImageData.images.bodies.map((body: any, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(body.filename)}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedAccessory}
-                  onChange={(e) => setSeedAccessory(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Accessory</option>
-                  {ImageData.images.accessories.map(
-                    (accessory: any, index: number) => (
+            <div className="mb-4 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+              <div className="grid grid-cols-2 gap-4 p-4">
+                <div>
+                  <label
+                    htmlFor="background"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select background`}
+                  </label>
+                  <select
+                    id="background"
+                    value={seedBackground}
+                    onChange={(e) => setSeedBackground(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">All backgrounds</option>
+                    {ImageData.bgcolors.map((color: string, index: number) => (
                       <option key={index} value={index.toString()}>
-                        {formatTraitName(accessory.filename)}
+                        {color}
                       </option>
-                    ),
-                  )}
-                </select>
-                <select
-                  value={seedHead}
-                  onChange={(e) => setSeedHead(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Head</option>
-                  {ImageData.images.heads.map((head: any, index: number) => (
-                    <option key={index} value={index.toString()}>
-                      {formatTraitName(head.filename)}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={seedGlasses}
-                  onChange={(e) => setSeedGlasses(e.target.value)}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                >
-                  <option value="">Select Glasses</option>
-                  {ImageData.images.glasses.map(
-                    (glasses: any, index: number) => (
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="body"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select body`}
+                  </label>
+                  <select
+                    id="body"
+                    value={seedBody}
+                    onChange={(e) => setSeedBody(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">{t`All bodies`}</option>
+                    {ImageData.images.bodies.map((body: any, index: number) => (
                       <option key={index} value={index.toString()}>
-                        {formatTraitName(glasses.filename)}
+                        {formatTraitName(body.filename)}
                       </option>
-                    ),
-                  )}
-                </select>
-                <span />
-                <input
-                  type="number"
-                  value={Number(nounId)}
-                  placeholder="Noun"
-                  disabled={true}
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                />
-                <input
-                  type="number"
-                  value={formatEther(BigInt(price ?? 0))}
-                  readOnly={true}
-                  placeholder="Price"
-                  className="rounded border border-gray-300 bg-white p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:ring-blue-400"
-                />
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="accessory"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select accessory`}
+                  </label>
+                  <select
+                    id="accessory"
+                    value={seedAccessory}
+                    onChange={(e) => setSeedAccessory(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">All accessories</option>
+                    {ImageData.images.accessories.map(
+                      (accessory: any, index: number) => (
+                        <option key={index} value={index.toString()}>
+                          {formatTraitName(accessory.filename)}
+                        </option>
+                      ),
+                    )}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="head"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select head`}
+                  </label>
+                  <select
+                    id="head"
+                    value={seedHead}
+                    onChange={(e) => setSeedHead(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">All heads</option>
+                    {ImageData.images.heads.map((head: any, index: number) => (
+                      <option key={index} value={index.toString()}>
+                        {formatTraitName(head.filename)}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="glasses"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    {t`Select glasses`}
+                  </label>
+                  <select
+                    id="glasses"
+                    value={seedGlasses}
+                    onChange={(e) => setSeedGlasses(e.target.value)}
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                  >
+                    <option value="">All glasses</option>
+                    {ImageData.images.glasses.map(
+                      (glasses: any, index: number) => (
+                        <option key={index} value={index.toString()}>
+                          {formatTraitName(glasses.filename)}
+                        </option>
+                      ),
+                    )}
+                  </select>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      htmlFor="noun-id"
+                      className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Noun ID
+                    </label>
+                    <input
+                      id="noun-id"
+                      name="noun-id"
+                      type="text"
+                      value={Number(nounId)}
+                      placeholder="Noun"
+                      readOnly={true}
+                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="price"
+                      className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Price
+                    </label>
+                    <input
+                      id="price"
+                      name="price"
+                      type="text"
+                      value={formatEther(BigInt(price ?? 0))}
+                      placeholder="Noun"
+                      readOnly={true}
+                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <div>
@@ -408,22 +457,19 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
               ) : (
                 <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
                   {seedsData.map(({ blockNumber, seed }) => (
-                    <div
-                      key={blockNumber}
-                      className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white p-0 text-center shadow dark:border-gray-700 dark:bg-gray-800"
-                    >
-                      <div className="flex flex-1 flex-col items-center pb-6">
-                        <SVGImage svgBase64={renderSVG(seed)} />
-                        <div className="mt-4 text-sm font-medium text-gray-900 dark:text-gray-300">
-                          Block Number: {blockNumber}
-                        </div>
-                      </div>
-                      <div className="flex">
+                    <div className="group relative" key={blockNumber}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
+                        alt={`Noun ${nounId}`}
+                        className="h-auto w-full rounded-lg shadow-md"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
                         <button
                           onClick={() => handleBuy(blockNumber)}
-                          className="relative inline-flex w-full justify-center rounded-b-lg border border-transparent bg-green-50 py-3 text-sm font-semibold text-gray-900 hover:bg-green-100 dark:bg-green-800 dark:text-gray-200 dark:hover:bg-green-700"
+                          className="rounded-lg bg-white px-6 py-2 font-semibold text-black shadow hover:bg-gray-200"
                         >
-                          Buy Now
+                          Buy
                         </button>
                       </div>
                     </div>

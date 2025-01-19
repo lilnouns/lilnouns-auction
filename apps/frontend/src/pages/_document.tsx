@@ -13,9 +13,9 @@ export default function Document(props: Props) {
   const direction = getLocaleDirection(language)
 
   return (
-    <Html lang={language} dir={direction}>
+    <Html lang={language} dir={direction} className="dark">
       <Head />
-      <body>
+      <body className="antialiased dark:bg-gray-900">
         <Main />
         <NextScript />
       </body>
