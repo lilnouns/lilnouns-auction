@@ -1,4 +1,5 @@
 import flowbite from 'flowbite-react/tailwind'
+import flowbiteTypography from 'flowbite-typography'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -18,6 +19,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [flowbite.plugin()],
+
+  plugins: [flowbite.plugin(), flowbiteTypography],
 }
 export default config
