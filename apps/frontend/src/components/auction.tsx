@@ -291,7 +291,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   return (
     <>
       <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
-        <section className="w-full p-1">
+        <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
             <div className="mb-4 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
               <div className="grid grid-cols-2 gap-4 p-4">
