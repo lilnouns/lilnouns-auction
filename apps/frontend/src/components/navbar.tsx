@@ -19,47 +19,48 @@ const Navbar = () => {
             className="mr-3 h-5"
             fill="none"
             shape-rendering="crispEdges"
-            viewBox="0 0 160 60"
+            viewBox="0 0 20 8"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <g fill="#d53c5e">
-              <path d="m90 0h-60v10h60z"></path>
-              <path d="m160 0h-60v10h60z"></path>
-              <path d="m40 10h-10v10h10z"></path>
+            <g fill="none">
+              <path fill="#F3322C" d="M11 0H3v1h8zm9 0h-8v1h8zM4 1H3v1h1z" />
+              <path fill="#FFF" d="M6 1H4v1h2z" />
+              <path fill="#000" d="M10 1H6v1h4z" />
+              <path fill="#F3322C" d="M11 1h-1v1h1zm2 0h-1v1h1z" />
+              <path fill="#FFF" d="M15 1h-2v1h2z" />
+              <path fill="#000" d="M19 1h-4v1h4z" />
+              <path fill="#F3322C" d="M20 1h-1v1h1zM4 2H3v1h1z" />
+              <path fill="#FFF" d="M6 2H4v1h2z" />
+              <path fill="#000" d="M10 2H6v1h4z" />
+              <path fill="#F3322C" d="M11 2h-1v1h1zm2 0h-1v1h1z" />
+              <path fill="#FFF" d="M15 2h-2v1h2z" />
+              <path fill="#000" d="M19 2h-4v1h4z" />
+              <path fill="#F3322C" d="M20 2h-1v1h1zM4 3H0v1h4z" />
+              <path fill="#FFF" d="M6 3H4v1h2z" />
+              <path fill="#000" d="M10 3H6v1h4z" />
+              <path fill="#F3322C" d="M13 3h-3v1h3z" />
+              <path fill="#FFF" d="M15 3h-2v1h2z" />
+              <path fill="#000" d="M19 3h-4v1h4z" />
+              <path fill="#F3322C" d="M20 3h-1v1h1zM1 4H0v1h1zm3 0H3v1h1z" />
+              <path fill="#FFF" d="M6 4H4v1h2z" />
+              <path fill="#000" d="M10 4H6v1h4z" />
+              <path fill="#F3322C" d="M11 4h-1v1h1zm2 0h-1v1h1z" />
+              <path fill="#FFF" d="M15 4h-2v1h2z" />
+              <path fill="#000" d="M19 4h-4v1h4z" />
+              <path fill="#F3322C" d="M20 4h-1v1h1zM1 5H0v1h1zm3 0H3v1h1z" />
+              <path fill="#FFF" d="M6 5H4v1h2z" />
+              <path fill="#000" d="M10 5H6v1h4z" />
+              <path fill="#F3322C" d="M11 5h-1v1h1zm2 0h-1v1h1z" />
+              <path fill="#FFF" d="M15 5h-2v1h2z" />
+              <path fill="#000" d="M19 5h-4v1h4z" />
+              <path fill="#F3322C" d="M20 5h-1v1h1zM4 6H3v1h1z" />
+              <path fill="#FFF" d="M6 6H4v1h2z" />
+              <path fill="#000" d="M10 6H6v1h4z" />
+              <path fill="#F3322C" d="M11 6h-1v1h1zm2 0h-1v1h1z" />
+              <path fill="#FFF" d="M15 6h-2v1h2z" />
+              <path fill="#000" d="M19 6h-4v1h4z" />
+              <path fill="#F3322C" d="M20 6h-1v1h1zm-9 1H3v1h8zm9 0h-8v1h8z" />
             </g>
-            <path d="m60 10h-20v10h20z" fill="#fff"></path>
-            <path d="m80 10h-20v10h20z" fill="#000"></path>
-            <path d="m90 10h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m110 10h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m130 10h-20v10h20z" fill="#fff"></path>
-            <path d="m150 10h-20v10h20z" fill="#000"></path>
-            <path d="m160 10h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m40 20h-40v10h40z" fill="#d53c5e"></path>
-            <path d="m60 20h-20v10h20z" fill="#fff"></path>
-            <path d="m80 20h-20v10h20z" fill="#000"></path>
-            <path d="m110 20h-30v10h30z" fill="#d53c5e"></path>
-            <path d="m130 20h-20v10h20z" fill="#fff"></path>
-            <path d="m150 20h-20v10h20z" fill="#000"></path>
-            <path d="m160 20h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m10 30h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m40 30h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m60 30h-20v10h20z" fill="#fff"></path>
-            <path d="m80 30h-20v10h20z" fill="#000"></path>
-            <path d="m90 30h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m110 30h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m130 30h-20v10h20z" fill="#fff"></path>
-            <path d="m150 30h-20v10h20z" fill="#000"></path>
-            <path d="m160 30h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m10 40h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m40 40h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m60 40h-20v10h20z" fill="#fff"></path>
-            <path d="m80 40h-20v10h20z" fill="#000"></path>
-            <path d="m90 40h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m110 40h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m130 40h-20v10h20z" fill="#fff"></path>
-            <path d="m150 40h-20v10h20z" fill="#000"></path>
-            <path d="m160 40h-10v10h10z" fill="#d53c5e"></path>
-            <path d="m90 50h-60v10h60z" fill="#d53c5e"></path>
-            <path d="m160 50h-60v10h60z" fill="#d53c5e"></path>
           </svg>
           <span className="hidden text-2xl font-semibold dark:text-white">
             {t`Lil Nouns Auction`}

@@ -8,6 +8,7 @@ import {
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
+import { useErrorBoundary } from 'react-error-boundary'
 import { useIdle } from 'react-use'
 import { join, map, pipe, prop, split } from 'remeda'
 import { Address, formatEther } from 'viem'
@@ -137,7 +138,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const isIdle = useIdle(600_000)
 
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
-  const [error, setError] = useState<string | undefined>()
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const [seedBackground, setSeedBackground] = useState<string | undefined>()
@@ -145,6 +145,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [seedAccessory, setSeedAccessory] = useState<string | undefined>()
   const [seedHead, setSeedHead] = useState<string | undefined>()
   const [seedGlasses, setSeedGlasses] = useState<string | undefined>()
+
+  const { showBoundary } = useErrorBoundary()
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -213,16 +215,24 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       ]
 
       setSeedsData(seedResults)
-    } catch (error_) {
-      if (error_ instanceof Error) {
-        setError(error_.message)
+    } catch (error) {
+      if (error instanceof Error) {
+        showBoundary(error)
       } else {
-        setError('An unexpected error occurred')
+        showBoundary('An unexpected error occurred')
       }
     } finally {
       setIsLoading(false)
     }
-  }, [nounId, seedBackground, seedBody, seedAccessory, seedHead, seedGlasses])
+  }, [
+    nounId,
+    seedBackground,
+    seedBody,
+    seedAccessory,
+    seedHead,
+    seedGlasses,
+    showBoundary,
+  ])
 
   useEffect(() => {
     // Initial fetch on component mount
@@ -449,10 +459,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   {Array.from({ length: 12 }).map((_, index) => (
                     <SkeletonCard key={index} />
                   ))}
-                </div>
-              ) : error ? (
-                <div className="text-red-600 dark:text-red-400">
-                  Error: {error}
                 </div>
               ) : (
                 <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">

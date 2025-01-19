@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.6] - 2025-01-19
+
+### Refactor
+
+- Use `useErrorBoundary` for error handling
+- Update SVG for streamlined design
+
 ## [1.1.0-alpha.5] - 2025-01-19
 
 ### Features
