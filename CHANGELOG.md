@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.5] - 2025-01-19
+
+### Features
+
+- Enable dark mode configuration
+- Improve input layout and add labels
+- Integrate `flowbite` with TailwindCSS
+- Update translations for auction component
+- Add `dark` class to HTML element
+- Enhance UI with styled wallet cards
+- Add localization to wallet options text
+- Integrate `ThemeModeScript` for theme support
+- Add `Navbar` component
+- Add `Navbar` component to home page
+- Add new translations for wallet options
+- Add error boundaries for better UX
+
+### Bug Fixes
+
+- Handle missing promise resolution in `fetchData`
+- Add ts-ignore comment for `buildSVG` usage
+- Update styling for wallet options
+- Pass correct error to `showBoundary`
+- Update plugin import for `flowbite-typography`
+
+### Refactor
+
+- Simplify image rendering logic
+- Remove unused GraphQL fields
+- Enhance select elements with improved UI
+- Update input fields to `text` and `readOnly`
+- Enhance UI and add toggle details
+
+### Styling
+
+- Reorder class names for consistency
+- Improve consistency of input and layout styles
+- Update body styling with dark mode support
+- Constrain section width with `max-w-screen-xl`
+- Make navbar sticky with updated styles
+- Hide navbar title for better UI
+
 ## [1.1.0-alpha.4] - 2025-01-18
 
 ### Bug Fixes
