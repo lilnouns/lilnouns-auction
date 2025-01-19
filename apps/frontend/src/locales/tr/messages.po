@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/components/auction.tsx
+msgid "All bodies"
+msgstr ""
+
 #: src/components/home-page.tsx
 msgid "Lil Nouns Auction"
 msgstr ""
@@ -24,6 +28,26 @@ msgstr ""
 #: src/components/locale-switcher.tsx
 msgid "Open options"
 msgstr "Seçenekleri aç"
+
+#: src/components/auction.tsx
+msgid "Select accessory"
+msgstr ""
+
+#: src/components/auction.tsx
+msgid "Select background"
+msgstr ""
+
+#: src/components/auction.tsx
+msgid "Select body"
+msgstr ""
+
+#: src/components/auction.tsx
+msgid "Select glasses"
+msgstr ""
+
+#: src/components/auction.tsx
+msgid "Select head"
+msgstr ""
 
 #: src/components/theme-switcher.tsx
 msgid "Switch to dark theme"
