@@ -61,7 +61,7 @@ const Navbar = () => {
             <path d="m90 50h-60v10h60z" fill="#d53c5e"></path>
             <path d="m160 50h-60v10h60z" fill="#d53c5e"></path>
           </svg>
-          <span className="text-2xl font-semibold dark:text-white">
+          <span className="hidden text-2xl font-semibold dark:text-white">
             {t`Lil Nouns Auction`}
           </span>
         </a>
