@@ -3,6 +3,7 @@ import { LinguiClientProvider } from '@/components/lingui-client-provider'
 import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
 import { PageLangParam, withLinguiLayout } from '@/i18n/with-lingui'
 import { t } from '@lingui/macro'
+import { ThemeModeScript } from 'flowbite-react'
 
 /**
  * Generates an array of parameter objects for static site generation, where
@@ -37,6 +38,9 @@ export default withLinguiLayout(function RootLayout({
 }) {
   return (
     <html lang={lang} className="dark">
+      <head>
+        <ThemeModeScript />
+      </head>
       <body className="antialiased dark:bg-gray-900">
         <main className="flex min-h-screen flex-col">
           <LinguiClientProvider
