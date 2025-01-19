@@ -17,7 +17,13 @@ msgstr ""
 msgid "All bodies"
 msgstr "All bodies"
 
+#: src/components/wallet-options.tsx
+msgid "Connect with one of our available wallet providers."
+msgstr "Connect with one of our available wallet providers."
+
 #: src/components/home-page.tsx
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns Auction"
 
