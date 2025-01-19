@@ -15,7 +15,7 @@ export default function Document(props: Props) {
   return (
     <Html lang={language} dir={direction}>
       <Head />
-      <body>
+      <body className="antialiased dark:bg-gray-900">
         <Main />
         <NextScript />
       </body>
