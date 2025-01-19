@@ -12,6 +12,11 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@farcaster/auth-kit": "0.6.0",
+    "@farcaster/frame-core": "0.0.22",
+    "@farcaster/frame-node": "0.0.7",
+    "@farcaster/frame-sdk": "0.0.26",
+    "@farcaster/frame-wagmi-connector": "0.0.6",
     "@headlessui/react": "2.2.0",
     "@heroicons/react": "2.2.0",
     "@lilnounsdao/assets": "0.5.15",
