@@ -12,7 +12,13 @@ import { find, mapToObj, pipe } from 'remeda'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createConfig, http, WagmiProvider } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
-import { injected, metaMask, safe, walletConnect } from 'wagmi/connectors'
+import {
+  coinbaseWallet,
+  injected,
+  metaMask,
+  safe,
+  walletConnect,
+} from 'wagmi/connectors'
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const reownProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID ?? ''
@@ -44,6 +50,9 @@ const config = createConfig({
     injected(),
     walletConnect({ projectId: reownProjectId }),
     metaMask(),
+    coinbaseWallet({
+      appName: `Lil Nouns Auction`,
+    }),
     safe(),
   ],
   transports,
