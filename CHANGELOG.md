@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.8] - 2025-01-20
+
+### Features
+
+- Add `coinbaseWallet` connector support
+
 ## [1.1.0-alpha.7] - 2025-01-19
 
 ### Bug Fixes
