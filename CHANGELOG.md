@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.9] - 2025-01-23
+
+### Miscellaneous Tasks
+
+- Update TailwindCSS import syntax
+- Add `.npmrc` with `save-exact=true`
+
 ## [1.1.0-alpha.8] - 2025-01-20
 
 ### Features
