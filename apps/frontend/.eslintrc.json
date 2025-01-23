@@ -3,7 +3,6 @@
     "next",
     "next/core-web-vitals",
     "plugin:lingui/recommended",
-    "plugin:tailwindcss/recommended",
     "plugin:jsdoc/recommended-typescript",
     "plugin:eslint-plugin-next-on-pages/recommended",
     "../../.eslintrc.json"
