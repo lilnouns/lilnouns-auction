@@ -46,7 +46,7 @@
     "tailwind-merge": "2.6.0",
     "tailwindcss": "4.0.0",
     "viem": "2.22.9",
-    "wagmi": "2.14.8"
+    "wagmi": "2.14.9"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.7",
