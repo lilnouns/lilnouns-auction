@@ -1,4 +1,3 @@
-import { Button } from 'flowbite-react'
 import React, { useState } from 'react'
 
 type ErrorFallbackProps = {
@@ -22,25 +21,27 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
           Please try refreshing the page or contact support if the problem
           persists.
         </p>
-        <Button
+
+        <button
+          type="button"
+          className="mb-2 me-2 w-full rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
           onClick={() => setShowDetails((prev) => !prev)}
-          color="gray"
-          className="mb-4 w-full hover:bg-gray-200 focus:outline-none focus:ring focus:ring-gray-400 dark:hover:bg-gray-700"
         >
           {showDetails ? 'Hide Details' : 'Show Details'}
-        </Button>
+        </button>
+
         {showDetails && (
           <pre className="overflow-x-auto rounded-lg bg-gray-50 p-4 text-left text-sm text-gray-800 dark:bg-gray-800 dark:text-gray-300">
             {error.message}
           </pre>
         )}
-        <Button
+        <button
+          type="button"
           onClick={resetErrorBoundary}
-          color="red"
-          className="mt-4 w-full hover:bg-red-700 focus:outline-none focus:ring focus:ring-red-500 dark:hover:bg-red-600"
+          className="mb-2 me-2 w-full rounded-lg bg-red-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
         >
           Refresh
-        </Button>
+        </button>
       </div>
     </div>
   )
