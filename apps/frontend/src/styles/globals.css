@@ -1,5 +1,8 @@
 @import "tailwindcss";
+
 @plugin "flowbite/plugin";
+@plugin "flowbite-typography";
+
 @source "../../node_modules/flowbite";
 
 @layer base {
