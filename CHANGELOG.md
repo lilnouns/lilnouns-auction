@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.11] - 2025-01-25
+
+### Refactor
+
+- Replace `Button` with native `button`
+
+### Miscellaneous Tasks
+
+- Update deps for `flowbite` plugins
+
+### Styling
+
+- Fix inconsistent dark mode placeholder color
+
 ## [1.1.0-alpha.10] - 2025-01-25
 
 ### Bug Fixes
