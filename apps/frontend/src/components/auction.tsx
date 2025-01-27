@@ -294,18 +294,18 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   // @ts-ignore
   return (
     <>
+      <AuctionDrawer
+        isOpen={isDrawerOpen}
+        onClose={closeDrawer}
+        onOpen={openDrawer}
+        seed={seed}
+        nounId={nounId}
+        price={price}
+        updateSeed={updateSeed}
+      />
       <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
-            <AuctionDrawer
-              isOpen={isDrawerOpen}
-              onClose={closeDrawer}
-              onOpen={openDrawer}
-              seed={seed}
-              nounId={nounId}
-              price={price}
-              updateSeed={updateSeed}
-            />
             <div>
               {isLoading ? (
                 <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
