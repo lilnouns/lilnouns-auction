@@ -2,7 +2,7 @@
 
 import { t } from '@lingui/macro'
 import { ImageData } from '@shared/utilities'
-import { Button, Drawer } from 'flowbite-react'
+import { Drawer } from 'flowbite-react'
 import React from 'react'
 import { HiBars2, HiSquaresPlus } from 'react-icons/hi2'
 import { join, map, pipe, split } from 'remeda'
@@ -33,13 +33,8 @@ const AuctionDrawer: React.FC<AuctionDrawerProps> = ({
   price,
   updateSeed,
 }) => {
-  if (!isOpen) return
-
   return (
     <>
-      <div className="flex min-h-[50vh] items-center justify-center">
-        <Button onClick={() => onOpen()}>Show swipeable drawer</Button>
-      </div>
       <Drawer
         edge
         open={isOpen}
