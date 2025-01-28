@@ -8,7 +8,6 @@ import {
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
-import { useErrorBoundary } from 'react-error-boundary'
 import { useIdle } from 'react-use'
 import { join, map, pipe, prop, split } from 'remeda'
 import { Address, formatEther } from 'viem'
@@ -155,7 +154,12 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     }))
   }
 
-  const { showBoundary } = useErrorBoundary()
+  const [isDrawerOpen, setDrawerOpen] = useState(true)
+
+  const openDrawer = () => setDrawerOpen(true)
+  const closeDrawer = () => setDrawerOpen(false)
+
+  // const { showBoundary } = useErrorBoundary()
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -226,9 +230,9 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       setSeedsData(seedResults)
     } catch (error) {
       if (error instanceof Error) {
-        showBoundary(error)
+        // showBoundary(error)
       } else {
-        showBoundary('An unexpected error occurred')
+        // showBoundary('An unexpected error occurred')
       }
     } finally {
       setIsLoading(false)
@@ -240,7 +244,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     seed.accessory,
     seed.head,
     seed.glasses,
-    showBoundary,
+    // showBoundary,
   ])
 
   useEffect(() => {
