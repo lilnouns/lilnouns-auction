@@ -1,4 +1,5 @@
 import { getLocale, getLocaleDirection, Locale } from '@/utils/locales'
+import { ThemeModeScript } from 'flowbite-react'
 import { Head, Html, Main, NextScript } from 'next/document'
 import { ParsedUrlQuery } from 'node:querystring'
 import { DocumentProps } from 'postcss'
@@ -13,8 +14,15 @@ export default function Document(props: Props) {
   const direction = getLocaleDirection(language)
 
   return (
-    <Html lang={language} dir={direction} className="dark">
-      <Head />
+    <Html
+      suppressHydrationWarning
+      lang={language}
+      dir={direction}
+      className="dark"
+    >
+      <Head>
+        <ThemeModeScript />
+      </Head>
       <body className="antialiased dark:bg-gray-900">
         <Main />
         <NextScript />
