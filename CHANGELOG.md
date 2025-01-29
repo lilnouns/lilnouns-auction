@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.12] - 2025-01-29
+
+### Documentation
+
+- Remove duplicated important note
+
 ## [1.1.0-alpha.11] - 2025-01-25
 
 ### Refactor
