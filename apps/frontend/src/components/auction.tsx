@@ -304,7 +304,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
             <div className="mb-4 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-              <div className="grid grid-cols-2 gap-4 p-4">
+              <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
                 <div>
                   <label
                     htmlFor="background"
@@ -455,13 +455,13 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
             </div>
             <div>
               {isLoading ? (
-                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
+                <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
                   {Array.from({ length: 12 }).map((_, index) => (
                     <SkeletonCard key={index} />
                   ))}
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-6 text-gray-900 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 dark:text-gray-200">
+                <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
                   {seedsData.map(({ blockNumber, seed }) => (
                     <div className="group relative" key={blockNumber}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}

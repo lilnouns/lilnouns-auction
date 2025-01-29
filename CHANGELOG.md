@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.15] - 2025-01-29
+
+### Features
+
+- Update grid layout for auction component
+- Add dark theme toggle
+- Wrap `DarkThemeToggle` with `Flowbite`
+
+### Bug Fixes
+
+- Disable webpack cache in config
+
+### Styling
+
+- Update grid layout for better responsiveness
+
 ## [1.1.0-alpha.14] - 2025-01-29
 
 ### Features
