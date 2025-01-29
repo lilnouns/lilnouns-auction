@@ -1,4 +1,5 @@
 import { t } from '@lingui/macro'
+import { DarkThemeToggle } from 'flowbite-react'
 
 const Navbar = () => {
   /*const [selectedLanguage, setSelectedLanguage] = useState("English (US)");
@@ -96,6 +97,7 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>*/}
+            <DarkThemeToggle />
           </div>
         </div>
       </div>
