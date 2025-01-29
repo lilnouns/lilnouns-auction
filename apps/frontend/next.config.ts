@@ -8,14 +8,15 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     webpackBuildWorker: true,
-    swcPlugins: [
-      [
-        '@lingui/swc-plugin',
-        {
-          // the same options as in .swcrc
-        },
-      ],
-    ],
+    swcPlugins: [['@lingui/swc-plugin', {}]],
+    turbo: {
+      rules: {
+        '*.po': {
+          loaders: ['@lingui/loader'],
+          as: '*.js'
+        }
+      }
+    }
   },
   webpack: (config) => {
     config.cache = false // Disables PackFileCacheStrategy
