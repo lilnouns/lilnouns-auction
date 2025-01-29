@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.16] - 2025-01-29
+
+### Features
+
+- Integrate `flowbite` into Tailwind config
+- Enhance typography and theming styles
+
+### Refactor
+
+- Consolidate seed state management
+
 ## [1.1.0-alpha.15] - 2025-01-29
 
 ### Features

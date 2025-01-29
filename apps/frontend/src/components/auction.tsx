@@ -140,11 +140,20 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [seedsData, setSeedsData] = useState<SeedData[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const [seedBackground, setSeedBackground] = useState<string | undefined>()
-  const [seedBody, setSeedBody] = useState<string | undefined>()
-  const [seedAccessory, setSeedAccessory] = useState<string | undefined>()
-  const [seedHead, setSeedHead] = useState<string | undefined>()
-  const [seedGlasses, setSeedGlasses] = useState<string | undefined>()
+  const [seed, setSeed] = useState<{
+    background?: string
+    body?: string
+    accessory?: string
+    head?: string
+    glasses?: string
+  }>({})
+
+  const updateSeed = (key: string, value: string | undefined) => {
+    setSeed((prev) => ({
+      ...prev,
+      [key]: value,
+    }))
+  }
 
   const { showBoundary } = useErrorBoundary()
 
@@ -168,11 +177,11 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
         : undefined
 
     const filterParams: Partial<Seed> = {
-      background: parseSeedParameter(seedBackground),
-      body: parseSeedParameter(seedBody),
-      accessory: parseSeedParameter(seedAccessory),
-      head: parseSeedParameter(seedHead),
-      glasses: parseSeedParameter(seedGlasses),
+      background: parseSeedParameter(seed.background),
+      body: parseSeedParameter(seed.body),
+      accessory: parseSeedParameter(seed.accessory),
+      head: parseSeedParameter(seed.head),
+      glasses: parseSeedParameter(seed.glasses),
     }
 
     let seedResults: SeedData[] = []
@@ -226,11 +235,11 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     }
   }, [
     nounId,
-    seedBackground,
-    seedBody,
-    seedAccessory,
-    seedHead,
-    seedGlasses,
+    seed.background,
+    seed.body,
+    seed.accessory,
+    seed.head,
+    seed.glasses,
     showBoundary,
   ])
 
@@ -314,8 +323,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   </label>
                   <select
                     id="background"
-                    value={seedBackground}
-                    onChange={(e) => setSeedBackground(e.target.value)}
+                    value={seed.background}
+                    onChange={(e) => updateSeed('background', e.target.value)}
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   >
                     <option value="">All backgrounds</option>
@@ -335,8 +344,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   </label>
                   <select
                     id="body"
-                    value={seedBody}
-                    onChange={(e) => setSeedBody(e.target.value)}
+                    value={seed.body}
+                    onChange={(e) => updateSeed('body', e.target.value)}
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   >
                     <option value="">{t`All bodies`}</option>
@@ -356,8 +365,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   </label>
                   <select
                     id="accessory"
-                    value={seedAccessory}
-                    onChange={(e) => setSeedAccessory(e.target.value)}
+                    value={seed.accessory}
+                    onChange={(e) => updateSeed('accessory', e.target.value)}
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   >
                     <option value="">All accessories</option>
@@ -379,8 +388,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   </label>
                   <select
                     id="head"
-                    value={seedHead}
-                    onChange={(e) => setSeedHead(e.target.value)}
+                    value={seed.head}
+                    onChange={(e) => updateSeed('head', e.target.value)}
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   >
                     <option value="">All heads</option>
@@ -400,8 +409,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   </label>
                   <select
                     id="glasses"
-                    value={seedGlasses}
-                    onChange={(e) => setSeedGlasses(e.target.value)}
+                    value={seed.glasses}
+                    onChange={(e) => updateSeed('glasses', e.target.value)}
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   >
                     <option value="">All glasses</option>

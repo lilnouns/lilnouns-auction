@@ -18,12 +18,12 @@ export default function Document(props: Props) {
       suppressHydrationWarning
       lang={language}
       dir={direction}
-      className="dark"
+      className="dark font-sans"
     >
       <Head>
         <ThemeModeScript />
       </Head>
-      <body className="antialiased dark:bg-gray-900">
+      <body className="bg-white text-gray-600 antialiased dark:bg-gray-900 dark:text-gray-400">
         <Main />
         <NextScript />
       </body>
