@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.14] - 2025-01-29
+
+### Features
+
+- Integrate `ThemeModeScript` in `_document`
+
+### Documentation
+
+- Add project description section
+
 ## [1.1.0-alpha.13] - 2025-01-29
 
 ### Bug Fixes
