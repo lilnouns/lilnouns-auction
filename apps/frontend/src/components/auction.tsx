@@ -304,7 +304,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
             <div className="mb-4 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-              <div className="grid grid-cols-2 gap-4 p-4">
+              <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
                 <div>
                   <label
                     htmlFor="background"
