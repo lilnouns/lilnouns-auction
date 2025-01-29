@@ -169,10 +169,6 @@ export const HomePage: NextPage = () => {
               <div className="mt-3 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
                 <BarLoader color={'#10b981'} loading={isLoading} width={100} />
               </div>
-            ) : isError ? (
-              <div className="text-red-600 dark:text-red-400">
-                Error: {error.toString()}
-              </div>
             ) : (
               <Auction nounId={nounId} price={price} />
             )}
