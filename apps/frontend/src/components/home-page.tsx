@@ -1,5 +1,3 @@
-import Navbar from '@/components/navbar'
-import { WalletOptions } from '@/components/wallet-options'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
@@ -7,7 +5,9 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 // import { useErrorBoundary } from 'react-error-boundary'
-import { BarLoader } from 'react-spinners'
+import { WalletOptions } from '@/components/wallet-options'
+import { Button, DarkThemeToggle, Flowbite, Navbar } from 'flowbite-react'
+import Link from 'next/link'
 import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useAccount, useReadContract } from 'wagmi'
@@ -98,15 +98,68 @@ const auctionContract = {
   ] as const,
 }
 
+const Noggles = () => (
+  <svg
+    aria-label={t`Lil Nouns Auction`} // Using aria-label instead
+    className="mr-3 h-5"
+    fill="none"
+    shape-rendering="crispEdges"
+    viewBox="0 0 20 8"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g fill="none">
+      <path fill="#F3322C" d="M11 0H3v1h8zm9 0h-8v1h8zM4 1H3v1h1z" />
+      <path fill="#FFF" d="M6 1H4v1h2z" />
+      <path fill="#000" d="M10 1H6v1h4z" />
+      <path fill="#F3322C" d="M11 1h-1v1h1zm2 0h-1v1h1z" />
+      <path fill="#FFF" d="M15 1h-2v1h2z" />
+      <path fill="#000" d="M19 1h-4v1h4z" />
+      <path fill="#F3322C" d="M20 1h-1v1h1zM4 2H3v1h1z" />
+      <path fill="#FFF" d="M6 2H4v1h2z" />
+      <path fill="#000" d="M10 2H6v1h4z" />
+      <path fill="#F3322C" d="M11 2h-1v1h1zm2 0h-1v1h1z" />
+      <path fill="#FFF" d="M15 2h-2v1h2z" />
+      <path fill="#000" d="M19 2h-4v1h4z" />
+      <path fill="#F3322C" d="M20 2h-1v1h1zM4 3H0v1h4z" />
+      <path fill="#FFF" d="M6 3H4v1h2z" />
+      <path fill="#000" d="M10 3H6v1h4z" />
+      <path fill="#F3322C" d="M13 3h-3v1h3z" />
+      <path fill="#FFF" d="M15 3h-2v1h2z" />
+      <path fill="#000" d="M19 3h-4v1h4z" />
+      <path fill="#F3322C" d="M20 3h-1v1h1zM1 4H0v1h1zm3 0H3v1h1z" />
+      <path fill="#FFF" d="M6 4H4v1h2z" />
+      <path fill="#000" d="M10 4H6v1h4z" />
+      <path fill="#F3322C" d="M11 4h-1v1h1zm2 0h-1v1h1z" />
+      <path fill="#FFF" d="M15 4h-2v1h2z" />
+      <path fill="#000" d="M19 4h-4v1h4z" />
+      <path fill="#F3322C" d="M20 4h-1v1h1zM1 5H0v1h1zm3 0H3v1h1z" />
+      <path fill="#FFF" d="M6 5H4v1h2z" />
+      <path fill="#000" d="M10 5H6v1h4z" />
+      <path fill="#F3322C" d="M11 5h-1v1h1zm2 0h-1v1h1z" />
+      <path fill="#FFF" d="M15 5h-2v1h2z" />
+      <path fill="#000" d="M19 5h-4v1h4z" />
+      <path fill="#F3322C" d="M20 5h-1v1h1zM4 6H3v1h1z" />
+      <path fill="#FFF" d="M6 6H4v1h2z" />
+      <path fill="#000" d="M10 6H6v1h4z" />
+      <path fill="#F3322C" d="M11 6h-1v1h1zm2 0h-1v1h1z" />
+      <path fill="#FFF" d="M15 6h-2v1h2z" />
+      <path fill="#000" d="M19 6h-4v1h4z" />
+      <path fill="#F3322C" d="M20 6h-1v1h1zm-9 1H3v1h8zm9 0h-8v1h8z" />
+    </g>
+  </svg>
+)
+
 export const HomePage: NextPage = () => {
   const [isClient, setIsClient] = useState(false)
 
   const { i18n } = useLingui()
 
-  const { isConnected } = useAccount()
-
   const [nounId, setNounId] = useState<bigint | undefined>()
   const [price, setPrice] = useState<bigint | undefined>()
+
+  const { isConnecting } = useAccount()
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   // const { showBoundary } = useErrorBoundary()
 
@@ -160,27 +213,36 @@ export const HomePage: NextPage = () => {
         />
       </Head>
 
-      <Navbar />
+      <Navbar
+        rounded
+        className="border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-800"
+      >
+        <Navbar.Brand as={Link} href="/">
+          <Noggles />
+          <span className="hidden self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            {t`Lil Nouns Auction`}
+          </span>
+        </Navbar.Brand>
+        <div className="flex gap-2 sm:justify-start md:order-2">
+          <Flowbite>
+            <DarkThemeToggle />
+          </Flowbite>
+          <Button
+            onClick={() => setIsModalOpen(true)}
+            isProcessing={isConnecting}
+            color="light"
+          >
+            Connect wallet
+          </Button>
+        </div>
+      </Navbar>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {isConnected ? (
-          <>
-            {isLoading ? (
-              <div className="mt-3 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-                <BarLoader color={'#10b981'} loading={isLoading} width={100} />
-              </div>
-            ) : (
-              <Auction nounId={nounId} price={price} />
-            )}
-          </>
-        ) : (
-          <>
-            <div className="mx-auto mt-10 max-w-sm">
-              <WalletOptions />
-            </div>
-          </>
-        )}
-      </div>
+      <WalletOptions
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+
+      <Auction nounId={nounId} price={price} />
     </>
   )
 }
