@@ -138,7 +138,7 @@ importers:
         version: 3.0.0(rollup@4.31.0)
       flowbite-react:
         specifier: 0.10.2
-        version: 0.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.31.0)(tailwindcss@4.0.1)
+        version: 0.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.31.0)(tailwindcss@4.0.3)
       graphql-request:
         specifier: 7.1.2
         version: 7.1.2(graphql@16.10.0)
@@ -185,8 +185,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       tailwindcss:
-        specifier: 4.0.1
-        version: 4.0.1
+        specifier: 4.0.3
+        version: 4.0.3
       viem:
         specifier: 2.22.17
         version: 2.22.17(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1)
@@ -6580,6 +6580,9 @@ packages:
   tailwindcss@4.0.1:
     resolution: {integrity: sha512-UK5Biiit/e+r3i0O223bisoS5+y7ZT1PM8Ojn0MxRHzXN1VPZ2KY6Lo6fhu1dOfCfyUAlK7Lt6wSxowRabATBw==}
 
+  tailwindcss@4.0.3:
+    resolution: {integrity: sha512-ImmZF0Lon5RrQpsEAKGxRvHwCvMgSC4XVlFRqmbzTEDb/3wvin9zfEZrMwgsa3yqBbPqahYcVI6lulM2S7IZAA==}
+
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -7228,6 +7231,7 @@ packages:
   wrangler@3.107.0:
     resolution: {integrity: sha512-Rb/fFZDHSiGNQte13Mem0O7oGKs77MfodImB3WbBD+xS0S/fxMYMwuVzkNlOGLBYYnwKx2V2/k8GpK5dJsRLhQ==}
     engines: {node: '>=16.17.0'}
+    deprecated: There is a regression in Wrangler 3.107.0 in which [assets] was not being inherited from the top-level environment. Please downgrade to v3.106.0 for now.
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20250121.0
@@ -11897,7 +11901,7 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  flowbite-react@0.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.31.0)(tailwindcss@4.0.1):
+  flowbite-react@0.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.31.0)(tailwindcss@4.0.3):
     dependencies:
       '@floating-ui/core': 1.6.6
       '@floating-ui/react': 0.26.21(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -11908,7 +11912,7 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       react-icons: 5.2.1(react@18.3.1)
       tailwind-merge: 2.4.0
-      tailwindcss: 4.0.1
+      tailwindcss: 4.0.3
     transitivePeerDependencies:
       - rollup
 
@@ -14693,6 +14697,8 @@ snapshots:
   tailwind-merge@3.0.1: {}
 
   tailwindcss@4.0.1: {}
+
+  tailwindcss@4.0.3: {}
 
   tapable@2.2.1: {}
 
