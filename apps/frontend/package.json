@@ -46,7 +46,7 @@
     "remeda": "2.20.1",
     "tailwind-merge": "3.0.1",
     "tailwindcss": "4.0.3",
-    "viem": "2.22.19",
+    "viem": "2.22.21",
     "wagmi": "2.14.9"
   },
   "devDependencies": {
