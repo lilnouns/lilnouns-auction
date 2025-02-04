@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.17] - 2025-02-04
+
+### Features
+
+- Replace `a` tag with `Link` component
+
 ## [1.1.0-alpha.16] - 2025-01-29
 
 ### Features
