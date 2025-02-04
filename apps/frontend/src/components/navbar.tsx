@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react'
+import Link from 'next/link'
 
 const Navbar = () => {
   /*const [selectedLanguage, setSelectedLanguage] = useState("English (US)");
@@ -14,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-800">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <svg
             aria-label={t`Lil Nouns Auction`} // Using aria-label instead
             className="mr-3 h-5"
@@ -66,7 +67,7 @@ const Navbar = () => {
           <span className="hidden text-2xl font-semibold dark:text-white">
             {t`Lil Nouns Auction`}
           </span>
-        </a>
+        </Link>
         <div className="flex items-center space-x-4">
           <div className="relative">
             {/*<button
