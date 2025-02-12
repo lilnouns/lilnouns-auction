@@ -1,8 +1,14 @@
 import js from '@eslint/js'
 import pluginNext from '@next/eslint-plugin-next'
 import eslintConfigPrettier from 'eslint-config-prettier'
+import pluginLingui from 'eslint-plugin-lingui'
+import pluginPrettier from 'eslint-plugin-prettier'
 import pluginReact from 'eslint-plugin-react'
 import pluginReactHooks from 'eslint-plugin-react-hooks'
+import pluginRegexp from 'eslint-plugin-regexp'
+import pluginUnicorn from 'eslint-plugin-unicorn'
+import pluginVitest from 'eslint-plugin-vitest'
+
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
@@ -47,5 +53,26 @@ export const nextJsConfig = [
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
     },
+  },
+  {
+    plugins: { lingui: pluginLingui },
+    rules: { 'lingui/ t-call-in-function': 'error' },
+  },
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    plugins: {
+      prettier: pluginPrettier,
+    },
+  },
+  {
+    plugins: { regexp: pluginRegexp },
+  },
+  {
+    languageOptions: { globals: globals.builtin },
+    plugins: { unicorn: pluginUnicorn },
+  },
+  {
+    files: ['tests/**'],
+    plugins: { vitest: pluginVitest },
   },
 ]
