@@ -19,6 +19,7 @@ import {
   safe,
   walletConnect,
 } from 'wagmi/connectors'
+import { ThemeProvider } from '@/components/theme-provider'
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const reownProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID ?? ''
@@ -63,16 +64,23 @@ export default function App({ Component, pageProps }: AppProps) {
   useLanguageAndDirection()
 
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <WagmiProvider config={config}>
-        <QueryClientProvider client={queryClient}>
-          <I18nProvider i18n={i18n}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </I18nProvider>
-        </QueryClientProvider>
-      </WagmiProvider>
-    </ErrorBoundary>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <WagmiProvider config={config}>
+          <QueryClientProvider client={queryClient}>
+            <I18nProvider i18n={i18n}>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </I18nProvider>
+          </QueryClientProvider>
+        </WagmiProvider>
+      </ErrorBoundary>
+    </ThemeProvider>
   )
 }
