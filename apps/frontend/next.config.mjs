@@ -1,6 +1,7 @@
 import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ["@repo/ui"],
   swcMinify: true,
   images: {
     unoptimized: true,
