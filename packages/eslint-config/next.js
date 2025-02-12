@@ -56,7 +56,7 @@ export const nextJsConfig = [
   },
   {
     plugins: { lingui: pluginLingui },
-    rules: { 'lingui/ t-call-in-function': 'error' },
+    rules: { 'lingui/t-call-in-function': 'error' },
   },
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
