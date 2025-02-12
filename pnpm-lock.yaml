@@ -145,7 +145,7 @@ importers:
         version: 3.1.2(rollup@4.34.6)
       flowbite-react:
         specifier: 0.10.2
-        version: 0.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.34.6)(tailwindcss@4.0.6)
+        version: 0.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.34.6)(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3)))
       graphql-request:
         specifier: 7.1.2
         version: 7.1.2(graphql@16.10.0)
@@ -192,8 +192,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       tailwindcss:
-        specifier: 4.0.6
-        version: 4.0.6
+        specifier: 3.4.17
+        version: 3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))
       viem:
         specifier: 2.23.2
         version: 2.23.2(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.1)
@@ -11917,6 +11917,14 @@ packages:
     engines: { node: '>=14.0.0' }
     hasBin: true
 
+  tailwindcss@3.4.17:
+    resolution:
+      {
+        integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==,
+      }
+    engines: { node: '>=14.0.0' }
+    hasBin: true
+
   tailwindcss@4.0.6:
     resolution:
       {
@@ -18051,7 +18059,7 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  flowbite-react@0.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.34.6)(tailwindcss@4.0.6):
+  flowbite-react@0.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.34.6)(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))):
     dependencies:
       '@floating-ui/core': 1.6.6
       '@floating-ui/react': 0.26.21(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -18062,7 +18070,7 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       react-icons: 5.2.1(react@18.3.1)
       tailwind-merge: 2.4.0
-      tailwindcss: 4.0.6
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))
     transitivePeerDependencies:
       - rollup
 
@@ -21123,6 +21131,33 @@ snapshots:
       is-glob: 4.0.3
       jiti: 1.21.7
       lilconfig: 2.1.0
+      micromatch: 4.0.8
+      normalize-path: 3.0.0
+      object-hash: 3.0.0
+      picocolors: 1.1.1
+      postcss: 8.5.2
+      postcss-import: 15.1.0(postcss@8.5.2)
+      postcss-js: 4.0.1(postcss@8.5.2)
+      postcss-load-config: 4.0.2(postcss@8.5.2)(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))
+      postcss-nested: 6.2.0(postcss@8.5.2)
+      postcss-selector-parser: 6.1.2
+      resolve: 1.22.10
+      sucrase: 3.35.0
+    transitivePeerDependencies:
+      - ts-node
+
+  tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3)):
+    dependencies:
+      '@alloc/quick-lru': 5.2.0
+      arg: 5.0.2
+      chokidar: 3.6.0
+      didyoumean: 1.2.2
+      dlv: 1.1.3
+      fast-glob: 3.3.3
+      glob-parent: 6.0.2
+      is-glob: 4.0.3
+      jiti: 1.21.7
+      lilconfig: 3.1.3
       micromatch: 4.0.8
       normalize-path: 3.0.0
       object-hash: 3.0.0
