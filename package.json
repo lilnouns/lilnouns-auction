@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.1.0-alpha.18",
+  "version": "1.1.0-alpha.19",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -42,7 +42,6 @@
   },
   "resolutions": {
     "@babel/traverse": ">=7.23.2",
-    "cookie": ">=0.7.0",
     "cross-spawn": ">=7.0.5",
     "debug": ">=4.3.1",
     "elliptic": ">=6.6.0",
@@ -64,6 +63,6 @@
     "node": ">=18.17.0",
     "pnpm": ">=9.0.0"
   },
-  "packageManager": "pnpm@10.2.0",
+  "packageManager": "pnpm@10.0.0",
   "type": "module"
 }
