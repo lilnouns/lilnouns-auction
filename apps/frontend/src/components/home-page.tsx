@@ -3,7 +3,6 @@ import { WalletOptions } from '@/components/wallet-options'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { useErrorBoundary } from 'react-error-boundary'
@@ -12,12 +11,7 @@ import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useAccount, useReadContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
-
-// Dynamically import Auction component
-const Auction = dynamic(() => import('@/components/auction'), {
-  ssr: false,
-  suspense: true,
-})
+import Auction from '@/components/auction'
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const activeChainContracts: Record<number, Address> = {
