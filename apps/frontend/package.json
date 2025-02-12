@@ -20,7 +20,7 @@
     "@lingui/core": "4.11.4",
     "@lingui/detect-locale": "4.11.4",
     "@lingui/react": "4.11.4",
-    "@prisma/adapter-d1": "6.3.0",
+    "@prisma/adapter-d1": "6.3.1",
     "@prisma/client": "6.3.1",
     "@shared/utilities": "workspace:*",
     "@tanstack/react-query": "5.66.0",
