@@ -1,6 +1,6 @@
 import Navbar from '@/components/navbar'
 import { WalletOptions } from '@/components/wallet-options'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
 import Head from 'next/head'

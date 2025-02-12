@@ -1,7 +1,7 @@
 'use client'
 
 import { buildSVG } from '@lilnounsdao/sdk'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import {
   ImageData,
   getNounData,

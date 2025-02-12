@@ -1,4 +1,4 @@
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import { DarkThemeToggle, Flowbite } from 'flowbite-react'
 import Link from 'next/link'
 

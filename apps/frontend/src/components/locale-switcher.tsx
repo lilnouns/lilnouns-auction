@@ -3,7 +3,7 @@ import { clsxm } from '@/utils'
 import { availableLocales, getLocaleName } from '@/utils/locales'
 import { Menu, Transition } from '@headlessui/react'
 import { LanguageIcon } from '@heroicons/react/24/outline'
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 import clsx from 'clsx'
 import { Fragment } from 'react'
 
