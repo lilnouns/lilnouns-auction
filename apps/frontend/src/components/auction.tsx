@@ -349,11 +349,16 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   >
                     <option value="">{t`All bodies`}</option>
-                    {ImageData.images.bodies.map((body: any, index: number) => (
-                      <option key={index} value={index.toString()}>
-                        {formatTraitName(body.filename)}
-                      </option>
-                    ))}
+                    {ImageData.images.bodies.map(
+                      (
+                        body: { filename: string; data: string },
+                        index: number,
+                      ) => (
+                        <option key={index} value={index.toString()}>
+                          {formatTraitName(body.filename)}
+                        </option>
+                      ),
+                    )}
                   </select>
                 </div>
                 <div>
@@ -371,7 +376,10 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   >
                     <option value="">All accessories</option>
                     {ImageData.images.accessories.map(
-                      (accessory: any, index: number) => (
+                      (
+                        accessory: { filename: string; data: string },
+                        index: number,
+                      ) => (
                         <option key={index} value={index.toString()}>
                           {formatTraitName(accessory.filename)}
                         </option>
@@ -393,11 +401,16 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   >
                     <option value="">All heads</option>
-                    {ImageData.images.heads.map((head: any, index: number) => (
-                      <option key={index} value={index.toString()}>
-                        {formatTraitName(head.filename)}
-                      </option>
-                    ))}
+                    {ImageData.images.heads.map(
+                      (
+                        head: { filename: string; data: string },
+                        index: number,
+                      ) => (
+                        <option key={index} value={index.toString()}>
+                          {formatTraitName(head.filename)}
+                        </option>
+                      ),
+                    )}
                   </select>
                 </div>
                 <div>
@@ -415,7 +428,10 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                   >
                     <option value="">All glasses</option>
                     {ImageData.images.glasses.map(
-                      (glasses: any, index: number) => (
+                      (
+                        glasses: { filename: string; data: string },
+                        index: number,
+                      ) => (
                         <option key={index} value={index.toString()}>
                           {formatTraitName(glasses.filename)}
                         </option>
