@@ -10,6 +10,7 @@ import {
 import { Input } from '@repo/ui/components/input'
 import { formatEther } from 'viem'
 import React from 'react'
+import { join, map, pipe, split } from 'remeda'
 
 interface AuctionTraitSelectionProps {
   seed: Record<string, string>
@@ -23,7 +24,6 @@ interface AuctionTraitSelectionProps {
       glasses: Array<{ filename: string }>
     }
   }
-  formatTraitName: (name: string) => string
   nounId?: bigint
   price?: bigint
 }
@@ -31,7 +31,6 @@ interface AuctionTraitSelectionProps {
 export function AuctionTraitSelection({
   updateSeed,
   ImageData,
-  formatTraitName,
   nounId,
   price,
 }: AuctionTraitSelectionProps) {
@@ -48,27 +47,23 @@ export function AuctionTraitSelection({
             id: 'body',
             label: 'Select body',
             options: ImageData.images.bodies,
-            format: true,
           },
           {
             id: 'accessory',
             label: 'Select accessory',
             options: ImageData.images.accessories,
-            format: true,
           },
           {
             id: 'head',
             label: 'Select head',
             options: ImageData.images.heads,
-            format: true,
           },
           {
             id: 'glasses',
             label: 'Select glasses',
             options: ImageData.images.glasses,
-            format: true,
           },
-        ].map(({ id, label, options, format }) => (
+        ].map(({ id, label, options }) => (
           <div key={id}>
             <Label htmlFor={id}>{label}</Label>
             <Select onValueChange={(value) => updateSeed(id, value)}>
@@ -106,5 +101,24 @@ export function AuctionTraitSelection({
         </div>
       </CardContent>
     </Card>
+  )
+}
+
+/**
+ * Formats the given trait name by capitalizing each part of the name and
+ * removing specific prefixes if present.
+ *
+ * @param traitName - The trait name to format.
+ * @returns The formatted trait name.
+ */
+function formatTraitName(traitName: string): string {
+  const prefixes = new Set(['head', 'accessory', 'glasses', 'body'])
+
+  return pipe(
+    traitName,
+    split('-'),
+    (parts) => (prefixes.has(parts[0] ?? '') ? parts.slice(1) : parts),
+    map((part) => (part ? part.charAt(0).toUpperCase() + part.slice(1) : '')),
+    join(' '),
   )
 }

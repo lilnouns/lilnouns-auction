@@ -67,25 +67,6 @@ export async function fetchBlocks(
   return blocks ?? []
 }
 
-/**
- * Formats the given trait name by capitalizing each part of the name and
- * removing specific prefixes if present.
- *
- * @param traitName - The trait name to format.
- * @returns The formatted trait name.
- */
-function formatTraitName(traitName: string): string {
-  const prefixes = new Set(['head', 'accessory', 'glasses', 'body'])
-
-  return pipe(
-    traitName,
-    split('-'),
-    (parts) => (prefixes.has(parts[0] ?? '') ? parts.slice(1) : parts),
-    map((part) => (part ? part.charAt(0).toUpperCase() + part.slice(1) : '')),
-    join(' '),
-  )
-}
-
 interface AuctionProps {
   nounId?: bigint | undefined
   price?: bigint | undefined
@@ -279,7 +260,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
               seed={seed}
               updateSeed={updateSeed}
               ImageData={ImageData}
-              formatTraitName={formatTraitName}
               nounId={nounId}
               price={price}
             />
