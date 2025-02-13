@@ -6,7 +6,7 @@ import {
   ImageData,
   getNounData,
   getNounSeedFromBlockHash,
-} from '@shared/utilities'
+} from '@repo/utilities'
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
