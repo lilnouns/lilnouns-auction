@@ -55,7 +55,7 @@ const IconNoggles = () => (
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-800">
+    <nav className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between p-4">
         <Link href="/" className="flex items-center">
           <IconNoggles />
