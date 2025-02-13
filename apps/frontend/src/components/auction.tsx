@@ -16,6 +16,9 @@ import { join, map, pipe, prop, split } from 'remeda'
 import { Address, formatEther } from 'viem'
 import { useWriteContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
+import { Card, CardContent } from '@repo/ui/components/card'
+import { Skeleton } from '@repo/ui/components/skeleton'
+import { Button } from '@repo/ui/components/button'
 
 const { palette } = ImageData
 
@@ -485,40 +488,64 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                 </div>
               </div>
             </div>
-            <div>
-              {isLoading ? (
-                <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
-                  {Array.from({ length: 12 }).map((_, index) => (
-                    <SkeletonCard key={index} />
-                  ))}
-                </div>
-              ) : (
-                <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
-                  {seedsData.map(({ blockNumber, seed }) => (
-                    <div className="group relative" key={blockNumber}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
-                        alt={`Noun ${nounId}`}
-                        className="h-auto w-full rounded-lg shadow-md"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
-                        <button
-                          onClick={() => handleBuy(blockNumber)}
-                          className="rounded-lg bg-white px-6 py-2 font-semibold text-black shadow hover:bg-gray-200"
-                        >
-                          Buy
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <AuctionPreviewGrid
+              isLoading={isLoading}
+              seedsData={seedsData}
+              renderSVG={renderSVG}
+              handleBuy={handleBuy}
+            />
           </div>
         </section>
       </div>
     </>
+  )
+}
+
+interface AuctionPreviewGridProps {
+  isLoading: boolean
+  seedsData: SeedData[]
+  renderSVG: (seed: any) => string
+  handleBuy: (blockNumber: number) => void
+}
+
+function AuctionPreviewGrid({
+  isLoading,
+  seedsData,
+  renderSVG,
+  handleBuy,
+}: AuctionPreviewGridProps) {
+  return (
+    <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
+      {isLoading
+        ? Array.from({ length: 12 }).map((_, index) => (
+            <Card key={index} className="rounded-lg shadow-md">
+              <CardContent className="p-4">
+                <Skeleton className="h-32 w-full rounded-lg" />
+              </CardContent>
+            </Card>
+          ))
+        : seedsData.map(({ blockNumber, seed }) => (
+            <Card
+              key={blockNumber}
+              className="group relative rounded-lg shadow-md overflow-hidden"
+            >
+              <img
+                src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
+                alt={`Noun ${blockNumber}`}
+                className="h-auto w-full rounded-lg"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+                <Button
+                  onClick={() => handleBuy(blockNumber)}
+                  variant="secondary"
+                  className="px-6 py-2"
+                >
+                  Buy
+                </Button>
+              </div>
+            </Card>
+          ))}
+    </div>
   )
 }
 
