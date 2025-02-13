@@ -35,7 +35,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
-    "@turbo/gen": "2.4.1",
+    "@turbo/gen": "2.4.2",
     "@types/node": "22.13.2",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
