@@ -1,7 +1,6 @@
 import '@repo/ui/globals.css'
 import type { AppProps } from 'next/app'
 
-import { Layout } from '@/components'
 import { Providers } from '@/components/providers'
 
 import { useLanguageAndDirection } from '@/hooks/use-language-and-direction'
@@ -13,9 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <Providers>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </Providers>
   )
 }
