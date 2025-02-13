@@ -1,9 +1,13 @@
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+
 import linguiConfig from '@/../lingui.config'
-import ErrorFallback from '@/components/error-fallback'
 import { LinguiClientProvider } from '@/components/lingui-client-provider'
 import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
 import { PageLangParam, withLinguiLayout } from '@/i18n/with-lingui'
 import { t } from '@lingui/core/macro'
+
+import ErrorFallback from '@/components/error-fallback'
 import { ErrorBoundary } from 'react-error-boundary'
 
 const geistSans = Geist({
