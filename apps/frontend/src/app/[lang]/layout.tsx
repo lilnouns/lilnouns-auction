@@ -9,6 +9,7 @@ import { t } from '@lingui/core/macro'
 
 import ErrorFallback from '@/components/error-fallback'
 import { ErrorBoundary } from 'react-error-boundary'
+import { cn } from '@repo/ui/lib/utils'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
