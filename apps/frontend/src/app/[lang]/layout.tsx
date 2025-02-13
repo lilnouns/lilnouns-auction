@@ -6,6 +6,21 @@ import { PageLangParam, withLinguiLayout } from '@/i18n/with-lingui'
 import { t } from '@lingui/core/macro'
 import { ErrorBoundary } from 'react-error-boundary'
 
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
+
+export const metadata: Metadata = {
+  title: 'Lil Nouns Auction',
+  description: '',
+}
+
 /**
  * Generates an array of parameter objects for static site generation, where
  * each object contains a language code.
@@ -39,7 +54,14 @@ export default withLinguiLayout(function RootLayout({
 }) {
   return (
     <html lang={lang} className="dark">
-      <body className="antialiased dark:bg-gray-900">
+      <body
+        className={cn(
+          'min-h-svh bg-background font-sans antialiased',
+          geistSans.variable,
+          geistMono.variable,
+        )}
+        suppressHydrationWarning={true}
+      >
         <main className="flex min-h-screen flex-col">
           <LinguiClientProvider
             initialLocale={lang}
