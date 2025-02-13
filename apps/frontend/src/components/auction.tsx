@@ -129,18 +129,6 @@ function formatTraitName(traitName: string): string {
   )
 }
 
-const SkeletonCard: React.FC = () => (
-  <div className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white p-0 text-center shadow dark:border-gray-700 dark:bg-gray-800">
-    <div className="flex flex-1 animate-pulse flex-col items-center p-6">
-      <div className="size-24 w-full rounded bg-gray-300 dark:bg-gray-700"></div>
-      <div className="mt-4 h-4 w-full rounded bg-gray-300 dark:bg-gray-700"></div>
-    </div>
-    <div className="flex">
-      <div className="h-10 w-full rounded-b-lg bg-green-50 dark:bg-green-800"></div>
-    </div>
-  </div>
-)
-
 interface AuctionProps {
   nounId?: bigint | undefined
   price?: bigint | undefined
