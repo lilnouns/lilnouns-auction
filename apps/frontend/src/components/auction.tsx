@@ -2,9 +2,9 @@
 
 import { buildSVG } from '@lilnounsdao/sdk'
 import {
-  ImageData,
   getNounData,
   getNounSeedFromBlockHash,
+  ImageData,
 } from '@repo/utilities'
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
@@ -27,6 +27,7 @@ import {
 } from '@repo/ui/components/select'
 import { Input } from '@repo/ui/components/input'
 import { Label } from '@repo/ui/components/label'
+import { Block, BlockData, Seed, SeedData } from '@/types'
 
 const { palette } = ImageData
 
@@ -34,40 +35,6 @@ const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const activeChainContracts: Record<number, Address> = {
   [mainnet.id]: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
   [sepolia.id]: '0x0d8c4d18765AB8808ab6CEE4d7A760e8b93AB20c',
-}
-
-interface BlockData {
-  blocks?: Block[]
-}
-
-export interface Block {
-  id: string
-  number: number
-  timestamp: number
-  parentHash?: string
-  author?: string
-  difficulty: bigint
-  totalDifficulty: bigint
-  gasUsed: bigint
-  gasLimit: bigint
-  receiptsRoot: string
-  transactionsRoot: string
-  stateRoot: string
-  size: bigint
-  unclesHash: string
-}
-
-interface Seed {
-  accessory: number
-  background: number
-  body: number
-  glasses: number
-  head: number
-}
-
-interface SeedData {
-  blockNumber: number
-  seed: Seed
 }
 
 export async function fetchBlocks(
