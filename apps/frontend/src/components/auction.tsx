@@ -161,7 +161,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
-    // @ts-ignore
     const svgBinary = buildSVG(parts, palette, background)
     return btoa(svgBinary)
   }, [])
@@ -308,7 +307,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     })
   }
 
-  // @ts-ignore
   return (
     <>
       <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
