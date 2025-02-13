@@ -1,5 +1,5 @@
 {
-  "name": "@shared/utilities",
+  "name": "@repo/utilities",
   "type": "module",
   "scripts": {
     "build": "unbuild",
