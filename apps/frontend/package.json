@@ -6,8 +6,8 @@
     "dev": "next dev",
     "lingui:extract": "lingui extract --clean",
     "lint": "next lint",
-    "prestart": "next-on-pages",
-    "start": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
+    "pages:build": "pnpm next-on-pages",
+    "preview": "pnpm pages:build && wrangler pages dev",
     "test": "vitest run",
     "type-check": "tsc --noEmit"
   },
