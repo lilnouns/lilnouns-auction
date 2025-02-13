@@ -11,6 +11,7 @@ import { Input } from '@repo/ui/components/input'
 import { formatEther } from 'viem'
 import React from 'react'
 import { join, map, pipe, split } from 'remeda'
+import { MultiSelect } from '@repo/ui/components/multi-select'
 
 interface AuctionTraitSelectionProps {
   seed: Record<string, string>
@@ -40,55 +41,59 @@ export function AuctionTraitSelection({
         {[
           {
             id: 'background',
-            label: 'Select background',
+            label: 'Background',
             options: ImageData.bgcolors,
           },
           {
             id: 'body',
-            label: 'Select body',
+            label: 'Body',
             options: ImageData.images.bodies,
           },
           {
             id: 'accessory',
-            label: 'Select accessory',
+            label: 'Accessory',
             options: ImageData.images.accessories,
           },
           {
             id: 'head',
-            label: 'Select head',
+            label: 'Head',
             options: ImageData.images.heads,
           },
           {
             id: 'glasses',
-            label: 'Select glasses',
+            label: 'Glasses',
             options: ImageData.images.glasses,
           },
         ].map(({ id, label, options }) => (
           <div key={id}>
             <Label htmlFor={id}>{label}</Label>
-            <Select onValueChange={(value) => updateSeed(id, value)}>
-              <SelectTrigger>
-                <SelectValue placeholder={`All ${label.toLowerCase()}`} />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="default">
-                  All {label.toLowerCase()}
-                </SelectItem>
-                {options.map((option, index) => (
-                  <SelectItem key={index} value={index.toString()}>
-                    {formatTraitName(
-                      typeof option !== 'string' ? option?.filename : option,
-                    )}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <MultiSelect
+              options={options.map((option, index) => {
+                return {
+                  label: formatTraitName(
+                    typeof option !== 'string' ? option?.filename : option,
+                  ),
+                  value: index.toString(),
+                }
+              })}
+              onValueChange={(value) => updateSeed(id, value[0]!)}
+              defaultValue={[]}
+              placeholder={`Select ${label.toLowerCase()}`}
+              variant="inverted"
+              animation={0}
+              maxCount={2}
+            />
           </div>
         ))}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <Label htmlFor="noun-id">Noun ID</Label>
-            <Input id="noun-id" value={Number(nounId)} readOnly />
+            <Input
+              id="noun-id"
+              value={Number(nounId)}
+              readOnly
+              className={'shadow min-h-10'}
+            />
           </div>
           <div>
             <Label htmlFor="price">Price</Label>
@@ -96,6 +101,7 @@ export function AuctionTraitSelection({
               id="price"
               value={formatEther(BigInt(price ?? 0))}
               readOnly
+              className={'shadow min-h-10'}
             />
           </div>
         </div>
