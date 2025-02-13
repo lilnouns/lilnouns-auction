@@ -9,9 +9,9 @@ import {
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
-// import { useErrorBoundary } from 'react-error-boundary'
+
 import { useIdle } from 'react-use'
-import { join, map, pipe, prop, split } from 'remeda'
+import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useWriteContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
