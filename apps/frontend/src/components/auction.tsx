@@ -170,8 +170,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     if (!nounId) return
     setIsLoading(false)
 
-    let blockOffset = 0
-    let blockLimit = 256
+    const blockOffset = 0
+    const blockLimit = 256
 
     const parseSeedParameter = (seedParam?: string): number | undefined =>
       seedParam && !Number.isNaN(Number(seedParam))
