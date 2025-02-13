@@ -161,7 +161,14 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
-    const svgBinary = buildSVG(parts, palette, background)
+    // Transform the parts to match the expected type
+    const formattedParts = parts
+      .filter(
+        (part): part is { filename: string; data: string } =>
+          part !== undefined,
+      )
+      .map(({ data }) => ({ data }))
+    const svgBinary = buildSVG(formattedParts, palette, background!)
     return btoa(svgBinary)
   }, [])
 
