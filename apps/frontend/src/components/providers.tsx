@@ -67,13 +67,13 @@ export function Providers({ children }: PropsWithChildren) {
         enableSystem
         disableTransitionOnChange
       >
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <WagmiProvider config={config}>
-            <QueryClientProvider client={queryClient}>
-              {children}
-            </QueryClientProvider>
-          </WagmiProvider>
-        </ErrorBoundary>
+        {/*<ErrorBoundary FallbackComponent={ErrorFallback}>*/}
+        <WagmiProvider config={config}>
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
+        </WagmiProvider>
+        {/*</ErrorBoundary>*/}
       </ThemeProvider>
     </I18nProvider>
   )

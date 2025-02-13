@@ -157,7 +157,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     }))
   }
 
-  const { showBoundary } = useErrorBoundary()
+  // const { showBoundary } = useErrorBoundary()
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
@@ -234,9 +234,9 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       setSeedsData(seedResults)
     } catch (error) {
       if (error instanceof Error) {
-        showBoundary(error)
+        // showBoundary(error)
       } else {
-        showBoundary('An unexpected error occurred')
+        // showBoundary('An unexpected error occurred')
       }
     } finally {
       setIsLoading(false)
@@ -248,7 +248,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     seed.accessory,
     seed.head,
     seed.glasses,
-    showBoundary,
+    // showBoundary,
   ])
 
   useEffect(() => {
