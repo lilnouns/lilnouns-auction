@@ -1,8 +1,8 @@
 import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev'
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  transpilePackages: ["@repo/ui"],
-  swcMinify: true,
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  transpilePackages: ['@repo/ui'],
   images: {
     unoptimized: true,
   },
@@ -18,7 +18,7 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
-    config.cache = false; // Disables PackFileCacheStrategy
+    config.cache = false // Disables PackFileCacheStrategy
 
     config.resolve.fallback = {
       // if you miss it, all the other options in fallback, specified
