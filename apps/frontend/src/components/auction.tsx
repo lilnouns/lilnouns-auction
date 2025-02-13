@@ -1,7 +1,6 @@
 'use client'
 
 import { buildSVG } from '@lilnounsdao/sdk'
-import { t } from '@lingui/core/macro'
 import {
   ImageData,
   getNounData,
@@ -10,7 +9,7 @@ import {
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
-import { useErrorBoundary } from 'react-error-boundary'
+// import { useErrorBoundary } from 'react-error-boundary'
 import { useIdle } from 'react-use'
 import { join, map, pipe, prop, split } from 'remeda'
 import { Address, formatEther } from 'viem'
@@ -19,6 +18,15 @@ import { mainnet, sepolia } from 'wagmi/chains'
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { Button } from '@repo/ui/components/button'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@repo/ui/components/select'
+import { Input } from '@repo/ui/components/input'
+import { Label } from '@repo/ui/components/label'
 
 const { palette } = ImageData
 
@@ -322,172 +330,14 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
-            <div className="mb-4 w-full rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
-              <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="background"
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    {t`Select background`}
-                  </label>
-                  <select
-                    id="background"
-                    value={seed.background}
-                    onChange={(e) => updateSeed('background', e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  >
-                    <option value="">All backgrounds</option>
-                    {ImageData.bgcolors.map((color: string, index: number) => (
-                      <option key={index} value={index.toString()}>
-                        {color}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label
-                    htmlFor="body"
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    {t`Select body`}
-                  </label>
-                  <select
-                    id="body"
-                    value={seed.body}
-                    onChange={(e) => updateSeed('body', e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  >
-                    <option value="">{t`All bodies`}</option>
-                    {ImageData.images.bodies.map(
-                      (
-                        body: { filename: string; data: string },
-                        index: number,
-                      ) => (
-                        <option key={index} value={index.toString()}>
-                          {formatTraitName(body.filename)}
-                        </option>
-                      ),
-                    )}
-                  </select>
-                </div>
-                <div>
-                  <label
-                    htmlFor="accessory"
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    {t`Select accessory`}
-                  </label>
-                  <select
-                    id="accessory"
-                    value={seed.accessory}
-                    onChange={(e) => updateSeed('accessory', e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  >
-                    <option value="">All accessories</option>
-                    {ImageData.images.accessories.map(
-                      (
-                        accessory: { filename: string; data: string },
-                        index: number,
-                      ) => (
-                        <option key={index} value={index.toString()}>
-                          {formatTraitName(accessory.filename)}
-                        </option>
-                      ),
-                    )}
-                  </select>
-                </div>
-                <div>
-                  <label
-                    htmlFor="head"
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    {t`Select head`}
-                  </label>
-                  <select
-                    id="head"
-                    value={seed.head}
-                    onChange={(e) => updateSeed('head', e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  >
-                    <option value="">All heads</option>
-                    {ImageData.images.heads.map(
-                      (
-                        head: { filename: string; data: string },
-                        index: number,
-                      ) => (
-                        <option key={index} value={index.toString()}>
-                          {formatTraitName(head.filename)}
-                        </option>
-                      ),
-                    )}
-                  </select>
-                </div>
-                <div>
-                  <label
-                    htmlFor="glasses"
-                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    {t`Select glasses`}
-                  </label>
-                  <select
-                    id="glasses"
-                    value={seed.glasses}
-                    onChange={(e) => updateSeed('glasses', e.target.value)}
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                  >
-                    <option value="">All glasses</option>
-                    {ImageData.images.glasses.map(
-                      (
-                        glasses: { filename: string; data: string },
-                        index: number,
-                      ) => (
-                        <option key={index} value={index.toString()}>
-                          {formatTraitName(glasses.filename)}
-                        </option>
-                      ),
-                    )}
-                  </select>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="noun-id"
-                      className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Noun ID
-                    </label>
-                    <input
-                      id="noun-id"
-                      name="noun-id"
-                      type="text"
-                      value={Number(nounId)}
-                      placeholder="Noun"
-                      readOnly={true}
-                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="price"
-                      className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Price
-                    </label>
-                    <input
-                      id="price"
-                      name="price"
-                      type="text"
-                      value={formatEther(BigInt(price ?? 0))}
-                      placeholder="Noun"
-                      readOnly={true}
-                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <AuctionTraitSelection
+              seed={seed}
+              updateSeed={updateSeed}
+              ImageData={ImageData}
+              formatTraitName={formatTraitName}
+              nounId={nounId}
+              price={price}
+            />
             <AuctionPreviewGrid
               isLoading={isLoading}
               seedsData={seedsData}
@@ -498,6 +348,104 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
         </section>
       </div>
     </>
+  )
+}
+
+interface AuctionTraitSelectionProps {
+  seed: Record<string, string>
+  updateSeed: (trait: string, value: string) => void
+  ImageData: {
+    bgcolors: string[]
+    images: {
+      bodies: Array<{ filename: string }>
+      accessories: Array<{ filename: string }>
+      heads: Array<{ filename: string }>
+      glasses: Array<{ filename: string }>
+    }
+  }
+  formatTraitName: (name: string) => string
+  nounId?: bigint
+  price?: bigint
+}
+
+export function AuctionTraitSelection({
+  updateSeed,
+  ImageData,
+  formatTraitName,
+  nounId,
+  price,
+}: AuctionTraitSelectionProps) {
+  return (
+    <Card className="mb-4 w-full">
+      <CardContent className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
+        {[
+          {
+            id: 'background',
+            label: 'Select background',
+            options: ImageData.bgcolors,
+          },
+          {
+            id: 'body',
+            label: 'Select body',
+            options: ImageData.images.bodies,
+            format: true,
+          },
+          {
+            id: 'accessory',
+            label: 'Select accessory',
+            options: ImageData.images.accessories,
+            format: true,
+          },
+          {
+            id: 'head',
+            label: 'Select head',
+            options: ImageData.images.heads,
+            format: true,
+          },
+          {
+            id: 'glasses',
+            label: 'Select glasses',
+            options: ImageData.images.glasses,
+            format: true,
+          },
+        ].map(({ id, label, options, format }) => (
+          <div key={id}>
+            <Label htmlFor={id}>{label}</Label>
+            <Select onValueChange={(value) => updateSeed(id, value)}>
+              <SelectTrigger>
+                <SelectValue placeholder={`All ${label.toLowerCase()}`} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="default">
+                  All {label.toLowerCase()}
+                </SelectItem>
+                {options.map((option, index) => (
+                  <SelectItem key={index} value={index.toString()}>
+                    {formatTraitName(
+                      typeof option !== 'string' ? option?.filename : option,
+                    )}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        ))}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="noun-id">Noun ID</Label>
+            <Input id="noun-id" value={Number(nounId)} readOnly />
+          </div>
+          <div>
+            <Label htmlFor="price">Price</Label>
+            <Input
+              id="price"
+              value={formatEther(BigInt(price ?? 0))}
+              readOnly
+            />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
 
