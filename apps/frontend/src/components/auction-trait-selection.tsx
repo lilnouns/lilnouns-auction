@@ -82,6 +82,7 @@ export function AuctionTraitSelection({
               variant="inverted"
               animation={0}
               maxCount={2}
+              className={'shadow-none min-h-10'}
             />
           </div>
         ))}
@@ -92,7 +93,7 @@ export function AuctionTraitSelection({
               id="noun-id"
               value={Number(nounId)}
               readOnly
-              className={'shadow min-h-10'}
+              className={'shadow-none min-h-10'}
             />
           </div>
           <div>
@@ -101,7 +102,7 @@ export function AuctionTraitSelection({
               id="price"
               value={formatEther(BigInt(price ?? 0))}
               readOnly
-              className={'shadow min-h-10'}
+              className={'shadow-none min-h-10'}
             />
           </div>
         </div>
