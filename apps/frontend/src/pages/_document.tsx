@@ -1,5 +1,4 @@
 import { getLocale, getLocaleDirection, Locale } from '@/utils/locales'
-import { ThemeModeScript } from 'flowbite-react'
 import { Head, Html, Main, NextScript } from 'next/document'
 import { ParsedUrlQuery } from 'node:querystring'
 import { DocumentProps } from 'postcss'
@@ -20,9 +19,7 @@ export default function Document(props: Props) {
       dir={direction}
       className="dark font-sans"
     >
-      <Head>
-        <ThemeModeScript />
-      </Head>
+      <Head />
       <body className="bg-white text-gray-600 antialiased dark:bg-gray-900 dark:text-gray-400">
         <Main />
         <NextScript />
