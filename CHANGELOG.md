@@ -2,6 +2,99 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.20] - 2025-02-14
+
+### Features
+
+- Set up base configuration for ui package
+- Add `transpilePackages` for `@repo/ui`
+- Add shared ESLint configurations
+- Add shared prettier config with plugins
+- Add shared TypeScript configs
+- Add new eslint plugins for enhanced linting
+- Add `Button` component
+- Add `DropdownMenu` component
+- Add theme toggle component
+- Add `ThemeProvider` component
+- Wrap app with `ThemeProvider`
+- Add `Card` component
+- Add `Alert` component with variants
+- Add `Input` component
+- Add `Select` component
+- Add `Skeleton` component
+- Add `Label` component
+- Enhance navbar styling and behavior
+- Add `cn` utility to layout
+- Add `Badge` component
+- Add `Command` components for command palette
+- Add reusable `Dialog` component
+- Add `Separator` component
+- Add `Popover` component
+- Add `MultiSelect` component
+- Replace `Select` with `MultiSelect` in traits
+
+### Bug Fixes
+
+- Mark `auction` component as client-side
+- Correct typo in rule identifier
+- Handle undefined values in `parts` transformation
+
+### Refactor
+
+- Remove dynamic import for `Auction` component
+- Replace `DarkThemeToggle` with `ModeToggle`
+- Use `const` instead of `let` in `auction`
+- Use `const` instead of `let` for constants
+- Remove unnecessary `@ts-ignore` comments
+- Replace `any` with specific type annotations
+- Use shared `Card` and `Button` components
+- Extract `Providers` component
+- Extract `IconNoggles` into a dedicated component
+- Modernize `error-fallback` UI with `Card`
+- Remove `Layout` component usage
+- Disable `ErrorBoundary` handling
+- Extract `AuctionPreviewGrid` component
+- Extract trait selection to new component
+- Remove unused `SkeletonCard` component
+- Extract type interfaces to dedicated file
+- Extract `AuctionTraitSelection` and `AuctionPreviewGrid`
+- Relocate `formatTraitName` to trait selection
+- Simplify `auction` component imports
+- Remove unused component exports
+- Remove `ThemeModeScript` from layout
+- Improve layout and styling usage
+- Reorder imports in layout component
+- Remove unused `Select` component imports
+- Update `seed` to support multiple values
+- Add `backgrounds` to mapping
+
+### Miscellaneous Tasks
+
+- Add `components.json` for ShadCN config
+- Update PostCSS config to use shared module
+- Update tailwind config to re-export shared config
+- Update `tsconfig` paths for `@repo/ui`
+- Migrate `wrangler.toml` to `wrangler.json`
+- Update `nextjs` compiler options
+- Update `tsconfig` to extend shared config
+- Enable `strictNullChecks` in TypeScript
+- Migrate to unified ESLint config
+- Remove unused global CSS imports
+- Update global styles import path
+- Update turbo configuration for `build` task
+- Remove `*.config.js` from `.eslintignore`
+- Update `@lingui/macro` imports
+- Update `next.config` to use TypeScript
+- Remove unused `next.config.mjs` from include
+- Update import path for utilities
+- Comment out `setupDevPlatform` in dev mode
+- Update scripts for `pages` commands
+- Update loader in `HomePage` component
+
+### Styling
+
+- Remove shadow styling from input fields
+
 ## [1.1.0-alpha.19] - 2025-02-12
 
 ### Bug Fixes
