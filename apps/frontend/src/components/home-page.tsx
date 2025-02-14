@@ -5,8 +5,7 @@ import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import { useErrorBoundary } from 'react-error-boundary'
-import { BarLoader } from 'react-spinners'
+import { BeatLoader } from 'react-spinners'
 import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useAccount, useReadContract } from 'wagmi'
@@ -160,8 +159,8 @@ export const HomePage: NextPage = () => {
         {isConnected ? (
           <>
             {isLoading ? (
-              <div className="mt-3 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-                <BarLoader color={'#10b981'} loading={isLoading} width={100} />
+              <div className="mt-6 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
+                <BeatLoader color={'#18181b'} loading={isLoading} size={15} />
               </div>
             ) : (
               <Auction nounId={nounId} price={price} />

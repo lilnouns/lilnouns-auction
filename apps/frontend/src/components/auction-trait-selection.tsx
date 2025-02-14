@@ -1,20 +1,14 @@
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Label } from '@repo/ui/components/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@repo/ui/components/select'
 import { Input } from '@repo/ui/components/input'
 import { formatEther } from 'viem'
 import React from 'react'
 import { join, map, pipe, split } from 'remeda'
+import { MultiSelect } from '@repo/ui/components/multi-select'
 
 interface AuctionTraitSelectionProps {
-  seed: Record<string, string>
-  updateSeed: (trait: string, value: string) => void
+  seed: Record<string, string[]>
+  updateSeed: (trait: string, value: string[]) => void
   ImageData: {
     bgcolors: string[]
     images: {
@@ -29,6 +23,7 @@ interface AuctionTraitSelectionProps {
 }
 
 export function AuctionTraitSelection({
+  seed,
   updateSeed,
   ImageData,
   nounId,
@@ -40,55 +35,66 @@ export function AuctionTraitSelection({
         {[
           {
             id: 'background',
-            label: 'Select background',
+            label: 'Background',
             options: ImageData.bgcolors,
           },
           {
             id: 'body',
-            label: 'Select body',
+            label: 'Body',
             options: ImageData.images.bodies,
           },
           {
             id: 'accessory',
-            label: 'Select accessory',
+            label: 'Accessory',
             options: ImageData.images.accessories,
           },
           {
             id: 'head',
-            label: 'Select head',
+            label: 'Head',
             options: ImageData.images.heads,
           },
           {
             id: 'glasses',
-            label: 'Select glasses',
+            label: 'Glasses',
             options: ImageData.images.glasses,
           },
         ].map(({ id, label, options }) => (
           <div key={id}>
             <Label htmlFor={id}>{label}</Label>
-            <Select onValueChange={(value) => updateSeed(id, value)}>
-              <SelectTrigger>
-                <SelectValue placeholder={`All ${label.toLowerCase()}`} />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="default">
-                  All {label.toLowerCase()}
-                </SelectItem>
-                {options.map((option, index) => (
-                  <SelectItem key={index} value={index.toString()}>
-                    {formatTraitName(
-                      typeof option !== 'string' ? option?.filename : option,
-                    )}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <MultiSelect
+              options={options.map((option, index) => {
+                const backgrounds: { [key: string]: string } = {
+                  d5d7e1: 'cold',
+                  e1d7d5: 'warm',
+                }
+                return {
+                  label: formatTraitName(
+                    typeof option !== 'string'
+                      ? option?.filename
+                      : backgrounds[option]!,
+                  ),
+                  value: index.toString(),
+                }
+              })}
+              onValueChange={(value) => updateSeed(id, value)}
+              defaultValue={seed[id] ?? []}
+              placeholder={`Select ${label.toLowerCase()}`}
+              variant="inverted"
+              animation={0}
+              maxCount={2}
+              className={'shadow-none min-h-10'}
+            />
           </div>
         ))}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <Label htmlFor="noun-id">Noun ID</Label>
-            <Input id="noun-id" value={Number(nounId)} readOnly />
+            <Input
+              id="noun-id"
+              value={Number(nounId)}
+              readOnly
+              className={'shadow-none min-h-10'}
+            />
           </div>
           <div>
             <Label htmlFor="price">Price</Label>
@@ -96,6 +102,7 @@ export function AuctionTraitSelection({
               id="price"
               value={formatEther(BigInt(price ?? 0))}
               readOnly
+              className={'shadow-none min-h-10'}
             />
           </div>
         </div>

@@ -80,14 +80,14 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const [seed, setSeed] = useState<{
-    background?: string
-    body?: string
-    accessory?: string
-    head?: string
-    glasses?: string
+    background?: string[]
+    body?: string[]
+    accessory?: string[]
+    head?: string[]
+    glasses?: string[]
   }>({})
 
-  const updateSeed = (key: string, value: string | undefined) => {
+  const updateSeed = (key: string, value: string[] | undefined) => {
     setSeed((prev) => ({
       ...prev,
       [key]: value,
@@ -116,12 +116,14 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     const blockOffset = 0
     const blockLimit = 256
 
-    const parseSeedParameter = (seedParam?: string): number | undefined =>
-      seedParam && !Number.isNaN(Number(seedParam))
-        ? Number(seedParam)
-        : undefined
+    const parseSeedParameter = (seedParams?: string[]): number[] | undefined =>
+      seedParams
+        ?.map((param) =>
+          !Number.isNaN(Number(param)) ? Number(param) : undefined,
+        )
+        .filter((num): num is number => num !== undefined) ?? undefined
 
-    const filterParams: Partial<Seed> = {
+    const filterParams = {
       background: parseSeedParameter(seed.background),
       body: parseSeedParameter(seed.body),
       accessory: parseSeedParameter(seed.accessory),
@@ -138,8 +140,11 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
           try {
             const seed = getNounSeedFromBlockHash(Number(nounId), block.id)
             const isMatching = Object.entries(filterParams).every(
-              ([key, value]) =>
-                value === undefined || seed[key as keyof Seed] === value,
+              ([key, values]) => {
+                if (!values || values.length === 0) return true
+                const seedValue = seed[key as keyof Seed]
+                return values.includes(seedValue)
+              },
             )
             return isMatching
               ? { blockNumber: block.number, seed }
