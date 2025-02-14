@@ -1,11 +1,30 @@
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+
 import linguiConfig from '@/../lingui.config'
-import ErrorFallback from '@/components/error-fallback'
 import { LinguiClientProvider } from '@/components/lingui-client-provider'
 import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
 import { PageLangParam, withLinguiLayout } from '@/i18n/with-lingui'
-import { t } from '@lingui/macro'
-import { ThemeModeScript } from 'flowbite-react'
+import { t } from '@lingui/core/macro'
+
+import ErrorFallback from '@/components/error-fallback'
 import { ErrorBoundary } from 'react-error-boundary'
+import { cn } from '@repo/ui/lib/utils'
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
+
+export const metadata: Metadata = {
+  title: 'Lil Nouns Auction',
+  description: '',
+}
 
 /**
  * Generates an array of parameter objects for static site generation, where
@@ -40,10 +59,14 @@ export default withLinguiLayout(function RootLayout({
 }) {
   return (
     <html lang={lang} className="dark">
-      <head>
-        <ThemeModeScript />
-      </head>
-      <body className="antialiased dark:bg-gray-900">
+      <body
+        className={cn(
+          'min-h-svh bg-background font-sans antialiased',
+          geistSans.variable,
+          geistMono.variable,
+        )}
+        suppressHydrationWarning={true}
+      >
         <main className="flex min-h-screen flex-col">
           <LinguiClientProvider
             initialLocale={lang}

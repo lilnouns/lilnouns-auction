@@ -1,16 +1,14 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
+  "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "env": ["BLOCKS_SUBGRAPH_URL"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["apps/**/.next/**", "packages/**/dist/**"]
     },
     "dev": {
-      "cache": false
-    },
-    "start": {
-      "dependsOn": ["build"],
       "cache": false
     },
     "lint": {

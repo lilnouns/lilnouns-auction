@@ -1,6 +1,6 @@
 import { clsxm } from '@/utils'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import React, { useEffect, useState } from 'react'
 import { useLocalStorage } from 'react-use'
 

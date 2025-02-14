@@ -1,23 +1,16 @@
 import Navbar from '@/components/navbar'
 import { WalletOptions } from '@/components/wallet-options'
-import { t } from '@lingui/macro'
+import { t } from '@lingui/core/macro'
 import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import { useErrorBoundary } from 'react-error-boundary'
-import { BarLoader } from 'react-spinners'
+import { BeatLoader } from 'react-spinners'
 import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useAccount, useReadContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
-
-// Dynamically import Auction component
-const Auction = dynamic(() => import('@/components/auction'), {
-  ssr: false,
-  suspense: true,
-})
+import Auction from '@/components/auction'
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const activeChainContracts: Record<number, Address> = {
@@ -108,18 +101,18 @@ export const HomePage: NextPage = () => {
   const [nounId, setNounId] = useState<bigint | undefined>()
   const [price, setPrice] = useState<bigint | undefined>()
 
-  const { showBoundary } = useErrorBoundary()
+  // const { showBoundary } = useErrorBoundary()
 
   const { data, isLoading, isError, error } = useReadContract({
     ...auctionContract,
     functionName: 'fetchNextNoun',
   })
 
-  useEffect(() => {
-    if (isError) {
-      showBoundary(error)
-    }
-  }, [error, isError, showBoundary])
+  // useEffect(() => {
+  //   if (isError) {
+  //     showBoundary(error)
+  //   }
+  // }, [error, isError, showBoundary])
 
   useEffect(() => {
     if (!isLoading && !isError && data) {
@@ -166,12 +159,8 @@ export const HomePage: NextPage = () => {
         {isConnected ? (
           <>
             {isLoading ? (
-              <div className="mt-3 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-                <BarLoader color={'#10b981'} loading={isLoading} width={100} />
-              </div>
-            ) : isError ? (
-              <div className="text-red-600 dark:text-red-400">
-                Error: {error.toString()}
+              <div className="mt-6 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
+                <BeatLoader color={'#18181b'} loading={isLoading} size={15} />
               </div>
             ) : (
               <Auction nounId={nounId} price={price} />
