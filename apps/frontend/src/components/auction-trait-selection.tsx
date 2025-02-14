@@ -1,12 +1,5 @@
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Label } from '@repo/ui/components/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@repo/ui/components/select'
 import { Input } from '@repo/ui/components/input'
 import { formatEther } from 'viem'
 import React from 'react'
