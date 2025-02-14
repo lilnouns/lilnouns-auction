@@ -7,8 +7,8 @@ import { join, map, pipe, split } from 'remeda'
 import { MultiSelect } from '@repo/ui/components/multi-select'
 
 interface AuctionTraitSelectionProps {
-  seed: Record<string, string>
-  updateSeed: (trait: string, value: string) => void
+  seed: Record<string, string[]>
+  updateSeed: (trait: string, value: string[]) => void
   ImageData: {
     bgcolors: string[]
     images: {
@@ -23,6 +23,7 @@ interface AuctionTraitSelectionProps {
 }
 
 export function AuctionTraitSelection({
+  seed,
   updateSeed,
   ImageData,
   nounId,
@@ -69,8 +70,8 @@ export function AuctionTraitSelection({
                   value: index.toString(),
                 }
               })}
-              onValueChange={(value) => updateSeed(id, value[0]!)}
-              defaultValue={[]}
+              onValueChange={(value) => updateSeed(id, value)}
+              defaultValue={seed[id] ?? []}
               placeholder={`Select ${label.toLowerCase()}`}
               variant="inverted"
               animation={0}
