@@ -63,9 +63,15 @@ export function AuctionTraitSelection({
             <Label htmlFor={id}>{label}</Label>
             <MultiSelect
               options={options.map((option, index) => {
+                const backgrounds: { [key: string]: string } = {
+                  d5d7e1: 'cold',
+                  e1d7d5: 'warm',
+                }
                 return {
                   label: formatTraitName(
-                    typeof option !== 'string' ? option?.filename : option,
+                    typeof option !== 'string'
+                      ? option?.filename
+                      : backgrounds[option]!,
                   ),
                   value: index.toString(),
                 }
