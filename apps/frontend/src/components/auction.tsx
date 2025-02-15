@@ -129,8 +129,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
               },
             )
             return isMatching
-              ? { blockNumber: block.number, seed }
-              : { blockNumber: block.number, seed: undefined }
+              ? { blockNumber: BigInt(block.number), nounId, seed }
+              : { blockNumber: BigInt(block.number), nounId, seed: undefined }
           } catch (error) {
             if (error instanceof Error) {
               console.error(
@@ -143,7 +143,11 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
                 error,
               )
             }
-            return { blockNumber: block.number, seed: undefined }
+            return {
+              blockNumber: BigInt(block.number),
+              nounId,
+              seed: undefined,
+            }
           }
         }),
       )
@@ -201,7 +205,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     },
   })
 
-  const handleBuy = (blockNumber: number) => {
+  const handleBuy = (blockNumber: bigint, nounId: bigint) => {
     const args: readonly [bigint, bigint] = [
       BigInt(blockNumber),
       BigInt(nounId ?? 0),

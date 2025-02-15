@@ -28,6 +28,7 @@ export interface Seed {
 }
 
 export interface PoolSeed {
-  blockNumber: number
+  blockNumber: bigint
+  nounId: bigint
   seed: Seed
 }

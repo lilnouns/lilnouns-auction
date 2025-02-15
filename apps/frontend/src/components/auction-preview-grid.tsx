@@ -14,7 +14,7 @@ import { ImageData } from '@repo/utilities'
 const { palette } = ImageData
 
 interface AuctionPreviewGridProps {
-  handleBuy: (blockNumber: number) => void
+  handleBuy: (blockNumber: bigint, nounId: bigint) => void
 }
 
 export function AuctionPreviewGrid({ handleBuy }: AuctionPreviewGridProps) {
@@ -43,7 +43,7 @@ export function AuctionPreviewGrid({ handleBuy }: AuctionPreviewGridProps) {
               </CardContent>
             </Card>
           ))
-        : poolSeeds.map(({ blockNumber, seed }) => (
+        : poolSeeds.map(({ blockNumber, nounId, seed }) => (
             <Card
               key={blockNumber}
               className="group relative rounded-lg shadow-md overflow-hidden"
@@ -55,7 +55,7 @@ export function AuctionPreviewGrid({ handleBuy }: AuctionPreviewGridProps) {
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
                 <Button
-                  onClick={() => handleBuy(blockNumber)}
+                  onClick={() => handleBuy(blockNumber, nounId)}
                   variant="secondary"
                   className="px-6 py-2"
                 >
