@@ -16,6 +16,7 @@ import { AuctionTraitSelection } from '@/components/auction-trait-selection'
 import { AuctionPreviewGrid } from '@/components/auction-preview-grid'
 
 import { usePoolStore } from '@/stores/use-pool-store'
+import { useTraitFilterStore } from '@/stores/use-trait-filter-store'
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const activeChainContracts: Record<number, Address> = {
@@ -72,22 +73,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
   const isIdle = useIdle(600_000)
 
+  const { traitFilter } = useTraitFilterStore()
   const { setPoolSeeds, setIsLoading } = usePoolStore()
-
-  const [traitFilter, setTraitFilter] = useState<{
-    background?: string[]
-    body?: string[]
-    accessory?: string[]
-    head?: string[]
-    glasses?: string[]
-  }>({})
-
-  const handleTraitChange = (key: string, value: string[] | undefined) => {
-    setTraitFilter((prev) => ({
-      ...prev,
-      [key]: value,
-    }))
-  }
 
   // const { showBoundary } = useErrorBoundary()
 
@@ -248,8 +235,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
             <AuctionTraitSelection
-              seed={traitFilter}
-              onTraitChange={handleTraitChange}
               ImageData={ImageData}
               nounId={nounId}
               price={price}
