@@ -1,4 +1,4 @@
-import { SeedData } from '@/types'
+import { PoolSeed } from '@/types'
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { Button } from '@repo/ui/components/button'
@@ -6,14 +6,14 @@ import React from 'react'
 
 interface AuctionPreviewGridProps {
   isLoading: boolean
-  seedsData: SeedData[]
+  items: PoolSeed[]
   renderSVG: (seed: any) => string
   handleBuy: (blockNumber: number) => void
 }
 
 export function AuctionPreviewGrid({
   isLoading,
-  seedsData,
+  items,
   renderSVG,
   handleBuy,
 }: AuctionPreviewGridProps) {
@@ -27,7 +27,7 @@ export function AuctionPreviewGrid({
               </CardContent>
             </Card>
           ))
-        : seedsData.map(({ blockNumber, seed }) => (
+        : items.map(({ blockNumber, seed }) => (
             <Card
               key={blockNumber}
               className="group relative rounded-lg shadow-md overflow-hidden"

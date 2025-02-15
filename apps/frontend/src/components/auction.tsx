@@ -15,7 +15,7 @@ import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useWriteContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
-import { Block, BlockData, Seed, SeedData } from '@/types'
+import { Block, BlockData, Seed, PoolSeed } from '@/types'
 import { AuctionTraitSelection } from '@/components/auction-trait-selection'
 import { AuctionPreviewGrid } from '@/components/auction-preview-grid'
 
@@ -76,7 +76,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
   const isIdle = useIdle(600_000)
 
-  const [seedsData, setSeedsData] = useState<SeedData[]>([])
+  const [poolSeeds, setPoolSeeds] = useState<PoolSeed[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const [seed, setSeed] = useState<{
@@ -131,7 +131,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       glasses: parseSeedParameter(seed.glasses),
     }
 
-    let seedResults: SeedData[] = []
+    let seedResults: PoolSeed[] = []
 
     try {
       const blocks = await fetchBlocks(blockOffset, blockLimit)
@@ -169,11 +169,11 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       seedResults = [
         ...seedResults,
         ...newSeedResults.filter(
-          (result): result is SeedData => result.seed !== undefined,
+          (result): result is PoolSeed => result.seed !== undefined,
         ),
       ]
 
-      setSeedsData(seedResults)
+      setPoolSeeds(seedResults)
     } catch (error) {
       if (error instanceof Error) {
         // showBoundary(error)
@@ -270,7 +270,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
             />
             <AuctionPreviewGrid
               isLoading={isLoading}
-              seedsData={seedsData}
+              items={poolSeeds}
               renderSVG={renderSVG}
               handleBuy={handleBuy}
             />
