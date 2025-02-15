@@ -1,7 +1,5 @@
 'use client'
 
-import React from 'react'
-
 import { AuctionTraitFilter } from '@/components/auction-trait-filter'
 import { AuctionPreviewGrid } from '@/components/auction-preview-grid'
 
