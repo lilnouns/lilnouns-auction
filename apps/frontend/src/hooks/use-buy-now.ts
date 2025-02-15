@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { useWriteContract } from 'wagmi'
 import { prop } from 'remeda'
 import { mainnet, sepolia } from 'wagmi/chains'
@@ -13,13 +12,7 @@ const activeChainContracts: Record<number, Address> = {
 
 export const useBuyNow = () => {
   const { price } = useNextNoun()
-
-  const router = useRouter()
-  const { writeContract } = useWriteContract({
-    mutation: {
-      onSuccess: () => router.reload(),
-    },
-  })
+  const { writeContract } = useWriteContract()
 
   const handleBuy = (blockNumber: bigint, nounId: bigint) => {
     writeContract({
