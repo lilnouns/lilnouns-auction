@@ -2,21 +2,20 @@ import { PoolSeed } from '@/types'
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { Button } from '@repo/ui/components/button'
-import React from 'react'
+
+import { usePoolStore } from '@/stores/use-pool-store'
 
 interface AuctionPreviewGridProps {
-  isLoading: boolean
-  items: PoolSeed[]
   renderSVG: (seed: any) => string
   handleBuy: (blockNumber: number) => void
 }
 
 export function AuctionPreviewGrid({
-  isLoading,
-  items,
   renderSVG,
   handleBuy,
 }: AuctionPreviewGridProps) {
+  const { poolSeeds, isLoading } = usePoolStore()
+
   return (
     <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
       {isLoading
@@ -27,7 +26,7 @@ export function AuctionPreviewGrid({
               </CardContent>
             </Card>
           ))
-        : items.map(({ blockNumber, seed }) => (
+        : poolSeeds.map(({ blockNumber, seed }) => (
             <Card
               key={blockNumber}
               className="group relative rounded-lg shadow-md overflow-hidden"

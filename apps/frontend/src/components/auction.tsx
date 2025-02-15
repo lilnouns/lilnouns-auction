@@ -16,8 +16,11 @@ import { Address } from 'viem'
 import { useWriteContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
 import { Block, BlockData, Seed, PoolSeed } from '@/types'
+
 import { AuctionTraitSelection } from '@/components/auction-trait-selection'
 import { AuctionPreviewGrid } from '@/components/auction-preview-grid'
+
+import { usePoolStore } from '@/stores/use-pool-store'
 
 const { palette } = ImageData
 
@@ -76,8 +79,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
   const isIdle = useIdle(600_000)
 
-  const [poolSeeds, setPoolSeeds] = useState<PoolSeed[]>([])
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const { setPoolSeeds, setIsLoading } = usePoolStore()
 
   const [seed, setSeed] = useState<{
     background?: string[]
@@ -268,12 +270,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
               nounId={nounId}
               price={price}
             />
-            <AuctionPreviewGrid
-              isLoading={isLoading}
-              items={poolSeeds}
-              renderSVG={renderSVG}
-              handleBuy={handleBuy}
-            />
+            <AuctionPreviewGrid renderSVG={renderSVG} handleBuy={handleBuy} />
           </div>
         </section>
       </div>
