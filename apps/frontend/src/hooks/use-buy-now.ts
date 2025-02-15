@@ -22,11 +22,6 @@ export const useBuyNow = () => {
   })
 
   const handleBuy = (blockNumber: bigint, nounId: bigint) => {
-    const args: readonly [bigint, bigint] = [
-      BigInt(blockNumber),
-      BigInt(nounId ?? 0),
-    ]
-
     writeContract({
       abi: [
         {
@@ -52,7 +47,7 @@ export const useBuyNow = () => {
         prop(activeChainContracts, activeChainId) ??
         activeChainContracts[sepolia.id],
       functionName: 'buyNow',
-      args,
+      args: [blockNumber, nounId],
       value: price,
     })
   }
