@@ -6,59 +6,56 @@ import React from 'react'
 import { join, map, pipe, split } from 'remeda'
 import { MultiSelect } from '@repo/ui/components/multi-select'
 
-interface AuctionTraitSelectionProps {
-  seed: Record<string, string[]>
-  updateSeed: (trait: string, value: string[]) => void
-  ImageData: {
-    bgcolors: string[]
-    images: {
-      bodies: Array<{ filename: string }>
-      accessories: Array<{ filename: string }>
-      heads: Array<{ filename: string }>
-      glasses: Array<{ filename: string }>
-    }
-  }
-  nounId?: bigint
-  price?: bigint
-}
+import { ImageData } from '@repo/utilities'
 
-export function AuctionTraitSelection({
-  seed,
-  updateSeed,
-  ImageData,
-  nounId,
-  price,
-}: AuctionTraitSelectionProps) {
+import {
+  TraitFilter,
+  useTraitFilterStore,
+} from '@/stores/use-trait-filter-store'
+import { useNextNoun } from '@/hooks/use-next-noun'
+
+type TraitOptions = Array<{
+  id: keyof TraitFilter
+  label: string
+  options: string[] | { filename: string }[]
+}>
+
+export function AuctionTraitFilter() {
+  const { traitFilter, setTraitFilter } = useTraitFilterStore()
+  const { nounId, price } = useNextNoun()
+
+  const traitOptions: TraitOptions = [
+    {
+      id: 'background',
+      label: 'Background',
+      options: ImageData.bgcolors,
+    },
+    {
+      id: 'body',
+      label: 'Body',
+      options: ImageData.images.bodies,
+    },
+    {
+      id: 'accessory',
+      label: 'Accessory',
+      options: ImageData.images.accessories,
+    },
+    {
+      id: 'head',
+      label: 'Head',
+      options: ImageData.images.heads,
+    },
+    {
+      id: 'glasses',
+      label: 'Glasses',
+      options: ImageData.images.glasses,
+    },
+  ]
+
   return (
     <Card className="mb-4 w-full">
       <CardContent className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2">
-        {[
-          {
-            id: 'background',
-            label: 'Background',
-            options: ImageData.bgcolors,
-          },
-          {
-            id: 'body',
-            label: 'Body',
-            options: ImageData.images.bodies,
-          },
-          {
-            id: 'accessory',
-            label: 'Accessory',
-            options: ImageData.images.accessories,
-          },
-          {
-            id: 'head',
-            label: 'Head',
-            options: ImageData.images.heads,
-          },
-          {
-            id: 'glasses',
-            label: 'Glasses',
-            options: ImageData.images.glasses,
-          },
-        ].map(({ id, label, options }) => (
+        {traitOptions.map(({ id, label, options }) => (
           <div key={id}>
             <Label htmlFor={id}>{label}</Label>
             <MultiSelect
@@ -76,8 +73,8 @@ export function AuctionTraitSelection({
                   value: index.toString(),
                 }
               })}
-              onValueChange={(value) => updateSeed(id, value)}
-              defaultValue={seed[id] ?? []}
+              onValueChange={(value) => setTraitFilter(id, value)}
+              defaultValue={traitFilter[id] ?? []}
               placeholder={`Select ${label.toLowerCase()}`}
               variant="inverted"
               animation={0}
