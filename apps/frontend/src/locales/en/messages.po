@@ -13,17 +13,17 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 "Plural-Forms: \n"
 
-#: src/components/auction.tsx
-msgid "All bodies"
-msgstr "All bodies"
-
 #: src/components/wallet-options.tsx
 msgid "Connect with one of our available wallet providers."
 msgstr "Connect with one of our available wallet providers."
 
+#: src/components/navbar.tsx
+msgid "Filter Auctions"
+msgstr "Filter Auctions"
+
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 #: src/components/home-page.tsx
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns Auction"
 
@@ -35,25 +35,9 @@ msgstr "Noun {nounId} | Lil Nouns Auction"
 msgid "Open options"
 msgstr "Open options"
 
-#: src/components/auction.tsx
-msgid "Select accessory"
-msgstr "Select accessory"
-
-#: src/components/auction.tsx
-msgid "Select background"
-msgstr "Select background"
-
-#: src/components/auction.tsx
-msgid "Select body"
-msgstr "Select body"
-
-#: src/components/auction.tsx
-msgid "Select glasses"
-msgstr "Select glasses"
-
-#: src/components/auction.tsx
-msgid "Select head"
-msgstr "Select head"
+#: src/components/navbar.tsx
+msgid "Select traits to filter the auction listings"
+msgstr "Select traits to filter the auction listings"
 
 #: src/components/theme-switcher.tsx
 msgid "Switch to dark theme"
