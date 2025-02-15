@@ -1,6 +1,6 @@
 import { t } from '@lingui/core/macro'
 import React, { useEffect, useState } from 'react'
-import { Connector, useConnect } from 'wagmi'
+import { Connector, useAccount, useConnect, useDisconnect } from 'wagmi'
 import { Button } from '@repo/ui/components/button'
 import {
   Dialog,
@@ -14,6 +14,8 @@ import { WalletIcon } from 'lucide-react'
 
 export const WalletOptions = () => {
   const { connectors, connect } = useConnect()
+  const { isConnected, address } = useAccount()
+  const { disconnect } = useDisconnect()
 
   return (
     <Dialog>
@@ -24,20 +26,38 @@ export const WalletOptions = () => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{t`Connect Wallet`}</DialogTitle>
+          <DialogTitle>
+            {isConnected ? t`Wallet Connected` : t`Connect Wallet`}
+          </DialogTitle>
           <DialogDescription>
-            {t`Connect with one of our available wallet providers.`}
+            {isConnected
+              ? t`Your wallet is connected. Manage your wallet connection below.`
+              : t`Connect with one of our available wallet providers.`}
           </DialogDescription>
         </DialogHeader>
-        <ul className="space-y-3">
-          {connectors.map((connector) => (
-            <WalletOption
-              key={connector.uid}
-              connector={connector}
-              onClick={() => connect({ connector })}
-            />
-          ))}
-        </ul>
+
+        {isConnected ? (
+          <div className="space-y-3">
+            <div className="p-4 break-all bg-muted rounded-lg">{address}</div>
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => disconnect()}
+            >
+              {t`Disconnect Wallet`}
+            </Button>
+          </div>
+        ) : (
+          <ul className="space-y-3">
+            {connectors.map((connector) => (
+              <WalletOption
+                key={connector.uid}
+                connector={connector}
+                onClick={() => connect({ connector })}
+              />
+            ))}
+          </ul>
+        )}
       </DialogContent>
     </Dialog>
   )
