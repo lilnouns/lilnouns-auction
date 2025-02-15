@@ -14,8 +14,16 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/components/wallet-options.tsx
+msgid "Connect Wallet"
+msgstr "Connect Wallet"
+
+#: src/components/wallet-options.tsx
 msgid "Connect with one of our available wallet providers."
 msgstr "Connect with one of our available wallet providers."
+
+#: src/components/wallet-options.tsx
+msgid "Disconnect Wallet"
+msgstr "Disconnect Wallet"
 
 #: src/components/navbar.tsx
 msgid "Filter Auctions"
@@ -50,3 +58,11 @@ msgstr "Switch to light theme"
 #: src/app/[lang]/layout.tsx
 msgid "Translation Demo"
 msgstr "Translation Demo"
+
+#: src/components/wallet-options.tsx
+msgid "Wallet Connected"
+msgstr "Wallet Connected"
+
+#: src/components/wallet-options.tsx
+msgid "Your wallet is connected. Manage your wallet connection below."
+msgstr "Your wallet is connected. Manage your wallet connection below."
