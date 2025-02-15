@@ -183,36 +183,38 @@ export function AuctionPreviewGrid() {
 
   return (
     <>
-      {!isLoading && poolSeeds.length === 0 && <NoContentMessage />}
-
       <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
-        {isLoading &&
+        {!isLoading ? (
+          poolSeeds.length > 0 ? (
+            poolSeeds.map(({ blockNumber, nounId, seed }) => (
+              <Card
+                key={blockNumber}
+                className="group relative rounded-lg shadow-md overflow-hidden"
+              >
+                <NounImage seed={seed} />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+                  <Button
+                    onClick={() => handleBuy(blockNumber, nounId)}
+                    variant="secondary"
+                    className="px-6 py-2"
+                  >
+                    Buy
+                  </Button>
+                </div>
+              </Card>
+            ))
+          ) : (
+            <NoContentMessage />
+          )
+        ) : (
           Array.from({ length: 12 }).map((_, index) => (
             <Card key={index} className="rounded-lg shadow-md">
               <CardContent className="p-4">
                 <Skeleton className="h-32 w-full rounded-lg" />
               </CardContent>
             </Card>
-          ))}
-        {!isLoading &&
-          poolSeeds.length > 0 &&
-          poolSeeds.map(({ blockNumber, nounId, seed }) => (
-            <Card
-              key={blockNumber}
-              className="group relative rounded-lg shadow-md overflow-hidden"
-            >
-              <NounImage seed={seed} />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
-                <Button
-                  onClick={() => handleBuy(blockNumber, nounId)}
-                  variant="secondary"
-                  className="px-6 py-2"
-                >
-                  Buy
-                </Button>
-              </div>
-            </Card>
-          ))}
+          ))
+        )}
       </div>
     </>
   )
@@ -250,7 +252,7 @@ export function NoContentMessage() {
   )
 
   return (
-    <Card className="w-full">
+    <Card className="w-full shadow-none">
       <CardContent className="flex flex-col items-center justify-center p-8 text-center">
         <h3 className="mb-2 text-lg font-semibold">No Nouns Found</h3>
         <p className="text-gray-500">
