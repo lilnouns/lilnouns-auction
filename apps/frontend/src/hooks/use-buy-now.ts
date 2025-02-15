@@ -12,7 +12,8 @@ const activeChainContracts: Record<number, Address> = {
 
 export const useBuyNow = () => {
   const { price } = useNextNoun()
-  const { writeContract } = useWriteContract()
+  const { data, isPending, isSuccess, isError, error, writeContract } =
+    useWriteContract()
 
   const handleBuy = (blockNumber: bigint, nounId: bigint) => {
     writeContract({
@@ -45,5 +46,5 @@ export const useBuyNow = () => {
     })
   }
 
-  return { handleBuy }
+  return { handleBuy, isPending, isSuccess, data, isError, error }
 }
