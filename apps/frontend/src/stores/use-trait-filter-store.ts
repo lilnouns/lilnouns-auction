@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 export type TraitFilter = {
   background?: string[]
@@ -13,13 +14,20 @@ interface TraitFilterState {
   setTraitFilter: (key: keyof TraitFilter, value: string[] | undefined) => void
 }
 
-export const useTraitFilterStore = create<TraitFilterState>((set) => ({
-  traitFilter: {},
-  setTraitFilter: (key, value) =>
-    set((state) => ({
-      traitFilter: {
-        ...state.traitFilter,
-        [key]: value,
-      },
-    })),
-}))
+export const useTraitFilterStore = create<TraitFilterState>()(
+  persist(
+    (set) => ({
+      traitFilter: {},
+      setTraitFilter: (key, value) =>
+        set((state) => ({
+          traitFilter: {
+            ...state.traitFilter,
+            [key]: value,
+          },
+        })),
+    }),
+    {
+      name: 'trait-filter-storage',
+    },
+  ),
+)
