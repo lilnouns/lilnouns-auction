@@ -13,12 +13,20 @@ import {
 import { WalletIcon } from 'lucide-react'
 
 export const WalletOptions = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const { connectors, connect } = useConnect()
   const { isConnected, address } = useAccount()
   const { disconnect } = useDisconnect()
 
+  // Close dialog when wallet gets connected
+  useEffect(() => {
+    if (isConnected) {
+      setIsOpen(false)
+    }
+  }, [isConnected])
+
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger>
         <Button variant="outline" size="icon">
           <WalletIcon />
