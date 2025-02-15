@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.21] - 2025-02-15
+
+### Styling
+
+- Update color palette for improved contrast
+
 ## [1.1.0-alpha.20] - 2025-02-14
 
 ### Features
