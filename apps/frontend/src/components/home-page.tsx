@@ -16,7 +16,7 @@ export const HomePage: NextPage = () => {
   const { i18n } = useLingui()
 
   const { isConnected } = useAccount()
-  const { nounId, price, isLoading } = useNextNoun()
+  const { nounId, isLoading } = useNextNoun()
 
   useEffect(() => {
     if (nounId) {
@@ -58,7 +58,7 @@ export const HomePage: NextPage = () => {
                 <BeatLoader color={'#18181b'} loading={isLoading} size={15} />
               </div>
             ) : (
-              <Auction nounId={nounId} price={price} />
+              <Auction />
             )}
           </>
         ) : (

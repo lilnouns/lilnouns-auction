@@ -3,20 +3,21 @@
 import { getNounSeedFromBlockHash } from '@repo/utilities'
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect } from 'react'
 
 import { useIdle } from 'react-use'
 import { prop } from 'remeda'
 import { Address } from 'viem'
 import { useWriteContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
-import { Block, BlockData, Seed, PoolSeed } from '@/types'
+import { Block, BlockData, PoolSeed, Seed } from '@/types'
 
 import { AuctionTraitFilter } from '@/components/auction-trait-filter'
 import { AuctionPreviewGrid } from '@/components/auction-preview-grid'
 
 import { usePoolStore } from '@/stores/use-pool-store'
 import { useTraitFilterStore } from '@/stores/use-trait-filter-store'
+import { useNextNoun } from '@/hooks/use-next-noun'
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const activeChainContracts: Record<number, Address> = {
@@ -64,14 +65,11 @@ export async function fetchBlocks(
   return blocks ?? []
 }
 
-interface AuctionProps {
-  nounId?: bigint | undefined
-  price?: bigint | undefined
-}
-
-const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
+export default function Auction() {
   // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
   const isIdle = useIdle(600_000)
+
+  const { nounId, price } = useNextNoun()
 
   const { traitFilter } = useTraitFilterStore()
   const { setPoolSeeds, setIsLoading } = usePoolStore()
@@ -242,5 +240,3 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     </>
   )
 }
-
-export default Auction
