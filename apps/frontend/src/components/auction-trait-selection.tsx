@@ -8,7 +8,7 @@ import { MultiSelect } from '@repo/ui/components/multi-select'
 
 interface AuctionTraitSelectionProps {
   seed: Record<string, string[]>
-  updateSeed: (trait: string, value: string[]) => void
+  onTraitChange: (trait: string, value: string[]) => void
   ImageData: {
     bgcolors: string[]
     images: {
@@ -24,7 +24,7 @@ interface AuctionTraitSelectionProps {
 
 export function AuctionTraitSelection({
   seed,
-  updateSeed,
+  onTraitChange,
   ImageData,
   nounId,
   price,
@@ -76,7 +76,7 @@ export function AuctionTraitSelection({
                   value: index.toString(),
                 }
               })}
-              onValueChange={(value) => updateSeed(id, value)}
+              onValueChange={(value) => onTraitChange(id, value)}
               defaultValue={seed[id] ?? []}
               placeholder={`Select ${label.toLowerCase()}`}
               variant="inverted"

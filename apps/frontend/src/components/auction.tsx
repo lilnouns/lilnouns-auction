@@ -74,7 +74,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
 
   const { setPoolSeeds, setIsLoading } = usePoolStore()
 
-  const [seed, setSeed] = useState<{
+  const [traitFilter, setTraitFilter] = useState<{
     background?: string[]
     body?: string[]
     accessory?: string[]
@@ -82,8 +82,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     glasses?: string[]
   }>({})
 
-  const updateSeed = (key: string, value: string[] | undefined) => {
-    setSeed((prev) => ({
+  const handleTraitChange = (key: string, value: string[] | undefined) => {
+    setTraitFilter((prev) => ({
       ...prev,
       [key]: value,
     }))
@@ -106,11 +106,11 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
         .filter((num): num is number => num !== undefined) ?? undefined
 
     const filterParams = {
-      background: parseSeedParameter(seed.background),
-      body: parseSeedParameter(seed.body),
-      accessory: parseSeedParameter(seed.accessory),
-      head: parseSeedParameter(seed.head),
-      glasses: parseSeedParameter(seed.glasses),
+      background: parseSeedParameter(traitFilter.background),
+      body: parseSeedParameter(traitFilter.body),
+      accessory: parseSeedParameter(traitFilter.accessory),
+      head: parseSeedParameter(traitFilter.head),
+      glasses: parseSeedParameter(traitFilter.glasses),
     }
 
     let seedResults: PoolSeed[] = []
@@ -171,11 +171,11 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
     }
   }, [
     nounId,
-    seed.background,
-    seed.body,
-    seed.accessory,
-    seed.head,
-    seed.glasses,
+    traitFilter.background,
+    traitFilter.body,
+    traitFilter.accessory,
+    traitFilter.head,
+    traitFilter.glasses,
     // showBoundary,
   ])
 
@@ -248,8 +248,8 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
             <AuctionTraitSelection
-              seed={seed}
-              updateSeed={updateSeed}
+              seed={traitFilter}
+              onTraitChange={handleTraitChange}
               ImageData={ImageData}
               nounId={nounId}
               price={price}
