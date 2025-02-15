@@ -5,7 +5,6 @@ import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import { BeatLoader } from 'react-spinners'
 import { useAccount } from 'wagmi'
 import Auction from '@/components/auction'
 import { useNextNoun } from '@/hooks/use-next-noun'
@@ -16,7 +15,7 @@ export const HomePage: NextPage = () => {
   const { i18n } = useLingui()
 
   const { isConnected } = useAccount()
-  const { nounId, isLoading } = useNextNoun()
+  const { nounId } = useNextNoun()
 
   useEffect(() => {
     if (nounId) {
@@ -52,21 +51,11 @@ export const HomePage: NextPage = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {isConnected ? (
-          <>
-            {isLoading ? (
-              <div className="mt-6 flex h-full items-center justify-center text-gray-700 dark:text-gray-300">
-                <BeatLoader color={'#18181b'} loading={isLoading} size={15} />
-              </div>
-            ) : (
-              <Auction />
-            )}
-          </>
+          <Auction />
         ) : (
-          <>
-            <div className="mx-auto mt-10 max-w-sm">
-              <WalletOptions />
-            </div>
-          </>
+          <div className="mx-auto mt-10 max-w-sm">
+            <WalletOptions />
+          </div>
         )}
       </div>
     </>
