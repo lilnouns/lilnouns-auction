@@ -10,15 +10,13 @@ import { buildSVG } from '@lilnounsdao/sdk'
 import { getNounData } from '@lilnounsdao/assets'
 
 import { ImageData } from '@repo/utilities'
+import { useBuyNow } from '@/hooks/use-buy-now'
 
 const { palette } = ImageData
 
-interface AuctionPreviewGridProps {
-  handleBuy: (blockNumber: bigint, nounId: bigint) => void
-}
-
-export function AuctionPreviewGrid({ handleBuy }: AuctionPreviewGridProps) {
+export function AuctionPreviewGrid() {
   const { poolSeeds, isLoading } = usePoolStore()
+  const { handleBuy } = useBuyNow()
 
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)

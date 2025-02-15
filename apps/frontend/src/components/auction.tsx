@@ -2,14 +2,9 @@
 
 import { getNounSeedFromBlockHash } from '@repo/utilities'
 import { gql, request } from 'graphql-request'
-import { useRouter } from 'next/router'
 import React, { useCallback, useEffect } from 'react'
 
 import { useIdle } from 'react-use'
-import { prop } from 'remeda'
-import { Address } from 'viem'
-import { useWriteContract } from 'wagmi'
-import { mainnet, sepolia } from 'wagmi/chains'
 import { Block, BlockData, PoolSeed, Seed } from '@/types'
 
 import { AuctionTraitFilter } from '@/components/auction-trait-filter'
@@ -17,13 +12,8 @@ import { AuctionPreviewGrid } from '@/components/auction-preview-grid'
 
 import { usePoolStore } from '@/stores/use-pool-store'
 import { useTraitFilterStore } from '@/stores/use-trait-filter-store'
-import { useNextNoun } from '@/hooks/use-next-noun'
 
-const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
-const activeChainContracts: Record<number, Address> = {
-  [mainnet.id]: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
-  [sepolia.id]: '0x0d8c4d18765AB8808ab6CEE4d7A760e8b93AB20c',
-}
+import { useNextNoun } from '@/hooks/use-next-noun'
 
 export async function fetchBlocks(
   offset: number,
@@ -183,57 +173,13 @@ export default function Auction() {
     }
   }, [fetchData, isIdle])
 
-  const router = useRouter()
-  const { writeContract } = useWriteContract({
-    mutation: {
-      onSuccess: () => router.reload(),
-    },
-  })
-
-  const handleBuy = (blockNumber: bigint, nounId: bigint) => {
-    const args: readonly [bigint, bigint] = [
-      BigInt(blockNumber),
-      BigInt(nounId ?? 0),
-    ]
-    const value = price
-
-    writeContract({
-      abi: [
-        {
-          inputs: [
-            {
-              internalType: 'uint256',
-              name: 'expectedBlockNumber',
-              type: 'uint256',
-            },
-            {
-              internalType: 'uint256',
-              name: 'expectedNounId',
-              type: 'uint256',
-            },
-          ],
-          name: 'buyNow',
-          outputs: [],
-          stateMutability: 'payable',
-          type: 'function',
-        },
-      ] as const,
-      address:
-        prop(activeChainContracts, activeChainId) ??
-        activeChainContracts[sepolia.id],
-      functionName: 'buyNow',
-      args,
-      value,
-    })
-  }
-
   return (
     <>
       <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
             <AuctionTraitFilter nounId={nounId} price={price} />
-            <AuctionPreviewGrid handleBuy={handleBuy} />
+            <AuctionPreviewGrid />
           </div>
         </section>
       </div>
