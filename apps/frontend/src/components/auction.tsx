@@ -12,7 +12,7 @@ import { useWriteContract } from 'wagmi'
 import { mainnet, sepolia } from 'wagmi/chains'
 import { Block, BlockData, Seed, PoolSeed } from '@/types'
 
-import { AuctionTraitSelection } from '@/components/auction-trait-selection'
+import { AuctionTraitFilter } from '@/components/auction-trait-filter'
 import { AuctionPreviewGrid } from '@/components/auction-preview-grid'
 
 import { usePoolStore } from '@/stores/use-pool-store'
@@ -234,7 +234,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
-            <AuctionTraitSelection nounId={nounId} price={price} />
+            <AuctionTraitFilter nounId={nounId} price={price} />
             <AuctionPreviewGrid handleBuy={handleBuy} />
           </div>
         </section>

@@ -13,7 +13,7 @@ import {
   useTraitFilterStore,
 } from '@/stores/use-trait-filter-store'
 
-interface AuctionTraitSelectionProps {
+interface AuctionTraitFilterProps {
   nounId?: bigint
   price?: bigint
 }
@@ -24,10 +24,7 @@ type TraitOptions = Array<{
   options: string[] | { filename: string }[]
 }>
 
-export function AuctionTraitSelection({
-  nounId,
-  price,
-}: AuctionTraitSelectionProps) {
+export function AuctionTraitFilter({ nounId, price }: AuctionTraitFilterProps) {
   const { traitFilter, setTraitFilter } = useTraitFilterStore()
 
   const traitOptions: TraitOptions = [
