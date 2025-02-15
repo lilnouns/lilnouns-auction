@@ -182,16 +182,21 @@ export function AuctionPreviewGrid() {
   const { handleBuy } = useBuyNow()
 
   return (
-    <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
-      {isLoading
-        ? Array.from({ length: 12 }).map((_, index) => (
+    <>
+      {!isLoading && poolSeeds.length === 0 && <NoContentMessage />}
+
+      <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
+        {isLoading &&
+          Array.from({ length: 12 }).map((_, index) => (
             <Card key={index} className="rounded-lg shadow-md">
               <CardContent className="p-4">
                 <Skeleton className="h-32 w-full rounded-lg" />
               </CardContent>
             </Card>
-          ))
-        : poolSeeds.map(({ blockNumber, nounId, seed }) => (
+          ))}
+        {!isLoading &&
+          poolSeeds.length > 0 &&
+          poolSeeds.map(({ blockNumber, nounId, seed }) => (
             <Card
               key={blockNumber}
               className="group relative rounded-lg shadow-md overflow-hidden"
@@ -208,7 +213,8 @@ export function AuctionPreviewGrid() {
               </div>
             </Card>
           ))}
-    </div>
+      </div>
+    </>
   )
 }
 
@@ -232,5 +238,27 @@ function NounImage({ seed }: { seed: Seed }) {
       className="h-auto w-full rounded-lg"
       alt={`Noun`}
     />
+  )
+}
+
+export function NoContentMessage() {
+  const { traitFilter } = useTraitFilterStore()
+
+  // Check if any filters are active
+  const hasActiveFilters = Object.values(traitFilter).some(
+    (filter) => filter && filter.length > 0,
+  )
+
+  return (
+    <Card className="w-full">
+      <CardContent className="flex flex-col items-center justify-center p-8 text-center">
+        <h3 className="mb-2 text-lg font-semibold">No Nouns Found</h3>
+        <p className="text-gray-500">
+          {hasActiveFilters
+            ? 'No Nouns match your current filter criteria. Try adjusting your filters.'
+            : 'There are no Nouns available to display.'}
+        </p>
+      </CardContent>
+    </Card>
   )
 }
