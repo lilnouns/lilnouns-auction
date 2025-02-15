@@ -181,19 +181,6 @@ export function AuctionPreviewGrid() {
   const { poolSeeds, isLoading } = usePoolStore()
   const { handleBuy } = useBuyNow()
 
-  const renderSVG = useCallback((seed: Seed) => {
-    const { parts, background } = getNounData(seed)
-    // Transform the parts to match the expected type
-    const formattedParts = parts
-      .filter(
-        (part): part is { filename: string; data: string } =>
-          part !== undefined,
-      )
-      .map(({ data }) => ({ data }))
-    const svgBinary = buildSVG(formattedParts, palette, background!)
-    return btoa(svgBinary)
-  }, [])
-
   return (
     <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
       {isLoading
@@ -209,11 +196,7 @@ export function AuctionPreviewGrid() {
               key={blockNumber}
               className="group relative rounded-lg shadow-md overflow-hidden"
             >
-              <img
-                src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
-                alt={`Noun ${blockNumber}`}
-                className="h-auto w-full rounded-lg"
-              />
+              <NounImage seed={seed} />
               <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
                 <Button
                   onClick={() => handleBuy(blockNumber, nounId)}
@@ -226,5 +209,28 @@ export function AuctionPreviewGrid() {
             </Card>
           ))}
     </div>
+  )
+}
+
+function NounImage({ seed }: { seed: Seed }) {
+  const renderSVG = useCallback((seed: Seed) => {
+    const { parts, background } = getNounData(seed)
+    // Transform the parts to match the expected type
+    const formattedParts = parts
+      .filter(
+        (part): part is { filename: string; data: string } =>
+          part !== undefined,
+      )
+      .map(({ data }) => ({ data }))
+    const svgBinary = buildSVG(formattedParts, palette, background!)
+    return btoa(svgBinary)
+  }, [])
+
+  return (
+    <img
+      src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
+      className="h-auto w-full rounded-lg"
+      alt={`Noun`}
+    />
   )
 }
