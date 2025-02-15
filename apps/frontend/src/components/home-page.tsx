@@ -1,5 +1,4 @@
 import Navbar from '@/components/navbar'
-import { WalletOptions } from '@/components/wallet-options'
 import { t } from '@lingui/core/macro'
 import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
@@ -50,13 +49,7 @@ export const HomePage: NextPage = () => {
       <Navbar />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {isConnected ? (
-          <Auction />
-        ) : (
-          <div className="mx-auto mt-10 max-w-sm">
-            <WalletOptions />
-          </div>
-        )}
+        <Auction />
       </div>
     </>
   )

@@ -13,6 +13,7 @@ import { AuctionTraitFilter } from '@/components/auction-trait-filter'
 import React from 'react'
 import { Button } from '@repo/ui/components/button'
 import { FilterIcon } from 'lucide-react'
+import { WalletOptions } from '@/components/wallet-options'
 
 const IconNoggles = () => (
   <svg
@@ -96,6 +97,8 @@ const Navbar = () => {
               </div>
             </DialogContent>
           </Dialog>
+
+          <WalletOptions />
         </div>
       </div>
     </nav>

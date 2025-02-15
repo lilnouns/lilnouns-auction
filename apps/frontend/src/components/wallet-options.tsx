@@ -1,25 +1,34 @@
 import { t } from '@lingui/core/macro'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Connector, useConnect } from 'wagmi'
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardTitle,
-  CardDescription,
-} from '@repo/ui/components/card'
 import { Button } from '@repo/ui/components/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@repo/ui/components/dialog'
+import { WalletIcon } from 'lucide-react'
 
 export const WalletOptions = () => {
   const { connectors, connect } = useConnect()
 
   return (
-    <Card className="w-full max-w-sm">
-      <CardHeader>
-        <CardTitle>Connect Wallet</CardTitle>
-        <CardDescription>{t`Connect with one of our available wallet providers.`}</CardDescription>
-      </CardHeader>
-      <CardContent>
+    <Dialog>
+      <DialogTrigger>
+        <Button variant="outline" size="icon">
+          <WalletIcon />
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>{t`Connect Wallet`}</DialogTitle>
+          <DialogDescription>
+            {t`Connect with one of our available wallet providers.`}
+          </DialogDescription>
+        </DialogHeader>
         <ul className="space-y-3">
           {connectors.map((connector) => (
             <WalletOption
@@ -29,8 +38,8 @@ export const WalletOptions = () => {
             />
           ))}
         </ul>
-      </CardContent>
-    </Card>
+      </DialogContent>
+    </Dialog>
   )
 }
 
