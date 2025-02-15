@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useReadContract } from 'wagmi'
 import { Address } from 'viem'
 import { mainnet, sepolia } from 'wagmi/chains'
@@ -98,6 +98,7 @@ export function useNextNoun(): UseNextNounResult {
   const { data, isLoading, isError, error } = useReadContract({
     ...auctionContract,
     functionName: 'fetchNextNoun',
+    query: { enabled: true },
   })
 
   useEffect(() => {
