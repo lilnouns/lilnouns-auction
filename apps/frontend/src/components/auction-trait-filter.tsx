@@ -12,11 +12,7 @@ import {
   TraitFilter,
   useTraitFilterStore,
 } from '@/stores/use-trait-filter-store'
-
-interface AuctionTraitFilterProps {
-  nounId?: bigint
-  price?: bigint
-}
+import { useNextNoun } from '@/hooks/use-next-noun'
 
 type TraitOptions = Array<{
   id: keyof TraitFilter
@@ -24,8 +20,9 @@ type TraitOptions = Array<{
   options: string[] | { filename: string }[]
 }>
 
-export function AuctionTraitFilter({ nounId, price }: AuctionTraitFilterProps) {
+export function AuctionTraitFilter() {
   const { traitFilter, setTraitFilter } = useTraitFilterStore()
+  const { nounId, price } = useNextNoun()
 
   const traitOptions: TraitOptions = [
     {
