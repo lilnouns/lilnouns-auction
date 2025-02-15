@@ -17,6 +17,7 @@ import { useBuyNow } from '@/hooks/use-buy-now'
 
 import { useIdle } from 'react-use'
 import { gql, request } from 'graphql-request'
+import { cn } from '@repo/ui/lib/utils'
 
 const { palette } = ImageData
 
@@ -181,12 +182,17 @@ export function AuctionPreviewGrid() {
   const { poolSeeds, isLoading } = usePoolStore()
   const { handleBuy } = useBuyNow()
 
+  const gridClassName = cn(
+    'grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 ' +
+      'lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200',
+  )
+
   return (
     <>
-      <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">
-        {!isLoading ? (
-          poolSeeds.length > 0 ? (
-            poolSeeds.map(({ blockNumber, nounId, seed }) => (
+      {!isLoading ? (
+        poolSeeds.length > 0 ? (
+          <div className={gridClassName}>
+            {poolSeeds.map(({ blockNumber, nounId, seed }) => (
               <Card
                 key={blockNumber}
                 className="group relative rounded-lg shadow-md overflow-hidden"
@@ -202,20 +208,22 @@ export function AuctionPreviewGrid() {
                   </Button>
                 </div>
               </Card>
-            ))
-          ) : (
-            <NoContentMessage />
-          )
+            ))}
+          </div>
         ) : (
-          Array.from({ length: 12 }).map((_, index) => (
+          <NoContentMessage />
+        )
+      ) : (
+        <div className={gridClassName}>
+          {Array.from({ length: 12 }).map((_, index) => (
             <Card key={index} className="rounded-lg shadow-md">
               <CardContent className="p-4">
                 <Skeleton className="h-32 w-full rounded-lg" />
               </CardContent>
             </Card>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </>
   )
 }
