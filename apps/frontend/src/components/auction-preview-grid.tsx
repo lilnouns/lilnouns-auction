@@ -1,20 +1,37 @@
-import { PoolSeed } from '@/types'
+import { Seed } from '@/types'
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { Button } from '@repo/ui/components/button'
 
 import { usePoolStore } from '@/stores/use-pool-store'
+import { useCallback } from 'react'
+
+import { buildSVG } from '@lilnounsdao/sdk'
+import { getNounData } from '@lilnounsdao/assets'
+
+import { ImageData } from '@repo/utilities'
+
+const { palette } = ImageData
 
 interface AuctionPreviewGridProps {
-  renderSVG: (seed: any) => string
   handleBuy: (blockNumber: number) => void
 }
 
-export function AuctionPreviewGrid({
-  renderSVG,
-  handleBuy,
-}: AuctionPreviewGridProps) {
+export function AuctionPreviewGrid({ handleBuy }: AuctionPreviewGridProps) {
   const { poolSeeds, isLoading } = usePoolStore()
+
+  const renderSVG = useCallback((seed: Seed) => {
+    const { parts, background } = getNounData(seed)
+    // Transform the parts to match the expected type
+    const formattedParts = parts
+      .filter(
+        (part): part is { filename: string; data: string } =>
+          part !== undefined,
+      )
+      .map(({ data }) => ({ data }))
+    const svgBinary = buildSVG(formattedParts, palette, background!)
+    return btoa(svgBinary)
+  }, [])
 
   return (
     <div className="grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200">

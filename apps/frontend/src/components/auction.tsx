@@ -1,11 +1,6 @@
 'use client'
 
-import { buildSVG } from '@lilnounsdao/sdk'
-import {
-  getNounData,
-  getNounSeedFromBlockHash,
-  ImageData,
-} from '@repo/utilities'
+import { getNounSeedFromBlockHash, ImageData } from '@repo/utilities'
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
@@ -21,8 +16,6 @@ import { AuctionTraitSelection } from '@/components/auction-trait-selection'
 import { AuctionPreviewGrid } from '@/components/auction-preview-grid'
 
 import { usePoolStore } from '@/stores/use-pool-store'
-
-const { palette } = ImageData
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const activeChainContracts: Record<number, Address> = {
@@ -97,19 +90,6 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
   }
 
   // const { showBoundary } = useErrorBoundary()
-
-  const renderSVG = useCallback((seed: Seed) => {
-    const { parts, background } = getNounData(seed)
-    // Transform the parts to match the expected type
-    const formattedParts = parts
-      .filter(
-        (part): part is { filename: string; data: string } =>
-          part !== undefined,
-      )
-      .map(({ data }) => ({ data }))
-    const svgBinary = buildSVG(formattedParts, palette, background!)
-    return btoa(svgBinary)
-  }, [])
 
   const fetchData = useCallback(async () => {
     if (!nounId) return
@@ -270,7 +250,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
               nounId={nounId}
               price={price}
             />
-            <AuctionPreviewGrid renderSVG={renderSVG} handleBuy={handleBuy} />
+            <AuctionPreviewGrid handleBuy={handleBuy} />
           </div>
         </section>
       </div>
