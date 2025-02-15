@@ -6,21 +6,14 @@ import React from 'react'
 import { join, map, pipe, split } from 'remeda'
 import { MultiSelect } from '@repo/ui/components/multi-select'
 
+import { ImageData } from '@repo/utilities'
+
 import {
   TraitFilter,
   useTraitFilterStore,
 } from '@/stores/use-trait-filter-store'
 
 interface AuctionTraitSelectionProps {
-  ImageData: {
-    bgcolors: string[]
-    images: {
-      bodies: Array<{ filename: string }>
-      accessories: Array<{ filename: string }>
-      heads: Array<{ filename: string }>
-      glasses: Array<{ filename: string }>
-    }
-  }
   nounId?: bigint
   price?: bigint
 }
@@ -32,7 +25,6 @@ type TraitOptions = Array<{
 }>
 
 export function AuctionTraitSelection({
-  ImageData,
   nounId,
   price,
 }: AuctionTraitSelectionProps) {

@@ -1,6 +1,6 @@
 'use client'
 
-import { getNounSeedFromBlockHash, ImageData } from '@repo/utilities'
+import { getNounSeedFromBlockHash } from '@repo/utilities'
 import { gql, request } from 'graphql-request'
 import { useRouter } from 'next/router'
 import React, { useCallback, useEffect, useState } from 'react'
@@ -234,11 +234,7 @@ const Auction: React.FC<AuctionProps> = ({ nounId, price }) => {
       <div className="flex min-h-screen flex-col items-center justify-between p-1 py-5">
         <section className="w-full max-w-screen-xl p-1">
           <div className="container mx-auto">
-            <AuctionTraitSelection
-              ImageData={ImageData}
-              nounId={nounId}
-              price={price}
-            />
+            <AuctionTraitSelection nounId={nounId} price={price} />
             <AuctionPreviewGrid handleBuy={handleBuy} />
           </div>
         </section>
