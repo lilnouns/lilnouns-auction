@@ -1,14 +1,10 @@
 import { Block, BlockData, PoolSeed, Seed } from '@/types'
 import { Card, CardContent } from '@repo/ui/components/card'
-import { Button } from '@repo/ui/components/button'
 
 import { usePoolStore } from '@/stores/pool-store'
 import { useCallback, useEffect } from 'react'
 
-import { buildSVG } from '@lilnounsdao/sdk'
-import { getNounData } from '@lilnounsdao/assets'
-
-import { getNounSeedFromBlockHash, ImageData } from '@repo/utilities'
+import { getNounSeedFromBlockHash } from '@repo/utilities'
 
 import { useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
@@ -17,11 +13,8 @@ import { useBuyNow } from '@/hooks/use-buy-now'
 import { useIdle } from 'react-use'
 import { gql, request } from 'graphql-request'
 import { cn } from '@repo/ui/lib/utils'
-import { useAccount } from 'wagmi'
-import { walletOptions } from '@/components/wallet-options-dialog'
-import { useDialogStore } from '@/stores/dialog-store'
-
-const { palette } = ImageData
+import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
+import { AuctionSeedImage } from '@/components/auction-seed-image'
 
 export async function fetchBlocks(
   offset: number,
@@ -184,9 +177,6 @@ export function AuctionPreviewGrid() {
   const { poolSeeds } = usePoolStore()
   const { handleBuy } = useBuyNow()
 
-  const { isConnected } = useAccount()
-  const { openDialog } = useDialogStore()
-
   return (
     <>
       {poolSeeds.length === 0 && <NoContentMessage />}
@@ -197,53 +187,20 @@ export function AuctionPreviewGrid() {
         )}
       >
         {poolSeeds.map(({ blockNumber, nounId, seed }) => (
-          <Card
+          <AuctionSeedDialog
             key={blockNumber}
-            className="group relative rounded-lg shadow-none overflow-hidden"
+            seed={seed}
+            onBuy={() => handleBuy(blockNumber, nounId)}
           >
-            <NounImage seed={seed} />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
-              <Button
-                onClick={() => {
-                  if (!isConnected) {
-                    openDialog(walletOptions)
-                  } else {
-                    handleBuy(blockNumber, nounId)
-                  }
-                }}
-                variant="secondary"
-                className="px-6 py-2"
-              >
-                Buy
-              </Button>
-            </div>
-          </Card>
+            <Card className={'w-full shadow-none border-none cursor-pointer'}>
+              <CardContent className="p-0">
+                <AuctionSeedImage seed={seed} />
+              </CardContent>
+            </Card>
+          </AuctionSeedDialog>
         ))}
       </div>
     </>
-  )
-}
-
-function NounImage({ seed }: { seed: Seed }) {
-  const renderSVG = useCallback((seed: Seed) => {
-    const { parts, background } = getNounData(seed)
-    // Transform the parts to match the expected type
-    const formattedParts = parts
-      .filter(
-        (part): part is { filename: string; data: string } =>
-          part !== undefined,
-      )
-      .map(({ data }) => ({ data }))
-    const svgBinary = buildSVG(formattedParts, palette, background!)
-    return btoa(svgBinary)
-  }, [])
-
-  return (
-    <img
-      src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
-      className="h-auto w-full rounded-lg"
-      alt={`Noun`}
-    />
   )
 }
 
