@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { useAccount } from 'wagmi'
 import Auction from '@/components/auction'
 import { useNextNoun } from '@/hooks/use-next-noun'
+import { Tour } from '@/components/tour'
 
 export const HomePage: NextPage = () => {
   const [isClient, setIsClient] = useState(false)
@@ -51,6 +52,8 @@ export const HomePage: NextPage = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Auction />
       </div>
+
+      <Tour />
     </>
   )
 }
