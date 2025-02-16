@@ -81,7 +81,7 @@ export const WalletOptionsDialog = () => {
         }
       >
         <DialogTrigger asChild>
-          <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" id={'wallet-button'}>
             <WalletIcon />
           </Button>
         </DialogTrigger>
