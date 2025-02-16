@@ -4,7 +4,7 @@ import { Input } from '@repo/ui/components/input'
 import { formatEther } from 'viem'
 import React from 'react'
 import { join, map, pipe, split } from 'remeda'
-import { MultiSelect } from '@repo/ui/components/multi-select'
+import { MultiSelect } from '@/components/multi-select'
 
 import { ImageData } from '@repo/utilities'
 
