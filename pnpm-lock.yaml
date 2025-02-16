@@ -153,8 +153,8 @@ importers:
         specifier: 5.4.0
         version: 5.4.0(react@19.0.0)
       react-joyride:
-        specifier: 2.9.3
-        version: 2.9.3(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 3.0.0-7
+        version: 3.0.0-7(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-markdown:
         specifier: 9.0.3
         version: 9.0.3(@types/react@19.0.8)(react@19.0.0)
@@ -1863,16 +1863,24 @@ packages:
         integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==,
       }
 
-  '@gilbarbara/deep-equal@0.1.2':
-    resolution:
-      {
-        integrity: sha512-jk+qzItoEb0D0xSSmrKDDzf9sheQj/BAPxlgNxgmOaA3mxpUa6ndJLYGZKsJnIVEQSD8zcTbyILz7I0HcnBCRA==,
-      }
-
   '@gilbarbara/deep-equal@0.3.1':
     resolution:
       {
         integrity: sha512-I7xWjLs2YSVMc5gGx1Z3ZG1lgFpITPndpi8Ku55GeEIKpACCPQNS/OTqQbxgTCfq0Ncvcc+CrFov96itVh6Qvw==,
+      }
+
+  '@gilbarbara/hooks@0.8.2':
+    resolution:
+      {
+        integrity: sha512-aWXlJFCrqmasGaDd6IhSpqOFeOD4pSBpRtILKw0WxWQzWE+HYCA0adLf0P18BNztR/G0byWnpkGupeGx+NFnuw==,
+      }
+    peerDependencies:
+      react: '>=19.0.0'
+
+  '@gilbarbara/types@0.2.2':
+    resolution:
+      {
+        integrity: sha512-QuQDBRRcm1Q8AbSac2W1YElurOhprj3Iko/o+P1fJxUWS4rOGKMVli98OXS7uo4z+cKAif6a+L9bcZFSyauQpQ==,
       }
 
   '@graphql-typed-document-node/core@3.2.0':
@@ -2684,6 +2692,12 @@ packages:
         integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==,
       }
     engines: { node: ^12.20.0 || ^14.18.0 || >=16.0.0 }
+
+  '@popperjs/core@2.11.8':
+    resolution:
+      {
+        integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==,
+      }
 
   '@prisma/adapter-d1@6.3.1':
     resolution:
@@ -6201,12 +6215,6 @@ packages:
       }
     engines: { node: '>=0.10' }
 
-  deep-diff@1.0.2:
-    resolution:
-      {
-        integrity: sha512-aWS3UIVH+NPGCD1kki+DCU9Dua032iSsO43LqQpcs4R3+dVv7tX0qBGjiVHJHjplsoUM2XRO/KB92glqc68awg==,
-      }
-
   deep-eql@5.0.2:
     resolution:
       {
@@ -6226,6 +6234,13 @@ packages:
       {
         integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==,
       }
+
+  deepmerge-ts@7.1.4:
+    resolution:
+      {
+        integrity: sha512-fxqo6nHGQ9zOVgI4KXqtWXJR/yCLtC7aXIVq+6jc8tHPFUxlFmuUcm2kC4vztQ+LJxQ3gER/XAWearGYQ8niGA==,
+      }
+    engines: { node: '>=16.0.0' }
 
   deepmerge@4.3.1:
     resolution:
@@ -8460,12 +8475,6 @@ packages:
       }
     engines: { node: '>=8' }
 
-  is-lite@0.8.2:
-    resolution:
-      {
-        integrity: sha512-JZfH47qTsslwaAsqbMI3Q6HNNjUuq6Cmzzww50TdP5Esb6e1y2sK2UAaZZuzfAzpoI2AkxoPQapZdlDuP6Vlsw==,
-      }
-
   is-lite@1.2.1:
     resolution:
       {
@@ -10526,13 +10535,6 @@ packages:
       }
     engines: { node: '>=12.0.0' }
 
-  popper.js@1.16.1:
-    resolution:
-      {
-        integrity: sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==,
-      }
-    deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
-
   possible-typed-array-names@1.1.0:
     resolution:
       {
@@ -11206,10 +11208,10 @@ packages:
     peerDependencies:
       react: '>=19.0.0'
 
-  react-floater@0.7.9:
+  react-floater@0.9.5-4:
     resolution:
       {
-        integrity: sha512-NXqyp9o8FAXOATOEo0ZpyaQ2KPb4cmPMXGWkx377QtJkIXHlHRAGer7ai0r0C1kG5gf+KJ6Gy+gdNIiosvSicg==,
+        integrity: sha512-3CBOgMfqD18A5HvQRKRNR6pKT5rOCzcdqDzyOU7RYNFgpiGm6BrMjDTXJrstEpRjJ4fyL65dQ6wTRIE2UMQTmQ==,
       }
     peerDependencies:
       react: '>=19.0.0'
@@ -11250,10 +11252,10 @@ packages:
         integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==,
       }
 
-  react-joyride@2.9.3:
+  react-joyride@3.0.0-7:
     resolution:
       {
-        integrity: sha512-1+Mg34XK5zaqJ63eeBhqdbk7dlGCFp36FXwsEvgpjqrtyywX2C6h9vr3jgxP0bGHCw8Ilsp/nRDzNVq6HJ3rNw==,
+        integrity: sha512-NBgtdm8QehHEVI/Qkakb4EJ/WjKN7bQaZgZmO/01v1p2yBlzAcXyKM36FeS1YZaywX8v8R79bF5Z0OcV5BK1og==,
       }
     peerDependencies:
       react: '>=19.0.0'
@@ -12757,16 +12759,18 @@ packages:
       }
     engines: { node: '>=18' }
 
+  tree-changes-hook@0.11.3:
+    resolution:
+      {
+        integrity: sha512-cNHPuFc5Qbi2B74VqSqL/Ee/l4n0SFfzYKTnXYViJW1yCFZ0bl97QsgUIw9vdQtqpWDwo83mpNkGUvcjeQc0Xw==,
+      }
+    peerDependencies:
+      react: '>=19.0.0'
+
   tree-changes@0.11.3:
     resolution:
       {
         integrity: sha512-r14mvDZ6tqz8PRQmlFKjhUVngu4VZ9d92ON3tp0EGpFBE6PAHOq8Bx8m8ahbNoGE3uI/npjYcJiqVydyOiYXag==,
-      }
-
-  tree-changes@0.9.3:
-    resolution:
-      {
-        integrity: sha512-vvvS+O6kEeGRzMglTKbc19ltLWNtmNt1cpBoSYLj/iEcPVvpJasemKOlxBrmZaCtDJoF+4bwv3m01UKYi8mukQ==,
       }
 
   tree-kill@1.2.2:
@@ -14765,9 +14769,16 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@gilbarbara/deep-equal@0.1.2': {}
-
   '@gilbarbara/deep-equal@0.3.1': {}
+
+  '@gilbarbara/hooks@0.8.2(react@19.0.0)':
+    dependencies:
+      '@gilbarbara/deep-equal': 0.3.1
+      react: 19.0.0
+
+  '@gilbarbara/types@0.2.2':
+    dependencies:
+      type-fest: 4.33.0
 
   '@graphql-typed-document-node/core@3.2.0(graphql@16.10.0)':
     dependencies:
@@ -15359,6 +15370,8 @@ snapshots:
     optional: true
 
   '@pkgr/core@0.1.1': {}
+
+  '@popperjs/core@2.11.8': {}
 
   '@prisma/adapter-d1@6.3.1':
     dependencies:
@@ -17961,13 +17974,13 @@ snapshots:
 
   decode-uri-component@0.2.2: {}
 
-  deep-diff@1.0.2: {}
-
   deep-eql@5.0.2: {}
 
   deep-extend@0.6.0: {}
 
   deep-is@0.1.4: {}
+
+  deepmerge-ts@7.1.4: {}
 
   deepmerge@4.3.1: {}
 
@@ -18538,8 +18551,8 @@ snapshots:
       '@typescript-eslint/parser': 8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
       eslint: 9.20.1(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0)(eslint@9.20.1(jiti@2.4.2))
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.20.1(jiti@2.4.2))
+      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.20.1(jiti@2.4.2))
       eslint-plugin-react: 7.37.4(eslint@9.20.1(jiti@2.4.2))
       eslint-plugin-react-hooks: 5.1.0(eslint@9.20.1(jiti@2.4.2))
@@ -18562,7 +18575,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@9.20.1(jiti@2.4.2)):
+  eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2)):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.0
@@ -18574,22 +18587,22 @@ snapshots:
       is-glob: 4.0.3
       stable-hash: 0.0.4
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.20.1(jiti@2.4.2))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@9.20.1(jiti@2.4.2)):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2)):
     dependencies:
       debug: 4.4.0
     optionalDependencies:
       '@typescript-eslint/parser': 8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
       eslint: 9.20.1(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0)(eslint@9.20.1(jiti@2.4.2))
+      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@9.20.1(jiti@2.4.2)):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -18600,7 +18613,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.20.1(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@9.20.1(jiti@2.4.2))
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2)))(eslint@9.20.1(jiti@2.4.2))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -19565,8 +19578,6 @@ snapshots:
   is-hexadecimal@2.0.1: {}
 
   is-interactive@1.0.0: {}
-
-  is-lite@0.8.2: {}
 
   is-lite@1.2.1: {}
 
@@ -20869,8 +20880,6 @@ snapshots:
 
   pony-cause@2.1.11: {}
 
-  popper.js@1.16.1: {}
-
   possible-typed-array-names@1.1.0: {}
 
   postcss-calc@10.1.0(postcss@8.5.2):
@@ -21248,15 +21257,14 @@ snapshots:
       '@babel/runtime': 7.26.7
       react: 19.0.0
 
-  react-floater@0.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-floater@0.9.5-4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
-      deepmerge: 4.3.1
-      is-lite: 0.8.2
-      popper.js: 1.16.1
-      prop-types: 15.8.1
+      '@popperjs/core': 2.11.8
+      deepmerge-ts: 7.1.4
+      is-lite: 1.2.1
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-      tree-changes: 0.9.3
+      tree-changes-hook: 0.11.3(react@19.0.0)
 
   react-icons@5.4.0(react@19.0.0):
     dependencies:
@@ -21273,21 +21281,20 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-joyride@2.9.3(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-joyride@3.0.0-7(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@gilbarbara/deep-equal': 0.3.1
-      deep-diff: 1.0.2
+      '@gilbarbara/hooks': 0.8.2(react@19.0.0)
+      '@gilbarbara/types': 0.2.2
       deepmerge: 4.3.1
       is-lite: 1.2.1
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-      react-floater: 0.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-floater: 0.9.5-4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-innertext: 1.1.5(@types/react@19.0.8)(react@19.0.0)
-      react-is: 16.13.1
       scroll: 3.0.1
       scrollparent: 2.1.0
-      tree-changes: 0.11.3
-      type-fest: 4.33.0
+      tree-changes-hook: 0.11.3(react@19.0.0)
     transitivePeerDependencies:
       - '@types/react'
 
@@ -22310,15 +22317,16 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
+  tree-changes-hook@0.11.3(react@19.0.0):
+    dependencies:
+      '@gilbarbara/deep-equal': 0.3.1
+      react: 19.0.0
+      tree-changes: 0.11.3
+
   tree-changes@0.11.3:
     dependencies:
       '@gilbarbara/deep-equal': 0.3.1
       is-lite: 1.2.1
-
-  tree-changes@0.9.3:
-    dependencies:
-      '@gilbarbara/deep-equal': 0.1.2
-      is-lite: 0.8.2
 
   tree-kill@1.2.2: {}
 
