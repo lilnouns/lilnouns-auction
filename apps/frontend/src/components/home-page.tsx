@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import Auction from '@/components/auction'
 import { useNextNoun } from '@/hooks/use-next-noun'
+import { Tour } from '@/components/tour'
 import { useLingui } from '@lingui/react/macro'
 
 import { sdk as frameSdk } from '@farcaster/frame-sdk'
@@ -62,6 +63,8 @@ export const HomePage: NextPage = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Auction />
       </div>
+
+      <Tour />
     </>
   )
 }
