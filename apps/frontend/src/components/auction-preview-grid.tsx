@@ -17,6 +17,9 @@ import { useBuyNow } from '@/hooks/use-buy-now'
 import { useIdle } from 'react-use'
 import { gql, request } from 'graphql-request'
 import { cn } from '@repo/ui/lib/utils'
+import { useAccount } from 'wagmi'
+import { walletOptions } from '@/components/wallet-options-dialog'
+import { useDialogStore } from '@/stores/dialog-store'
 
 const { palette } = ImageData
 
@@ -178,8 +181,11 @@ export function AuctionPreviewGrid() {
     }
   }, [fetchData, isIdle])
 
-  const { poolSeeds, isLoading } = usePoolStore()
+  const { poolSeeds } = usePoolStore()
   const { handleBuy } = useBuyNow()
+
+  const { isConnected } = useAccount()
+  const { openDialog } = useDialogStore()
 
   return (
     <>
@@ -198,7 +204,13 @@ export function AuctionPreviewGrid() {
             <NounImage seed={seed} />
             <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
               <Button
-                onClick={() => handleBuy(blockNumber, nounId)}
+                onClick={() => {
+                  if (!isConnected) {
+                    openDialog(walletOptions)
+                  } else {
+                    handleBuy(blockNumber, nounId)
+                  }
+                }}
                 variant="secondary"
                 className="px-6 py-2"
               >
