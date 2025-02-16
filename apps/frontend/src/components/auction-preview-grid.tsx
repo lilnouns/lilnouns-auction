@@ -184,8 +184,8 @@ export function AuctionPreviewGrid() {
           'grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9',
         )}
       >
-        {poolSeeds.map((poolSeed, index) => (
-          <AuctionSeedDialog key={index} poolSeed={poolSeed}>
+        {poolSeeds.map((poolSeed) => (
+          <AuctionSeedDialog key={poolSeed.blockNumber} poolSeed={poolSeed}>
             <Card className={'w-full shadow-none border-none cursor-pointer'}>
               <CardContent className="p-0">
                 <AuctionSeedImage seed={poolSeed.seed} />
