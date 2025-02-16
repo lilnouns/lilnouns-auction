@@ -19,6 +19,11 @@ import { useDialogStore } from '@/stores/dialog-store'
 import { walletOptions } from '@/components/wallet-options-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
 
+import { ImageData } from '@repo/utilities'
+import { formatTraitName } from '@/utils/format-trait-name'
+
+const { palette, images, bgcolors } = ImageData
+
 interface AuctionSeedDialogProps {
   seed: Seed
   onBuy: () => void
@@ -32,6 +37,11 @@ export function AuctionSeedDialog({
 }: AuctionSeedDialogProps) {
   const { isConnected } = useAccount()
   const { openDialog } = useDialogStore()
+
+  const backgrounds: { [key: string]: string } = {
+    d5d7e1: 'cold',
+    e1d7d5: 'warm',
+  }
 
   return (
     <Dialog>
@@ -48,23 +58,41 @@ export function AuctionSeedDialog({
                 <TableBody>
                   <TableRow>
                     <TableCell className="font-medium">Background</TableCell>
-                    <TableCell>{seed.background}</TableCell>
+                    <TableCell className={'text-end'}>
+                      {formatTraitName(
+                        backgrounds[bgcolors[seed.background!]!] ?? '',
+                      )}
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Body</TableCell>
-                    <TableCell>{seed.body}</TableCell>
+                    <TableCell className={'text-end'}>
+                      {formatTraitName(
+                        images.bodies[seed.body]?.filename ?? '',
+                      )}
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Accessory</TableCell>
-                    <TableCell>{seed.accessory}</TableCell>
+                    <TableCell className={'text-end'}>
+                      {formatTraitName(
+                        images.accessories[seed.accessory]?.filename ?? '',
+                      )}
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Head</TableCell>
-                    <TableCell>{seed.head}</TableCell>
+                    <TableCell className={'text-end'}>
+                      {formatTraitName(images.heads[seed.head]?.filename ?? '')}
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium">Glasses</TableCell>
-                    <TableCell>{seed.glasses}</TableCell>
+                    <TableCell className={'text-end'}>
+                      {formatTraitName(
+                        images.glasses[seed.glasses]?.filename ?? '',
+                      )}
+                    </TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
