@@ -11,9 +11,13 @@ import {
   DialogTrigger,
 } from '@repo/ui/components/dialog'
 import { WalletIcon } from 'lucide-react'
+import { useDialogStore } from '@/stores/dialog-store'
 
-export const WalletOptions = () => {
-  const [isOpen, setIsOpen] = useState(false)
+export const walletOptions = 'wallet-options'
+
+export const WalletOptionsDialog = () => {
+  const { openDialogs, openDialog, closeDialog } = useDialogStore()
+
   const { connectors, connect } = useConnect()
   const { isConnected, address } = useAccount()
   const { disconnect } = useDisconnect()
@@ -21,12 +25,17 @@ export const WalletOptions = () => {
   // Close dialog when wallet gets connected
   useEffect(() => {
     if (isConnected) {
-      setIsOpen(false)
+      closeDialog(walletOptions)
     }
-  }, [isConnected])
+  }, [closeDialog, isConnected])
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog
+      open={openDialogs[walletOptions]}
+      onOpenChange={(open) =>
+        open ? openDialog(walletOptions) : closeDialog(walletOptions)
+      }
+    >
       <DialogTrigger>
         <Button variant="outline" size="icon">
           <WalletIcon />

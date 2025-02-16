@@ -3,7 +3,7 @@ import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { Button } from '@repo/ui/components/button'
 
-import { usePoolStore } from '@/stores/use-pool-store'
+import { usePoolStore } from '@/stores/pool-store'
 import { useCallback, useEffect } from 'react'
 
 import { buildSVG } from '@lilnounsdao/sdk'
@@ -11,7 +11,7 @@ import { getNounData } from '@lilnounsdao/assets'
 
 import { getNounSeedFromBlockHash, ImageData } from '@repo/utilities'
 
-import { useTraitFilterStore } from '@/stores/use-trait-filter-store'
+import { useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
 import { useBuyNow } from '@/hooks/use-buy-now'
 
