@@ -8,10 +8,7 @@ import { MultiSelect } from '@/components/multi-select'
 
 import { ImageData } from '@repo/utilities'
 
-import {
-  TraitFilter,
-  useTraitFilterStore,
-} from '@/stores/use-trait-filter-store'
+import { TraitFilter, useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
 
 type TraitOptions = Array<{
