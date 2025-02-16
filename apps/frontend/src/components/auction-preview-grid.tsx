@@ -182,16 +182,15 @@ export function AuctionPreviewGrid() {
   const { poolSeeds, isLoading } = usePoolStore()
   const { handleBuy } = useBuyNow()
 
-  const gridClassName = cn(
-    'grid grid-cols-2 gap-2 text-gray-900 sm:grid-cols-3 md:grid-cols-4 ' +
-      'lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200',
-  )
-
   return (
     <>
       {!isLoading ? (
         poolSeeds.length > 0 ? (
-          <div className={gridClassName}>
+          <div
+            className={cn(
+              'grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9',
+            )}
+          >
             {poolSeeds.map(({ blockNumber, nounId, seed }) => (
               <Card
                 key={blockNumber}
@@ -214,7 +213,11 @@ export function AuctionPreviewGrid() {
           <NoContentMessage />
         )
       ) : (
-        <div className={gridClassName}>
+        <div
+          className={cn(
+            'grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9',
+          )}
+        >
           {Array.from({ length: 12 }).map((_, index) => (
             <Card key={index} className="rounded-lg shadow-md">
               <CardContent className="p-4">
