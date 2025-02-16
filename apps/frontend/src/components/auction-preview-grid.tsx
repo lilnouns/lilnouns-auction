@@ -1,6 +1,5 @@
 import { Block, BlockData, PoolSeed, Seed } from '@/types'
 import { Card, CardContent } from '@repo/ui/components/card'
-import { Skeleton } from '@repo/ui/components/skeleton'
 import { Button } from '@repo/ui/components/button'
 
 import { usePoolStore } from '@/stores/pool-store'
@@ -184,49 +183,31 @@ export function AuctionPreviewGrid() {
 
   return (
     <>
-      {!isLoading ? (
-        poolSeeds.length > 0 ? (
-          <div
-            className={cn(
-              'grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9',
-            )}
+      {poolSeeds.length === 0 && <NoContentMessage />}
+
+      <div
+        className={cn(
+          'grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9',
+        )}
+      >
+        {poolSeeds.map(({ blockNumber, nounId, seed }) => (
+          <Card
+            key={blockNumber}
+            className="group relative rounded-lg shadow-none overflow-hidden"
           >
-            {poolSeeds.map(({ blockNumber, nounId, seed }) => (
-              <Card
-                key={blockNumber}
-                className="group relative rounded-lg shadow-none overflow-hidden"
+            <NounImage seed={seed} />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+              <Button
+                onClick={() => handleBuy(blockNumber, nounId)}
+                variant="secondary"
+                className="px-6 py-2"
               >
-                <NounImage seed={seed} />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
-                  <Button
-                    onClick={() => handleBuy(blockNumber, nounId)}
-                    variant="secondary"
-                    className="px-6 py-2"
-                  >
-                    Buy
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-        ) : (
-          <NoContentMessage />
-        )
-      ) : (
-        <div
-          className={cn(
-            'grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9',
-          )}
-        >
-          {Array.from({ length: 12 }).map((_, index) => (
-            <Card key={index} className="rounded-lg shadow-md">
-              <CardContent className="p-4">
-                <Skeleton className="h-32 w-full rounded-lg" />
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      )}
+                Buy
+              </Button>
+            </div>
+          </Card>
+        ))}
+      </div>
     </>
   )
 }
