@@ -183,7 +183,7 @@ export function AuctionPreviewGrid() {
   const { handleBuy } = useBuyNow()
 
   const gridClassName = cn(
-    'grid grid-cols-2 gap-6 text-gray-900 sm:grid-cols-3 md:grid-cols-4 ' +
+    'grid grid-cols-2 gap-2 text-gray-900 sm:grid-cols-3 md:grid-cols-4 ' +
       'lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 dark:text-gray-200',
   )
 
@@ -195,7 +195,7 @@ export function AuctionPreviewGrid() {
             {poolSeeds.map(({ blockNumber, nounId, seed }) => (
               <Card
                 key={blockNumber}
-                className="group relative rounded-lg shadow-md overflow-hidden"
+                className="group relative rounded-lg shadow-none overflow-hidden"
               >
                 <NounImage seed={seed} />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
