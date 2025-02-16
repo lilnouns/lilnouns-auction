@@ -22,6 +22,14 @@ import { AuctionSeedImage } from '@/components/auction-seed-image'
 import { ImageData } from '@repo/utilities'
 import { formatTraitName } from '@/utils/format-trait-name'
 import { useBuyNow } from '@/hooks/use-buy-now'
+import { useMedia } from 'react-use'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@repo/ui/components/drawer'
 
 const { palette, images, bgcolors } = ImageData
 
@@ -110,15 +118,31 @@ export function AuctionSeedDialog({
   poolSeed,
   children,
 }: AuctionSeedDialogProps) {
+  const isDesktop = useMedia('(min-width: 768px)')
+
+  if (isDesktop) {
+    return (
+      <Dialog>
+        <DialogTrigger asChild>{children}</DialogTrigger>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Seed Details</DialogTitle>
+          </DialogHeader>
+          <SeedInfo {...poolSeed} />
+        </DialogContent>
+      </Dialog>
+    )
+  }
+
   return (
-    <Dialog>
-      <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Seed Details</DialogTitle>
-        </DialogHeader>
+    <Drawer>
+      <DrawerTrigger asChild>{children}</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>Seed Details</DrawerTitle>
+        </DrawerHeader>
         <SeedInfo {...poolSeed} />
-      </DialogContent>
-    </Dialog>
+      </DrawerContent>
+    </Drawer>
   )
 }
