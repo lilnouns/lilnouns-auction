@@ -1,19 +1,9 @@
 import { t } from '@lingui/core/macro'
 import Link from 'next/link'
 import { default as ModeToggle } from '@/components/mode-toggle'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@repo/ui/components/dialog'
-import { AuctionTraitFilter } from '@/components/auction-trait-filter'
 import React from 'react'
-import { Button } from '@repo/ui/components/button'
-import { FilterIcon } from 'lucide-react'
 import { WalletOptions } from '@/components/wallet-options'
+import { AuctionFilterDialog } from '@/components/auction-filter-dialog'
 
 const IconNoggles = () => (
   <svg
@@ -79,24 +69,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <ModeToggle />
 
-          <Dialog>
-            <DialogTrigger>
-              <Button variant="outline" size="icon">
-                <FilterIcon />
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>{t`Filter Auctions`}</DialogTitle>
-                <DialogDescription>
-                  {t`Select traits to filter the auction listings`}
-                </DialogDescription>
-              </DialogHeader>
-              <div className="">
-                <AuctionTraitFilter />
-              </div>
-            </DialogContent>
-          </Dialog>
+          <AuctionFilterDialog />
 
           <WalletOptions />
         </div>
