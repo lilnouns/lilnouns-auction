@@ -12,35 +12,74 @@ import { t } from '@lingui/core/macro'
 import { AuctionTraitFilter } from '@/components/auction-trait-filter'
 import React from 'react'
 import { useDialogStore } from '@/stores/dialog-store'
+import { useMedia } from 'react-use'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@repo/ui/components/drawer'
 
 export const auctionFilter = 'auction-filter'
 
 export function AuctionFilterDialog() {
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
+  const isDesktop = useMedia('(min-width: 768px)')
+
+  if (isDesktop) {
+    return (
+      <Dialog
+        open={openDialogs[auctionFilter]}
+        onOpenChange={(open) =>
+          open ? openDialog(auctionFilter) : closeDialog(auctionFilter)
+        }
+      >
+        <DialogTrigger>
+          <Button variant="outline" size="icon">
+            <FilterIcon />
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t`Filter Auctions`}</DialogTitle>
+            <DialogDescription>
+              {t`Select traits to filter the auction listings`}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="">
+            <AuctionTraitFilter />
+          </div>
+        </DialogContent>
+      </Dialog>
+    )
+  }
+
   return (
-    <Dialog
+    <Drawer
       open={openDialogs[auctionFilter]}
       onOpenChange={(open) =>
         open ? openDialog(auctionFilter) : closeDialog(auctionFilter)
       }
     >
-      <DialogTrigger>
+      <DrawerTrigger>
         <Button variant="outline" size="icon">
           <FilterIcon />
         </Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>{t`Filter Auctions`}</DialogTitle>
-          <DialogDescription>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>{t`Filter Auctions`}</DrawerTitle>
+          <DrawerDescription>
             {t`Select traits to filter the auction listings`}
-          </DialogDescription>
-        </DialogHeader>
+          </DrawerDescription>
+        </DrawerHeader>
         <div className="">
           <AuctionTraitFilter />
         </div>
-      </DialogContent>
-    </Dialog>
+      </DrawerContent>
+    </Drawer>
   )
 }
