@@ -50,8 +50,8 @@ export function AuctionTraitFilter() {
   ]
 
   return (
-    <Card className="mb-4 w-full shadow-none border-none">
-      <CardContent className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-1">
+    <Card className="w-full shadow-none border-none">
+      <CardContent className="grid grid-cols-1 p-0">
         {traitOptions.map(({ id, label, options }) => (
           <div key={id}>
             <Label htmlFor={id}>{label}</Label>
@@ -80,7 +80,7 @@ export function AuctionTraitFilter() {
             />
           </div>
         ))}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-2">
           <div>
             <Label htmlFor="noun-id">Noun ID</Label>
             <Input
