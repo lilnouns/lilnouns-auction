@@ -8,7 +8,6 @@ import { getNounSeedFromBlockHash } from '@repo/utilities'
 
 import { useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
-import { useBuyNow } from '@/hooks/use-buy-now'
 
 import { useIdle } from 'react-use'
 import { gql, request } from 'graphql-request'
@@ -175,7 +174,6 @@ export function AuctionPreviewGrid() {
   }, [fetchData, isIdle])
 
   const { poolSeeds } = usePoolStore()
-  const { handleBuy } = useBuyNow()
 
   return (
     <>
@@ -186,15 +184,11 @@ export function AuctionPreviewGrid() {
           'grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9',
         )}
       >
-        {poolSeeds.map(({ blockNumber, nounId, seed }) => (
-          <AuctionSeedDialog
-            key={blockNumber}
-            seed={seed}
-            onBuy={() => handleBuy(blockNumber, nounId)}
-          >
+        {poolSeeds.map((poolSeed, index) => (
+          <AuctionSeedDialog key={index} poolSeed={poolSeed}>
             <Card className={'w-full shadow-none border-none cursor-pointer'}>
               <CardContent className="p-0">
-                <AuctionSeedImage seed={seed} />
+                <AuctionSeedImage seed={poolSeed.seed} />
               </CardContent>
             </Card>
           </AuctionSeedDialog>
