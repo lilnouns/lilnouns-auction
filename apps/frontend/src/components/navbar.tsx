@@ -2,7 +2,7 @@ import { t } from '@lingui/core/macro'
 import Link from 'next/link'
 import { default as ModeToggle } from '@/components/mode-toggle'
 import React from 'react'
-import { WalletOptions } from '@/components/wallet-options'
+import { WalletOptionsDialog } from '@/components/wallet-options-dialog'
 import { AuctionFilterDialog } from '@/components/auction-filter-dialog'
 
 const IconNoggles = () => (
@@ -71,7 +71,7 @@ const Navbar = () => {
 
           <AuctionFilterDialog />
 
-          <WalletOptions />
+          <WalletOptionsDialog />
         </div>
       </div>
     </nav>

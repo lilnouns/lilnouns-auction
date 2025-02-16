@@ -13,7 +13,7 @@ import {
 import { WalletIcon } from 'lucide-react'
 import { useDialogStore } from '@/stores/dialog-store'
 
-export const WalletOptions = () => {
+export const WalletOptionsDialog = () => {
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
   const { connectors, connect } = useConnect()
