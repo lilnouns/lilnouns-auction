@@ -3,13 +3,13 @@ import { Label } from '@repo/ui/components/label'
 import { Input } from '@repo/ui/components/input'
 import { formatEther } from 'viem'
 import React from 'react'
-import { join, map, pipe, split } from 'remeda'
 import { MultiSelect } from '@/components/multi-select'
 
 import { ImageData } from '@repo/utilities'
 
 import { TraitFilter, useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
+import { formatTraitName } from '@/utils/format-trait-name'
 
 type TraitOptions = Array<{
   id: keyof TraitFilter
@@ -102,24 +102,5 @@ export function AuctionTraitFilter() {
         </div>
       </CardContent>
     </Card>
-  )
-}
-
-/**
- * Formats the given trait name by capitalizing each part of the name and
- * removing specific prefixes if present.
- *
- * @param traitName - The trait name to format.
- * @returns The formatted trait name.
- */
-function formatTraitName(traitName: string): string {
-  const prefixes = new Set(['head', 'accessory', 'glasses', 'body'])
-
-  return pipe(
-    traitName,
-    split('-'),
-    (parts) => (prefixes.has(parts[0] ?? '') ? parts.slice(1) : parts),
-    map((part) => (part ? part.charAt(0).toUpperCase() + part.slice(1) : '')),
-    join(' '),
   )
 }
