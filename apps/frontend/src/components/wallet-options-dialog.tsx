@@ -13,6 +13,8 @@ import {
 import { WalletIcon } from 'lucide-react'
 import { useDialogStore } from '@/stores/dialog-store'
 
+export const walletOptions = 'wallet-options'
+
 export const WalletOptionsDialog = () => {
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
@@ -23,15 +25,15 @@ export const WalletOptionsDialog = () => {
   // Close dialog when wallet gets connected
   useEffect(() => {
     if (isConnected) {
-      closeDialog('wallet-connect')
+      closeDialog(walletOptions)
     }
   }, [closeDialog, isConnected])
 
   return (
     <Dialog
-      open={openDialogs['wallet-connect']}
+      open={openDialogs[walletOptions]}
       onOpenChange={(open) =>
-        open ? openDialog('wallet-connect') : closeDialog('wallet-connect')
+        open ? openDialog(walletOptions) : closeDialog(walletOptions)
       }
     >
       <DialogTrigger>
