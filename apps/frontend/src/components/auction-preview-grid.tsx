@@ -185,7 +185,10 @@ export function AuctionPreviewGrid() {
         )}
       >
         {poolSeeds.map((poolSeed) => (
-          <AuctionSeedDialog key={poolSeed.blockNumber} poolSeed={poolSeed}>
+          <AuctionSeedDialog
+            key={`${poolSeed.nounId}-${poolSeed.blockNumber}`}
+            poolSeed={poolSeed}
+          >
             <Card className={'w-full shadow-none border-none cursor-pointer'}>
               <CardContent className="p-0">
                 <AuctionSeedImage seed={poolSeed.seed} />

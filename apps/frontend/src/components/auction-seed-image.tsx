@@ -24,7 +24,7 @@ export function AuctionSeedImage({ seed }: { seed: Seed }) {
   return (
     <img
       src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
-      className="h-auto w-full rounded-lg"
+      className="h-full w-full object-cover rounded-lg"
       alt={`Noun`}
     />
   )

@@ -1,6 +1,6 @@
-changed_files=$(git diff --name-only --staged | grep -E '\.(js|jsx|ts|tsx|mdx)$') \
-   && [ -n "$changed_files" ] \
-   && pnpm lingui extract --verbose --overwrite --clean "$changed_files" \
-   && git add ./**/*.po
+# changed_files=$(git diff --name-only --staged | grep -E '\.(js|jsx|ts|tsx|mdx)$') \
+#  && [ -n "$changed_files" ] \
+#  && cd apps/frontend; pnpm lingui extract --verbose --overwrite --clean "$changed_files" \
+#  && git add ./**/*.po
 
 pnpm lint-staged
