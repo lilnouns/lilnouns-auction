@@ -78,7 +78,7 @@ export function AuctionFilterDialog() {
             {t`Select traits to filter the auction listings`}
           </DrawerDescription>
         </DrawerHeader>
-        <div className="p-5">
+        <div className="p-4">
           <AuctionTraitFilter />
         </div>
         <DrawerFooter className="pt-2">

@@ -164,11 +164,13 @@ export function AuctionSeedDialog({
   return (
     <Drawer>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
-      <DrawerContent className={'mx-4'}>
+      <DrawerContent className={'mx-4 max-h-[calc(100vh-20px)] mt-5'}>
         <DrawerHeader>
           <DrawerTitle>Seed Details</DrawerTitle>
         </DrawerHeader>
-        <SeedInfo {...poolSeed} />
+        <div className="p-4 overflow-y-auto">
+          <SeedInfo {...poolSeed} />
+        </div>
       </DrawerContent>
     </Drawer>
   )
