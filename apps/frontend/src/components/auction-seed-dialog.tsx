@@ -1,12 +1,13 @@
 import {
   Dialog,
   DialogContent,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from '@repo/ui/components/dialog'
 import { Button } from '@repo/ui/components/button'
-import { Card, CardContent, CardFooter } from '@repo/ui/components/card'
+import { Card, CardContent } from '@repo/ui/components/card'
 import {
   Table,
   TableBody,
@@ -27,17 +28,30 @@ import { useBuyNow } from '@/hooks/use-buy-now'
 import { useMedia } from 'react-use'
 import {
   Drawer,
+  DrawerClose,
   DrawerContent,
+  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
 } from '@repo/ui/components/drawer'
 import { useNextNoun } from '@/hooks/use-next-noun'
 import { formatEther } from 'viem'
+import React from 'react'
 
 const { images, bgcolors } = ImageData
 
-function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
+interface AuctionSeedDialogProps {
+  poolSeed: PoolSeed
+  children: React.ReactNode
+}
+
+export function AuctionSeedDialog({
+  poolSeed,
+  children,
+}: AuctionSeedDialogProps) {
+  const isDesktop = useMedia('(min-width: 768px)')
+
   const { isConnected, chainId } = useAccount()
   const { switchChain } = useSwitchChain()
 
@@ -54,7 +68,9 @@ function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
     e1d7d5: 'warm',
   }
 
-  return (
+  const { seed, blockNumber, nounId } = poolSeed
+
+  const content = (
     <Card className={'shadow-none border-none'}>
       <CardContent className="p-0">
         <div className="grid gap-6">
@@ -111,40 +127,29 @@ function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
           </Table>
         </div>
       </CardContent>
-      <CardFooter className="p-0">
-        <Button
-          onClick={() => {
-            if (!isConnected) {
-              openDialog(walletOptions)
-            } else if (isWrongChain) {
-              switchChain({ chainId: correctChainId })
-            } else {
-              buyNow(blockNumber, nounId)
-            }
-          }}
-          className="w-full"
-        >
-          {!isConnected
-            ? 'Connect Wallet'
-            : isWrongChain
-              ? 'Switch Chain'
-              : 'Buy Now'}
-        </Button>
-      </CardFooter>
     </Card>
   )
-}
 
-interface AuctionSeedDialogProps {
-  poolSeed: PoolSeed
-  children: React.ReactNode
-}
-
-export function AuctionSeedDialog({
-  poolSeed,
-  children,
-}: AuctionSeedDialogProps) {
-  const isDesktop = useMedia('(min-width: 768px)')
+  const buyNowButton = (
+    <Button
+      onClick={() => {
+        if (!isConnected) {
+          openDialog(walletOptions)
+        } else if (isWrongChain) {
+          switchChain({ chainId: correctChainId })
+        } else {
+          buyNow(blockNumber, nounId)
+        }
+      }}
+      className="w-full"
+    >
+      {!isConnected
+        ? 'Connect Wallet'
+        : isWrongChain
+          ? 'Switch Chain'
+          : 'Buy Now'}
+    </Button>
+  )
 
   if (isDesktop) {
     return (
@@ -154,7 +159,8 @@ export function AuctionSeedDialog({
           <DialogHeader>
             <DialogTitle>Seed Details</DialogTitle>
           </DialogHeader>
-          <SeedInfo {...poolSeed} />
+          {content}
+          <DialogFooter>{buyNowButton}</DialogFooter>
         </DialogContent>
       </Dialog>
     )
@@ -167,9 +173,13 @@ export function AuctionSeedDialog({
         <DrawerHeader>
           <DrawerTitle>Seed Details</DrawerTitle>
         </DrawerHeader>
-        <div className="p-4 overflow-y-auto">
-          <SeedInfo {...poolSeed} />
-        </div>
+        <div className="p-4 overflow-y-auto">{content}</div>
+        <DrawerFooter>
+          {buyNowButton}
+          <DrawerClose asChild>
+            <Button variant="outline">Close</Button>
+          </DrawerClose>
+        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   )
