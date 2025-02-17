@@ -3,7 +3,6 @@ import {
   DialogContent,
   DialogDescription,
   DialogFooter,
-  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from '@repo/ui/components/dialog'
@@ -159,10 +158,8 @@ export function AuctionSeedDialog({
       <Dialog>
         <DialogTrigger asChild>{children}</DialogTrigger>
         <DialogContent>
-          <DialogHeader>
-            <DialogTitle>{t`Seed Details`}</DialogTitle>
-            <DialogDescription></DialogDescription>
-          </DialogHeader>
+          <DialogTitle>{t`Noun Details`}</DialogTitle>
+          <DialogDescription>{t`View traits and pricing for this Noun`}</DialogDescription>
           {content}
           <DialogFooter>{buyNowButton}</DialogFooter>
         </DialogContent>
@@ -175,8 +172,8 @@ export function AuctionSeedDialog({
       <DrawerTrigger asChild>{children}</DrawerTrigger>
       <DrawerContent className={'mx-4 max-h-[calc(100vh-20px)] mt-5'}>
         <DrawerHeader>
-          <DrawerTitle>{t`Seed Details`}</DrawerTitle>
-          <DrawerDescription></DrawerDescription>
+          <DrawerTitle>{t`Noun Details`}</DrawerTitle>
+          <DrawerDescription>{t`View traits and pricing`}</DrawerDescription>
         </DrawerHeader>
         <div className="p-4 overflow-y-auto">{content}</div>
         <DrawerFooter>
