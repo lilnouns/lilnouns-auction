@@ -81,7 +81,7 @@ export function AuctionSeedDialog({
             <TableBody>
               <TableRow>
                 <TableCell className="font-medium">Background</TableCell>
-                <TableCell className={'text-end'}>
+                <TableCell className="text-right">
                   {formatTraitName(
                     backgrounds[bgcolors[seed.background!]!] ?? '',
                   )}
@@ -89,13 +89,13 @@ export function AuctionSeedDialog({
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Body</TableCell>
-                <TableCell className={'text-end'}>
+                <TableCell className="text-right">
                   {formatTraitName(images.bodies[seed.body]?.filename ?? '')}
                 </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Accessory</TableCell>
-                <TableCell className={'text-end'}>
+                <TableCell className="text-right">
                   {formatTraitName(
                     images.accessories[seed.accessory]?.filename ?? '',
                   )}
@@ -103,13 +103,13 @@ export function AuctionSeedDialog({
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Head</TableCell>
-                <TableCell className={'text-end'}>
+                <TableCell className="text-right">
                   {formatTraitName(images.heads[seed.head]?.filename ?? '')}
                 </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Glasses</TableCell>
-                <TableCell className={'text-end'}>
+                <TableCell className="text-right">
                   {formatTraitName(
                     images.glasses[seed.glasses]?.filename ?? '',
                   )}
@@ -117,12 +117,12 @@ export function AuctionSeedDialog({
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Noun ID</TableCell>
-                <TableCell className={'text-end'}>{nounId}</TableCell>
+                <TableCell className="text-right">{nounId}</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Price</TableCell>
-                <TableCell className={'text-end'}>
-                  {price ? `${formatEther(price)} ETH` : 'N/A'}
+                <TableCell className="text-right">
+                  {formatEther(price || 0n)}
                 </TableCell>
               </TableRow>
             </TableBody>
