@@ -24,9 +24,10 @@
     "@prisma/client": "6.3.1",
     "@repo/ui": "workspace:*",
     "@repo/utilities": "workspace:*",
-    "@tanstack/react-query": "5.66.0",
+    "@tanstack/react-query": "5.66.3",
     "@wagmi/core": "2.16.4",
     "autoprefixer": "10.4.20",
+    "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cssnano": "7.0.6",
     "graphql-request": "7.1.2",
@@ -44,16 +45,17 @@
     "react-markdown": "9.0.3",
     "react-spinners": "0.15.0",
     "react-use": "17.6.0",
-    "remeda": "2.20.1",
+    "remeda": "2.20.2",
     "tailwind-merge": "3.0.1",
     "tailwindcss": "3.4.17",
     "viem": "2.23.2",
     "wagmi": "2.14.11",
-    "zod": "3.24.2"
+    "zod": "3.24.2",
+    "zustand": "5.0.3"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.7",
-    "@cloudflare/workers-types": "4.20250204.0",
+    "@cloudflare/workers-types": "4.20250214.0",
     "@eslint/eslintrc": "3.2.0",
     "@lingui/cli": "5.2.0",
     "@lingui/conf": "5.2.0",
@@ -73,8 +75,8 @@
     "@types/langs": "2.0.5",
     "@types/lint-staged": "13.3.0",
     "@types/negotiator": "0.6.3",
-    "@types/node": "22.13.2",
-    "@types/react": "19.0.8",
+    "@types/node": "22.13.4",
+    "@types/react": "19.0.9",
     "@types/react-dom": "19.0.3",
     "@vitejs/plugin-react": "4.3.4",
     "eslint": "9.20.1",
@@ -89,8 +91,8 @@
     "tailwind-merge": "3.0.1",
     "tailwindcss": "3.4.17",
     "typescript": "5.7.3",
-    "vercel": "41.1.2",
+    "vercel": "41.1.4",
     "vitest": "3.0.5",
-    "wrangler": "3.108.1"
+    "wrangler": "3.109.1"
   }
 }

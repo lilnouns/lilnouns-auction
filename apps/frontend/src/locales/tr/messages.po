@@ -13,17 +13,25 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/auction.tsx
-msgid "All bodies"
+#: src/components/wallet-options.tsx
+msgid "Connect Wallet"
 msgstr ""
 
 #: src/components/wallet-options.tsx
 msgid "Connect with one of our available wallet providers."
 msgstr ""
 
+#: src/components/wallet-options.tsx
+msgid "Disconnect Wallet"
+msgstr ""
+
+#: src/components/navbar.tsx
+msgid "Filter Auctions"
+msgstr ""
+
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 #: src/components/home-page.tsx
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr ""
 
@@ -35,24 +43,8 @@ msgstr ""
 msgid "Open options"
 msgstr "Seçenekleri aç"
 
-#: src/components/auction.tsx
-msgid "Select accessory"
-msgstr ""
-
-#: src/components/auction.tsx
-msgid "Select background"
-msgstr ""
-
-#: src/components/auction.tsx
-msgid "Select body"
-msgstr ""
-
-#: src/components/auction.tsx
-msgid "Select glasses"
-msgstr ""
-
-#: src/components/auction.tsx
-msgid "Select head"
+#: src/components/navbar.tsx
+msgid "Select traits to filter the auction listings"
 msgstr ""
 
 #: src/components/theme-switcher.tsx
@@ -65,4 +57,12 @@ msgstr "Aydınlık temaya geç"
 
 #: src/app/[lang]/layout.tsx
 msgid "Translation Demo"
+msgstr ""
+
+#: src/components/wallet-options.tsx
+msgid "Wallet Connected"
+msgstr ""
+
+#: src/components/wallet-options.tsx
+msgid "Your wallet is connected. Manage your wallet connection below."
 msgstr ""

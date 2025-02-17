@@ -1,6 +1,9 @@
 import { t } from '@lingui/core/macro'
 import Link from 'next/link'
 import { default as ModeToggle } from '@/components/mode-toggle'
+import React from 'react'
+import { WalletOptionsDialog } from '@/components/wallet-options-dialog'
+import { AuctionFilterDialog } from '@/components/auction-filter-dialog'
 
 const IconNoggles = () => (
   <svg
@@ -63,8 +66,12 @@ const Navbar = () => {
             {t`Lil Nouns Auction`}
           </span>
         </Link>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2">
           <ModeToggle />
+
+          <AuctionFilterDialog />
+
+          <WalletOptionsDialog />
         </div>
       </div>
     </nav>
