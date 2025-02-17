@@ -44,7 +44,7 @@ function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
 
   const { openDialog } = useDialogStore()
 
-  const { handleBuy } = useBuyNow()
+  const { buyNow } = useBuyNow()
   const { price } = useNextNoun()
 
   const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
@@ -120,7 +120,7 @@ function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
             } else if (isWrongChain) {
               switchChain({ chainId: correctChainId })
             } else {
-              handleBuy(blockNumber, nounId)
+              buyNow(blockNumber, nounId)
             }
           }}
           className="w-full"

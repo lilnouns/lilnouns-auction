@@ -15,7 +15,7 @@ export const useBuyNow = () => {
   const { data, isPending, isSuccess, isError, error, writeContract } =
     useWriteContract()
 
-  const handleBuy = (blockNumber: bigint, nounId: bigint) => {
+  const buyNow = (blockNumber: bigint, nounId: bigint) => {
     writeContract({
       abi: [
         {
@@ -46,5 +46,5 @@ export const useBuyNow = () => {
     })
   }
 
-  return { handleBuy, isPending, isSuccess, data, isError, error }
+  return { buyNow, isPending, isSuccess, data, isError, error }
 }
