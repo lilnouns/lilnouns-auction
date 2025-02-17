@@ -13,19 +13,32 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/wallet-options.tsx
+#. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now for {0} ETH"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buying..."
+msgstr ""
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
 msgid "Connect Wallet"
 msgstr ""
 
-#: src/components/wallet-options.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
 msgstr ""
 
-#: src/components/wallet-options.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
 msgstr ""
 
-#: src/components/navbar.tsx
+#: src/components/auction-filter-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr ""
 
@@ -39,12 +52,22 @@ msgstr ""
 msgid "Noun {nounId} | Lil Nouns Auction"
 msgstr ""
 
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "Noun Details"
+msgstr ""
+
 #: src/components/locale-switcher.tsx
 msgid "Open options"
 msgstr "Seçenekleri aç"
 
-#: src/components/navbar.tsx
+#: src/components/auction-filter-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Switch Network"
 msgstr ""
 
 #: src/components/theme-switcher.tsx
@@ -59,10 +82,24 @@ msgstr "Aydınlık temaya geç"
 msgid "Translation Demo"
 msgstr ""
 
-#: src/components/wallet-options.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "View traits and pricing"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View traits and pricing for this Noun"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View Transaction"
+msgstr ""
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr ""
 
-#: src/components/wallet-options.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
 msgstr ""
