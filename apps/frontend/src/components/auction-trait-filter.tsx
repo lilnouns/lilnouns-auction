@@ -1,14 +1,11 @@
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Label } from '@repo/ui/components/label'
-import { Input } from '@repo/ui/components/input'
-import { formatEther } from 'viem'
 import React from 'react'
 import { MultiSelect } from '@/components/multi-select'
 
 import { ImageData } from '@repo/utilities'
 
 import { TraitFilter, useTraitFilterStore } from '@/stores/trait-filter-store'
-import { useNextNoun } from '@/hooks/use-next-noun'
 import { formatTraitName } from '@/utils/format-trait-name'
 
 type TraitOptions = Array<{
@@ -19,7 +16,6 @@ type TraitOptions = Array<{
 
 export function AuctionTraitFilter() {
   const { traitFilter, setTraitFilter } = useTraitFilterStore()
-  const { nounId, price } = useNextNoun()
 
   const traitOptions: TraitOptions = [
     {
@@ -80,26 +76,6 @@ export function AuctionTraitFilter() {
             />
           </div>
         ))}
-        <div className="grid grid-cols-2 gap-2">
-          <div>
-            <Label htmlFor="noun-id">Noun ID</Label>
-            <Input
-              id="noun-id"
-              value={Number(nounId)}
-              readOnly
-              className={'shadow-none min-h-10'}
-            />
-          </div>
-          <div>
-            <Label htmlFor="price">Price</Label>
-            <Input
-              id="price"
-              value={formatEther(BigInt(price ?? 0))}
-              readOnly
-              className={'shadow-none min-h-10'}
-            />
-          </div>
-        </div>
       </CardContent>
     </Card>
   )

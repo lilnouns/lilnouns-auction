@@ -15,8 +15,10 @@ import { useDialogStore } from '@/stores/dialog-store'
 import { useMedia } from 'react-use'
 import {
   Drawer,
+  DrawerClose,
   DrawerContent,
   DrawerDescription,
+  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -69,16 +71,21 @@ export function AuctionFilterDialog() {
           <FilterIcon />
         </Button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="mx-4">
         <DrawerHeader>
           <DrawerTitle>{t`Filter Auctions`}</DrawerTitle>
           <DrawerDescription>
             {t`Select traits to filter the auction listings`}
           </DrawerDescription>
         </DrawerHeader>
-        <div className="">
+        <div className="p-5">
           <AuctionTraitFilter />
         </div>
+        <DrawerFooter className="pt-2">
+          <DrawerClose asChild>
+            <Button variant="outline">Close</Button>
+          </DrawerClose>
+        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   )
