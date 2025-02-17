@@ -14,7 +14,9 @@ import {
   TableRow,
 } from '@repo/ui/components/table'
 import { PoolSeed } from '@/types'
-import { useAccount } from 'wagmi'
+
+import { useAccount, useChainId, useSwitchChain } from 'wagmi'
+
 import { useDialogStore } from '@/stores/dialog-store'
 import { walletOptions } from '@/components/wallet-options-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
@@ -40,9 +42,15 @@ interface AuctionSeedDialogProps {
 
 function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
   const { isConnected } = useAccount()
+  const chainId = useChainId()
+  const { switchChain } = useSwitchChain()
+
   const { openDialog } = useDialogStore()
 
   const { handleBuy } = useBuyNow()
+
+  const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
+  const isWrongChain = chainId !== correctChainId
 
   const backgrounds: { [key: string]: string } = {
     d5d7e1: 'cold',
@@ -99,15 +107,21 @@ function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
       <CardFooter className="p-0">
         <Button
           onClick={() => {
-            if (isConnected) {
-              handleBuy(blockNumber, nounId)
-            } else {
+            if (!isConnected) {
               openDialog(walletOptions)
+            } else if (isWrongChain) {
+              switchChain({ chainId: correctChainId })
+            } else {
+              handleBuy(blockNumber, nounId)
             }
           }}
           className="w-full"
         >
-          Buy Now
+          {!isConnected
+            ? 'Connect Wallet'
+            : isWrongChain
+              ? 'Switch Chain'
+              : 'Buy Now'}
         </Button>
       </CardFooter>
     </Card>
