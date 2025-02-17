@@ -2,6 +2,92 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.22] - 2025-02-17
+
+### Features
+
+- Add `usePoolStore` for pool state management
+- Add `useTraitFilterStore` for state management
+- Add `useNextNoun` hook for auction data
+- Add `useBuyNow` for buy now contract interaction
+- Extend `useBuyNow` with additional state
+- Add `Drawer` component
+- Wrap `AuctionTraitFilter` in a drawer
+- Add `NoContentMessage` for empty state
+- Add `persist` middleware to trait filter store
+- Enhance wallet connection UI
+- Add wallet connection state handling
+- Add automatic dialog close on wallet connect
+- Add `useDialogStore` for dialog state management
+- Add wallet connection check for `handleBuy`
+- Add `AuctionSeedImage` component
+- Add `AuctionSeedDialog` component
+- Add `Table` component and subcomponents
+- Enhance trait name formatting
+- Add responsive drawer for seed details
+- Add responsive behavior to auction filter
+- Enhance chain handling in auction dialog
+- Display price and noun ID in auction dialog
+- Add responsive wallet options dialog
+- Improve layout for auction seed dialog
+
+### Bug Fixes
+
+- Enable `fetchNextNoun` query by default
+- Use unique `key` for auction seed dialog
+- Add `chainId` to `buyNow` contract call
+
+### Refactor
+
+- Rename `SeedData` to `PoolSeed` in types
+- Centralize `poolSeeds` and `isLoading` state
+- Move `renderSVG` logic to `AuctionPreviewGrid`
+- Update `blockNumber` and `handleBuy`
+- Rename `updateSeed` to `handleTraitChange`
+- Integrate `useTraitFilterStore` directly
+- Remove `ImageData` prop from `AuctionTraitSelection`
+- Rename `AuctionTraitSelection` to `AuctionTraitFilter`
+- Replace inline logic with `useNextNoun` hook
+- Simplify `Auction` component props
+- Simplify and centralize `handleBuy` logic
+- Remove props from `AuctionTraitFilter`
+- Relocate data-fetch logic to preview grid
+- Extract `NounImage` component
+- Remove unused `React` import
+- Simplify `handleBuy` args construction
+- Simplify `useBuyNow` by removing router logic
+- Replace `Drawer` with `Dialog` for filtering
+- Simplify conditional rendering logic
+- Extract grid classes into `gridClassName`
+- Simplify conditional rendering logic
+- Update imports for `MultiSelect` component
+- Update store imports for consistency
+- Integrate `useDialogStore` in wallet dialog
+- Extract `AuctionFilterDialog` component
+- Rename `WalletOptions` to `WalletOptionsDialog`
+- Replace hardcoded strings with `walletOptions`
+- Update grid layout for auction preview
+- Simplify conditional rendering logic
+- Simplify auction preview component
+- Enhance auction dialog UI with structured layout
+- Extract `formatTraitName` to utils
+- Streamline seed handling in `AuctionSeedDialog`
+- Enhance auction filter and trait filter UI
+- Rename `handleBuy` to `buyNow`
+- Consolidate `chainId` into `useAccount`
+
+### Miscellaneous Tasks
+
+- Update translations for auction filters
+- Update translations for wallet options
+
+### Styling
+
+- Update styles for auction trait filter
+- Adjust spacing between navbar items
+- Adjust spacing and padding in UI components
+- Update grid gap and card shadow styles
+
 ## [1.1.0-alpha.21] - 2025-02-15
 
 ### Styling
