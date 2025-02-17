@@ -9,7 +9,8 @@
   "vars": {
     "NEXT_PUBLIC_CHAIN_ID": "11155111",
     "NEXT_PUBLIC_SITE_URL": "http://localhost:8788",
-    "NODE_VERSION": "22.3.0"
+    "NODE_VERSION": "22.3.0",
+    "NEXT_PUBLIC_BLOCK_EXPLORER": "https://etherscan.io"
   },
   "env": {
     "preview": {
@@ -17,7 +18,8 @@
       "vars": {
         "NEXT_PUBLIC_CHAIN_ID": "11155111",
         "NEXT_PUBLIC_SITE_URL": "https://sepolia.lilnouns.auction",
-        "NODE_VERSION": "22.3.0"
+        "NODE_VERSION": "22.3.0",
+        "NEXT_PUBLIC_BLOCK_EXPLORER": "https://etherscan.io"
       }
     },
     "production": {
@@ -25,7 +27,8 @@
       "vars": {
         "NEXT_PUBLIC_CHAIN_ID": "1",
         "NEXT_PUBLIC_SITE_URL": "https://lilnouns.auction",
-        "NODE_VERSION": "22.3.0"
+        "NODE_VERSION": "22.3.0",
+        "NEXT_PUBLIC_BLOCK_EXPLORER": "https://sepolia.etherscan.io"
       }
     }
   }
