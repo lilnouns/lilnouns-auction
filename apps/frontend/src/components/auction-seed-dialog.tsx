@@ -40,6 +40,7 @@ import { useNextNoun } from '@/hooks/use-next-noun'
 import { formatEther } from 'viem'
 import React from 'react'
 import { t } from '@lingui/core/macro'
+import Link from 'next/link'
 
 const { images, bgcolors } = ImageData
 
@@ -59,7 +60,7 @@ export function AuctionSeedDialog({
 
   const { openDialog } = useDialogStore()
 
-  const { buyNow } = useBuyNow()
+  const { buyNow, isSuccess, isPending, data: hash } = useBuyNow()
   const { price } = useNextNoun()
 
   const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
@@ -119,12 +120,6 @@ export function AuctionSeedDialog({
                 <TableCell className="font-medium">Noun ID</TableCell>
                 <TableCell className="text-right">{nounId}</TableCell>
               </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">Price</TableCell>
-                <TableCell className="text-right">
-                  {formatEther(price || 0n)}
-                </TableCell>
-              </TableRow>
             </TableBody>
           </Table>
         </div>
@@ -132,26 +127,50 @@ export function AuctionSeedDialog({
     </Card>
   )
 
-  const buyNowButton = (
-    <Button
-      onClick={() => {
-        if (!isConnected) {
-          openDialog(walletOptions)
-        } else if (isWrongChain) {
-          switchChain({ chainId: correctChainId })
-        } else {
-          buyNow(blockNumber, nounId)
-        }
-      }}
-      className="w-full"
-    >
-      {!isConnected
-        ? 'Connect Wallet'
-        : isWrongChain
-          ? 'Switch Chain'
-          : 'Buy Now'}
-    </Button>
-  )
+  const renderActionButton = () => {
+    if (!isConnected) {
+      return (
+        <Button onClick={() => openDialog(walletOptions)} className="w-full">
+          {t`Connect Wallet`}
+        </Button>
+      )
+    }
+
+    if (isWrongChain) {
+      return (
+        <Button
+          onClick={() => switchChain({ chainId: correctChainId })}
+          className="w-full"
+        >
+          {t`Switch Network`}
+        </Button>
+      )
+    }
+
+    if (isSuccess && hash) {
+      return (
+        <Link
+          href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${hash}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="w-full">{t`View Transaction`}</Button>
+        </Link>
+      )
+    }
+
+    return (
+      <Button
+        onClick={() => buyNow(blockNumber, nounId)}
+        disabled={isPending || isSuccess}
+        className="w-full"
+      >
+        {isPending
+          ? t`Buying...`
+          : t`Buy Now for ${Number(formatEther(price ?? 0n)).toFixed(5)} ETH`}
+      </Button>
+    )
+  }
 
   if (isDesktop) {
     return (
@@ -161,7 +180,7 @@ export function AuctionSeedDialog({
           <DialogTitle>{t`Noun Details`}</DialogTitle>
           <DialogDescription>{t`View traits and pricing for this Noun`}</DialogDescription>
           {content}
-          <DialogFooter>{buyNowButton}</DialogFooter>
+          <DialogFooter>{renderActionButton()}</DialogFooter>
         </DialogContent>
       </Dialog>
     )
@@ -177,7 +196,7 @@ export function AuctionSeedDialog({
         </DrawerHeader>
         <div className="p-4 overflow-y-auto">{content}</div>
         <DrawerFooter>
-          {buyNowButton}
+          {renderActionButton()}
           <DrawerClose asChild>
             <Button variant="outline">Close</Button>
           </DrawerClose>
