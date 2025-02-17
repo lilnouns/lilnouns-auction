@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.23] - 2025-02-17
+
+### Features
+
+- Enhance layout for auction seed dialog
+- Add localization for seed details UI
+- Add `NEXT_PUBLIC_BLOCK_EXPLORER` variable
+- Add full-width style to transaction link
+
+### Bug Fixes
+
+- Update `key` prop in `AuctionSeedDialog`
+- Update `NEXT_PUBLIC_BLOCK_EXPLORER` URLs
+
+### Refactor
+
+- Improve `AuctionSeedDialog` structure
+- Update dialog headers for clarity
+- Replace `text-end` with `text-right`
+- Replace `text-end` with `text-right`
+
+### Miscellaneous Tasks
+
+- Update pre-commit hook to run inside frontend
+- Remove unused lingui extract hook
+- Update translation strings and contexts
+
+### Styling
+
+- Update image styling for seed component
+
 ## [1.1.0-alpha.22] - 2025-02-17
 
 ### Features
