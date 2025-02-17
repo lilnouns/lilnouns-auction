@@ -15,7 +15,7 @@ import {
 } from '@repo/ui/components/table'
 import { PoolSeed } from '@/types'
 
-import { useAccount, useChainId, useSwitchChain } from 'wagmi'
+import { useAccount, useSwitchChain } from 'wagmi'
 
 import { useDialogStore } from '@/stores/dialog-store'
 import { walletOptions } from '@/components/wallet-options-dialog'
@@ -38,8 +38,7 @@ import { formatEther } from 'viem'
 const { images, bgcolors } = ImageData
 
 function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
-  const { isConnected } = useAccount()
-  const chainId = useChainId()
+  const { isConnected, chainId } = useAccount()
   const { switchChain } = useSwitchChain()
 
   const { openDialog } = useDialogStore()
