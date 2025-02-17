@@ -153,6 +153,7 @@ export function AuctionSeedDialog({
           href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${hash}`}
           target="_blank"
           rel="noopener noreferrer"
+          className="w-full"
         >
           <Button className="w-full">{t`View Transaction`}</Button>
         </Link>
