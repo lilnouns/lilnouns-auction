@@ -73,7 +73,7 @@ export function AuctionSeedDialog({
   const content = (
     <Card className={'shadow-none border-none'}>
       <CardContent className="p-0">
-        <div className="grid gap-6">
+        <div className="grid gap-6 grid-cols-2">
           <AuctionSeedImage seed={seed} />
           <Table>
             <TableBody>
@@ -155,7 +155,7 @@ export function AuctionSeedDialog({
     return (
       <Dialog>
         <DialogTrigger asChild>{children}</DialogTrigger>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent>
           <DialogHeader>
             <DialogTitle>Seed Details</DialogTitle>
           </DialogHeader>
