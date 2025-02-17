@@ -1,6 +1,7 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -30,6 +31,7 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
+  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -38,6 +40,7 @@ import {
 import { useNextNoun } from '@/hooks/use-next-noun'
 import { formatEther } from 'viem'
 import React from 'react'
+import { t } from '@lingui/core/macro'
 
 const { images, bgcolors } = ImageData
 
@@ -73,7 +76,7 @@ export function AuctionSeedDialog({
   const content = (
     <Card className={'shadow-none border-none'}>
       <CardContent className="p-0">
-        <div className="grid gap-6 grid-cols-2">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
           <AuctionSeedImage seed={seed} />
           <Table>
             <TableBody>
@@ -157,7 +160,8 @@ export function AuctionSeedDialog({
         <DialogTrigger asChild>{children}</DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Seed Details</DialogTitle>
+            <DialogTitle>{t`Seed Details`}</DialogTitle>
+            <DialogDescription></DialogDescription>
           </DialogHeader>
           {content}
           <DialogFooter>{buyNowButton}</DialogFooter>
@@ -171,7 +175,8 @@ export function AuctionSeedDialog({
       <DrawerTrigger asChild>{children}</DrawerTrigger>
       <DrawerContent className={'mx-4 max-h-[calc(100vh-20px)] mt-5'}>
         <DrawerHeader>
-          <DrawerTitle>Seed Details</DrawerTitle>
+          <DrawerTitle>{t`Seed Details`}</DrawerTitle>
+          <DrawerDescription></DrawerDescription>
         </DrawerHeader>
         <div className="p-4 overflow-y-auto">{content}</div>
         <DrawerFooter>
