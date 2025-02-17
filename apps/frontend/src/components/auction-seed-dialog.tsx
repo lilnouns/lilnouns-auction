@@ -32,13 +32,10 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@repo/ui/components/drawer'
+import { useNextNoun } from '@/hooks/use-next-noun'
+import { formatEther } from 'viem'
 
-const { palette, images, bgcolors } = ImageData
-
-interface AuctionSeedDialogProps {
-  poolSeed: PoolSeed
-  children: React.ReactNode
-}
+const { images, bgcolors } = ImageData
 
 function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
   const { isConnected } = useAccount()
@@ -48,6 +45,7 @@ function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
   const { openDialog } = useDialogStore()
 
   const { handleBuy } = useBuyNow()
+  const { price } = useNextNoun()
 
   const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
   const isWrongChain = chainId !== correctChainId
@@ -100,6 +98,16 @@ function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
                   )}
                 </TableCell>
               </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Noun ID</TableCell>
+                <TableCell className={'text-end'}>{nounId}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Price</TableCell>
+                <TableCell className={'text-end'}>
+                  {price ? `${formatEther(price)} ETH` : 'N/A'}
+                </TableCell>
+              </TableRow>
             </TableBody>
           </Table>
         </div>
@@ -128,6 +136,11 @@ function SeedInfo({ seed, blockNumber, nounId }: PoolSeed) {
   )
 }
 
+interface AuctionSeedDialogProps {
+  poolSeed: PoolSeed
+  children: React.ReactNode
+}
+
 export function AuctionSeedDialog({
   poolSeed,
   children,
@@ -151,7 +164,7 @@ export function AuctionSeedDialog({
   return (
     <Drawer>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className={'mx-4'}>
         <DrawerHeader>
           <DrawerTitle>Seed Details</DrawerTitle>
         </DrawerHeader>
