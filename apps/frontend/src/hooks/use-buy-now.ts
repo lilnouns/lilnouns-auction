@@ -17,6 +17,7 @@ export const useBuyNow = () => {
 
   const buyNow = (blockNumber: bigint, nounId: bigint) => {
     writeContract({
+      chainId: activeChainId,
       abi: [
         {
           inputs: [
