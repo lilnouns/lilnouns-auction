@@ -37,6 +37,10 @@ msgstr "Connect with one of our available wallet providers."
 msgid "Disconnect Wallet"
 msgstr "Disconnect Wallet"
 
+#: src/components/auction-preview-grid.tsx
+msgid "Error"
+msgstr "Error"
+
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
@@ -47,6 +51,18 @@ msgstr "Filter Auctions"
 #: src/components/home-page.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns Auction"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Noun ID found. Please refresh the page."
+msgstr "No Noun ID found. Please refresh the page."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Nouns Found"
+msgstr "No Nouns Found"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Nouns match your current filter criteria. Try adjusting your filters."
+msgstr "No Nouns match your current filter criteria. Try adjusting your filters."
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
@@ -77,6 +93,10 @@ msgstr "Switch to dark theme"
 #: src/components/theme-switcher.tsx
 msgid "Switch to light theme"
 msgstr "Switch to light theme"
+
+#: src/components/auction-preview-grid.tsx
+msgid "There are no Nouns available to display."
+msgstr "There are no Nouns available to display."
 
 #: src/app/[lang]/layout.tsx
 msgid "Translation Demo"

@@ -1,26 +1,31 @@
 import { Block, BlockData, PoolSeed, Seed } from '@/types'
-import { Card, CardContent } from '@repo/ui/components/card'
 
 import { usePoolStore } from '@/stores/pool-store'
-import { useCallback, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { getNounSeedFromBlockHash } from '@repo/utilities'
-
 import { useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
 
-import { useIdle } from 'react-use'
+import useSWR from 'swr'
 import { gql, request } from 'graphql-request'
+
+import { TriangleAlert } from 'lucide-react'
 import { cn } from '@repo/ui/lib/utils'
+import { Alert, AlertDescription, AlertTitle } from '@repo/ui/components/alert'
+import { Card, CardContent } from '@repo/ui/components/card'
+
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
 
-export async function fetchBlocks(
+import { t } from '@lingui/core/macro'
+
+const fetchBlocks = async (
   offset: number,
   limit: number,
   after?: number,
   before?: number,
-): Promise<Block[]> {
+): Promise<Block[]> => {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? globalThis.location.origin
   const subgraphUrl = `${siteUrl}/subgraphs/blocks`
 
@@ -56,22 +61,31 @@ export async function fetchBlocks(
 }
 
 export function AuctionPreviewGrid() {
-  // Detect if user is idle. Idle threshold set to 10 minutes (600000 ms).
-  const isIdle = useIdle(600_000)
-
   const { nounId } = useNextNoun()
-
   const { traitFilter } = useTraitFilterStore()
-  const { setPoolSeeds, setIsLoading } = usePoolStore()
+  const { poolSeeds, setPoolSeeds, setIsLoading } = usePoolStore()
 
-  // const { showBoundary } = useErrorBoundary()
+  // Check if any filters are active
+  const hasActiveFilters = Object.values(traitFilter).some(
+    (filter) => filter && filter.length > 0,
+  )
 
-  const fetchData = useCallback(async () => {
-    if (!nounId) return
-    setIsLoading(false)
+  const blockOffset = 0
+  const blockLimit = 256
 
-    const blockOffset = 0
-    const blockLimit = 256
+  const {
+    data: blocks,
+    error,
+    isValidating,
+  } = useSWR(
+    ['blocks', blockOffset, blockLimit],
+    () => fetchBlocks(blockOffset, blockLimit),
+    { refreshInterval: 12000 },
+  )
+
+  useEffect(() => {
+    setIsLoading(isValidating)
+    if (!blocks || nounId === undefined) return
 
     const parseSeedParameter = (seedParams?: string[]): number[] | undefined =>
       seedParams
@@ -88,10 +102,9 @@ export function AuctionPreviewGrid() {
       glasses: parseSeedParameter(traitFilter.glasses),
     }
 
-    let seedResults: PoolSeed[] = []
+    const processSeeds = async () => {
+      let seedResults: PoolSeed[] = []
 
-    try {
-      const blocks = await fetchBlocks(blockOffset, blockLimit)
       const newSeedResults = await Promise.all(
         blocks.map(async (block) => {
           try {
@@ -107,17 +120,7 @@ export function AuctionPreviewGrid() {
               ? { blockNumber: BigInt(block.number), nounId, seed }
               : { blockNumber: BigInt(block.number), nounId, seed: undefined }
           } catch (error) {
-            if (error instanceof Error) {
-              console.error(
-                `Error generating seed for block ${block.id}:`,
-                error.message,
-              )
-            } else {
-              console.error(
-                `An unknown error occurred while generating seed for block ${block.id}:`,
-                error,
-              )
-            }
+            console.error(`Error generating seed for block ${block.id}:`, error)
             return {
               blockNumber: BigInt(block.number),
               nounId,
@@ -133,51 +136,40 @@ export function AuctionPreviewGrid() {
           (result): result is PoolSeed => result.seed !== undefined,
         ),
       ]
-
       setPoolSeeds(seedResults)
-    } catch (error) {
-      if (error instanceof Error) {
-        // showBoundary(error)
-      } else {
-        // showBoundary('An unexpected error occurred')
-      }
-    } finally {
-      setIsLoading(false)
     }
-  }, [
-    nounId,
-    traitFilter.background,
-    traitFilter.body,
-    traitFilter.accessory,
-    traitFilter.head,
-    traitFilter.glasses,
-    // showBoundary,
-  ])
 
-  useEffect(() => {
-    // Initial fetch on component mount
-    fetchData().then(() => {})
+    processSeeds()
+  }, [blocks, nounId, traitFilter, setPoolSeeds, setIsLoading, isValidating])
 
-    // Declaring intervalId to use in cleanup and visibility/idleness checking
-    let intervalId: NodeJS.Timeout | null
+  const renderNoResultsMessage = () => (
+    <Alert>
+      <TriangleAlert className="h-4 w-4" />
+      <AlertTitle>{t`No Nouns Found`}</AlertTitle>
+      <AlertDescription>
+        {hasActiveFilters
+          ? t`No Nouns match your current filter criteria. Try adjusting your filters.`
+          : t`There are no Nouns available to display.`}
+      </AlertDescription>
+    </Alert>
+  )
 
-    // Setting up interval for fetching data every 12 seconds
-    if (!isIdle) {
-      intervalId = setInterval(fetchData, 12_000)
-    }
-    // Cleanup function
-    return () => {
-      if (intervalId) {
-        clearInterval(intervalId)
-      }
-    }
-  }, [fetchData, isIdle])
+  if (error) return renderNoResultsMessage()
 
-  const { poolSeeds } = usePoolStore()
+  if (!isValidating && nounId === undefined)
+    return (
+      <Alert variant="destructive">
+        <TriangleAlert className="h-4 w-4" />
+        <AlertTitle>{t`Error`}</AlertTitle>
+        <AlertDescription>
+          {t`No Noun ID found. Please refresh the page.`}
+        </AlertDescription>
+      </Alert>
+    )
 
   return (
     <>
-      {poolSeeds.length === 0 && <NoContentMessage />}
+      {poolSeeds.length === 0 && !isValidating && renderNoResultsMessage()}
 
       <div
         className={cn(
@@ -198,27 +190,5 @@ export function AuctionPreviewGrid() {
         ))}
       </div>
     </>
-  )
-}
-
-export function NoContentMessage() {
-  const { traitFilter } = useTraitFilterStore()
-
-  // Check if any filters are active
-  const hasActiveFilters = Object.values(traitFilter).some(
-    (filter) => filter && filter.length > 0,
-  )
-
-  return (
-    <Card className="w-full shadow-none">
-      <CardContent className="flex flex-col items-center justify-center p-8 text-center">
-        <h3 className="mb-2 text-lg font-semibold">No Nouns Found</h3>
-        <p className="text-gray-500">
-          {hasActiveFilters
-            ? 'No Nouns match your current filter criteria. Try adjusting your filters.'
-            : 'There are no Nouns available to display.'}
-        </p>
-      </CardContent>
-    </Card>
   )
 }
