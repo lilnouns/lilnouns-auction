@@ -1,6 +1,12 @@
 import { Block, BlockData, PoolSeed, Seed } from '@/types'
-import { Card, CardContent } from '@repo/ui/components/card'
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@repo/ui/components/card'
 import { usePoolStore } from '@/stores/pool-store'
 import { useCallback, useEffect } from 'react'
 
@@ -14,6 +20,7 @@ import { gql, request } from 'graphql-request'
 import { cn } from '@repo/ui/lib/utils'
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
+import { t } from '@lingui/core/macro'
 
 export async function fetchBlocks(
   offset: number,
@@ -211,14 +218,14 @@ export function NoContentMessage() {
 
   return (
     <Card className="w-full shadow-none">
-      <CardContent className="flex flex-col items-center justify-center p-8 text-center">
-        <h3 className="mb-2 text-lg font-semibold">No Nouns Found</h3>
-        <p className="text-gray-500">
+      <CardHeader>
+        <CardTitle>{t`No Nouns Found`}</CardTitle>
+        <CardDescription>
           {hasActiveFilters
-            ? 'No Nouns match your current filter criteria. Try adjusting your filters.'
-            : 'There are no Nouns available to display.'}
-        </p>
-      </CardContent>
+            ? t`No Nouns match your current filter criteria. Try adjusting your filters.`
+            : t`There are no Nouns available to display.`}
+        </CardDescription>
+      </CardHeader>
     </Card>
   )
 }
