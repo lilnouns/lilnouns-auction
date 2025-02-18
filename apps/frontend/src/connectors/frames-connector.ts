@@ -2,15 +2,17 @@ import sdk from '@farcaster/frame-sdk'
 import { SwitchChainError, fromHex, getAddress, numberToHex } from 'viem'
 import { ChainNotConfiguredError, createConnector } from 'wagmi'
 
-frameConnector.type = 'frameConnector' as const
+export const frameConnectorType = 'frameConnector' as const
 
-export function frameConnector() {
+export function frameConnector(): ReturnType<
+  typeof createConnector<typeof sdk.wallet.ethProvider>
+> {
   let connected = true
 
   return createConnector<typeof sdk.wallet.ethProvider>((config) => ({
     id: 'farcaster',
     name: 'Farcaster Wallet',
-    type: frameConnector.type,
+    type: frameConnectorType,
 
     async setup() {
       this.connect({ chainId: config.chains[0].id })
@@ -56,7 +58,7 @@ export function frameConnector() {
       }
 
       const accounts = await this.getAccounts()
-      return accounts.length > 0
+      return !!accounts.length
     },
     async switchChain({ chainId }) {
       const provider = await this.getProvider()
