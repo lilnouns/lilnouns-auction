@@ -142,7 +142,7 @@ export function AuctionPreviewGrid() {
     processSeeds()
   }, [blocks, nounId, traitFilter, setPoolSeeds, setIsLoading, isValidating])
 
-  const NoContentMessage = () => (
+  const renderNoResultsMessage = () => (
     <Alert>
       <TriangleAlert className="h-4 w-4" />
       <AlertTitle>{t`No Nouns Found`}</AlertTitle>
@@ -154,7 +154,8 @@ export function AuctionPreviewGrid() {
     </Alert>
   )
 
-  if (error) return <NoContentMessage />
+  if (error) return renderNoResultsMessage()
+
   if (nounId === undefined)
     return (
       <Alert variant="destructive">
@@ -168,7 +169,7 @@ export function AuctionPreviewGrid() {
 
   return (
     <>
-      {poolSeeds.length === 0 && !isValidating && <NoContentMessage />}
+      {poolSeeds.length === 0 && !isValidating && renderNoResultsMessage()}
 
       <div
         className={cn(
