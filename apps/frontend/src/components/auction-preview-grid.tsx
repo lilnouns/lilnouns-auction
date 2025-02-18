@@ -21,6 +21,7 @@ import { cn } from '@repo/ui/lib/utils'
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
 import { t } from '@lingui/core/macro'
+import { Alert, AlertDescription, AlertTitle } from '@repo/ui/components/alert'
 
 export async function fetchBlocks(
   offset: number,
@@ -217,15 +218,14 @@ export function NoContentMessage() {
   )
 
   return (
-    <Card className="w-full shadow-none">
-      <CardHeader>
-        <CardTitle>{t`No Nouns Found`}</CardTitle>
-        <CardDescription>
-          {hasActiveFilters
-            ? t`No Nouns match your current filter criteria. Try adjusting your filters.`
-            : t`There are no Nouns available to display.`}
-        </CardDescription>
-      </CardHeader>
-    </Card>
+    <Alert>
+      <TriangleAlert className="h-4 w-4" />
+      <AlertTitle>{t`No Nouns Found`}</AlertTitle>
+      <AlertDescription>
+        {hasActiveFilters
+          ? t`No Nouns match your current filter criteria. Try adjusting your filters.`
+          : t`There are no Nouns available to display.`}
+      </AlertDescription>
+    </Alert>
   )
 }
