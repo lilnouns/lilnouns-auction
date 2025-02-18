@@ -156,7 +156,7 @@ export function AuctionPreviewGrid() {
 
   if (error) return renderNoResultsMessage()
 
-  if (nounId === undefined)
+  if (!isValidating && nounId === undefined)
     return (
       <Alert variant="destructive">
         <TriangleAlert className="h-4 w-4" />
