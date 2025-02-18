@@ -31,7 +31,7 @@ export async function generateMetadata(props: PageLangParam) {
   const i18n = getI18nInstance((await props.params).lang)
 
   return {
-    title: t(i18n)`Translation Demo`,
+    title: t(i18n)`Lil Nouns Auction`,
   }
 }
 
