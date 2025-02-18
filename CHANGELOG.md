@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-alpha.24] - 2025-02-18
+
+### Features
+
+- Add toast component and hooks for notifications
+- Add `Toaster` component to `_document` and `layout`
+- Replace `Card` with `Alert` in grid UI
+
+### Bug Fixes
+
+- Add validation check before rendering alert
+
+### Refactor
+
+- Use localized strings in `AuctionPreviewGrid`
+- Integrate `useSWR` for data fetching
+- Rename `NoContentMessage` for clarity
+
+### Miscellaneous Tasks
+
+- Update translations for auction grid
+
 ## [1.1.0-alpha.23] - 2025-02-17
 
 ### Features
