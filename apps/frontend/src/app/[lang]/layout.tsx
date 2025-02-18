@@ -9,7 +9,9 @@ import { t } from '@lingui/core/macro'
 
 import ErrorFallback from '@/components/error-fallback'
 import { ErrorBoundary } from 'react-error-boundary'
+
 import { cn } from '@repo/ui/lib/utils'
+import { Toaster } from '@repo/ui/components/toaster'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -77,6 +79,7 @@ export default withLinguiLayout(function RootLayout({
             </ErrorBoundary>
           </LinguiClientProvider>
         </main>
+        <Toaster />
       </body>
     </html>
   )
