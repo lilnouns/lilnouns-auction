@@ -4,7 +4,6 @@ import { useLingui } from '@lingui/react'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import { useAccount } from 'wagmi'
 import Auction from '@/components/auction'
 import { useNextNoun } from '@/hooks/use-next-noun'
 
@@ -13,7 +12,6 @@ export const HomePage: NextPage = () => {
 
   const { i18n } = useLingui()
 
-  const { isConnected } = useAccount()
   const { nounId } = useNextNoun()
 
   useEffect(() => {

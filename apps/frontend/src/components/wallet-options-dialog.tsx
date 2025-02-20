@@ -1,5 +1,5 @@
 import { t } from '@lingui/core/macro'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Connector, useAccount, useConnect, useDisconnect } from 'wagmi'
 import { Button } from '@repo/ui/components/button'
 import {
@@ -141,14 +141,14 @@ const WalletOption = ({
   connector: Connector
   onClick: () => void
 }) => {
-  const [ready, setReady] = useState(false)
-
-  useEffect(() => {
-    ;(async () => {
-      const provider = await connector.getProvider()
-      setReady(!!provider)
-    })()
-  }, [connector])
+  // const [ready, setReady] = useState(false)
+  //
+  // useEffect(() => {
+  //   ;(async () => {
+  //     const provider = await connector.getProvider()
+  //     setReady(!!provider)
+  //   })()
+  // }, [connector])
 
   return (
     <li>
