@@ -1,7 +1,9 @@
-import linguiConfig from '@/../lingui.config'
-import { loadCatalog } from '@/i18n/pages-router-i18n'
-import type { GetStaticPaths } from 'next'
 import { GetStaticProps } from 'next'
+import { loadCatalog } from '@/i18n/pages-router-i18n'
+import { HomePage } from '@/components/home-page'
+
+import linguiConfig from '@/../lingui.config'
+import type { GetStaticPaths } from 'next'
 
 export const getStaticPaths = (async () => {
   const paths = linguiConfig.locales.map((lang) => ({ params: { lang } }))
@@ -25,4 +27,4 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   }
 }
 
-export { HomePage as default } from '@/components/home-page'
+export default HomePage

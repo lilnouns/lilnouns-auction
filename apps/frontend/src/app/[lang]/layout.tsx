@@ -5,7 +5,6 @@ import { LinguiClientProvider } from '@/components/lingui-client-provider'
 import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
 import { initLingui, PageLangParam } from '@/i18n/init-lingui'
 import { t } from '@lingui/core/macro'
-import { setI18n } from '@lingui/react/server'
 
 import ErrorFallback from '@/components/error-fallback'
 import { ErrorBoundary } from 'react-error-boundary'
@@ -31,7 +30,7 @@ export async function generateMetadata(props: PageLangParam) {
   const i18n = getI18nInstance((await props.params).lang)
 
   return {
-    title: t(i18n)`Translation Demo`,
+    title: t(i18n)`Lil Nouns Auction`,
   }
 }
 
