@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.0] - 2025-02-20
+
+### Features
+
+- Add React server-client rendering directive
+- Add persistence to `pool-store`
+
+### Refactor
+
+- Update dynamic metadata title generation
+- Remove unused `setI18n` import
+- Reorder imports and update export syntax
+
 ## [1.1.0-beta.1] - 2025-02-20
 
 ### Bug Fixes
