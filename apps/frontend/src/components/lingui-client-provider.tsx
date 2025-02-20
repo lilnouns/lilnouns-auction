@@ -1,7 +1,7 @@
 'use client'
 
-import { type Messages, setupI18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
+import { type Messages, setupI18n } from '@lingui/core'
 import { useState } from 'react'
 
 type Props = {
@@ -10,11 +10,11 @@ type Props = {
   initialMessages: Messages
 }
 
-export const LinguiClientProvider = ({
+export function LinguiClientProvider({
   children,
   initialLocale,
   initialMessages,
-}: Props) => {
+}: Props) {
   const [i18n] = useState(() => {
     return setupI18n({
       locale: initialLocale,

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0-beta.1] - 2025-02-20
+
+### Bug Fixes
+
+- Update `useEffect` dependencies for i18n
+
+### Refactor
+
+- Restructure i18n and layout initialization
+- Clean up unused state, imports, and components
+- Clean up unused state, imports, and components
+- Remove `ThemeSwitcher` component
+
 ## [1.1.0-beta.0] - 2025-02-18
 
 ### Bug Fixes

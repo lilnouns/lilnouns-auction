@@ -1,7 +1,7 @@
 import { type PropsWithChildren } from 'react'
 
-import { ErrorBoundary } from 'react-error-boundary'
-import ErrorFallback from '@/components/error-fallback'
+// import { ErrorBoundary } from 'react-error-boundary'
+// import ErrorFallback from '@/components/error-fallback'
 
 import { I18nProvider } from '@lingui/react'
 import { i18n } from '@lingui/core'
