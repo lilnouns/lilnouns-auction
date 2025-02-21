@@ -82,7 +82,7 @@
     "@vitejs/plugin-react": "4.3.4",
     "eslint": "9.20.1",
     "eslint-config-next": "15.1.7",
-    "eslint-plugin-next-on-pages": "1.13.7",
+    "eslint-plugin-next-on-pages": "1.13.8",
     "is-ci": "4.1.0",
     "jsdom": "26.0.0",
     "pino": "9.6.0",
