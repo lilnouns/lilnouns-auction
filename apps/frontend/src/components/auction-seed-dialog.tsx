@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Dialog,
   DialogContent,
@@ -39,8 +41,8 @@ import {
 import { useNextNoun } from '@/hooks/use-next-noun'
 import { formatEther } from 'viem'
 import React from 'react'
-import { t } from '@lingui/core/macro'
 import Link from 'next/link'
+import { useLingui } from '@lingui/react/macro'
 
 const { images, bgcolors } = imageData
 
@@ -53,6 +55,7 @@ export function AuctionSeedDialog({
   poolSeed,
   children,
 }: AuctionSeedDialogProps) {
+  const { t } = useLingui()
   const isDesktop = useMedia('(min-width: 768px)')
 
   const { isConnected, chainId } = useAccount()

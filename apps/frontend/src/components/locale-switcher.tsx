@@ -1,3 +1,5 @@
+'use client'
+
 import { useLocaleSwitcher } from '@/hooks/use-locale-switcher'
 import { clsxm } from '@/utils'
 import { availableLocales, getLocaleName } from '@/utils/locales'
