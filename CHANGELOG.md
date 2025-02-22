@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.3] - 2025-02-22
+
+### Features
+
+- Add BigInt support for sessionStorage
+
 ## [1.2.0-alpha.2] - 2025-02-22
 
 ### Bug Fixes
