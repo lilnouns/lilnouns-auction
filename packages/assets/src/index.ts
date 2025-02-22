@@ -2,15 +2,16 @@ import { keccak256 as solidityKeccak256 } from '@ethersproject/solidity'
 import { getPseudorandomPart } from '@lilnounsdao/assets'
 import { NounData, NounSeed } from '@lilnounsdao/assets/dist/types'
 import { default as imageData } from './image-data.json'
+import { EncodedImage } from '@lilnounsdao/sdk'
 
 type ImageData = {
   bgcolors: string[]
   palette: string[]
   images: {
-    bodies: { filename: string; data: string }[]
-    accessories: { filename: string; data: string }[]
-    heads: { filename: string; data: string }[]
-    glasses: { filename: string; data: string }[]
+    bodies: EncodedImage[]
+    accessories: EncodedImage[]
+    heads: EncodedImage[]
+    glasses: EncodedImage[]
   }
 }
 
