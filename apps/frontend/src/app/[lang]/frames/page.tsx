@@ -1,5 +1,7 @@
 'use client'
 
+export const runtime = 'edge'
+
 import dynamic from 'next/dynamic'
 
 const Demo = dynamic(() => import('@/components/demo'), {
