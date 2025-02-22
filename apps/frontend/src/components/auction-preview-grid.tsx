@@ -1,3 +1,5 @@
+'use client'
+
 import { Block, BlockData, PoolSeed, Seed } from '@/types'
 
 import { usePoolStore } from '@/stores/pool-store'

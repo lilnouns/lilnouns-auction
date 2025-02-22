@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect } from 'react'
 import { Connector, useAccount, useConnect, useDisconnect } from 'wagmi'
 import { Button } from '@repo/ui/components/button'
