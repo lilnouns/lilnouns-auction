@@ -11,10 +11,10 @@ const { palette } = imageData
 export function AuctionSeedImage({ seed }: { seed: Seed }) {
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
-    // Transform the parts to match the expected type
+    // First filter out undefined values, then map the remaining parts
     const formattedParts = parts
-      .filter((part): part is EncodedImage => part !== undefined)
-      .map(({ data }) => ({ data }))
+      .filter((part): part is NonNullable<typeof part> => part !== undefined)
+      .map(({ data }): Omit<EncodedImage, 'filename'> => ({ data }))
     const svgBinary = buildSVG(formattedParts, palette, background!)
     return btoa(svgBinary)
   }, [])
@@ -24,7 +24,7 @@ export function AuctionSeedImage({ seed }: { seed: Seed }) {
     <img
       src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
       className="h-full w-full object-cover rounded-lg"
-      alt={`Noun`}
+      alt="Noun"
     />
   )
 }
