@@ -17,8 +17,7 @@ import { Card, CardContent } from '@repo/ui/components/card'
 
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
-
-import { t } from '@lingui/core/macro'
+import { useLingui } from '@lingui/react/macro'
 
 const fetchBlocks = async (
   offset: number,
@@ -61,6 +60,7 @@ const fetchBlocks = async (
 }
 
 export function AuctionPreviewGrid() {
+  const { t } = useLingui()
   const { nounId } = useNextNoun()
   const { traitFilter } = useTraitFilterStore()
   const { poolSeeds, setPoolSeeds, setIsLoading } = usePoolStore()
