@@ -1,9 +1,24 @@
 import { keccak256 as solidityKeccak256 } from '@ethersproject/solidity'
 import { getPseudorandomPart } from '@lilnounsdao/assets'
 import { NounData, NounSeed } from '@lilnounsdao/assets/dist/types'
-import { bgcolors, images } from './image-data.json'
+import { default as imageData } from './image-data.json'
+import { EncodedImage } from '@lilnounsdao/sdk'
 
-const { bodies, accessories, heads, glasses } = images
+type ImageData = {
+  bgcolors: string[]
+  palette: string[]
+  images: {
+    bodies: EncodedImage[]
+    accessories: EncodedImage[]
+    heads: EncodedImage[]
+    glasses: EncodedImage[]
+  }
+}
+
+const {
+  bgcolors,
+  images: { bodies, accessories, heads, glasses },
+}: ImageData = imageData
 
 /**
  * Generates an object containing data for a noun entity based on the provided
@@ -15,12 +30,12 @@ const { bodies, accessories, heads, glasses } = images
 export function getNounData(seed: NounSeed): NounData {
   return {
     parts: [
-      bodies[seed.body],
-      accessories[seed.accessory],
-      heads[seed.head],
-      glasses[seed.glasses],
+      bodies[seed.body]!,
+      accessories[seed.accessory]!,
+      heads[seed.head]!,
+      glasses[seed.glasses]!,
     ],
-    background: bgcolors[seed.background],
+    background: bgcolors[seed.background]!,
   }
 }
 
@@ -47,3 +62,5 @@ export function getNounSeedFromBlockHash(
     glasses: getPseudorandomPart(pseudorandomness, glasses.length, 192),
   }
 }
+
+export { imageData }

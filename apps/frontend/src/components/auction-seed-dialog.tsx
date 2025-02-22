@@ -22,7 +22,7 @@ import { useDialogStore } from '@/stores/dialog-store'
 import { walletOptions } from '@/components/wallet-options-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
 
-import { ImageData } from '@repo/utilities'
+import { imageData } from '@repo/assets/index'
 import { formatTraitName } from '@/utils/format-trait-name'
 import { useBuyNow } from '@/hooks/use-buy-now'
 import { useMedia } from 'react-use'
@@ -42,7 +42,7 @@ import React from 'react'
 import { t } from '@lingui/core/macro'
 import Link from 'next/link'
 
-const { images, bgcolors } = ImageData
+const { images, bgcolors } = imageData
 
 interface AuctionSeedDialogProps {
   poolSeed: PoolSeed

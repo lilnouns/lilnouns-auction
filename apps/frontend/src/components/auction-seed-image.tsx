@@ -1,11 +1,10 @@
 import { Seed } from '@/types'
 import { useCallback } from 'react'
-import { getNounData } from '@lilnounsdao/assets'
 import { buildSVG } from '@lilnounsdao/sdk'
 
-import { ImageData } from '@repo/utilities'
+import { getNounData, imageData } from '@repo/assets/index'
 
-const { palette } = ImageData
+const { palette } = imageData
 
 export function AuctionSeedImage({ seed }: { seed: Seed }) {
   const renderSVG = useCallback((seed: Seed) => {
