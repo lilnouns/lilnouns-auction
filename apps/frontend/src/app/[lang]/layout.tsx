@@ -7,6 +7,7 @@ import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
 import { initLingui, PageLangParam } from '@/i18n/init-lingui'
 import { t } from '@lingui/core/macro'
 
+import '@repo/ui/globals.css'
 import { Providers } from '@/components/providers'
 
 import { cn } from '@repo/ui/lib/utils'
