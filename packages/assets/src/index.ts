@@ -30,12 +30,12 @@ const {
 export function getNounData(seed: NounSeed): NounData {
   return {
     parts: [
-      bodies[seed.body],
-      accessories[seed.accessory],
-      heads[seed.head],
-      glasses[seed.glasses],
+      bodies[seed.body]!,
+      accessories[seed.accessory]!,
+      heads[seed.head]!,
+      glasses[seed.glasses]!,
     ],
-    background: bgcolors[seed.background],
+    background: bgcolors[seed.background]!,
   }
 }
 
