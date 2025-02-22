@@ -13,6 +13,7 @@ import { Providers } from '@/components/providers'
 
 import { cn } from '@repo/ui/lib/utils'
 import { Toaster } from '@repo/ui/components/toaster'
+import { Providers } from '@/components/providers'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
