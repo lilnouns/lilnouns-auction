@@ -3,7 +3,7 @@ import { Block, BlockData, PoolSeed, Seed } from '@/types'
 import { usePoolStore } from '@/stores/pool-store'
 import { useEffect } from 'react'
 
-import { getNounSeedFromBlockHash } from '@repo/utilities'
+import { getNounSeedFromBlockHash } from '@repo/assets/index'
 import { useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
 
