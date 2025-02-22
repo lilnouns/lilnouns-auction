@@ -2,9 +2,8 @@
   "name": "@repo/assets",
   "type": "module",
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --watch",
-    "prepack": "unbuild"
+    "format": "prettier --write .",
+    "lint": "eslint . --max-warnings 0"
   },
   "exports": {
     ".": {
