@@ -20,6 +20,7 @@ export function AuctionSeedImage({ seed }: { seed: Seed }) {
   }, [])
 
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
       className="h-full w-full object-cover rounded-lg"
