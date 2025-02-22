@@ -1,3 +1,5 @@
+'use client'
+
 import Navbar from '@/components/navbar'
 import { t } from '@lingui/core/macro'
 import { useLingui } from '@lingui/react'
