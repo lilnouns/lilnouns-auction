@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.2] - 2025-02-22
+
+### Bug Fixes
+
+- Add non-null assertion to `getNounData`
+
+### Refactor
+
+- Rename `utilities` package to `assets`
+- Update `imageData` type and usage
+- Use `EncodedImage` type for image data
+
 ## [1.2.0-alpha.1] - 2025-02-22
 
 ### Bug Fixes
