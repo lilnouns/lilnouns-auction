@@ -3,7 +3,7 @@ import { Label } from '@repo/ui/components/label'
 import React from 'react'
 import { MultiSelect } from '@/components/multi-select'
 
-import { ImageData } from '@repo/utilities'
+import { imageData } from '@repo/assets/index'
 
 import { TraitFilter, useTraitFilterStore } from '@/stores/trait-filter-store'
 import { formatTraitName } from '@/utils/format-trait-name'
@@ -21,27 +21,27 @@ export function AuctionTraitFilter() {
     {
       id: 'background',
       label: 'Background',
-      options: ImageData.bgcolors,
+      options: imageData.bgcolors,
     },
     {
       id: 'body',
       label: 'Body',
-      options: ImageData.images.bodies,
+      options: imageData.images.bodies,
     },
     {
       id: 'accessory',
       label: 'Accessory',
-      options: ImageData.images.accessories,
+      options: imageData.images.accessories,
     },
     {
       id: 'head',
       label: 'Head',
-      options: ImageData.images.heads,
+      options: imageData.images.heads,
     },
     {
       id: 'glasses',
       label: 'Glasses',
-      options: ImageData.images.glasses,
+      options: imageData.images.glasses,
     },
   ]
 

@@ -1,5 +1,5 @@
 {
-  "name": "@repo/utilities",
+  "name": "@repo/assets",
   "type": "module",
   "scripts": {
     "build": "unbuild",

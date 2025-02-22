@@ -23,7 +23,7 @@
     "@prisma/adapter-d1": "6.4.1",
     "@prisma/client": "6.4.1",
     "@repo/ui": "workspace:*",
-    "@repo/utilities": "workspace:*",
+    "@repo/assets": "workspace:*",
     "@tanstack/react-query": "5.66.8",
     "@wagmi/core": "2.16.4",
     "autoprefixer": "10.4.20",

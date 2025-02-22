@@ -47,3 +47,5 @@ export function getNounSeedFromBlockHash(
     glasses: getPseudorandomPart(pseudorandomness, glasses.length, 192),
   }
 }
+
+export { default as imageData } from './image-data.json'
