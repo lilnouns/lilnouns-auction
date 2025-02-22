@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
 
 import linguiConfig from '@/../lingui.config'
@@ -6,8 +7,7 @@ import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
 import { initLingui, PageLangParam } from '@/i18n/init-lingui'
 import { t } from '@lingui/core/macro'
 
-import ErrorFallback from '@/components/error-fallback'
-import { ErrorBoundary } from 'react-error-boundary'
+import { Providers } from '@/components/providers'
 
 import { cn } from '@repo/ui/lib/utils'
 import { Toaster } from '@repo/ui/components/toaster'
@@ -38,8 +38,8 @@ export default async function RootLayout({
   children,
   params,
 }: {
-  children: React.ReactNode
-  params: { lang: string }
+  children: ReactNode
+  params: Promise<{ lang: string }>
 }) {
   const lang = (await params).lang
   initLingui(lang)
@@ -59,9 +59,7 @@ export default async function RootLayout({
             initialLocale={lang}
             initialMessages={allMessages[lang]!}
           >
-            <ErrorBoundary FallbackComponent={ErrorFallback}>
-              {children}
-            </ErrorBoundary>
+            <Providers>{children}</Providers>
           </LinguiClientProvider>
         </main>
         <Toaster />
