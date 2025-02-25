@@ -1,0 +1,13 @@
+{
+  "name": "lilnouns-auction",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-11-11",
+  "observability": {
+    "enabled": true
+  },
+  "triggers": {
+    "crons": [
+      "*/5 * * * *"
+    ]
+  }
+}

@@ -43,6 +43,27 @@ importers:
         specifier: 2.4.2
         version: 2.4.2
 
+  apps/farcaster:
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: 4.20250224.0
+        version: 4.20250224.0
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@repo/prettier-config':
+        specifier: 'workspace:'
+        version: link:../../packages/prettier-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      typescript:
+        specifier: 5.7.3
+        version: 5.7.3
+      wrangler:
+        specifier: 3.109.3
+        version: 3.109.3(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+
   apps/frontend:
     dependencies:
       '@headlessui/react':
@@ -189,7 +210,7 @@ importers:
         version: 5.2.0(typescript@5.7.3)
       '@lingui/loader':
         specifier: 5.2.0
-        version: 5.2.0(typescript@5.7.3)(webpack@5.97.1(esbuild@0.17.19))
+        version: 5.2.0(typescript@5.7.3)(webpack@5.97.1(esbuild@0.25.0))
       '@lingui/macro':
         specifier: 5.2.0
         version: 5.2.0(@lingui/babel-plugin-lingui-macro@5.2.0(babel-plugin-macros@3.1.0)(typescript@5.7.3))(babel-plugin-macros@3.1.0)(react@19.0.0)
@@ -9429,12 +9450,12 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@lingui/loader@5.2.0(typescript@5.7.3)(webpack@5.97.1(esbuild@0.17.19))':
+  '@lingui/loader@5.2.0(typescript@5.7.3)(webpack@5.97.1(esbuild@0.25.0))':
     dependencies:
       '@babel/runtime': 7.26.9
       '@lingui/cli': 5.2.0(typescript@5.7.3)
       '@lingui/conf': 5.2.0(typescript@5.7.3)
-      webpack: 5.97.1(esbuild@0.17.19)
+      webpack: 5.97.1(esbuild@0.25.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -16501,16 +16522,16 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
-  terser-webpack-plugin@5.3.11(esbuild@0.17.19)(webpack@5.97.1(esbuild@0.17.19)):
+  terser-webpack-plugin@5.3.11(esbuild@0.25.0)(webpack@5.97.1(esbuild@0.25.0)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 4.3.0
       serialize-javascript: 6.0.2
       terser: 5.39.0
-      webpack: 5.97.1(esbuild@0.17.19)
+      webpack: 5.97.1(esbuild@0.25.0)
     optionalDependencies:
-      esbuild: 0.17.19
+      esbuild: 0.25.0
 
   terser@5.39.0:
     dependencies:
@@ -17118,7 +17139,7 @@ snapshots:
 
   webpack-sources@3.2.3: {}
 
-  webpack@5.97.1(esbuild@0.17.19):
+  webpack@5.97.1(esbuild@0.25.0):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.6
@@ -17140,7 +17161,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.11(esbuild@0.17.19)(webpack@5.97.1(esbuild@0.17.19))
+      terser-webpack-plugin: 5.3.11(esbuild@0.25.0)(webpack@5.97.1(esbuild@0.25.0))
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
