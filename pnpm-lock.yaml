@@ -57,6 +57,12 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
+      graphql:
+        specifier: 16.10.0
+        version: 16.10.0
+      graphql-request:
+        specifier: 7.1.2
+        version: 7.1.2(graphql@16.10.0)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
