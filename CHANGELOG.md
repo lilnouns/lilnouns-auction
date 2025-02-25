@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.10] - 2025-02-25
+
+### Features
+
+- Add frame icon to assets
+- Add `frameConnector` for Farcaster Wallet
+- Integrate `frameConnector` in providers
+
+### Refactor
+
+- Update `frameConnector` for improved type safety
+- Replace `ErrorBoundary` with `Providers`
+- Remove unused `Providers` import
+
+### Miscellaneous Tasks
+
+- Update deps in `transpilePackages`
+
 ## [1.2.0-alpha.9] - 2025-02-25
 
 ### Features
