@@ -64,7 +64,7 @@ export const config = {
      * - api (API routes)
      * Feel free to modify this pattern to include more paths.
      */
-    // eslint-disable-next-line unicorn/prefer-string-raw
+
     '/((?!_next/static|_next/image|favicon.ico|api|subgraphs|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 }
