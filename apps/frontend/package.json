@@ -63,7 +63,7 @@
     "@lingui/format-po": "5.2.0",
     "@lingui/loader": "5.2.0",
     "@lingui/macro": "5.2.0",
-    "@lingui/swc-plugin": "5.2.0",
+    "@lingui/swc-plugin": "5.4.0",
     "@repo/eslint-config": "workspace:",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
