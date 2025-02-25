@@ -25,7 +25,7 @@
     "@repo/assets": "workspace:*",
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "5.66.9",
-    "@wagmi/core": "2.16.4",
+    "@wagmi/core": "2.16.5",
     "autoprefixer": "10.4.20",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
