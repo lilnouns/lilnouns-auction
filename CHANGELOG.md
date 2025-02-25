@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.5] - 2025-02-25
+
+### Bug Fixes
+
+- Disable eslint rule for `img` element
+
+### Refactor
+
+- Use `ReactNode` type from `react`
+- Use `EncodedImage` in `filter`
+- Update `renderSVG` for stricter typing
+- Improve `AuctionSeedImage` part handling
+
+### Miscellaneous Tasks
+
+- Update and streamline plugins
+
+### Styling
+
+- Remove unnecessary eslint-disable comment
+
 ## [1.2.0-alpha.4] - 2025-02-25
 
 ### Features
