@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.8] - 2025-02-25
+
+### Features
+
+- Add wrangler config for scheduling
+- Add scheduled handler for cron triggers
+
+### Refactor
+
+- Extract `scheduledHandler` to a separate file
+
+### Miscellaneous Tasks
+
+- Add `.gitignore` for project setup
+- Add TypeScript config for farcaster
+- Add base eslint configuration
+- Add shared prettier config
+- Add type definition for Cloudflare worker
+- Update type generation instructions
+
 ## [1.2.0-alpha.7] - 2025-02-25
 
 ### Refactor
