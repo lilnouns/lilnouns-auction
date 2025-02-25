@@ -1,0 +1,16 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": false,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": ["es2021"],
+    "module": "es2022",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "target": "es2021",
+    "types": ["@cloudflare/workers-types"]
+  }
+}
