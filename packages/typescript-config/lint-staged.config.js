@@ -2,5 +2,7 @@
  * @type {import('lint-staged').Configuration}
  **/
 export default {
-  "*": "prettier --write",
+  // Format specific file types
+  "*.{js,jsx,ts,tsx}": ["prettier --write"],
+  "*.{json,md,yml,yaml}": ["prettier --write"],
 };
