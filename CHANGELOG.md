@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.9] - 2025-02-25
+
+### Features
+
+- Add `queueHandler` for message processing
+
 ## [1.2.0-alpha.8] - 2025-02-25
 
 ### Features
