@@ -2,7 +2,7 @@ import { useWriteContract } from 'wagmi'
 import { prop } from 'remeda'
 import { mainnet, sepolia } from 'wagmi/chains'
 import { useNextNoun } from '@/hooks/use-next-noun'
-import { Address } from 'viem'
+import { Address, Hash } from 'viem'
 
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const activeChainContracts: Record<number, Address> = {
@@ -10,7 +10,16 @@ const activeChainContracts: Record<number, Address> = {
   [sepolia.id]: '0x0d8c4d18765AB8808ab6CEE4d7A760e8b93AB20c',
 }
 
-export const useBuyNow = () => {
+interface UseBuyNowReturn {
+  buyNow: (blockNumber: bigint, nounId: bigint) => void
+  isPending: boolean
+  isSuccess: boolean
+  isError: boolean
+  error: Error | null
+  data: Hash | undefined
+}
+
+export const useBuyNow = (): UseBuyNowReturn => {
   const { price } = useNextNoun()
   const { data, isPending, isSuccess, isError, error, writeContract } =
     useWriteContract()
