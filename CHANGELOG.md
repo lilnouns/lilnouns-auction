@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.4] - 2025-02-25
+
+### Features
+
+- Add localized `Page` component
+- Add `use client` directive to home page
+- Add global styles import to layout
+- Add `use client` directive to components
+- Add enhanced return types to `useBuyNow`
+
+### Refactor
+
+- Remove Next.js pages-related files
+- Remove `I18nProvider` from component
+- Replace `ErrorBoundary` with `Providers`
+- Replace `t` macro with `useLingui`
+
+### Miscellaneous Tasks
+
+- Update scripts to use `prettier` and `eslint`
+
 ## [1.2.0-alpha.3] - 2025-02-22
 
 ### Features

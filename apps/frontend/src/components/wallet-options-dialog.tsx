@@ -1,4 +1,5 @@
-import { t } from '@lingui/core/macro'
+'use client'
+
 import React, { useEffect } from 'react'
 import { Connector, useAccount, useConnect, useDisconnect } from 'wagmi'
 import { Button } from '@repo/ui/components/button'
@@ -23,10 +24,12 @@ import {
 import { WalletIcon } from 'lucide-react'
 import { useDialogStore } from '@/stores/dialog-store'
 import { useMedia } from 'react-use'
+import { useLingui } from '@lingui/react/macro'
 
 export const walletOptions = 'wallet-options'
 
 export const WalletOptionsDialog = () => {
+  const { t } = useLingui()
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
   const { connectors, connect } = useConnect()

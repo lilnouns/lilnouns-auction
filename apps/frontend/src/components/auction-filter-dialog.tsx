@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Dialog,
   DialogContent,
@@ -8,7 +10,6 @@ import {
 } from '@repo/ui/components/dialog'
 import { Button } from '@repo/ui/components/button'
 import { FilterIcon } from 'lucide-react'
-import { t } from '@lingui/core/macro'
 import { AuctionTraitFilter } from '@/components/auction-trait-filter'
 import React from 'react'
 import { useDialogStore } from '@/stores/dialog-store'
@@ -23,10 +24,12 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@repo/ui/components/drawer'
+import { useLingui } from '@lingui/react/macro'
 
 export const auctionFilter = 'auction-filter'
 
 export function AuctionFilterDialog() {
+  const { t } = useLingui()
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
   const isDesktop = useMedia('(min-width: 768px)')

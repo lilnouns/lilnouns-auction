@@ -1,3 +1,5 @@
+'use client'
+
 import { Seed } from '@/types'
 import { useCallback } from 'react'
 import { buildSVG } from '@lilnounsdao/sdk'

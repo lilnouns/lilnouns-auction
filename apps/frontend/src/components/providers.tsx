@@ -1,10 +1,9 @@
+'use client'
+
 import { type PropsWithChildren } from 'react'
 
 // import { ErrorBoundary } from 'react-error-boundary'
 // import ErrorFallback from '@/components/error-fallback'
-
-import { I18nProvider } from '@lingui/react'
-import { i18n } from '@lingui/core'
 
 import { ThemeProvider } from '@/components/theme-provider'
 import { find, mapToObj, pipe } from 'remeda'
@@ -60,21 +59,19 @@ const config = createConfig({
 
 export function Providers({ children }: PropsWithChildren) {
   return (
-    <I18nProvider i18n={i18n}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        {/*<ErrorBoundary FallbackComponent={ErrorFallback}>*/}
-        <WagmiProvider config={config}>
-          <QueryClientProvider client={queryClient}>
-            {children}
-          </QueryClientProvider>
-        </WagmiProvider>
-        {/*</ErrorBoundary>*/}
-      </ThemeProvider>
-    </I18nProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      {/*<ErrorBoundary FallbackComponent={ErrorFallback}>*/}
+      <WagmiProvider config={config}>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      </WagmiProvider>
+      {/*</ErrorBoundary>*/}
+    </ThemeProvider>
   )
 }
