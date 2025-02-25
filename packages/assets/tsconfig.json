@@ -1,21 +1,19 @@
 {
+  "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
-    "target": "ESNext", // Target the latest JavaScript version
-    "module": "ESNext", // Use ESNext modules
-    "lib": ["DOM", "ESNext"], // Support for browser APIs and modern JavaScript
-    "declaration": true, // Generate declaration files (.d.ts)
-    "declarationMap": true, // Generate source maps for declaration files
-    "outDir": "dist", // Output directory for compiled files
-    "strict": true, // Enable strict type checking
-    "moduleResolution": "node", // Resolve modules using Node.js resolution
+    "allowSyntheticDefaultImports": true, // Allow default imports for non-ES modules
     "esModuleInterop": true, // Allow default imports from modules with no default export
-    "skipLibCheck": true, // Skip type checks on declaration files
     "forceConsistentCasingInFileNames": true, // Enforce consistent file naming
     "isolatedModules": true, // Ensure TypeScript treats each file as an isolated module
-    "sourceMap": true, // Generate source maps for debugging
     "jsx": "react-jsx", // If using React, adjust if necessary
-    "allowSyntheticDefaultImports": true, // Allow default imports for non-ES modules
-    "resolveJsonModule": true // Allows importing JSON files
+    "lib": ["DOM", "ESNext"], // Support for browser APIs and modern JavaScript
+    "module": "ESNext", // Use ESNext modules
+    "moduleResolution": "node", // Resolve modules using Node.js resolution
+    "outDir": "dist", // Output directory for compiled files
+    "skipLibCheck": true, // Skip type checks on declaration files
+    "sourceMap": true, // Generate source maps for debugging
+    "strict": true, // Enable strict type checking
+    "target": "ESNext" // Target the latest JavaScript version
   },
   "include": ["src"], // Include your source files
   "exclude": ["node_modules", "dist"] // Exclude unnecessary directories
