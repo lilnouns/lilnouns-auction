@@ -8,5 +8,6 @@
   },
   "scripts": {
     "format": "prettier --write ."
-  }
+  },
+  "type": "module"
 }

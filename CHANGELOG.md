@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.7] - 2025-02-25
+
+### Refactor
+
+- Simplify and relocate lint-staged config
+- Update config for file-specific tasks
+
+### Miscellaneous Tasks
+
+- Update tsconfig to extend base config
+- Remove custom prettier configuration
+- Add `type: module` to package
+
+### Revert
+
+- Update `@lingui/swc-plugin` to v5.4.0
+
 ## [1.2.0-alpha.6] - 2025-02-25
 
 ### Bug Fixes
