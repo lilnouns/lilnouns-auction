@@ -1,8 +1,7 @@
-import * as prettierPluginOrganizeAttributes from 'prettier-plugin-organize-attributes'
-import * as prettierPluginOrganizeImports from 'prettier-plugin-organize-imports'
-import * as prettierPluginPackageJson from 'prettier-plugin-packagejson'
+import * as prettierPluginOrganizeAttributes from "prettier-plugin-organize-attributes";
+import * as prettierPluginOrganizeImports from "prettier-plugin-organize-imports";
 
-import { config as baseConfig } from './base.js'
+import { config as baseConfig } from "./base.js";
 
 /**
  * A shared Prettier configuration for libraries that use Next.js.
@@ -12,10 +11,10 @@ import { config as baseConfig } from './base.js'
 export const config = {
   ...baseConfig,
   plugins: [
+    ...baseConfig.plugins,
     prettierPluginOrganizeImports,
     prettierPluginOrganizeAttributes,
     // prettierPluginTailwindcss,
-    prettierPluginPackageJson,
   ],
-  tailwindFunctions: ['clsx', 'cn'],
-}
+  tailwindFunctions: ["clsx", "cn"],
+};
