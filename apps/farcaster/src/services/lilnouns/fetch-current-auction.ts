@@ -5,7 +5,7 @@ import { GraphQLClient } from 'graphql-request'
 export async function fetchCurrentAuction(endpoint: string) {
   const sdk = getSdk(new GraphQLClient(endpoint))
   try {
-    const { auctions } = await sdk.currentAuction()
+    const { auctions } = await sdk.getCurrentAuction()
 
     const auction = first(auctions)
     if (auction) {
