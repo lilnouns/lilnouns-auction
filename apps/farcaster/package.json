@@ -13,10 +13,10 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
-    "luxon": "3.5.0",
-    "remeda": "2.20.2",
     "graphql": "16.10.0",
     "graphql-request": "7.1.2",
+    "luxon": "3.5.0",
+    "remeda": "2.20.2",
     "typescript": "5.7.3",
     "wrangler": "3.110.0"
   }
