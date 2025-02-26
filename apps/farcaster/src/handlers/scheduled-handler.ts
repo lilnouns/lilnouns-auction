@@ -5,15 +5,16 @@ export async function scheduledHandler(
   env: Env,
   _ctx: ExecutionContext,
 ): Promise<void> {
-  const auctionId = await env.KV.get<number | null>('latest-auction-id')
-  console.log(`Latest auction ID from KV: ${auctionId}`)
+  const previousId = await env.KV.get<number | null>('latest-auction-id')
+  console.log(`Latest auction ID from KV: ${previousId}`)
 
   const auction = await fetchLatestAuction(env.LILNOUNS_SUBGRAPH_URL)
-  console.log(auction)
+  const currentId = Number(auction?.id)
+  console.log(`Latest auction ID from subgraph: ${currentId}`)
 
-  if (auction?.id && auctionId && auctionId < Number(auction.id)) {
+  if (previousId && currentId && previousId < currentId) {
     console.log('New auction found!')
   }
 
-  await env.KV.put('latest-auction-id', auction?.id ?? '')
+  await env.KV.put('latest-auction-id', currentId.toString())
 }
