@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "cf-typegen": "wrangler types",
-    "codegen": "graphql-codegen --config codegen.config.mjs",
+    "codegen": "graphql-codegen --config codegen.config.ts",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --test-scheduled",
     "prepare": "pnpm codegen",

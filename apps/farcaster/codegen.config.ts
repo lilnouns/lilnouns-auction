@@ -1,7 +1,7 @@
-/**
- * @type {import('@graphql-codegen/cli').CodegenConfig}
- */
-export default {
+import 'dotenv/config'
+import type { CodegenConfig } from '@graphql-codegen/cli'
+
+const config: CodegenConfig = {
   emitLegacyCommonJSImports: false,
   generates: {
     './src/services/lilnouns/index.ts': {
@@ -12,6 +12,14 @@ export default {
         'typescript-operations',
         'typescript-graphql-request',
       ],
+      config: {
+        useTypeImports: true,
+        namingConvention: {
+          transformUnderscore: true,
+        },
+      },
     },
   },
 }
+
+export default config
