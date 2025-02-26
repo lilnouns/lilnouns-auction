@@ -1,6 +1,7 @@
 {
   "name": "@repo/frontend",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
