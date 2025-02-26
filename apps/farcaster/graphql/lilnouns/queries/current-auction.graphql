@@ -1,0 +1,19 @@
+query currentAuction {
+  auctions(
+    where: { settled: false }
+    orderBy: endTime
+    orderDirection: asc
+    first: 1
+  ) {
+    id
+    noun {
+      id
+    }
+    amount
+    endTime
+    settled
+    bidder {
+      id
+    }
+  }
+}
