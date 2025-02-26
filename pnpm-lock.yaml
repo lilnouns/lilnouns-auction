@@ -73,8 +73,8 @@ importers:
         specifier: 0.0.26
         version: 0.0.26(typescript@5.7.3)
       '@farcaster/frame-node':
-        specifier: 0.0.15
-        version: 0.0.15(typescript@5.7.3)
+        specifier: 0.0.16
+        version: 0.0.16(typescript@5.7.3)
       '@farcaster/frame-sdk':
         specifier: 0.0.28
         version: 0.0.28(typescript@5.7.3)(zod@3.24.2)
@@ -1359,8 +1359,11 @@ packages:
   '@farcaster/frame-core@0.0.26':
     resolution: {integrity: sha512-DqBsi+lz7WBlqcxJfYv8ZiU8+Th4Y49euq13kCxVOn6YU/rKR7Wq6E6N1bgeb625wyoIrlC3NnPRXf5SoRxNhA==}
 
-  '@farcaster/frame-node@0.0.15':
-    resolution: {integrity: sha512-TYAN7RJWBvkIBPbb6y4LHwFfjnYwDE8eoRXu8kf2Hzu/tMlwSHjnMMT8UAlVSvtmBzwXyjZ57hnRqEnTo2+TAg==}
+  '@farcaster/frame-core@0.0.27':
+    resolution: {integrity: sha512-qHypYYY9hUnXmSr0i0Ii48db/ZRSY5aaGCedXYT/Rfv1o+CKxMxD1zUzHeuGa6Y51WZj51ZqQuCkfDCA0zqVFg==}
+
+  '@farcaster/frame-node@0.0.16':
+    resolution: {integrity: sha512-clyKNfayf85kQnjLowi3J66qMsFrtvqbb42UHNaGeTgVpRruNZH3ZAcvsbSP0HV+4+wgbywxQdXgfQwvdSqrMA==}
 
   '@farcaster/frame-sdk@0.0.28':
     resolution: {integrity: sha512-raxJkwy9oNDTodyfcY8DNvQNkt/9wdWGIqGnXW70biBPfVxfdG9WAqy1Bm552KSynd0+hGzcrQVwkMNzvpSZBg==}
@@ -9332,9 +9335,16 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@farcaster/frame-node@0.0.15(typescript@5.7.3)':
+  '@farcaster/frame-core@0.0.27(typescript@5.7.3)':
     dependencies:
-      '@farcaster/frame-core': 0.0.26(typescript@5.7.3)
+      ox: 0.4.4(typescript@5.7.3)(zod@3.24.2)
+      zod: 3.24.2
+    transitivePeerDependencies:
+      - typescript
+
+  '@farcaster/frame-node@0.0.16(typescript@5.7.3)':
+    dependencies:
+      '@farcaster/frame-core': 0.0.27(typescript@5.7.3)
       '@noble/curves': 1.8.1
       ox: 0.4.4(typescript@5.7.3)(zod@3.24.2)
       zod: 3.24.2
