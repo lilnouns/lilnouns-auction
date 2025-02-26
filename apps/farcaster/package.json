@@ -2,17 +2,36 @@
   "name": "@repo/farcaster",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
+    "cf-typegen": "wrangler types",
+    "codegen": "graphql-codegen --config codegen.config.ts",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --test-scheduled",
-    "start": "wrangler dev --test-scheduled",
-    "cf-typegen": "wrangler types"
+    "prepare": "pnpm codegen",
+    "start": "wrangler dev --test-scheduled"
+  },
+  "dependencies": {
+    "graphql": "16.10.0",
+    "graphql-request": "7.1.2",
+    "graphql-tag": "2.12.6",
+    "luxon": "3.5.0",
+    "remeda": "2.20.2"
   },
   "devDependencies": {
+    "@0no-co/graphqlsp": "1.12.16",
     "@cloudflare/workers-types": "4.20250224.0",
+    "@graphprotocol/graph-ts": "0.38.0",
+    "@graphql-codegen/cli": "5.0.5",
+    "@graphql-codegen/schema-ast": "4.1.0",
+    "@graphql-codegen/typescript-graphql-request": "6.2.0",
+    "@graphql-codegen/typescript-operations": "4.5.1",
+    "@parcel/watcher": "2.5.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
+    "@types/node": "22.13.5",
+    "graphql-scalars": "1.24.1",
     "typescript": "5.7.3",
     "wrangler": "3.110.0"
   }

@@ -2,12 +2,20 @@
   "name": "lilnouns-auction",
   "main": "src/index.ts",
   "compatibility_date": "2024-11-11",
+  "compatibility_flags": ["nodejs_compat"],
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "triggers": {
-    "crons": [
-      "*/5 * * * *"
-    ]
-  }
+    "crons": ["*/5 * * * *"],
+  },
+  "vars": {
+    "LILNOUNS_SUBGRAPH_URL": "https://api.studio.thegraph.com/query/31138/lilnouns/version/latest",
+  },
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "8f7e4f77a1c2461393ceff20c7470dd9"
+    }
+  ]
 }
