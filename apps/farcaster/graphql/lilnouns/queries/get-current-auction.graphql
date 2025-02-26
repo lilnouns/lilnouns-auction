@@ -1,4 +1,4 @@
-query currentAuction {
+query getCurrentAuction {
   auctions(
     where: { settled: false }
     orderBy: endTime
