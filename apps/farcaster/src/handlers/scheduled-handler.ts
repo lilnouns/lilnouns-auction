@@ -1,16 +1,20 @@
-export async function scheduledHandler(
-  controller: ScheduledController,
-  env: Env,
-  ctx: ExecutionContext,
-): Promise<void> {
-  // A Cron Trigger can make requests to other endpoints on the Internet,
-  // publish to a Queue, query a D1 Database, and much more.
-  //
-  // We'll keep it simple and make an API call to a Cloudflare API:
-  let resp = await fetch('https://api.cloudflare.com/client/v4/ips')
-  let wasSuccessful = resp.ok ? 'success' : 'fail'
+import { fetchLatestAuction } from '@/services/lilnouns/fetch-latest-auction'
 
-  // You could store this result in KV, write to a D1 Database, or publish to a Queue.
-  // In this template, we'll just log the result:
-  console.log(`trigger fired at ${controller.cron}: ${wasSuccessful}`)
+export async function scheduledHandler(
+  _controller: ScheduledController,
+  env: Env,
+  _ctx: ExecutionContext,
+): Promise<void> {
+  const previousId = await env.KV.get<number | null>('latest-auction-id')
+  console.log(`Latest auction ID from KV: ${previousId}`)
+
+  const auction = await fetchLatestAuction(env.LILNOUNS_SUBGRAPH_URL)
+  const currentId = Number(auction?.id)
+  console.log(`Latest auction ID from subgraph: ${currentId}`)
+
+  if (previousId && currentId && previousId < currentId) {
+    console.log('New auction found!')
+  }
+
+  await env.KV.put('latest-auction-id', currentId.toString())
 }
