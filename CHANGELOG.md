@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.11] - 2025-02-26
+
+### Refactor
+
+- Restructure plugin setup
+
 ## [1.2.0-alpha.10] - 2025-02-25
 
 ### Features
