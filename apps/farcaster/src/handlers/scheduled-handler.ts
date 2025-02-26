@@ -1,9 +1,9 @@
-import { fetchCurrentAuction } from '../services/lilnouns/fetch-current-auction'
+import { fetchLatestAuction } from '@/services/lilnouns/fetch-latest-auction'
 
 export async function scheduledHandler(
   controller: ScheduledController,
   env: Env,
   ctx: ExecutionContext,
 ): Promise<void> {
-  await fetchCurrentAuction(env.LILNOUNS_SUBGRAPH_URL)
+  await fetchLatestAuction(env.LILNOUNS_SUBGRAPH_URL)
 }
