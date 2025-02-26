@@ -1,28 +1,29 @@
-import { getSdk } from './index'
+import { GetLatestAuctionQuery, getSdk } from './index'
 import { first } from 'remeda'
 import { GraphQLClient } from 'graphql-request'
 
-export async function fetchLatestAuction(endpoint: string) {
-  const sdk = getSdk(new GraphQLClient(endpoint))
+/**
+ * Represents a single auction from the GraphQL response
+ */
+type AuctionResult = NonNullable<GetLatestAuctionQuery['auctions'][0]>
+
+/**
+ * Fetches the latest auction data from the specified GraphQL endpoint
+ * @param endpoint - The GraphQL API endpoint URL
+ * @returns The latest auction data or null if no auction is found
+ * @throws Will throw an error if the GraphQL request fails
+ */
+export async function fetchLatestAuction(
+  endpoint: string,
+): Promise<AuctionResult | null> {
   try {
+    const graphqlClient = new GraphQLClient(endpoint)
+    const sdk = getSdk(graphqlClient)
     const { auctions } = await sdk.getLatestAuction()
-
-    const auction = first(auctions)
-    if (auction) {
-      console.log('Latest Auction:', {
-        id: auction.id,
-        nounId: auction.noun?.id,
-        amount: auction.amount,
-        endTime: auction.endTime,
-        bidder: auction.bidder,
-      })
-    } else {
-      console.log('No active auctions found')
-    }
-
-    return auction
+    return first(auctions) ?? null
   } catch (error) {
-    console.error('Error fetching latest auction:', error)
-    throw error
+    throw new Error(
+      `Failed to fetch latest auction: ${error instanceof Error ? error.message : 'Unknown error'}`,
+    )
   }
 }
