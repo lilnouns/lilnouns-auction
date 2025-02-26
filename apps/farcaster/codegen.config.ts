@@ -1,5 +1,10 @@
 import 'dotenv/config'
 import type { CodegenConfig } from '@graphql-codegen/cli'
+import {
+  TimestampResolver,
+  BigIntResolver,
+  ByteResolver,
+} from 'graphql-scalars'
 
 const config: CodegenConfig = {
   emitLegacyCommonJSImports: false,
@@ -13,6 +18,12 @@ const config: CodegenConfig = {
         'typescript-graphql-request',
       ],
       config: {
+        strictScalars: false,
+        scalars: {
+          BigInt: BigIntResolver,
+          Bytes: ByteResolver,
+          Timestamp: TimestampResolver,
+        },
         useTypeImports: true,
         namingConvention: {
           transformUnderscore: true,
