@@ -1,56 +1,17 @@
-import { gql } from 'graphql-request'
+import { getSdk } from './index'
 import { first } from 'remeda'
-import { createClient } from './index'
-
-interface Auction {
-  id: string
-  noun: {
-    id: string
-  }
-  amount: bigint
-  endTime: bigint
-  settled: boolean
-  bidder: {
-    id: string
-  }
-}
-
-interface CurrentAuctionResponse {
-  auctions: Auction[]
-}
-
-const query = gql`
-  query CurrentAuction {
-    auctions(
-      where: { settled: false }
-      orderBy: endTime
-      orderDirection: asc
-      first: 1
-    ) {
-      id
-      noun {
-        id
-      }
-      amount
-      endTime
-      settled
-      bidder {
-        id
-      }
-    }
-  }
-`
+import { GraphQLClient } from 'graphql-request'
 
 export async function fetchCurrentAuction(endpoint: string) {
-  const client = createClient(endpoint)
+  const sdk = getSdk(new GraphQLClient(endpoint))
   try {
-    const response = await client.request<CurrentAuctionResponse>(query)
+    const { auctions } = await sdk.currentAuction()
 
-    const auction = first(response.auctions)
+    const auction = first(auctions)
     if (auction) {
       console.log('Current Auction:', {
         id: auction.id,
-        nounId: auction.noun.id,
+        nounId: auction.noun?.id,
         amount: auction.amount,
         endTime: auction.endTime,
         bidder: auction.bidder,
@@ -59,7 +20,7 @@ export async function fetchCurrentAuction(endpoint: string) {
       console.log('No active auctions found')
     }
 
-    return response
+    return auction
   } catch (error) {
     console.error('Error fetching current auction:', error)
     throw error
