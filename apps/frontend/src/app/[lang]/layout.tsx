@@ -2,7 +2,7 @@ import { type ReactNode } from 'react'
 
 import { Geist, Geist_Mono } from 'next/font/google'
 
-import linguiConfig from '@/../lingui.config'
+import linguiConfig from '../../../lingui.config'
 import { LinguiClientProvider } from '@/components/lingui-client-provider'
 import { allMessages, getI18nInstance } from '@/i18n/app-router-i18n'
 import { initLingui, PageLangParam } from '@/i18n/init-lingui'

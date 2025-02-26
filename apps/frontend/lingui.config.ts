@@ -1,7 +1,7 @@
-const { formatter } = require('@lingui/format-po')
+import { formatter } from '@lingui/format-po'
+import type { LinguiConfig } from '@lingui/conf'
 
-/** @type {import('@lingui/conf').LinguiConfig} */
-module.exports = {
+const config: LinguiConfig = {
   locales: ['ar', 'en', 'fa', 'tr', 'pseudo'],
   pseudoLocale: 'pseudo',
   sourceLocale: 'en',
@@ -17,3 +17,5 @@ module.exports = {
   ],
   format: formatter({ lineNumbers: false }),
 }
+
+export default config
