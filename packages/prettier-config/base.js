@@ -1,3 +1,4 @@
+import * as prettierPluginPackageJson from "prettier-plugin-packagejson";
 /**
  * A shared Prettier configuration for the repository.
  *
@@ -5,9 +6,10 @@
  */
 export const config = {
   semi: false,
-  trailingComma: 'all',
+  trailingComma: "all",
   singleQuote: true,
   tabWidth: 2,
   useTabs: false,
   printWidth: 80,
-}
+  plugins: [prettierPluginPackageJson],
+};
