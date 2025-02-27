@@ -6,103 +6,109 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: fa\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
-msgstr ""
+msgstr "همین حالا با {0} اتر بخرید"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
-msgstr ""
+msgstr "در حال خرید..."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Connect Wallet"
-msgstr ""
+msgstr "اتصال کیف پول"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
-msgstr ""
+msgstr "با یکی از ارائه‌دهندگان کیف پول موجود متصل شوید."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
-msgstr ""
+msgstr "قطع اتصال کیف پول"
 
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
-msgstr ""
+msgstr "خطا"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
-msgstr ""
+msgstr "فیلتر مزایده‌ها"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/layout.tsx
 msgid "Lil Nouns Auction"
-msgstr ""
+msgstr "مزایده لیل نونز"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
-msgstr ""
+msgstr "شناسه نون یافت نشد. لطفاً صفحه را بازنشانی کنید."
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns Found"
-msgstr ""
+msgstr "هیچ نونی یافت نشد"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr ""
+msgstr "هیچ نونی با فیلترهای انتخابی شما مطابقت ندارد. فیلترهای خود را تغییر دهید."
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr ""
+msgstr "نون {nounId} | مزایده لیل نونز"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
-msgstr ""
+msgstr "جزئیات نون"
 
 #: src/components/locale-switcher.tsx
 msgid "Open options"
-msgstr ""
+msgstr "باز کردن گزینه‌ها"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr ""
+msgstr "ویژگی‌های مورد نظر را برای فیلتر کردن مزایده‌ها انتخاب کنید"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
-msgstr ""
+msgstr "تغییر شبکه"
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr ""
+msgstr "هیچ نونی برای نمایش موجود نیست."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
-msgstr ""
+msgstr "مشاهده ویژگی‌ها و قیمت"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
-msgstr ""
+msgstr "مشاهده ویژگی‌ها و قیمت این نون"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"
-msgstr ""
+msgstr "مشاهده تراکنش"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
-msgstr ""
+msgstr "کیف پول متصل شد"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
-msgstr ""
+msgstr "کیف پول شما متصل است. اتصال خود را در زیر مدیریت کنید."

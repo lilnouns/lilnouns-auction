@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: tr\n"
+"Language: es\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -16,99 +16,99 @@ msgstr ""
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
-msgstr "Şimdi {0} ETH karşılığında satın al"
+msgstr "Comprar ahora por {0} ETH"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
-msgstr "Satın alınıyor..."
+msgstr "Comprando..."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Connect Wallet"
-msgstr "Cüzdanı Bağla"
+msgstr "Conectar Billetera"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
-msgstr "Mevcut cüzdan sağlayıcılarımızdan biriyle bağlanın."
+msgstr "Conéctate con uno de nuestros proveedores de billeteras disponibles."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
-msgstr "Cüzdan Bağlantısını Kes"
+msgstr "Desconectar Billetera"
 
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
-msgstr "Hata"
+msgstr "Error"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
-msgstr "Açık Artırmaları Filtrele"
+msgstr "Filtrar Subastas"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/layout.tsx
 msgid "Lil Nouns Auction"
-msgstr "Lil Nouns Açık Artırması"
+msgstr "Subasta de Lil Nouns"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
-msgstr "Noun kimliği bulunamadı. Lütfen sayfayı yenileyin."
+msgstr "No se encontró el ID del Noun. Por favor, actualiza la página."
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns Found"
-msgstr "Hiç Noun bulunamadı"
+msgstr "No se encontraron Nouns"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "Geçerli filtre kriterlerinize uygun Noun bulunamadı. Filtrelerinizi ayarlamayı deneyin."
+msgstr "Ningún Noun coincide con tus criterios de filtro actuales. Intenta ajustar tus filtros."
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Lil Nouns Açık Artırması"
+msgstr "Noun {nounId} | Subasta de Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
-msgstr "Noun Detayları"
+msgstr ""
 
 #: src/components/locale-switcher.tsx
 msgid "Open options"
-msgstr "Seçenekleri aç"
+msgstr ""
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "Açık artırma listelerini filtrelemek için özellikleri seçin"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
-msgstr "Ağı Değiştir"
+msgstr ""
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr "Görüntülenecek Noun bulunmuyor."
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
-msgstr "Özellikleri ve fiyatlandırmayı görüntüle"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
-msgstr "Bu Noun için özellikleri ve fiyatlandırmayı görüntüle"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"
-msgstr "İşlemi Görüntüle"
+msgstr ""
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
-msgstr "Cüzdan Bağlandı"
+msgstr ""
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
-msgstr "Cüzdanınız bağlandı. Aşağıdan bağlantınızı yönetin."
+msgstr ""
