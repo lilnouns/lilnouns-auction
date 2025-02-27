@@ -1,11 +1,9 @@
 import { i18n, Messages } from '@lingui/core'
-import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export async function loadCatalog(locale: string) {
-  const catalog = await import(
-    `@lingui/loader!../locales/${locale}/messages.po`
-  )
+  const catalog = await import(`../../locales/${locale}/messages.po`)
   return catalog.messages
 }
 

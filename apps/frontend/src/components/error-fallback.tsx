@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from '@repo/ui/components/card'
 import { Alert, AlertDescription, AlertTitle } from '@repo/ui/components/alert'
+import { Trans, useLingui } from '@lingui/react/macro'
 
 interface ErrorFallbackProps {
   error: Error
@@ -19,6 +20,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
   error,
   resetErrorBoundary,
 }) => {
+  const { t } = useLingui()
   const [showDetails, setShowDetails] = useState(false)
 
   return (
@@ -26,15 +28,17 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-red-600 dark:text-red-400">
-            Something went wrong
+            {t`Something went wrong`}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <Alert variant="destructive" className="mb-4">
-            <AlertTitle>Error</AlertTitle>
+            <AlertTitle>{t`Error`}</AlertTitle>
             <AlertDescription>
-              Please try refreshing the page or contact support if the issue
-              persists.
+              <Trans>
+                Please try refreshing the page or contact support if the issue
+                persists.
+              </Trans>
             </AlertDescription>
           </Alert>
           <Button
@@ -42,7 +46,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
             className="w-full mb-2"
             onClick={() => setShowDetails((prev) => !prev)}
           >
-            {showDetails ? 'Hide Details' : 'Show Details'}
+            {showDetails ? t`Hide Details` : t`Show Details`}
           </Button>
           {showDetails && (
             <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm text-foreground">
@@ -53,7 +57,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
             className="w-full bg-red-600 hover:bg-red-700"
             onClick={resetErrorBoundary}
           >
-            Refresh
+            {t`Refresh`}
           </Button>
         </CardContent>
       </Card>

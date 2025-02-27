@@ -86,7 +86,7 @@ export function AuctionFilterDialog() {
         </div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
-            <Button variant="outline">Close</Button>
+            <Button variant="outline">{t`Close`}</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

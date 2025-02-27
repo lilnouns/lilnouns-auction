@@ -9,6 +9,7 @@ import { imageData } from '@repo/assets/index'
 
 import { TraitFilter, useTraitFilterStore } from '@/stores/trait-filter-store'
 import { formatTraitName } from '@/utils/format-trait-name'
+import { useLingui } from '@lingui/react/macro'
 
 type TraitOptions = Array<{
   id: keyof TraitFilter
@@ -17,6 +18,7 @@ type TraitOptions = Array<{
 }>
 
 export function AuctionTraitFilter() {
+  const { i18n, t } = useLingui()
   const { traitFilter, setTraitFilter } = useTraitFilterStore()
 
   const traitOptions: TraitOptions = [
@@ -60,17 +62,19 @@ export function AuctionTraitFilter() {
                   e1d7d5: 'warm',
                 }
                 return {
-                  label: formatTraitName(
-                    typeof option !== 'string'
-                      ? option?.filename
-                      : backgrounds[option]!,
+                  label: i18n._(
+                    formatTraitName(
+                      typeof option !== 'string'
+                        ? option?.filename
+                        : backgrounds[option]!,
+                    ),
                   ),
                   value: index.toString(),
                 }
               })}
               onValueChange={(value) => setTraitFilter(id, value)}
               defaultValue={traitFilter[id] ?? []}
-              placeholder={`Select ${label.toLowerCase()}`}
+              placeholder={t`Select ${label.toLowerCase()}`}
               variant="inverted"
               animation={0}
               maxCount={2}
