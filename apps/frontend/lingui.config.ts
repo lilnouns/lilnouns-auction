@@ -2,7 +2,21 @@ import { formatter } from '@lingui/format-po'
 import type { LinguiConfig } from '@lingui/conf'
 
 const config: LinguiConfig = {
-  locales: ['ar', 'en', 'fa', 'tr', 'pseudo'],
+  locales: [
+    'ar',
+    'cn',
+    'en',
+    'es',
+    'fa',
+    'fr',
+    'de',
+    'hi',
+    'it',
+    'ja',
+    'pt',
+    'tr',
+    'pseudo',
+  ],
   pseudoLocale: 'pseudo',
   sourceLocale: 'en',
   fallbackLocales: {
