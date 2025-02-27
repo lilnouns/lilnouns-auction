@@ -2,6 +2,57 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.12] - 2025-02-27
+
+### Features
+
+- Add `lilnouns` GraphQL schema
+- Add service to fetch current lilnouns auction
+- Add `currentAuction` GraphQL query
+- Add `getLatestAuction` GraphQL query
+- Add `fetchLatestAuction` to lilnouns service
+- Add custom scalar resolvers to codegen config
+- Add path alias for source directory
+- Add `kv_namespaces` configuration
+- Enhance `scheduledHandler` with auction tracking
+
+### Bug Fixes
+
+- Update `sdk` method in auction fetch logic
+- Remove unused theme translation strings
+
+### Refactor
+
+- Simplify `scheduledHandler` logic
+- Remove unused `lilnouns` GraphQL schema
+- Remove unused `createClient` function
+- Simplify `fetchCurrentAuction` logic
+- Convert `codegen.config` to TypeScript
+- Rename `currentAuction` to `getCurrentAuction`
+- Improve auction fetch functions
+- Use `fetchLatestAuction` for clarity
+- Update variable names for clarity
+- Migrate `lingui.config` to TypeScript
+
+### Miscellaneous Tasks
+
+- Update package name to `@repo/frontend`
+- Add `LILNOUNS_SUBGRAPH_URL` to `vars`
+- Add support for ESM and codegen config
+- Add `nodejs_compat` to compatibility flags
+- Add `.gitignore` for `lilnouns` service
+- Add GraphQL codegen configuration
+- Add `prepare` script for code generation
+- Disable legacy CommonJS imports
+- Update `prepare` script and add `codegen`
+- Update `types` in tsconfig deps
+- Add `type` as `module` to `package.json`
+- Remove `prepare` script
+
+### Styling
+
+- Standardize quote usage in config
+
 ## [1.2.0-alpha.11] - 2025-02-26
 
 ### Refactor
