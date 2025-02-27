@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.17] - 2025-02-27
+
+### Features
+
+- Expand supported locales in `lingui.config`
+- Add translations for multiple locales
+- Add i18n support to various components
+- Update translations for locale support
+
+### Refactor
+
+- Remove unused code and redundant comments
+- Update `loadCatalog` import path
+- Update i18n message handling logic
+
+### Miscellaneous Tasks
+
+- Update translation dependencies
+
 ## [1.2.0-alpha.16] - 2025-02-27
 
 ### Features
