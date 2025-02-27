@@ -5,10 +5,13 @@ import { useCallback } from 'react'
 import { buildSVG, EncodedImage } from '@lilnounsdao/sdk'
 
 import { getNounData, imageData } from '@repo/assets/index'
+import { useLingui } from '@lingui/react/macro'
 
 const { palette } = imageData
 
 export function AuctionSeedImage({ seed }: { seed: Seed }) {
+  const { t } = useLingui()
+
   const renderSVG = useCallback((seed: Seed) => {
     const { parts, background } = getNounData(seed)
     const validParts = parts.filter(
@@ -29,7 +32,7 @@ export function AuctionSeedImage({ seed }: { seed: Seed }) {
     <img
       src={`data:image/svg+xml;base64,${renderSVG(seed)}`}
       className="h-full w-full object-cover rounded-lg"
-      alt="Noun"
+      alt={t`Noun`}
     />
   )
 }

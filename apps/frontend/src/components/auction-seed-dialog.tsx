@@ -202,7 +202,7 @@ export function AuctionSeedDialog({
         <DrawerFooter>
           {renderActionButton()}
           <DrawerClose asChild>
-            <Button variant="outline">Close</Button>
+            <Button variant="outline">{t`Close`}</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

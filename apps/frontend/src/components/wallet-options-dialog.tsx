@@ -29,7 +29,7 @@ import { useLingui } from '@lingui/react/macro'
 export const walletOptions = 'wallet-options'
 
 export const WalletOptionsDialog = () => {
-  const { t } = useLingui()
+  const { t, i18n } = useLingui()
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
   const { connectors, connect } = useConnect()
@@ -144,6 +144,7 @@ const WalletOption = ({
   connector: Connector
   onClick: () => void
 }) => {
+  const { t, i18n } = useLingui()
   // const [ready, setReady] = useState(false)
   //
   // useEffect(() => {
@@ -160,7 +161,7 @@ const WalletOption = ({
         variant="outline"
         className="w-full flex justify-between items-center"
       >
-        {connector.name}
+        {i18n._(connector.name)}
       </Button>
     </li>
   )

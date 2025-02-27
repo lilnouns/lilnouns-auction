@@ -5,13 +5,14 @@ import { clsxm } from '@/utils'
 import { availableLocales, getLocaleName } from '@/utils/locales'
 import { Menu, Transition } from '@headlessui/react'
 import { LanguageIcon } from '@heroicons/react/24/outline'
-import { Trans } from '@lingui/react/macro'
+import { Trans, useLingui } from '@lingui/react/macro'
 import clsx from 'clsx'
 import { Fragment } from 'react'
 
 type LocalSwitcherProps = { className?: string }
 
 const LocaleSwitcher = ({ className }: LocalSwitcherProps) => {
+  const { t } = useLingui()
   const { changeLocale } = useLocaleSwitcher()
 
   return (
@@ -25,7 +26,7 @@ const LocaleSwitcher = ({ className }: LocalSwitcherProps) => {
       <div>
         <Menu.Button className="flex items-center">
           <span className="sr-only">
-            <Trans>Open options</Trans>
+            <Trans>{t`Open options`}</Trans>
           </span>
           <LanguageIcon className="size-7" aria-hidden="true" />
         </Menu.Button>
