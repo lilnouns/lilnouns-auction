@@ -3,4 +3,7 @@
 interface Env {
   KV: KVNamespace
   LILNOUNS_SUBGRAPH_URL: 'https://api.studio.thegraph.com/query/31138/lilnouns/version/latest'
+  WARPCAST_BASE_URL: 'https://api.warpcast.com'
+  WARPCAST_ACCESS_TOKEN: string
+  WARPCAST_API_KEY: string
 }
