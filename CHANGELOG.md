@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.16] - 2025-02-27
+
+### Features
+
+- Add Warpcast integration variables
+- Add `sendDirectCast` service and HTTP client
+- Send direct cast on new auction detection
+
 ## [1.2.0-alpha.15] - 2025-02-27
 
 ### Miscellaneous Tasks
