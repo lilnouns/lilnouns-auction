@@ -6,6 +6,7 @@ import React from 'react'
 import { WalletOptionsDialog } from '@/components/wallet-options-dialog'
 import { AuctionFilterDialog } from '@/components/auction-filter-dialog'
 import { useLingui } from '@lingui/react/macro'
+import { LanguageSwitcher } from '@/components/language-switcher'
 
 const IconNoggles = () => {
   const { t } = useLingui()
@@ -78,6 +79,8 @@ const Navbar = () => {
           <AuctionFilterDialog />
 
           <WalletOptionsDialog />
+
+          <LanguageSwitcher />
 
           <ModeToggle />
         </div>
