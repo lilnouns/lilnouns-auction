@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.15] - 2025-02-27
+
+### Miscellaneous Tasks
+
+- Add Node.js 23.x to build matrix
+- Update `LILNOUNS_SUBGRAPH_URL` to use secrets
+- Move `LILNOUNS_SUBGRAPH_URL` to build step
+- Update `env` with `LILNOUNS_SUBGRAPH_URL`
+
 ## [1.2.0-alpha.14] - 2025-02-27
 
 ### Miscellaneous Tasks
