@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.14] - 2025-02-27
+
+### Miscellaneous Tasks
+
+- Add `LILNOUNS_SUBGRAPH_URL` to environment
+
 ## [1.2.0-alpha.13] - 2025-02-27
 
 ### Features
