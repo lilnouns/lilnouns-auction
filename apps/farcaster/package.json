@@ -8,7 +8,6 @@
     "codegen": "graphql-codegen --config codegen.config.ts",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --test-scheduled",
-    "prepare": "pnpm codegen",
     "start": "wrangler dev --test-scheduled"
   },
   "dependencies": {
