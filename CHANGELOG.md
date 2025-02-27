@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.13] - 2025-02-27
+
+### Features
+
+- Add `prebuild` and `build` scripts
+
 ## [1.2.0-alpha.12] - 2025-02-27
 
 ### Features
