@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "graphql": "16.10.0",
-    "graphql-request": "7.1.2",
+    "graphql-request": "6.1.0",
     "graphql-tag": "2.12.6",
     "luxon": "3.5.0",
     "remeda": "2.21.0"
