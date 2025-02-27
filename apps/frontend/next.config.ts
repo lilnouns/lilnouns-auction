@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   experimental: {
-    webpackBuildWorker: true,
     swcPlugins: [['@lingui/swc-plugin', {}]],
     turbo: {
       rules: {
@@ -17,20 +16,6 @@ const nextConfig: NextConfig = {
         },
       },
     },
-  },
-  webpack: (config) => {
-    config.cache = false // Disables PackFileCacheStrategy
-
-    config.resolve.fallback = {
-      // if you miss it, all the other options in fallback, specified
-      // by next.js will be dropped.
-      ...config.resolve.fallback,
-
-      // fs: false,
-    }
-
-    // Important: return the modified config
-    return config
   },
   rewrites: async () => {
     const blocksSubgraphUrl = process.env.BLOCKS_SUBGRAPH_URL
