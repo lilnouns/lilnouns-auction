@@ -1,5 +1,5 @@
-import { scheduledHandler } from './handlers/scheduled-handler'
-import { queueHandler } from './handlers/queue-handler'
+import { scheduledHandler } from '@/handlers/scheduled-handler'
+import { queueHandler } from '@/handlers/queue-handler'
 
 export default {
   // The queue handler is invoked when a batch of messages is ready to be delivered

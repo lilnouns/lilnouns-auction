@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.2.0-alpha.11",
+  "version": "1.2.0-alpha.12",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -19,8 +19,8 @@
     "packages/*"
   ],
   "devDependencies": {
-    "husky": "9.1.7",
     "eslint": "9.20.1",
+    "husky": "9.1.7",
     "lint-staged": "15.4.3",
     "prettier": "3.5.2",
     "rimraf": "6.0.1",
@@ -32,6 +32,7 @@
     "debug": ">=4.3.1",
     "elliptic": ">=6.6.0",
     "eslint": ">=9.0.0",
+    "graphql-request": ">=7.0.0",
     "path-to-regexp": ">=6.3.0",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0",

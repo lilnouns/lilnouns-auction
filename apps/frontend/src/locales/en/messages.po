@@ -49,6 +49,7 @@ msgstr "Filter Auctions"
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
+#: src/app/[lang]/layout.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns Auction"
 
@@ -86,21 +87,9 @@ msgstr "Select traits to filter the auction listings"
 msgid "Switch Network"
 msgstr "Switch Network"
 
-#: src/components/theme-switcher.tsx
-msgid "Switch to dark theme"
-msgstr "Switch to dark theme"
-
-#: src/components/theme-switcher.tsx
-msgid "Switch to light theme"
-msgstr "Switch to light theme"
-
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
 msgstr "There are no Nouns available to display."
-
-#: src/app/[lang]/layout.tsx
-msgid "Translation Demo"
-msgstr "Translation Demo"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"

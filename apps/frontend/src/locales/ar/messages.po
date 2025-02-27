@@ -49,6 +49,7 @@ msgstr ""
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
+#: src/app/[lang]/layout.tsx
 msgid "Lil Nouns Auction"
 msgstr ""
 
@@ -86,20 +87,8 @@ msgstr ""
 msgid "Switch Network"
 msgstr ""
 
-#: src/components/theme-switcher.tsx
-msgid "Switch to dark theme"
-msgstr "التبديل إلى المظهر المظلم"
-
-#: src/components/theme-switcher.tsx
-msgid "Switch to light theme"
-msgstr "التبديل إلى المظهر الفاتح"
-
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr ""
-
-#: src/app/[lang]/layout.tsx
-msgid "Translation Demo"
 msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
