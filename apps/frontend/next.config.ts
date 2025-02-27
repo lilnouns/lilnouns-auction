@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
       // by next.js will be dropped.
       ...config.resolve.fallback,
 
-      fs: false,
+      // fs: false,
     }
 
     // Important: return the modified config
