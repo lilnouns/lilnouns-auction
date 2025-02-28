@@ -7,36 +7,15 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   experimental: {
-    webpackBuildWorker: true,
-    swcPlugins: [
-      [
-        '@lingui/swc-plugin',
-        {
-          // the same options as in .swcrc
+    swcPlugins: [['@lingui/swc-plugin', {}]],
+    turbo: {
+      rules: {
+        '*.po': {
+          loaders: ['@lingui/loader'],
+          as: '*.js',
         },
-      ],
-    ],
-  },
-  webpack: (config) => {
-    config.cache = false // Disables PackFileCacheStrategy
-
-    config.resolve.fallback = {
-      // if you miss it, all the other options in fallback, specified
-      // by next.js will be dropped.
-      ...config.resolve.fallback,
-
-      fs: false,
-    }
-
-    config.module.rules.push({
-      test: /\.po$/,
-      use: {
-        loader: '@lingui/loader',
       },
-    })
-
-    // Important: return the modified config
-    return config
+    },
   },
   rewrites: async () => {
     const blocksSubgraphUrl = process.env.BLOCKS_SUBGRAPH_URL
