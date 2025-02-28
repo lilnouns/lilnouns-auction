@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.18] - 2025-02-28
+
+### Bug Fixes
+
+- Update middleware regex to handle new paths
+
 ## [1.2.0-alpha.17] - 2025-02-27
 
 ### Features
