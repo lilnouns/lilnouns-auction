@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
       // by next.js will be dropped.
       ...config.resolve.fallback,
 
-      fs: false,
+      // fs: false,
     }
 
     config.module.rules.push({
