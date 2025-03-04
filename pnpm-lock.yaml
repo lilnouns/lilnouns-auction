@@ -67,8 +67,8 @@ importers:
         specifier: 1.12.16
         version: 1.12.16(graphql@16.10.0)(typescript@5.7.3)
       '@cloudflare/workers-types':
-        specifier: 4.20250224.0
-        version: 4.20250224.0
+        specifier: 4.20250303.0
+        version: 4.20250303.0
       '@graphprotocol/graph-ts':
         specifier: 0.38.0
         version: 0.38.0
@@ -107,7 +107,7 @@ importers:
         version: 5.7.3
       wrangler:
         specifier: 3.111.0
-        version: 3.111.0(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+        version: 3.111.0(@cloudflare/workers-types@4.20250303.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
 
   apps/frontend:
     dependencies:
@@ -252,10 +252,10 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.8
-        version: 1.13.8(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@41.3.0(rollup@4.34.8))(wrangler@3.111.0(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+        version: 1.13.8(@cloudflare/workers-types@4.20250303.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@41.3.0(rollup@4.34.8))(wrangler@3.111.0(@cloudflare/workers-types@4.20250303.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
-        specifier: 4.20250224.0
-        version: 4.20250224.0
+        specifier: 4.20250303.0
+        version: 4.20250303.0
       '@eslint/eslintrc':
         specifier: 3.3.0
         version: 3.3.0
@@ -363,7 +363,7 @@ importers:
         version: 3.0.7(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.13.8)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.1)(terser@5.39.0)(yaml@2.7.0)
       wrangler:
         specifier: 3.111.0
-        version: 3.111.0(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+        version: 3.111.0(@cloudflare/workers-types@4.20250303.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
 
   packages/assets:
     dependencies:
@@ -949,8 +949,8 @@ packages:
   '@cloudflare/workers-types@4.20240614.0':
     resolution: {integrity: sha512-fnV3uXD1Hpq5EWnY7XYb+smPcjzIoUFiZpTSV/Tk8qKL3H+w6IqcngZwXQBZ/2U/DwYkDilXHW3FfPhnyD7FZA==}
 
-  '@cloudflare/workers-types@4.20250224.0':
-    resolution: {integrity: sha512-j6ZwQ5G2moQRaEtGI2u5TBQhVXv/XwOS5jfBAheZHcpCM07zm8j0i8jZHHLq/6VA8e6VRjKohOyj5j6tZ1KHLQ==}
+  '@cloudflare/workers-types@4.20250303.0':
+    resolution: {integrity: sha512-O7F7nRT4bbmwHf3gkRBLfJ7R6vHIJ/oZzWdby6obOiw2yavUfp/AIwS7aO2POu5Cv8+h3TXS3oHs3kKCZLraUA==}
 
   '@coinbase/wallet-sdk@3.9.3':
     resolution: {integrity: sha512-N/A2DRIf0Y3PHc1XAMvbBUu4zisna6qAdqABMZwBMNEfWrXpAwx16pZGkYCLGE+Rvv1edbcB2LYDRnACNcmCiw==}
@@ -10082,7 +10082,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.8(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@41.3.0(rollup@4.34.8))(wrangler@3.111.0(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.8(@cloudflare/workers-types@4.20250303.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@41.3.0(rollup@4.34.8))(wrangler@3.111.0(@cloudflare/workers-types@4.20250303.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.14.0
       ast-types: 0.14.2
@@ -10097,9 +10097,9 @@ snapshots:
       pcre-to-regexp: 1.1.0
       semver: 7.7.1
       vercel: 41.3.0(rollup@4.34.8)
-      wrangler: 3.111.0(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      wrangler: 3.111.0(@cloudflare/workers-types@4.20250303.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250224.0
+      '@cloudflare/workers-types': 4.20250303.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -10121,7 +10121,7 @@ snapshots:
 
   '@cloudflare/workers-types@4.20240614.0': {}
 
-  '@cloudflare/workers-types@4.20250224.0': {}
+  '@cloudflare/workers-types@4.20250303.0': {}
 
   '@coinbase/wallet-sdk@3.9.3':
     dependencies:
@@ -20221,7 +20221,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250214.0
       '@cloudflare/workerd-windows-64': 1.20250214.0
 
-  wrangler@3.111.0(@cloudflare/workers-types@4.20250224.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10):
+  wrangler@3.111.0(@cloudflare/workers-types@4.20250303.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
@@ -20233,7 +20233,7 @@ snapshots:
       unenv: 2.0.0-rc.1
       workerd: 1.20250214.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250224.0
+      '@cloudflare/workers-types': 4.20250303.0
       fsevents: 2.3.3
       sharp: 0.33.5
     transitivePeerDependencies:
