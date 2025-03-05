@@ -115,8 +115,8 @@ importers:
         specifier: 0.6.0
         version: 0.6.0(@types/react@19.0.10)(babel-plugin-macros@3.1.0)(bufferutil@4.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(utf-8-validate@5.0.10)(viem@2.23.6(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))
       '@farcaster/frame-core':
-        specifier: 0.0.27
-        version: 0.0.27(typescript@5.7.3)
+        specifier: 0.0.28
+        version: 0.0.28(typescript@5.7.3)
       '@farcaster/frame-node':
         specifier: 0.0.17
         version: 0.0.17(typescript@5.7.3)
