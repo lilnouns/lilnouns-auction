@@ -77,7 +77,7 @@ export function AuctionSeedDialog({
   const { seed, blockNumber, nounId } = poolSeed
 
   const content = (
-    <Card className={'shadow-none border-none'}>
+    <Card className="shadow-none border-none">
       <CardContent className="p-0">
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
           <AuctionSeedImage seed={seed} />
@@ -193,7 +193,7 @@ export function AuctionSeedDialog({
   return (
     <Drawer>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
-      <DrawerContent className={'mx-4 max-h-[calc(100vh-20px)] mt-5'}>
+      <DrawerContent className="mx-4 max-h-[calc(100vh-20px)] mt-5">
         <DrawerHeader>
           <DrawerTitle>{t`Noun Details`}</DrawerTitle>
           <DrawerDescription>{t`View traits and pricing`}</DrawerDescription>

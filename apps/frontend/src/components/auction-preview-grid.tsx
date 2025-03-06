@@ -183,7 +183,7 @@ export function AuctionPreviewGrid() {
             key={`${poolSeed.nounId}-${poolSeed.blockNumber}`}
             poolSeed={poolSeed}
           >
-            <Card className={'w-full shadow-none border-none cursor-pointer'}>
+            <Card className="w-full shadow-xs border-none cursor-pointer">
               <CardContent className="p-0">
                 <AuctionSeedImage seed={poolSeed.seed} />
               </CardContent>
