@@ -12,7 +12,7 @@ import '@repo/ui/globals.css'
 import { Providers } from '@/components/providers'
 
 import { cn } from '@repo/ui/lib/utils'
-import { Toaster } from '@repo/ui/components/toaster'
+import { Toaster } from '@repo/ui/components/sonner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
