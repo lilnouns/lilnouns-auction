@@ -146,7 +146,7 @@ export function AuctionPreviewGrid() {
 
   const renderNoResultsMessage = () => (
     <Alert>
-      <TriangleAlert className="h-4 w-4" />
+      <TriangleAlert className="size-4" />
       <AlertTitle>{t`No Nouns Found`}</AlertTitle>
       <AlertDescription>
         {hasActiveFilters
@@ -161,7 +161,7 @@ export function AuctionPreviewGrid() {
   if (!isValidating && nounId === undefined)
     return (
       <Alert variant="destructive">
-        <TriangleAlert className="h-4 w-4" />
+        <TriangleAlert className="size-4" />
         <AlertTitle>{t`Error`}</AlertTitle>
         <AlertDescription>
           {t`No Noun ID found. Please refresh the page.`}

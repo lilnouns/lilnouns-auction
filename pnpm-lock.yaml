@@ -118,8 +118,8 @@ importers:
         specifier: 0.0.29
         version: 0.0.29(typescript@5.7.3)
       '@farcaster/frame-node':
-        specifier: 0.0.17
-        version: 0.0.17(typescript@5.7.3)
+        specifier: 0.0.18
+        version: 0.0.18(typescript@5.7.3)
       '@farcaster/frame-sdk':
         specifier: 0.0.29
         version: 0.0.29(typescript@5.7.3)(zod@3.24.2)
@@ -1697,14 +1697,11 @@ packages:
   '@farcaster/frame-core@0.0.27':
     resolution: {integrity: sha512-qHypYYY9hUnXmSr0i0Ii48db/ZRSY5aaGCedXYT/Rfv1o+CKxMxD1zUzHeuGa6Y51WZj51ZqQuCkfDCA0zqVFg==}
 
-  '@farcaster/frame-core@0.0.28':
-    resolution: {integrity: sha512-HVUpnfCsGJ/E8jiXeBqtwt09JKCxl9rcN8fg8rTHyTTdfiyr5y70UvR7SOmu2xe4V7VY22Z3B8LWC9hZCiEhZw==}
-
   '@farcaster/frame-core@0.0.29':
     resolution: {integrity: sha512-+iQjOS4OE0YCeW7hhBOg0QK8Pch7/C3mlkfD0OLey0Thnj4Uab4tWmvmfKxnsJNSYnESx9BT+Sw/pn9cueCl1Q==}
 
-  '@farcaster/frame-node@0.0.17':
-    resolution: {integrity: sha512-BaDB4N7JAHdNLZIQU3Trtco9RAYxXHmVTdzDo4snE/6UyGB3MVbUAHLQ50KtVom6j1OiRi+KR+5TePuMqjUl1Q==}
+  '@farcaster/frame-node@0.0.18':
+    resolution: {integrity: sha512-MBx8NDQTs/RLK6oZ5s7SnonK98mqyOAm7iYk9WMrFCvNILSrhNX86GaL7mrU0CHw9tmHSMFcvzmGR0GSi4V4XQ==}
 
   '@farcaster/frame-sdk@0.0.29':
     resolution: {integrity: sha512-Veom3+tPTOlzKmCSQoZgMG8pe+E95SzB2uK6DP9b7lMSvSQ2Q1eavB8sF3G7IeAqHlAot8GZ2ayF0uRKWqaonA==}
@@ -10888,13 +10885,6 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@farcaster/frame-core@0.0.28(typescript@5.7.3)':
-    dependencies:
-      ox: 0.4.4(typescript@5.7.3)(zod@3.24.2)
-      zod: 3.24.2
-    transitivePeerDependencies:
-      - typescript
-
   '@farcaster/frame-core@0.0.29(typescript@5.7.3)':
     dependencies:
       ox: 0.4.4(typescript@5.7.3)(zod@3.24.2)
@@ -10902,9 +10892,9 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@farcaster/frame-node@0.0.17(typescript@5.7.3)':
+  '@farcaster/frame-node@0.0.18(typescript@5.7.3)':
     dependencies:
-      '@farcaster/frame-core': 0.0.28(typescript@5.7.3)
+      '@farcaster/frame-core': 0.0.29(typescript@5.7.3)
       '@noble/curves': 1.8.1
       ox: 0.4.4(typescript@5.7.3)(zod@3.24.2)
       zod: 3.24.2
