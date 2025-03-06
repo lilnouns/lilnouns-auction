@@ -11,7 +11,7 @@ import { mainnet, sepolia } from 'wagmi/chains'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createConfig, http, WagmiProvider } from 'wagmi'
 
-import { frameConnector } from '@/connectors/frames-connector'
+import { farcasterFrame } from '@farcaster/frame-wagmi-connector'
 
 import {
   coinbaseWallet,
@@ -55,7 +55,7 @@ const config = createConfig({
       appName: `Lil Nouns Auction`,
     }),
     safe(),
-    frameConnector(),
+    farcasterFrame(),
   ],
   transports,
 })
