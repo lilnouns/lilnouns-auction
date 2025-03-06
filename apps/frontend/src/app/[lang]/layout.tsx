@@ -47,7 +47,7 @@ export default async function RootLayout({
   initLingui(lang)
 
   return (
-    <html lang={lang} className="dark">
+    <html lang={lang} suppressHydrationWarning>
       <body
         className={cn(
           'min-h-svh bg-background font-sans antialiased',
