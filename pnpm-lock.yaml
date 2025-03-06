@@ -428,6 +428,9 @@ importers:
       eslint-plugin-regexp:
         specifier: 2.7.0
         version: 2.7.0(eslint@9.21.0(jiti@2.4.2))
+      eslint-plugin-tailwindcss:
+        specifier: 4.0.0-alpha.0
+        version: 4.0.0-alpha.0(jiti@2.4.2)(typescript@5.7.3)
       eslint-plugin-turbo:
         specifier: 2.4.4
         version: 2.4.4(eslint@9.21.0(jiti@2.4.2))(turbo@2.4.4)
@@ -5443,6 +5446,12 @@ packages:
     engines: {node: ^18 || >=20}
     peerDependencies:
       eslint: '>=9.0.0'
+
+  eslint-plugin-tailwindcss@4.0.0-alpha.0:
+    resolution: {integrity: sha512-0903c/da8CP5AlHWsmHRFq/YxGdcRgSg4AzvLKXHhnPN/f7wP0/RHYaaIVcJcoEF6NUZ2gTeui7Qhi34wn01Og==}
+    engines: {node: '>=20.10.0'}
+    peerDependencies:
+      tailwindcss: next
 
   eslint-plugin-turbo@2.4.4:
     resolution: {integrity: sha512-myEnQTjr3FkI0j1Fu0Mqnv1z8n0JW5iFTOUNzHaEevjzl+1uzMSsFwks/x8i3rGmI3EYtC1BY8K2B2pS0Vfx6w==}
@@ -15696,6 +15705,16 @@ snapshots:
       refa: 0.12.1
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
+
+  eslint-plugin-tailwindcss@4.0.0-alpha.0(jiti@2.4.2)(typescript@5.7.3):
+    dependencies:
+      '@typescript-eslint/types': 7.18.0
+      '@typescript-eslint/utils': 7.18.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)
+      eslint: 9.21.0(jiti@2.4.2)
+    transitivePeerDependencies:
+      - jiti
+      - supports-color
+      - typescript
 
   eslint-plugin-turbo@2.4.4(eslint@9.21.0(jiti@2.4.2))(turbo@2.4.4):
     dependencies:
