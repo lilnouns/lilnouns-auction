@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.23] - 2025-03-06
+
+### Features
+
+- Use `asChild` prop in `DrawerTrigger`
+
+### Refactor
+
+- Replace size classes with `size-4`
+
 ## [1.2.0-alpha.22] - 2025-03-06
 
 ### Bug Fixes
