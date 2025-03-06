@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.22] - 2025-03-06
+
+### Bug Fixes
+
+- Add `suppressHydrationWarning` to `html` tag
+
+### Refactor
+
+- Rename `nextJsConfig` to `config`
+- Replace `frameConnector` with `farcasterFrame`
+
+### Miscellaneous Tasks
+
+- Add `turbo.json` configuration
+- Add `turbo.json` configuration
+- Update eslint config to use new import
+
 ## [1.2.0-alpha.21] - 2025-03-04
 
 ### Bug Fixes
