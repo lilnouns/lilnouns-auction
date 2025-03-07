@@ -335,8 +335,8 @@ importers:
         specifier: 15.1.7
         version: 15.1.7(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)
       eslint-plugin-next-on-pages:
-        specifier: 1.13.8
-        version: 1.13.8(eslint@9.21.0(jiti@2.4.2))
+        specifier: 1.13.9
+        version: 1.13.9(eslint@9.21.0(jiti@2.4.2))
       is-ci:
         specifier: 4.1.0
         version: 4.1.0
@@ -5403,8 +5403,8 @@ packages:
     peerDependencies:
       eslint: '>=9.0.0'
 
-  eslint-plugin-next-on-pages@1.13.8:
-    resolution: {integrity: sha512-zQS2dlStpT7lUqaB4+wFByf4Z/HuXY56s+T9UqR07WKkILlMOibAvPyw+trwOhp043DEr78uRI8dmodD//TA6A==}
+  eslint-plugin-next-on-pages@1.13.9:
+    resolution: {integrity: sha512-jXX7zcoEEYcpgun2WTFcjNVFXo6SpwcbuW1wVGOIcacUfmorD55fweR6yvCRnp+4SpeVZSIPrcknfZdsDiCP7w==}
     peerDependencies:
       eslint: '>=9.0.0'
 
@@ -8785,8 +8785,8 @@ packages:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
 
-  terser-webpack-plugin@5.3.13:
-    resolution: {integrity: sha512-JG3pBixF6kx2o0Yfz2K6pqh72DpwTI08nooHd06tcj5WyIt5SsSiUYqRT+kemrGUNSuSzVhwfZ28aO8gogajNQ==}
+  terser-webpack-plugin@5.3.14:
+    resolution: {integrity: sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       '@swc/core': '*'
@@ -15642,7 +15642,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-next-on-pages@1.13.8(eslint@9.21.0(jiti@2.4.2)):
+  eslint-plugin-next-on-pages@1.13.9(eslint@9.21.0(jiti@2.4.2)):
     dependencies:
       '@types/estree-jsx': 1.0.5
       comment-parser: 1.4.1
@@ -19485,7 +19485,7 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
-  terser-webpack-plugin@5.3.13(esbuild@0.25.0)(webpack@5.97.1(esbuild@0.25.0)):
+  terser-webpack-plugin@5.3.14(esbuild@0.25.0)(webpack@5.97.1(esbuild@0.25.0)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
@@ -20167,7 +20167,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.13(esbuild@0.25.0)(webpack@5.97.1(esbuild@0.25.0))
+      terser-webpack-plugin: 5.3.14(esbuild@0.25.0)(webpack@5.97.1(esbuild@0.25.0))
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
