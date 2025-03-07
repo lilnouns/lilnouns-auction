@@ -229,8 +229,8 @@ importers:
         specifier: 2.21.0
         version: 2.21.0
       swr:
-        specifier: 2.3.2
-        version: 2.3.2(react@19.0.0)
+        specifier: 2.3.3
+        version: 2.3.3(react@19.0.0)
       tailwind-merge:
         specifier: 3.0.2
         version: 3.0.2
@@ -8737,8 +8737,8 @@ packages:
   swap-case@2.0.2:
     resolution: {integrity: sha512-kc6S2YS/2yXbtkSMunBtKdah4VFETZ8Oh6ONSmSd9bRxhqTrtARUCBUiWXH3xVPpvR7tz2CSnkuXVE42EcGnMw==}
 
-  swr@2.3.2:
-    resolution: {integrity: sha512-RosxFpiabojs75IwQ316DGoDRmOqtiAj0tg8wCcbEu4CiLZBs/a9QNtHV7TUfDXmmlgqij/NqzKq/eLelyv9xA==}
+  swr@2.3.3:
+    resolution: {integrity: sha512-dshNvs3ExOqtZ6kJBaAsabhPdHyeY4P2cKwRCniDVifBMoG/SVI7tfLWqPXriVspf2Rg4tPzXJTnwaihIeFw2A==}
     peerDependencies:
       react: '>=19.0.0'
 
@@ -19391,7 +19391,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  swr@2.3.2(react@19.0.0):
+  swr@2.3.3(react@19.0.0):
     dependencies:
       dequal: 2.0.3
       react: 19.0.0
