@@ -63,10 +63,6 @@ msgstr "glasses"
 msgid "Glasses"
 msgstr "Glasses"
 
-#: src/components/language-switcher.tsx
-msgid "Arabic"
-msgstr "Arabic"
-
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -75,10 +71,6 @@ msgstr "Buy Now for {0} ETH"
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
 msgstr "Buying..."
-
-#: src/components/language-switcher.tsx
-msgid "Chinese"
-msgstr "Chinese"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -122,29 +114,13 @@ msgstr "Error"
 msgid "Filter Auctions"
 msgstr "Filter Auctions"
 
-#: src/components/language-switcher.tsx
-msgid "French"
-msgstr "French"
-
-#: src/components/language-switcher.tsx
-msgid "German"
-msgstr "German"
-
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "Hide Details"
 
 #: src/components/language-switcher.tsx
-msgid "Indonesian"
-msgstr "Indonesian"
-
-#: src/components/language-switcher.tsx
 msgid "Italian"
 msgstr "Italian"
-
-#: src/components/language-switcher.tsx
-msgid "Japanese"
-msgstr "Japanese"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -198,10 +174,6 @@ msgstr "Portuguese"
 msgid "Refresh"
 msgstr "Refresh"
 
-#: src/components/language-switcher.tsx
-msgid "Russian"
-msgstr "Russian"
-
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
@@ -239,10 +211,6 @@ msgstr "There are no Nouns available to display."
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "Toggle theme"
-
-#: src/components/language-switcher.tsx
-msgid "Turkish"
-msgstr "Turkish"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
