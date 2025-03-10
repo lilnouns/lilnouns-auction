@@ -63,10 +63,6 @@ msgstr "안경"
 msgid "Glasses"
 msgstr "안경"
 
-#: src/components/language-switcher.tsx
-msgid "Arabic"
-msgstr ""
-
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -75,10 +71,6 @@ msgstr "{0} ETH에 즉시 구매"
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
 msgstr "구매 중..."
-
-#: src/components/language-switcher.tsx
-msgid "Chinese"
-msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -122,28 +114,12 @@ msgstr "오류"
 msgid "Filter Auctions"
 msgstr "경매 필터"
 
-#: src/components/language-switcher.tsx
-msgid "French"
-msgstr ""
-
-#: src/components/language-switcher.tsx
-msgid "German"
-msgstr ""
-
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "세부 정보 숨기기"
 
 #: src/components/language-switcher.tsx
-msgid "Indonesian"
-msgstr ""
-
-#: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
-
-#: src/components/language-switcher.tsx
-msgid "Japanese"
 msgstr ""
 
 #: src/components/mode-toggle.tsx
@@ -198,10 +174,6 @@ msgstr ""
 msgid "Refresh"
 msgstr "새로 고침"
 
-#: src/components/language-switcher.tsx
-msgid "Russian"
-msgstr ""
-
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
@@ -239,10 +211,6 @@ msgstr "표시할 나운이 없습니다."
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "테마 전환"
-
-#: src/components/language-switcher.tsx
-msgid "Turkish"
-msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
