@@ -68,12 +68,12 @@ export function AuctionSeedDialog({
     buyNow,
     isSuccess: isSuccessBuyNow,
     isPending: isPendingBuyNow,
-    data: hash,
+    data: txHash,
   } = useBuyNow()
   const { price } = useNextNoun()
 
   const { isLoading: isConfirming, isSuccess: isConfirmed } =
-    useWaitForTransactionReceipt({ hash })
+    useWaitForTransactionReceipt({ hash: txHash })
 
   const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
   const isWrongChain = chainId !== correctChainId
@@ -158,10 +158,10 @@ export function AuctionSeedDialog({
       )
     }
 
-    if (isSuccessBuyNow && hash) {
+    if (isSuccessBuyNow && txHash) {
       return (
         <Link
-          href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${hash}`}
+          href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${txHash}`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full"
