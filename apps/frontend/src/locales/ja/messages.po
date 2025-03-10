@@ -11,62 +11,57 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "background"
-msgstr ""
+msgstr "背景"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Background"
-msgstr ""
+msgstr "背景"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "body"
-msgstr ""
+msgstr "ボディ"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Body"
-msgstr ""
+msgstr "ボディ"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "accessory"
-msgstr ""
+msgstr "アクセサリー"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Accessory"
-msgstr ""
+msgstr "アクセサリー"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "head"
-msgstr ""
+msgstr "ヘッド"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Head"
-msgstr ""
+msgstr "ヘッド"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "glasses"
-msgstr ""
+msgstr "メガネ"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Glasses"
-msgstr ""
-
-#. placeholder {0}: 'use client' import { useLocaleSwitcher } from '@/hooks/use-locale-switcher' import { clsxm } from '@/utils' import { availableLocales, getLocaleName } from '@/utils/locales' import { Menu, Transition } from '@headlessui/react' import { LanguageIcon } from '@heroicons/react/24/outline' import { Trans, useLingui } from '@lingui/react/macro' import clsx from 'clsx' import { Fragment } from 'react' type LocalSwitcherProps = { className?: string } const LocaleSwitcher = ({ className }: LocalSwitcherProps) => { const { t } = useLingui() const { changeLocale } = useLocaleSwitcher() return ( <Menu as="div" className={clsxm( 'relative inline-block ltr:text-left rtl:text-right', className, )} > <div> <Menu.Button className="flex items-center"> <span className="sr-only"> <Trans>{t`Open options`}</Trans> </span> <LanguageIcon className="size-7" aria-hidden="true" /> </Menu.Button> </div> <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95" > <Menu.Items className="absolute z-10 mt-2 w-32 rounded-md border border-gray-900 ring-1 ring-black/5 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left dark:border-white"> <div className="py-1"> {availableLocales.map((locale) => ( <Menu.Item key={locale}> {({ active }) => ( <div role="button" className={clsx( active ? 'bg-gray-100 text-gray-900' : 'text-gray-700 dark:text-white', 'block cursor-pointer px-4 py-2 text-sm', )} onClick={() => { changeLocale(locale) }} > {getLocaleName(locale)} </div> )} </Menu.Item> ))} </div> </Menu.Items> </Transition> </Menu> ) } export default LocaleSwitcher 
-#: src/components/locale-switcher.tsx
-msgid "{0}"
-msgstr ""
+msgstr "メガネ"
 
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
@@ -80,7 +75,7 @@ msgstr "購入中..."
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Close"
-msgstr ""
+msgstr "閉じる"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -95,7 +90,7 @@ msgstr "利用可能なウォレットプロバイダーのいずれかに接続
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
-msgstr ""
+msgstr "ダーク"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
@@ -113,11 +108,11 @@ msgstr "オークションをフィルター"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
-msgstr ""
+msgstr "詳細を隠す"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
-msgstr ""
+msgstr "ライト"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
@@ -140,7 +135,7 @@ msgstr "現在のフィルター条件に一致する Noun はありません。
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
-msgstr ""
+msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
@@ -151,22 +146,18 @@ msgstr "Noun {nounId} | Lil Nouns オークション"
 msgid "Noun Details"
 msgstr "Noun の詳細"
 
-#: src/components/locale-switcher.tsx
-msgid "Open options"
-msgstr "オプションを開く"
-
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr ""
+msgstr "ページを更新するか、問題が解決しない場合はサポートに連絡してください。"
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
-msgstr ""
+msgstr "更新"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr ""
+msgstr "{0} を選択"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -175,11 +166,11 @@ msgstr "オークションのリストをフィルタリングする特性を選
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr ""
+msgstr "詳細を表示"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr ""
+msgstr "問題が発生しました"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -187,7 +178,7 @@ msgstr "ネットワークを切り替え"
 
 #: src/components/mode-toggle.tsx
 msgid "System"
-msgstr ""
+msgstr "システム"
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
@@ -195,7 +186,7 @@ msgstr "表示可能な Noun はありません。"
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
-msgstr ""
+msgstr "テーマを切り替え"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
