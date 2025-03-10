@@ -63,6 +63,10 @@ msgstr "चश्मा"
 msgid "Glasses"
 msgstr "चश्मा"
 
+#: src/components/language-switcher.tsx
+msgid "Arabic"
+msgstr ""
+
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -71,6 +75,10 @@ msgstr "अभी {0} ETH में खरीदें"
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
 msgstr "खरीदारी जारी..."
+
+#: src/components/language-switcher.tsx
+msgid "Chinese"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -100,6 +108,10 @@ msgstr "गहरा"
 msgid "Disconnect Wallet"
 msgstr "वॉलेट डिस्कनेक्ट करें"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -110,9 +122,29 @@ msgstr "त्रुटि"
 msgid "Filter Auctions"
 msgstr "नीलामी फ़िल्टर करें"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "German"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "विवरण छिपाएँ"
+
+#: src/components/language-switcher.tsx
+msgid "Indonesian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Japanese"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,9 +190,17 @@ msgstr ""
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "कृपया पृष्ठ को पुनः लोड करने का प्रयास करें या यदि समस्या बनी रहती है तो समर्थन से संपर्क करें।"
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "ताज़ा करें"
+
+#: src/components/language-switcher.tsx
+msgid "Russian"
+msgstr ""
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -180,6 +220,10 @@ msgstr "विवरण दिखाएँ"
 msgid "Something went wrong"
 msgstr "कुछ गलत हो गया"
 
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "नेटवर्क बदलें"
@@ -195,6 +239,10 @@ msgstr "प्रदर्शित करने के लिए कोई Noun
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "थीम बदलें"
+
+#: src/components/language-switcher.tsx
+msgid "Turkish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"

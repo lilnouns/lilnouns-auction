@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: zh-CN\n"
+"Language: zh\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -63,6 +63,10 @@ msgstr "眼镜"
 msgid "Glasses"
 msgstr "眼镜"
 
+#: src/components/language-switcher.tsx
+msgid "Arabic"
+msgstr ""
+
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -72,6 +76,10 @@ msgstr "立即购买 {0} ETH"
 msgid "Buying..."
 msgstr "购买中..."
 
+#: src/components/language-switcher.tsx
+msgid "Chinese"
+msgstr ""
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Close"
@@ -79,7 +87,7 @@ msgstr "关闭"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "确认中..."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -90,15 +98,19 @@ msgstr "连接钱包"
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
-msgstr "使用我们的可用钱包提供商之一进行连接。"
+msgstr "使用我们提供的钱包服务连接。"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
-msgstr "暗黑模式"
+msgstr "深色模式"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
-msgstr "断开钱包连接"
+msgstr "断开钱包"
+
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
 
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
@@ -110,13 +122,33 @@ msgstr "错误"
 msgid "Filter Auctions"
 msgstr "筛选拍卖"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "German"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "隐藏详情"
 
+#: src/components/language-switcher.tsx
+msgid "Indonesian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Japanese"
+msgstr ""
+
 #: src/components/mode-toggle.tsx
 msgid "Light"
-msgstr "亮色模式"
+msgstr "浅色模式"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
@@ -127,15 +159,15 @@ msgstr "Lil Nouns 拍卖"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
-msgstr "未找到 Noun ID。请刷新页面。"
+msgstr "未找到 Noun ID，请刷新页面。"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns Found"
-msgstr "未找到 Noun"
+msgstr "未找到 Nouns"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "没有符合您当前筛选条件的 Noun。请调整筛选条件。"
+msgstr "没有符合当前筛选条件的 Nouns，请尝试调整筛选条件。"
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -152,15 +184,23 @@ msgstr "Noun 详情"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "等待中..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "请尝试刷新页面或联系支持人员以解决问题。"
+msgstr "请尝试刷新页面，或在问题持续时联系支持。"
+
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "刷新"
+
+#: src/components/language-switcher.tsx
+msgid "Russian"
+msgstr ""
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -170,7 +210,7 @@ msgstr "选择 {0}"
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "选择特征以筛选拍卖列表"
+msgstr "选择特征来筛选拍卖列表"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
@@ -178,7 +218,11 @@ msgstr "显示详情"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr "发生错误"
+msgstr "出现问题"
+
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -186,15 +230,19 @@ msgstr "切换网络"
 
 #: src/components/mode-toggle.tsx
 msgid "System"
-msgstr "系统默认"
+msgstr "系统模式"
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr "没有可显示的 Noun。"
+msgstr "没有可显示的 Nouns。"
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "切换主题"
+
+#: src/components/language-switcher.tsx
+msgid "Turkish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -216,4 +264,4 @@ msgstr "钱包已连接"
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
-msgstr "您的钱包已连接。在下方管理您的钱包连接。"
+msgstr "您的钱包已连接，可在下方管理钱包连接。"

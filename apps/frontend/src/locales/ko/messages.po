@@ -63,6 +63,10 @@ msgstr "안경"
 msgid "Glasses"
 msgstr "안경"
 
+#: src/components/language-switcher.tsx
+msgid "Arabic"
+msgstr ""
+
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -71,6 +75,10 @@ msgstr "{0} ETH에 즉시 구매"
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
 msgstr "구매 중..."
+
+#: src/components/language-switcher.tsx
+msgid "Chinese"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -100,6 +108,10 @@ msgstr "다크 모드"
 msgid "Disconnect Wallet"
 msgstr "지갑 연결 해제"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -110,9 +122,29 @@ msgstr "오류"
 msgid "Filter Auctions"
 msgstr "경매 필터"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "German"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "세부 정보 숨기기"
+
+#: src/components/language-switcher.tsx
+msgid "Indonesian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Japanese"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,9 +190,17 @@ msgstr ""
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "페이지를 새로 고침하거나 문제가 지속되면 지원팀에 문의하세요."
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "새로 고침"
+
+#: src/components/language-switcher.tsx
+msgid "Russian"
+msgstr ""
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -180,6 +220,10 @@ msgstr "세부 정보 보기"
 msgid "Something went wrong"
 msgstr "문제가 발생했습니다"
 
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "네트워크 전환"
@@ -195,6 +239,10 @@ msgstr "표시할 나운이 없습니다."
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "테마 전환"
+
+#: src/components/language-switcher.tsx
+msgid "Turkish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"

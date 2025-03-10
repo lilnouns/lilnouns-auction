@@ -63,6 +63,10 @@ msgstr "แว่นตา"
 msgid "Glasses"
 msgstr "แว่นตา"
 
+#: src/components/language-switcher.tsx
+msgid "Arabic"
+msgstr ""
+
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -71,6 +75,10 @@ msgstr "ซื้อเลยในราคา {0} ETH"
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
 msgstr "กำลังซื้อ..."
+
+#: src/components/language-switcher.tsx
+msgid "Chinese"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -100,6 +108,10 @@ msgstr "โหมดมืด"
 msgid "Disconnect Wallet"
 msgstr "ยกเลิกการเชื่อมต่อกระเป๋าเงิน"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -110,9 +122,29 @@ msgstr "ข้อผิดพลาด"
 msgid "Filter Auctions"
 msgstr "กรองการประมูล"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "German"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "ซ่อนรายละเอียด"
+
+#: src/components/language-switcher.tsx
+msgid "Indonesian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Japanese"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,9 +190,17 @@ msgstr ""
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr ""
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "รีเฟรช"
+
+#: src/components/language-switcher.tsx
+msgid "Russian"
+msgstr ""
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -180,6 +220,10 @@ msgstr ""
 msgid "Something went wrong"
 msgstr ""
 
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "สลับเครือข่าย"
@@ -195,6 +239,10 @@ msgstr "ไม่มี Nouns ให้แสดง"
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "สลับธีม"
+
+#: src/components/language-switcher.tsx
+msgid "Turkish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
