@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: es\n"
+"Language: tr\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -13,158 +13,199 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 'use client' import { useLocaleSwitcher } from '@/hooks/use-locale-switcher' import { clsxm } from '@/utils' import { availableLocales, getLocaleName } from '@/utils/locales' import { Menu, Transition } from '@headlessui/react' import { LanguageIcon } from '@heroicons/react/24/outline' import {Trans, useLingui} from '@lingui/react/macro' import clsx from 'clsx' import { Fragment } from 'react' type LocalSwitcherProps = { className?: string } const LocaleSwitcher = ({ className }: LocalSwitcherProps) => { const { t } = useLingui() const { changeLocale } = useLocaleSwitcher() return ( <Menu as="div" className={clsxm( 'relative inline-block ltr:text-left rtl:text-right', className, )} > <div> <Menu.Button className="flex items-center"> <span className="sr-only"> <Trans>{t`Open options`}</Trans> </span> <LanguageIcon className="size-7" aria-hidden="true" /> </Menu.Button> </div> <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95" > <Menu.Items className="absolute z-10 mt-2 w-32 rounded-md border border-gray-900 ring-1 ring-black/5 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left dark:border-white"> <div className="py-1"> {availableLocales.map((locale) => ( <Menu.Item key={locale}> {({ active }) => ( <div role="button" className={clsx( active ? 'bg-gray-100 text-gray-900' : 'text-gray-700 dark:text-white', 'block cursor-pointer px-4 py-2 text-sm', )} onClick={() => { changeLocale(locale) }} > {getLocaleName(locale)} </div> )} </Menu.Item> ))} </div> </Menu.Items> </Transition> </Menu> ) } export default LocaleSwitcher 
-#: src/components/locale-switcher.tsx
-msgid "{0}"
-msgstr ""
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "background"
+msgstr "arka plan"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Background"
+msgstr "Arka Plan"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "body"
+msgstr "gövde"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Body"
+msgstr "Gövde"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "accessory"
+msgstr "aksesuar"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Accessory"
+msgstr "Aksesuar"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "head"
+msgstr "baş"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Head"
+msgstr "Baş"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "glasses"
+msgstr "gözlük"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Glasses"
+msgstr "Gözlük"
 
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
-msgstr "Comprar ahora por {0} ETH"
+msgstr "Şimdi {0} ETH karşılığında satın al"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
-msgstr "Comprando..."
+msgstr "Satın alınıyor..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Connect Wallet"
-msgstr "Conectar Billetera"
+msgstr "Cüzdanı Bağla"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
-msgstr "Conéctate con uno de nuestros proveedores de billeteras disponibles."
+msgstr "Mevcut cüzdan sağlayıcılarımızdan biriyle bağlanın."
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
-msgstr ""
+msgstr "Karanlık"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
-msgstr "Desconectar Billetera"
+msgstr "Cüzdan Bağlantısını Kes"
 
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
-msgstr "Error"
+msgstr "Hata"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
-msgstr "Filtrar Subastas"
+msgstr "Açık Artırmaları Filtrele"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
-msgstr ""
+msgstr "Detayları Gizle"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
-msgstr ""
+msgstr "Aydınlık"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/layout.tsx
 msgid "Lil Nouns Auction"
-msgstr "Subasta de Lil Nouns"
+msgstr "Lil Nouns Açık Artırması"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
-msgstr "No se encontró el ID del Noun. Por favor, actualiza la página."
+msgstr "Noun kimliği bulunamadı. Lütfen sayfayı yenileyin."
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns Found"
-msgstr "No se encontraron Nouns"
+msgstr "Hiç Noun bulunamadı"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "Ningún Noun coincide con tus criterios de filtro actuales. Intenta ajustar tus filtros."
+msgstr "Geçerli filtre kriterlerinize uygun Noun bulunamadı. Filtrelerinizi ayarlamayı deneyin."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
-msgstr ""
+msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Subasta de Lil Nouns"
+msgstr "Noun {nounId} | Lil Nouns Açık Artırması"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
-msgstr ""
-
-#: src/components/locale-switcher.tsx
-msgid "Open options"
-msgstr ""
+msgstr "Noun Detayları"
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr ""
+msgstr "Lütfen sayfayı yenilemeyi deneyin veya sorun devam ederse destek ile iletişime geçin."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
-msgstr ""
+msgstr "Yenile"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr ""
+msgstr "{0} seç"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr ""
+msgstr "Açık artırma listelerini filtrelemek için özellikleri seçin"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr ""
+msgstr "Detayları Göster"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr ""
+msgstr "Bir şeyler ters gitti"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
-msgstr ""
+msgstr "Ağı Değiştir"
 
 #: src/components/mode-toggle.tsx
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr ""
+msgstr "Görüntülenecek Noun bulunmuyor."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
-msgstr ""
+msgstr "Temayı Değiştir"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
-msgstr ""
+msgstr "Özellikleri ve fiyatlandırmayı görüntüle"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
-msgstr ""
+msgstr "Bu Noun için özellikleri ve fiyatlandırmayı görüntüle"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"
-msgstr ""
+msgstr "İşlemi Görüntüle"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
-msgstr ""
+msgstr "Cüzdan Bağlandı"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
-msgstr ""
+msgstr "Cüzdanınız bağlandı. Aşağıdan bağlantınızı yönetin."

@@ -13,10 +13,55 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 'use client' import { useLocaleSwitcher } from '@/hooks/use-locale-switcher' import { clsxm } from '@/utils' import { availableLocales, getLocaleName } from '@/utils/locales' import { Menu, Transition } from '@headlessui/react' import { LanguageIcon } from '@heroicons/react/24/outline' import {Trans, useLingui} from '@lingui/react/macro' import clsx from 'clsx' import { Fragment } from 'react' type LocalSwitcherProps = { className?: string } const LocaleSwitcher = ({ className }: LocalSwitcherProps) => { const { t } = useLingui() const { changeLocale } = useLocaleSwitcher() return ( <Menu as="div" className={clsxm( 'relative inline-block ltr:text-left rtl:text-right', className, )} > <div> <Menu.Button className="flex items-center"> <span className="sr-only"> <Trans>{t`Open options`}</Trans> </span> <LanguageIcon className="size-7" aria-hidden="true" /> </Menu.Button> </div> <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95" > <Menu.Items className="absolute z-10 mt-2 w-32 rounded-md border border-gray-900 ring-1 ring-black/5 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left dark:border-white"> <div className="py-1"> {availableLocales.map((locale) => ( <Menu.Item key={locale}> {({ active }) => ( <div role="button" className={clsx( active ? 'bg-gray-100 text-gray-900' : 'text-gray-700 dark:text-white', 'block cursor-pointer px-4 py-2 text-sm', )} onClick={() => { changeLocale(locale) }} > {getLocaleName(locale)} </div> )} </Menu.Item> ))} </div> </Menu.Items> </Transition> </Menu> ) } export default LocaleSwitcher 
-#: src/components/locale-switcher.tsx
-msgid "{0}"
-msgstr ""
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "background"
+msgstr "背景"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Background"
+msgstr "背景"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "body"
+msgstr "身体"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Body"
+msgstr "身体"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "accessory"
+msgstr "配饰"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Accessory"
+msgstr "配饰"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "head"
+msgstr "头部"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Head"
+msgstr "头部"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "glasses"
+msgstr "眼镜"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Glasses"
+msgstr "眼镜"
 
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
@@ -30,7 +75,7 @@ msgstr "购买中..."
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -45,7 +90,7 @@ msgstr "使用我们的可用钱包提供商之一进行连接。"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
-msgstr ""
+msgstr "暗黑模式"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
@@ -63,11 +108,11 @@ msgstr "筛选拍卖"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
-msgstr ""
+msgstr "隐藏详情"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
-msgstr ""
+msgstr "亮色模式"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
@@ -90,7 +135,7 @@ msgstr "没有符合您当前筛选条件的 Noun。请调整筛选条件。"
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
-msgstr ""
+msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
@@ -99,72 +144,68 @@ msgstr "Noun {nounId} | Lil Nouns 拍卖"
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
-msgstr ""
-
-#: src/components/locale-switcher.tsx
-msgid "Open options"
-msgstr ""
+msgstr "Noun 详情"
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr ""
+msgstr "请尝试刷新页面或联系支持人员以解决问题。"
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
-msgstr ""
+msgstr "刷新"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr ""
+msgstr "选择 {0}"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr ""
+msgstr "选择特征以筛选拍卖列表"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr ""
+msgstr "显示详情"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr ""
+msgstr "发生错误"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
-msgstr ""
+msgstr "切换网络"
 
 #: src/components/mode-toggle.tsx
 msgid "System"
-msgstr ""
+msgstr "系统默认"
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr ""
+msgstr "没有可显示的 Noun。"
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
-msgstr ""
+msgstr "切换主题"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
-msgstr ""
+msgstr "查看特征和价格"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
-msgstr ""
+msgstr "查看此 Noun 的特征和价格"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"
-msgstr ""
+msgstr "查看交易"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
-msgstr ""
+msgstr "钱包已连接"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
-msgstr ""
+msgstr "您的钱包已连接。在下方管理您的钱包连接。"

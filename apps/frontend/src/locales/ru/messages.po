@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: en\n"
+"Language: ru\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -16,196 +16,196 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "background"
-msgstr "ƀȧƈķɠřǿŭƞḓ"
+msgstr "фон"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Background"
-msgstr "Ɓȧƈķɠřǿŭƞḓ"
+msgstr "Фон"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "body"
-msgstr "ƀǿḓẏ"
+msgstr "тело"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Body"
-msgstr "Ɓǿḓẏ"
+msgstr "Тело"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "accessory"
-msgstr "ȧƈƈḗşşǿřẏ"
+msgstr "аксессуар"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Accessory"
-msgstr "Ȧƈƈḗşşǿřẏ"
+msgstr "Аксессуар"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "head"
-msgstr "ħḗȧḓ"
+msgstr "голова"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Head"
-msgstr "Ħḗȧḓ"
+msgstr "Голова"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "glasses"
-msgstr "ɠŀȧşşḗş"
+msgstr "очки"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Glasses"
-msgstr "Ɠŀȧşşḗş"
+msgstr "Очки"
 
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
-msgstr "Ɓŭẏ Ƞǿẇ ƒǿř {0} ḖŦĦ"
+msgstr "Купить сейчас за {0} ETH"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
-msgstr "Ɓŭẏīƞɠ..."
+msgstr "Покупка..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Close"
-msgstr "Ƈŀǿşḗ"
+msgstr "Закрыть"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Connect Wallet"
-msgstr "Ƈǿƞƞḗƈŧ Ẇȧŀŀḗŧ"
+msgstr "Подключить кошелек"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
-msgstr "Ƈǿƞƞḗƈŧ ẇīŧħ ǿƞḗ ǿƒ ǿŭř ȧṽȧīŀȧƀŀḗ ẇȧŀŀḗŧ ƥřǿṽīḓḗřş."
+msgstr "Подключитесь к одному из доступных провайдеров кошельков."
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
-msgstr "Ḓȧřķ"
+msgstr "Темный"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
-msgstr "Ḓīşƈǿƞƞḗƈŧ Ẇȧŀŀḗŧ"
+msgstr "Отключить кошелек"
 
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
-msgstr "Ḗřřǿř"
+msgstr "Ошибка"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
-msgstr "Ƒīŀŧḗř Ȧŭƈŧīǿƞş"
+msgstr "Фильтр аукционов"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
-msgstr "Ħīḓḗ Ḓḗŧȧīŀş"
+msgstr "Скрыть детали"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
-msgstr "Ŀīɠħŧ"
+msgstr "Светлый"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/layout.tsx
 msgid "Lil Nouns Auction"
-msgstr "Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
+msgstr "Аукцион Lil Nouns"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
-msgstr "Ƞǿ Ƞǿŭƞ ĪḒ ƒǿŭƞḓ. Ƥŀḗȧşḗ řḗƒřḗşħ ŧħḗ ƥȧɠḗ."
+msgstr "ID Noun не найден. Обновите страницу."
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns Found"
-msgstr "Ƞǿ Ƞǿŭƞş Ƒǿŭƞḓ"
+msgstr "Nouns не найдены"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "Ƞǿ Ƞǿŭƞş ḿȧŧƈħ ẏǿŭř ƈŭřřḗƞŧ ƒīŀŧḗř ƈřīŧḗřīȧ. Ŧřẏ ȧḓĵŭşŧīƞɠ ẏǿŭř ƒīŀŧḗřş."
+msgstr "Нет Nouns, соответствующих текущим критериям фильтра. Попробуйте изменить фильтры."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
-msgstr "Ƞǿŭƞ"
+msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Ƞǿŭƞ {ƞǿŭƞĪḓ} | Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
+msgstr "Noun {nounId} | Аукцион Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
-msgstr "Ƞǿŭƞ Ḓḗŧȧīŀş"
+msgstr "Детали Noun"
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "Ƥŀḗȧşḗ ŧřẏ řḗƒřḗşħīƞɠ ŧħḗ ƥȧɠḗ ǿř ƈǿƞŧȧƈŧ şŭƥƥǿřŧ īƒ ŧħḗ īşşŭḗ ƥḗřşīşŧş."
+msgstr "Попробуйте обновить страницу или обратитесь в поддержку, если проблема сохраняется."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
-msgstr "Řḗƒřḗşħ"
+msgstr "Обновить"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr "Şḗŀḗƈŧ {0}"
+msgstr "Выбрать {0}"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "Şḗŀḗƈŧ ŧřȧīŧş ŧǿ ƒīŀŧḗř ŧħḗ ȧŭƈŧīǿƞ ŀīşŧīƞɠş"
+msgstr "Выберите характеристики для фильтрации списка аукционов"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr "Şħǿẇ Ḓḗŧȧīŀş"
+msgstr "Показать детали"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr "Şǿḿḗŧħīƞɠ ẇḗƞŧ ẇřǿƞɠ"
+msgstr "Что-то пошло не так"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
-msgstr "Şẇīŧƈħ Ƞḗŧẇǿřķ"
+msgstr "Сменить сеть"
 
 #: src/components/mode-toggle.tsx
 msgid "System"
-msgstr "Şẏşŧḗḿ"
+msgstr "Система"
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr "Ŧħḗřḗ ȧřḗ ƞǿ Ƞǿŭƞş ȧṽȧīŀȧƀŀḗ ŧǿ ḓīşƥŀȧẏ."
+msgstr "Нет доступных Nouns для отображения."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
-msgstr "Ŧǿɠɠŀḗ ŧħḗḿḗ"
+msgstr "Переключить тему"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
-msgstr "Ṽīḗẇ ŧřȧīŧş ȧƞḓ ƥřīƈīƞɠ"
+msgstr "Просмотреть характеристики и цены"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
-msgstr "Ṽīḗẇ ŧřȧīŧş ȧƞḓ ƥřīƈīƞɠ ƒǿř ŧħīş Ƞǿŭƞ"
+msgstr "Просмотреть характеристики и цены для этого Noun"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"
-msgstr "Ṽīḗẇ Ŧřȧƞşȧƈŧīǿƞ"
+msgstr "Просмотреть транзакцию"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
-msgstr "Ẇȧŀŀḗŧ Ƈǿƞƞḗƈŧḗḓ"
+msgstr "Кошелек подключен"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
-msgstr "Ẏǿŭř ẇȧŀŀḗŧ īş ƈǿƞƞḗƈŧḗḓ. Ḿȧƞȧɠḗ ẏǿŭř ẇȧŀŀḗŧ ƈǿƞƞḗƈŧīǿƞ ƀḗŀǿẇ."
+msgstr "Ваш кошелек подключен. Управляйте подключением ниже."

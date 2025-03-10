@@ -13,10 +13,55 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. placeholder {0}: 'use client' import { useLocaleSwitcher } from '@/hooks/use-locale-switcher' import { clsxm } from '@/utils' import { availableLocales, getLocaleName } from '@/utils/locales' import { Menu, Transition } from '@headlessui/react' import { LanguageIcon } from '@heroicons/react/24/outline' import {Trans, useLingui} from '@lingui/react/macro' import clsx from 'clsx' import { Fragment } from 'react' type LocalSwitcherProps = { className?: string } const LocaleSwitcher = ({ className }: LocalSwitcherProps) => { const { t } = useLingui() const { changeLocale } = useLocaleSwitcher() return ( <Menu as="div" className={clsxm( 'relative inline-block ltr:text-left rtl:text-right', className, )} > <div> <Menu.Button className="flex items-center"> <span className="sr-only"> <Trans>{t`Open options`}</Trans> </span> <LanguageIcon className="size-7" aria-hidden="true" /> </Menu.Button> </div> <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95" > <Menu.Items className="absolute z-10 mt-2 w-32 rounded-md border border-gray-900 ring-1 ring-black/5 focus:outline-none ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left dark:border-white"> <div className="py-1"> {availableLocales.map((locale) => ( <Menu.Item key={locale}> {({ active }) => ( <div role="button" className={clsx( active ? 'bg-gray-100 text-gray-900' : 'text-gray-700 dark:text-white', 'block cursor-pointer px-4 py-2 text-sm', )} onClick={() => { changeLocale(locale) }} > {getLocaleName(locale)} </div> )} </Menu.Item> ))} </div> </Menu.Items> </Transition> </Menu> ) } export default LocaleSwitcher 
-#: src/components/locale-switcher.tsx
-msgid "{0}"
-msgstr ""
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "background"
+msgstr "الخلفية"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Background"
+msgstr "الخلفية"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "body"
+msgstr "الجسم"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Body"
+msgstr "الجسم"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "accessory"
+msgstr "الإكسسوار"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Accessory"
+msgstr "الإكسسوار"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "head"
+msgstr "الرأس"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Head"
+msgstr "الرأس"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "glasses"
+msgstr "النظارات"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Glasses"
+msgstr "النظارات"
 
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
@@ -30,7 +75,7 @@ msgstr "جارٍ الشراء..."
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Close"
-msgstr ""
+msgstr "إغلاق"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -45,7 +90,7 @@ msgstr "اتصل بأحد مزودي المحافظ المتاحين لدينا.
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
-msgstr ""
+msgstr "داكن"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
@@ -63,11 +108,11 @@ msgstr "تصفية المزادات"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
-msgstr ""
+msgstr "إخفاء التفاصيل"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
-msgstr ""
+msgstr "فاتح"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
@@ -78,45 +123,41 @@ msgstr "مزاد ليل ناونز"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
-msgstr "لم يتم العثور على معرف نون. يرجى تحديث الصفحة."
+msgstr "لم يتم العثور على معرف  نان. يرجى تحديث الصفحة."
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns Found"
-msgstr "لم يتم العثور على أي نون"
+msgstr "لم يتم العثور على أي  نان"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "لا يوجد أي نون مطابق لمعايير التصفية الحالية. حاول ضبط المرشحات."
+msgstr "لا يوجد أي  نان مطابق لمعايير التصفية الحالية. حاول ضبط المرشحات."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
-msgstr ""
+msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "نون {nounId} | مزاد ليل ناونز"
+msgstr " نان {nounId} | مزاد ليل ناونز"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
-msgstr "تفاصيل النون"
-
-#: src/components/locale-switcher.tsx
-msgid "Open options"
-msgstr "فتح الخيارات"
+msgstr "تفاصيل ال نان"
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr ""
+msgstr "يرجى محاولة تحديث الصفحة أو الاتصال بالدعم إذا استمرت المشكلة."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
-msgstr ""
+msgstr "تحديث"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr ""
+msgstr "اختر {0}"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -125,11 +166,11 @@ msgstr "حدد السمات لتصفية قوائم المزاد"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr ""
+msgstr "إظهار التفاصيل"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr ""
+msgstr "حدث خطأ ما"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -137,15 +178,15 @@ msgstr "تبديل الشبكة"
 
 #: src/components/mode-toggle.tsx
 msgid "System"
-msgstr ""
+msgstr "النظام"
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr "لا توجد أي نونات متاحة للعرض."
+msgstr "لا توجد أي  نانات متاحة للعرض."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
-msgstr ""
+msgstr "تبديل السمة"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -153,7 +194,7 @@ msgstr "عرض السمات والتسعير"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
-msgstr "عرض السمات والتسعير لهذا النون"
+msgstr "عرض السمات والتسعير لهذا ال نان"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"

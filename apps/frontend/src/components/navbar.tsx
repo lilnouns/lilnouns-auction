@@ -67,19 +67,19 @@ const Navbar = () => {
 
   return (
     <nav className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex max-w-screen-xl items-center justify-between p-4">
+      <div className="mx-auto flex max-w-screen-xl items-center justify-between p-2">
         <Link href="/" className="flex items-center">
           <IconNoggles />
           <span className="hidden text-2xl font-semibold dark:text-white">
             {t`Lil Nouns Auction`}
           </span>
         </Link>
-        <div className="flex items-center space-x-2">
-          <ModeToggle />
-
+        <div className="flex gap-2">
           <AuctionFilterDialog />
 
           <WalletOptionsDialog />
+
+          <ModeToggle />
         </div>
       </div>
     </nav>

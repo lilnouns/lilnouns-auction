@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: en\n"
+"Language: th\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -16,196 +16,169 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "background"
-msgstr "ƀȧƈķɠřǿŭƞḓ"
+msgstr "พื้นหลัง"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Background"
-msgstr "Ɓȧƈķɠřǿŭƞḓ"
+msgstr "พื้นหลัง"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "body"
-msgstr "ƀǿḓẏ"
+msgstr "ร่างกาย"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Body"
-msgstr "Ɓǿḓẏ"
+msgstr "ร่างกาย"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "accessory"
-msgstr "ȧƈƈḗşşǿřẏ"
+msgstr "อุปกรณ์เสริม"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Accessory"
-msgstr "Ȧƈƈḗşşǿřẏ"
+msgstr "อุปกรณ์เสริม"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "head"
-msgstr "ħḗȧḓ"
+msgstr "ศีรษะ"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Head"
-msgstr "Ħḗȧḓ"
+msgstr "ศีรษะ"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "glasses"
-msgstr "ɠŀȧşşḗş"
+msgstr "แว่นตา"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Glasses"
-msgstr "Ɠŀȧşşḗş"
+msgstr "แว่นตา"
 
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
-msgstr "Ɓŭẏ Ƞǿẇ ƒǿř {0} ḖŦĦ"
+msgstr "ซื้อเลยในราคา {0} ETH"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
-msgstr "Ɓŭẏīƞɠ..."
+msgstr "กำลังซื้อ..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Close"
-msgstr "Ƈŀǿşḗ"
+msgstr "ปิด"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Connect Wallet"
-msgstr "Ƈǿƞƞḗƈŧ Ẇȧŀŀḗŧ"
+msgstr "เชื่อมต่อกระเป๋าเงิน"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
-msgstr "Ƈǿƞƞḗƈŧ ẇīŧħ ǿƞḗ ǿƒ ǿŭř ȧṽȧīŀȧƀŀḗ ẇȧŀŀḗŧ ƥřǿṽīḓḗřş."
+msgstr "เชื่อมต่อกับผู้ให้บริการกระเป๋าเงินที่มีอยู่ของเรา"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
-msgstr "Ḓȧřķ"
+msgstr "โหมดมืด"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
-msgstr "Ḓīşƈǿƞƞḗƈŧ Ẇȧŀŀḗŧ"
+msgstr "ยกเลิกการเชื่อมต่อกระเป๋าเงิน"
 
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
-msgstr "Ḗřřǿř"
+msgstr "ข้อผิดพลาด"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
-msgstr "Ƒīŀŧḗř Ȧŭƈŧīǿƞş"
+msgstr "กรองการประมูล"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
-msgstr "Ħīḓḗ Ḓḗŧȧīŀş"
+msgstr "ซ่อนรายละเอียด"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
-msgstr "Ŀīɠħŧ"
+msgstr "โหมดสว่าง"
 
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/layout.tsx
 msgid "Lil Nouns Auction"
-msgstr "Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
+msgstr "การประมูล Lil Nouns"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
-msgstr "Ƞǿ Ƞǿŭƞ ĪḒ ƒǿŭƞḓ. Ƥŀḗȧşḗ řḗƒřḗşħ ŧħḗ ƥȧɠḗ."
+msgstr "ไม่พบรหัส Noun กรุณารีเฟรชหน้าเว็บ"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns Found"
-msgstr "Ƞǿ Ƞǿŭƞş Ƒǿŭƞḓ"
+msgstr "ไม่พบ Nouns"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "Ƞǿ Ƞǿŭƞş ḿȧŧƈħ ẏǿŭř ƈŭřřḗƞŧ ƒīŀŧḗř ƈřīŧḗřīȧ. Ŧřẏ ȧḓĵŭşŧīƞɠ ẏǿŭř ƒīŀŧḗřş."
+msgstr "ไม่มี Nouns ที่ตรงกับตัวกรองปัจจุบันของคุณ ลองปรับตัวกรองดู"
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
-msgstr "Ƞǿŭƞ"
+msgstr "Noun"
 
-#: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Ƞǿŭƞ {ƞǿŭƞĪḓ} | Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
-
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
-msgstr "Ƞǿŭƞ Ḓḗŧȧīŀş"
-
-#: src/components/error-fallback.tsx
-msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "Ƥŀḗȧşḗ ŧřẏ řḗƒřḗşħīƞɠ ŧħḗ ƥȧɠḗ ǿř ƈǿƞŧȧƈŧ şŭƥƥǿřŧ īƒ ŧħḗ īşşŭḗ ƥḗřşīşŧş."
+msgstr "รายละเอียดของ Noun"
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
-msgstr "Řḗƒřḗşħ"
-
-#. placeholder {0}: label.toLowerCase()
-#: src/components/auction-trait-filter.tsx
-msgid "Select {0}"
-msgstr "Şḗŀḗƈŧ {0}"
-
-#: src/components/auction-filter-dialog.tsx
-#: src/components/auction-filter-dialog.tsx
-msgid "Select traits to filter the auction listings"
-msgstr "Şḗŀḗƈŧ ŧřȧīŧş ŧǿ ƒīŀŧḗř ŧħḗ ȧŭƈŧīǿƞ ŀīşŧīƞɠş"
-
-#: src/components/error-fallback.tsx
-msgid "Show Details"
-msgstr "Şħǿẇ Ḓḗŧȧīŀş"
-
-#: src/components/error-fallback.tsx
-msgid "Something went wrong"
-msgstr "Şǿḿḗŧħīƞɠ ẇḗƞŧ ẇřǿƞɠ"
+msgstr "รีเฟรช"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
-msgstr "Şẇīŧƈħ Ƞḗŧẇǿřķ"
+msgstr "สลับเครือข่าย"
 
 #: src/components/mode-toggle.tsx
 msgid "System"
-msgstr "Şẏşŧḗḿ"
+msgstr "ระบบ"
 
 #: src/components/auction-preview-grid.tsx
 msgid "There are no Nouns available to display."
-msgstr "Ŧħḗřḗ ȧřḗ ƞǿ Ƞǿŭƞş ȧṽȧīŀȧƀŀḗ ŧǿ ḓīşƥŀȧẏ."
+msgstr "ไม่มี Nouns ให้แสดง"
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
-msgstr "Ŧǿɠɠŀḗ ŧħḗḿḗ"
+msgstr "สลับธีม"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
-msgstr "Ṽīḗẇ ŧřȧīŧş ȧƞḓ ƥřīƈīƞɠ"
+msgstr "ดูคุณสมบัติและราคา"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
-msgstr "Ṽīḗẇ ŧřȧīŧş ȧƞḓ ƥřīƈīƞɠ ƒǿř ŧħīş Ƞǿŭƞ"
+msgstr "ดูคุณสมบัติและราคาของ Noun นี้"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"
-msgstr "Ṽīḗẇ Ŧřȧƞşȧƈŧīǿƞ"
+msgstr "ดูธุรกรรม"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
-msgstr "Ẇȧŀŀḗŧ Ƈǿƞƞḗƈŧḗḓ"
+msgstr "กระเป๋าเงินเชื่อมต่อแล้ว"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
-msgstr "Ẏǿŭř ẇȧŀŀḗŧ īş ƈǿƞƞḗƈŧḗḓ. Ḿȧƞȧɠḗ ẏǿŭř ẇȧŀŀḗŧ ƈǿƞƞḗƈŧīǿƞ ƀḗŀǿẇ."
+msgstr "กระเป๋าเงินของคุณเชื่อมต่อแล้ว จัดการการเชื่อมต่อกระเป๋าเงินของคุณด้านล่าง"
