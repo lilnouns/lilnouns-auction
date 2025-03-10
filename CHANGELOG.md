@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.26] - 2025-03-10
+
+### Features
+
+- Add loading indicator to network switch button
+- Enhance transaction status feedback
+
+### Bug Fixes
+
+- Ensure correct locale fallback logic
+- Update button state logic in auction dialog
+
+### Refactor
+
+- Rename `isSuccess` and `isPending` variables
+- Rename `hash` to `txHash` in auction logic
+
+### Miscellaneous Tasks
+
+- Update translations for new UI strings
+
 ## [1.2.0-alpha.25] - 2025-03-10
 
 ### Features

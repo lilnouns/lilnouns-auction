@@ -77,6 +77,10 @@ msgstr "Αγορά σε εξέλιξη..."
 msgid "Close"
 msgstr "Κλείσιμο"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Confirming..."
+msgstr ""
+
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -146,6 +150,10 @@ msgstr "Noun {nounId} | Δημοπρασία Lil Nouns"
 msgid "Noun Details"
 msgstr "Λεπτομέρειες Noun"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Pending..."
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "Δοκιμάστε να ανανεώσετε τη σελίδα ή επικοινωνήστε με την υποστήριξη αν το πρόβλημα παραμένει."
@@ -153,6 +161,24 @@ msgstr "Δοκιμάστε να ανανεώσετε τη σελίδα ή επι
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Ανανέωση"
+
+#. placeholder {0}: label.toLowerCase()
+#: src/components/auction-trait-filter.tsx
+msgid "Select {0}"
+msgstr ""
+
+#: src/components/auction-filter-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Select traits to filter the auction listings"
+msgstr ""
+
+#: src/components/error-fallback.tsx
+msgid "Show Details"
+msgstr ""
+
+#: src/components/error-fallback.tsx
+msgid "Something went wrong"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"

@@ -9,7 +9,6 @@ import {
   DialogTrigger,
 } from '@repo/ui/components/dialog'
 import { Button } from '@repo/ui/components/button'
-import { Card, CardContent } from '@repo/ui/components/card'
 import {
   Table,
   TableBody,
@@ -18,7 +17,7 @@ import {
 } from '@repo/ui/components/table'
 import { PoolSeed } from '@/types'
 
-import { useAccount, useSwitchChain } from 'wagmi'
+import { useAccount, useSwitchChain, useWaitForTransactionReceipt } from 'wagmi'
 
 import { useDialogStore } from '@/stores/dialog-store'
 import { walletOptions } from '@/components/wallet-options-dialog'
@@ -43,6 +42,7 @@ import { formatEther } from 'viem'
 import React from 'react'
 import Link from 'next/link'
 import { useLingui } from '@lingui/react/macro'
+import { Loader2 } from 'lucide-react'
 
 const { images, bgcolors } = imageData
 
@@ -59,12 +59,21 @@ export function AuctionSeedDialog({
   const isDesktop = useMedia('(min-width: 768px)')
 
   const { isConnected, chainId } = useAccount()
-  const { switchChain } = useSwitchChain()
+
+  const { switchChain, isPending: isSwitchChainPending } = useSwitchChain()
 
   const { openDialog } = useDialogStore()
 
-  const { buyNow, isSuccess, isPending, data: hash } = useBuyNow()
+  const {
+    buyNow,
+    isSuccess: isSuccessBuyNow,
+    isPending: isPendingBuyNow,
+    data: txHash,
+  } = useBuyNow()
   const { price } = useNextNoun()
+
+  const { isLoading: isConfirming, isSuccess: isConfirmed } =
+    useWaitForTransactionReceipt({ hash: txHash })
 
   const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
   const isWrongChain = chainId !== correctChainId
@@ -141,21 +150,32 @@ export function AuctionSeedDialog({
         <Button
           onClick={() => switchChain({ chainId: correctChainId })}
           className="w-full"
+          disabled={isSwitchChainPending}
         >
+          {isSwitchChainPending && <Loader2 className="animate-spin" />}
           {t`Switch Network`}
         </Button>
       )
     }
 
-    if (isSuccess && hash) {
+    if (isSuccessBuyNow && txHash) {
       return (
         <Link
-          href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${hash}`}
+          href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${txHash}`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full"
         >
-          <Button className="w-full">{t`View Transaction`}</Button>
+          <Button className="w-full" disabled={isConfirming || !isConfirmed}>
+            {(isConfirming || !isConfirmed) && (
+              <Loader2 className="animate-spin" />
+            )}
+            {isConfirming
+              ? t`Confirming...`
+              : isConfirmed
+                ? t`View Transaction`
+                : t`Pending...`}
+          </Button>
         </Link>
       )
     }
@@ -163,12 +183,17 @@ export function AuctionSeedDialog({
     return (
       <Button
         onClick={() => buyNow(blockNumber, nounId)}
-        disabled={isPending || isSuccess}
+        disabled={isPendingBuyNow || isSuccessBuyNow}
         className="w-full"
       >
-        {isPending
-          ? t`Buying...`
-          : t`Buy Now for ${Number(formatEther(price ?? 0n)).toFixed(5)} ETH`}
+        {isPendingBuyNow ? (
+          <>
+            <Loader2 className="animate-spin" />
+            {t`Buying...`}
+          </>
+        ) : (
+          t`Buy Now for ${Number(formatEther(price ?? 0n)).toFixed(5)} ETH`
+        )}
       </Button>
     )
   }

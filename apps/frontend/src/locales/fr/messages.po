@@ -77,6 +77,10 @@ msgstr "Achat en cours..."
 msgid "Close"
 msgstr "Fermer"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Confirming..."
+msgstr ""
+
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -145,6 +149,10 @@ msgstr "Noun {nounId} | Enchères Lil Nouns"
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
 msgstr "Détails du Noun"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Pending..."
+msgstr ""
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."

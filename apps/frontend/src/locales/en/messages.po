@@ -77,6 +77,10 @@ msgstr "Buying..."
 msgid "Close"
 msgstr "Close"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Confirming..."
+msgstr "Confirming..."
+
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -145,6 +149,10 @@ msgstr "Noun {nounId} | Lil Nouns Auction"
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
 msgstr "Noun Details"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Pending..."
+msgstr "Pending..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."

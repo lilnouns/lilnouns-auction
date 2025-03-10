@@ -77,6 +77,10 @@ msgstr "खरीदारी जारी..."
 msgid "Close"
 msgstr "बंद करें"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Confirming..."
+msgstr ""
+
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -145,6 +149,10 @@ msgstr "Noun {nounId} | लिल नाउन्स नीलामी"
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
 msgstr "Noun विवरण"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Pending..."
+msgstr ""
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."

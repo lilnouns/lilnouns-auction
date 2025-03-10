@@ -77,6 +77,10 @@ msgstr "กำลังซื้อ..."
 msgid "Close"
 msgstr "ปิด"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Confirming..."
+msgstr ""
+
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -137,13 +141,44 @@ msgstr "ไม่มี Nouns ที่ตรงกับตัวกรอง�
 msgid "Noun"
 msgstr "Noun"
 
+#: src/components/home-page.tsx
+msgid "Noun {nounId} | Lil Nouns Auction"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
 msgstr "รายละเอียดของ Noun"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Pending..."
+msgstr ""
+
+#: src/components/error-fallback.tsx
+msgid "Please try refreshing the page or contact support if the issue persists."
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "รีเฟรช"
+
+#. placeholder {0}: label.toLowerCase()
+#: src/components/auction-trait-filter.tsx
+msgid "Select {0}"
+msgstr ""
+
+#: src/components/auction-filter-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Select traits to filter the auction listings"
+msgstr ""
+
+#: src/components/error-fallback.tsx
+msgid "Show Details"
+msgstr ""
+
+#: src/components/error-fallback.tsx
+msgid "Something went wrong"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
