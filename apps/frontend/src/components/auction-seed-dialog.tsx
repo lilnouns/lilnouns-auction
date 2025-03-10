@@ -77,8 +77,10 @@ export function AuctionSeedDialog({
   const { seed, blockNumber, nounId } = poolSeed
 
   const content = (
-    <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-      <AuctionSeedImage seed={seed} />
+    <div className="grid gap-6 -grid-cols-1 md:grid-cols-2">
+      <div>
+        <AuctionSeedImage seed={seed} />
+      </div>
       <Table>
         <TableBody>
           <TableRow>
