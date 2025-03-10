@@ -1,6 +1,5 @@
 'use client'
 
-import { Card, CardContent } from '@repo/ui/components/card'
 import { Label } from '@repo/ui/components/label'
 import React from 'react'
 import { MultiSelect } from '@/components/multi-select'

@@ -4,7 +4,6 @@ import { type PropsWithChildren } from 'react'
 
 // import { ErrorBoundary } from 'react-error-boundary'
 // import ErrorFallback from '@/components/error-fallback'
-
 import { ThemeProvider } from '@/components/theme-provider'
 import { find, mapToObj, pipe } from 'remeda'
 import { mainnet, sepolia } from 'wagmi/chains'
