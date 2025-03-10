@@ -23,66 +23,64 @@ export function AuctionTraitFilter() {
 
   const traitOptions: TraitOptions = [
     {
-      id: 'background',
-      label: 'Background',
+      id: /*i18n*/ 'background',
+      label: /*i18n*/ 'Background',
       options: imageData.bgcolors,
     },
     {
-      id: 'body',
-      label: 'Body',
+      id: /*i18n*/ 'body',
+      label: /*i18n*/ 'Body',
       options: imageData.images.bodies,
     },
     {
-      id: 'accessory',
-      label: 'Accessory',
+      id: /*i18n*/ 'accessory',
+      label: /*i18n*/ 'Accessory',
       options: imageData.images.accessories,
     },
     {
-      id: 'head',
-      label: 'Head',
+      id: /*i18n*/ 'head',
+      label: /*i18n*/ 'Head',
       options: imageData.images.heads,
     },
     {
-      id: 'glasses',
-      label: 'Glasses',
+      id: /*i18n*/ 'glasses',
+      label: /*i18n*/ 'Glasses',
       options: imageData.images.glasses,
     },
   ]
 
   return (
-    <Card className="w-full shadow-none border-none">
-      <CardContent className="grid grid-cols-1 p-0">
-        {traitOptions.map(({ id, label, options }) => (
-          <div key={id}>
-            <Label htmlFor={id}>{label}</Label>
-            <MultiSelect
-              options={options.map((option, index) => {
-                const backgrounds: { [key: string]: string } = {
-                  d5d7e1: 'cold',
-                  e1d7d5: 'warm',
-                }
-                return {
-                  label: i18n._(
-                    formatTraitName(
-                      typeof option !== 'string'
-                        ? option?.filename
-                        : backgrounds[option]!,
-                    ),
+    <div className="flex flex-col gap-2 px-0">
+      {traitOptions.map(({ id, label, options }) => (
+        <div className="grid gap-2" key={id}>
+          <Label htmlFor={id}>{label}</Label>
+          <MultiSelect
+            options={options.map((option, index) => {
+              const backgrounds: { [key: string]: string } = {
+                d5d7e1: 'cold',
+                e1d7d5: 'warm',
+              }
+              return {
+                label: i18n._(
+                  formatTraitName(
+                    typeof option !== 'string'
+                      ? option?.filename
+                      : backgrounds[option]!,
                   ),
-                  value: index.toString(),
-                }
-              })}
-              onValueChange={(value) => setTraitFilter(id, value)}
-              defaultValue={traitFilter[id] ?? []}
-              placeholder={t`Select ${label.toLowerCase()}`}
-              variant="inverted"
-              animation={0}
-              maxCount={2}
-              className={'shadow-none min-h-10'}
-            />
-          </div>
-        ))}
-      </CardContent>
-    </Card>
+                ),
+                value: index.toString(),
+              }
+            })}
+            onValueChange={(value) => setTraitFilter(id, value)}
+            defaultValue={traitFilter[id] ?? []}
+            placeholder={t`Select ${label.toLowerCase()}`}
+            variant="inverted"
+            animation={0}
+            maxCount={2}
+            className={'shadow-none min-h-10'}
+          />
+        </div>
+      ))}
+    </div>
   )
 }

@@ -6,7 +6,6 @@
   "exports": {
     "./globals.css": "./src/styles/globals.css",
     "./postcss.config": "./postcss.config.mjs",
-    "./tailwind.config": "./tailwind.config.ts",
     "./lib/*": "./src/lib/*.ts",
     "./components/*": "./src/components/*.tsx",
     "./hooks/*": "./src/hooks/*.ts"
@@ -23,8 +22,6 @@
     "@radix-ui/react-select": "2.1.6",
     "@radix-ui/react-separator": "1.1.2",
     "@radix-ui/react-slot": "1.1.2",
-    "@radix-ui/react-tabs": "1.1.3",
-    "@radix-ui/react-toast": "1.2.6",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cmdk": "1.0.4",
@@ -32,6 +29,7 @@
     "next-themes": "0.4.5",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "sonner": "2.0.1",
     "tailwind-merge": "3.0.2",
     "tailwindcss-animate": "1.0.7",
     "vaul": "1.1.2",
@@ -39,16 +37,16 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/prettier-config": "workspace:",
+    "@repo/prettier-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "4.0.9",
     "@turbo/gen": "2.4.4",
     "@types/node": "22.13.10",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
-    "autoprefixer": "10.4.21",
-    "postcss": "8.5.3",
+    "eslint": "9.21.0",
     "postcss-load-config": "6.0.1",
-    "tailwindcss": "3.4.14",
-    "typescript": "5.7.3"
+    "tailwindcss": "4.0.9",
+    "typescript": "5.8.2"
   }
 }
