@@ -75,11 +75,11 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex items-center space-x-2">
-          <ModeToggle />
-
           <AuctionFilterDialog />
 
           <WalletOptionsDialog />
+
+          <ModeToggle />
         </div>
       </div>
     </nav>
