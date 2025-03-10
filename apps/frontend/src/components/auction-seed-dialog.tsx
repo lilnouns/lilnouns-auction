@@ -43,6 +43,7 @@ import { formatEther } from 'viem'
 import React from 'react'
 import Link from 'next/link'
 import { useLingui } from '@lingui/react/macro'
+import { Loader2 } from 'lucide-react'
 
 const { images, bgcolors } = imageData
 
@@ -59,7 +60,8 @@ export function AuctionSeedDialog({
   const isDesktop = useMedia('(min-width: 768px)')
 
   const { isConnected, chainId } = useAccount()
-  const { switchChain } = useSwitchChain()
+
+  const { switchChain, isPending: isSwitchChainPending } = useSwitchChain()
 
   const { openDialog } = useDialogStore()
 
@@ -141,7 +143,9 @@ export function AuctionSeedDialog({
         <Button
           onClick={() => switchChain({ chainId: correctChainId })}
           className="w-full"
+          disabled={isSwitchChainPending}
         >
+          {isSwitchChainPending && <Loader2 className="animate-spin" />}
           {t`Switch Network`}
         </Button>
       )
