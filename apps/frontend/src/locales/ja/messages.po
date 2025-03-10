@@ -63,6 +63,10 @@ msgstr "メガネ"
 msgid "Glasses"
 msgstr "メガネ"
 
+#: src/components/language-switcher.tsx
+msgid "Arabic"
+msgstr ""
+
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -71,6 +75,10 @@ msgstr "今すぐ {0} ETH で購入"
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
 msgstr "購入中..."
+
+#: src/components/language-switcher.tsx
+msgid "Chinese"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -100,6 +108,10 @@ msgstr "ダーク"
 msgid "Disconnect Wallet"
 msgstr "ウォレットの接続を解除"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -110,9 +122,29 @@ msgstr "エラー"
 msgid "Filter Auctions"
 msgstr "オークションをフィルター"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "German"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "詳細を隠す"
+
+#: src/components/language-switcher.tsx
+msgid "Indonesian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
+
+#: src/components/language-switcher.tsx
+msgid "Japanese"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,9 +190,17 @@ msgstr ""
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "ページを更新するか、問題が解決しない場合はサポートに連絡してください。"
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "更新"
+
+#: src/components/language-switcher.tsx
+msgid "Russian"
+msgstr ""
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -180,6 +220,10 @@ msgstr "詳細を表示"
 msgid "Something went wrong"
 msgstr "問題が発生しました"
 
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "ネットワークを切り替え"
@@ -195,6 +239,10 @@ msgstr "表示可能な Noun はありません。"
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "テーマを切り替え"
+
+#: src/components/language-switcher.tsx
+msgid "Turkish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"

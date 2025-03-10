@@ -63,6 +63,10 @@ msgstr "glasses"
 msgid "Glasses"
 msgstr "Glasses"
 
+#: src/components/language-switcher.tsx
+msgid "Arabic"
+msgstr "Arabic"
+
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -71,6 +75,10 @@ msgstr "Buy Now for {0} ETH"
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
 msgstr "Buying..."
+
+#: src/components/language-switcher.tsx
+msgid "Chinese"
+msgstr "Chinese"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -100,6 +108,10 @@ msgstr "Dark"
 msgid "Disconnect Wallet"
 msgstr "Disconnect Wallet"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr "English"
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -110,9 +122,29 @@ msgstr "Error"
 msgid "Filter Auctions"
 msgstr "Filter Auctions"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "French"
+
+#: src/components/language-switcher.tsx
+msgid "German"
+msgstr "German"
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "Hide Details"
+
+#: src/components/language-switcher.tsx
+msgid "Indonesian"
+msgstr "Indonesian"
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr "Italian"
+
+#: src/components/language-switcher.tsx
+msgid "Japanese"
+msgstr "Japanese"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,9 +190,17 @@ msgstr "Pending..."
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "Please try refreshing the page or contact support if the issue persists."
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr "Portuguese"
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Refresh"
+
+#: src/components/language-switcher.tsx
+msgid "Russian"
+msgstr "Russian"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -180,6 +220,10 @@ msgstr "Show Details"
 msgid "Something went wrong"
 msgstr "Something went wrong"
 
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr "Spanish"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "Switch Network"
@@ -195,6 +239,10 @@ msgstr "There are no Nouns available to display."
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "Toggle theme"
+
+#: src/components/language-switcher.tsx
+msgid "Turkish"
+msgstr "Turkish"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
