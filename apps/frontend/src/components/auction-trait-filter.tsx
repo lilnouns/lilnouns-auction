@@ -23,28 +23,28 @@ export function AuctionTraitFilter() {
 
   const traitOptions: TraitOptions = [
     {
-      id: 'background',
-      label: 'Background',
+      id: /*i18n*/ 'background',
+      label: /*i18n*/ 'Background',
       options: imageData.bgcolors,
     },
     {
-      id: 'body',
-      label: 'Body',
+      id: /*i18n*/ 'body',
+      label: /*i18n*/ 'Body',
       options: imageData.images.bodies,
     },
     {
-      id: 'accessory',
-      label: 'Accessory',
+      id: /*i18n*/ 'accessory',
+      label: /*i18n*/ 'Accessory',
       options: imageData.images.accessories,
     },
     {
-      id: 'head',
-      label: 'Head',
+      id: /*i18n*/ 'head',
+      label: /*i18n*/ 'Head',
       options: imageData.images.heads,
     },
     {
-      id: 'glasses',
-      label: 'Glasses',
+      id: /*i18n*/ 'glasses',
+      label: /*i18n*/ 'Glasses',
       options: imageData.images.glasses,
     },
   ]
