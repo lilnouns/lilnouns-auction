@@ -166,8 +166,8 @@ export function AuctionSeedDialog({
           rel="noopener noreferrer"
           className="w-full"
         >
-          <Button className="w-full" disabled={isConfirming}>
-            {(isConfirming || isConfirmed) && (
+          <Button className="w-full" disabled={isConfirming || !isConfirmed}>
+            {(isConfirming || !isConfirmed) && (
               <Loader2 className="animate-spin" />
             )}
             {isConfirming
