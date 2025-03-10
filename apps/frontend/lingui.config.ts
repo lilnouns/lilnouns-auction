@@ -4,8 +4,10 @@ import type { LinguiConfig } from '@lingui/conf'
 const config: LinguiConfig = {
   locales: [
     'ar',
+    'bn',
     'cn',
     'de',
+    'el',
     'en',
     'es',
     'fa',
@@ -18,7 +20,9 @@ const config: LinguiConfig = {
     'pseudo',
     'pt',
     'ru',
+    'th',
     'tr',
+    'vi',
   ],
   pseudoLocale: 'pseudo',
   sourceLocale: 'en',
