@@ -63,10 +63,6 @@ msgstr "চশমা"
 msgid "Glasses"
 msgstr "চশমা"
 
-#: src/components/language-switcher.tsx
-msgid "Arabic"
-msgstr ""
-
 #. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -75,10 +71,6 @@ msgstr "{0} ETH-এ এখনই কিনুন"
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
 msgstr "কিনছেন..."
-
-#: src/components/language-switcher.tsx
-msgid "Chinese"
-msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -122,28 +114,12 @@ msgstr "ত্রুটি"
 msgid "Filter Auctions"
 msgstr "নিলাম ফিল্টার করুন"
 
-#: src/components/language-switcher.tsx
-msgid "French"
-msgstr ""
-
-#: src/components/language-switcher.tsx
-msgid "German"
-msgstr ""
-
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "বিবরণ লুকান"
 
 #: src/components/language-switcher.tsx
-msgid "Indonesian"
-msgstr ""
-
-#: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
-
-#: src/components/language-switcher.tsx
-msgid "Japanese"
 msgstr ""
 
 #: src/components/mode-toggle.tsx
@@ -198,10 +174,6 @@ msgstr ""
 msgid "Refresh"
 msgstr "রিফ্রেশ করুন"
 
-#: src/components/language-switcher.tsx
-msgid "Russian"
-msgstr ""
-
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
@@ -239,10 +211,6 @@ msgstr "প্রদর্শনের জন্য কোনো নাউন �
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
 msgstr "থিম পরিবর্তন করুন"
-
-#: src/components/language-switcher.tsx
-msgid "Turkish"
-msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
