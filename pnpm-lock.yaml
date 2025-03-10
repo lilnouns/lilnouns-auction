@@ -60,8 +60,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       remeda:
-        specifier: 2.21.0
-        version: 2.21.0
+        specifier: 2.21.1
+        version: 2.21.1
     devDependencies:
       '@0no-co/graphqlsp':
         specifier: 1.12.16
@@ -226,8 +226,8 @@ importers:
         specifier: 17.6.0
         version: 17.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       remeda:
-        specifier: 2.21.0
-        version: 2.21.0
+        specifier: 2.21.1
+        version: 2.21.1
       swr:
         specifier: 2.3.3
         version: 2.3.3(react@19.0.0)
@@ -8150,8 +8150,8 @@ packages:
   remark-rehype@11.1.1:
     resolution: {integrity: sha512-g/osARvjkBXb6Wo0XvAeXQohVta8i84ACbenPpoSsxTOQH/Ae0/RGP4WZgnMH5pMLpsj4FG7OHmcIcXxpza8eQ==}
 
-  remeda@2.21.0:
-    resolution: {integrity: sha512-ANFqOts3BsvW1MrKOv9SVHG3ly0MzzLa0HIu5qLkiRuEPGPuH9ny3sgd7VdHvC2VOUSN/7RkmabPlAda6JtGgg==}
+  remeda@2.21.1:
+    resolution: {integrity: sha512-7I3JaB+geXL0Vq8V3TEwX6mMlWUCv18OdweAovYKiwDCbjKYf1DIHB58B6z8K7juPuZ1whwj79fOvUaHHHjbew==}
 
   remedial@1.0.8:
     resolution: {integrity: sha512-/62tYiOe6DzS5BqVsNpH/nkGlX45C/Sp6V+NtiN6JQNS1Viay7cWkazmRkrQrdFj2eshDe96SIQNIoMxqhzBOg==}
@@ -9029,8 +9029,8 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  type-fest@4.35.0:
-    resolution: {integrity: sha512-2/AwEFQDFEy30iOLjrvHDIH7e4HEWH+f1Yl1bI5XMqzuoCUqwYCdxachgsgv0og/JdVZUhbfjcJAoHj5L1753A==}
+  type-fest@4.37.0:
+    resolution: {integrity: sha512-S/5/0kFftkq27FPNye0XM1e2NsnoD/3FS+pBmbjmmtLT6I+i344KoOf7pvXreaFsDamWeaJX55nczA1m5PsBDg==}
     engines: {node: '>=16'}
 
   typed-array-buffer@1.0.3:
@@ -17927,7 +17927,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.26.2
       index-to-position: 0.1.2
-      type-fest: 4.35.0
+      type-fest: 4.37.0
 
   parse-ms@2.1.0: {}
 
@@ -18586,14 +18586,14 @@ snapshots:
     dependencies:
       find-up-simple: 1.0.0
       read-pkg: 9.0.1
-      type-fest: 4.35.0
+      type-fest: 4.37.0
 
   read-pkg@9.0.1:
     dependencies:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.2
       parse-json: 8.1.0
-      type-fest: 4.35.0
+      type-fest: 4.37.0
       unicorn-magic: 0.1.0
 
   readable-stream@2.3.8:
@@ -18704,9 +18704,9 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
-  remeda@2.21.0:
+  remeda@2.21.1:
     dependencies:
-      type-fest: 4.35.0
+      type-fest: 4.37.0
 
   remedial@1.0.8: {}
 
@@ -19705,7 +19705,7 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  type-fest@4.35.0: {}
+  type-fest@4.37.0: {}
 
   typed-array-buffer@1.0.3:
     dependencies:
