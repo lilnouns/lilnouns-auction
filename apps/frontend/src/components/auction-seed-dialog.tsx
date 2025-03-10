@@ -65,7 +65,12 @@ export function AuctionSeedDialog({
 
   const { openDialog } = useDialogStore()
 
-  const { buyNow, isSuccess, isPending, data: hash } = useBuyNow()
+  const {
+    buyNow,
+    isSuccess: isSuccessBuyNow,
+    isPending: isPendingBuyNow,
+    data: hash,
+  } = useBuyNow()
   const { price } = useNextNoun()
 
   const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
@@ -151,7 +156,7 @@ export function AuctionSeedDialog({
       )
     }
 
-    if (isSuccess && hash) {
+    if (isSuccessBuyNow && hash) {
       return (
         <Link
           href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${hash}`}
@@ -167,12 +172,17 @@ export function AuctionSeedDialog({
     return (
       <Button
         onClick={() => buyNow(blockNumber, nounId)}
-        disabled={isPending || isSuccess}
+        disabled={isPendingBuyNow || isSuccessBuyNow}
         className="w-full"
       >
-        {isPending
-          ? t`Buying...`
-          : t`Buy Now for ${Number(formatEther(price ?? 0n)).toFixed(5)} ETH`}
+        {isPendingBuyNow ? (
+          <>
+            <Loader2 className="animate-spin" />
+            {t`Buying...`}
+          </>
+        ) : (
+          t`Buy Now for ${Number(formatEther(price ?? 0n)).toFixed(5)} ETH`
+        )}
       </Button>
     )
   }
