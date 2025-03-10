@@ -112,7 +112,10 @@ export function AuctionSeedDialog({
           <TableRow>
             <TableCell className="font-medium">Glasses</TableCell>
             <TableCell className="text-right">
-              {formatTraitName(images.glasses[seed.glasses]?.filename ?? '')}
+              {formatTraitName(
+                images.glasses[seed.glasses]?.filename.replace(/square-/, '') ??
+                  '',
+              )}
             </TableCell>
           </TableRow>
           <TableRow>
