@@ -87,7 +87,7 @@
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "@vitejs/plugin-react": "4.3.4",
-    "eslint": "9.21.0",
+    "eslint": "9.22.0",
     "eslint-config-next": "15.1.7",
     "eslint-plugin-next-on-pages": "1.13.9",
     "is-ci": "4.1.0",
