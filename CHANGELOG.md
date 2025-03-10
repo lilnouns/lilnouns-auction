@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.27] - 2025-03-10
+
+### Styling
+
+- Remove unnecessary line breaks in imports
+
 ## [1.2.0-alpha.26] - 2025-03-10
 
 ### Features
