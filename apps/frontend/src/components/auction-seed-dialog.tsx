@@ -77,57 +77,49 @@ export function AuctionSeedDialog({
   const { seed, blockNumber, nounId } = poolSeed
 
   const content = (
-    <Card className="shadow-none border-none">
-      <CardContent className="p-0">
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-          <AuctionSeedImage seed={seed} />
-          <Table>
-            <TableBody>
-              <TableRow>
-                <TableCell className="font-medium">Background</TableCell>
-                <TableCell className="text-right">
-                  {formatTraitName(
-                    backgrounds[bgcolors[seed.background!]!] ?? '',
-                  )}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">Body</TableCell>
-                <TableCell className="text-right">
-                  {formatTraitName(images.bodies[seed.body]?.filename ?? '')}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">Accessory</TableCell>
-                <TableCell className="text-right">
-                  {formatTraitName(
-                    images.accessories[seed.accessory]?.filename ?? '',
-                  )}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">Head</TableCell>
-                <TableCell className="text-right">
-                  {formatTraitName(images.heads[seed.head]?.filename ?? '')}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">Glasses</TableCell>
-                <TableCell className="text-right">
-                  {formatTraitName(
-                    images.glasses[seed.glasses]?.filename ?? '',
-                  )}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">Noun ID</TableCell>
-                <TableCell className="text-right">{nounId}</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+      <AuctionSeedImage seed={seed} />
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell className="font-medium">Background</TableCell>
+            <TableCell className="text-right">
+              {formatTraitName(backgrounds[bgcolors[seed.background!]!] ?? '')}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Body</TableCell>
+            <TableCell className="text-right">
+              {formatTraitName(images.bodies[seed.body]?.filename ?? '')}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Accessory</TableCell>
+            <TableCell className="text-right">
+              {formatTraitName(
+                images.accessories[seed.accessory]?.filename ?? '',
+              )}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Head</TableCell>
+            <TableCell className="text-right">
+              {formatTraitName(images.heads[seed.head]?.filename ?? '')}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Glasses</TableCell>
+            <TableCell className="text-right">
+              {formatTraitName(images.glasses[seed.glasses]?.filename ?? '')}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">Noun ID</TableCell>
+            <TableCell className="text-right">{nounId}</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </div>
   )
 
   const renderActionButton = () => {
