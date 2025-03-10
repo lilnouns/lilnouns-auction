@@ -42,7 +42,7 @@ export function AuctionFilterDialog() {
           open ? openDialog(auctionFilter) : closeDialog(auctionFilter)
         }
       >
-        <DialogTrigger>
+        <DialogTrigger asChild>
           <Button variant="outline" size="icon">
             <FilterIcon />
           </Button>

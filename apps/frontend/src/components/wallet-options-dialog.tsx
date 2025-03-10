@@ -109,7 +109,7 @@ export const WalletOptionsDialog = () => {
         open ? openDialog(walletOptions) : closeDialog(walletOptions)
       }
     >
-      <DrawerTrigger>
+      <DrawerTrigger asChild>
         <Button variant="outline" size="icon">
           <WalletIcon />
         </Button>
