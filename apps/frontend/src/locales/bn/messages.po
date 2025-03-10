@@ -1,0 +1,182 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-02-27 22:18+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: bn\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "background"
+msgstr "পটভূমি"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Background"
+msgstr "পটভূমি"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "body"
+msgstr "শরীর"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Body"
+msgstr "শরীর"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "accessory"
+msgstr "অ্যাক্সেসরী"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Accessory"
+msgstr "অ্যাক্সেসরী"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "head"
+msgstr "মাথা"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Head"
+msgstr "মাথা"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "glasses"
+msgstr "চশমা"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Glasses"
+msgstr "চশমা"
+
+#. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now for {0} ETH"
+msgstr "{0} ETH-এ এখনই কিনুন"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buying..."
+msgstr "কিনছেন..."
+
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Close"
+msgstr "বন্ধ করুন"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "Connect Wallet"
+msgstr "ওয়ালেট সংযুক্ত করুন"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+msgid "Connect with one of our available wallet providers."
+msgstr "আমাদের উপলব্ধ ওয়ালেট প্রদানকারীদের সাথে সংযুক্ত হন।"
+
+#: src/components/mode-toggle.tsx
+msgid "Dark"
+msgstr "ডার্ক মোড"
+
+#: src/components/wallet-options-dialog.tsx
+msgid "Disconnect Wallet"
+msgstr "ওয়ালেট সংযোগ বিচ্ছিন্ন করুন"
+
+#: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+msgid "Error"
+msgstr "ত্রুটি"
+
+#: src/components/auction-filter-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Filter Auctions"
+msgstr "নিলাম ফিল্টার করুন"
+
+#: src/components/error-fallback.tsx
+msgid "Hide Details"
+msgstr "বিবরণ লুকান"
+
+#: src/components/mode-toggle.tsx
+msgid "Light"
+msgstr "লাইট মোড"
+
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
+#: src/components/home-page.tsx
+#: src/app/[lang]/layout.tsx
+msgid "Lil Nouns Auction"
+msgstr "লিল নাউনস নিলাম"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Noun ID found. Please refresh the page."
+msgstr "কোনো নাউন আইডি পাওয়া যায়নি। দয়া করে পৃষ্ঠাটি রিফ্রেশ করুন।"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Nouns Found"
+msgstr "কোনো নাউন পাওয়া যায়নি"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Nouns match your current filter criteria. Try adjusting your filters."
+msgstr "আপনার বর্তমান ফিল্টার মানদণ্ডের সাথে কোনো নাউন মেলে না। দয়া করে ফিল্টার সামঞ্জস্য করুন।"
+
+#: src/components/auction-seed-image.tsx
+msgid "Noun"
+msgstr "নাউন"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Noun Details"
+msgstr "নাউনের বিবরণ"
+
+#: src/components/error-fallback.tsx
+msgid "Refresh"
+msgstr "রিফ্রেশ করুন"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Switch Network"
+msgstr "নেটওয়ার্ক পরিবর্তন করুন"
+
+#: src/components/mode-toggle.tsx
+msgid "System"
+msgstr "সিস্টেম"
+
+#: src/components/auction-preview-grid.tsx
+msgid "There are no Nouns available to display."
+msgstr "প্রদর্শনের জন্য কোনো নাউন উপলব্ধ নেই।"
+
+#: src/components/mode-toggle.tsx
+msgid "Toggle theme"
+msgstr "থিম পরিবর্তন করুন"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View traits and pricing"
+msgstr "বৈশিষ্ট্য এবং মূল্য দেখুন"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View traits and pricing for this Noun"
+msgstr "এই নাউনের বৈশিষ্ট্য এবং মূল্য দেখুন"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View Transaction"
+msgstr "লেনদেন দেখুন"
+
+#: src/components/wallet-options-dialog.tsx
+msgid "Wallet Connected"
+msgstr "ওয়ালেট সংযুক্ত হয়েছে"
+
+#: src/components/wallet-options-dialog.tsx
+msgid "Your wallet is connected. Manage your wallet connection below."
+msgstr "আপনার ওয়ালেট সংযুক্ত হয়েছে। নিচে আপনার ওয়ালেট সংযোগ পরিচালনা করুন।"

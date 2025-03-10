@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-02-27 22:18+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: th\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "background"
+msgstr "พื้นหลัง"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Background"
+msgstr "พื้นหลัง"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "body"
+msgstr "ร่างกาย"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Body"
+msgstr "ร่างกาย"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "accessory"
+msgstr "อุปกรณ์เสริม"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Accessory"
+msgstr "อุปกรณ์เสริม"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "head"
+msgstr "ศีรษะ"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Head"
+msgstr "ศีรษะ"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "glasses"
+msgstr "แว่นตา"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Glasses"
+msgstr "แว่นตา"
+
+#. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now for {0} ETH"
+msgstr "ซื้อเลยในราคา {0} ETH"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buying..."
+msgstr "กำลังซื้อ..."
+
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Close"
+msgstr "ปิด"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "Connect Wallet"
+msgstr "เชื่อมต่อกระเป๋าเงิน"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+msgid "Connect with one of our available wallet providers."
+msgstr "เชื่อมต่อกับผู้ให้บริการกระเป๋าเงินที่มีอยู่ของเรา"
+
+#: src/components/mode-toggle.tsx
+msgid "Dark"
+msgstr "โหมดมืด"
+
+#: src/components/wallet-options-dialog.tsx
+msgid "Disconnect Wallet"
+msgstr "ยกเลิกการเชื่อมต่อกระเป๋าเงิน"
+
+#: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+msgid "Error"
+msgstr "ข้อผิดพลาด"
+
+#: src/components/auction-filter-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Filter Auctions"
+msgstr "กรองการประมูล"
+
+#: src/components/error-fallback.tsx
+msgid "Hide Details"
+msgstr "ซ่อนรายละเอียด"
+
+#: src/components/mode-toggle.tsx
+msgid "Light"
+msgstr "โหมดสว่าง"
+
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
+#: src/components/home-page.tsx
+#: src/app/[lang]/layout.tsx
+msgid "Lil Nouns Auction"
+msgstr "การประมูล Lil Nouns"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Noun ID found. Please refresh the page."
+msgstr "ไม่พบรหัส Noun กรุณารีเฟรชหน้าเว็บ"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Nouns Found"
+msgstr "ไม่พบ Nouns"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Nouns match your current filter criteria. Try adjusting your filters."
+msgstr "ไม่มี Nouns ที่ตรงกับตัวกรองปัจจุบันของคุณ ลองปรับตัวกรองดู"
+
+#: src/components/auction-seed-image.tsx
+msgid "Noun"
+msgstr "Noun"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Noun Details"
+msgstr "รายละเอียดของ Noun"
+
+#: src/components/error-fallback.tsx
+msgid "Refresh"
+msgstr "รีเฟรช"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Switch Network"
+msgstr "สลับเครือข่าย"
+
+#: src/components/mode-toggle.tsx
+msgid "System"
+msgstr "ระบบ"
+
+#: src/components/auction-preview-grid.tsx
+msgid "There are no Nouns available to display."
+msgstr "ไม่มี Nouns ให้แสดง"
+
+#: src/components/mode-toggle.tsx
+msgid "Toggle theme"
+msgstr "สลับธีม"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View traits and pricing"
+msgstr "ดูคุณสมบัติและราคา"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View traits and pricing for this Noun"
+msgstr "ดูคุณสมบัติและราคาของ Noun นี้"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View Transaction"
+msgstr "ดูธุรกรรม"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+msgid "Wallet Connected"
+msgstr "กระเป๋าเงินเชื่อมต่อแล้ว"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+msgid "Your wallet is connected. Manage your wallet connection below."
+msgstr "กระเป๋าเงินของคุณเชื่อมต่อแล้ว จัดการการเชื่อมต่อกระเป๋าเงินของคุณด้านล่าง"
