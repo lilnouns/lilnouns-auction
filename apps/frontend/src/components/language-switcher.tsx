@@ -17,9 +17,18 @@ import { Button } from '@repo/ui/components/button'
 type LOCALES = 'ar' | 'en' | 'tr' | 'pseudo'
 
 const languages = {
-  ar: msg`Arabic`,
   en: msg`English`,
-  tr: msg`Turkish`,
+  // ar: msg`Arabic`,
+  // de: msg`German`,
+  es: msg`Spanish`,
+  // fr: msg`French`,
+  // id: msg`Indonesian`,
+  it: msg`Italian`,
+  // ja: msg`Japanese`,
+  pt: msg`Portuguese`,
+  // ru: msg`Russian`,
+  // tr: msg`Turkish`,
+  // zh: msg`Chinese`,
 } as const
 
 export function LanguageSwitcher() {
