@@ -17,7 +17,7 @@
     "graphql-request": "6.1.0",
     "graphql-tag": "2.12.6",
     "luxon": "3.5.0",
-    "remeda": "2.21.0"
+    "remeda": "2.21.1"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.12.16",
@@ -31,9 +31,9 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "22.13.9",
+    "@types/node": "22.13.10",
     "graphql-scalars": "1.24.1",
     "typescript": "5.7.3",
-    "wrangler": "3.113.0"
+    "wrangler": "3.114.0"
   }
 }
