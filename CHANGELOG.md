@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.25] - 2025-03-10
+
+### Features
+
+- Add translations for auction filters
+- Update supported locales in `lingui.config`
+- Add i18n support for `id`, `ko`, and `ru`
+- Add support for new locales
+- Add translations for bn, el, th, and vi
+
+### Bug Fixes
+
+- Update `DialogTrigger` to use `asChild`
+- Update `formatTraitName` to strip `square-`
+- Update translations for multiple locales
+
+### Refactor
+
+- Replace `toast` with `sonner`
+- Replace CSS color values with `hsl`
+- Migrate Tailwind config to CSS
+- Update color system to use `oklch`
+- Update styles for consistency and clarity
+- Replace `forwardRef` with functional components
+- Simplify layout for trait filter
+- Add i18n comments to explicitly marking messages
+- Simplify auction seed dialog structure
+- Wrap `AuctionSeedImage` in a div
+- Reorder `ModeToggle` in navbar
+- Remove `LocaleSwitcher` component
+- Simplify `activeLocale` fallback logic
+
+### Miscellaneous Tasks
+
+- Remove `tailwind.config` export from package
+- Update tailwindcss import syntax
+- Update `components` configs
+- Update tailwind config and base color
+- Update `tsconfig.json` by removing commented `outDir`
+- Update `Toaster` import path
+
+### Styling
+
+- Standardize className formatting and styles
+- Adjust padding in `Card` component
+- Replace `space-x-2` with `gap-2`
+- Update color palette to enhance readability
+- Adjust navbar padding to improve spacing
+
 ## [1.2.0-alpha.24] - 2025-03-10
 
 ### Bug Fixes
