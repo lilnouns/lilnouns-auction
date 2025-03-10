@@ -3,12 +3,12 @@ import type { LinguiConfig } from '@lingui/conf'
 
 const config: LinguiConfig = {
   locales: [
+    'en',
     'ar',
     'bn',
     'cn',
     'de',
     'el',
-    'en',
     'es',
     'fa',
     'fr',
