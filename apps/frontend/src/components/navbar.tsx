@@ -74,7 +74,7 @@ const Navbar = () => {
             {t`Lil Nouns Auction`}
           </span>
         </Link>
-        <div className="flex items-center space-x-2">
+        <div className="flex gap-2">
           <AuctionFilterDialog />
 
           <WalletOptionsDialog />
