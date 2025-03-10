@@ -9,7 +9,6 @@ import {
   DialogTrigger,
 } from '@repo/ui/components/dialog'
 import { Button } from '@repo/ui/components/button'
-import { Card, CardContent } from '@repo/ui/components/card'
 import {
   Table,
   TableBody,
@@ -18,7 +17,7 @@ import {
 } from '@repo/ui/components/table'
 import { PoolSeed } from '@/types'
 
-import { useAccount, useSwitchChain } from 'wagmi'
+import { useAccount, useSwitchChain, useWaitForTransactionReceipt } from 'wagmi'
 
 import { useDialogStore } from '@/stores/dialog-store'
 import { walletOptions } from '@/components/wallet-options-dialog'
@@ -72,6 +71,9 @@ export function AuctionSeedDialog({
     data: hash,
   } = useBuyNow()
   const { price } = useNextNoun()
+
+  const { isLoading: isConfirming, isSuccess: isConfirmed } =
+    useWaitForTransactionReceipt({ hash })
 
   const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
   const isWrongChain = chainId !== correctChainId
@@ -164,7 +166,16 @@ export function AuctionSeedDialog({
           rel="noopener noreferrer"
           className="w-full"
         >
-          <Button className="w-full">{t`View Transaction`}</Button>
+          <Button className="w-full" disabled={isConfirming}>
+            {(isConfirming || isConfirmed) && (
+              <Loader2 className="animate-spin" />
+            )}
+            {isConfirming
+              ? t`Confirming...`
+              : isConfirmed
+                ? t`View Transaction`
+                : t`Pending...`}
+          </Button>
         </Link>
       )
     }
