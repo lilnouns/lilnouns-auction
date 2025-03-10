@@ -32,7 +32,7 @@ function getRequestLocale(requestHeaders: Headers): string {
     headers: { 'accept-language': langHeader },
   }).languages(locales.slice())
 
-  const activeLocale = languages[0] || locales[0] || 'en'
+  const activeLocale = languages[0] /*|| locales[0]*/ || 'en'
 
   return activeLocale
 }
