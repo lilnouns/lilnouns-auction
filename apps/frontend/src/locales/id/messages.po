@@ -1,0 +1,211 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-02-27 22:18+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: id\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "background"
+msgstr "latar belakang"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Background"
+msgstr "Latar Belakang"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "body"
+msgstr "tubuh"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Body"
+msgstr "Tubuh"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "accessory"
+msgstr "aksesoris"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Accessory"
+msgstr "Aksesoris"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "head"
+msgstr "kepala"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Head"
+msgstr "Kepala"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "glasses"
+msgstr "kacamata"
+
+#. js-lingui-explicit-id
+#: src/components/auction-trait-filter.tsx
+msgid "Glasses"
+msgstr "Kacamata"
+
+#. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now for {0} ETH"
+msgstr "Beli Sekarang seharga {0} ETH"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buying..."
+msgstr "Membeli..."
+
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Close"
+msgstr "Tutup"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "Connect Wallet"
+msgstr "Hubungkan Dompet"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+msgid "Connect with one of our available wallet providers."
+msgstr "Hubungkan dengan salah satu penyedia dompet yang tersedia."
+
+#: src/components/mode-toggle.tsx
+msgid "Dark"
+msgstr "Gelap"
+
+#: src/components/wallet-options-dialog.tsx
+msgid "Disconnect Wallet"
+msgstr "Putuskan Koneksi Dompet"
+
+#: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+msgid "Error"
+msgstr "Kesalahan"
+
+#: src/components/auction-filter-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Filter Auctions"
+msgstr "Saring Lelang"
+
+#: src/components/error-fallback.tsx
+msgid "Hide Details"
+msgstr "Sembunyikan Detail"
+
+#: src/components/mode-toggle.tsx
+msgid "Light"
+msgstr "Terang"
+
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
+#: src/components/home-page.tsx
+#: src/app/[lang]/layout.tsx
+msgid "Lil Nouns Auction"
+msgstr "Lelang Lil Nouns"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Noun ID found. Please refresh the page."
+msgstr "Tidak ditemukan ID Noun. Silakan segarkan halaman."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Nouns Found"
+msgstr "Tidak Ada Noun Ditemukan"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No Nouns match your current filter criteria. Try adjusting your filters."
+msgstr "Tidak ada Noun yang cocok dengan filter saat ini. Coba sesuaikan filter Anda."
+
+#: src/components/auction-seed-image.tsx
+msgid "Noun"
+msgstr "Noun"
+
+#: src/components/home-page.tsx
+msgid "Noun {nounId} | Lil Nouns Auction"
+msgstr "Noun {nounId} | Lelang Lil Nouns"
+
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "Noun Details"
+msgstr "Detail Noun"
+
+#: src/components/error-fallback.tsx
+msgid "Please try refreshing the page or contact support if the issue persists."
+msgstr "Silakan coba segarkan halaman atau hubungi dukungan jika masalah berlanjut."
+
+#: src/components/error-fallback.tsx
+msgid "Refresh"
+msgstr "Segarkan"
+
+#. placeholder {0}: label.toLowerCase()
+#: src/components/auction-trait-filter.tsx
+msgid "Select {0}"
+msgstr "Pilih {0}"
+
+#: src/components/auction-filter-dialog.tsx
+#: src/components/auction-filter-dialog.tsx
+msgid "Select traits to filter the auction listings"
+msgstr "Pilih sifat untuk menyaring daftar lelang"
+
+#: src/components/error-fallback.tsx
+msgid "Show Details"
+msgstr "Tampilkan Detail"
+
+#: src/components/error-fallback.tsx
+msgid "Something went wrong"
+msgstr "Terjadi kesalahan"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Switch Network"
+msgstr "Ganti Jaringan"
+
+#: src/components/mode-toggle.tsx
+msgid "System"
+msgstr "Sistem"
+
+#: src/components/auction-preview-grid.tsx
+msgid "There are no Nouns available to display."
+msgstr "Tidak ada Noun yang tersedia untuk ditampilkan."
+
+#: src/components/mode-toggle.tsx
+msgid "Toggle theme"
+msgstr "Ubah tema"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View traits and pricing"
+msgstr "Lihat sifat dan harga"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View traits and pricing for this Noun"
+msgstr "Lihat sifat dan harga untuk Noun ini"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "View Transaction"
+msgstr "Lihat Transaksi"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+msgid "Wallet Connected"
+msgstr "Dompet Terhubung"
+
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+msgid "Your wallet is connected. Manage your wallet connection below."
+msgstr "Dompet Anda terhubung. Kelola koneksi dompet Anda di bawah ini."
