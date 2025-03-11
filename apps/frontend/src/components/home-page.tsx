@@ -8,11 +8,24 @@ import Auction from '@/components/auction'
 import { useNextNoun } from '@/hooks/use-next-noun'
 import { useLingui } from '@lingui/react/macro'
 
+import { sdk as frameSdk } from '@farcaster/frame-sdk'
+
 export const HomePage: NextPage = () => {
   const { t } = useLingui()
   const [isClient, setIsClient] = useState(false)
+  const [isFrameSDKLoaded, setIsFrameSDKLoaded] = useState(false)
 
   const { nounId } = useNextNoun()
+
+  useEffect(() => {
+    const load = async () => {
+      frameSdk.actions.ready()
+    }
+    if (frameSdk && !isFrameSDKLoaded) {
+      setIsFrameSDKLoaded(true)
+      load()
+    }
+  }, [isFrameSDKLoaded])
 
   useEffect(() => {
     if (nounId) {
