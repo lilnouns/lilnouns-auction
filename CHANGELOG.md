@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.28] - 2025-03-11
+
+### Features
+
+- Add `LanguageSwitcher` component to navbar
+- Update supported languages in `LanguageSwitcher`
+- Add multilingual support for new languages
+- Integrate `frameSdk` into home page
+
+### Bug Fixes
+
+- Update locale code from `cn` to `zh`
+
+### Refactor
+
+- Remove unused language strings
+
 ## [1.2.0-alpha.27] - 2025-03-10
 
 ### Styling
