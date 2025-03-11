@@ -2,19 +2,68 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Lil Nouns Auction'
-export const size = {
-  width: 600,
-  height: 400,
+interface ImageConfig {
+  dimensions: {
+    width: number
+    height: number
+  }
+  theme: {
+    colors: {
+      background: string
+      text: string
+    }
+    typography: {
+      headingSize: string
+    }
+    layout: {
+      fullSize: '100%'
+    }
+  }
 }
 
-export const contentType = 'image/png'
+const imageConfig: ImageConfig = {
+  dimensions: {
+    width: 600,
+    height: 400,
+  },
+  theme: {
+    colors: {
+      background: '#f0ecf9',
+      text: '#131314',
+    },
+    typography: {
+      headingSize: '3.75rem',
+    },
+    layout: {
+      fullSize: '100%',
+    },
+  },
+}
 
-export default async function Image() {
+const layoutStyles = {
+  container: {
+    height: imageConfig.theme.layout.fullSize,
+    width: imageConfig.theme.layout.fullSize,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    backgroundColor: imageConfig.theme.colors.background,
+  },
+  heading: {
+    fontSize: imageConfig.theme.typography.headingSize,
+    color: imageConfig.theme.colors.text,
+  },
+} as const
+
+export const size = imageConfig.dimensions
+
+export default async function AuctionImageGenerator() {
   return new ImageResponse(
     (
-      <div tw="h-full w-full flex flex-col justify-center items-center relative bg-white">
-        <h1 tw="text-6xl">Lil Nouns Auction</h1>
+      <div style={layoutStyles.container}>
+        <h1 style={layoutStyles.heading}>Lil Nouns Auction</h1>
       </div>
     ),
     {
