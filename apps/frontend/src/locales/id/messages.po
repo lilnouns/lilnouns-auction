@@ -100,6 +100,10 @@ msgstr "Gelap"
 msgid "Disconnect Wallet"
 msgstr "Putuskan Koneksi Dompet"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -113,6 +117,10 @@ msgstr "Saring Lelang"
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "Sembunyikan Detail"
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,6 +166,10 @@ msgstr ""
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "Silakan coba segarkan halaman atau hubungi dukungan jika masalah berlanjut."
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Segarkan"
@@ -179,6 +191,10 @@ msgstr "Tampilkan Detail"
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
 msgstr "Terjadi kesalahan"
+
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"

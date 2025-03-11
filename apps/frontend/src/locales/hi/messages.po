@@ -100,6 +100,10 @@ msgstr "गहरा"
 msgid "Disconnect Wallet"
 msgstr "वॉलेट डिस्कनेक्ट करें"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -113,6 +117,10 @@ msgstr "नीलामी फ़िल्टर करें"
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "विवरण छिपाएँ"
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,6 +166,10 @@ msgstr ""
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "कृपया पृष्ठ को पुनः लोड करने का प्रयास करें या यदि समस्या बनी रहती है तो समर्थन से संपर्क करें।"
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "ताज़ा करें"
@@ -179,6 +191,10 @@ msgstr "विवरण दिखाएँ"
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
 msgstr "कुछ गलत हो गया"
+
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"

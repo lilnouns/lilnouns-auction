@@ -100,6 +100,10 @@ msgstr "Escuro"
 msgid "Disconnect Wallet"
 msgstr "Desconectar Carteira"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -113,6 +117,10 @@ msgstr "Filtrar Leilões"
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "Ocultar Detalhes"
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,6 +166,10 @@ msgstr ""
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "Tente atualizar a página ou entre em contato com o suporte se o problema persistir."
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Atualizar"
@@ -179,6 +191,10 @@ msgstr "Mostrar Detalhes"
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
 msgstr "Algo deu errado"
+
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"

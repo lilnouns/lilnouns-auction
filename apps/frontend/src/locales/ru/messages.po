@@ -100,6 +100,10 @@ msgstr "Темный"
 msgid "Disconnect Wallet"
 msgstr "Отключить кошелек"
 
+#: src/components/language-switcher.tsx
+msgid "English"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 #: src/components/auction-preview-grid.tsx
 msgid "Error"
@@ -113,6 +117,10 @@ msgstr "Фильтр аукционов"
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "Скрыть детали"
+
+#: src/components/language-switcher.tsx
+msgid "Italian"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -158,6 +166,10 @@ msgstr ""
 msgid "Please try refreshing the page or contact support if the issue persists."
 msgstr "Попробуйте обновить страницу или обратитесь в поддержку, если проблема сохраняется."
 
+#: src/components/language-switcher.tsx
+msgid "Portuguese"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Обновить"
@@ -179,6 +191,10 @@ msgstr "Показать детали"
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
 msgstr "Что-то пошло не так"
+
+#: src/components/language-switcher.tsx
+msgid "Spanish"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
