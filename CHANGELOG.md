@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.29] - 2025-03-11
+
+### Features
+
+- Add `FrameEmbed` type definition
+- Add Open Graph image generation
+- Add `generateMetadata` for dynamic metadata
+- Add `Launch Frame` translation key
+- Add Open Graph image
+
+### Bug Fixes
+
+- Correct `imageUrl` in `frame` object
+
+### Refactor
+
+- Improve opengraph image generation
+
+### Miscellaneous Tasks
+
+- Rename assets for clarity
+- Remove unused `vercel.svg` asset
+
 ## [1.2.0-alpha.28] - 2025-03-11
 
 ### Features
