@@ -122,6 +122,10 @@ msgstr "বিবরণ লুকান"
 msgid "Italian"
 msgstr ""
 
+#: src/app/[lang]/page.tsx
+msgid "Launch Frame"
+msgstr ""
+
 #: src/components/mode-toggle.tsx
 msgid "Light"
 msgstr "লাইট মোড"
@@ -129,6 +133,9 @@ msgstr "লাইট মোড"
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
 msgid "Lil Nouns Auction"
 msgstr "লিল নাউনস নিলাম"
