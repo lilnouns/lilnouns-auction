@@ -331,8 +331,8 @@ importers:
         specifier: '>=9.0.0'
         version: 9.22.0(jiti@2.4.2)
       eslint-plugin-next-on-pages:
-        specifier: 1.13.9
-        version: 1.13.9(eslint@9.22.0(jiti@2.4.2))
+        specifier: 1.13.10
+        version: 1.13.10(eslint@9.22.0(jiti@2.4.2))
       is-ci:
         specifier: 4.1.0
         version: 4.1.0
@@ -5333,8 +5333,8 @@ packages:
     peerDependencies:
       eslint: '>=9.0.0'
 
-  eslint-plugin-next-on-pages@1.13.9:
-    resolution: {integrity: sha512-jXX7zcoEEYcpgun2WTFcjNVFXo6SpwcbuW1wVGOIcacUfmorD55fweR6yvCRnp+4SpeVZSIPrcknfZdsDiCP7w==}
+  eslint-plugin-next-on-pages@1.13.10:
+    resolution: {integrity: sha512-p8wllngvsFEO+iOsKUFWmuN+hgkA1zt420sopfUuIDiw/SO1orH8KWPQ2xsqF+9c2ENCKyJ5OdipBM3H+kL8Dw==}
     peerDependencies:
       eslint: '>=9.0.0'
 
@@ -15516,7 +15516,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-next-on-pages@1.13.9(eslint@9.22.0(jiti@2.4.2)):
+  eslint-plugin-next-on-pages@1.13.10(eslint@9.22.0(jiti@2.4.2)):
     dependencies:
       '@types/estree-jsx': 1.0.5
       comment-parser: 1.4.1
