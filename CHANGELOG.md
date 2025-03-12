@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.30] - 2025-03-12
+
+### Features
+
+- Add reusable `Icons` component
+
+### Refactor
+
+- Replace `IconNoggles` with `Icons.logo`
+
 ## [1.2.0-alpha.29] - 2025-03-11
 
 ### Features
