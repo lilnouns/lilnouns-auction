@@ -33,7 +33,7 @@ export async function generateMetadata(
         splashImageUrl: `${appUrl}/splash.png`,
         splashBackgroundColor: '#f7f7f7',
       },
-      title: t(i18n)`Launch Frame`,
+      title: t(i18n)`Get Your Lil Noun`,
     },
   }
 
