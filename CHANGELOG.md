@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.33] - 2025-03-13
+
+### Features
+
+- Enhance component styling and layout
+
 ## [1.2.0-alpha.32] - 2025-03-13
 
 ### Features

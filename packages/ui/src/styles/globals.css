@@ -32,7 +32,7 @@
   --chart-3: hsl(258.8 50% 60%);
   --chart-4: hsl(258.8 50% 72%);
   --chart-5: hsl(258.8 50% 83%);
-    --radius: 0rem;
+  --radius: 0rem;
   --sidebar: hsl(259, 50%, 90%);
   --sidebar-foreground: hsl(259, 3%, 7%);
   --sidebar-primary: hsl(259, 50%, 54%);
