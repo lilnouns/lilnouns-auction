@@ -31,7 +31,10 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: PageLangParam) {
   const i18n = getI18nInstance((await props.params).lang)
 
+  const appUrl = process.env.NEXT_PUBLIC_SITE_URL
+
   return {
+    metadataBase: new URL(`${appUrl}`),
     title: t(i18n)`Lil Nouns Auction`,
   }
 }
