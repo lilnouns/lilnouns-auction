@@ -30,6 +30,7 @@ const nextConfig: NextConfig = {
       ...config.resolve.fallback,
 
       fs: false,
+      path: false,
     }
 
     config.module.rules.push({
