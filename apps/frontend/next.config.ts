@@ -1,6 +1,7 @@
 // import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev'
 import type { NextConfig } from 'next'
 import { version } from '../../package.json'
+import webpack from 'webpack'
 
 const nextConfig: NextConfig = {
   env: {
@@ -24,13 +25,24 @@ const nextConfig: NextConfig = {
   webpack: (config) => {
     config.cache = false // Disables PackFileCacheStrategy
 
+    config.experiments = { ...config.experiments, topLevelAwait: true }
+
+    config.externals['node:fs'] = 'commonjs node:fs'
+
     config.resolve.fallback = {
       // if you miss it, all the other options in fallback, specified
       // by next.js will be dropped.
       ...config.resolve.fallback,
 
       fs: false,
+      path: false,
     }
+
+    config.plugins.push(
+      new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+        resource.request = resource.request.replace(/^node:/, '')
+      }),
+    )
 
     config.module.rules.push({
       test: /\.po$/,

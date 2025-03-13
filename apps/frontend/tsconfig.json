@@ -12,7 +12,7 @@
         "name": "next"
       }
     ],
-    "types": ["@cloudflare/workers-types/2023-07-01"],
+    "types": ["@cloudflare/workers-types", "webpack", "node"],
     "strictNullChecks": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
