@@ -12,7 +12,7 @@ type Props = {
   params: Promise<{ lang: string }>
 }
 
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 export async function generateMetadata(
   { params }: Props,
