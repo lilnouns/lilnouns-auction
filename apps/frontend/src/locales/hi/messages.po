@@ -114,16 +114,16 @@ msgstr "त्रुटि"
 msgid "Filter Auctions"
 msgstr "नीलामी फ़िल्टर करें"
 
+#: src/app/[lang]/page.tsx
+msgid "Get Your Lil Noun"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "विवरण छिपाएँ"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
-
-#: src/app/[lang]/page.tsx
-msgid "Launch Frame"
 msgstr ""
 
 #: src/components/mode-toggle.tsx

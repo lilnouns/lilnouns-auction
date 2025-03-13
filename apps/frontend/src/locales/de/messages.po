@@ -114,16 +114,16 @@ msgstr "Fehler"
 msgid "Filter Auctions"
 msgstr "Auktionen filtern"
 
+#: src/app/[lang]/page.tsx
+msgid "Get Your Lil Noun"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "Details ausblenden"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
-
-#: src/app/[lang]/page.tsx
-msgid "Launch Frame"
 msgstr ""
 
 #: src/components/mode-toggle.tsx
