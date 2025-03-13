@@ -70,6 +70,7 @@
     "@lingui/loader": "5.2.0",
     "@lingui/macro": "5.2.0",
     "@lingui/swc-plugin": "5.5.0",
+    "@opennextjs/aws": "3.5.2",
     "@opennextjs/cloudflare": "0.5.11",
     "@repo/eslint-config": "workspace:",
     "@repo/prettier-config": "workspace:",
