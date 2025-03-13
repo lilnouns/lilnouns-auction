@@ -28,6 +28,8 @@ export async function generateMetadata(
       images: [`${appUrl}/opengraph-image.png`],
     },
     other: {
+      'fc:frame': 'vNext',
+      'fc:frame:image': `${appUrl}/opengraph-image.png`,
       'fc:frame:button:1': t(i18n)`Get Your Lil Noun`,
       'fc:frame:button:1:action': 'link',
       'fc:frame:button:1:target': `https://warpcast.com/~/frames/launch?url=${encodeURIComponent(`${appUrl}/${lang}/frames/?version=${version}`)}`,
