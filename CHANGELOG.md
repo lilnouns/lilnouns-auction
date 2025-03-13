@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.32] - 2025-03-13
+
+### Features
+
+- Add chain-specific `accountAssociation`
+
 ## [1.2.0-alpha.31] - 2025-03-13
 
 ### Features
