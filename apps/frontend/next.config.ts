@@ -25,6 +25,10 @@ const nextConfig: NextConfig = {
   webpack: (config) => {
     config.cache = false // Disables PackFileCacheStrategy
 
+    config.experiments = { ...config.experiments, topLevelAwait: true }
+
+    config.externals['node:fs'] = 'commonjs node:fs'
+
     config.resolve.fallback = {
       // if you miss it, all the other options in fallback, specified
       // by next.js will be dropped.
