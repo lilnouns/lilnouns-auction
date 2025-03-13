@@ -13,11 +13,11 @@ export const contentType = 'image/png'
 
 // Image generation
 export default async function Image() {
-  const vazirmatnSemiBoldResp = await fetch(
-    new URL('../../styles/fonts/Vazirmatn/Vazirmatn-Bold.ttf', import.meta.url),
-  )
+  // const vazirmatnSemiBoldResp = await fetch(
+  //   new URL('../../styles/fonts/Vazirmatn/Vazirmatn-Bold.ttf', import.meta.url),
+  // )
 
-  const vazirmatnSemiBoldFontArray = await vazirmatnSemiBoldResp.arrayBuffer()
+  // const vazirmatnSemiBoldFontArray = await vazirmatnSemiBoldResp.arrayBuffer()
 
   return new ImageResponse(
     (
@@ -42,14 +42,14 @@ export default async function Image() {
       // For convenience, we can re-use the exported opengraph-image
       // size config to also set the ImageResponse's width and height.
       ...size,
-      fonts: [
-        {
-          name: 'Vazirmatn',
-          data: vazirmatnSemiBoldFontArray,
-          style: 'normal',
-          weight: 400,
-        },
-      ],
+      // fonts: [
+      //   {
+      //     name: 'Vazirmatn',
+      //     data: vazirmatnSemiBoldFontArray,
+      //     style: 'normal',
+      //     weight: 400,
+      //   },
+      // ],
     },
   )
 }
