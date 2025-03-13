@@ -1,6 +1,7 @@
 // import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev'
 import type { NextConfig } from 'next'
 import { version } from '../../package.json'
+import webpack from 'webpack'
 
 const nextConfig: NextConfig = {
   env: {
@@ -32,6 +33,12 @@ const nextConfig: NextConfig = {
       fs: false,
       path: false,
     }
+
+    config.plugins.push(
+      new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+        resource.request = resource.request.replace(/^node:/, '')
+      }),
+    )
 
     config.module.rules.push({
       test: /\.po$/,
