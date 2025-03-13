@@ -1,8 +1,11 @@
 // import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev'
 import type { NextConfig } from 'next'
+import { version } from '../../package.json'
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@repo/ui', '@farcaster/frame-sdk'],
+  env: {
+    NEXT_PUBLIC_APP_VERSION: `${version}.${process.env.CF_PAGES_COMMIT_SHA}`,
+  },
   images: {
     unoptimized: true,
   },
@@ -17,6 +20,7 @@ const nextConfig: NextConfig = {
       ],
     ],
   },
+  transpilePackages: ['@repo/ui', '@farcaster/frame-sdk'],
   webpack: (config) => {
     config.cache = false // Disables PackFileCacheStrategy
 
