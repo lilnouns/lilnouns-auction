@@ -4,7 +4,7 @@ import { version } from '../../package.json'
 
 const nextConfig: NextConfig = {
   env: {
-    NEXT_PUBLIC_APP_VERSION: `${version}.${process.env.CF_PAGES_COMMIT_SHA}`,
+    NEXT_PUBLIC_APP_VERSION: `${version}+${process.env.CF_PAGES_COMMIT_SHA}`,
   },
   images: {
     unoptimized: true,
