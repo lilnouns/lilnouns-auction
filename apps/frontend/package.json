@@ -4,11 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "next build",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "deploy": "opennextjs-cloudflare && wrangler deploy",
     "dev": "next dev",
     "lingui:extract": "lingui extract --clean",
     "lint": "next lint",
-    "pages:build": "pnpm next-on-pages",
-    "preview": "pnpm pages:build && wrangler pages dev",
+    "preview": "opennextjs-cloudflare && wrangler dev",
     "test": "vitest run",
     "type-check": "tsc --noEmit"
   },
