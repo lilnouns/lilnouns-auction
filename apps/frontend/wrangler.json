@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "pages_build_output_dir": ".vercel/output/static",
+  "main": ".open-next/worker.js",
   "compatibility_date": "2025-02-28",
   "compatibility_flags": ["nodejs_compat"],
   "placement": {
@@ -23,5 +23,9 @@
         "NODE_VERSION": "22.3.0"
       }
     }
+  },
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
   }
 }
