@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.34] - 2025-03-13
+
+### Features
+
+- Add `NormalModuleReplacementPlugin` support
+- Add `metadataBase` to `generateMetadata`
+- Enable top-level await and add externals
+
+### Bug Fixes
+
+- Set `path` fallback to false
+
+### Refactor
+
+- Remove redundant openGraph config
+- Simplify OpenGraph image generation
+- Comment out unused font fetching logic
+
+### Miscellaneous Tasks
+
+- Update `types` in tsconfig dependencies
+- Remove unused opengraph image
+
+### Styling
+
+- Update colors in opengraph image
+
 ## [1.2.0-alpha.33] - 2025-03-13
 
 ### Features
