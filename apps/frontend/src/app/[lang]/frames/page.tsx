@@ -32,7 +32,7 @@ export async function generateMetadata(
       action: {
         type: 'launch_frame',
         name: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
-        url: `${appUrl}/${lang}/?version=${version}`,
+        url: `${appUrl}/${lang}/frames/?version=${version}`,
         splashImageUrl: `${appUrl}/splash.png?version=${version}`,
         splashBackgroundColor: '#f7f7f7',
       },
