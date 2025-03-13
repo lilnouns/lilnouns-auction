@@ -62,8 +62,8 @@ importers:
         specifier: 3.5.0
         version: 3.5.0
       remeda:
-        specifier: 2.21.1
-        version: 2.21.1
+        specifier: 2.21.2
+        version: 2.21.2
     devDependencies:
       '@0no-co/graphqlsp':
         specifier: 1.12.16
@@ -228,8 +228,8 @@ importers:
         specifier: 17.6.0
         version: 17.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       remeda:
-        specifier: 2.21.1
-        version: 2.21.1
+        specifier: 2.21.2
+        version: 2.21.2
       swr:
         specifier: 2.3.3
         version: 2.3.3(react@19.0.0)
@@ -8108,8 +8108,8 @@ packages:
   remark-rehype@11.1.1:
     resolution: {integrity: sha512-g/osARvjkBXb6Wo0XvAeXQohVta8i84ACbenPpoSsxTOQH/Ae0/RGP4WZgnMH5pMLpsj4FG7OHmcIcXxpza8eQ==}
 
-  remeda@2.21.1:
-    resolution: {integrity: sha512-7I3JaB+geXL0Vq8V3TEwX6mMlWUCv18OdweAovYKiwDCbjKYf1DIHB58B6z8K7juPuZ1whwj79fOvUaHHHjbew==}
+  remeda@2.21.2:
+    resolution: {integrity: sha512-wdhkMDou8HRpD7RnxKJ/FHJWEGXRH7jV/pb0NsdLLSoBo+G9RjtxcY41hVhogLfEMkThk6aySKjs+Yd6PnpzBA==}
 
   remedial@1.0.8:
     resolution: {integrity: sha512-/62tYiOe6DzS5BqVsNpH/nkGlX45C/Sp6V+NtiN6JQNS1Viay7cWkazmRkrQrdFj2eshDe96SIQNIoMxqhzBOg==}
@@ -18646,7 +18646,7 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
-  remeda@2.21.1:
+  remeda@2.21.2:
     dependencies:
       type-fest: 4.37.0
 
