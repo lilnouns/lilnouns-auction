@@ -20,7 +20,7 @@ export async function GET() {
       imageUrl: `${appUrl}/image.png?version=${version}`,
       buttonTitle: 'Get Your Lil Noun',
       splashImageUrl: `${appUrl}/splash.png?version=${version}`,
-      splashBackgroundColor: '#eeccff',
+      splashBackgroundColor: '#f0ecf9',
       webhookUrl: `${appUrl}/api/webhook`,
     },
   }
