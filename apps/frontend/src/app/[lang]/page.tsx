@@ -1,7 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next'
 
-import type { FrameEmbed } from '@/types'
-
 import { t } from '@lingui/core/macro'
 import { initLingui } from '@/i18n/init-lingui'
 import { getI18nInstance } from '@/i18n/app-router-i18n'
@@ -23,28 +21,16 @@ export async function generateMetadata(
   const appUrl = process.env.NEXT_PUBLIC_SITE_URL
   const version = process.env.NEXT_PUBLIC_APP_VERSION
 
-  const frame: FrameEmbed = {
-    version: 'next',
-    imageUrl: `${appUrl}/opengraph-image.png`,
-    button: {
-      action: {
-        type: 'launch_frame',
-        name: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
-        url: `${appUrl}/${lang}/?version=${version}`,
-        splashImageUrl: `${appUrl}/splash.png?version=${version}`,
-        splashBackgroundColor: '#f7f7f7',
-      },
-      title: t(i18n)`Get Your Lil Noun`,
-    },
-  }
-
   return {
     title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
     openGraph: {
       title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
+      images: [`${appUrl}/opengraph-image.png`],
     },
     other: {
-      'fc:frame': JSON.stringify(frame),
+      'fc:frame:button:1': t(i18n)`Get Your Lil Noun`,
+      'fc:frame:button:1:action': 'link',
+      'fc:frame:button:1:target': `https://warpcast.com/~/frames/launch?url=${encodeURIComponent(`${appUrl}/${lang}/frames/?version=${version}`)}`,
     },
   }
 }
