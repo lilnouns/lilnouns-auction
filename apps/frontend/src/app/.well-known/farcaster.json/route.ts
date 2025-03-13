@@ -1,4 +1,4 @@
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 export async function GET() {
   const appUrl = process.env.NEXT_PUBLIC_SITE_URL

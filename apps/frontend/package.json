@@ -4,11 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "next build",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "deploy": "opennextjs-cloudflare && wrangler deploy",
     "dev": "next dev",
     "lingui:extract": "lingui extract --clean",
     "lint": "next lint",
-    "pages:build": "pnpm next-on-pages",
-    "preview": "pnpm pages:build && wrangler pages dev",
+    "preview": "opennextjs-cloudflare && wrangler dev",
     "test": "vitest run",
     "type-check": "tsc --noEmit"
   },
@@ -60,7 +61,6 @@
     "zustand": "5.0.3"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "1.13.10",
     "@cloudflare/workers-types": "4.20250312.0",
     "@eslint/eslintrc": "3.3.0",
     "@lingui/cli": "5.2.0",
@@ -70,6 +70,8 @@
     "@lingui/loader": "5.2.0",
     "@lingui/macro": "5.2.0",
     "@lingui/swc-plugin": "5.5.0",
+    "@opennextjs/aws": "3.5.2",
+    "@opennextjs/cloudflare": "0.5.11",
     "@repo/eslint-config": "workspace:",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
@@ -87,7 +89,6 @@
     "@types/react-dom": "19.0.4",
     "@vitejs/plugin-react": "4.3.4",
     "eslint": "9.22.0",
-    "eslint-plugin-next-on-pages": "1.13.10",
     "is-ci": "4.1.0",
     "jsdom": "26.0.0",
     "pino": "9.6.0",
