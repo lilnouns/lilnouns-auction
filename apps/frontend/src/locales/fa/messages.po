@@ -114,16 +114,16 @@ msgstr "خطا"
 msgid "Filter Auctions"
 msgstr "فیلتر مزایده‌ها"
 
+#: src/app/[lang]/page.tsx
+msgid "Get Your Lil Noun"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "مخفی کردن جزئیات"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
-
-#: src/app/[lang]/page.tsx
-msgid "Launch Frame"
 msgstr ""
 
 #: src/components/mode-toggle.tsx

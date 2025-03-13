@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.31] - 2025-03-13
+
+### Features
+
+- Update frame link title to `Get Your Lil Noun`
+- Add `icon.png` to public assets
+- Add `farcaster.json` route for config generation
+- Update middleware to include `.well-known`
+- Set `runtime` to `edge` for faster responses
+- Inject app version into `NEXT_PUBLIC_APP_VERSION`
+- Append version to resource URLs
+- Add dynamic metadata generation for frames
+- Set `runtime` to `edge` in pages
+- Add `fc:frame` metadata properties
+
+### Bug Fixes
+
+- Add missing translation for `Get Your Lil Noun`
+- Update `NEXT_PUBLIC_APP_VERSION` format
+- Update `splashBackgroundColor` value
+- Update `url` path for frame launches
+
+### Refactor
+
+- Reorganize `farcaster.json` route
+- Inline `farcaster` account association
+- Simplify `frame` configuration
+
+### Miscellaneous Tasks
+
+- Update `wrangler.json` to JSONC format
+- Update environment variables
+- Update `wrangler.jsonc` with new vars
+- Update `wrangler.json` formatting
+- Remove unused vars from `wrangler.json`
+- Update `wrangler.json` compatibility date
+
+### Styling
+
+- Update icons for app visuals
+
 ## [1.2.0-alpha.30] - 2025-03-12
 
 ### Features

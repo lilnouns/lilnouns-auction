@@ -114,16 +114,16 @@ msgstr "错误"
 msgid "Filter Auctions"
 msgstr "筛选拍卖"
 
+#: src/app/[lang]/page.tsx
+msgid "Get Your Lil Noun"
+msgstr ""
+
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
 msgstr "隐藏详情"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
-
-#: src/app/[lang]/page.tsx
-msgid "Launch Frame"
 msgstr ""
 
 #: src/components/mode-toggle.tsx

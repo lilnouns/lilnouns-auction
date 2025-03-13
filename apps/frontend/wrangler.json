@@ -1,34 +1,26 @@
 {
   "name": "lilnouns-auction",
   "pages_build_output_dir": ".vercel/output/static",
-  "compatibility_date": "2024-11-11",
+  "compatibility_date": "2025-02-28",
   "compatibility_flags": ["nodejs_compat"],
   "placement": {
     "mode": "smart"
   },
-  "vars": {
-    "NEXT_PUBLIC_CHAIN_ID": "11155111",
-    "NEXT_PUBLIC_SITE_URL": "http://localhost:8788",
-    "NODE_VERSION": "22.3.0",
-    "NEXT_PUBLIC_BLOCK_EXPLORER": "https://etherscan.io"
-  },
   "env": {
     "preview": {
-      "compatibility_date": "2024-11-11",
       "vars": {
+        "NEXT_PUBLIC_BLOCK_EXPLORER": "https://sepolia.etherscan.io",
         "NEXT_PUBLIC_CHAIN_ID": "11155111",
         "NEXT_PUBLIC_SITE_URL": "https://sepolia.lilnouns.auction",
-        "NODE_VERSION": "22.3.0",
-        "NEXT_PUBLIC_BLOCK_EXPLORER": "https://sepolia.etherscan.io"
+        "NODE_VERSION": "22.3.0"
       }
     },
     "production": {
-      "compatibility_date": "2024-11-11",
       "vars": {
+        "NEXT_PUBLIC_BLOCK_EXPLORER": "https://etherscan.io",
         "NEXT_PUBLIC_CHAIN_ID": "1",
         "NEXT_PUBLIC_SITE_URL": "https://lilnouns.auction",
-        "NODE_VERSION": "22.3.0",
-        "NEXT_PUBLIC_BLOCK_EXPLORER": "https://etherscan.io"
+        "NODE_VERSION": "22.3.0"
       }
     }
   }

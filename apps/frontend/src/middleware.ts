@@ -47,7 +47,8 @@ export const config = {
      * - images - .svg, .png, .jpg, .jpeg, .gif, .webp
      * - subgraphs paths
      * - api paths
+     * - .well-known directory
      */
-    '/((?!_next/static|_next/image|favicon.ico|subgraphs|api|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|subgraphs|api|\\.well-known|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 }
