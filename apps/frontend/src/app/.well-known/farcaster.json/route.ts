@@ -2,6 +2,7 @@ export const runtime = 'edge'
 
 export async function GET() {
   const appUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const version = process.env.NEXT_PUBLIC_APP_VERSION
 
   const config = {
     accountAssociation: {
@@ -14,11 +15,11 @@ export async function GET() {
     frame: {
       version: '1',
       name: 'Lil Nouns Auction',
-      iconUrl: `${appUrl}/icon.png`,
+      iconUrl: `${appUrl}/icon.png?version=${version}`,
       homeUrl: `${appUrl}`,
-      imageUrl: `${appUrl}/image.png`,
+      imageUrl: `${appUrl}/image.png?version=${version}`,
       buttonTitle: 'Get Your Lil Noun',
-      splashImageUrl: `${appUrl}/splash.png`,
+      splashImageUrl: `${appUrl}/splash.png?version=${version}`,
       splashBackgroundColor: '#eeccff',
       webhookUrl: `${appUrl}/api/webhook`,
     },

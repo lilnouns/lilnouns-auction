@@ -21,6 +21,7 @@ export async function generateMetadata(
   const i18n = getI18nInstance(lang)
 
   const appUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const version = process.env.NEXT_PUBLIC_APP_VERSION
 
   const frame: FrameEmbed = {
     version: 'next',
@@ -29,8 +30,8 @@ export async function generateMetadata(
       action: {
         type: 'launch_frame',
         name: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
-        url: `${appUrl}/${lang}/`,
-        splashImageUrl: `${appUrl}/splash.png`,
+        url: `${appUrl}/${lang}/?version=${version}`,
+        splashImageUrl: `${appUrl}/splash.png?version=${version}`,
         splashBackgroundColor: '#f7f7f7',
       },
       title: t(i18n)`Get Your Lil Noun`,
