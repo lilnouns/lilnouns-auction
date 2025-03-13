@@ -23,10 +23,6 @@ export async function generateMetadata(
 
   return {
     title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
-    openGraph: {
-      title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
-      images: [`${appUrl}/opengraph-image.png`],
-    },
     other: {
       'fc:frame': 'vNext',
       'fc:frame:image': `${appUrl}/opengraph-image.png`,
