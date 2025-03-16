@@ -57,3 +57,6 @@ next-env.d.ts
 
 # local env files
 .env*.local
+
+# opennext
+.open-next
