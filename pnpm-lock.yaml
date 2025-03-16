@@ -191,6 +191,9 @@ importers:
       lucide-react:
         specifier: 0.482.0
         version: 0.482.0(react@19.0.0)
+      luxon:
+        specifier: 3.5.0
+        version: 3.5.0
       negotiator:
         specifier: 1.0.0
         version: 1.0.0
@@ -230,6 +233,9 @@ importers:
       remeda:
         specifier: 2.21.2
         version: 2.21.2
+      sonner:
+        specifier: 2.0.1
+        version: 2.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       swr:
         specifier: 2.3.3
         version: 2.3.3(react@19.0.0)
@@ -312,6 +318,9 @@ importers:
       '@types/lint-staged':
         specifier: 13.3.0
         version: 13.3.0
+      '@types/luxon':
+        specifier: 3.4.2
+        version: 3.4.2
       '@types/negotiator':
         specifier: 0.6.3
         version: 0.6.3
@@ -3467,6 +3476,9 @@ packages:
 
   '@types/lint-staged@13.3.0':
     resolution: {integrity: sha512-WxGjVP+rA4OJlEdbZdT9MS9PFKQ7kVPhLn26gC+2tnBWBEFEj/KW+IbFfz6sxdxY5U6V7BvyF+3BzCGsAMHhNg==}
+
+  '@types/luxon@3.4.2':
+    resolution: {integrity: sha512-TifLZlFudklWlMBfhubvgqTXRzLDI5pCbGa4P8a3wPyUQSW+1xQ5eDsreP9DWHX3tjq1ke96uYG/nwundroWcA==}
 
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
@@ -12965,6 +12977,8 @@ snapshots:
   '@types/langs@2.0.5': {}
 
   '@types/lint-staged@13.3.0': {}
+
+  '@types/luxon@3.4.2': {}
 
   '@types/mdast@4.0.4':
     dependencies:
