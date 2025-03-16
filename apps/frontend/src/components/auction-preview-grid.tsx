@@ -12,13 +12,14 @@ import { useNextNoun } from '@/hooks/use-next-noun'
 import useSWR from 'swr'
 import { gql, request } from 'graphql-request'
 
-import { TriangleAlert } from 'lucide-react'
-import { Alert, AlertDescription, AlertTitle } from '@repo/ui/components/alert'
+import { toast } from 'sonner'
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
 import { useLingui } from '@lingui/react/macro'
+
+import { DateTime } from 'luxon'
 import { times } from 'remeda'
 
 const fetchBlocks = async (
@@ -77,8 +78,8 @@ export function AuctionPreviewGrid() {
 
   const {
     data: blocks,
-    error,
-    isValidating,
+    error: blocksError,
+    isValidating: isValidatingBlocks,
   } = useSWR(
     ['blocks', blockOffset, blockLimit],
     () => fetchBlocks(blockOffset, blockLimit),
@@ -86,7 +87,7 @@ export function AuctionPreviewGrid() {
   )
 
   useEffect(() => {
-    setIsLoading(isValidating)
+    setIsLoading(isValidatingBlocks)
     if (!blocks || nounId === undefined) return
 
     const parseSeedParameter = (seedParams?: string[]): number[] | undefined =>
@@ -142,32 +143,26 @@ export function AuctionPreviewGrid() {
     }
 
     processSeeds()
-  }, [blocks, nounId, traitFilter, setPoolSeeds, setIsLoading, isValidating])
+  }, [
+    blocks,
+    nounId,
+    traitFilter,
+    setPoolSeeds,
+    setIsLoading,
+    isValidatingBlocks,
+  ])
 
-  const renderNoResultsMessage = () => (
-    <Alert>
-      <TriangleAlert className="size-4" />
-      <AlertTitle>{t`No Nouns Found`}</AlertTitle>
-      <AlertDescription>
-        {hasActiveFilters
-          ? t`No Nouns match your current filter criteria. Try adjusting your filters.`
-          : t`There are no Nouns available to display.`}
-      </AlertDescription>
-    </Alert>
-  )
+  if (blocksError) {
+    toast(blocksError.message, {
+      description: DateTime.now().toLocaleString(DateTime.DATETIME_FULL),
+    })
+  }
 
-  if (error) return renderNoResultsMessage()
-
-  if (!isValidating && nounId === undefined)
-    return (
-      <Alert variant="destructive">
-        <TriangleAlert className="size-4" />
-        <AlertTitle>{t`Error`}</AlertTitle>
-        <AlertDescription>
-          {t`No Noun ID found. Please refresh the page.`}
-        </AlertDescription>
-      </Alert>
-    )
+  if (!isValidatingBlocks && nounId === undefined) {
+    toast(t`No Noun ID found. Please refresh the page.`, {
+      description: DateTime.now().toLocaleString(DateTime.DATETIME_FULL),
+    })
+  }
 
   if (nounId === undefined) {
     return (
@@ -188,8 +183,6 @@ export function AuctionPreviewGrid() {
 
   return (
     <>
-      {poolSeeds.length === 0 && !isValidating && renderNoResultsMessage()}
-
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
         {poolSeeds.map((poolSeed) => (
           <AuctionSeedDialog
