@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.36] - 2025-03-16
+
+### Refactor
+
+- Replace alerts with `toast` for errors
+
+### Miscellaneous Tasks
+
+- Add `NEXT_PUBLIC_SITE_URL` to build `env`
+- Add `NEXT_PUBLIC_SITE_URL` to environment
+
 ## [1.2.0-alpha.35] - 2025-03-16
 
 ### Features
