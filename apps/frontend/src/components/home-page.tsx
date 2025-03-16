@@ -3,19 +3,29 @@
 import Navbar from '@/components/navbar'
 import { NextPage } from 'next'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Auction from '@/components/auction'
 import { useNextNoun } from '@/hooks/use-next-noun'
 import { useLingui } from '@lingui/react/macro'
 
 import { sdk as frameSdk } from '@farcaster/frame-sdk'
 
-export const HomePage: NextPage = () => {
+interface HomePageProps {
+  nounId: bigint
+}
+
+export const HomePage: FC<HomePageProps> = ({ nounId: sNounId }) => {
+  const [nounId, setNounId] = useState<bigint>(sNounId)
+
   const { t } = useLingui()
   const [isClient, setIsClient] = useState(false)
   const [isFrameSDKLoaded, setIsFrameSDKLoaded] = useState(false)
 
-  const { nounId } = useNextNoun()
+  const { nounId: cNounId } = useNextNoun()
+
+  useEffect(() => {
+    if (cNounId) setNounId(cNounId)
+  }, [cNounId])
 
   useEffect(() => {
     const load = async () => {

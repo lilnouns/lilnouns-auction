@@ -51,8 +51,18 @@ export async function generateMetadata(
   }
 }
 
+async function getNextNoun() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/next-noun`, {
+    cache: 'no-store',
+  })
+  if (!res.ok) throw new Error('Failed to fetch next noun')
+  return res.json() as Promise<{ nounId: bigint; price: bigint }>
+}
+
 export default async function Page({ params }: Props) {
   const { lang } = await params
   initLingui(lang)
-  return <HomePage />
+  const { nounId } = await getNextNoun()
+
+  return <HomePage nounId={nounId} />
 }

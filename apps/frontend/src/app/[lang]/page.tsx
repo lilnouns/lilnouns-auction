@@ -6,6 +6,8 @@ import { getI18nInstance } from '@/i18n/app-router-i18n'
 
 import { HomePage } from '@/components/home-page'
 
+export const runtime = 'edge';
+
 type Props = {
   params: Promise<{ lang: string }>
 }
@@ -35,8 +37,18 @@ export async function generateMetadata(
   }
 }
 
+async function getNextNoun() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/next-noun`, {
+    cache: 'no-store',
+  })
+  if (!res.ok) throw new Error('Failed to fetch next noun')
+  return res.json() as Promise<{ nounId: bigint; price: bigint }>
+}
+
 export default async function Page({ params }: Props) {
   const { lang } = await params
   initLingui(lang)
-  return <HomePage />
+  const { nounId } = await getNextNoun()
+
+  return <HomePage nounId={nounId} />
 }
