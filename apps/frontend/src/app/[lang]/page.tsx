@@ -20,6 +20,8 @@ export async function generateMetadata(
 
   const appUrl = process.env.NEXT_PUBLIC_SITE_URL
   const version = process.env.NEXT_PUBLIC_APP_VERSION
+  const frameUrl = encodeURIComponent(`${appUrl}/?version=${version}`)
+  const launchUrl = new URL(`https://warpcast.com/?launchFrameUrl=${frameUrl}`)
 
   return {
     title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
@@ -28,7 +30,7 @@ export async function generateMetadata(
       'fc:frame:image': `${appUrl}/opengraph-image.png`,
       'fc:frame:button:1': t(i18n)`Get Your Lil Noun`,
       'fc:frame:button:1:action': 'link',
-      'fc:frame:button:1:target': `https://warpcast.com/?launchFrameUrl=${encodeURIComponent(`${appUrl}/?version=${version}`)}`,
+      'fc:frame:button:1:target': launchUrl.toString(),
     },
   }
 }

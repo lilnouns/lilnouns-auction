@@ -13,13 +13,13 @@ import useSWR from 'swr'
 import { gql, request } from 'graphql-request'
 
 import { TriangleAlert } from 'lucide-react'
-import { cn } from '@repo/ui/lib/utils'
 import { Alert, AlertDescription, AlertTitle } from '@repo/ui/components/alert'
 import { Card, CardContent } from '@repo/ui/components/card'
-
+import { Skeleton } from '@repo/ui/components/skeleton'
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
 import { useLingui } from '@lingui/react/macro'
+import { times } from 'remeda'
 
 const fetchBlocks = async (
   offset: number,
@@ -169,15 +169,28 @@ export function AuctionPreviewGrid() {
       </Alert>
     )
 
+  if (nounId === undefined) {
+    return (
+      <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
+        {times(256, (index) => (
+          <Card
+            key={index}
+            className="w-full shadow-xs border-none cursor-pointer py-0"
+          >
+            <CardContent className="px-0">
+              <Skeleton className="w-full h-full aspect-square object-cover rounded-lg" />
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    )
+  }
+
   return (
     <>
       {poolSeeds.length === 0 && !isValidating && renderNoResultsMessage()}
 
-      <div
-        className={cn(
-          'grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9',
-        )}
-      >
+      <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
         {poolSeeds.map((poolSeed) => (
           <AuctionSeedDialog
             key={`${poolSeed.nounId}-${poolSeed.blockNumber}`}
