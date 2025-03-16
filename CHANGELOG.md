@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.35] - 2025-03-16
+
+### Features
+
+- Add loading skeleton for auction preview grid
+
+### Refactor
+
+- Simplify `launchUrl` construction
+
+### Miscellaneous Tasks
+
+- Update `.gitignore` to include `.open-next`
+
 ## [1.2.0-alpha.34] - 2025-03-13
 
 ### Features
