@@ -1,5 +1,7 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { Block, BlockData, PoolSeed, Seed } from '@/types'
 
 import { usePoolStore } from '@/stores/pool-store'
@@ -67,6 +69,8 @@ export function AuctionPreviewGrid() {
   const { nounId } = useNextNoun()
   const { traitFilter } = useTraitFilterStore()
   const { poolSeeds, setPoolSeeds, setIsLoading } = usePoolStore()
+
+  const router = useRouter()
 
   // Check if any filters are active
   const hasActiveFilters = Object.values(traitFilter).some(
@@ -155,12 +159,20 @@ export function AuctionPreviewGrid() {
   if (blocksError) {
     toast(blocksError.message, {
       description: DateTime.now().toLocaleString(DateTime.DATETIME_FULL),
+      action: {
+        label: t`Refresh`,
+        onClick: () => router.refresh(),
+      },
     })
   }
 
   if (!isValidatingBlocks && nounId === undefined) {
     toast(t`No Noun ID found. Please refresh the page.`, {
       description: DateTime.now().toLocaleString(DateTime.DATETIME_FULL),
+      action: {
+        label: t`Refresh`,
+        onClick: () => router.refresh(),
+      },
     })
   }
 
