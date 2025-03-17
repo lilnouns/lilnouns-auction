@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "错误"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "筛选拍卖"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "浅色模式"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns 拍卖"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "未找到 Noun ID，请刷新页面。"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "未找到 Nouns"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "没有符合当前筛选条件的 Nouns，请尝试调整筛选条件。"
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "刷新"
 
@@ -210,10 +205,6 @@ msgstr "切换网络"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "系统模式"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "没有可显示的 Nouns。"
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"

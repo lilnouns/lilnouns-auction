@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "خطا"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "فیلتر مزایده‌ها"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "روشن"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "مزایده لیل  نانز"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "شناسه  نان یافت نشد. لطفاً صفحه را بازنشانی کنید."
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "هیچ  نانی یافت نشد"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "هیچ  نانی با فیلترهای انتخابی شما مطابقت ندارد. فیلترهای خود را تغییر دهید."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "بازنشانی"
 
@@ -210,10 +205,6 @@ msgstr "تغییر شبکه"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "سیستم"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "هیچ  نانی برای نمایش موجود نیست."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"

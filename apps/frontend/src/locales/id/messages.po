@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "Kesalahan"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "Saring Lelang"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "Terang"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lelang Lil Nouns"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "Tidak ditemukan ID Noun. Silakan segarkan halaman."
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "Tidak Ada Noun Ditemukan"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "Tidak ada Noun yang cocok dengan filter saat ini. Coba sesuaikan filter Anda."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "Segarkan"
 
@@ -210,10 +205,6 @@ msgstr "Ganti Jaringan"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "Sistem"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "Tidak ada Noun yang tersedia untuk ditampilkan."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"

@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "エラー"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "オークションをフィルター"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "ライト"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns オークション"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "Noun ID が見つかりません。ページを更新してください。"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "Noun が見つかりません"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "現在のフィルター条件に一致する Noun はありません。フィルターを調整してみてください。"
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "更新"
 
@@ -210,10 +205,6 @@ msgstr "ネットワークを切り替え"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "システム"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "表示可能な Noun はありません。"
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"

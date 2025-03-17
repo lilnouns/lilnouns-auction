@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.37] - 2025-03-17
+
+### Features
+
+- Add `refresh` action to error toasts
+
+### Refactor
+
+- Clean up unused translation strings
+
 ## [1.2.0-alpha.36] - 2025-03-16
 
 ### Refactor

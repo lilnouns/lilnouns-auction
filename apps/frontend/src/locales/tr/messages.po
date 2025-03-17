@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "Hata"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "Açık Artırmaları Filtrele"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "Aydınlık"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns Açık Artırması"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "Noun kimliği bulunamadı. Lütfen sayfayı yenileyin."
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "Hiç Noun bulunamadı"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "Geçerli filtre kriterlerinize uygun Noun bulunamadı. Filtrelerinizi ayarlamayı deneyin."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "Yenile"
 
@@ -210,10 +205,6 @@ msgstr "Ağı Değiştir"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "Sistem"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "Görüntülenecek Noun bulunmuyor."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
