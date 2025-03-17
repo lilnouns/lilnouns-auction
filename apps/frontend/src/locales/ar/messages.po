@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "خطأ"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "تصفية المزادات"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "فاتح"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "مزاد ليل ناونز"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "لم يتم العثور على معرف  نان. يرجى تحديث الصفحة."
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "لم يتم العثور على أي  نان"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "لا يوجد أي  نان مطابق لمعايير التصفية الحالية. حاول ضبط المرشحات."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "تحديث"
 
@@ -210,10 +205,6 @@ msgstr "تبديل الشبكة"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "النظام"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "لا توجد أي  نانات متاحة للعرض."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"

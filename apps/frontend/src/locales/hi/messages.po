@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "त्रुटि"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "नीलामी फ़िल्टर करें"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "हल्का"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "लिल नाउन्स नीलामी"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "कोई Noun ID नहीं मिली। कृपया पृष्ठ को पुनः लोड करें।"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "कोई Noun नहीं मिला"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "आपके वर्तमान फ़िल्टर मानदंड से मेल खाने वाले कोई Noun नहीं हैं। कृपया अपने फ़िल्टर समायोजित करें।"
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "ताज़ा करें"
 
@@ -210,10 +205,6 @@ msgstr "नेटवर्क बदलें"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "सिस्टम"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "प्रदर्शित करने के लिए कोई Nouns उपलब्ध नहीं हैं।"
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"

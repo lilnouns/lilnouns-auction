@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "오류"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "경매 필터"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "라이트 모드"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "릴 나운즈 경매"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "나운 ID를 찾을 수 없습니다. 페이지를 새로 고침하세요."
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "나운을 찾을 수 없음"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "현재 필터 기준에 맞는 나운이 없습니다. 필터를 조정해 보세요."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "새로 고침"
 
@@ -210,10 +205,6 @@ msgstr "네트워크 전환"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "시스템"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "표시할 나운이 없습니다."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"

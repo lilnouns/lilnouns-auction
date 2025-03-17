@@ -105,7 +105,6 @@ msgid "English"
 msgstr ""
 
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Error"
 msgstr "Ḗřřǿř"
 
@@ -115,6 +114,7 @@ msgid "Filter Auctions"
 msgstr "Ƒīŀŧḗř Ȧŭƈŧīǿƞş"
 
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -134,23 +134,16 @@ msgstr "Ŀīɠħŧ"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
 
 #: src/components/auction-preview-grid.tsx
 msgid "No Noun ID found. Please refresh the page."
 msgstr "Ƞǿ Ƞǿŭƞ ĪḒ ƒǿŭƞḓ. Ƥŀḗȧşḗ řḗƒřḗşħ ŧħḗ ƥȧɠḗ."
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns Found"
-msgstr "Ƞǿ Ƞǿŭƞş Ƒǿŭƞḓ"
-
-#: src/components/auction-preview-grid.tsx
-msgid "No Nouns match your current filter criteria. Try adjusting your filters."
-msgstr "Ƞǿ Ƞǿŭƞş ḿȧŧƈħ ẏǿŭř ƈŭřřḗƞŧ ƒīŀŧḗř ƈřīŧḗřīȧ. Ŧřẏ ȧḓĵŭşŧīƞɠ ẏǿŭř ƒīŀŧḗřş."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -178,6 +171,8 @@ msgid "Portuguese"
 msgstr ""
 
 #: src/components/error-fallback.tsx
+#: src/components/auction-preview-grid.tsx
+#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "Řḗƒřḗşħ"
 
@@ -210,10 +205,6 @@ msgstr "Şẇīŧƈħ Ƞḗŧẇǿřķ"
 #: src/components/mode-toggle.tsx
 msgid "System"
 msgstr "Şẏşŧḗḿ"
-
-#: src/components/auction-preview-grid.tsx
-msgid "There are no Nouns available to display."
-msgstr "Ŧħḗřḗ ȧřḗ ƞǿ Ƞǿŭƞş ȧṽȧīŀȧƀŀḗ ŧǿ ḓīşƥŀȧẏ."
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
