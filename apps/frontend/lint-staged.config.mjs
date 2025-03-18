@@ -1,4 +1,4 @@
-import path from "node:path";
+import path from 'node:path'
 
 const buildEslintCommand = (filenames) =>
   `next lint --fix --file ${filenames
@@ -9,7 +9,7 @@ const buildEslintCommand = (filenames) =>
  * @type {import('lint-staged').Configuration}
  */
 export default {
-  '*.{js,jsx,ts,tsx}': [buildEslintCommand, 'prettier --write'],
-  '*.{json,md}': ['prettier --write'],
-  '*.{css,scss}': ['prettier --write'],
+  '**/src/*.{js,jsx,ts,tsx}': [buildEslintCommand, 'prettier --write'],
+  '**/src/*.{json,md}': ['prettier --write'],
+  '**/src/*.{css,scss}': ['prettier --write'],
 }
