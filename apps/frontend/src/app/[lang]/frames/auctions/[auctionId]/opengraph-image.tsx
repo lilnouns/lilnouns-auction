@@ -2,6 +2,10 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
+interface Props {
+  params: { auctionId: string }
+}
+
 // Image metadata
 export const alt = 'Lil Nouns Auction'
 export const size = {
@@ -12,11 +16,7 @@ export const size = {
 export const contentType = 'image/png'
 
 // Image generation
-export default async function Image({
-  params,
-}: {
-  params: { auctionId: string }
-}) {
+export default async function Image({ params }: Props) {
   const auctionId = Number(params.auctionId) // Convert string to number
 
   if (isNaN(auctionId)) {

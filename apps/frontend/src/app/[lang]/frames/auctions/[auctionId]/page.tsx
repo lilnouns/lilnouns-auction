@@ -1,6 +1,10 @@
 export const runtime = 'edge'
 
-export default function Page({ params }: { params: { auctionId: string } }) {
+interface Props {
+  params: { auctionId: string }
+}
+
+export default function Page({ params }: Props) {
   const auctionId = Number(params.auctionId)
 
   if (isNaN(auctionId)) {
