@@ -1,5 +1,4 @@
 import { ImageResponse } from 'next/og'
-import { isNumber } from 'remeda'
 
 export const runtime = 'edge'
 
@@ -20,7 +19,7 @@ interface Props {
 export default async function Image({ params }: Props) {
   const { auctionId } = await params
 
-  if (!isNumber(auctionId)) {
+  if (isNaN(Number(auctionId))) {
     return new Response('Invalid Auction ID', { status: 400 })
   }
 

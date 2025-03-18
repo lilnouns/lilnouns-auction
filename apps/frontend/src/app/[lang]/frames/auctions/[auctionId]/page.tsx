@@ -1,5 +1,3 @@
-import { isNumber } from 'remeda'
-
 export const runtime = 'edge'
 
 interface Props {
@@ -9,7 +7,7 @@ interface Props {
 export default async function Page({ params }: Props) {
   const { auctionId } = await params
 
-  if (!isNumber(auctionId)) {
+  if (isNaN(Number(auctionId))) {
     return <div>Invalid Auction ID</div>
   }
 
