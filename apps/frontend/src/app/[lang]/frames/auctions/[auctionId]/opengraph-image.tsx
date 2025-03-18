@@ -12,7 +12,17 @@ export const size = {
 export const contentType = 'image/png'
 
 // Image generation
-export default async function Image() {
+export default async function Image({
+  params,
+}: {
+  params: { auctionId: string }
+}) {
+  const auctionId = Number(params.auctionId) // Convert string to number
+
+  if (isNaN(auctionId)) {
+    return new Response('Invalid Auction ID', { status: 400 })
+  }
+
   // const vazirmatnSemiBoldResp = await fetch(
   //   new URL('../../styles/fonts/Vazirmatn/Vazirmatn-Bold.ttf', import.meta.url),
   // )
