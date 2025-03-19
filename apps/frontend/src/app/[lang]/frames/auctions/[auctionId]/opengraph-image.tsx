@@ -132,10 +132,10 @@ export default async function Image({ params }: Props) {
 
         <h1
           style={{
-            fontSize: '3rem',
+            fontSize: '2.5rem',
             fontWeight: '600',
             color: '#fff',
-            marginBottom: '0.5rem',
+            marginBottom: '0rem',
             lineHeight: 1.5,
             whiteSpace: 'pre-wrap',
           }}
@@ -144,10 +144,10 @@ export default async function Image({ params }: Props) {
         </h1>
         <h2
           style={{
-            fontSize: '1.8rem',
+            fontSize: '1.9rem',
             fontWeight: '500',
             color: '#fff',
-            marginBottom: '1rem',
+            marginBottom: '0rem',
           }}
         >
           Auction Price: Ξ {formatEther(BigInt(auction?.amount ?? 0n))}
