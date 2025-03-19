@@ -18,7 +18,8 @@ export async function scheduledHandler(
     console.log('New auction found!')
 
     const recipientFid = 17838
-    const castMessage = `New auction found: ${auction?.id}`
+    const castMessage = `New auction found: 
+    https://sepolia.lilnouns.auction/en/frames/auctions/${auction?.id}`
     const idempotencyKey = createHash('sha256')
       .update(castMessage)
       .digest('hex')

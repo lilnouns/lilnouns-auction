@@ -1,24 +1,22 @@
 import { Metadata, ResolvingMetadata } from 'next'
 
-import type { FrameEmbed } from '@/types'
-
-import { t } from '@lingui/core/macro'
-import { initLingui } from '@/i18n/init-lingui'
 import { getI18nInstance } from '@/i18n/app-router-i18n'
+import type { FrameEmbed } from '@/types'
+import { t } from '@lingui/core/macro'
 
-import { HomePage } from '@/components/home-page'
-
-type Props = {
-  params: Promise<{ lang: string }>
-}
+import { Redirect } from '@/components/redirect'
 
 export const runtime = 'edge'
+
+interface Props {
+  params: Promise<{ lang: string; auctionId: string }>
+}
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const { lang } = await params
+  const { lang, auctionId } = await params
   const { title } = await parent
   const i18n = getI18nInstance(lang)
 
@@ -27,7 +25,7 @@ export async function generateMetadata(
 
   const frame: FrameEmbed = {
     version: 'next',
-    imageUrl: `${appUrl}/opengraph-image?version=${version}`,
+    imageUrl: `${appUrl}/${lang}/frames/auctions/${auctionId}/opengraph-image?version=${version}`,
     button: {
       action: {
         type: 'launch_frame',
@@ -41,18 +39,12 @@ export async function generateMetadata(
   }
 
   return {
-    title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
-    openGraph: {
-      title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
-    },
     other: {
       'fc:frame': JSON.stringify(frame),
     },
   }
 }
 
-export default async function Page({ params }: Props) {
-  const { lang } = await params
-  initLingui(lang)
-  return <HomePage />
+export default function Page({ params }: Props) {
+  return <Redirect />
 }
