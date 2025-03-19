@@ -1,15 +1,50 @@
+import { Metadata, ResolvingMetadata } from 'next'
+
+import { getI18nInstance } from '@/i18n/app-router-i18n'
+import type { FrameEmbed } from '@/types'
+import { t } from '@lingui/core/macro'
+
+import { Redirect } from '@/components/redirect'
+
 export const runtime = 'edge'
 
 interface Props {
-  params: Promise<{ auctionId: string }>
+  params: Promise<{ lang: string; auctionId: string }>
 }
 
-export default async function Page({ params }: Props) {
-  const { auctionId } = await params
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const { lang } = await params
+  const { title } = await parent
+  const i18n = getI18nInstance(lang)
 
-  if (isNaN(Number(auctionId))) {
-    return <div>Invalid Auction ID</div>
+  const appUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const version = process.env.NEXT_PUBLIC_APP_VERSION
+
+  const frame: FrameEmbed = {
+    version: 'next',
+    imageUrl: `${appUrl}/opengraph-image.png`,
+    button: {
+      action: {
+        type: 'launch_frame',
+        name: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
+        url: `${appUrl}/${lang}/frames/?version=${version}`,
+        splashImageUrl: `${appUrl}/splash.png?version=${version}`,
+        splashBackgroundColor: '#f7f7f7',
+      },
+      title: t(i18n)`Get Your Lil Noun`,
+    },
   }
 
-  return <div>Auction ID: {auctionId}</div>
+  return {
+    other: {
+      'fc:frame': JSON.stringify(frame),
+    },
+  }
+}
+
+export default function Page({ params }: Props) {
+  return <Redirect />
 }
