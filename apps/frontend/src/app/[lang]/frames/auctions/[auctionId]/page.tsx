@@ -16,7 +16,7 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const { lang } = await params
+  const { lang, auctionId } = await params
   const { title } = await parent
   const i18n = getI18nInstance(lang)
 
@@ -25,7 +25,7 @@ export async function generateMetadata(
 
   const frame: FrameEmbed = {
     version: 'next',
-    imageUrl: `${appUrl}/opengraph-image.png`,
+    imageUrl: `${appUrl}/${lang}/frames/auctions/${auctionId}/opengraph-image?version=${version}`,
     button: {
       action: {
         type: 'launch_frame',
