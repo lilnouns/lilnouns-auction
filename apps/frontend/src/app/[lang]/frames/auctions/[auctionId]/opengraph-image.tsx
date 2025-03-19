@@ -24,14 +24,7 @@ type AuctionResponse = {
       id: string
       noun: {
         id: string
-        seed: {
-          id: string
-          background: string
-          body: string
-          accessory: string
-          head: string
-          glasses: string
-        }
+        seed: Seed
       }
       amount: string
     } | null
@@ -56,7 +49,6 @@ export async function fetchLilNounsAuction(
             noun {
               id
               seed {
-                id
                 background
                 body
                 accessory
@@ -118,30 +110,12 @@ export default async function Image({ params }: Props) {
     return btoa(svgBinary)
   }
 
-  const convertToSeed = (
-    apiSeed: AuctionResponse['data']['auction']['noun']['seed'] | undefined,
-  ): Seed => {
-    if (!apiSeed) {
-      // Default seed values if none available
-      return {
-        accessory: 0,
-        background: 0,
-        body: 0,
-        glasses: 0,
-        head: 0,
-      }
-    }
+  const seed = auction?.noun?.seed
 
-    return {
-      accessory: parseInt(apiSeed.accessory),
-      background: parseInt(apiSeed.background),
-      body: parseInt(apiSeed.body),
-      glasses: parseInt(apiSeed.glasses),
-      head: parseInt(apiSeed.head),
-    }
+  if (!seed) {
+    return new Response('No seed data available', { status: 404 })
   }
 
-  const seed = convertToSeed(auction?.noun?.seed)
   const svg = `data:image/svg+xml;base64,${renderSVG(seed)}`
 
   return new ImageResponse(
