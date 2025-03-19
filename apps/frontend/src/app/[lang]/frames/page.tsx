@@ -27,7 +27,7 @@ export async function generateMetadata(
 
   const frame: FrameEmbed = {
     version: 'next',
-    imageUrl: `${appUrl}/opengraph-image.png`,
+    imageUrl: `${appUrl}/opengraph-image?version=${version}`,
     button: {
       action: {
         type: 'launch_frame',
