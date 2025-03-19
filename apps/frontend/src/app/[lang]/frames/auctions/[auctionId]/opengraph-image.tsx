@@ -169,7 +169,8 @@ export default async function Image({ params }: Props) {
             marginBottom: '0rem',
           }}
         >
-          Auction Price: Ξ {formatEther(BigInt(auction?.amount ?? 0n))}
+          Auction Price: Ξ{' '}
+          {Number(formatEther(BigInt(auction?.amount ?? 0n))).toFixed(5)}
         </h2>
         <div
           style={{
