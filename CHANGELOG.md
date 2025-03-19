@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.39] - 2025-03-19
+
+### Features
+
+- Add `opengraph-image` for auction pages
+- Enable `edge` runtime for auctions page
+- Validate and display `auctionId`
+- Add `fetchLilNounsAuction` for auction data
+- Enhance auction image with dynamic data
+- Enhance auction OG image generation
+- Add `Redirect` component
+- Add metadata generation for auction pages
+
+### Bug Fixes
+
+- Update `splashBackgroundColor` value
+- Validate `auctionId` in `Image` function
+- Update `lint-staged` glob patterns
+- Format auction price with fixed decimals
+- Update `imageUrl` to include `auctionId`
+- Update `imageUrl` to include `version` param
+- Update `castMessage` with auction URL
+
+### Refactor
+
+- Clean up unused translation strings
+- Extract `Props` interface for components
+- Improve auction ID validation logic
+- Replace `isNumber` check with `isNaN`
+- Simplify `seed` handling in opengraph image
+
+### Miscellaneous Tasks
+
+- Update `lint-staged` patterns
+- Update `lint-staged` config to remove eslint
+
+### Styling
+
+- Update app icons and splash screen
+- Adjust font sizes and margins in opengraph
+
 ## [1.2.0-alpha.38] - 2025-03-19
 
 ### Bug Fixes
