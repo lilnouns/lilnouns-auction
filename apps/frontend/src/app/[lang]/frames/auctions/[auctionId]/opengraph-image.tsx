@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import { formatEther } from 'viem'
 
 export const runtime = 'edge'
 
@@ -88,6 +89,8 @@ export default async function Image({ params }: Props) {
     return new Response('Invalid Auction ID', { status: 400 })
   }
 
+  const auction = await fetchLilNounsAuction(auctionId)
+
   // const vazirmatnSemiBoldResp = await fetch(
   //   new URL('../../styles/fonts/Vazirmatn/Vazirmatn-Bold.ttf', import.meta.url),
   // )
@@ -137,7 +140,7 @@ export default async function Image({ params }: Props) {
             whiteSpace: 'pre-wrap',
           }}
         >
-          Lil Nouns
+          Lil Nouns #{auction?.id}
         </h1>
         <h2
           style={{
@@ -147,7 +150,7 @@ export default async function Image({ params }: Props) {
             marginBottom: '1rem',
           }}
         >
-          Auction Price: Ξ 0.42
+          Auction Price: Ξ {formatEther(BigInt(auction?.amount ?? 0n))}
         </h2>
         <div
           style={{
