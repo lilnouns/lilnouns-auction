@@ -11,6 +11,71 @@ export const size = {
 
 export const contentType = 'image/png'
 
+type AuctionResponse = {
+  data: {
+    auction: {
+      id: string
+      noun: {
+        id: string
+        seed: {
+          id: string
+          background: string
+          body: string
+          accessory: string
+          head: string
+          glasses: string
+        }
+      }
+      amount: string
+    } | null
+  }
+}
+
+export async function fetchLilNounsAuction(
+  auctionId: string,
+): Promise<AuctionResponse['data']['auction'] | undefined> {
+  try {
+    const endpoint = process.env.NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL ?? ''
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        query: `{
+          auction(id: "${auctionId}") {
+            id
+            noun {
+              id
+              seed {
+                id
+                background
+                body
+                accessory
+                head
+                glasses
+              }
+            }
+            amount
+          }
+        }`,
+        variables: {},
+      }),
+    })
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`)
+    }
+
+    const result: AuctionResponse = await response.json()
+    return result.data.auction ?? undefined
+  } catch (error) {
+    console.error('Error fetching auction data:', error)
+    return undefined
+  }
+}
+
 interface Props {
   params: Promise<{ auctionId: string }>
 }
