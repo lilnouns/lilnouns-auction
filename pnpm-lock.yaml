@@ -361,8 +361,8 @@ importers:
         specifier: 6.5.0
         version: 6.5.0(typescript@5.8.2)
       shadcn:
-        specifier: 2.4.0-canary.14
-        version: 2.4.0-canary.14(@types/node@22.13.10)(typescript@5.8.2)
+        specifier: 2.4.0-canary.16
+        version: 2.4.0-canary.16(@types/node@22.13.10)(typescript@5.8.2)
       tailwindcss:
         specifier: 4.0.14
         version: 4.0.14
@@ -2191,8 +2191,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inquirer/confirm@5.1.7':
-    resolution: {integrity: sha512-Xrfbrw9eSiHb+GsesO8TQIeHSMTP0xyvTCeeYevgZ4sKW+iz9w/47bgfG9b0niQm+xaLY2EWPBINUPldLwvYiw==}
+  '@inquirer/confirm@5.1.8':
+    resolution: {integrity: sha512-dNLWCYZvXDjO3rnQfk2iuJNL4Ivwz/T2+C3+WnNfJKsNGSuOs3wAo2F6e0p946gtSAk31nZMfW+MRmYaplPKsg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
@@ -2200,8 +2200,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@inquirer/core@10.1.8':
-    resolution: {integrity: sha512-HpAqR8y715zPpM9e/9Q+N88bnGwqqL8ePgZ0SMv/s3673JLMv3bIkoivGmjPqXlEgisUksSXibweQccUwEx4qQ==}
+  '@inquirer/core@10.1.9':
+    resolution: {integrity: sha512-sXhVB8n20NYkUBfDYgizGHlpRVaCRjtuzNZA6xpALIUbkgfd2Hjz+DfEN6+h1BRnuxw0/P4jCIMjMsEOAMwAJw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
@@ -8325,8 +8325,8 @@ packages:
     resolution: {integrity: sha512-QMEp5B7cftE7APOjk5Y6xgrbWu+WkLVQwk8JNjZ8nKRciZaByEW6MubieAiToS7+dwvrjGhH8jRXz3MVd0AYqQ==}
     hasBin: true
 
-  shadcn@2.4.0-canary.14:
-    resolution: {integrity: sha512-0sDjDZW7II+JFvbXg9KC1exosHCZgZMDPsujI2iSZZr1PrNVbv0nvWZx0uL/YUnaRvt4XmCFN7Pi8noN6iMjUA==}
+  shadcn@2.4.0-canary.16:
+    resolution: {integrity: sha512-HajpBYMB5P1iFoHrQ+bbfjuBtHfeQ0IVQWJIOsM4NgqymhMT0BpvOkncMf6Y0ttFc/CvhoZle5OJYkgA2oNzdA==}
     hasBin: true
 
   sharp@0.33.5:
@@ -11574,14 +11574,14 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@inquirer/confirm@5.1.7(@types/node@22.13.10)':
+  '@inquirer/confirm@5.1.8(@types/node@22.13.10)':
     dependencies:
-      '@inquirer/core': 10.1.8(@types/node@22.13.10)
+      '@inquirer/core': 10.1.9(@types/node@22.13.10)
       '@inquirer/type': 3.0.5(@types/node@22.13.10)
     optionalDependencies:
       '@types/node': 22.13.10
 
-  '@inquirer/core@10.1.8(@types/node@22.13.10)':
+  '@inquirer/core@10.1.9(@types/node@22.13.10)':
     dependencies:
       '@inquirer/figures': 1.0.11
       '@inquirer/type': 3.0.5(@types/node@22.13.10)
@@ -17418,7 +17418,7 @@ snapshots:
       '@bundled-es-modules/cookie': 2.0.1
       '@bundled-es-modules/statuses': 1.0.1
       '@bundled-es-modules/tough-cookie': 0.1.6
-      '@inquirer/confirm': 5.1.7(@types/node@22.13.10)
+      '@inquirer/confirm': 5.1.8(@types/node@22.13.10)
       '@mswjs/interceptors': 0.37.6
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/until': 2.1.0
@@ -18860,7 +18860,7 @@ snapshots:
       inherits: 2.0.4
       safe-buffer: 5.2.1
 
-  shadcn@2.4.0-canary.14(@types/node@22.13.10)(typescript@5.8.2):
+  shadcn@2.4.0-canary.16(@types/node@22.13.10)(typescript@5.8.2):
     dependencies:
       '@antfu/ni': 23.3.1
       '@babel/core': 7.26.10
