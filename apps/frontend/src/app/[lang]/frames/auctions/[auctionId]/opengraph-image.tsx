@@ -36,8 +36,15 @@ export async function fetchLilNounsAuction(
 ): Promise<AuctionResponse['data']['auction'] | undefined> {
   try {
     const endpoint = process.env.NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL ?? ''
-    const query = `{
-          auction(id: "${auctionId}") {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        query: `query getAuction($id: ID!){
+          auction(id: $id) {
             id
             noun {
               id
@@ -51,19 +58,10 @@ export async function fetchLilNounsAuction(
             }
             amount
           }
-        }`
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        query: query,
-        variables: {},
+        }`,
+        variables: { id: auctionId },
       }),
     })
-    console.log({ query, endpoint, response })
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`)
