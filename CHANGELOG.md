@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.40] - 2025-03-23
+
+### Bug Fixes
+
+- Update `setIsLoading` logic in auction grid
+
 ## [1.2.0-alpha.39] - 2025-03-19
 
 ### Features

@@ -84,6 +84,7 @@ export function AuctionPreviewGrid() {
     data: blocks,
     error: blocksError,
     isValidating: isValidatingBlocks,
+    isLoading: isLoadingBlocks,
   } = useSWR(
     ['blocks', blockOffset, blockLimit],
     () => fetchBlocks(blockOffset, blockLimit),
@@ -91,7 +92,7 @@ export function AuctionPreviewGrid() {
   )
 
   useEffect(() => {
-    setIsLoading(isValidatingBlocks)
+    setIsLoading(isValidatingBlocks || isLoadingBlocks)
     if (!blocks || nounId === undefined) return
 
     const parseSeedParameter = (seedParams?: string[]): number[] | undefined =>
@@ -154,6 +155,7 @@ export function AuctionPreviewGrid() {
     setPoolSeeds,
     setIsLoading,
     isValidatingBlocks,
+    isLoadingBlocks,
   ])
 
   if (blocksError) {
