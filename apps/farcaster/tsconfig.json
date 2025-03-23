@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "target": "es2021",
-    "types": ["node", "@cloudflare/workers-types"],
+    "types": ["node", "worker-configuration.d.ts"],
     "paths": {
       "@/*": ["./src/*"]
     }
