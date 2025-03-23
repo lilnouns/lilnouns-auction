@@ -10,19 +10,26 @@ export const runtime = 'edge'
 
 interface Props {
   params: Promise<{ lang: string; auctionId: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export async function generateMetadata(
-  { params }: Props,
+  { params, searchParams }: Props,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const { lang, auctionId } = await params
   const { title } = await parent
+  const { fv } = await searchParams
+
   const i18n = getI18nInstance(lang)
 
   const appUrl = process.env.NEXT_PUBLIC_SITE_URL
   const appVersion = process.env.NEXT_PUBLIC_APP_VERSION
-  const frameVersion = process.env.NEXT_PUBLIC_FRAME_VERSION ?? 1
+  const frameVersion = (
+    fv ??
+    process.env.NEXT_PUBLIC_FRAME_VERSION ??
+    '1'
+  ).toString()
 
   const frame: FrameEmbed = {
     version: 'next',
@@ -44,7 +51,7 @@ export async function generateMetadata(
 
   return {
     other: {
-      ...(frameVersion !== 1
+      ...(frameVersion !== '1'
         ? {
             'fc:frame': JSON.stringify(frame),
           }
