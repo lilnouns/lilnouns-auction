@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.41] - 2025-03-23
+
+### Features
+
+- Add support for `frameVersion` handling
+- Enhance `frame` structure for dynamic embedding
+
+### Bug Fixes
+
+- Update `frameUrl` to include version info
+
+### Refactor
+
+- Rename `version` to `appVersion`
+- Restructure `fetchLilNounsAuction` query
+- Optimize GraphQL `getAuction` query
+
+### Miscellaneous Tasks
+
+- Add logging for `auction` details
+- Refine debug logging in opengraph image
+
+### Styling
+
+- Update styles for `popover`, `card`, and others
+
 ## [1.2.0-alpha.40] - 2025-03-23
 
 ### Bug Fixes
