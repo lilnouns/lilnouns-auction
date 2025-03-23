@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.44] - 2025-03-23
+
+### Refactor
+
+- Update `Env` declaration structure
+
+### Miscellaneous Tasks
+
+- Update `compatibility_date` in config
+- Update `types` in tsconfig dependencies
+- Update `generate-types` script
+- Update wrangler type generation command
+
+### Revert
+
+- Remove `@cloudflare/workers-types`
+- Remove `worker-configuration.d.ts` from repo
+
 ## [1.2.0-alpha.43] - 2025-03-23
 
 ### Bug Fixes

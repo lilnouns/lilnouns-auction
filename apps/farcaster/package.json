@@ -9,7 +9,7 @@
     "codegen": "graphql-codegen --config codegen.config.ts",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --test-scheduled",
-    "generate-types": "wrangler types",
+    "generate-types": "wrangler types --include-runtime=false --strict-vars=false",
     "start": "wrangler dev --test-scheduled",
     "type-check": "pnpm generate-types && tsc"
   },
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.12.16",
+    "@cloudflare/workers-types": "4.20250320.0",
     "@graphprotocol/graph-ts": "0.38.0",
     "@graphql-codegen/cli": "5.0.5",
     "@graphql-codegen/schema-ast": "4.1.0",
