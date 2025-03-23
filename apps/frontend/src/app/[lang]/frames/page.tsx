@@ -24,6 +24,7 @@ export async function generateMetadata(
 
   const appUrl = process.env.NEXT_PUBLIC_SITE_URL
   const version = process.env.NEXT_PUBLIC_APP_VERSION
+  const frameVersion = process.env.NEXT_PUBLIC_FRAME_VERSION ?? 1
 
   const frame: FrameEmbed = {
     version: 'next',
@@ -40,13 +41,26 @@ export async function generateMetadata(
     },
   }
 
+  const frameUrl = encodeURIComponent(frame.button.action.url)
+  const launchUrl = new URL(`https://warpcast.com/?launchFrameUrl=${frameUrl}`)
+
   return {
     title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
     openGraph: {
       title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
     },
     other: {
-      'fc:frame': JSON.stringify(frame),
+      ...(frameVersion !== 1
+        ? {
+            'fc:frame': JSON.stringify(frame),
+          }
+        : {
+            'fc:frame': 'vNext',
+            'fc:frame:image': frame.imageUrl,
+            'fc:frame:button:1': frame.button.title,
+            'fc:frame:button:1:action': 'link',
+            'fc:frame:button:1:target': launchUrl.toString(),
+          }),
     },
   }
 }
