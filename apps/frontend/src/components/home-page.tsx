@@ -23,6 +23,7 @@ export const HomePage: NextPage = () => {
     }
     if (frameSdk && !isFrameSDKLoaded) {
       setIsFrameSDKLoaded(true)
+      frameSdk.actions.addFrame()
       load()
     }
   }, [isFrameSDKLoaded])
