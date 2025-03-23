@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.47] - 2025-03-23
+
+### Bug Fixes
+
+- Update `castMessage` with query parameter
+
 ## [1.2.0-alpha.46] - 2025-03-23
 
 ### Features
