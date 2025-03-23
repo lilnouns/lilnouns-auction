@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.46] - 2025-03-23
+
+### Features
+
+- Add `addFrame` action to `frameSdk`
+- Add `NEXT_PUBLIC_FRAME_VERSION` env variable
+- Support `searchParams` for metadata generation
+- Add `runtime` configuration for edge
+
 ## [1.2.0-alpha.45] - 2025-03-23
 
 ### Miscellaneous Tasks
