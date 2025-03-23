@@ -29,7 +29,7 @@ export async function scheduledHandler(
   if (previousId && currentId > previousId) {
     console.log('New auction found!')
     const recipientFid = 17838 // Consider moving to env variables
-    const castMessage = `New auction found: ${env.SITE_BASE_URL}/en/frames/auctions/${auction.id}`
+    const castMessage = `New auction found: ${env.SITE_BASE_URL}/en/frames/auctions/${auction.id}?fv=1`
     const idempotencyKey = createHash('sha256')
       .update(castMessage)
       .digest('hex')
