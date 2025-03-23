@@ -52,7 +52,6 @@ export async function fetchLilNounsAuction(
             amount
           }
         }`
-    console.log(query)
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -64,6 +63,7 @@ export async function fetchLilNounsAuction(
         variables: {},
       }),
     })
+    console.log({ query, endpoint, response })
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`)
