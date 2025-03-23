@@ -39,7 +39,7 @@ export async function generateMetadata(
     },
   }
 
-  const frameUrl = encodeURIComponent(frame.button.action.url)
+  const frameUrl = encodeURIComponent(`${appUrl}/?version=${appVersion}`)
   const launchUrl = new URL(`https://warpcast.com/?launchFrameUrl=${frameUrl}`)
 
   return {
