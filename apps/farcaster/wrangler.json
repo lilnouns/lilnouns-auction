@@ -1,7 +1,7 @@
 {
   "name": "lilnouns-auction",
   "main": "src/index.ts",
-  "compatibility_date": "2024-11-11",
+  "compatibility_date": "2025-03-23",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
     "enabled": true
