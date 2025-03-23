@@ -4,9 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "pnpm codegen",
+    "prebuild": "wrangler types && pnpm codegen",
     "build": "wrangler deploy --dry-run --outdir dist",
-    "cf-typegen": "wrangler types",
     "codegen": "graphql-codegen --config codegen.config.ts",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --test-scheduled",
