@@ -7,6 +7,8 @@ import { getI18nInstance } from '@/i18n/app-router-i18n'
 import { HomePage } from '@/components/home-page'
 import type { FrameEmbed } from '@/types'
 
+export const runtime = 'edge'
+
 type Props = {
   params: Promise<{ lang: string }>
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
