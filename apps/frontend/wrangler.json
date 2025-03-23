@@ -12,7 +12,8 @@
         "NEXT_PUBLIC_BLOCK_EXPLORER": "https://sepolia.etherscan.io",
         "NEXT_PUBLIC_CHAIN_ID": "11155111",
         "NEXT_PUBLIC_SITE_URL": "https://sepolia.lilnouns.auction",
-        "NODE_VERSION": "22.3.0"
+        "NODE_VERSION": "22.3.0",
+        "NEXT_PUBLIC_FRAME_VERSION": "2"
       }
     },
     "production": {
@@ -20,7 +21,8 @@
         "NEXT_PUBLIC_BLOCK_EXPLORER": "https://etherscan.io",
         "NEXT_PUBLIC_CHAIN_ID": "1",
         "NEXT_PUBLIC_SITE_URL": "https://lilnouns.auction",
-        "NODE_VERSION": "22.3.0"
+        "NODE_VERSION": "22.3.0",
+        "NEXT_PUBLIC_FRAME_VERSION": "2"
       }
     }
   }
