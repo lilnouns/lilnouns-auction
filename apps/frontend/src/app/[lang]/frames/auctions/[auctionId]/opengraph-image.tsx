@@ -88,6 +88,7 @@ export default async function Image({ params }: Props) {
   }
 
   const auction = await fetchLilNounsAuction(auctionId)
+  console.log('Auction', auction?.id, auction?.noun?.seed, auction?.amount)
 
   // const vazirmatnSemiBoldResp = await fetch(
   //   new URL('../../styles/fonts/Vazirmatn/Vazirmatn-Bold.ttf', import.meta.url),
