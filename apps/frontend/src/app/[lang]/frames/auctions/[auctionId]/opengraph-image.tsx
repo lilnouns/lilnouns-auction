@@ -43,8 +43,8 @@ export async function fetchLilNounsAuction(
         Accept: 'application/json',
       },
       body: JSON.stringify({
-        query: `{
-          auction(id: "${auctionId}") {
+        query: `query getAuction($id: ID!){
+          auction(id: $id) {
             id
             noun {
               id
@@ -59,7 +59,7 @@ export async function fetchLilNounsAuction(
             amount
           }
         }`,
-        variables: {},
+        variables: { id: auctionId },
       }),
     })
 
