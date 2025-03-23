@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.45] - 2025-03-23
+
+### Miscellaneous Tasks
+
+- Remove `type-check` from `prebuild` script
+
 ## [1.2.0-alpha.44] - 2025-03-23
 
 ### Refactor
