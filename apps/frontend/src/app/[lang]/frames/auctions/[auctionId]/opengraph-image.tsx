@@ -36,14 +36,7 @@ export async function fetchLilNounsAuction(
 ): Promise<AuctionResponse['data']['auction'] | undefined> {
   try {
     const endpoint = process.env.NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL ?? ''
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        query: `{
+    const query = `{
           auction(id: "${auctionId}") {
             id
             noun {
@@ -58,7 +51,16 @@ export async function fetchLilNounsAuction(
             }
             amount
           }
-        }`,
+        }`
+    console.log(query)
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
         variables: {},
       }),
     })
@@ -88,7 +90,6 @@ export default async function Image({ params }: Props) {
   }
 
   const auction = await fetchLilNounsAuction(auctionId)
-  console.log('Auction', auction?.id, auction?.noun?.seed, auction?.amount)
 
   // const vazirmatnSemiBoldResp = await fetch(
   //   new URL('../../styles/fonts/Vazirmatn/Vazirmatn-Bold.ttf', import.meta.url),
