@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.43] - 2025-03-23
+
+### Bug Fixes
+
+- Handle `null` and invalid auction IDs
+
+### Refactor
+
+- Use `env.SITE_BASE_URL` for URLs
+
+### Miscellaneous Tasks
+
+- Remove unused `LILNOUNS_SUBGRAPH_URL` var
+- Update `wrangler.jsonc` to `wrangler.json`
+- Update `types` in tsconfig dependencies
+- Remove `worker-configuration.d.ts` from repo
+- Update `prebuild` script with `wrangler types`
+- Update `wrangler` config for vars and kv
+- Update `types` path in `tsconfig.json`
+- Update scripts for type-checking and codegen
+
 ## [1.2.0-alpha.42] - 2025-03-23
 
 ### Bug Fixes

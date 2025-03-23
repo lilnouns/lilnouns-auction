@@ -4,13 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "pnpm codegen",
+    "prebuild": "pnpm type-check && pnpm codegen",
     "build": "wrangler deploy --dry-run --outdir dist",
-    "cf-typegen": "wrangler types",
     "codegen": "graphql-codegen --config codegen.config.ts",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --test-scheduled",
-    "start": "wrangler dev --test-scheduled"
+    "generate-types": "wrangler types",
+    "start": "wrangler dev --test-scheduled",
+    "type-check": "pnpm generate-types && tsc"
   },
   "dependencies": {
     "graphql": "16.10.0",
@@ -21,7 +22,6 @@
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.12.16",
-    "@cloudflare/workers-types": "4.20250320.0",
     "@graphprotocol/graph-ts": "0.38.0",
     "@graphql-codegen/cli": "5.0.5",
     "@graphql-codegen/schema-ast": "4.1.0",
