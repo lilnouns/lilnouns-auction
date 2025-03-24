@@ -1,7 +1,5 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-
 import { PoolSeed, Seed } from '@/types'
 
 import { usePoolStore } from '@/stores/pool-store'
@@ -10,25 +8,17 @@ import { useEffect } from 'react'
 import { getNounSeedFromBlockHash } from '@repo/assets/index'
 import { useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
-
-import { toast } from 'sonner'
 import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
-import { useLingui } from '@lingui/react/macro'
-
-import { DateTime } from 'luxon'
 import { times } from 'remeda'
 import { useBlocks } from '@/hooks/use-blocks'
 
 export function AuctionPreviewGrid() {
-  const { t } = useLingui()
   const { nounId } = useNextNoun()
   const { traitFilter } = useTraitFilterStore()
   const { poolSeeds, setPoolSeeds, setIsLoading } = usePoolStore()
-
-  const router = useRouter()
 
   const {
     data: blocks,
@@ -38,6 +28,14 @@ export function AuctionPreviewGrid() {
   } = useBlocks()
 
   useEffect(() => {
+    if (blocksError) {
+      console.error('Blocks error:', blocksError)
+    }
+
+    if (nounId === undefined) {
+      console.error('No Noun ID found. Please refresh the page.')
+    }
+
     setIsLoading(isValidatingBlocks || isLoadingBlocks)
     if (!blocks || nounId === undefined) return
 
@@ -102,27 +100,8 @@ export function AuctionPreviewGrid() {
     setIsLoading,
     isValidatingBlocks,
     isLoadingBlocks,
+    blocksError,
   ])
-
-  if ((!isLoadingBlocks || !isValidatingBlocks) && blocksError) {
-    toast(blocksError.message, {
-      description: DateTime.now().toLocaleString(DateTime.DATETIME_FULL),
-      action: {
-        label: t`Refresh`,
-        onClick: () => router.refresh(),
-      },
-    })
-  }
-
-  if (!isValidatingBlocks && nounId === undefined) {
-    toast(t`No Noun ID found. Please refresh the page.`, {
-      description: DateTime.now().toLocaleString(DateTime.DATETIME_FULL),
-      action: {
-        label: t`Refresh`,
-        onClick: () => router.refresh(),
-      },
-    })
-  }
 
   if (poolSeeds.length === 0) {
     return (
