@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.51] - 2025-03-24
+
+### Bug Fixes
+
+- Update loading check for `blocksError` handling
+
+### Refactor
+
+- Remove redundant fragment in grid layout
+- Remove unused `hasActiveFilters`
+- Extract `useBlocks` to a custom hook
+
 ## [1.2.0-alpha.50] - 2025-03-24
 
 ### Features
