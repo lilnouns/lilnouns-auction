@@ -178,7 +178,12 @@ export function AuctionPreviewGrid() {
     })
   }
 
-  if (isLoadingBlocks || isValidatingBlocks || nounId === undefined) {
+  if (
+    poolSeeds.length === 0 ||
+    isLoadingBlocks ||
+    isValidatingBlocks ||
+    nounId === undefined
+  ) {
     return (
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
         {times(256, (index) => (
