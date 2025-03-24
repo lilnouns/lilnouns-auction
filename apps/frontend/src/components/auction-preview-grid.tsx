@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 
-import { Block, BlockData, PoolSeed, Seed } from '@/types'
+import { PoolSeed, Seed } from '@/types'
 
 import { usePoolStore } from '@/stores/pool-store'
 import { useEffect } from 'react'
@@ -10,9 +10,6 @@ import { useEffect } from 'react'
 import { getNounSeedFromBlockHash } from '@repo/assets/index'
 import { useTraitFilterStore } from '@/stores/trait-filter-store'
 import { useNextNoun } from '@/hooks/use-next-noun'
-
-import useSWR from 'swr'
-import { gql, request } from 'graphql-request'
 
 import { toast } from 'sonner'
 import { Card, CardContent } from '@repo/ui/components/card'
@@ -23,46 +20,7 @@ import { useLingui } from '@lingui/react/macro'
 
 import { DateTime } from 'luxon'
 import { times } from 'remeda'
-
-const fetchBlocks = async (
-  offset: number,
-  limit: number,
-  after?: number,
-  before?: number,
-): Promise<Block[]> => {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? globalThis.location.origin
-  const subgraphUrl = `${siteUrl}/subgraphs/blocks`
-
-  const query = gql`
-    query GetBlocks($skip: Int!, $first: Int!, $filter: Block_filter) {
-      blocks(
-        skip: $skip
-        first: $first
-        orderBy: number
-        orderDirection: desc
-        where: $filter
-      ) {
-        id
-        number
-        timestamp
-      }
-    }
-  `
-
-  const filter: Record<string, unknown> = {}
-  if (after !== null) filter.number_gt = after
-  if (before !== null) filter.number_lt = before
-
-  const variables = {
-    skip: offset,
-    first: limit,
-    filter,
-  }
-
-  const { blocks } = await request<BlockData>(subgraphUrl, query, variables)
-
-  return blocks ?? []
-}
+import { useBlocks } from '@/hooks/use-blocks'
 
 export function AuctionPreviewGrid() {
   const { t } = useLingui()
@@ -72,24 +30,12 @@ export function AuctionPreviewGrid() {
 
   const router = useRouter()
 
-  // Check if any filters are active
-  const hasActiveFilters = Object.values(traitFilter).some(
-    (filter) => filter && filter.length > 0,
-  )
-
-  const blockOffset = 0
-  const blockLimit = 256
-
   const {
     data: blocks,
     error: blocksError,
     isValidating: isValidatingBlocks,
     isLoading: isLoadingBlocks,
-  } = useSWR(
-    ['blocks', blockOffset, blockLimit],
-    () => fetchBlocks(blockOffset, blockLimit),
-    { refreshInterval: 12000 },
-  )
+  } = useBlocks()
 
   useEffect(() => {
     setIsLoading(isValidatingBlocks || isLoadingBlocks)
@@ -158,7 +104,7 @@ export function AuctionPreviewGrid() {
     isLoadingBlocks,
   ])
 
-  if (blocksError) {
+  if ((!isLoadingBlocks || !isValidatingBlocks) && blocksError) {
     toast(blocksError.message, {
       description: DateTime.now().toLocaleString(DateTime.DATETIME_FULL),
       action: {
@@ -178,12 +124,7 @@ export function AuctionPreviewGrid() {
     })
   }
 
-  if (
-    poolSeeds.length === 0 ||
-    isLoadingBlocks ||
-    isValidatingBlocks ||
-    nounId === undefined
-  ) {
+  if (poolSeeds.length === 0) {
     return (
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
         {times(256, (index) => (
@@ -201,21 +142,19 @@ export function AuctionPreviewGrid() {
   }
 
   return (
-    <>
-      <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
-        {poolSeeds.map((poolSeed) => (
-          <AuctionSeedDialog
-            key={`${poolSeed.nounId}-${poolSeed.blockNumber}`}
-            poolSeed={poolSeed}
-          >
-            <Card className="w-full shadow-xs border-none cursor-pointer py-0">
-              <CardContent className="px-0">
-                <AuctionSeedImage seed={poolSeed.seed} />
-              </CardContent>
-            </Card>
-          </AuctionSeedDialog>
-        ))}
-      </div>
-    </>
+    <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
+      {poolSeeds.map((poolSeed) => (
+        <AuctionSeedDialog
+          key={`${poolSeed.nounId}-${poolSeed.blockNumber}`}
+          poolSeed={poolSeed}
+        >
+          <Card className="w-full shadow-xs border-none cursor-pointer py-0">
+            <CardContent className="px-0">
+              <AuctionSeedImage seed={poolSeed.seed} />
+            </CardContent>
+          </Card>
+        </AuctionSeedDialog>
+      ))}
+    </div>
   )
 }
