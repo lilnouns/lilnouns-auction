@@ -1,5 +1,5 @@
 import { Block, BlockData } from '@/types'
-import { gql, request } from 'graphql-request'
+import { ClientError, gql, request } from 'graphql-request'
 import useSWR from 'swr'
 
 const fetchBlocks = async (
@@ -37,9 +37,31 @@ const fetchBlocks = async (
     filter,
   }
 
-  const { blocks } = await request<BlockData>(subgraphUrl, query, variables)
+  let blocks: Block[] = []
+  try {
+    const data = await request<BlockData>(subgraphUrl, query, variables)
 
-  return blocks ?? []
+    blocks = data.blocks ?? []
+  } catch (error) {
+    // Check if the error is a GraphQL error
+    if (
+      error instanceof ClientError &&
+      error.response &&
+      error.response.errors
+    ) {
+      const graphqlErrors = error.response.errors
+        .map((err) => err.message)
+        .join(', ')
+      throw new Error(`GraphQL Error: ${graphqlErrors}`)
+    } else if (error instanceof Error) {
+      // Handle network errors or other unexpected errors
+      throw new Error(`Network Error: ${error.message}`)
+    } else {
+      console.error('An unexpected error occurred')
+    }
+  }
+
+  return blocks
 }
 
 export const useBlocks = () => {
