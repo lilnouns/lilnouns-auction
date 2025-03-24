@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.50] - 2025-03-24
+
+### Features
+
+- Append `appVersion` to `launchUrl`
+
+### Bug Fixes
+
+- Handle block-loading states in grid rendering
+- Handle empty `poolSeeds` in auction grid
+
 ## [1.2.0-alpha.49] - 2025-03-24
 
 ### Refactor
