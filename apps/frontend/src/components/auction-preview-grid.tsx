@@ -158,7 +158,7 @@ export function AuctionPreviewGrid() {
     isLoadingBlocks,
   ])
 
-  if (blocksError) {
+  if ((!isLoadingBlocks || !isValidatingBlocks) && blocksError) {
     toast(blocksError.message, {
       description: DateTime.now().toLocaleString(DateTime.DATETIME_FULL),
       action: {
@@ -178,12 +178,7 @@ export function AuctionPreviewGrid() {
     })
   }
 
-  if (
-    poolSeeds.length === 0 ||
-    isLoadingBlocks ||
-    isValidatingBlocks ||
-    nounId === undefined
-  ) {
+  if (poolSeeds.length === 0) {
     return (
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
         {times(256, (index) => (
