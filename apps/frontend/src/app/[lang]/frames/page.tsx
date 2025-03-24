@@ -49,7 +49,7 @@ export async function generateMetadata(
   }
 
   const appHost = new URL(appUrl ?? '').host
-  const launchUrl = `https://warpcast.com/~/frames/launch?domain=${appHost}`
+  const launchUrl = `https://warpcast.com/~/frames/launch?domain=${appHost}&version=${appVersion}`
 
   return {
     title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,
