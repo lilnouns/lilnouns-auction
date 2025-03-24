@@ -49,7 +49,17 @@ export const useBlocks = () => {
   const { data, error, isValidating, isLoading } = useSWR(
     ['blocks', blockOffset, blockLimit],
     () => fetchBlocks(blockOffset, blockLimit),
-    { refreshInterval: 12000 },
+    {
+      refreshInterval: 12000,
+      onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
+        // Do not retry on GraphQL errors
+        if (error.message.startsWith('GraphQL Error')) return
+        // Retry up to 3 times for network errors
+        if (retryCount >= 3) return
+        // Retry after 5 seconds
+        setTimeout(() => revalidate({ retryCount }), 5000)
+      },
+    },
   )
 
   return {
