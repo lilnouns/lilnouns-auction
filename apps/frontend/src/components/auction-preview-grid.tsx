@@ -72,11 +72,6 @@ export function AuctionPreviewGrid() {
 
   const router = useRouter()
 
-  // Check if any filters are active
-  const hasActiveFilters = Object.values(traitFilter).some(
-    (filter) => filter && filter.length > 0,
-  )
-
   const blockOffset = 0
   const blockLimit = 256
 
