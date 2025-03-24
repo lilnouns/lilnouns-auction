@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.52] - 2025-03-24
+
+### Features
+
+- Add custom retry logic to `useBlocks`
+
+### Bug Fixes
+
+- Handle GraphQL and network errors in `fetchBlocks`
+- Handle missing `nounId` and `blocksError` issues
+
 ## [1.2.0-alpha.51] - 2025-03-24
 
 ### Bug Fixes
