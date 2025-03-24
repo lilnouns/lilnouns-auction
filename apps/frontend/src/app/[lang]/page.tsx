@@ -24,7 +24,7 @@ export async function generateMetadata(
 
   const i18n = getI18nInstance(lang)
 
-  const appUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const appUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
   const appVersion = process.env.NEXT_PUBLIC_APP_VERSION
   const frameVersion = (
     fv ??
@@ -47,8 +47,8 @@ export async function generateMetadata(
     },
   }
 
-  const frameUrl = encodeURIComponent(`${appUrl}/?version=${appVersion}`)
-  const launchUrl = new URL(`https://warpcast.com/?launchFrameUrl=${frameUrl}`)
+  const appHost = new URL(appUrl ?? '').host
+  const launchUrl = `https://warpcast.com/~/frames/launch?domain=${appHost}`
 
   return {
     title: title ? title.absolute : t(i18n)`Lil Nouns Auction`,

@@ -46,8 +46,8 @@ export async function generateMetadata(
     },
   }
 
-  const frameUrl = encodeURIComponent(`${appUrl}/?version=${appVersion}`)
-  const launchUrl = new URL(`https://warpcast.com/?launchFrameUrl=${frameUrl}`)
+  const appHost = new URL(appUrl ?? '').host
+  const launchUrl = `https://warpcast.com/~/frames/launch?domain=${appHost}`
 
   return {
     other: {
