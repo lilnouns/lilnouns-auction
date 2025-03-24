@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.49] - 2025-03-24
+
+### Refactor
+
+- Update `launchUrl` construction logic
+
 ## [1.2.0-alpha.48] - 2025-03-24
 
 ### Bug Fixes
