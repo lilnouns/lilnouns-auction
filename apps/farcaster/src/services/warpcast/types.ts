@@ -6,7 +6,7 @@ export interface Pfp {
 export interface Bio {
   text: string
   mentions: string[]
-  channelMentions: string[]
+  channelMentions?: string[]
 }
 
 export interface Location {
@@ -19,34 +19,43 @@ export interface Profile {
   location: Location
 }
 
-export interface ViewerContext {
-  following: boolean
-  followedBy: boolean
-  canSendDirectCasts: boolean
-  enableNotifications: boolean
-  hasUploadedInboxKeys: boolean
+export interface UserViewerContext {
+  following?: boolean
+  followedBy?: boolean
+  blockedBy?: boolean
+  canSendDirectCasts?: boolean
+  enableNotifications?: boolean
+  hasUploadedInboxKeys?: boolean
 }
+
+type Author = User
 
 export interface User {
   fid: number
-  username: string
+  username?: string
   displayName: string
   pfp: Pfp
   profile: Profile
   followerCount: number
   followingCount: number
-  activeOnFcNetwork: boolean
-  connectedAccounts: string[]
-  viewerContext: ViewerContext
+  activeOnFcNetwork?: boolean
+  connectedAccounts?: string[]
+  viewerContext: UserViewerContext
 }
 
 export interface OpenGraph {
   url: string
   sourceUrl: string
   title: string
+  description?: string
   domain: string
+  image?: string
   useLargeImage: boolean
-  frame: {
+  channel?: {
+    key: string
+    followerCount: number
+  }
+  frame?: {
     version: string
     frameUrl: string
     imageUrl: string
@@ -57,6 +66,24 @@ export interface OpenGraph {
       type: string
       target: string
     }[]
+    frameEmbedNext?: {
+      frameUrl: string
+      frameEmbed: {
+        version: string
+        imageUrl: string
+        button: {
+          title: string
+          action: {
+            type: string
+            name: string
+            url: string
+            splashImageUrl: string
+            splashBackgroundColor: string
+          }
+        }
+      }
+      author: Author
+    }
     imageAspectRatio: string
   }
 }
@@ -72,32 +99,65 @@ export interface Embeds {
   videos: never[]
   unknowns: never[]
   processedCastText: string
+  groupInvites: never[]
+}
+
+export interface ParentSource {
+  type: string
+  url: string
+}
+
+interface Tag {
+  type: string
+  id: string
+  name: string
+  imageUrl: string
+}
+
+export interface Channel {
+  key: string
+  name: string
+  imageUrl: string
+  authorContext: AuthorContext
+  authorRole: string
+}
+
+export interface AuthorContext {
+  role: string
+  restricted: boolean
+  banned: boolean
 }
 
 export interface Cast {
   hash: string
   threadHash: string
-  author: User
+  parentSource?: ParentSource
+  author: Author
+  castType?: string
   text: string
   timestamp: number
   mentions: never[]
-  attachments: never
+  attachments?: never
   embeds: Embeds
+  ancestors?: { count: number; casts?: Cast[] }
   replies: { count: number }
   reactions: { count: number }
-  recasts: { count: number }
+  recasts: {
+    count: number
+    recasters?: never[]
+  }
   watches: { count: number }
-  tags: {
-    type: string
-    id: string
-    name: string
-    imageUrl: string
-  }[]
+  tags: Tag[]
+  viewCount?: number
   quoteCount: number
   combinedRecastCount: number
-  viewerContext: {
-    reacted: boolean
-    recast: boolean
-    bookmarked: boolean
-  }
+  warpsTipped: number
+  channel?: Channel
+  viewerContext: CastViewerContext
+}
+
+export interface CastViewerContext {
+  reacted: boolean
+  recast: boolean
+  bookmarked: boolean
 }
