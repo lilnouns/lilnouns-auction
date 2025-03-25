@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.55] - 2025-03-25
+
+### Features
+
+- Add TypeScript interfaces for warpcast
+- Add `cast` service for creating casts
+
+### Refactor
+
+- Update `Cast` and `User` interfaces
+- Replace `sendDirectCast` with `cast`
+
 ## [1.2.0-alpha.54] - 2025-03-25
 
 ### Bug Fixes
