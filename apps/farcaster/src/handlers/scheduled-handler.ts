@@ -1,6 +1,6 @@
 import { fetchLatestAuction } from '@/services/lilnouns/fetch-latest-auction'
-import { sendDirectCast } from '@/services/warpcast/send-direct-cast'
-import { createHash } from 'crypto'
+import { formatEther } from 'viem'
+import { cast } from '@/services/warpcast/cast'
 
 export async function scheduledHandler(
   _controller: ScheduledController,
@@ -28,21 +28,25 @@ export async function scheduledHandler(
 
   if (previousId && currentId > previousId) {
     console.log('New auction found!')
-    const recipientFid = 17838 // Consider moving to env variables
-    const castMessage = `New auction found: ${env.SITE_BASE_URL}/en/frames/auctions/${auction.id}?fv=1`
-    const idempotencyKey = createHash('sha256')
-      .update(castMessage)
-      .digest('hex')
+
     try {
-      const result = await sendDirectCast(
-        env,
-        recipientFid,
-        castMessage,
-        idempotencyKey,
-      )
-      if (!result.success) {
-        throw new Error(`Non-successful result: ${JSON.stringify(result)}`)
+      const nextNoun = auction.noun!.id.toString().endsWith('9')
+        ? currentId + 3
+        : currentId + 1
+      const nounPrice = formatEther(BigInt(auction?.amount ?? 0n))
+      const castText =
+        `Lil Noun #${auction.noun!.id} found a new home for ${nounPrice} Ξ! ` +
+        `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
+      const embedsUrls = [
+        `${env.SITE_BASE_URL}/en/frames/auctions/${auction.id}`,
+      ]
+      const channelKey = 'lilnouns'
+      const result = await cast(env, castText, embedsUrls, channelKey)
+
+      if (!result.cast) {
+        throw new Error('Failed to create cast')
       }
+
       // Update KV only when direct cast was successful
       await env.KV.put('latest-auction-id', currentId.toString())
       console.log(`Updated latest auction ID in KV to ${currentId}`)
