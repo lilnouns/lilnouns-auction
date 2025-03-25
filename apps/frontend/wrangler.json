@@ -15,7 +15,7 @@
         "NODE_VERSION": "22.3.0",
         "NEXT_PUBLIC_FRAME_VERSION": "2",
         "NEXT_PUBLIC_BLOCKS_SUBGRAPH_URL": "https://proxy.nekofar.workers.dev/subgraphs/blocks/sepolia",
-        "NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL": "hhttps://proxy.nekofar.workers.dev/subgraphs/lilnouns/sepolia"
+        "NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL": "https://proxy.nekofar.workers.dev/subgraphs/lilnouns/sepolia"
       }
     },
     "production": {
@@ -26,7 +26,7 @@
         "NODE_VERSION": "22.3.0",
         "NEXT_PUBLIC_FRAME_VERSION": "2",
         "NEXT_PUBLIC_BLOCKS_SUBGRAPH_URL": "https://proxy.nekofar.workers.dev/subgraphs/blocks/mainnet",
-        "NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL": "hhttps://proxy.nekofar.workers.dev/subgraphs/lilnouns/mainnet"
+        "NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL": "https://proxy.nekofar.workers.dev/subgraphs/lilnouns/mainnet"
       }
     }
   }

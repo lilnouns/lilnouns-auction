@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.54] - 2025-03-25
+
+### Bug Fixes
+
+- Correct typo in `NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL`
+
 ## [1.2.0-alpha.53] - 2025-03-25
 
 ### Bug Fixes
