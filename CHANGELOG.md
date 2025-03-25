@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.53] - 2025-03-25
+
+### Bug Fixes
+
+- Update `subgraphUrl` to use environment variable
+
+### Refactor
+
+- Remove unused `rewrites` config
+
+### Miscellaneous Tasks
+
+- Update environment variables for subgraphs
+
 ## [1.2.0-alpha.52] - 2025-03-24
 
 ### Features
