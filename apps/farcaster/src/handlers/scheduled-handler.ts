@@ -29,13 +29,18 @@ export async function scheduledHandler(
   if (previousId && currentId > previousId) {
     console.log('New auction found!')
 
+    if (!auction.noun) {
+      console.error('No noun found in auction')
+      return
+    }
+
     try {
-      const nextNoun = auction.noun!.id.toString().endsWith('9')
+      const nextNoun = auction.noun.id.toString().endsWith('9')
         ? currentId + 3
         : currentId + 1
       const nounPrice = formatEther(BigInt(auction?.amount ?? 0n))
       const castText =
-        `Lil Noun #${auction.noun!.id} found a new home for ${nounPrice} Ξ! ` +
+        `Lil Noun #${auction.noun.id} found a new home for ${nounPrice} Ξ! ` +
         `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
       const embedsUrls = [
         `${env.SITE_BASE_URL}/en/frames/auctions/${auction.id}`,
