@@ -1,6 +1,7 @@
 import { fetchLatestAuction } from '@/services/lilnouns/fetch-latest-auction'
 import { formatEther } from 'viem'
 import { cast } from '@/services/warpcast/cast'
+import { round } from 'remeda'
 
 export async function scheduledHandler(
   _controller: ScheduledController,
@@ -38,7 +39,10 @@ export async function scheduledHandler(
       const nextNoun = auction.noun.id.toString().endsWith('9')
         ? currentId + 3
         : currentId + 1
-      const nounPrice = formatEther(BigInt(auction?.amount ?? 0n))
+      const nounPrice = round(
+        Number(formatEther(BigInt(auction?.amount ?? 0n))),
+        5,
+      )
       const castText =
         `Lil Noun #${auction.noun.id} found a new home for ${nounPrice} Ξ! ` +
         `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
