@@ -4,6 +4,7 @@ import { formatEther } from 'viem'
 import { Seed } from '@/types'
 import { getNounData, imageData } from '@repo/assets/index'
 import { buildSVG, EncodedImage } from '@lilnounsdao/sdk'
+import { round } from 'remeda'
 
 const { palette } = imageData
 
@@ -170,7 +171,7 @@ export default async function Image({ params }: Props) {
           }}
         >
           Auction Price: Ξ{' '}
-          {Number(formatEther(BigInt(auction?.amount ?? 0n))).toFixed(5)}
+          {round(Number(formatEther(BigInt(auction?.amount ?? 0n))), 5)}
         </h2>
         <div
           style={{
