@@ -43,6 +43,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useLingui } from '@lingui/react/macro'
 import { Loader2 } from 'lucide-react'
+import { round } from 'remeda'
 
 const { images, bgcolors } = imageData
 
@@ -192,7 +193,7 @@ export function AuctionSeedDialog({
             {t`Buying...`}
           </>
         ) : (
-          t`Buy Now for ${Number(formatEther(price ?? 0n)).toFixed(5)} ETH`
+          t`Buy Now for ${round(Number(formatEther(price ?? 0n)), 5)} ETH`
         )}
       </Button>
     )

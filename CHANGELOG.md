@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.56] - 2025-03-26
+
+### Features
+
+- Round `nounPrice` to 5 decimal places
+
+### Bug Fixes
+
+- Handle missing `noun` in auction handler
+
+### Refactor
+
+- Use `round` for auction price formatting
+
 ## [1.2.0-alpha.55] - 2025-03-25
 
 ### Features
