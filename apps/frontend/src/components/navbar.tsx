@@ -8,6 +8,7 @@ import { LanguageSwitcher } from '@/components/language-switcher'
 import { Icons } from '@/components/icons'
 
 import { useLingui } from '@lingui/react/macro'
+import { UserGuideDialog } from '@/components/user-guide-dialog'
 
 const Navbar = () => {
   const { t } = useLingui()
@@ -27,6 +28,8 @@ const Navbar = () => {
           <WalletOptionsDialog />
 
           <LanguageSwitcher />
+
+          <UserGuideDialog />
 
           <ModeToggle />
         </div>
