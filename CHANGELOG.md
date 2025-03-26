@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.59] - 2025-03-26
+
+### Features
+
+- Add translations for user guide dialog
+
 ## [1.2.0-alpha.58] - 2025-03-26
 
 ### Features
