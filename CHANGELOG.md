@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.57] - 2025-03-26
+
+### Refactor
+
+- Streamline nullish checks with `isNullish`
+
+### Documentation
+
+- Update badges in `README.md`
+
+### Miscellaneous Tasks
+
+- Update `NEXT_PUBLIC_*_SUBGRAPH_URL` values
+
 ## [1.2.0-alpha.56] - 2025-03-26
 
 ### Features
