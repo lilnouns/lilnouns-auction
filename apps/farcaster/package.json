@@ -17,7 +17,7 @@
     "graphql": "16.10.0",
     "graphql-request": "6.1.0",
     "graphql-tag": "2.12.6",
-    "luxon": "3.5.0",
+    "luxon": "3.6.0",
     "remeda": "2.21.2",
     "viem": "^2.23.15"
   },
