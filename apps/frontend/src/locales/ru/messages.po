@@ -63,7 +63,7 @@ msgstr "очки"
 msgid "Glasses"
 msgstr "Очки"
 
-#. placeholder {0}: Number(formatEther(price ?? 0n)).toFixed(5)
+#. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
 msgstr "Купить сейчас за {0} ETH"
@@ -72,6 +72,11 @@ msgstr "Купить сейчас за {0} ETH"
 msgid "Buying..."
 msgstr "Покупка..."
 
+#: src/components/user-guide-dialog.tsx
+msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
+msgstr ""
+
+#: src/components/user-guide-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Close"
@@ -108,6 +113,10 @@ msgstr ""
 msgid "Error"
 msgstr "Ошибка"
 
+#: src/components/user-guide-dialog.tsx
+msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
+msgstr ""
+
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
@@ -115,6 +124,7 @@ msgstr "Фильтр аукционов"
 
 #: src/app/[lang]/page.tsx
 #: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -126,6 +136,10 @@ msgstr "Скрыть детали"
 msgid "Italian"
 msgstr ""
 
+#: src/components/user-guide-dialog.tsx
+msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
+msgstr ""
+
 #: src/components/mode-toggle.tsx
 msgid "Light"
 msgstr "Светлый"
@@ -134,16 +148,23 @@ msgstr "Светлый"
 #: src/components/navbar.tsx
 #: src/components/home-page.tsx
 #: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
 #: src/app/[lang]/layout.tsx
 #: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
 msgid "Lil Nouns Auction"
 msgstr "Аукцион Lil Nouns"
 
-#: src/components/auction-preview-grid.tsx
-msgid "No Noun ID found. Please refresh the page."
-msgstr "ID Noun не найден. Обновите страницу."
+#: src/components/user-guide-dialog.tsx
+#: src/components/user-guide-dialog.tsx
+msgid "Lil Nouns Auction Guide"
+msgstr ""
+
+#: src/components/user-guide-dialog.tsx
+msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
+msgstr ""
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -170,9 +191,11 @@ msgstr "Попробуйте обновить страницу или обрат
 msgid "Portuguese"
 msgstr ""
 
+#: src/components/user-guide-dialog.tsx
+msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
+msgstr ""
+
 #: src/components/error-fallback.tsx
-#: src/components/auction-preview-grid.tsx
-#: src/components/auction-preview-grid.tsx
 msgid "Refresh"
 msgstr "Обновить"
 
@@ -210,6 +233,15 @@ msgstr "Система"
 msgid "Toggle theme"
 msgstr "Переключить тему"
 
+#: src/components/user-guide-dialog.tsx
+msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
+msgstr ""
+
+#: src/components/user-guide-dialog.tsx
+#: src/components/user-guide-dialog.tsx
+msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
+msgstr ""
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
 msgstr "Просмотреть характеристики и цены"
@@ -221,6 +253,10 @@ msgstr "Просмотреть характеристики и цены для �
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"
 msgstr "Просмотреть транзакцию"
+
+#: src/components/user-guide-dialog.tsx
+msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
+msgstr ""
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
