@@ -8,8 +8,7 @@ import { LanguageSwitcher } from '@/components/language-switcher'
 import { Icons } from '@/components/icons'
 
 import { useLingui } from '@lingui/react/macro'
-import { Button } from '@repo/ui/components/button'
-import { CircleHelpIcon } from 'lucide-react'
+import { UserGuideDialog } from '@/components/user-guide-dialog'
 
 const Navbar = () => {
   const { t } = useLingui()
@@ -30,11 +29,7 @@ const Navbar = () => {
 
           <LanguageSwitcher />
 
-          <Button variant="outline" size="icon" asChild>
-            <Link href="/about">
-              <CircleHelpIcon className="h-4 w-4" />
-            </Link>
-          </Button>
+          <UserGuideDialog />
 
           <ModeToggle />
         </div>
