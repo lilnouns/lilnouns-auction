@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.58] - 2025-03-26
+
+### Features
+
+- Add `Avatar` component
+- Add help button with link to about page
+- Add `UserGuideDialog` for auction info
+
+### Refactor
+
+- Replace `CircleHelpIcon` with `UserGuideDialog`
+- Optimize `UserGuideDialog` for maintainability
+
+### Miscellaneous Tasks
+
+- Update `workers_dev` in wrangler config
+
 ## [1.2.0-alpha.57] - 2025-03-26
 
 ### Refactor
