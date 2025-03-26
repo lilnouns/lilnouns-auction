@@ -1,7 +1,7 @@
 import { fetchLatestAuction } from '@/services/lilnouns/fetch-latest-auction'
 import { formatEther } from 'viem'
 import { cast } from '@/services/warpcast/cast'
-import { round } from 'remeda'
+import { isNullish, round } from 'remeda'
 
 export async function scheduledHandler(
   _controller: ScheduledController,
@@ -14,7 +14,7 @@ export async function scheduledHandler(
   console.log(`Latest auction ID from KV: ${previousId}`)
 
   const auction = await fetchLatestAuction(env.LILNOUNS_SUBGRAPH_URL)
-  if (!auction) {
+  if (isNullish(auction)) {
     console.log('No auction data found from subgraph')
     return
   }
@@ -30,7 +30,7 @@ export async function scheduledHandler(
   if (previousId && currentId > previousId) {
     console.log('New auction found!')
 
-    if (!auction.noun) {
+    if (isNullish(auction.noun)) {
       console.error('No noun found in auction')
       return
     }
