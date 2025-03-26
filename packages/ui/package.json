@@ -39,7 +39,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@tailwindcss/postcss": "4.0.15",
+    "@tailwindcss/postcss": "4.0.16",
     "@turbo/gen": "2.4.4",
     "@types/node": "22.13.13",
     "@types/react": "19.0.12",
