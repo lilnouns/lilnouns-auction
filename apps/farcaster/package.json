@@ -28,7 +28,7 @@
     "@graphql-codegen/cli": "5.0.5",
     "@graphql-codegen/schema-ast": "4.1.0",
     "@graphql-codegen/typescript-graphql-request": "6.2.0",
-    "@graphql-codegen/typescript-operations": "4.5.1",
+    "@graphql-codegen/typescript-operations": "4.6.0",
     "@parcel/watcher": "2.5.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
