@@ -1,13 +1,16 @@
 import { fetchLatestAuction } from '@/services/lilnouns/fetch-latest-auction'
 import { formatEther } from 'viem'
-import { cast } from '@/services/warpcast/cast'
 import { isNullish, round } from 'remeda'
+import { client, createCast } from '@nekofar/warpcast'
 
 export async function scheduledHandler(
   _controller: ScheduledController,
   env: Env,
   _ctx: ExecutionContext,
 ): Promise<void> {
+  client.setConfig({
+    auth: () => env.WARPCAST_ACCESS_TOKEN,
+  })
   // Get previous ID as string and convert to number
   const previousIdStr = await env.KV.get('latest-auction-id')
   const previousId = previousIdStr ? Number(previousIdStr) : null
@@ -50,9 +53,15 @@ export async function scheduledHandler(
         `${env.SITE_BASE_URL}/en/frames/auctions/${auction.id}`,
       ]
       const channelKey = 'lilnouns'
-      const result = await cast(env, castText, embedsUrls, channelKey)
+      const { data } = await createCast({
+        body: {
+          text: castText,
+          embeds: embedsUrls,
+          channelKey,
+        },
+      })
 
-      if (!result.cast) {
+      if (!data?.result?.cast) {
         throw new Error('Failed to create cast')
       }
 
