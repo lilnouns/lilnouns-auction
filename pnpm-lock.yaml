@@ -49,6 +49,9 @@ importers:
 
   apps/farcaster:
     dependencies:
+      '@nekofar/warpcast':
+        specifier: 2.0.0-alpha.5
+        version: 2.0.0-alpha.5
       graphql:
         specifier: 16.10.0
         version: 16.10.0
@@ -2108,6 +2111,9 @@ packages:
     peerDependencies:
       react: '>=19.0.0'
 
+  '@hey-api/client-fetch@0.8.4':
+    resolution: {integrity: sha512-SWtUjVEFIUdiJGR2NiuF0njsSrSdTe7WHWkp3BLH3DEl2bRhiflOnBo29NSDdrY90hjtTQiTQkBxUgGOF29Xzg==}
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -2521,6 +2527,9 @@ packages:
   '@mswjs/interceptors@0.37.6':
     resolution: {integrity: sha512-wK+5pLK5XFmgtH3aQ2YVvA3HohS3xqV/OxuVOdNx9Wpnz7VE/fnC+e1A7ln6LFYeck7gOJ/dsZV6OLplOtAJ2w==}
     engines: {node: '>=18'}
+
+  '@nekofar/warpcast@2.0.0-alpha.5':
+    resolution: {integrity: sha512-Z6RfptgpAX+UO+Ji5M7jcGx/LmtgGNVYjDP54Y7KVWoc25jbSlhXUUOu/KVIPQxgZb0cONpU4cz35YiJnYucOw==}
 
   '@next/env@13.5.8':
     resolution: {integrity: sha512-YmiG58BqyZ2FjrF2+5uZExL2BrLr8RTQzLXNDJ8pJr0O+rPlOeDPXp1p1/4OrR3avDidzZo3D8QO2cuDv1KCkw==}
@@ -11643,6 +11652,8 @@ snapshots:
     dependencies:
       react: 19.0.0
 
+  '@hey-api/client-fetch@0.8.4': {}
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -12197,6 +12208,10 @@ snapshots:
       is-node-process: 1.2.0
       outvariant: 1.4.3
       strict-event-emitter: 0.5.1
+
+  '@nekofar/warpcast@2.0.0-alpha.5':
+    dependencies:
+      '@hey-api/client-fetch': 0.8.4
 
   '@next/env@13.5.8': {}
 
