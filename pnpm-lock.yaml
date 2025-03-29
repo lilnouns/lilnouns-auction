@@ -50,8 +50,8 @@ importers:
   apps/farcaster:
     dependencies:
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.7
-        version: 2.0.0-alpha.7
+        specifier: 2.0.0-alpha.8
+        version: 2.0.0-alpha.8
       graphql:
         specifier: 16.10.0
         version: 16.10.0
@@ -2528,8 +2528,8 @@ packages:
     resolution: {integrity: sha512-wK+5pLK5XFmgtH3aQ2YVvA3HohS3xqV/OxuVOdNx9Wpnz7VE/fnC+e1A7ln6LFYeck7gOJ/dsZV6OLplOtAJ2w==}
     engines: {node: '>=18'}
 
-  '@nekofar/warpcast@2.0.0-alpha.7':
-    resolution: {integrity: sha512-LUrLufgsaAbO7hRUFbqcAviz7YIj+NS6rFfq0/LOeSS5WbRQ/OYuMDKt4GmKp3Sxps8v8pQ5wOyoMLa1NcZxuA==}
+  '@nekofar/warpcast@2.0.0-alpha.8':
+    resolution: {integrity: sha512-j0S5DyHBV8IhxvC+UuO2l3dI4zuW+D9OiNa2hzMkaol466vEgBhGBg7IHhjPDJnD4BDqwLiQNIL3LCeMwG9IjQ==}
 
   '@next/env@13.5.8':
     resolution: {integrity: sha512-YmiG58BqyZ2FjrF2+5uZExL2BrLr8RTQzLXNDJ8pJr0O+rPlOeDPXp1p1/4OrR3avDidzZo3D8QO2cuDv1KCkw==}
@@ -12209,7 +12209,7 @@ snapshots:
       outvariant: 1.4.3
       strict-event-emitter: 0.5.1
 
-  '@nekofar/warpcast@2.0.0-alpha.7':
+  '@nekofar/warpcast@2.0.0-alpha.8':
     dependencies:
       '@hey-api/client-fetch': 0.8.4
 
