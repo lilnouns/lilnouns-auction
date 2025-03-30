@@ -1,7 +1,8 @@
-import { fetchLatestAuction } from '@/services/lilnouns/fetch-latest-auction'
 import { formatEther } from 'viem'
-import { isNullish, round } from 'remeda'
+import { first, isNullish, round } from 'remeda'
 import { client, createCast } from '@nekofar/warpcast'
+import { GraphQLClient } from 'graphql-request'
+import { getSdk } from '@/services/lilnouns'
 
 export async function scheduledHandler(
   _controller: ScheduledController,
@@ -16,7 +17,11 @@ export async function scheduledHandler(
   const previousId = previousIdStr ? Number(previousIdStr) : null
   console.log(`Latest auction ID from KV: ${previousId}`)
 
-  const auction = await fetchLatestAuction(env.LILNOUNS_SUBGRAPH_URL)
+  const graphqlClient = new GraphQLClient(env.LILNOUNS_SUBGRAPH_URL)
+  const sdk = getSdk(graphqlClient)
+  const { auctions } = await sdk.getLatestAuction()
+  const auction = first(auctions)
+
   if (isNullish(auction)) {
     console.log('No auction data found from subgraph')
     return
