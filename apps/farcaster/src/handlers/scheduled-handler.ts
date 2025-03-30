@@ -46,7 +46,6 @@ export async function scheduledHandler(
     }
 
     try {
-      let castText
       const nextNoun = auction.noun.id.toString().endsWith('9')
         ? currentId + 3
         : currentId + 1
@@ -62,15 +61,10 @@ export async function scheduledHandler(
         auth: () => env.WARPCAST_ACCESS_TOKEN,
       })
 
-      if (!userData?.result?.user) {
-        castText =
-          `Lil Noun #${auction.noun.id} found a new home for ${nounPrice} Ξ! ` +
-          `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
-      } else {
-        castText =
-          `Lil Noun #${auction.noun.id} found a new home by @${userData?.result?.user.username} for ${nounPrice} Ξ! ` +
-          `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
-      }
+      const username = userData?.result?.user?.username
+      const castText =
+        `Lil Noun #${auction.noun.id} found a new home${username ? ` by @${username}` : ''} for ${nounPrice} Ξ! ` +
+        `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
 
       const siteBaseUrl = env.SITE_BASE_URL
       const embedsUrls = [`${siteBaseUrl}/en/frames/auctions/${auction.id}`]
