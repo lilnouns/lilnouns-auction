@@ -75,6 +75,7 @@ export async function scheduledHandler(
           embeds: embedsUrls,
           channelKey,
         },
+        auth: () => env.WARPCAST_ACCESS_TOKEN,
       })
 
       if (!castData?.result?.cast) {
