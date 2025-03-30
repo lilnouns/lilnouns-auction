@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.61] - 2025-03-30
+
+### Features
+
+- Improve auction notifications with bidder info
+
+### Bug Fixes
+
+- Add `auth` to scheduled handler requests
+
+### Refactor
+
+- Replace `cast` with `createCast`
+- Remove `fetchCurrentAuction` and `fetchLatestAuction`
+- Rename `client` to `warpcastClient`
+- Simplify Warpcast client usage
+- Simplify `castText` assignment logic
+
 ## [1.2.0-alpha.60] - 2025-03-29
 
 ### Bug Fixes

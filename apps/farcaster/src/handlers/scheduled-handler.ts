@@ -1,7 +1,8 @@
-import { fetchLatestAuction } from '@/services/lilnouns/fetch-latest-auction'
 import { formatEther } from 'viem'
-import { cast } from '@/services/warpcast/cast'
-import { isNullish, round } from 'remeda'
+import { first, isNullish, round } from 'remeda'
+import { createCast, getUserByVerificationAddress } from '@nekofar/warpcast'
+import { GraphQLClient } from 'graphql-request'
+import { getSdk } from '@/services/lilnouns'
 
 export async function scheduledHandler(
   _controller: ScheduledController,
@@ -13,7 +14,11 @@ export async function scheduledHandler(
   const previousId = previousIdStr ? Number(previousIdStr) : null
   console.log(`Latest auction ID from KV: ${previousId}`)
 
-  const auction = await fetchLatestAuction(env.LILNOUNS_SUBGRAPH_URL)
+  const graphqlClient = new GraphQLClient(env.LILNOUNS_SUBGRAPH_URL)
+  const sdk = getSdk(graphqlClient)
+  const { auctions } = await sdk.getLatestAuction()
+  const auction = first(auctions)
+
   if (isNullish(auction)) {
     console.log('No auction data found from subgraph')
     return
@@ -35,6 +40,11 @@ export async function scheduledHandler(
       return
     }
 
+    if (isNullish(auction.bidder)) {
+      console.error('No bidder found in auction')
+      return
+    }
+
     try {
       const nextNoun = auction.noun.id.toString().endsWith('9')
         ? currentId + 3
@@ -43,16 +53,32 @@ export async function scheduledHandler(
         Number(formatEther(BigInt(auction?.amount ?? 0n))),
         5,
       )
-      const castText =
-        `Lil Noun #${auction.noun.id} found a new home for ${nounPrice} Ξ! ` +
-        `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
-      const embedsUrls = [
-        `${env.SITE_BASE_URL}/en/frames/auctions/${auction.id}`,
-      ]
-      const channelKey = 'lilnouns'
-      const result = await cast(env, castText, embedsUrls, channelKey)
 
-      if (!result.cast) {
+      const { data: userData } = await getUserByVerificationAddress({
+        query: {
+          address: auction.bidder?.id,
+        },
+        auth: () => env.WARPCAST_ACCESS_TOKEN,
+      })
+
+      const username = userData?.result?.user?.username
+      const castText =
+        `Lil Noun #${auction.noun.id} found a new home${username ? ` by @${username}` : ''} for ${nounPrice} Ξ! ` +
+        `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
+
+      const siteBaseUrl = env.SITE_BASE_URL
+      const embedsUrls = [`${siteBaseUrl}/en/frames/auctions/${auction.id}`]
+      const channelKey = 'lilnouns'
+      const { data: castData } = await createCast({
+        body: {
+          text: castText,
+          embeds: embedsUrls,
+          channelKey,
+        },
+        auth: () => env.WARPCAST_ACCESS_TOKEN,
+      })
+
+      if (!castData?.result?.cast) {
         throw new Error('Failed to create cast')
       }
 
