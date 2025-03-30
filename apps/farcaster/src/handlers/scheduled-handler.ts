@@ -1,6 +1,6 @@
 import { formatEther } from 'viem'
 import { first, isNullish, round } from 'remeda'
-import { client, createCast } from '@nekofar/warpcast'
+import { client as warpcastClient, createCast } from '@nekofar/warpcast'
 import { GraphQLClient } from 'graphql-request'
 import { getSdk } from '@/services/lilnouns'
 
@@ -9,15 +9,16 @@ export async function scheduledHandler(
   env: Env,
   _ctx: ExecutionContext,
 ): Promise<void> {
-  client.setConfig({
+  warpcastClient.setConfig({
     auth: () => env.WARPCAST_ACCESS_TOKEN,
   })
+  const graphqlClient = new GraphQLClient(env.LILNOUNS_SUBGRAPH_URL)
+
   // Get previous ID as string and convert to number
   const previousIdStr = await env.KV.get('latest-auction-id')
   const previousId = previousIdStr ? Number(previousIdStr) : null
   console.log(`Latest auction ID from KV: ${previousId}`)
 
-  const graphqlClient = new GraphQLClient(env.LILNOUNS_SUBGRAPH_URL)
   const sdk = getSdk(graphqlClient)
   const { auctions } = await sdk.getLatestAuction()
   const auction = first(auctions)
