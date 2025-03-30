@@ -1,10 +1,6 @@
 import { formatEther } from 'viem'
 import { first, isNullish, round } from 'remeda'
-import {
-  client as warpcastClient,
-  createCast,
-  getUserByVerificationAddress,
-} from '@nekofar/warpcast'
+import { createCast, getUserByVerificationAddress } from '@nekofar/warpcast'
 import { GraphQLClient } from 'graphql-request'
 import { getSdk } from '@/services/lilnouns'
 
@@ -13,17 +9,12 @@ export async function scheduledHandler(
   env: Env,
   _ctx: ExecutionContext,
 ): Promise<void> {
-  warpcastClient.setConfig({
-    auth: () => env.WARPCAST_ACCESS_TOKEN,
-  })
-  const graphqlClient = new GraphQLClient(env.LILNOUNS_SUBGRAPH_URL)
-  const siteBaseUrl = env.SITE_BASE_URL
-
   // Get previous ID as string and convert to number
   const previousIdStr = await env.KV.get('latest-auction-id')
   const previousId = previousIdStr ? Number(previousIdStr) : null
   console.log(`Latest auction ID from KV: ${previousId}`)
 
+  const graphqlClient = new GraphQLClient(env.LILNOUNS_SUBGRAPH_URL)
   const sdk = getSdk(graphqlClient)
   const { auctions } = await sdk.getLatestAuction()
   const auction = first(auctions)
@@ -68,6 +59,7 @@ export async function scheduledHandler(
         query: {
           address: auction.bidder?.id,
         },
+        auth: () => env.WARPCAST_ACCESS_TOKEN,
       })
 
       if (!userData?.result?.user) {
@@ -76,10 +68,11 @@ export async function scheduledHandler(
           `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
       } else {
         castText =
-          `Lil Noun #${auction.noun.id} found a new home for ${nounPrice} Ξ by @${userData?.result?.user}! ` +
+          `Lil Noun #${auction.noun.id} found a new home by @${userData?.result?.user.username} for ${nounPrice} Ξ! ` +
           `Now auctioning #${nextNoun}; grab yours before someone else does! 👀`
       }
 
+      const siteBaseUrl = env.SITE_BASE_URL
       const embedsUrls = [`${siteBaseUrl}/en/frames/auctions/${auction.id}`]
       const channelKey = 'lilnouns'
       const { data: castData } = await createCast({
