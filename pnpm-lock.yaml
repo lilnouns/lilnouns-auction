@@ -349,8 +349,8 @@ importers:
         specifier: '>=9.0.0'
         version: 9.23.0(jiti@2.4.2)
       eslint-plugin-next-on-pages:
-        specifier: 1.13.10
-        version: 1.13.10(eslint@9.23.0(jiti@2.4.2))
+        specifier: 1.13.11
+        version: 1.13.11(eslint@9.23.0(jiti@2.4.2))
       is-ci:
         specifier: 4.1.0
         version: 4.1.0
@@ -3543,6 +3543,9 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
+  '@types/estree@1.0.7':
+    resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
+
   '@types/glob@7.2.0':
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
 
@@ -5505,8 +5508,8 @@ packages:
     peerDependencies:
       eslint: '>=9.0.0'
 
-  eslint-plugin-next-on-pages@1.13.10:
-    resolution: {integrity: sha512-p8wllngvsFEO+iOsKUFWmuN+hgkA1zt420sopfUuIDiw/SO1orH8KWPQ2xsqF+9c2ENCKyJ5OdipBM3H+kL8Dw==}
+  eslint-plugin-next-on-pages@1.13.11:
+    resolution: {integrity: sha512-vipvSXHkG5au+81N23xFguQcCqgY0KpI+X4x53Y0RgcLCaHcakn9oEybSm0dlJlNszEDayPV5oD/BoPFUfVOkg==}
     peerDependencies:
       eslint: '>=9.0.0'
 
@@ -12862,7 +12865,7 @@ snapshots:
 
   '@rollup/pluginutils@5.1.4(rollup@4.36.0)':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       estree-walker: 2.0.2
       picomatch: 4.0.2
     optionalDependencies:
@@ -13228,9 +13231,11 @@ snapshots:
 
   '@types/estree-jsx@1.0.5':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   '@types/estree@1.0.6': {}
+
+  '@types/estree@1.0.7': {}
 
   '@types/glob@7.2.0':
     dependencies:
@@ -15876,7 +15881,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-next-on-pages@1.13.10(eslint@9.23.0(jiti@2.4.2)):
+  eslint-plugin-next-on-pages@1.13.11(eslint@9.23.0(jiti@2.4.2)):
     dependencies:
       '@types/estree-jsx': 1.0.5
       comment-parser: 1.4.1
@@ -16051,7 +16056,7 @@ snapshots:
 
   estree-walker@3.0.3:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   esutils@2.0.3: {}
 
