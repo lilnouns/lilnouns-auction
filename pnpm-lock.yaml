@@ -62,8 +62,8 @@ importers:
         specifier: 2.12.6
         version: 2.12.6(graphql@16.10.0)
       luxon:
-        specifier: 3.6.0
-        version: 3.6.0
+        specifier: 3.6.1
+        version: 3.6.1
       remeda:
         specifier: 2.21.2
         version: 2.21.2
@@ -198,8 +198,8 @@ importers:
         specifier: 0.485.0
         version: 0.485.0(react@19.1.0)
       luxon:
-        specifier: 3.6.0
-        version: 3.6.0
+        specifier: 3.6.1
+        version: 3.6.1
       negotiator:
         specifier: 1.0.0
         version: 1.0.0
@@ -6849,8 +6849,8 @@ packages:
     peerDependencies:
       react: '>=19.0.0'
 
-  luxon@3.6.0:
-    resolution: {integrity: sha512-WE7p0p7W1xji9qxkLYsvcIxZyfP48GuFrWIBQZIsbjCyf65dG1rv4n83HcOyEyhvzxJCrUoObCRNFgRNIQ5KNA==}
+  luxon@3.6.1:
+    resolution: {integrity: sha512-tJLxrKJhO2ukZ5z0gyjY1zPh3Rh88Ej9P7jNrZiHMUXHae1yvI2imgOZtL1TO8TW6biMMKfTtAOoEJANgtWBMQ==}
     engines: {node: '>=12'}
 
   lz-string@1.5.0:
@@ -17393,7 +17393,7 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  luxon@3.6.0: {}
+  luxon@3.6.1: {}
 
   lz-string@1.5.0: {}
 
