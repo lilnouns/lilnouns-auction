@@ -49,6 +49,9 @@ importers:
 
   apps/farcaster:
     dependencies:
+      '@nekofar/lilnouns':
+        specifier: 1.0.0-alpha.1
+        version: 1.0.0-alpha.1
       '@nekofar/warpcast':
         specifier: 2.0.0-alpha.14
         version: 2.0.0-alpha.14(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))
@@ -158,6 +161,9 @@ importers:
       '@lingui/react':
         specifier: 5.2.0
         version: 5.2.0(@lingui/babel-plugin-lingui-macro@5.2.0(babel-plugin-macros@3.1.0)(typescript@5.8.2))(babel-plugin-macros@3.1.0)(react@19.1.0)
+      '@nekofar/lilnouns':
+        specifier: 1.0.0-alpha.1
+        version: 1.0.0-alpha.1
       '@prisma/adapter-d1':
         specifier: 6.5.0
         version: 6.5.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
@@ -2694,6 +2700,9 @@ packages:
     resolution: {integrity: sha512-wK+5pLK5XFmgtH3aQ2YVvA3HohS3xqV/OxuVOdNx9Wpnz7VE/fnC+e1A7ln6LFYeck7gOJ/dsZV6OLplOtAJ2w==}
     engines: {node: '>=18'}
 
+  '@nekofar/lilnouns@1.0.0-alpha.1':
+    resolution: {integrity: sha512-rfrfB996LuhhMnvtLLXivzhQo5mLQFttmAMjZQkZPRYAP5VdRPJAC8eG7gpPLtYoR57MY+5MgdnBXUBbfGEXgg==}
+
   '@nekofar/warpcast@2.0.0-alpha.14':
     resolution: {integrity: sha512-v+OnY8kHzACR69foec2I2eOZjGZk2PsQJBbKETwWZGTzL7mAcO7U9nchT6nmIclRgWXDtPLsfO8oEQi2Cc1nyA==}
 
@@ -4872,10 +4881,6 @@ packages:
 
   consola@3.4.0:
     resolution: {integrity: sha512-EiPU8G6dQG0GFHNR8ljnZFki/8a+cQwEQ+7wpxdChl02Q8HXlwEZWD5lqAF8vC2sEC3Tehr8hy7vErz88LHyUA==}
-    engines: {node: ^14.18.0 || >=16.10.0}
-
-  consola@3.4.2:
-    resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
   constant-case@2.0.0:
@@ -12529,6 +12534,14 @@ snapshots:
       outvariant: 1.4.3
       strict-event-emitter: 0.5.1
 
+  '@nekofar/lilnouns@1.0.0-alpha.1':
+    dependencies:
+      graphql: 16.10.0
+      graphql-request: 6.1.0(graphql@16.10.0)
+      graphql-tag: 2.12.6(graphql@16.10.0)
+    transitivePeerDependencies:
+      - encoding
+
   '@nekofar/warpcast@2.0.0-alpha.14(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))':
     dependencies:
       '@hey-api/client-fetch': 0.9.0(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))
@@ -15102,7 +15115,7 @@ snapshots:
 
   citty@0.1.6:
     dependencies:
-      consola: 3.4.2
+      consola: 3.4.0
 
   cjs-module-lexer@1.2.3: {}
 
@@ -15245,8 +15258,6 @@ snapshots:
   confbox@0.1.8: {}
 
   consola@3.4.0: {}
-
-  consola@3.4.2: {}
 
   constant-case@2.0.0:
     dependencies:
@@ -16685,7 +16696,7 @@ snapshots:
   giget@1.2.5:
     dependencies:
       citty: 0.1.6
-      consola: 3.4.2
+      consola: 3.4.0
       defu: 6.1.4
       node-fetch-native: 1.6.6
       nypm: 0.5.4
@@ -18233,7 +18244,7 @@ snapshots:
   nypm@0.5.4:
     dependencies:
       citty: 0.1.6
-      consola: 3.4.2
+      consola: 3.4.0
       pathe: 2.0.3
       pkg-types: 1.3.1
       tinyexec: 0.3.2
