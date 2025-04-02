@@ -50,8 +50,8 @@ importers:
   apps/farcaster:
     dependencies:
       '@nekofar/lilnouns':
-        specifier: 1.0.0-alpha.1
-        version: 1.0.0-alpha.1
+        specifier: 1.0.0-alpha.2
+        version: 1.0.0-alpha.2
       '@nekofar/warpcast':
         specifier: 2.0.0-alpha.15
         version: 2.0.0-alpha.15(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))
@@ -162,8 +162,8 @@ importers:
         specifier: 5.2.0
         version: 5.2.0(@lingui/babel-plugin-lingui-macro@5.2.0(babel-plugin-macros@3.1.0)(typescript@5.8.2))(babel-plugin-macros@3.1.0)(react@19.1.0)
       '@nekofar/lilnouns':
-        specifier: 1.0.0-alpha.1
-        version: 1.0.0-alpha.1
+        specifier: 1.0.0-alpha.2
+        version: 1.0.0-alpha.2
       '@prisma/adapter-d1':
         specifier: 6.5.0
         version: 6.5.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
@@ -2700,8 +2700,8 @@ packages:
     resolution: {integrity: sha512-wK+5pLK5XFmgtH3aQ2YVvA3HohS3xqV/OxuVOdNx9Wpnz7VE/fnC+e1A7ln6LFYeck7gOJ/dsZV6OLplOtAJ2w==}
     engines: {node: '>=18'}
 
-  '@nekofar/lilnouns@1.0.0-alpha.1':
-    resolution: {integrity: sha512-rfrfB996LuhhMnvtLLXivzhQo5mLQFttmAMjZQkZPRYAP5VdRPJAC8eG7gpPLtYoR57MY+5MgdnBXUBbfGEXgg==}
+  '@nekofar/lilnouns@1.0.0-alpha.2':
+    resolution: {integrity: sha512-m4POPxMR/Wp4akt6mfF4oK/qDoB2mve3gtq/qk2QLwe0bcRy02iuMQTQAN3wbBYKdAereEkJeqa+U1PwIDQK8g==}
 
   '@nekofar/warpcast@2.0.0-alpha.15':
     resolution: {integrity: sha512-OYU5+SfucFkD9k8cds/qDjIQ8J1c3+NVhXShs8Z7hkgJp7ckFpSZkmKD0A/+4fnveNS48S6Zmu/TzQx/qg1SFQ==}
@@ -12541,7 +12541,7 @@ snapshots:
       outvariant: 1.4.3
       strict-event-emitter: 0.5.1
 
-  '@nekofar/lilnouns@1.0.0-alpha.1':
+  '@nekofar/lilnouns@1.0.0-alpha.2':
     dependencies:
       graphql: 16.10.0
       graphql-request: 6.1.0(graphql@16.10.0)
