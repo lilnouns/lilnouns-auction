@@ -92,7 +92,7 @@
     "@types/webpack": "5.28.5",
     "@vitejs/plugin-react": "4.3.4",
     "eslint": "9.23.0",
-    "eslint-plugin-next-on-pages": "1.13.11",
+    "eslint-plugin-next-on-pages": "1.13.12",
     "is-ci": "4.1.0",
     "jsdom": "26.0.0",
     "pino": "9.6.0",
