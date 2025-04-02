@@ -53,8 +53,8 @@ importers:
         specifier: 1.0.0-alpha.1
         version: 1.0.0-alpha.1
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.14
-        version: 2.0.0-alpha.14(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))
+        specifier: 2.0.0-alpha.15
+        version: 2.0.0-alpha.15(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))
       graphql:
         specifier: 16.10.0
         version: 16.10.0
@@ -2703,8 +2703,8 @@ packages:
   '@nekofar/lilnouns@1.0.0-alpha.1':
     resolution: {integrity: sha512-rfrfB996LuhhMnvtLLXivzhQo5mLQFttmAMjZQkZPRYAP5VdRPJAC8eG7gpPLtYoR57MY+5MgdnBXUBbfGEXgg==}
 
-  '@nekofar/warpcast@2.0.0-alpha.14':
-    resolution: {integrity: sha512-v+OnY8kHzACR69foec2I2eOZjGZk2PsQJBbKETwWZGTzL7mAcO7U9nchT6nmIclRgWXDtPLsfO8oEQi2Cc1nyA==}
+  '@nekofar/warpcast@2.0.0-alpha.15':
+    resolution: {integrity: sha512-OYU5+SfucFkD9k8cds/qDjIQ8J1c3+NVhXShs8Z7hkgJp7ckFpSZkmKD0A/+4fnveNS48S6Zmu/TzQx/qg1SFQ==}
 
   '@next/env@13.5.8':
     resolution: {integrity: sha512-YmiG58BqyZ2FjrF2+5uZExL2BrLr8RTQzLXNDJ8pJr0O+rPlOeDPXp1p1/4OrR3avDidzZo3D8QO2cuDv1KCkw==}
@@ -12546,7 +12546,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@nekofar/warpcast@2.0.0-alpha.14(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))':
+  '@nekofar/warpcast@2.0.0-alpha.15(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))':
     dependencies:
       '@hey-api/client-fetch': 0.9.0(@hey-api/openapi-ts@0.65.0(typescript@5.8.2))
     transitivePeerDependencies:
