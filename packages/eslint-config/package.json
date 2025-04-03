@@ -20,7 +20,7 @@
     "eslint-plugin-jsdoc": "50.6.9",
     "eslint-plugin-lingui": "0.10.0",
     "eslint-plugin-only-warn": "1.1.0",
-    "eslint-plugin-prettier": "5.2.5",
+    "eslint-plugin-prettier": "5.2.6",
     "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-regexp": "2.7.0",
