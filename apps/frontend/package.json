@@ -57,7 +57,7 @@
     "sonner": "2.0.3",
     "swr": "2.3.3",
     "tailwind-merge": "3.1.0",
-    "viem": "2.24.3",
+    "viem": "2.25.0",
     "wagmi": "2.14.16",
     "zod": "3.24.2",
     "zustand": "5.0.3"
@@ -76,7 +76,7 @@
     "@repo/eslint-config": "workspace:",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
-    "@tailwindcss/postcss": "4.1.1",
+    "@tailwindcss/postcss": "4.1.2",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
     "@testing-library/user-event": "14.6.1",
