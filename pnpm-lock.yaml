@@ -129,8 +129,8 @@ importers:
         specifier: 0.0.31
         version: 0.0.31(typescript@5.8.3)
       '@farcaster/frame-node':
-        specifier: 0.0.18
-        version: 0.0.18(typescript@5.8.3)
+        specifier: 0.0.20
+        version: 0.0.20(typescript@5.8.3)
       '@farcaster/frame-sdk':
         specifier: 0.0.31
         version: 0.0.31(typescript@5.8.3)(zod@3.24.2)
@@ -1794,8 +1794,8 @@ packages:
   '@farcaster/frame-core@0.0.31':
     resolution: {integrity: sha512-sZHG4Jt9aXqzdod+WksNtIKGgSuxBxJ2i3Fx1uAzeK29L1W/Osfsp3ZCpilEOjNHB9iRTqtGH7VKp3CPf312hA==}
 
-  '@farcaster/frame-node@0.0.18':
-    resolution: {integrity: sha512-MBx8NDQTs/RLK6oZ5s7SnonK98mqyOAm7iYk9WMrFCvNILSrhNX86GaL7mrU0CHw9tmHSMFcvzmGR0GSi4V4XQ==}
+  '@farcaster/frame-node@0.0.20':
+    resolution: {integrity: sha512-Uj21h3VIKxpaHwxz+NvqngWUqD+ivFg1JgfexJuLldRhE2ZcAJu4FvMaXc++c9LZXD5KlK972NTzzooR5eSJFA==}
 
   '@farcaster/frame-sdk@0.0.31':
     resolution: {integrity: sha512-ZRFA4HyfE1PIcEi++27ulSqrArv2qdVeYww7juM90DYgvqyGLtX6cTZS0UEoRL7iog2U8Rv2aq1ORLbePCBZuA==}
@@ -11133,9 +11133,9 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@farcaster/frame-node@0.0.18(typescript@5.8.3)':
+  '@farcaster/frame-node@0.0.20(typescript@5.8.3)':
     dependencies:
-      '@farcaster/frame-core': 0.0.29(typescript@5.8.3)
+      '@farcaster/frame-core': 0.0.31(typescript@5.8.3)
       '@noble/curves': 1.8.1
       ox: 0.4.4(typescript@5.8.3)(zod@3.24.2)
       zod: 3.24.2
