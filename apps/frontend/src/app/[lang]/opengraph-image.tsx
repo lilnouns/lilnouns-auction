@@ -1,4 +1,4 @@
-import { ImageResponse } from 'next/og'
+import { redirect } from 'next/navigation'
 
 export const runtime = 'edge'
 
@@ -19,37 +19,40 @@ export default async function Image() {
 
   // const vazirmatnSemiBoldFontArray = await vazirmatnSemiBoldResp.arrayBuffer()
 
-  return new ImageResponse(
-    (
-      // ImageResponse JSX element
-      <div
-        style={{
-          color: '#131314',
-          fontSize: 128,
-          background: '#f0ecf9',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        Lil Nouns Auction
-      </div>
-    ),
-    // ImageResponse options
-    {
-      // For convenience, we can re-use the exported opengraph-image
-      // size config to also set the ImageResponse's width and height.
-      ...size,
-      // fonts: [
-      //   {
-      //     name: 'Vazirmatn',
-      //     data: vazirmatnSemiBoldFontArray,
-      //     style: 'normal',
-      //     weight: 400,
-      //   },
-      // ],
-    },
-  )
+  // return new ImageResponse(
+  //   (
+  //     // ImageResponse JSX element
+  //     <div
+  //       style={{
+  //         color: '#131314',
+  //         fontSize: 128,
+  //         background: '#f0ecf9',
+  //         width: '100%',
+  //         height: '100%',
+  //         display: 'flex',
+  //         alignItems: 'center',
+  //         justifyContent: 'center',
+  //       }}
+  //     >
+  //       Lil Nouns Auction
+  //     </div>
+  //   ),
+  //   // ImageResponse options
+  //   {
+  //     // For convenience, we can re-use the exported opengraph-image
+  //     // size config to also set the ImageResponse's width and height.
+  //     ...size,
+  //     // fonts: [
+  //     //   {
+  //     //     name: 'Vazirmatn',
+  //     //     data: vazirmatnSemiBoldFontArray,
+  //     //     style: 'normal',
+  //     //     weight: 400,
+  //     //   },
+  //     // ],
+  //   },
+  // )
+
+  // Redirect to the static image in the public folder
+  redirect('/opengraph-image.png')
 }
