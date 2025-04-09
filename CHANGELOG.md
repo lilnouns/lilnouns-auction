@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.68] - 2025-04-09
+
+### Features
+
+- Add dynamic Open Graph image generation
+
+### Refactor
+
+- Remove `opengraph-image` endpoint
+
+### Miscellaneous Tasks
+
+- Replace `opengraph-image` asset
+
 ## [1.2.0-alpha.67] - 2025-04-08
 
 ### Bug Fixes
