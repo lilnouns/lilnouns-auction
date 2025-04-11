@@ -16,7 +16,7 @@
     "@next/eslint-plugin-next": "15.3.0",
     "@typescript-eslint/eslint-plugin": "8.29.1",
     "@typescript-eslint/parser": "8.29.1",
-    "eslint-config-prettier": "10.1.1",
+    "eslint-config-prettier": "10.1.2",
     "eslint-plugin-jsdoc": "50.6.9",
     "eslint-plugin-lingui": "0.10.0",
     "eslint-plugin-only-warn": "1.1.0",
