@@ -21,11 +21,11 @@
     "graphql-tag": "2.12.6",
     "luxon": "3.6.1",
     "remeda": "2.21.2",
-    "viem": "^2.26.2"
+    "viem": "^2.26.3"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.12.16",
-    "@cloudflare/workers-types": "4.20250408.0",
+    "@cloudflare/workers-types": "4.20250410.0",
     "@graphprotocol/graph-ts": "0.38.0",
     "@graphql-codegen/cli": "5.0.5",
     "@graphql-codegen/schema-ast": "4.1.0",
@@ -38,6 +38,6 @@
     "@types/node": "22.14.0",
     "graphql-scalars": "1.24.2",
     "typescript": "5.8.3",
-    "wrangler": "4.8.0"
+    "wrangler": "4.10.0"
   }
 }
