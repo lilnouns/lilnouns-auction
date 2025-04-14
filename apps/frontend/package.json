@@ -94,7 +94,7 @@
     "eslint": "9.24.0",
     "eslint-plugin-next-on-pages": "1.13.12",
     "is-ci": "4.1.0",
-    "jsdom": "26.0.0",
+    "jsdom": "26.1.0",
     "pino": "9.6.0",
     "pino-pretty": "13.0.0",
     "postcss": "8.5.3",
