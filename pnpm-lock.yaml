@@ -238,8 +238,8 @@ importers:
         specifier: 10.1.0
         version: 10.1.0(@types/react@19.0.10)(react@19.1.0)
       react-spinners:
-        specifier: 0.15.0
-        version: 0.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 0.16.1
+        version: 0.16.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-use:
         specifier: 17.6.0
         version: 17.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -8259,8 +8259,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-spinners@0.15.0:
-    resolution: {integrity: sha512-ZO3/fNB9Qc+kgpG3SfdlMnvTX6LtLmTnOogb3W6sXIaU/kZ1ydEViPfZ06kSOaEsor58C/tzXw2wROGQu3X2pA==}
+  react-spinners@0.16.1:
+    resolution: {integrity: sha512-hYDQp2mmmv3a3JZZZYOi3+jW7C/ro51Ny71TfkRXhoPBb6wZuK9BgdvYbTnSAUrQCrVnOLSpWfZatncUTb6n5w==}
     peerDependencies:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
@@ -19040,7 +19040,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.10
 
-  react-spinners@0.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-spinners@0.16.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
