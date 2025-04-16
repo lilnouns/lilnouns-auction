@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.70] - 2025-04-16
+
+### Testing
+
+- Add unit tests for `Card` component
+- Remove `index` page test suite
+
 ## [1.2.0-alpha.69] - 2025-04-12
 
 ### Bug Fixes
