@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.71] - 2025-04-16
+
+### Features
+
+- Add webhook API route
+
 ## [1.2.0-alpha.70] - 2025-04-16
 
 ### Testing
