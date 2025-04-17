@@ -270,7 +270,7 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.10
-        version: 1.13.10(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@41.6.0(rollup@4.38.0))(wrangler@4.11.1(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+        version: 1.13.10(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@41.6.1(rollup@4.38.0))(wrangler@4.11.1(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
         specifier: 4.20250416.0
         version: 4.20250416.0
@@ -383,8 +383,8 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       vercel:
-        specifier: 41.6.0
-        version: 41.6.0(rollup@4.38.0)
+        specifier: 41.6.1
+        version: 41.6.1(rollup@4.38.0)
       vitest:
         specifier: 3.1.1
         version: 3.1.1(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@22.14.1)(jiti@2.4.2)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(msw@2.7.4(@types/node@22.14.1)(typescript@5.8.3))(terser@5.39.0)(yaml@2.7.1)
@@ -9384,8 +9384,8 @@ packages:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  vercel@41.6.0:
-    resolution: {integrity: sha512-wig7fUZqU6Xb5/CdW49NUrwssA5GuG18WUP5vxl84KZigUcmQM5CKySyxgeFcugBtqelQSlg1+4ytfjcfQxQuw==}
+  vercel@41.6.1:
+    resolution: {integrity: sha512-Xly6uozzOHm6VT2nB6l0IydEyhRNGvxU7aBnIA5CD2rt+HjLq+Dz9qIYC6XmcpBbR1EWkG2uCyM11k7pt+uHXA==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -10272,7 +10272,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@41.6.0(rollup@4.38.0))(wrangler@4.11.1(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@41.6.1(rollup@4.38.0))(wrangler@4.11.1(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.14.1
       ast-types: 0.14.2
@@ -10286,7 +10286,7 @@ snapshots:
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.7.1
-      vercel: 41.6.0(rollup@4.38.0)
+      vercel: 41.6.1(rollup@4.38.0)
       wrangler: 4.11.1(@cloudflare/workers-types@4.20250416.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     optionalDependencies:
       '@cloudflare/workers-types': 4.20250416.0
@@ -20116,7 +20116,7 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  vercel@41.6.0(rollup@4.38.0):
+  vercel@41.6.1(rollup@4.38.0):
     dependencies:
       '@vercel/build-utils': 10.5.1
       '@vercel/fun': 1.1.5
