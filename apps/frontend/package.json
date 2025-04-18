@@ -15,7 +15,7 @@
   "dependencies": {
     "@farcaster/auth-kit": "0.6.0",
     "@farcaster/frame-core": "0.0.31",
-    "@farcaster/frame-node": "0.0.20",
+    "@farcaster/frame-node": "0.0.21",
     "@farcaster/frame-sdk": "0.0.31",
     "@farcaster/frame-wagmi-connector": "0.0.19",
     "@headlessui/react": "2.2.1",
