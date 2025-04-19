@@ -14,11 +14,11 @@
   },
   "dependencies": {
     "@farcaster/auth-kit": "0.6.0",
-    "@farcaster/frame-core": "0.0.31",
-    "@farcaster/frame-node": "0.0.20",
+    "@farcaster/frame-core": "0.0.32",
+    "@farcaster/frame-node": "0.0.21",
     "@farcaster/frame-sdk": "0.0.31",
     "@farcaster/frame-wagmi-connector": "0.0.19",
-    "@headlessui/react": "2.2.1",
+    "@headlessui/react": "2.2.2",
     "@heroicons/react": "2.2.0",
     "@lilnounsdao/assets": "0.5.15",
     "@lilnounsdao/contracts": "0.3.5",
@@ -31,7 +31,7 @@
     "@prisma/client": "6.6.0",
     "@repo/assets": "workspace:*",
     "@repo/ui": "workspace:*",
-    "@tanstack/react-query": "5.74.3",
+    "@tanstack/react-query": "5.74.4",
     "@wagmi/core": "2.16.7",
     "autoprefixer": "10.4.21",
     "class-variance-authority": "0.7.1",
@@ -57,14 +57,14 @@
     "sonner": "2.0.3",
     "swr": "2.3.3",
     "tailwind-merge": "3.2.0",
-    "viem": "2.27.0",
+    "viem": "2.27.2",
     "wagmi": "2.14.16",
-    "zod": "3.24.2",
+    "zod": "3.24.3",
     "zustand": "5.0.3"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.10",
-    "@cloudflare/workers-types": "4.20250416.0",
+    "@cloudflare/workers-types": "4.20250417.0",
     "@eslint/eslintrc": "3.3.1",
     "@lingui/cli": "5.2.0",
     "@lingui/conf": "5.2.0",
@@ -103,8 +103,8 @@
     "tailwind-merge": "3.2.0",
     "tailwindcss": "4.1.4",
     "typescript": "5.8.3",
-    "vercel": "41.6.0",
+    "vercel": "41.6.1",
     "vitest": "3.1.1",
-    "wrangler": "4.11.1"
+    "wrangler": "4.12.0"
   }
 }
