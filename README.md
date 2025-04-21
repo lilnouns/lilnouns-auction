@@ -13,4 +13,4 @@
 
 # Description
 
-Lil Nouns Action is client for Lil Nouns VRGDA.
+Lil Nouns Action is a client for Lil Nouns VRGDA.
