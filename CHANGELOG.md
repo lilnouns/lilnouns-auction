@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.73] - 2025-04-21
+
+### Features
+
+- Update image data with new accessory
+
 ## [1.2.0-alpha.72] - 2025-04-19
 
 ### Bug Fixes
