@@ -579,8 +579,8 @@ importers:
         specifier: 4.1.4
         version: 4.1.4
       '@turbo/gen':
-        specifier: 2.5.0
-        version: 2.5.0(@types/node@22.14.1)(typescript@5.8.3)
+        specifier: 2.5.1
+        version: 2.5.1(@types/node@22.14.1)(typescript@5.8.3)
       '@types/node':
         specifier: 22.14.1
         version: 22.14.1
@@ -3495,12 +3495,12 @@ packages:
   '@tsconfig/node16@1.0.4':
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
 
-  '@turbo/gen@2.5.0':
-    resolution: {integrity: sha512-03vzgbv01lzadCCMaEUgXyqGhZuHaI+Umsrjisiyi81oCJF/HygxgHR0FBf21dVssSiEa2opmzcp4RHQmIz0Wg==}
+  '@turbo/gen@2.5.1':
+    resolution: {integrity: sha512-d6fSO1bhSVwUVHBMoDFbyorPiKt8pz3X4OS7c+GDL+D5CPJ21dTFvwdLdEgPe7iUnyARY1Nf5ZnP/v47bZlvvw==}
     hasBin: true
 
-  '@turbo/workspaces@2.5.0':
-    resolution: {integrity: sha512-u/IOgWVJ6orFG0MDJ8UeIEOWjhfEBsMskhxC8pg2nRlu1qbEAGIerjhZFk+bEqSTHW1o+fxYr8ix0KEtX4M9Vg==}
+  '@turbo/workspaces@2.5.1':
+    resolution: {integrity: sha512-xmNbkxC1GEIOmwye6lCQG0g+YhDb2KV3K4KtIn4OtszorCnz8pOxRU6s7UHJs7LezUZ8htWMOJwEFv1MT/9DPw==}
     hasBin: true
 
   '@types/aria-query@5.0.4':
@@ -13229,9 +13229,9 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@turbo/gen@2.5.0(@types/node@22.14.1)(typescript@5.8.3)':
+  '@turbo/gen@2.5.1(@types/node@22.14.1)(typescript@5.8.3)':
     dependencies:
-      '@turbo/workspaces': 2.5.0
+      '@turbo/workspaces': 2.5.1
       commander: 10.0.1
       fs-extra: 10.1.0
       inquirer: 8.2.6
@@ -13249,7 +13249,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@turbo/workspaces@2.5.0':
+  '@turbo/workspaces@2.5.1':
     dependencies:
       commander: 10.0.1
       execa: 5.1.1
