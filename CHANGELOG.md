@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.74] - 2025-04-24
+
+### Features
+
+- Add new `body-lilac` and `glasses-lavender`
+
+### Documentation
+
+- Fix typo in project description
+
 ## [1.2.0-alpha.73] - 2025-04-21
 
 ### Features
