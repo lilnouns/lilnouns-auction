@@ -16,7 +16,7 @@
   "dependencies": {
     "@nekofar/lilnouns": "1.0.0-alpha.6",
     "@nekofar/warpcast": "2.0.0-alpha.23",
-    "graphql": "16.10.0",
+    "graphql": "16.11.0",
     "graphql-request": "6.1.0",
     "graphql-tag": "2.12.6",
     "luxon": "3.6.1",
