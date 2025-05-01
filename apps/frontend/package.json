@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.10",
-    "@cloudflare/workers-types": "4.20250423.0",
+    "@cloudflare/workers-types": "4.20250425.0",
     "@eslint/eslintrc": "3.3.1",
     "@lingui/cli": "5.2.0",
     "@lingui/conf": "5.2.0",
@@ -86,7 +86,7 @@
     "@types/lint-staged": "13.3.0",
     "@types/luxon": "3.6.2",
     "@types/negotiator": "0.6.3",
-    "@types/node": "22.14.1",
+    "@types/node": "22.15.0",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "@types/webpack": "5.28.5",

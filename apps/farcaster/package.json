@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.12.16",
-    "@cloudflare/workers-types": "4.20250423.0",
+    "@cloudflare/workers-types": "4.20250425.0",
     "@graphprotocol/graph-ts": "0.38.0",
     "@graphql-codegen/cli": "5.0.5",
     "@graphql-codegen/schema-ast": "4.1.0",
@@ -35,7 +35,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "22.14.1",
+    "@types/node": "22.15.0",
     "graphql-scalars": "1.24.2",
     "typescript": "5.8.3",
     "wrangler": "4.13.0"
