@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.75] - 2025-05-01
+
+### Features
+
+- Add `head-green-snake` asset
+
 ## [1.2.0-alpha.74] - 2025-04-24
 
 ### Features
