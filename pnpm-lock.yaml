@@ -377,8 +377,8 @@ importers:
         specifier: 2.5.0
         version: 2.5.0(@types/node@22.15.17)(typescript@5.8.3)
       tailwindcss:
-        specifier: 4.1.5
-        version: 4.1.5
+        specifier: 4.1.6
+        version: 4.1.6
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -558,7 +558,7 @@ importers:
         version: 3.2.0
       tailwindcss-animate:
         specifier: 1.0.7
-        version: 1.0.7(tailwindcss@4.1.5)
+        version: 1.0.7(tailwindcss@4.1.6)
       vaul:
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -597,8 +597,8 @@ importers:
         specifier: 6.0.1
         version: 6.0.1(jiti@2.4.2)(postcss@8.5.3)(yaml@2.7.1)
       tailwindcss:
-        specifier: 4.1.5
-        version: 4.1.5
+        specifier: 4.1.6
+        version: 4.1.6
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -8077,6 +8077,9 @@ packages:
   preact@10.26.5:
     resolution: {integrity: sha512-fmpDkgfGU6JYux9teDWLhj9mKN55tyepwYbxHgQuIxbWQzgFg5vk7Mrrtfx7xRxq798ynkY4DDDxZr235Kk+4w==}
 
+  preact@10.26.6:
+    resolution: {integrity: sha512-5SRRBinwpwkaD+OqlBDeITlRgvd8I8QlxHJw9AxSdMNV6O+LodN9nUyYGpSF7sadHjs6RzeFShMexC6DbtWr9g==}
+
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -9085,6 +9088,9 @@ packages:
 
   tailwindcss@4.1.5:
     resolution: {integrity: sha512-nYtSPfWGDiWgCkwQG/m+aX83XCwf62sBgg3bIlNiiOcggnS1x3uVRDAuyelBFL+vJdOPPCGElxv9DjHJjRHiVA==}
+
+  tailwindcss@4.1.6:
+    resolution: {integrity: sha512-j0cGLTreM6u4OWzBeLBpycK0WIh8w7kSwcUsQZoGLHZ7xDTdM69lN64AgoIEEwFi0tnhs4wSykUa5YWxAzgFYg==}
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -10625,7 +10631,7 @@ snapshots:
       eth-json-rpc-filters: 6.0.1
       eventemitter3: 5.0.1
       keccak: 3.0.4
-      preact: 10.26.5
+      preact: 10.26.6
       sha.js: 2.4.11
     transitivePeerDependencies:
       - supports-color
@@ -19313,6 +19319,8 @@ snapshots:
 
   preact@10.26.5: {}
 
+  preact@10.26.6: {}
+
   prelude-ls@1.2.1: {}
 
   prettier-linter-helpers@1.0.0:
@@ -20440,11 +20448,13 @@ snapshots:
 
   tailwind-merge@3.2.0: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@4.1.5):
+  tailwindcss-animate@1.0.7(tailwindcss@4.1.6):
     dependencies:
-      tailwindcss: 4.1.5
+      tailwindcss: 4.1.6
 
   tailwindcss@4.1.5: {}
+
+  tailwindcss@4.1.6: {}
 
   tapable@2.2.1: {}
 
