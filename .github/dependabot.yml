@@ -1,9 +1,9 @@
 version: 2
 updates:
   # Maintain dependencies for GitHub Actions
-  - package-ecosystem: 'github-actions'
+  - package-ecosystem: "github-actions"
     # Files stored in repository root
-    directory: '/'
+    directory: "/"
     # Check for updates every weekday
     schedule:
       interval: "daily"
@@ -11,26 +11,26 @@ updates:
       timezone: "UTC"
     # Add assignees
     assignees:
-      - 'nekofar'
+      - "nekofar"
     # Include a list of updated dependencies
     commit-message:
-      prefix: 'ci'
-      include: 'scope'
+      prefix: "ci"
+      include: "scope"
     # Specify labels for pull requests
     labels:
-      - 'dependencies'
+      - "dependencies"
     # Allow up to 20 open pull requests for dependencies
     open-pull-requests-limit: 20
     # Add reviewers
     reviewers:
-      - 'nekofar'
+      - "nekofar"
     # Raise pull requests against the `develop` branch
-    target-branch: 'develop'
+    target-branch: "develop"
 
   # Maintain dependencies for PNPM
-  - package-ecosystem: 'npm'
+  - package-ecosystem: "npm"
     # Files stored in repository root
-    directory: '/'
+    directory: "/"
     # Check for updates every weekday
     schedule:
       interval: "daily"
@@ -38,85 +38,93 @@ updates:
       timezone: "UTC"
     # Add assignees
     assignees:
-      - 'nekofar'
+      - "nekofar"
     # Include a list of updated dependencies
     commit-message:
-      prefix: 'chore'
-      include: 'scope'
+      prefix: "chore"
+      include: "scope"
     # Specify labels for pull requests
     labels:
-      - 'dependencies'
+      - "dependencies"
     # Allow up to 10 open pull requests for dependencies
     open-pull-requests-limit: 20
     # Add reviewers
     reviewers:
-      - 'nekofar'
+      - "nekofar"
     # Raise pull requests against the `develop` branch
-    target-branch: 'develop'
+    target-branch: "develop"
     # Create a group of dependencies to be updated together in one pull request
     groups:
       babel:
         patterns:
-          - '@babel/*'
-          - 'babel-core'
-          - 'babel-loader'
+          - "@babel/*"
+          - "babel-core"
+          - "babel-loader"
       eslint:
         patterns:
-          - 'eslint'
-          - '@typescript-eslint/eslint-plugin'
-          - '@typescript-eslint/parser'
+          - "eslint"
+          - "@typescript-eslint/eslint-plugin"
+          - "@typescript-eslint/parser"
       lingui:
         patterns:
-          - '@lingui/*'
+          - "@lingui/*"
       prisma:
         patterns:
-          - 'prisma'
-          - '@prisma/*'
+          - "prisma"
+          - "@prisma/*"
       next:
         patterns:
-          - 'next'
-          - 'eslint-config-next'
-          - '@next/*'
+          - "next"
+          - "eslint-config-next"
+          - "@next/*"
+      tailwindcss:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+      turbo:
+        patterns:
+          - "turbo"
+          - "eslint-plugin-turbo"
       next-on-page:
         patterns:
-          - '@cloudflare/next-on-pages'
-          - 'eslint-plugin-next-on-pages'
+          - "@cloudflare/next-on-pages"
+          - "eslint-plugin-next-on-pages"
       react:
         patterns:
-          - 'react'
-          - 'react-dom'
-          - '@types/react'
-          - '@types/react-dom'
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
     # List of packages to ignore for specific update types
     ignore:
-      - dependency-name: 'eslint'
+      - dependency-name: "eslint"
         update-types:
           - version-update:semver-major
-      - dependency-name: 'next'
+      - dependency-name: "next"
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
-      - dependency-name: 'react'
+      - dependency-name: "react"
         update-types:
           - version-update:semver-major
-      - dependency-name: 'react-dom'
+      - dependency-name: "react-dom"
         update-types:
           - version-update:semver-major
-      - dependency-name: '@types/react-dom'
+      - dependency-name: "@types/react-dom"
         update-types:
           - version-update:semver-major
-      - dependency-name: '@next/*'
+      - dependency-name: "@next/*"
         update-types:
           - version-update:semver-major
-      - dependency-name: '@lingui/*'
+      - dependency-name: "@lingui/*"
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
           - version-update:semver-patch
-      - dependency-name: 'eslint-config-next'
+      - dependency-name: "eslint-config-next"
         update-types:
           - version-update:semver-major
-      - dependency-name: '@cloudflare/next-on-pages'
+      - dependency-name: "@cloudflare/next-on-pages"
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
