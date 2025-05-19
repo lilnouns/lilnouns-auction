@@ -35,7 +35,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "22.15.17",
+    "@types/node": "22.15.19",
     "graphql-scalars": "1.24.2",
     "typescript": "5.8.3",
     "wrangler": "4.13.2"
