@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.78] - 2025-05-19
+
+### Features
+
+- Add `head-sock` image data
+
 ## [1.2.0-alpha.77] - 2025-05-17
 
 ### Bug Fixes
