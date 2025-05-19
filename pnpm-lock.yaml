@@ -127,8 +127,8 @@ importers:
         specifier: 0.6.0
         version: 0.6.0(@types/react@19.0.10)(babel-plugin-macros@3.1.0)(bufferutil@4.0.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(utf-8-validate@5.0.10)(viem@2.29.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.24.3))
       '@farcaster/frame-core':
-        specifier: 0.0.34
-        version: 0.0.34(typescript@5.8.3)
+        specifier: 0.0.40
+        version: 0.0.40(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@farcaster/frame-node':
         specifier: 0.0.29
         version: 0.0.29(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
@@ -1822,9 +1822,6 @@ packages:
 
   '@farcaster/frame-core@0.0.29':
     resolution: {integrity: sha512-+iQjOS4OE0YCeW7hhBOg0QK8Pch7/C3mlkfD0OLey0Thnj4Uab4tWmvmfKxnsJNSYnESx9BT+Sw/pn9cueCl1Q==}
-
-  '@farcaster/frame-core@0.0.34':
-    resolution: {integrity: sha512-hohopBJo9TH5C4M+3WzcvpWfuJ6bMXyqSx4gP1AvRT3F3MxHf0qCakicV4wiR3SM9FfPNcCjUcK3wSM+WzsDjA==}
 
   '@farcaster/frame-core@0.0.40':
     resolution: {integrity: sha512-FfuaZKwsIKAFi2IcPbMqTGz670uEkbrVuq3647XTBPkWqY7fFLJzx3jh66ufPO0arXThjzv+lrp7uSMUQ1gW3g==}
@@ -3895,6 +3892,9 @@ packages:
 
   '@types/ws@7.4.7':
     resolution: {integrity: sha512-JQbbmxZTZehdc2iszGKs5oC3NFnjeay7mtAWrdt7qNtAVK0g19muApzAy4bm9byz79xa2ZnO/BOBC2R8RC5Lww==}
+
+  '@types/ws@8.18.1':
+    resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
 
   '@types/ws@8.5.14':
     resolution: {integrity: sha512-bd/YFLW+URhBzMXurx7lWByOu+xzU9+kb3RboOteXYDfW+tr+JZa99OyNmPINEGB/ahzKrEuc8rcv4gnpJmxTw==}
@@ -10266,7 +10266,7 @@ snapshots:
       '@babel/core': 7.26.10
       '@babel/generator': 7.27.0
       '@babel/parser': 7.27.0
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.27.1
       '@babel/traverse': 7.27.0
       '@babel/types': 7.27.0
       babel-preset-fbjs: 3.4.0(@babel/core@7.26.10)
@@ -11231,7 +11231,7 @@ snapshots:
     dependencies:
       '@ethersproject/bytes': 5.7.0
       '@ethersproject/logger': 5.7.0
-      bn.js: 5.2.1
+      bn.js: 5.2.2
 
   '@ethersproject/bignumber@5.8.0':
     dependencies:
@@ -11391,7 +11391,7 @@ snapshots:
       '@ethersproject/bytes': 5.7.0
       '@ethersproject/logger': 5.7.0
       '@ethersproject/properties': 5.7.0
-      bn.js: 5.2.1
+      bn.js: 5.2.2
       elliptic: 6.6.1
       hash.js: 1.1.7
 
@@ -11501,13 +11501,6 @@ snapshots:
       - viem
 
   '@farcaster/frame-core@0.0.29(typescript@5.8.3)':
-    dependencies:
-      ox: 0.4.4(typescript@5.8.3)(zod@3.24.3)
-      zod: 3.24.3
-    transitivePeerDependencies:
-      - typescript
-
-  '@farcaster/frame-core@0.0.34(typescript@5.8.3)':
     dependencies:
       ox: 0.4.4(typescript@5.8.3)(zod@3.24.3)
       zod: 3.24.3
@@ -14127,6 +14120,10 @@ snapshots:
       - webpack-cli
 
   '@types/ws@7.4.7':
+    dependencies:
+      '@types/node': 22.15.17
+
+  '@types/ws@8.18.1':
     dependencies:
       '@types/node': 22.15.17
 
@@ -18554,7 +18551,7 @@ snapshots:
 
   media-query-parser@2.0.2:
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.27.1
 
   merge-stream@2.0.0: {}
 
@@ -19166,8 +19163,8 @@ snapshots:
       '@adraffy/ens-normalize': 1.11.0
       '@noble/curves': 1.9.1
       '@noble/hashes': 1.8.0
-      '@scure/bip32': 1.7.0
-      '@scure/bip39': 1.6.0
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
       abitype: 1.0.8(typescript@5.8.3)(zod@3.24.3)
       eventemitter3: 5.0.1
     optionalDependencies:
@@ -20150,7 +20147,7 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.17
       '@types/uuid': 8.3.4
-      '@types/ws': 8.5.14
+      '@types/ws': 8.18.1
       buffer: 6.0.3
       eventemitter3: 5.0.1
       uuid: 8.3.2
@@ -20163,7 +20160,7 @@ snapshots:
 
   rtl-css-js@1.16.1:
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.27.1
 
   run-async@2.4.1: {}
 
