@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { find, mapToObj, pipe } from 'remeda'
 import { mainnet, sepolia } from 'wagmi/chains'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { createConfig, http, WagmiProvider } from 'wagmi'
+import { createConfig, fallback, http, WagmiProvider, webSocket } from 'wagmi'
 
 import { farcasterFrame } from '@farcaster/frame-wagmi-connector'
 
@@ -39,9 +39,14 @@ const chainNetworkMap: Record<number, string> = {
 
 const transports = mapToObj([mainnet, sepolia], (chain) => [
   chain.id,
-  http(
-    `https://${chainNetworkMap[chain.id]}.g.alchemy.com/v2/${alchemyApiKey}`,
-  ),
+  fallback([
+    webSocket(
+      `wss://${chainNetworkMap[chain.id]}.g.alchemy.com/v2/${alchemyApiKey}`,
+    ),
+    http(
+      `https://${chainNetworkMap[chain.id]}.g.alchemy.com/v2/${alchemyApiKey}`,
+    ),
+  ]),
 ])
 
 const config = createConfig({
