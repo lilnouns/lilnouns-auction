@@ -20,7 +20,7 @@
     "graphql-request": "6.1.0",
     "graphql-tag": "2.12.6",
     "luxon": "3.6.1",
-    "remeda": "2.22.3",
+    "remeda": "2.22.5",
     "viem": "2.30.5"
   },
   "devDependencies": {
