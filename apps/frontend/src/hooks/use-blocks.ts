@@ -2,6 +2,7 @@ import { Block, BlockData } from '@/types'
 import { ClientError, gql, request } from 'graphql-request'
 import useSWR from 'swr'
 import { useWatchBlockNumber } from 'wagmi'
+import { useCallback, useState } from 'react'
 
 const fetchBlocks = async (
   offset: number,
@@ -28,8 +29,8 @@ const fetchBlocks = async (
   `
 
   const filter: Record<string, unknown> = {}
-  if (after !== null) filter.number_gt = after
-  if (before !== null) filter.number_lt = before
+  if (after !== undefined) filter.number_gt = after
+  if (before !== undefined) filter.number_lte = before
 
   const variables = {
     skip: offset,
@@ -65,14 +66,27 @@ const fetchBlocks = async (
 }
 
 export const useBlocks = () => {
-  const blockOffset = 0
   const blockLimit = 256
+  const [currentBlockNumber, setCurrentBlockNumber] = useState<bigint | null>(
+    null,
+  )
+
+  const fetcher = useCallback(async () => {
+    if (!currentBlockNumber) return []
+
+    // Fetch blocks from (currentBlock - 256) to currentBlock
+    const fromBlock = Number(currentBlockNumber) - blockLimit
+    return fetchBlocks(0, blockLimit, fromBlock, Number(currentBlockNumber))
+  }, [currentBlockNumber, blockLimit])
 
   const { data, error, isValidating, isLoading, mutate } = useSWR(
-    ['blocks', blockOffset, blockLimit],
-    () => fetchBlocks(blockOffset, blockLimit),
+    currentBlockNumber
+      ? ['blocks', currentBlockNumber.toString(), blockLimit]
+      : null,
+    fetcher,
     {
-      // Remove refreshInterval
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
       onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
         // Do not retry on GraphQL errors
         if (error.message.startsWith('GraphQL Error')) return
@@ -84,12 +98,20 @@ export const useBlocks = () => {
     },
   )
 
-  // Watch for new block numbers
+  // Watch for new block numbers and only update when block changes
   useWatchBlockNumber({
     onBlockNumber: (blockNumber) => {
-      console.log('New block detected:', blockNumber)
-      // Revalidate the SWR cache when a new block is detected
-      mutate()
+      // Only update if the block number has actually changed
+      if (currentBlockNumber !== blockNumber) {
+        console.log(
+          'Block number changed:',
+          currentBlockNumber,
+          '->',
+          blockNumber,
+        )
+        setCurrentBlockNumber(blockNumber)
+        // SWR will automatically revalidate due to key change
+      }
     },
     onError: (error) => {
       console.error('Error watching block number:', error)
@@ -101,5 +123,6 @@ export const useBlocks = () => {
     error,
     isValidating,
     isLoading,
+    currentBlockNumber: currentBlockNumber ? Number(currentBlockNumber) : null,
   }
 }
