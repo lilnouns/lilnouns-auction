@@ -1,17 +1,14 @@
 import { X } from 'lucide-react' // close icon
 import { Button } from '@repo/ui/components/button'
 import { Card, CardContent } from '@repo/ui/components/card'
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 
 interface BannerProps {
   title: string
-  description?: string
+  description?: ReactNode
   onClose?: () => void
 }
 
-/**
- * Banner now uses sticky positioning and full width to sit above Navbar.
- */
 export function Banner({ title, description, onClose }: BannerProps) {
   const [visible, setVisible] = useState(true)
   if (!visible) return null
@@ -27,9 +24,9 @@ export function Banner({ title, description, onClose }: BannerProps) {
         <div>
           <h4 className="text-sm font-semibold">{title}</h4>
           {description && (
-            <p className="text-xs text-neutral-600 dark:text-neutral-400">
+            <div className="text-xs text-neutral-600 dark:text-neutral-400">
               {description}
-            </p>
+            </div>
           )}
         </div>
         <Button
