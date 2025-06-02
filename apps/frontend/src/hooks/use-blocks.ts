@@ -1,6 +1,7 @@
 import { Block, BlockData } from '@/types'
 import { ClientError, gql, request } from 'graphql-request'
 import useSWR from 'swr'
+import { useWatchBlockNumber } from 'wagmi'
 
 const fetchBlocks = async (
   offset: number,
@@ -67,11 +68,11 @@ export const useBlocks = () => {
   const blockOffset = 0
   const blockLimit = 256
 
-  const { data, error, isValidating, isLoading } = useSWR(
+  const { data, error, isValidating, isLoading, mutate } = useSWR(
     ['blocks', blockOffset, blockLimit],
     () => fetchBlocks(blockOffset, blockLimit),
     {
-      refreshInterval: 12000,
+      // Remove refreshInterval
       onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
         // Do not retry on GraphQL errors
         if (error.message.startsWith('GraphQL Error')) return
@@ -82,6 +83,18 @@ export const useBlocks = () => {
       },
     },
   )
+
+  // Watch for new block numbers
+  useWatchBlockNumber({
+    onBlockNumber: (blockNumber) => {
+      console.log('New block detected:', blockNumber)
+      // Revalidate the SWR cache when a new block is detected
+      mutate()
+    },
+    onError: (error) => {
+      console.error('Error watching block number:', error)
+    },
+  })
 
   return {
     data,
