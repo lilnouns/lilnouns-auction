@@ -22,7 +22,13 @@ const nextConfig: NextConfig = {
     ],
   },
   transpilePackages: ['@repo/ui', '@farcaster/frame-sdk'],
-  webpack: (config) => {
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      // Remove console.* calls in production client-side bundles
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console =
+        true
+    }
+
     config.cache = false // Disables PackFileCacheStrategy
 
     config.experiments = { ...config.experiments, topLevelAwait: true }
