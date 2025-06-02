@@ -1,6 +1,7 @@
 {
-  "$schema": "https://turborepo.dev/schema.json",
+  "$schema": "node_modules/turbo/schema.json",
   "ui": "tui",
+  "globalEnv": ["CF_PAGES_COMMIT_SHA", "NODE_ENV"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

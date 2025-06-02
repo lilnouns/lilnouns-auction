@@ -22,6 +22,18 @@ const nextConfig: NextConfig = {
     ],
   },
   transpilePackages: ['@repo/ui', '@farcaster/frame-sdk'],
+  headers: () =>
+    Promise.resolve([
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'x-build-id',
+            value: process.env.CF_PAGES_COMMIT_SHA ?? 'dev',
+          },
+        ],
+      },
+    ]),
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       // Remove console.* calls in production client-side bundles

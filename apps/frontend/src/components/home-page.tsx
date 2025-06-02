@@ -1,6 +1,7 @@
 'use client'
 
 import Navbar from '@/components/navbar'
+import { UpdateBanner } from '@/components/update-banner'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
@@ -57,6 +58,8 @@ export const HomePage: NextPage = () => {
           content={`Lil Nouns Auction: your chance to choose the perfect traits from a pool of 256 Lil Nouns!`}
         />
       </Head>
+
+      <UpdateBanner />
 
       <Navbar />
 

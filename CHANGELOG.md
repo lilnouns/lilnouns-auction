@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.86] - 2025-06-02
+
+### Features
+
+- Add `Banner` component for announcements
+- Support `ReactNode` in `Banner` props
+- Add `Banner` for version updates
+- Enhance `UpdateBanner` with version checks
+- Add `x-build-id` header for builds
+- Add `globalEnv` for environment variables
+- Add `NODE_ENV` to `globalEnv` configuration
+
+### Refactor
+
+- Extract `UpdateBanner` component
+- Update `headers` to use `Promise.resolve`
+
 ## [1.2.0-alpha.85] - 2025-06-02
 
 ### Bug Fixes
