@@ -1,6 +1,7 @@
 'use client'
 
 import Navbar from '@/components/navbar'
+import { Banner } from '@/components/banner'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
@@ -57,6 +58,23 @@ export const HomePage: NextPage = () => {
           content={`Lil Nouns Auction: your chance to choose the perfect traits from a pool of 256 Lil Nouns!`}
         />
       </Head>
+
+      <Banner
+        title="🚨 Update Available"
+        description={
+          <span className="text-xs text-neutral-600 dark:text-neutral-400">
+            {t`A new version is live. `}{' '}
+            <button
+              onClick={() => window.location.reload()}
+              className="font-semibold underline"
+            >
+              {t`Reload`}
+            </button>
+            .
+          </span>
+        }
+        onClose={() => console.log('Banner dismissed 😊')}
+      />
 
       <Navbar />
 
