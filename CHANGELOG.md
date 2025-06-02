@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.84] - 2025-06-02
+
+### Features
+
+- Integrate block number watcher
+- Improve block fetching logic
+- Add websocket fallback to `wagmi` config
+- Drop `console.*` in prod client bundles
+
 ## [1.2.0-alpha.83] - 2025-06-02
 
 ### Bug Fixes
