@@ -25,8 +25,21 @@ const nextConfig: NextConfig = {
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       // Remove console.* calls in production client-side bundles
-      config.optimization.minimizer[0].options.terserOptions.compress.drop_console =
-        true
+      // Safer approach that checks if minimizer exists
+      if (config.optimization?.minimizer?.length > 0) {
+        const terserPlugin = config.optimization.minimizer.find(
+          (plugin: any) => plugin.constructor.name === 'TerserPlugin',
+        )
+        if (terserPlugin && terserPlugin.options) {
+          terserPlugin.options.terserOptions = {
+            ...terserPlugin.options.terserOptions,
+            compress: {
+              ...terserPlugin.options.terserOptions?.compress,
+              drop_console: true,
+            },
+          }
+        }
+      }
     }
 
     config.cache = false // Disables PackFileCacheStrategy
