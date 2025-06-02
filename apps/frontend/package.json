@@ -99,7 +99,7 @@
     "pino-pretty": "13.0.0",
     "postcss": "8.5.4",
     "prisma": "6.8.2",
-    "shadcn": "2.5.0",
+    "shadcn": "2.6.0",
     "tailwind-merge": "3.3.0",
     "tailwindcss": "4.1.8",
     "typescript": "5.8.3",
