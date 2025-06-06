@@ -11,7 +11,7 @@
     "crons": ["*/5 * * * *"]
   },
   "vars": {
-    "WARPCAST_BASE_URL": "https://api.warpcast.com",
+    "WARPCAST_BASE_URL": "https://api.farcaster.xyz",
     "SITE_BASE_URL": "https://lilnouns.auction"
   },
   "kv_namespaces": [
