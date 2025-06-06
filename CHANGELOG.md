@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.87] - 2025-06-06
+
+### Bug Fixes
+
+- Update `WARPCAST_BASE_URL` to new domain
+
 ## [1.2.0-alpha.86] - 2025-06-02
 
 ### Features
