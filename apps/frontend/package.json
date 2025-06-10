@@ -32,7 +32,7 @@
     "@repo/assets": "workspace:*",
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "5.80.6",
-    "@wagmi/core": "2.17.2",
+    "@wagmi/core": "2.17.3",
     "autoprefixer": "10.4.21",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
