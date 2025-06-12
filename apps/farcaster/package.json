@@ -29,15 +29,17 @@
     "@graphprotocol/graph-ts": "0.38.1",
     "@graphql-codegen/cli": "5.0.7",
     "@graphql-codegen/schema-ast": "4.1.0",
+    "@graphql-codegen/typescript": "4.1.6",
     "@graphql-codegen/typescript-graphql-request": "6.3.0",
     "@graphql-codegen/typescript-operations": "4.6.1",
     "@parcel/watcher": "2.5.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "24.0.0",
+    "@types/node": "24.0.1",
+    "dotenv": "16.5.0",
     "graphql-scalars": "1.24.2",
     "typescript": "5.8.3",
-    "wrangler": "4.19.1"
+    "wrangler": "4.19.2"
   }
 }
