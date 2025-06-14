@@ -57,14 +57,14 @@
     "sonner": "2.0.5",
     "swr": "2.3.3",
     "tailwind-merge": "3.3.1",
-    "viem": "2.31.1",
+    "viem": "2.31.2",
     "wagmi": "2.15.6",
-    "zod": "3.25.63",
+    "zod": "3.25.64",
     "zustand": "5.0.5"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.10",
-    "@cloudflare/workers-types": "4.20250612.0",
+    "@cloudflare/workers-types": "4.20250614.0",
     "@eslint/eslintrc": "3.3.1",
     "@lingui/cli": "5.2.0",
     "@lingui/conf": "5.2.0",
