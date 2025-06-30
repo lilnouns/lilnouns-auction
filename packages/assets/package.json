@@ -20,7 +20,7 @@
     "@ethersproject/solidity": "5.8.0",
     "@lilnounsdao/assets": "0.5.15",
     "@lilnounsdao/sdk": "0.3.15",
-    "viem": "2.31.2"
+    "viem": "2.31.4"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
