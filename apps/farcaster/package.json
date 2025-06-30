@@ -40,6 +40,6 @@
     "dotenv": "16.5.0",
     "graphql-scalars": "1.24.2",
     "typescript": "5.8.3",
-    "wrangler": "4.20.0"
+    "wrangler": "4.22.0"
   }
 }

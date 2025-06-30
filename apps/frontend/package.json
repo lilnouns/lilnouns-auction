@@ -105,6 +105,6 @@
     "typescript": "5.8.3",
     "vercel": "43.0.0",
     "vitest": "3.2.3",
-    "wrangler": "4.20.0"
+    "wrangler": "4.22.0"
   }
 }
