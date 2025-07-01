@@ -136,8 +136,8 @@ importers:
         specifier: 0.1.10
         version: 0.1.10(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@farcaster/frame-node':
-        specifier: 0.0.40
-        version: 0.0.40(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+        specifier: 0.1.0
+        version: 0.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@farcaster/frame-sdk':
         specifier: 0.0.31
         version: 0.0.31(typescript@5.8.3)(zod@3.25.67)
@@ -1887,8 +1887,8 @@ packages:
   '@farcaster/frame-core@0.1.10':
     resolution: {integrity: sha512-4PG0mHrk5VmDtt/HH+vs3xDaWY/KVdZLUxlFetkD/szn1NNtHUxM43vCUE/qgulmlV53x8GPBbkwHzcA7Dmpuw==}
 
-  '@farcaster/frame-node@0.0.40':
-    resolution: {integrity: sha512-OqcCnCx/OZ+8oEcorhVNyr5sbVI2thX0Dhst4QaW8htKHsySJycVyjsHIM3ZCSMmgaDStvXK1nMAGnHGTBZCQA==}
+  '@farcaster/frame-node@0.1.0':
+    resolution: {integrity: sha512-PxdgYl38XJJZ+HLS+W7+sSoxI3eItAomDpDW0FVOgN+bIOIonYnsWMVVFR2yWDyjTtog6HxFUys9CatB61NcTQ==}
 
   '@farcaster/frame-sdk@0.0.31':
     resolution: {integrity: sha512-ZRFA4HyfE1PIcEi++27ulSqrArv2qdVeYww7juM90DYgvqyGLtX6cTZS0UEoRL7iog2U8Rv2aq1ORLbePCBZuA==}
@@ -1899,6 +1899,12 @@ packages:
       '@farcaster/frame-sdk': ^0.0.31
       '@wagmi/core': ^2.14.1
       viem: ^2.21.55
+
+  '@farcaster/miniapp-core@0.3.0':
+    resolution: {integrity: sha512-SUcDJxeZIpshvFaipmJxpq9xdYCNgQzyWPM2OOr+5dUPbCaPMWFvBQs4TZm5UUGp2cnSR2vvSU4Qi9nOhskdRA==}
+
+  '@farcaster/miniapp-node@0.1.0':
+    resolution: {integrity: sha512-c563jWS+la1Hfp5MXWTKUOisJ4BI+rBJrfpQLqm2tCZNtrckaAFIh6DZR2oMHNZowoIPQx1IhIG5fCUNV7ihTg==}
 
   '@floating-ui/core@1.6.9':
     resolution: {integrity: sha512-uMXCuQ3BItDUbAMhIXw7UPXRfAlOAvZzdK9BWpE60MCn+Svt3aLn9jsPTi/WNGlRUu2uI0v5S7JiIUsbsvh3fw==}
@@ -8412,6 +8418,9 @@ packages:
   preact@10.26.8:
     resolution: {integrity: sha512-1nMfdFjucm5hKvq0IClqZwK4FJkGXhRrQstOQ3P4vp8HxKrJEMFcY6RdBRVTdfQS/UlnX6gfbPuTvaqx/bDoeQ==}
 
+  preact@10.26.9:
+    resolution: {integrity: sha512-SSjF9vcnF27mJK1XyFMNJzFd5u3pQiATFqoaDy03XuN00u4ziveVVEGt5RKJrDR8MHE/wJo9Nnad56RLzS2RMA==}
+
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -11175,7 +11184,7 @@ snapshots:
       eth-json-rpc-filters: 6.0.1
       eventemitter3: 5.0.1
       keccak: 3.0.4
-      preact: 10.26.8
+      preact: 10.26.9
       sha.js: 2.4.11
     transitivePeerDependencies:
       - supports-color
@@ -11897,9 +11906,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@farcaster/frame-node@0.0.40(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+  '@farcaster/frame-node@0.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
     dependencies:
-      '@farcaster/frame-core': 0.1.10(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      '@farcaster/miniapp-node': 0.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@noble/curves': 1.9.2
       ox: 0.4.4(typescript@5.8.3)(zod@3.25.67)
       zod: 3.25.67
@@ -11924,6 +11933,29 @@ snapshots:
       '@farcaster/frame-sdk': 0.0.31(typescript@5.8.3)(zod@3.25.67)
       '@wagmi/core': 2.17.3(@tanstack/query-core@5.80.7)(@types/react@19.0.10)(react@19.1.0)(typescript@5.8.3)(use-sync-external-store@1.5.0(react@19.1.0))(viem@2.31.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67))
       viem: 2.31.4(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.67)
+
+  '@farcaster/miniapp-core@0.3.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+    dependencies:
+      '@solana/web3.js': 1.98.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      ox: 0.4.4(typescript@5.8.3)(zod@3.25.67)
+      zod: 3.25.67
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - typescript
+      - utf-8-validate
+
+  '@farcaster/miniapp-node@0.1.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+    dependencies:
+      '@farcaster/miniapp-core': 0.3.0(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      '@noble/curves': 1.9.2
+      ox: 0.4.4(typescript@5.8.3)(zod@3.25.67)
+      zod: 3.25.67
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - typescript
+      - utf-8-validate
 
   '@floating-ui/core@1.6.9':
     dependencies:
@@ -19731,9 +19763,9 @@ snapshots:
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
       '@noble/curves': 1.9.2
-      '@noble/hashes': 1.8.0
-      '@scure/bip32': 1.7.0
-      '@scure/bip39': 1.6.0
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
       abitype: 1.0.8(typescript@5.8.3)(zod@3.25.67)
       eventemitter3: 5.0.1
     optionalDependencies:
@@ -20228,6 +20260,8 @@ snapshots:
       source-map-js: 1.2.1
 
   preact@10.26.8: {}
+
+  preact@10.26.9: {}
 
   prelude-ls@1.2.1: {}
 
