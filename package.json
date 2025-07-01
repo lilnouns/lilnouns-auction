@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.2.0-alpha.97",
+  "version": "1.2.0-alpha.98",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -22,7 +22,7 @@
     "eslint": "9.30.0",
     "husky": "9.1.7",
     "lint-staged": "16.1.2",
-    "prettier": "3.5.3",
+    "prettier": "3.6.2",
     "rimraf": "6.0.1",
     "turbo": "2.5.4"
   },
