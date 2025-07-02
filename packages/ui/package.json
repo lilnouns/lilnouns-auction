@@ -42,10 +42,10 @@
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "4.1.11",
     "@turbo/gen": "2.5.4",
-    "@types/node": "24.0.8",
+    "@types/node": "24.0.10",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
-    "eslint": "9.30.0",
+    "eslint": "9.30.1",
     "postcss-load-config": "6.0.1",
     "tailwindcss": "4.1.11",
     "typescript": "5.8.3"
