@@ -172,11 +172,11 @@ importers:
         specifier: 1.0.0-alpha.6
         version: 1.0.0-alpha.6
       '@prisma/adapter-d1':
-        specifier: 6.10.1
-        version: 6.10.1
+        specifier: 6.11.0
+        version: 6.11.0
       '@prisma/client':
-        specifier: 6.10.1
-        version: 6.10.1(prisma@6.10.1(typescript@5.8.3))(typescript@5.8.3)
+        specifier: 6.11.0
+        version: 6.11.0(prisma@6.11.0(typescript@5.8.3))(typescript@5.8.3)
       '@repo/assets':
         specifier: workspace:*
         version: link:../../packages/assets
@@ -377,8 +377,8 @@ importers:
         specifier: 8.5.6
         version: 8.5.6
       prisma:
-        specifier: 6.10.1
-        version: 6.10.1(typescript@5.8.3)
+        specifier: 6.11.0
+        version: 6.11.0(typescript@5.8.3)
       shadcn:
         specifier: 2.7.0
         version: 2.7.0(@types/node@24.0.8)(typescript@5.8.3)
@@ -484,28 +484,28 @@ importers:
     dependencies:
       prettier:
         specifier: '>=3.0.0'
-        version: 3.5.3
+        version: 3.6.2
       prettier-plugin-jsdoc:
         specifier: 1.3.2
-        version: 1.3.2(prettier@3.5.3)
+        version: 1.3.2(prettier@3.6.2)
       prettier-plugin-organize-attributes:
         specifier: 1.0.0
-        version: 1.0.0(prettier@3.5.3)
+        version: 1.0.0(prettier@3.6.2)
       prettier-plugin-organize-imports:
         specifier: 4.1.0
-        version: 4.1.0(prettier@3.5.3)(typescript@5.8.3)
+        version: 4.1.0(prettier@3.6.2)(typescript@5.8.3)
       prettier-plugin-packagejson:
         specifier: 2.5.17
-        version: 2.5.17(prettier@3.5.3)
+        version: 2.5.17(prettier@3.6.2)
       prettier-plugin-prisma:
         specifier: 5.0.0
-        version: 5.0.0(prettier@3.5.3)
+        version: 5.0.0(prettier@3.6.2)
       prettier-plugin-tailwindcss:
         specifier: 0.6.13
-        version: 0.6.13(prettier-plugin-jsdoc@1.3.2(prettier@3.5.3))(prettier-plugin-organize-attributes@1.0.0(prettier@3.5.3))(prettier-plugin-organize-imports@4.1.0(prettier@3.5.3)(typescript@5.8.3))(prettier@3.5.3)
+        version: 0.6.13(prettier-plugin-jsdoc@1.3.2(prettier@3.6.2))(prettier-plugin-organize-attributes@1.0.0(prettier@3.6.2))(prettier-plugin-organize-imports@4.1.0(prettier@3.6.2)(typescript@5.8.3))(prettier@3.6.2)
       prettier-plugin-toml:
         specifier: 2.0.5
-        version: 2.0.5(prettier@3.5.3)
+        version: 2.0.5(prettier@3.6.2)
 
   packages/typescript-config: {}
 
@@ -2866,11 +2866,11 @@ packages:
     resolution: {integrity: sha512-YLT9Zo3oNPJoBjBc4q8G2mjU4tqIbf5CEOORbUUr48dCD9q3umJ3IPlVqOqDakPfd2HuwccBaqlGhN4Gmr5OWg==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@prisma/adapter-d1@6.10.1':
-    resolution: {integrity: sha512-qFIRU3+hmROylgSqeugWYZZ7EKuSCfGE8HGrZloHyvs29CJjemvqLWKJy9QvjXehh5JL5WM6iOU2aljRMDK3zg==}
+  '@prisma/adapter-d1@6.11.0':
+    resolution: {integrity: sha512-Fh+TxhTLOQgTXeDFhQ81Tw9m+3icV/aXIiksN3NHDV3cCVDEBaMmsEfuolCTt6w9jQAPSmcHGhR04p+RuzKqKQ==}
 
-  '@prisma/client@6.10.1':
-    resolution: {integrity: sha512-Re4pMlcUsQsUTAYMK7EJ4Bw2kg3WfZAAlr8GjORJaK4VOP6LxRQUQ1TuLnxcF42XqGkWQ36q5CQF1yVadANQ6w==}
+  '@prisma/client@6.11.0':
+    resolution: {integrity: sha512-K9TkKepOYvCOg3qCuKz7ZHf6rf58BFKi08plKjU4qVv9y7/UxO6tLz7PlWcgODUZKURLPmRHjHERffIx/8az4w==}
     engines: {node: '>=18.18'}
     peerDependencies:
       prisma: '*'
@@ -2881,26 +2881,26 @@ packages:
       typescript:
         optional: true
 
-  '@prisma/config@6.10.1':
-    resolution: {integrity: sha512-kz4/bnqrOrzWo8KzYguN0cden4CzLJJ+2VSpKtF8utHS3l1JS0Lhv6BLwpOX6X9yNreTbZQZwewb+/BMPDCIYQ==}
+  '@prisma/config@6.11.0':
+    resolution: {integrity: sha512-icBfutMpdrwSf2ggo012zhQ4oianijXL/UPbv4PNVK3WUWbB3/F5Ltq8ZfElGrtwKC6XuFFPxU5qDC9x7vh8zQ==}
 
-  '@prisma/debug@6.10.1':
-    resolution: {integrity: sha512-k2YT53cWxv9OLjW4zSYTZ6Z7j0gPfCzcr2Mj99qsuvlxr8WAKSZ2NcSR0zLf/mP4oxnYG842IMj3utTgcd7CaA==}
+  '@prisma/debug@6.11.0':
+    resolution: {integrity: sha512-zo4oEZMWMt0BFWl+4NK9FUpaEOmjGR3y2/r0lkW/DK4BUBRgMj90s8QqK2K+vXG3xn0nAGg2kOSu+Swn60CFLg==}
 
-  '@prisma/driver-adapter-utils@6.10.1':
-    resolution: {integrity: sha512-MJ7NiiMA5YQUD1aMHiOcLmRpW0U0NTpygyeuLMxHXnKbcq+HX/cy10qilFMLVzpveuIEHuwxziR67z6i0K1MKA==}
+  '@prisma/driver-adapter-utils@6.11.0':
+    resolution: {integrity: sha512-fuXpLkhHxY2x7/i1IylscOgmaKdMtvalumSBaTkJ2z3LG0Z/+px6aP3lKBGU6NVX5FrCnrTlK+dxifJaWzPJrA==}
 
-  '@prisma/engines-version@6.10.1-1.9b628578b3b7cae625e8c927178f15a170e74a9c':
-    resolution: {integrity: sha512-ZJFTsEqapiTYVzXya6TUKYDFnSWCNegfUiG5ik9fleQva5Sk3DNyyUi7X1+0ZxWFHwHDr6BZV5Vm+iwP+LlciA==}
+  '@prisma/engines-version@6.11.0-18.9c30299f5a0ea26a96790e13f796dc6094db3173':
+    resolution: {integrity: sha512-M3vbyDICFIA1oJl0cFkM0omD4HsJZjFi0hu0f0UxyPABH8KEcZyUd5BToCrNl4B8lUeQn+L5+gfaQleOKp6Lrg==}
 
-  '@prisma/engines@6.10.1':
-    resolution: {integrity: sha512-Q07P5rS2iPwk2IQr/rUQJ42tHjpPyFcbiH7PXZlV81Ryr9NYIgdxcUrwgVOWVm5T7ap02C0dNd1dpnNcSWig8A==}
+  '@prisma/engines@6.11.0':
+    resolution: {integrity: sha512-uqnYxvPKZPvYZA7F0q4gTR+fVWUJSY5bif7JAKBIOD5SoRRy0qEIaPy4Nna5WDLQaFGshaY/Bh8dLOQMfxhJJw==}
 
-  '@prisma/fetch-engine@6.10.1':
-    resolution: {integrity: sha512-clmbG/Jgmrc/n6Y77QcBmAUlq9LrwI9Dbgy4pq5jeEARBpRCWJDJ7PWW1P8p0LfFU0i5fsyO7FqRzRB8mkdS4g==}
+  '@prisma/fetch-engine@6.11.0':
+    resolution: {integrity: sha512-ZHHSP7vJFo5hePH+MNovxhqXabIg38ZpCwQfUBON29kwPX3f1pjYnzGpgJLCJy4k7mKGOzTgrXPqH8+nJvq2fw==}
 
-  '@prisma/get-platform@6.10.1':
-    resolution: {integrity: sha512-4CY5ndKylcsce9Mv+VWp5obbR2/86SHOLVV053pwIkhVtT9C9A83yqiqI/5kJM9T1v1u1qco/bYjDKycmei9HA==}
+  '@prisma/get-platform@6.11.0':
+    resolution: {integrity: sha512-yspBGvOfJQwuoApk5B4aBlHDy6YDXAOe4Ml8U2eZ+M2b7fDd10YDomS3Q4qrYHUUVYF3TJyN86NcnRMOvCMUrA==}
 
   '@prisma/prisma-schema-wasm@4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584':
     resolution: {integrity: sha512-JFdsnSgBPN8reDTLOI9Vh/6ccCb2aD1LbY/LWQnkcIgNo6IdpzvuM+qRVbBuA6IZP2SdqQI8Lu6RL2P8EFBQUA==}
@@ -5517,6 +5517,10 @@ packages:
 
   dotenv@16.5.0:
     resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+    engines: {node: '>=12'}
+
+  dotenv@16.6.1:
+    resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
     engines: {node: '>=12'}
 
   dotenv@17.0.0:
@@ -8433,6 +8437,9 @@ packages:
   preact@10.26.8:
     resolution: {integrity: sha512-1nMfdFjucm5hKvq0IClqZwK4FJkGXhRrQstOQ3P4vp8HxKrJEMFcY6RdBRVTdfQS/UlnX6gfbPuTvaqx/bDoeQ==}
 
+  preact@10.26.9:
+    resolution: {integrity: sha512-SSjF9vcnF27mJK1XyFMNJzFd5u3pQiATFqoaDy03XuN00u4ziveVVEGt5RKJrDR8MHE/wJo9Nnad56RLzS2RMA==}
+
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -8538,11 +8545,6 @@ packages:
     peerDependencies:
       prettier: ^3.0.3
 
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
-    engines: {node: '>=14'}
-    hasBin: true
-
   prettier@3.6.2:
     resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
@@ -8563,8 +8565,8 @@ packages:
   printable-characters@1.0.42:
     resolution: {integrity: sha512-dKp+C4iXWK4vVYZmYSd0KBH5F/h1HoZRsbJ82AVKRO3PEo8L4lBS/vLwhVtpwwuYcoIsVY+1JYKR268yn480uQ==}
 
-  prisma@6.10.1:
-    resolution: {integrity: sha512-khhlC/G49E4+uyA3T3H5PRBut486HD2bDqE2+rvkU0pwk9IAqGFacLFUyIx9Uw+W2eCtf6XGwsp+/strUwMNPw==}
+  prisma@6.11.0:
+    resolution: {integrity: sha512-gI69E7fusgk32XALpXzdgR10xUx2aFnHiu/JaUo4O07G4JvFT0xNtD0Iy81p37iBLTYFEhWa9VrHKXaiyZ5fLQ==}
     engines: {node: '>=18.18'}
     hasBin: true
     peerDependencies:
@@ -9079,8 +9081,9 @@ packages:
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
-  sha.js@2.4.11:
-    resolution: {integrity: sha512-QMEp5B7cftE7APOjk5Y6xgrbWu+WkLVQwk8JNjZ8nKRciZaByEW6MubieAiToS7+dwvrjGhH8jRXz3MVd0AYqQ==}
+  sha.js@2.4.12:
+    resolution: {integrity: sha512-8LzC5+bvI45BjpfXU8V5fdU2mfeKiQe1D1gIMn7XUlF3OTUrpdJpPPH4EMAnF0DsHHdSZqCdSss5qCmJKuiO3w==}
+    engines: {node: '>= 0.10'}
     hasBin: true
 
   shadcn@2.7.0:
@@ -9617,6 +9620,10 @@ packages:
   tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
+
+  to-buffer@1.2.1:
+    resolution: {integrity: sha512-tB82LpAIWjhLYbqjx3X4zEeHN6M8CiuOEy2JY8SEQVdYRe3CCHOFaqrBW1doLDrfpWhplcW7BL+bO3/6S3pcDQ==}
+    engines: {node: '>= 0.4'}
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -11206,8 +11213,8 @@ snapshots:
       eth-json-rpc-filters: 6.0.1
       eventemitter3: 5.0.1
       keccak: 3.0.4
-      preact: 10.26.8
-      sha.js: 2.4.11
+      preact: 10.26.9
+      sha.js: 2.4.12
     transitivePeerDependencies:
       - supports-color
 
@@ -13264,45 +13271,45 @@ snapshots:
 
   '@pkgr/core@0.2.7': {}
 
-  '@prisma/adapter-d1@6.10.1':
+  '@prisma/adapter-d1@6.11.0':
     dependencies:
       '@cloudflare/workers-types': 4.20250214.0
-      '@prisma/driver-adapter-utils': 6.10.1
+      '@prisma/driver-adapter-utils': 6.11.0
       ky: 1.7.5
 
-  '@prisma/client@6.10.1(prisma@6.10.1(typescript@5.8.3))(typescript@5.8.3)':
+  '@prisma/client@6.11.0(prisma@6.11.0(typescript@5.8.3))(typescript@5.8.3)':
     optionalDependencies:
-      prisma: 6.10.1(typescript@5.8.3)
+      prisma: 6.11.0(typescript@5.8.3)
       typescript: 5.8.3
 
-  '@prisma/config@6.10.1':
+  '@prisma/config@6.11.0':
     dependencies:
       jiti: 2.4.2
 
-  '@prisma/debug@6.10.1': {}
+  '@prisma/debug@6.11.0': {}
 
-  '@prisma/driver-adapter-utils@6.10.1':
+  '@prisma/driver-adapter-utils@6.11.0':
     dependencies:
-      '@prisma/debug': 6.10.1
+      '@prisma/debug': 6.11.0
 
-  '@prisma/engines-version@6.10.1-1.9b628578b3b7cae625e8c927178f15a170e74a9c': {}
+  '@prisma/engines-version@6.11.0-18.9c30299f5a0ea26a96790e13f796dc6094db3173': {}
 
-  '@prisma/engines@6.10.1':
+  '@prisma/engines@6.11.0':
     dependencies:
-      '@prisma/debug': 6.10.1
-      '@prisma/engines-version': 6.10.1-1.9b628578b3b7cae625e8c927178f15a170e74a9c
-      '@prisma/fetch-engine': 6.10.1
-      '@prisma/get-platform': 6.10.1
+      '@prisma/debug': 6.11.0
+      '@prisma/engines-version': 6.11.0-18.9c30299f5a0ea26a96790e13f796dc6094db3173
+      '@prisma/fetch-engine': 6.11.0
+      '@prisma/get-platform': 6.11.0
 
-  '@prisma/fetch-engine@6.10.1':
+  '@prisma/fetch-engine@6.11.0':
     dependencies:
-      '@prisma/debug': 6.10.1
-      '@prisma/engines-version': 6.10.1-1.9b628578b3b7cae625e8c927178f15a170e74a9c
-      '@prisma/get-platform': 6.10.1
+      '@prisma/debug': 6.11.0
+      '@prisma/engines-version': 6.11.0-18.9c30299f5a0ea26a96790e13f796dc6094db3173
+      '@prisma/get-platform': 6.11.0
 
-  '@prisma/get-platform@6.10.1':
+  '@prisma/get-platform@6.11.0':
     dependencies:
-      '@prisma/debug': 6.10.1
+      '@prisma/debug': 6.11.0
 
   '@prisma/prisma-schema-wasm@4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584': {}
 
@@ -16218,7 +16225,7 @@ snapshots:
       chokidar: 4.0.3
       confbox: 0.1.8
       defu: 6.1.4
-      dotenv: 16.5.0
+      dotenv: 16.6.1
       giget: 1.2.5
       jiti: 2.4.2
       mlly: 1.7.4
@@ -16932,6 +16939,8 @@ snapshots:
   dotenv@16.0.3: {}
 
   dotenv@16.5.0: {}
+
+  dotenv@16.6.1: {}
 
   dotenv@17.0.0: {}
 
@@ -20286,56 +20295,56 @@ snapshots:
 
   preact@10.26.8: {}
 
+  preact@10.26.9: {}
+
   prelude-ls@1.2.1: {}
 
   prettier-linter-helpers@1.0.0:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-jsdoc@1.3.2(prettier@3.5.3):
+  prettier-plugin-jsdoc@1.3.2(prettier@3.6.2):
     dependencies:
       binary-searching: 2.0.5
       comment-parser: 1.4.1
       mdast-util-from-markdown: 2.0.2
-      prettier: 3.5.3
+      prettier: 3.6.2
     transitivePeerDependencies:
       - supports-color
 
-  prettier-plugin-organize-attributes@1.0.0(prettier@3.5.3):
+  prettier-plugin-organize-attributes@1.0.0(prettier@3.6.2):
     dependencies:
-      prettier: 3.5.3
+      prettier: 3.6.2
 
-  prettier-plugin-organize-imports@4.1.0(prettier@3.5.3)(typescript@5.8.3):
+  prettier-plugin-organize-imports@4.1.0(prettier@3.6.2)(typescript@5.8.3):
     dependencies:
-      prettier: 3.5.3
+      prettier: 3.6.2
       typescript: 5.8.3
 
-  prettier-plugin-packagejson@2.5.17(prettier@3.5.3):
+  prettier-plugin-packagejson@2.5.17(prettier@3.6.2):
     dependencies:
       sort-package-json: 3.3.1
       synckit: 0.11.8
     optionalDependencies:
-      prettier: 3.5.3
+      prettier: 3.6.2
 
-  prettier-plugin-prisma@5.0.0(prettier@3.5.3):
+  prettier-plugin-prisma@5.0.0(prettier@3.6.2):
     dependencies:
       '@prisma/prisma-schema-wasm': 4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584
-      prettier: 3.5.3
+      prettier: 3.6.2
 
-  prettier-plugin-tailwindcss@0.6.13(prettier-plugin-jsdoc@1.3.2(prettier@3.5.3))(prettier-plugin-organize-attributes@1.0.0(prettier@3.5.3))(prettier-plugin-organize-imports@4.1.0(prettier@3.5.3)(typescript@5.8.3))(prettier@3.5.3):
+  prettier-plugin-tailwindcss@0.6.13(prettier-plugin-jsdoc@1.3.2(prettier@3.6.2))(prettier-plugin-organize-attributes@1.0.0(prettier@3.6.2))(prettier-plugin-organize-imports@4.1.0(prettier@3.6.2)(typescript@5.8.3))(prettier@3.6.2):
     dependencies:
-      prettier: 3.5.3
+      prettier: 3.6.2
     optionalDependencies:
-      prettier-plugin-jsdoc: 1.3.2(prettier@3.5.3)
-      prettier-plugin-organize-attributes: 1.0.0(prettier@3.5.3)
-      prettier-plugin-organize-imports: 4.1.0(prettier@3.5.3)(typescript@5.8.3)
+      prettier-plugin-jsdoc: 1.3.2(prettier@3.6.2)
+      prettier-plugin-organize-attributes: 1.0.0(prettier@3.6.2)
+      prettier-plugin-organize-imports: 4.1.0(prettier@3.6.2)(typescript@5.8.3)
 
-  prettier-plugin-toml@2.0.5(prettier@3.5.3):
+  prettier-plugin-toml@2.0.5(prettier@3.6.2):
     dependencies:
       '@taplo/lib': 0.5.0
-      prettier: 3.5.3
-
-  prettier@3.5.3: {}
+      prettier: 3.6.2
 
   prettier@3.6.2: {}
 
@@ -20357,10 +20366,10 @@ snapshots:
 
   printable-characters@1.0.42: {}
 
-  prisma@6.10.1(typescript@5.8.3):
+  prisma@6.11.0(typescript@5.8.3):
     dependencies:
-      '@prisma/config': 6.10.1
-      '@prisma/engines': 6.10.1
+      '@prisma/config': 6.11.0
+      '@prisma/engines': 6.11.0
     optionalDependencies:
       typescript: 5.8.3
 
@@ -20986,10 +20995,11 @@ snapshots:
 
   setprototypeof@1.2.0: {}
 
-  sha.js@2.4.11:
+  sha.js@2.4.12:
     dependencies:
       inherits: 2.0.4
       safe-buffer: 5.2.1
+      to-buffer: 1.2.1
 
   shadcn@2.7.0(@types/node@24.0.8)(typescript@5.8.3):
     dependencies:
@@ -21593,6 +21603,12 @@ snapshots:
   tmp@0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
+
+  to-buffer@1.2.1:
+    dependencies:
+      isarray: 2.0.5
+      safe-buffer: 5.2.1
+      typed-array-buffer: 1.0.3
 
   to-regex-range@5.0.1:
     dependencies:
