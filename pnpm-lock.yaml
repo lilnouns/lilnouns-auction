@@ -136,8 +136,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@farcaster/frame-node':
-        specifier: 0.1.1
-        version: 0.1.1(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+        specifier: 0.1.2
+        version: 0.1.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@farcaster/frame-sdk':
         specifier: 0.0.31
         version: 0.0.31(typescript@5.8.3)(zod@3.25.67)
@@ -1896,8 +1896,8 @@ packages:
   '@farcaster/frame-core@0.3.1':
     resolution: {integrity: sha512-LVqjZufRuUnDdsjepxrkCdteorsuPXBdIEJquaXF0Scjeq463MQS8qOMKtRP8eEAXIrKHSpNugo6SmCgDSsFoA==}
 
-  '@farcaster/frame-node@0.1.1':
-    resolution: {integrity: sha512-H0yiaTc83kKZeAklYxPMVUOcIobvUAtnxDV30bQ+mBHSM7xw1lwTfQ7rXMYbutxAO4j9pnQVYYdnX7NeyDhixg==}
+  '@farcaster/frame-node@0.1.2':
+    resolution: {integrity: sha512-MOEoh2Yv1JU39oFC09azY9O3yfoNJGmLyTyKAb6OFHPMN4AQ/ZyESFm9rqsYT2nZkoprng0ifD3Y34wLArMLUw==}
 
   '@farcaster/frame-sdk@0.0.31':
     resolution: {integrity: sha512-ZRFA4HyfE1PIcEi++27ulSqrArv2qdVeYww7juM90DYgvqyGLtX6cTZS0UEoRL7iog2U8Rv2aq1ORLbePCBZuA==}
@@ -1912,8 +1912,11 @@ packages:
   '@farcaster/miniapp-core@0.3.1':
     resolution: {integrity: sha512-oATZ7rs4SoHuFlffjIlz1FpmMHH8co+3yvCPWSSXQpgZFWBrJNcctDpdp1JKYy+3JiQH9z1sWIaRhbvew6I44w==}
 
-  '@farcaster/miniapp-node@0.1.1':
-    resolution: {integrity: sha512-rFU44K5LjkHZwFbHUuE7to4DFiCKMl7rUgB4CM/Gmk46x7sE4LTIR1qURxyAFr/+VxWnPyvzZndfkaUtyMGjFg==}
+  '@farcaster/miniapp-core@0.3.2':
+    resolution: {integrity: sha512-gxkQXfp3WeAd03tG5kbtihqkflBofgXy61lzQ55DgI94ROemG6AV8qwyl3uHp4Z6SPSX5QWwbjkOJJI2J0MaYA==}
+
+  '@farcaster/miniapp-node@0.1.2':
+    resolution: {integrity: sha512-nBq/vG4BaQfzv0gInbyowjMdNU/xenbxGEozrAk6+R0z4HM/5wrV+BMCy4JZ7FYww9CNmKPFJqzqDEJpq/iLbQ==}
 
   '@floating-ui/core@1.6.9':
     resolution: {integrity: sha512-uMXCuQ3BItDUbAMhIXw7UPXRfAlOAvZzdK9BWpE60MCn+Svt3aLn9jsPTi/WNGlRUu2uI0v5S7JiIUsbsvh3fw==}
@@ -11887,9 +11890,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@farcaster/frame-node@0.1.1(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+  '@farcaster/frame-node@0.1.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
     dependencies:
-      '@farcaster/miniapp-node': 0.1.1(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      '@farcaster/miniapp-node': 0.1.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@noble/curves': 1.9.2
       ox: 0.4.4(typescript@5.8.3)(zod@3.25.67)
       zod: 3.25.67
@@ -11926,9 +11929,20 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@farcaster/miniapp-node@0.1.1(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+  '@farcaster/miniapp-core@0.3.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
     dependencies:
-      '@farcaster/miniapp-core': 0.3.1(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      '@solana/web3.js': 1.98.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
+      ox: 0.4.4(typescript@5.8.3)(zod@3.25.67)
+      zod: 3.25.67
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - typescript
+      - utf-8-validate
+
+  '@farcaster/miniapp-node@0.1.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)':
+    dependencies:
+      '@farcaster/miniapp-core': 0.3.2(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@noble/curves': 1.9.2
       ox: 0.4.4(typescript@5.8.3)(zod@3.25.67)
       zod: 3.25.67
@@ -19672,9 +19686,9 @@ snapshots:
     dependencies:
       '@adraffy/ens-normalize': 1.11.0
       '@noble/curves': 1.9.2
-      '@noble/hashes': 1.8.0
-      '@scure/bip32': 1.7.0
-      '@scure/bip39': 1.6.0
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
       abitype: 1.0.8(typescript@5.8.3)(zod@3.25.67)
       eventemitter3: 5.0.1
     optionalDependencies:
