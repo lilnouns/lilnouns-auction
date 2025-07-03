@@ -79,8 +79,8 @@ importers:
         specifier: 1.13.0
         version: 1.13.0(graphql@16.11.0)(typescript@5.8.3)
       '@cloudflare/workers-types':
-        specifier: 4.20250702.0
-        version: 4.20250702.0
+        specifier: 4.20250703.0
+        version: 4.20250703.0
       '@graphprotocol/graph-ts':
         specifier: 0.38.1
         version: 0.38.1
@@ -125,7 +125,7 @@ importers:
         version: 5.8.3
       wrangler:
         specifier: 4.22.0
-        version: 4.22.0(@cloudflare/workers-types@4.20250702.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+        version: 4.22.0(@cloudflare/workers-types@4.20250703.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
 
   apps/frontend:
     dependencies:
@@ -273,10 +273,10 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.10
-        version: 1.13.10(@cloudflare/workers-types@4.20250702.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@44.2.10(rollup@4.44.1))(wrangler@4.22.0(@cloudflare/workers-types@4.20250702.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+        version: 1.13.10(@cloudflare/workers-types@4.20250703.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@44.2.10(rollup@4.44.1))(wrangler@4.22.0(@cloudflare/workers-types@4.20250703.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
-        specifier: 4.20250702.0
-        version: 4.20250702.0
+        specifier: 4.20250703.0
+        version: 4.20250703.0
       '@eslint/eslintrc':
         specifier: 3.3.1
         version: 3.3.1
@@ -396,7 +396,7 @@ importers:
         version: 3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@24.0.10)(jiti@2.4.2)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(msw@2.10.2(@types/node@24.0.10)(typescript@5.8.3))(terser@5.39.0)(yaml@2.8.0)
       wrangler:
         specifier: 4.22.0
-        version: 4.22.0(@cloudflare/workers-types@4.20250702.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+        version: 4.22.0(@cloudflare/workers-types@4.20250703.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
 
   packages/assets:
     dependencies:
@@ -1159,8 +1159,8 @@ packages:
   '@cloudflare/workers-types@4.20250214.0':
     resolution: {integrity: sha512-+M8oOFVbyXT5GeJrYLWMUGyPf5wGB4+k59PPqdedtOig7NjZ5r4S79wMdaZ/EV5IV8JPtZBSNjTKpDnNmfxjaQ==}
 
-  '@cloudflare/workers-types@4.20250702.0':
-    resolution: {integrity: sha512-gUuWeVvb0Y6E8h83nI19Ay+69x+9Xjz99TdhX0JdZoNTtyVX9KcdQgGcRK+Tmt2WC0z2AQaPq/qVmNihAgS7iQ==}
+  '@cloudflare/workers-types@4.20250703.0':
+    resolution: {integrity: sha512-6ITY5VL2eDkwFVWtF4OSsLIalyuwAE8/eH76fFn1KNGsH5V8JdjYriFTa/3YaJ+mzt4n4X6Hv06zrg00IKBTIA==}
 
   '@coinbase/wallet-sdk@3.9.3':
     resolution: {integrity: sha512-N/A2DRIf0Y3PHc1XAMvbBUu4zisna6qAdqABMZwBMNEfWrXpAwx16pZGkYCLGE+Rvv1edbcB2LYDRnACNcmCiw==}
@@ -8375,6 +8375,9 @@ packages:
   preact@10.26.8:
     resolution: {integrity: sha512-1nMfdFjucm5hKvq0IClqZwK4FJkGXhRrQstOQ3P4vp8HxKrJEMFcY6RdBRVTdfQS/UlnX6gfbPuTvaqx/bDoeQ==}
 
+  preact@10.26.9:
+    resolution: {integrity: sha512-SSjF9vcnF27mJK1XyFMNJzFd5u3pQiATFqoaDy03XuN00u4ziveVVEGt5RKJrDR8MHE/wJo9Nnad56RLzS2RMA==}
+
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -9016,8 +9019,9 @@ packages:
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
-  sha.js@2.4.11:
-    resolution: {integrity: sha512-QMEp5B7cftE7APOjk5Y6xgrbWu+WkLVQwk8JNjZ8nKRciZaByEW6MubieAiToS7+dwvrjGhH8jRXz3MVd0AYqQ==}
+  sha.js@2.4.12:
+    resolution: {integrity: sha512-8LzC5+bvI45BjpfXU8V5fdU2mfeKiQe1D1gIMn7XUlF3OTUrpdJpPPH4EMAnF0DsHHdSZqCdSss5qCmJKuiO3w==}
+    engines: {node: '>= 0.10'}
     hasBin: true
 
   shadcn@2.7.0:
@@ -9554,6 +9558,10 @@ packages:
   tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
+
+  to-buffer@1.2.1:
+    resolution: {integrity: sha512-tB82LpAIWjhLYbqjx3X4zEeHN6M8CiuOEy2JY8SEQVdYRe3CCHOFaqrBW1doLDrfpWhplcW7BL+bO3/6S3pcDQ==}
+    engines: {node: '>= 0.4'}
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -11076,7 +11084,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20250702.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@44.2.10(rollup@4.44.1))(wrangler@4.22.0(@cloudflare/workers-types@4.20250702.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20250703.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@44.2.10(rollup@4.44.1))(wrangler@4.22.0(@cloudflare/workers-types@4.20250703.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.14.1
       ast-types: 0.14.2
@@ -11091,9 +11099,9 @@ snapshots:
       pcre-to-regexp: 1.1.0
       semver: 7.7.1
       vercel: 44.2.10(rollup@4.44.1)
-      wrangler: 4.22.0(@cloudflare/workers-types@4.20250702.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      wrangler: 4.22.0(@cloudflare/workers-types@4.20250703.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250702.0
+      '@cloudflare/workers-types': 4.20250703.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -11136,7 +11144,7 @@ snapshots:
 
   '@cloudflare/workers-types@4.20250214.0': {}
 
-  '@cloudflare/workers-types@4.20250702.0': {}
+  '@cloudflare/workers-types@4.20250703.0': {}
 
   '@coinbase/wallet-sdk@3.9.3':
     dependencies:
@@ -11147,8 +11155,8 @@ snapshots:
       eth-json-rpc-filters: 6.0.1
       eventemitter3: 5.0.1
       keccak: 3.0.4
-      preact: 10.26.8
-      sha.js: 2.4.11
+      preact: 10.26.9
+      sha.js: 2.4.12
     transitivePeerDependencies:
       - supports-color
 
@@ -20149,6 +20157,8 @@ snapshots:
 
   preact@10.26.8: {}
 
+  preact@10.26.9: {}
+
   prelude-ls@1.2.1: {}
 
   prettier-linter-helpers@1.0.0:
@@ -20847,10 +20857,11 @@ snapshots:
 
   setprototypeof@1.2.0: {}
 
-  sha.js@2.4.11:
+  sha.js@2.4.12:
     dependencies:
       inherits: 2.0.4
       safe-buffer: 5.2.1
+      to-buffer: 1.2.1
 
   shadcn@2.7.0(@types/node@24.0.10)(typescript@5.8.3):
     dependencies:
@@ -21454,6 +21465,12 @@ snapshots:
   tmp@0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
+
+  to-buffer@1.2.1:
+    dependencies:
+      isarray: 2.0.5
+      safe-buffer: 5.2.1
+      typed-array-buffer: 1.0.3
 
   to-regex-range@5.0.1:
     dependencies:
@@ -22236,7 +22253,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250617.0
       '@cloudflare/workerd-windows-64': 1.20250617.0
 
-  wrangler@4.22.0(@cloudflare/workers-types@4.20250702.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10):
+  wrangler@4.22.0(@cloudflare/workers-types@4.20250703.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.3.3(unenv@2.0.0-rc.17)(workerd@1.20250617.0)
@@ -22247,7 +22264,7 @@ snapshots:
       unenv: 2.0.0-rc.17
       workerd: 1.20250617.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250702.0
+      '@cloudflare/workers-types': 4.20250703.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
