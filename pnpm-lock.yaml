@@ -69,8 +69,8 @@ importers:
         specifier: 3.6.1
         version: 3.6.1
       remeda:
-        specifier: 2.23.2
-        version: 2.23.2
+        specifier: 2.23.3
+        version: 2.23.3
       viem:
         specifier: 2.31.6
         version: 2.31.6(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@5.0.10)(zod@3.25.69)
@@ -247,8 +247,8 @@ importers:
         specifier: 17.6.0
         version: 17.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       remeda:
-        specifier: 2.23.2
-        version: 2.23.2
+        specifier: 2.23.3
+        version: 2.23.3
       sonner:
         specifier: 2.0.6
         version: 2.0.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -8796,8 +8796,8 @@ packages:
   remark-rehype@11.1.1:
     resolution: {integrity: sha512-g/osARvjkBXb6Wo0XvAeXQohVta8i84ACbenPpoSsxTOQH/Ae0/RGP4WZgnMH5pMLpsj4FG7OHmcIcXxpza8eQ==}
 
-  remeda@2.23.2:
-    resolution: {integrity: sha512-4W75s4Ii5SDncp1TRLYRspJ+skm/FEHK7NLYk+q8Zy18mFeypXhGPdahmPvHkmqo38KfTTCjAqXRHMkmcQIEGA==}
+  remeda@2.23.3:
+    resolution: {integrity: sha512-2mzlSo0cUzpgOGiZTryB5/0JyFmpzktr5552Xhcy3K54PgSjZp7U7NN056YxgybBTyNP1BRwJg/37JIRVmJn8g==}
 
   remedial@1.0.8:
     resolution: {integrity: sha512-/62tYiOe6DzS5BqVsNpH/nkGlX45C/Sp6V+NtiN6JQNS1Viay7cWkazmRkrQrdFj2eshDe96SIQNIoMxqhzBOg==}
@@ -20586,7 +20586,7 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
-  remeda@2.23.2:
+  remeda@2.23.3:
     dependencies:
       type-fest: 4.41.0
 
