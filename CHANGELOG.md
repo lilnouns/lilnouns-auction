@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.102] - 2025-07-05
+
+### Features
+
+- Add `head-floppy-disc` image data
+
 ## [1.2.0-alpha.101] - 2025-07-04
 
 ### Bug Fixes
