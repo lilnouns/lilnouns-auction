@@ -19,13 +19,13 @@
     "graphql": "16.11.0",
     "graphql-request": "7.2.0",
     "graphql-tag": "2.12.6",
-    "luxon": "3.6.1",
+    "luxon": "3.7.1",
     "remeda": "2.25.0",
     "viem": "2.31.7"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.14.0",
-    "@cloudflare/workers-types": "4.20250708.0",
+    "@cloudflare/workers-types": "4.20250709.0",
     "@graphprotocol/graph-ts": "0.38.1",
     "@graphql-codegen/cli": "5.0.7",
     "@graphql-codegen/schema-ast": "4.1.0",
@@ -37,7 +37,7 @@
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "24.0.12",
-    "dotenv": "17.1.0",
+    "dotenv": "17.2.0",
     "graphql-scalars": "1.24.2",
     "typescript": "5.8.3",
     "wrangler": "4.24.0"
