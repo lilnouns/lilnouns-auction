@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.14.0",
-    "@cloudflare/workers-types": "4.20250710.0",
+    "@cloudflare/workers-types": "4.20250711.0",
     "@graphprotocol/graph-ts": "0.38.1",
     "@graphql-codegen/cli": "5.0.7",
     "@graphql-codegen/schema-ast": "4.1.0",
