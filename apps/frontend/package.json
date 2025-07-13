@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.10",
-    "@cloudflare/workers-types": "4.20250710.0",
+    "@cloudflare/workers-types": "4.20250711.0",
     "@eslint/eslintrc": "3.3.1",
     "@lingui/cli": "5.2.0",
     "@lingui/conf": "5.2.0",
@@ -102,7 +102,7 @@
     "tailwind-merge": "3.3.1",
     "tailwindcss": "4.1.11",
     "typescript": "5.8.3",
-    "vercel": "44.4.0",
+    "vercel": "44.4.1",
     "vitest": "3.2.4",
     "wrangler": "4.24.3"
   }
