@@ -6,7 +6,7 @@ import { getSdk } from '@/services/lilnouns'
 
 export async function scheduledHandler(
   _controller: ScheduledController,
-  env: Env,
+  env: CloudflareEnv,
   _ctx: ExecutionContext,
 ): Promise<void> {
   // Get previous ID as string and convert to number
