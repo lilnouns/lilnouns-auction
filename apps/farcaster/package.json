@@ -9,7 +9,7 @@
     "codegen": "graphql-codegen --config codegen.config.ts",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --test-scheduled",
-    "generate-types": "wrangler types --include-runtime=false --strict-vars=false",
+    "generate-types": "wrangler types --include-runtime=false --strict-vars=false --env-interface CloudflareEnv ./cloudflare-env.d.ts",
     "start": "wrangler dev --test-scheduled",
     "type-check": "pnpm generate-types && tsc"
   },
