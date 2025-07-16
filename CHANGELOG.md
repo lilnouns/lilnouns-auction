@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.110] - 2025-07-16
+
+### Bug Fixes
+
+- Enhance `generate-types` script
+- Update `worker-configuration` type generation
+- Add `cloudflare-env.d.ts` to `types`
+- Update `Env` to `CloudflareEnv`
+
 ## [1.2.0-alpha.109] - 2025-07-14
 
 ### Bug Fixes
