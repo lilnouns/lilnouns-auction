@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.111] - 2025-07-17
+
+### Features
+
+- Add support for Infura and Ankr APIs
+
 ## [1.2.0-alpha.110] - 2025-07-16
 
 ### Bug Fixes
