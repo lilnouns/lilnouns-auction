@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-alpha.112] - 2025-07-17
+
+### Refactor
+
+- Remove unused Infura WebSocket configs
+
 ## [1.2.0-alpha.111] - 2025-07-17
 
 ### Features
