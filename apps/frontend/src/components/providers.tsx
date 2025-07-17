@@ -23,6 +23,8 @@ import {
 const activeChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
 const reownProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID ?? ''
 const alchemyApiKey = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
+const ankrApiKey = process.env.NEXT_PUBLIC_ANKR_API_KEY
+const infuraApiKey = process.env.NEXT_PUBLIC_INFURA_API_KEY
 
 const activeChain =
   pipe(
@@ -32,20 +34,36 @@ const activeChain =
 
 const queryClient = new QueryClient()
 
-const chainNetworkMap: Record<number, string> = {
+const alchemyNetworkMap: Record<number, string> = {
   [mainnet.id]: 'eth-mainnet',
   [sepolia.id]: 'eth-sepolia',
+}
+
+const infuraNetworkMap: Record<number, string> = {
+  [mainnet.id]: 'mainnet',
+  [sepolia.id]: 'sepolia',
+}
+
+const ankrNetworkMap: Record<number, string> = {
+  [mainnet.id]: 'eth',
+  [sepolia.id]: 'eth_sepolia',
 }
 
 const transports = mapToObj([mainnet, sepolia], (chain) => [
   chain.id,
   fallback([
     webSocket(
-      `wss://${chainNetworkMap[chain.id]}.g.alchemy.com/v2/${alchemyApiKey}`,
+      `wss://${alchemyNetworkMap[chain.id]}.g.alchemy.com/v2/${alchemyApiKey}`,
+    ),
+    // Infura WebSocket fallback
+    webSocket(
+      `wss://${infuraNetworkMap[chain.id]}.infura.io/ws/v3/${infuraApiKey}`,
     ),
     http(
-      `https://${chainNetworkMap[chain.id]}.g.alchemy.com/v2/${alchemyApiKey}`,
+      `https://${alchemyNetworkMap[chain.id]}.g.alchemy.com/v2/${alchemyApiKey}`,
     ),
+    // Ankr HTTP fallback with private endpoint
+    http(`https://rpc.ankr.com/${ankrNetworkMap[chain.id]}/${ankrApiKey}`),
   ]),
 ])
 
