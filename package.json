@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.2.0-alpha.113",
+  "version": "1.2.0-alpha.114",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -66,6 +66,9 @@
       "@tailwindcss/oxide",
       "msw",
       "workerd"
+    ],
+    "ignoredBuiltDependencies": [
+      "esbuild"
     ]
   }
 }
