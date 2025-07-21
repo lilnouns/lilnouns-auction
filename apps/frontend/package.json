@@ -89,7 +89,7 @@
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
     "@types/webpack": "5.28.5",
-    "@vitejs/plugin-react": "4.6.0",
+    "@vitejs/plugin-react": "4.7.0",
     "eslint": "9.31.0",
     "eslint-plugin-next-on-pages": "1.13.12",
     "is-ci": "4.1.0",
