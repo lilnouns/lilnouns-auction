@@ -66,6 +66,9 @@
       "@tailwindcss/oxide",
       "msw",
       "workerd"
+    ],
+    "ignoredBuiltDependencies": [
+      "esbuild"
     ]
   }
 }
