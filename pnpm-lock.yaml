@@ -54,8 +54,8 @@ importers:
         specifier: 1.0.0-alpha.6
         version: 1.0.0-alpha.6
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.30
-        version: 2.0.0-alpha.30
+        specifier: 2.0.0-alpha.35
+        version: 2.0.0-alpha.35
       graphql:
         specifier: 16.11.0
         version: 16.11.0
@@ -2586,8 +2586,8 @@ packages:
   '@nekofar/lilnouns@1.0.0-alpha.6':
     resolution: {integrity: sha512-u0bzu3ak4e/wMl3Ka/MPC7Zbx6/nIFRY6Uoo0VzvX9YA8AwhiiMn2rb6GR4IXOA8ipLTHreJo16fJusB4KwHZw==}
 
-  '@nekofar/warpcast@2.0.0-alpha.30':
-    resolution: {integrity: sha512-De/5OehZAA2SFMOUds7rJqcsTdsU4SLAX6Bj9jPfYrdKyxUTaYtTtzYVd6GwelNZtaeLCEIh9qLlxVFeyImETg==}
+  '@nekofar/warpcast@2.0.0-alpha.35':
+    resolution: {integrity: sha512-asvFbGbWQ9HupMeNrdApUpo4FP9tWHhQred/hrMWLfaJLMDTnceu2q5pYSPWI9ONo94lWN9+Gb19HusYyMQ5IQ==}
 
   '@next/env@13.5.8':
     resolution: {integrity: sha512-YmiG58BqyZ2FjrF2+5uZExL2BrLr8RTQzLXNDJ8pJr0O+rPlOeDPXp1p1/4OrR3avDidzZo3D8QO2cuDv1KCkw==}
@@ -12945,7 +12945,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@nekofar/warpcast@2.0.0-alpha.30': {}
+  '@nekofar/warpcast@2.0.0-alpha.35': {}
 
   '@next/env@13.5.8': {}
 
