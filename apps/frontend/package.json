@@ -102,7 +102,7 @@
     "tailwind-merge": "3.3.1",
     "tailwindcss": "4.1.11",
     "typescript": "5.8.3",
-    "vercel": "44.7.0",
+    "vercel": "44.7.3",
     "vitest": "3.2.4",
     "wrangler": "4.28.0"
   }
