@@ -1,3 +1,23 @@
 packages:
   - 'apps/*'
   - 'packages/*'
+
+saveExact: true
+enablePrePostScripts: true
+preferSymlinkedExecutables: true
+strictPeerDependencies: true
+autoInstallPeers: true
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@tailwindcss/oxide'
+  - bufferutil
+  - core-js-pure
+  - keccak
+  - msw
+  - prisma
+  - sharp
+  - utf-8-validate
+  - workerd

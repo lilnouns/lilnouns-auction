@@ -15,20 +15,20 @@
     "@eslint/js": "9.32.0",
     "@next/eslint-plugin-next": "15.4.5",
     "@typescript-eslint/eslint-plugin": "8.38.0",
-    "@typescript-eslint/parser": "8.38.0",
+    "@typescript-eslint/parser": "8.39.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-jsdoc": "52.0.2",
+    "eslint-plugin-jsdoc": "52.0.3",
     "eslint-plugin-lingui": "0.10.1",
     "eslint-plugin-only-warn": "1.1.0",
     "eslint-plugin-prettier": "5.5.3",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
-    "eslint-plugin-regexp": "2.9.0",
+    "eslint-plugin-regexp": "2.9.1",
     "eslint-plugin-turbo": "2.5.5",
     "eslint-plugin-unicorn": "60.0.0",
     "eslint-plugin-vitest": "0.5.4",
     "globals": "16.3.0",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.38.0"
+    "typescript-eslint": "8.39.0"
   }
 }

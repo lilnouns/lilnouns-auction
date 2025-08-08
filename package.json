@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.2.0-alpha.118",
+  "version": "1.2.0-alpha.119",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "eslint": "9.32.0",
     "husky": "9.1.7",
-    "lint-staged": "16.1.2",
+    "lint-staged": "16.1.4",
     "prettier": "3.6.2",
     "rimraf": "6.0.1",
     "turbo": "2.5.5"
@@ -43,7 +43,9 @@
     "tar": ">=6.2.1",
     "undici": ">=5.28.5",
     "ws": ">=7.5.10",
-    "vite": ">=6.2.5"
+    "vite": ">=6.2.5",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4"
   },
   "funding": [
     {
@@ -56,19 +58,5 @@
     "pnpm": ">=10.10.0"
   },
   "packageManager": "pnpm@10.12.1",
-  "type": "module",
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.0.10",
-      "@types/react-dom": "19.0.4"
-    },
-    "onlyBuiltDependencies": [
-      "@tailwindcss/oxide",
-      "msw",
-      "workerd"
-    ],
-    "ignoredBuiltDependencies": [
-      "esbuild"
-    ]
-  }
+  "type": "module"
 }

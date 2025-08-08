@@ -52,7 +52,7 @@
     "react-markdown": "10.1.0",
     "react-spinners": "0.17.0",
     "react-use": "17.6.0",
-    "remeda": "2.27.0",
+    "remeda": "2.28.0",
     "sonner": "2.0.7",
     "swr": "2.3.4",
     "tailwind-merge": "3.3.1",
@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.10",
-    "@cloudflare/workers-types": "4.20250803.0",
+    "@cloudflare/workers-types": "4.20250807.0",
     "@eslint/eslintrc": "3.3.1",
     "@lingui/cli": "5.2.0",
     "@lingui/conf": "5.2.0",
@@ -85,7 +85,7 @@
     "@types/lint-staged": "13.3.0",
     "@types/luxon": "3.7.1",
     "@types/negotiator": "0.6.4",
-    "@types/node": "24.1.0",
+    "@types/node": "24.2.0",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
     "@types/webpack": "5.28.5",
@@ -102,8 +102,8 @@
     "tailwind-merge": "3.3.1",
     "tailwindcss": "4.1.11",
     "typescript": "5.8.3",
-    "vercel": "44.7.0",
+    "vercel": "44.7.3",
     "vitest": "3.2.4",
-    "wrangler": "4.26.0"
+    "wrangler": "4.28.0"
   }
 }
