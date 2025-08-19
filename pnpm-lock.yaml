@@ -273,7 +273,7 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.10
-        version: 1.13.10(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@46.0.1(rollup@4.44.1))(wrangler@4.30.0(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+        version: 1.13.10(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@46.0.2(rollup@4.44.1))(wrangler@4.30.0(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
         specifier: 4.20250816.0
         version: 4.20250816.0
@@ -389,8 +389,8 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       vercel:
-        specifier: 46.0.1
-        version: 46.0.1(rollup@4.44.1)
+        specifier: 46.0.2
+        version: 46.0.2(rollup@4.44.1)
       vitest:
         specifier: 3.2.4
         version: 3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@24.3.0)(jiti@2.5.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.1)(msw@2.10.4(@types/node@24.3.0)(typescript@5.8.3))(terser@5.39.0)(yaml@2.8.1)
@@ -4081,8 +4081,8 @@ packages:
   '@vercel/hydrogen@1.2.3':
     resolution: {integrity: sha512-sU0HWHabNxlTdKQWPMDqwr+3MqnhXc4Tvnl4i9cbdEYn5061SEKhdfpl2RhuvPByQJ8sZL8soVXFHIjFBJAR4w==}
 
-  '@vercel/next@4.11.2':
-    resolution: {integrity: sha512-AicdYZZQ5oUHxBootGXKZx3tZNnbQNg3T3oq5+91psmGS6DHqmyYdb5xjgDXO0tSnRF4aX1FB21Tl2LQc4a3lg==}
+  '@vercel/next@4.11.3':
+    resolution: {integrity: sha512-muXOT6HRfZZgEJEVt9R0lsRjDHiPnelgVOa1l63qxRnK1gIczZ04zuGUJBjX+pCIsJuhr4qqcYA5kksJctpJlw==}
 
   '@vercel/nft@0.29.2':
     resolution: {integrity: sha512-A/Si4mrTkQqJ6EXJKv5EYCDQ3NL6nJXxG8VGXePsaiQigsomHYQC9xSpX8qGk7AEZk4b1ssbYIqJ0ISQQ7bfcA==}
@@ -10066,8 +10066,8 @@ packages:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  vercel@46.0.1:
-    resolution: {integrity: sha512-zKF1cvUhkTtin0qKcs/qUQvN8jsUhuJ052oznAKQc+fW1Ft/fA7e5EHQW+/qqawTXlhKCakBUdB3K/6YwjO27Q==}
+  vercel@46.0.2:
+    resolution: {integrity: sha512-3NfRcmMdBfW095gXRXCRB9zKIbbDBzgFPGbUZ+PCgjA5OHfa6MfxhDvdQq80oloDFPlql+I1YQuhyk6jNS6xMQ==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -11062,7 +11062,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@46.0.1(rollup@4.44.1))(wrangler@4.30.0(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@46.0.2(rollup@4.44.1))(wrangler@4.30.0(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.14.1
       ast-types: 0.14.2
@@ -11076,7 +11076,7 @@ snapshots:
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.7.1
-      vercel: 46.0.1(rollup@4.44.1)
+      vercel: 46.0.2(rollup@4.44.1)
       wrangler: 4.30.0(@cloudflare/workers-types@4.20250816.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     optionalDependencies:
       '@cloudflare/workers-types': 4.20250816.0
@@ -14851,7 +14851,7 @@ snapshots:
       '@vercel/static-config': 3.1.1
       ts-morph: 12.0.0
 
-  '@vercel/next@4.11.2(rollup@4.44.1)':
+  '@vercel/next@4.11.3(rollup@4.44.1)':
     dependencies:
       '@vercel/nft': 0.29.2(rollup@4.44.1)
     transitivePeerDependencies:
@@ -21990,7 +21990,7 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  vercel@46.0.1(rollup@4.44.1):
+  vercel@46.0.2(rollup@4.44.1):
     dependencies:
       '@vercel/blob': 1.0.2
       '@vercel/build-utils': 11.0.1
@@ -21999,7 +21999,7 @@ snapshots:
       '@vercel/go': 3.2.3
       '@vercel/hono': 0.0.14(rollup@4.44.1)
       '@vercel/hydrogen': 1.2.3
-      '@vercel/next': 4.11.2(rollup@4.44.1)
+      '@vercel/next': 4.11.3(rollup@4.44.1)
       '@vercel/node': 5.3.13(rollup@4.44.1)
       '@vercel/python': 5.0.0
       '@vercel/redwood': 2.3.4(rollup@4.44.1)
