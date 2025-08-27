@@ -208,8 +208,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       lucide-react:
-        specifier: 0.541.0
-        version: 0.541.0(react@19.1.1)
+        specifier: 0.542.0
+        version: 0.542.0(react@19.1.1)
       luxon:
         specifier: 3.7.1
         version: 3.7.1
@@ -545,8 +545,8 @@ importers:
         specifier: 1.1.1
         version: 1.1.1(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       lucide-react:
-        specifier: 0.541.0
-        version: 0.541.0(react@19.1.1)
+        specifier: 0.542.0
+        version: 0.542.0(react@19.1.1)
       next-themes:
         specifier: 0.4.6
         version: 0.4.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -4153,18 +4153,6 @@ packages:
       typescript:
         optional: true
 
-  '@wagmi/core@2.19.0':
-    resolution: {integrity: sha512-lI57q6refAtNU6xnk/oyOpbEtEiwQ6g4rR+C9FEx8Gn2hZlfoyyksndrl6hIKlMBK+UkkKso3VwR5DI65j/5XQ==}
-    peerDependencies:
-      '@tanstack/query-core': '>=5.0.0'
-      typescript: '>=5.0.4'
-      viem: 2.x
-    peerDependenciesMeta:
-      '@tanstack/query-core':
-        optional: true
-      typescript:
-        optional: true
-
   '@wagmi/core@2.20.0':
     resolution: {integrity: sha512-oKocFmaWvEEeccmb9+LtfXTO6XB0E2qmWgNK1ne0ruZWZwkcpUDJ/Fl39E6VLiz6O3n5KHA/dqT7efj2o4XOrA==}
     peerDependencies:
@@ -7367,8 +7355,8 @@ packages:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
 
-  lucide-react@0.541.0:
-    resolution: {integrity: sha512-s0Vircsu5WaGv2KoJZ5+SoxiAJ3UXV5KqEM3eIFDHaHkcLIFdIWgXtZ412+Gh02UsdS7Was+jvEpBvPCWQISlg==}
+  lucide-react@0.542.0:
+    resolution: {integrity: sha512-w3hD8/SQB7+lzU2r4VdFyzzOzKnUjTZIF/MQJGSSvni7Llewni4vuViRppfRAa2guOsY5k4jZyxw/i9DQHv+dw==}
     peerDependencies:
       react: '>=19.0.0'
 
@@ -15128,21 +15116,6 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@wagmi/core@2.19.0(@tanstack/query-core@5.85.5)(@types/react@19.0.10)(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.4.0(react@19.1.1))(viem@2.35.1(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76))':
-    dependencies:
-      eventemitter3: 5.0.1
-      mipd: 0.0.7(typescript@5.9.2)
-      viem: 2.35.1(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
-      zustand: 5.0.0(@types/react@19.0.10)(react@19.1.1)(use-sync-external-store@1.4.0(react@19.1.1))
-    optionalDependencies:
-      '@tanstack/query-core': 5.85.5
-      typescript: 5.9.2
-    transitivePeerDependencies:
-      - '@types/react'
-      - immer
-      - react
-      - use-sync-external-store
-
   '@wagmi/core@2.20.0(@tanstack/query-core@5.85.5)(@types/react@19.0.10)(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.4.0(react@19.1.1))(viem@2.35.1(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76))':
     dependencies:
       eventemitter3: 5.0.1
@@ -19152,7 +19125,7 @@ snapshots:
 
   lru-cache@7.18.3: {}
 
-  lucide-react@0.541.0(react@19.1.1):
+  lucide-react@0.542.0(react@19.1.1):
     dependencies:
       react: 19.1.1
 
