@@ -15,7 +15,8 @@
         "NODE_VERSION": "22.3.0",
         "NEXT_PUBLIC_FRAME_VERSION": "2",
         "NEXT_PUBLIC_BLOCKS_SUBGRAPH_URL": "https://proxy.lilnouns.auction/subgraphs/blocks/sepolia",
-        "NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL": "https://proxy.lilnouns.auction/subgraphs/lilnouns/sepolia"
+        "NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL": "https://proxy.lilnouns.auction/subgraphs/lilnouns/sepolia",
+        "NEXT_PUBLIC_GA_MEASUREMENT_ID": "G-FPLZ2MN9P9"
       }
     },
     "production": {
@@ -26,7 +27,8 @@
         "NODE_VERSION": "22.3.0",
         "NEXT_PUBLIC_FRAME_VERSION": "2",
         "NEXT_PUBLIC_BLOCKS_SUBGRAPH_URL": "https://proxy.lilnouns.auction/subgraphs/blocks/mainnet",
-        "NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL": "https://proxy.lilnouns.auction/subgraphs/lilnouns/mainnet"
+        "NEXT_PUBLIC_LILNOUNS_SUBGRAPH_URL": "https://proxy.lilnouns.auction/subgraphs/lilnouns/mainnet",
+        "NEXT_PUBLIC_GA_MEASUREMENT_ID": "G-FPLZ2MN9P9"
       }
     }
   }

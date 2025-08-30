@@ -2,7 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.2.0-alpha.121] - 2025-08-18
+## [1.2.0-alpha.122] - 2025-08-30
+
+### Features
+
+- Integrate Google Analytics 4
+
+### Miscellaneous Tasks
+
+- Add `.env.example` for GA measurement id
+- Add GA measurement id to environment config
+
+## [1.2.0-alpha.121] - 2025-08-19
 
 ### Bug Fixes
 
