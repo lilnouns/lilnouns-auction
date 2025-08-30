@@ -10,6 +10,8 @@ import { t } from '@lingui/core/macro'
 
 import '@repo/ui/globals.css'
 import { Providers } from '@/components/providers'
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
+import { RouteAnalytics } from '@/components/analytics/RouteAnalytics'
 
 import { cn } from '@repo/ui/lib/utils'
 import { Toaster } from '@repo/ui/components/sonner'
@@ -59,6 +61,8 @@ export default async function RootLayout({
         )}
         suppressHydrationWarning={true}
       >
+        <GoogleAnalytics />
+        <RouteAnalytics />
         <main className="flex min-h-screen flex-col">
           <LinguiClientProvider
             initialLocale={lang}
