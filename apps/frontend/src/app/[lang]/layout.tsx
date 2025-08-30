@@ -10,8 +10,8 @@ import { t } from '@lingui/core/macro'
 
 import '@repo/ui/globals.css'
 import { Providers } from '@/components/providers'
-import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
-import { RouteAnalytics } from '@/components/analytics/RouteAnalytics'
+import { GoogleAnalytics } from '@/components/analytics/google-analytics'
+import { RouteAnalytics } from '@/components/analytics/route-analytics'
 
 import { cn } from '@repo/ui/lib/utils'
 import { Toaster } from '@repo/ui/components/sonner'
