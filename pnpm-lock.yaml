@@ -368,8 +368,8 @@ importers:
         specifier: 26.1.0
         version: 26.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       pino:
-        specifier: 9.9.1
-        version: 9.9.1
+        specifier: 9.9.2
+        version: 9.9.2
       pino-pretty:
         specifier: 13.1.1
         version: 13.1.1
@@ -1044,6 +1044,7 @@ packages:
 
   '@cloudflare/next-on-pages@1.13.10':
     resolution: {integrity: sha512-miboFA675/RzpHNe3nri1XO5cwtJCPfEZbL7mdlwwXqYw6DMlrppPaBNNjgbgXdLylHBV7h1+zfKdVDaQ20B8w==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
@@ -6002,6 +6003,7 @@ packages:
 
   eslint-plugin-next-on-pages@1.13.15:
     resolution: {integrity: sha512-IFXMxFprsNkRECYKLKlo/Hq9+BZvr7bkADCZjB1ZplRpiuY5AXf6LR+Sav/Zr/pAxeWnFeQxXhIoWYJl9pkV9w==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     peerDependencies:
       eslint: '>=9.0.0'
 
@@ -8276,8 +8278,8 @@ packages:
     resolution: {integrity: sha512-dMACeu63HtRLmCG8VKdy4cShCPKaYDR4youZqoSWLxl5Gu99HUw8bw75thbPv9Nip+H+QYX8o3ZJbTdVZZ2TVg==}
     hasBin: true
 
-  pino@9.9.1:
-    resolution: {integrity: sha512-40SszWPOPwGhUIJ3zj0PsbMNV1bfg8nw5Qp/tP2FE2p3EuycmhDeYimKOMBAu6rtxcSw2QpjJsuK5A6v+en8Yw==}
+  pino@9.9.2:
+    resolution: {integrity: sha512-nepuunEhXfRllKa5w9PsNLjWayPsfO3jc6odPuoRaaJ/rb/YEvqhazOBZFzK0gmaHIFCMggvDSqnIcH8dfcGTA==}
     hasBin: true
 
   pkce-challenge@5.0.0:
@@ -20278,7 +20280,7 @@ snapshots:
       sonic-boom: 2.8.0
       thread-stream: 0.15.2
 
-  pino@9.9.1:
+  pino@9.9.2:
     dependencies:
       atomic-sleep: 1.0.0
       fast-redact: 3.5.0
