@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-beta.4] - 2025-09-08
+
+### Miscellaneous Tasks
+
+- Simplify Node.js and pnpm setup
+
 ## [1.2.0-beta.3] - 2025-09-08
 
 ### Bug Fixes
