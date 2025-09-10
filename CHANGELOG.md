@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-beta.5] - 2025-09-10
+
+### Miscellaneous Tasks
+
+- Remove `onlyBuiltDependencies` from `pnpm-workspace.yaml`
+
 ## [1.2.0-beta.4] - 2025-09-08
 
 ### Miscellaneous Tasks
