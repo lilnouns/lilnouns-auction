@@ -133,3 +133,6 @@ updates:
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
+      - dependency-name: "zod"
+        update-types:
+          - version-update:semver-major
