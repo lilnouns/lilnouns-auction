@@ -79,7 +79,7 @@ export const useBlocks = () => {
     return fetchBlocks(0, blockLimit, fromBlock, Number(currentBlockNumber))
   }, [currentBlockNumber, blockLimit])
 
-  const { data, error, isValidating, isLoading, mutate } = useSWR(
+  const { data, error, isValidating, isLoading } = useSWR(
     currentBlockNumber
       ? ['blocks', currentBlockNumber.toString(), blockLimit]
       : null,

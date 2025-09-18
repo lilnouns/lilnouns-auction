@@ -9,7 +9,7 @@ import { initLingui, PageLangParam } from '@/i18n/init-lingui'
 import { t } from '@lingui/core/macro'
 
 import '@repo/ui/globals.css'
-import { Providers } from '@/components/providers'
+import { Providers } from '@/app/providers'
 import { GoogleAnalytics } from '@/components/analytics/google-analytics'
 import { RouteAnalytics } from '@/components/analytics/route-analytics'
 

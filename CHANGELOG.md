@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-beta.6] - 2025-09-18
+
+### Refactor
+
+- Adjust `Providers` import paths
+- Simplify `Page` function
+- Remove unused `t` from `useLingui`
+- Add `getGaWindow` to enhance robustness
+- Remove `mutate` from `useSWR` destructure
+- Remove unused `useState` in `language-switcher`
+- Remove `strictPeerDependencies` field
+
+### Miscellaneous Tasks
+
+- Add Node.js 24.x to build matrix
+- Update Node.js versions in workflow matrix
+- Allow `wrangler` major/minor updates
+
 ## [1.2.0-beta.5] - 2025-09-10
 
 ### Miscellaneous Tasks
