@@ -54,8 +54,8 @@ importers:
         specifier: 1.0.0-alpha.6
         version: 1.0.0-alpha.6
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.36
-        version: 2.0.0-alpha.36
+        specifier: 2.0.0-alpha.66
+        version: 2.0.0-alpha.66(zod@3.25.76)
       graphql:
         specifier: 16.11.0
         version: 16.11.0
@@ -2642,8 +2642,11 @@ packages:
   '@nekofar/lilnouns@1.0.0-alpha.6':
     resolution: {integrity: sha512-u0bzu3ak4e/wMl3Ka/MPC7Zbx6/nIFRY6Uoo0VzvX9YA8AwhiiMn2rb6GR4IXOA8ipLTHreJo16fJusB4KwHZw==}
 
-  '@nekofar/warpcast@2.0.0-alpha.36':
-    resolution: {integrity: sha512-OxuZP8QZoV5qTnNSu3xikQOcNrtkrRCR+FakT06I0/Je2MDfNKyLBWnSs2ABkUCCOcXkYNS+8EZIP0L7tZQ2cA==}
+  '@nekofar/warpcast@2.0.0-alpha.66':
+    resolution: {integrity: sha512-DwLNrxPaf5zRGxgVDKSECKc4eT5NR5P06JUACXMLj4aEAfZYhTzTNrVtVtKPeLz767E75q133+bA+jqE600izA==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      zod: ^4.0.10
 
   '@next/env@13.5.11':
     resolution: {integrity: sha512-fbb2C7HChgM7CemdCY+y3N1n8pcTKdqtQLbC7/EQtPdLvlMUT9JX/dBYl8MMZAtYG4uVMyPFHXckb68q/NRwqg==}
@@ -12989,7 +12992,9 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@nekofar/warpcast@2.0.0-alpha.36': {}
+  '@nekofar/warpcast@2.0.0-alpha.66(zod@3.25.76)':
+    dependencies:
+      zod: 3.25.76
 
   '@next/env@13.5.11': {}
 
