@@ -66,6 +66,6 @@ export async function generateMetadata(
   }
 }
 
-export default function Page({ params }: Props) {
+export default function Page() {
   return <Redirect />
 }

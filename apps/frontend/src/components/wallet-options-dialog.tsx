@@ -29,7 +29,7 @@ import { useLingui } from '@lingui/react/macro'
 export const walletOptions = 'wallet-options'
 
 export const WalletOptionsDialog = () => {
-  const { t, i18n } = useLingui()
+  const { t } = useLingui()
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
   const { connectors, connect } = useConnect()
@@ -144,7 +144,7 @@ const WalletOption = ({
   connector: Connector
   onClick: () => void
 }) => {
-  const { t, i18n } = useLingui()
+  const { i18n } = useLingui()
   // const [ready, setReady] = useState(false)
   //
   // useEffect(() => {
