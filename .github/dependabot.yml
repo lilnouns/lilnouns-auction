@@ -2,7 +2,7 @@ version: 2
 updates:
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
-    # Files stored in repository root
+    # Files stored in the repository root
     directory: "/"
     # Check for updates every weekday
     schedule:
@@ -29,7 +29,7 @@ updates:
 
   # Maintain dependencies for PNPM
   - package-ecosystem: "npm"
-    # Files stored in repository root
+    # Files stored in the repository root
     directory: "/"
     # Check for updates every weekday
     schedule:
@@ -129,3 +129,7 @@ updates:
           - version-update:semver-major
           - version-update:semver-minor
           - version-update:semver-patch
+      - dependency-name: "wrangler"
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
