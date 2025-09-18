@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { useState } from 'react'
 import { msg } from '@lingui/core/macro'
 import { useLingui } from '@lingui/react'
 import { usePathname, useRouter } from 'next/navigation'
@@ -36,10 +35,6 @@ export function LanguageSwitcher() {
   const { i18n } = useLingui()
   const pathname = usePathname()
 
-  const [locale, setLocale] = useState<LOCALES>(
-    pathname?.split('/')[1] as LOCALES,
-  )
-
   // disabled for DEMO - so we can demonstrate the 'pseudo' locale functionality
   // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
   //   languages['pseudo'] = t`Pseudo`
@@ -51,7 +46,6 @@ export function LanguageSwitcher() {
     const pathNameWithoutLocale = pathname?.split('/')?.slice(2) ?? []
     const newPath = `/${locale}/${pathNameWithoutLocale.join('/')}`
 
-    setLocale(locale)
     router.push(newPath)
   }
 
