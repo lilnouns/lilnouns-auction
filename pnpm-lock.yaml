@@ -142,8 +142,8 @@ importers:
         specifier: 0.1.10
         version: 0.1.10(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9)
       '@farcaster/frame-wagmi-connector':
-        specifier: 0.0.19
-        version: 0.0.19(@farcaster/frame-sdk@0.1.10(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))(@wagmi/core@2.21.0(@tanstack/query-core@5.89.0)(@types/react@19.0.10)(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.4.0(react@19.1.1))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9)))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))
+        specifier: 1.0.0
+        version: 1.0.0(@farcaster/frame-sdk@0.1.10(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))(@wagmi/core@2.21.0(@tanstack/query-core@5.89.0)(@types/react@19.0.10)(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.4.0(react@19.1.1))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9)))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))
       '@headlessui/react':
         specifier: 2.2.8
         version: 2.2.8(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -1774,10 +1774,11 @@ packages:
     resolution: {integrity: sha512-4CtBkzHIGg7NVUbVZfgy6UiIeSqn0rx7vmwvOJ4pNRQoLG5guPkHKv9vc3D515aCVSATvrZXRT97xjss5kuN+Q==}
     engines: {node: '>=22.11.0'}
 
-  '@farcaster/frame-wagmi-connector@0.0.19':
-    resolution: {integrity: sha512-Ey9lEEk4SudkOiTtqY2eMGVTFZwW1lLMEtnAYqb7dCc/mDQowj3GfxNW9a2bdPoq5UEwAwJxxLiVvdERI+Hy3A==}
+  '@farcaster/frame-wagmi-connector@1.0.0':
+    resolution: {integrity: sha512-65zmI54PrJO88CYM3QrEXKgQIb+DD/h/U32tAaSRx+dT/AIG5w0tSQgON1zfLinNK8NYeBVRD40DBbR2vly3AQ==}
+    engines: {node: '>=22.11.0'}
     peerDependencies:
-      '@farcaster/frame-sdk': ^0.0.31
+      '@farcaster/frame-sdk': ^0.1.0
       '@wagmi/core': ^2.14.1
       viem: ^2.21.55
 
@@ -11722,7 +11723,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@farcaster/frame-wagmi-connector@0.0.19(@farcaster/frame-sdk@0.1.10(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))(@wagmi/core@2.21.0(@tanstack/query-core@5.89.0)(@types/react@19.0.10)(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.4.0(react@19.1.1))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9)))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))':
+  '@farcaster/frame-wagmi-connector@1.0.0(@farcaster/frame-sdk@0.1.10(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))(@wagmi/core@2.21.0(@tanstack/query-core@5.89.0)(@types/react@19.0.10)(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.4.0(react@19.1.1))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9)))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))':
     dependencies:
       '@farcaster/frame-sdk': 0.1.10(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9)
       '@wagmi/core': 2.21.0(@tanstack/query-core@5.89.0)(@types/react@19.0.10)(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.4.0(react@19.1.1))(viem@2.37.4(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.9))
