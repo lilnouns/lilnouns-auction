@@ -14,24 +14,24 @@
     "type-check": "pnpm generate-types && tsc"
   },
   "dependencies": {
-    "@nekofar/lilnouns": "1.0.0-alpha.6",
+    "@nekofar/lilnouns": "1.0.0-alpha.22",
     "@nekofar/warpcast": "2.0.0-alpha.66",
     "graphql": "16.11.0",
     "graphql-request": "7.2.0",
     "graphql-tag": "2.12.6",
     "luxon": "3.7.2",
     "remeda": "2.32.0",
-    "viem": "2.37.4"
+    "viem": "2.37.6"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.15.0",
-    "@cloudflare/workers-types": "4.20250918.0",
+    "@cloudflare/workers-types": "4.20250919.0",
     "@graphprotocol/graph-ts": "0.38.1",
     "@graphql-codegen/cli": "6.0.0",
     "@graphql-codegen/schema-ast": "5.0.0",
     "@graphql-codegen/typescript": "5.0.0",
     "@graphql-codegen/typescript-graphql-request": "6.3.0",
-    "@graphql-codegen/typescript-operations": "4.6.1",
+    "@graphql-codegen/typescript-operations": "5.0.0",
     "@parcel/watcher": "2.5.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",

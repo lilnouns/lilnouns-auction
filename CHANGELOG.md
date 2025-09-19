@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-beta.8] - 2025-09-19
+
+### Miscellaneous Tasks
+
+- Remove redundant Node.js configuration files
+
+### Revert
+
+- Bump zod from 3.25.76 to 4.1.9 (#1850)
+
 ## [1.2.0-beta.7] - 2025-09-18
 
 ### Bug Fixes
