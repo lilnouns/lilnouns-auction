@@ -63,6 +63,10 @@ msgstr "kacamata"
 msgid "Glasses"
 msgstr "Kacamata"
 
+#: src/components/update-banner.tsx
+msgid "A new version is live. "
+msgstr ""
+
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -76,9 +80,9 @@ msgstr "Membeli..."
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr ""
 
-#: src/components/user-guide-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+#: src/components/user-guide-dialog.tsx
 msgid "Close"
 msgstr "Tutup"
 
@@ -86,9 +90,9 @@ msgstr "Tutup"
 msgid "Confirming..."
 msgstr ""
 
-#: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "Hubungkan Dompet"
 
@@ -122,9 +126,9 @@ msgstr ""
 msgid "Filter Auctions"
 msgstr "Saring Lelang"
 
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
 msgstr ""
 
@@ -144,16 +148,16 @@ msgstr ""
 msgid "Light"
 msgstr "Terang"
 
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
-#: src/components/home-page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/layout.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/layout.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
+#: src/components/home-page.tsx
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lelang Lil Nouns"
 
@@ -198,6 +202,10 @@ msgstr ""
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Segarkan"
+
+#: src/components/update-banner.tsx
+msgid "Reload"
+msgstr ""
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
