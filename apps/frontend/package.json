@@ -26,7 +26,7 @@
     "@lingui/core": "5.2.0",
     "@lingui/detect-locale": "5.2.0",
     "@lingui/react": "5.2.0",
-    "@nekofar/lilnouns": "1.0.0-alpha.15",
+    "@nekofar/lilnouns": "1.0.0-alpha.22",
     "@prisma/adapter-d1": "6.16.2",
     "@prisma/client": "6.16.2",
     "@repo/assets": "workspace:*",
