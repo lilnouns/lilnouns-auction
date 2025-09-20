@@ -15,6 +15,7 @@ import { RouteAnalytics } from '@/components/analytics/route-analytics'
 
 import { cn } from '@repo/ui/lib/utils'
 import { Toaster } from '@repo/ui/components/sonner'
+import { firaCode, lora, poppins } from '@/styles/fonts'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -58,6 +59,9 @@ export default async function RootLayout({
           'min-h-svh bg-background font-sans antialiased',
           geistSans.variable,
           geistMono.variable,
+          poppins.variable,
+          lora.variable,
+          firaCode.variable,
         )}
         suppressHydrationWarning={true}
       >
