@@ -15,11 +15,13 @@ import { AuctionSeedImage } from '@/components/auction-seed-image'
 import { filter, isTruthy, map, pipe, times } from 'remeda'
 import { useBlocks } from '@/hooks/use-blocks'
 import { useAsyncRetry } from 'react-use'
+import { useIdleState } from '@/contexts/idle-context'
 
 export function AuctionPreviewGrid() {
   const { nounId } = useNextNoun()
   const { traitFilter } = useTraitFilterStore()
   const { poolSeeds, setPoolSeeds, setIsLoading } = usePoolStore()
+  const { isIdle } = useIdleState()
 
   const {
     data: blocks,
@@ -60,7 +62,7 @@ export function AuctionPreviewGrid() {
   }, [traitFilter])
 
   const seedState = useAsyncRetry<PoolSeed[]>(async () => {
-    if (!blocks || nounId === undefined) return []
+    if (isIdle || !blocks || nounId === undefined) return []
 
     const seedResults = await Promise.all(
       blocks.map(async (block) => {
@@ -87,11 +89,19 @@ export function AuctionPreviewGrid() {
     )
 
     return pipe(seedResults, filter(isTruthy))
-  }, [blocks, filterParams, nounId])
+  }, [blocks, filterParams, isIdle, nounId])
 
   useEffect(() => {
-    setIsLoading(isValidatingBlocks || isLoadingBlocks || seedState.loading)
-  }, [isValidatingBlocks, isLoadingBlocks, seedState.loading, setIsLoading])
+    setIsLoading(
+      !isIdle && (isValidatingBlocks || isLoadingBlocks || seedState.loading),
+    )
+  }, [
+    isIdle,
+    isValidatingBlocks,
+    isLoadingBlocks,
+    seedState.loading,
+    setIsLoading,
+  ])
 
   useEffect(() => {
     if (seedState.error) {
@@ -100,10 +110,10 @@ export function AuctionPreviewGrid() {
   }, [seedState.error])
 
   useEffect(() => {
-    if (seedState.value !== undefined) {
+    if (!isIdle && seedState.value !== undefined) {
       setPoolSeeds(seedState.value)
     }
-  }, [seedState.value, setPoolSeeds])
+  }, [isIdle, seedState.value, setPoolSeeds])
 
   if (poolSeeds.length === 0) {
     return (

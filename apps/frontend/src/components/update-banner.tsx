@@ -3,6 +3,7 @@ import { Trans } from '@lingui/react/macro'
 import { useCallback, useState } from 'react'
 import { Button } from '@repo/ui/components/button'
 import { useInterval, useLocalStorage, useMount } from 'react-use'
+import { useIdleState } from '@/contexts/idle-context'
 
 const STORAGE_KEY = 'app-build-id'
 const POLL_INTERVAL_MS = 5 * 60 * 1000
@@ -10,12 +11,14 @@ const POLL_INTERVAL_MS = 5 * 60 * 1000
 export function UpdateBanner() {
   const [showBanner, setShowBanner] = useState(false)
   const [currentBuildId, setCurrentBuildId] = useState<string | null>(null)
+  const { isIdle } = useIdleState()
   const [storedBuildId, setStoredBuildId] = useLocalStorage<string | null>(
     STORAGE_KEY,
     null,
   )
 
   const checkBuildId = useCallback(async () => {
+    if (isIdle) return
     try {
       const response = await fetch('/', {
         method: 'HEAD',
@@ -42,15 +45,18 @@ export function UpdateBanner() {
     } catch (error) {
       console.error('Failed to check build ID:', error)
     }
-  }, [setStoredBuildId, storedBuildId])
+  }, [isIdle, setStoredBuildId, storedBuildId])
 
   useMount(() => {
     void checkBuildId()
   })
 
-  useInterval(() => {
-    void checkBuildId()
-  }, POLL_INTERVAL_MS)
+  useInterval(
+    () => {
+      void checkBuildId()
+    },
+    isIdle ? null : POLL_INTERVAL_MS,
+  )
 
   const handleReload = () => {
     if (currentBuildId) {
