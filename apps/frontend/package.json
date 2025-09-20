@@ -83,7 +83,6 @@
     "@types/eslint": "9.6.1",
     "@types/eslint-config-prettier": "6.11.3",
     "@types/langs": "2.0.5",
-    "@types/lint-staged": "14.0.0",
     "@types/luxon": "3.7.1",
     "@types/negotiator": "0.6.4",
     "@types/node": "24.5.2",
