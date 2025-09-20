@@ -7,9 +7,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import Auction from '@/components/auction'
 import { useNextNoun } from '@/hooks/use-next-noun'
-import { Trans } from '@lingui/react/macro'
-import { useLingui } from '@lingui/react'
-import { msg } from '@lingui/core/macro'
+import { Trans, useLingui } from '@lingui/react/macro'
 
 import { sdk as frameSdk } from '@farcaster/frame-sdk'
 
