@@ -61,7 +61,7 @@ export function UpdateBanner() {
   const handleClose = () => {
     setShowBanner(false)
     if (currentBuildId) {
-      // Update the stored build ID when banner is dismissed
+      // Update the stored build ID when the banner is dismissed
       localStorage.setItem('app-build-id', currentBuildId)
     }
     console.log('Banner dismissed 😊')

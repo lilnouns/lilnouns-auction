@@ -18,7 +18,7 @@ export function AuctionSeedImage({ seed }: { seed: Seed }) {
 
     const formattedParts: EncodedImage[] = validParts.map((part) => ({
       data: part.data,
-      filename: part.filename || '', // Add filename if it's required by EncodedImage type
+      filename: part.filename || '', // Add filename if it's required by the EncodedImage type
     }))
 
     const svgBinary = buildSVG(formattedParts, palette, background!)
