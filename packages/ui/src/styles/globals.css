@@ -144,4 +144,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  button {
+    @apply cursor-pointer;
+  }
+  button:disabled {
+    @apply cursor-not-allowed;
+  }
 }
