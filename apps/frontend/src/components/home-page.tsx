@@ -20,7 +20,15 @@ export const HomePage: NextPage = () => {
 
   useAsync(async () => {
     if (typeof window === 'undefined') return
-    frameSdk.actions.addFrame()
+
+    const isMiniApp = await frameSdk
+      .isInMiniApp()
+      .then(Boolean)
+      .catch(() => false)
+
+    if (!isMiniApp) return
+
+    await frameSdk.actions.addFrame()
     await frameSdk.actions.ready()
   }, [])
 
