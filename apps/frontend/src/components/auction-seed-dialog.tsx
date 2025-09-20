@@ -122,7 +122,7 @@ export function AuctionSeedDialog({
     if (blockNumber === undefined) return '—'
     try {
       return countFormatter.format(Number(blockNumber))
-    } catch (error) {
+    } catch {
       return blockNumber.toString()
     }
   }, [blockNumber])
@@ -131,7 +131,7 @@ export function AuctionSeedDialog({
     if (nounId === undefined) return null
     try {
       return `#${countFormatter.format(Number(nounId))}`
-    } catch (error) {
+    } catch {
       return `#${nounId.toString()}`
     }
   }, [nounId])
@@ -172,7 +172,15 @@ export function AuctionSeedDialog({
       { label: 'Glasses', value: glassesLabel || '—' },
       { label: 'Noun ID', value: nounIdDisplay },
     ]
-  }, [seed, nounIdDisplay])
+  }, [
+    seed.background,
+    seed.body,
+    seed.accessory,
+    seed.head,
+    seed.glasses,
+    backgrounds,
+    nounIdDisplay,
+  ])
 
   const traitBadges = useMemo(
     () => traitCards.filter((row) => row.value !== '—').slice(0, 3),
