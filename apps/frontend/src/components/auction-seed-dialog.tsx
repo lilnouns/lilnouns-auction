@@ -289,16 +289,18 @@ export function AuctionSeedDialog({
             <Description>
               <Trans>View traits and pricing for this Noun</Trans>
             </Description>
-            <div className="mt-3 grid gap-3 sm:grid-cols-3">
-              <StatCard
-                label={<Trans>Current Price</Trans>}
-                value={priceLabel}
-                emphasis
-                className="sm:col-span-2"
-              />
-              <StatCard label={<Trans>Block</Trans>} value={blockLabel} />
-            </div>
-            {traitBadges.length > 0 && (
+            {!isMobile && (
+              <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                <StatCard
+                  label={<Trans>Current Price</Trans>}
+                  value={priceLabel}
+                  emphasis
+                  className="sm:col-span-2"
+                />
+                <StatCard label={<Trans>Block</Trans>} value={blockLabel} />
+              </div>
+            )}
+            {!isMobile && traitBadges.length > 0 && (
               <div className="mt-3 flex flex-wrap items-center gap-2">
                 {traitBadges.map((trait) => (
                   <Badge
