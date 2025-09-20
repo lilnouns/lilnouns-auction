@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.5] - 2025-09-20
+
+### Features
+
+- Adjust `modalContentClassName` height
+
 ## [1.3.0-alpha.4] - 2025-09-20
 
 ### Features
