@@ -4,6 +4,7 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -25,76 +26,69 @@ import {
   DrawerTrigger,
 } from '@repo/ui/components/drawer'
 import { Trans } from '@lingui/react/macro'
+import { cn } from '@repo/ui/lib/utils'
 
 export const auctionFilter = 'auction-filter'
 
 export function AuctionFilterDialog() {
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
+  const isMobile = useMedia('(max-width: 767px)', false)
+  const Root = isMobile ? Drawer : Dialog
+  const Trigger = isMobile ? DrawerTrigger : DialogTrigger
+  const Content = isMobile ? DrawerContent : DialogContent
+  const Header = isMobile ? DrawerHeader : DialogHeader
+  const Title = isMobile ? DrawerTitle : DialogTitle
+  const Description = isMobile ? DrawerDescription : DialogDescription
+  const Footer = isMobile ? DrawerFooter : DialogFooter
+  const modalContentClassName = cn(
+    'flex max-h-[85vh] flex-col overflow-hidden gap-0 p-0',
+    isMobile ? 'mx-4 mt-5 rounded-t-lg border-none' : 'sm:max-w-lg',
+  )
+  const headerClassName = cn(
+    'text-left',
+    isMobile ? 'px-4 pt-6 pb-4' : 'px-6 pt-6 pb-2',
+  )
+  const bodyClassName = cn(
+    'flex-1 overflow-y-auto',
+    isMobile ? 'px-4 pb-4' : 'px-6 pb-6',
+  )
+  const footerClassName = cn(
+    'gap-3 border-t border-border/40',
+    isMobile ? 'px-4 pb-4 pt-1' : 'px-6 pb-6 pt-3',
+  )
 
-  const isDesktop = useMedia('(min-width: 768px)')
-
-  if (isDesktop) {
-    return (
-      <Dialog
-        open={openDialogs[auctionFilter]}
-        onOpenChange={(open) =>
-          open ? openDialog(auctionFilter) : closeDialog(auctionFilter)
-        }
-      >
-        <DialogTrigger asChild>
-          <Button variant="outline" size="icon">
-            <FilterIcon />
-          </Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>
-              <Trans>Filter Auctions</Trans>
-            </DialogTitle>
-            <DialogDescription>
-              <Trans>Select traits to filter the auction listings</Trans>
-            </DialogDescription>
-          </DialogHeader>
-          <div className="">
-            <AuctionTraitFilter />
-          </div>
-        </DialogContent>
-      </Dialog>
-    )
-  }
+  const handleOpenChange = (open: boolean) =>
+    open ? openDialog(auctionFilter) : closeDialog(auctionFilter)
 
   return (
-    <Drawer
-      open={openDialogs[auctionFilter]}
-      onOpenChange={(open) =>
-        open ? openDialog(auctionFilter) : closeDialog(auctionFilter)
-      }
-    >
-      <DrawerTrigger asChild>
+    <Root open={openDialogs[auctionFilter]} onOpenChange={handleOpenChange}>
+      <Trigger asChild>
         <Button variant="outline" size="icon">
           <FilterIcon />
         </Button>
-      </DrawerTrigger>
-      <DrawerContent className="mx-4">
-        <DrawerHeader>
-          <DrawerTitle>
+      </Trigger>
+      <Content className={modalContentClassName}>
+        <Header className={headerClassName}>
+          <Title>
             <Trans>Filter Auctions</Trans>
-          </DrawerTitle>
-          <DrawerDescription>
+          </Title>
+          <Description>
             <Trans>Select traits to filter the auction listings</Trans>
-          </DrawerDescription>
-        </DrawerHeader>
-        <div className="p-4">
+          </Description>
+        </Header>
+        <div className={bodyClassName}>
           <AuctionTraitFilter />
         </div>
-        <DrawerFooter className="pt-2">
-          <DrawerClose asChild>
-            <Button variant="outline">
-              <Trans>Close</Trans>
-            </Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+        {isMobile && (
+          <Footer className={footerClassName}>
+            <DrawerClose asChild>
+              <Button variant="outline" className="w-full">
+                <Trans>Close</Trans>
+              </Button>
+            </DrawerClose>
+          </Footer>
+        )}
+      </Content>
+    </Root>
   )
 }

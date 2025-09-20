@@ -1,6 +1,7 @@
 import { Trans } from '@lingui/react/macro'
 import { useDialogStore } from '@/stores/dialog-store'
-import { useMedia } from 'react-use'
+import { useLocalStorage, useMedia } from 'react-use'
+import { usePathname } from 'next/navigation'
 import {
   Drawer,
   DrawerClose,
@@ -13,27 +14,87 @@ import {
 } from '@repo/ui/components/drawer'
 import { Button } from '@repo/ui/components/button'
 import { CircleHelpIcon } from 'lucide-react'
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from '@repo/ui/components/dialog'
+import { cn } from '@repo/ui/lib/utils'
 
 export const dialogReference = 'user-guide'
+const STORAGE_KEY = 'user-guide-last-opened-at'
+const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000
 
 export function UserGuideDialog() {
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
-  const isDesktop = useMedia('(min-width: 768px)')
+  const isMobile = useMedia('(max-width: 767px)', false)
+  const Root = isMobile ? Drawer : Dialog
+  const Trigger = isMobile ? DrawerTrigger : DialogTrigger
+  const Content = isMobile ? DrawerContent : DialogContent
+  const Header = isMobile ? DrawerHeader : DialogHeader
+  const Title = isMobile ? DrawerTitle : DialogTitle
+  const Description = isMobile ? DrawerDescription : DialogDescription
+  const Footer = isMobile ? DrawerFooter : DialogFooter
+  const modalContentClassName = cn(
+    'flex max-h-[85vh] flex-col overflow-hidden gap-0 p-0',
+    isMobile ? 'mx-4 mt-5 rounded-t-lg border-none' : 'sm:max-w-xl',
+  )
+  const headerClassName = cn(
+    'text-left',
+    isMobile ? 'px-4 pt-6 pb-4' : 'px-6 pt-6 pb-2',
+  )
+  const bodyClassName = cn(
+    'flex-1 overflow-y-auto',
+    isMobile ? 'px-4 pb-4' : 'px-6 pb-6',
+  )
+  const footerClassName = cn(
+    'gap-3 border-t border-border/40',
+    isMobile ? 'px-4 pb-4 pt-1' : 'px-6 pb-6 pt-3',
+  )
+  const pathname = usePathname()
+  const [lastOpenedAt, setLastOpenedAt] = useLocalStorage<number | null>(
+    STORAGE_KEY,
+    null,
+  )
+
+  const markGuideSeen = useCallback(() => {
+    setLastOpenedAt(Date.now())
+  }, [setLastOpenedAt])
 
   const handleOpenChange = useCallback(
-    (open: boolean) =>
-      open ? openDialog(dialogReference) : closeDialog(dialogReference),
-    [openDialog, closeDialog],
+    (open: boolean) => {
+      if (open) {
+        openDialog(dialogReference)
+        markGuideSeen()
+      } else {
+        closeDialog(dialogReference)
+      }
+    },
+    [openDialog, closeDialog, markGuideSeen],
   )
+
+  useEffect(() => {
+    if (!pathname) return
+
+    const segments = pathname.split('/').filter(Boolean)
+    // Expect paths like `/en` for homepage; ignore other routes.
+    const isHomepage = segments.length <= 1
+    if (!isHomepage) return
+
+    const now = Date.now()
+    const shouldOpenAutomatically =
+      !lastOpenedAt || now - lastOpenedAt > SEVEN_DAYS_MS
+
+    if (shouldOpenAutomatically) {
+      openDialog(dialogReference)
+      markGuideSeen()
+    }
+  }, [lastOpenedAt, pathname, openDialog, markGuideSeen])
 
   const content = (
     <div className="flex flex-col gap-4 text-muted-foreground">
@@ -91,48 +152,32 @@ export function UserGuideDialog() {
     </Button>
   )
 
-  return isDesktop ? (
-    <Dialog open={openDialogs[dialogReference]} onOpenChange={handleOpenChange}>
-      <DialogTrigger asChild>{TriggerButton}</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>
+  return (
+    <Root open={openDialogs[dialogReference]} onOpenChange={handleOpenChange}>
+      <Trigger asChild>{TriggerButton}</Trigger>
+      <Content className={modalContentClassName}>
+        <Header className={headerClassName}>
+          <Title>
             <Trans>Lil Nouns Auction Guide</Trans>
-          </DialogTitle>
-          <DialogDescription>
+          </Title>
+          <Description>
             <Trans>
               Understand how the Lil Nouns VRGDA auctions work and discover how
               to mint your favorite NFTs.
             </Trans>
-          </DialogDescription>
-        </DialogHeader>
-        <div className="overflow-y-auto p-0">{content}</div>
-      </DialogContent>
-    </Dialog>
-  ) : (
-    <Drawer open={openDialogs[dialogReference]} onOpenChange={handleOpenChange}>
-      <DrawerTrigger asChild>{TriggerButton}</DrawerTrigger>
-      <DrawerContent className="mx-4">
-        <DrawerHeader>
-          <DrawerTitle>
-            <Trans>Lil Nouns Auction Guide</Trans>
-          </DrawerTitle>
-          <DrawerDescription>
-            <Trans>
-              Understand how the Lil Nouns VRGDA auctions work and discover how
-              to mint your favorite NFTs.
-            </Trans>
-          </DrawerDescription>
-        </DrawerHeader>
-        <div className="overflow-y-auto p-4">{content}</div>
-        <DrawerFooter className="pt-2">
-          <DrawerClose asChild>
-            <Button variant="outline">
-              <Trans>Close</Trans>
-            </Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+          </Description>
+        </Header>
+        <div className={bodyClassName}>{content}</div>
+        {isMobile && (
+          <Footer className={footerClassName}>
+            <DrawerClose asChild>
+              <Button variant="outline" className="w-full">
+                <Trans>Close</Trans>
+              </Button>
+            </DrawerClose>
+          </Footer>
+        )}
+      </Content>
+    </Root>
   )
 }

@@ -5,6 +5,8 @@ import { type PropsWithChildren } from 'react'
 // import { ErrorBoundary } from 'react-error-boundary'
 // import ErrorFallback from '@/components/error-fallback'
 import { ThemeProvider } from '@/components/theme-provider'
+import { IdleProvider } from '@/contexts/idle-context'
+import { IdleOverlay } from '@/components/idle-overlay'
 import { find, mapToObj, pipe } from 'remeda'
 import { mainnet, sepolia } from 'wagmi/chains'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -91,11 +93,14 @@ export function Providers({ children }: PropsWithChildren) {
       disableTransitionOnChange
     >
       {/*<ErrorBoundary FallbackComponent={ErrorFallback}>*/}
-      <WagmiProvider config={config}>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
-      </WagmiProvider>
+      <IdleProvider>
+        <WagmiProvider config={config}>
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
+        </WagmiProvider>
+        <IdleOverlay />
+      </IdleProvider>
       {/*</ErrorBoundary>*/}
     </ThemeProvider>
   )

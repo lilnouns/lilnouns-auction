@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import { useReadContract } from 'wagmi'
 import { Address } from 'viem'
 import { mainnet, sepolia } from 'wagmi/chains'
 import { prop } from 'remeda'
+import { useIdleState } from '@/contexts/idle-context'
 
 interface UseNextNounResult {
   nounId: bigint | undefined
@@ -92,23 +93,16 @@ const auctionContract = {
 }
 
 export function useNextNoun(): UseNextNounResult {
-  const [nounId, setNounId] = useState<bigint | undefined>()
-  const [price, setPrice] = useState<bigint | undefined>()
+  const { isIdle } = useIdleState()
 
   const { data, isLoading, isError, error } = useReadContract({
     ...auctionContract,
     functionName: 'fetchNextNoun',
-    query: { enabled: true },
+    query: { enabled: !isIdle },
   })
 
-  useEffect(() => {
-    if (!isLoading && !isError && data) {
-      const newNounId = data[0]
-      const newPrice = data[3]
-      setNounId(newNounId)
-      setPrice(BigInt(newPrice))
-    }
-  }, [data, isLoading, isError])
+  const nounId = useMemo(() => (data ? data[0] : undefined), [data])
+  const price = useMemo(() => (data ? BigInt(data[3]) : undefined), [data])
 
   return {
     nounId,

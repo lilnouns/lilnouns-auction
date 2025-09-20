@@ -2,6 +2,64 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.2] - 2025-09-20
+
+### Features
+
+- Replace `button` with `Button` in `UpdateBanner`
+- Auto-open user guide on homepage after 7 days
+- Enhance `UpdateBanner` with interval polling
+- Replace `useEffect` with `useMount` in `Redirect`
+- Replace `useEffect` with `react-use` hooks
+- Replace `useEffect` with `useMemo` in `useNextNoun`
+- Replace `useEffect` with `useIsomorphicLayoutEffect`
+- Optimize seed processing with `useAsyncRetry`
+- Replace manual localStorage with `useLocalStorage`
+- Replace `useEffect` with `useUpdateEffect`
+- Add `IdleContext` for idle state tracking
+- Wrap app with `IdleProvider` and add `IdleOverlay`
+- Integrate `isIdle` in `use-blocks` hook
+- Integrate `isIdle` in `useNextNoun` hook
+- Add `IdleOverlay` component for idle state
+- Add `isIdle` check to `UpdateBanner`
+- Integrate `isIdle` in `AuctionPreviewGrid`
+- Enhance hydration logic with `useToggle`
+- Replace `useAsyncRetry` with `useQuery`
+- Optimize `AuctionSeedDialog` for mobile
+- Optimize `AuctionFilterDialog` for mobile
+- Optimize `UserGuideDialog` for mobile
+- Optimize `WalletOptionsDialog` for mobile
+- Enhance auction seed dialog with improved UX
+- Enhance trait display and layout in auction dialog
+- Migrate to oklch color format and add utility tokens
+- Add Poppins font family to project
+- Add Lora font family to project
+- Add Fira Code font family to project
+- Add comprehensive font families support
+- Add dynamic font variables to layout
+
+### Bug Fixes
+
+- Ensure consistent key serialization in queries
+- Guard `addFrame` action behind mini app check
+- Refine error handling and `useMemo` deps
+- Hide stat cards and badges on mobile
+
+### Miscellaneous Tasks
+
+- Remove `.npmrc` file
+- Remove `@types/lint-staged`
+
+### Performance
+
+- Keep auction grid data while revalidating
+
+### Styling
+
+- Enforce consistent double quotes in imports
+- Remove extra newline for code consistency
+- Ensure buttons use pointer cursor
+
 ## [1.3.0-alpha.1] - 2025-09-20
 
 ### Bug Fixes

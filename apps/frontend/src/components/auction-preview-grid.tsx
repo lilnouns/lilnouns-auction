@@ -3,7 +3,7 @@
 import { PoolSeed, Seed } from '@/types'
 
 import { usePoolStore } from '@/stores/pool-store'
-import { useEffect } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { getNounSeedFromBlockHash } from '@repo/assets/index'
 import { useTraitFilterStore } from '@/stores/trait-filter-store'
@@ -12,13 +12,17 @@ import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
-import { times } from 'remeda'
+import { filter, isTruthy, map, pipe, times } from 'remeda'
 import { useBlocks } from '@/hooks/use-blocks'
+import { useDebounce } from 'react-use'
+import { useIdleState } from '@/contexts/idle-context'
+import { useQuery } from '@tanstack/react-query'
 
 export function AuctionPreviewGrid() {
   const { nounId } = useNextNoun()
   const { traitFilter } = useTraitFilterStore()
   const { poolSeeds, setPoolSeeds, setIsLoading } = usePoolStore()
+  const { isIdle } = useIdleState()
 
   const {
     data: blocks,
@@ -31,79 +35,115 @@ export function AuctionPreviewGrid() {
     if (blocksError) {
       console.error('Blocks error:', blocksError)
     }
+  }, [blocksError])
 
+  useEffect(() => {
     if (nounId === undefined) {
       console.error('No Noun ID found. Please refresh the page.')
     }
+  }, [nounId])
 
-    setIsLoading(isValidatingBlocks || isLoadingBlocks)
-    if (!blocks || nounId === undefined) return
-
-    const parseSeedParameter = (seedParams?: string[]): number[] | undefined =>
+  const filterParams = useMemo(() => {
+    const parseSeedParameter = (seedParams?: string[]) =>
       seedParams
-        ?.map((param) =>
-          !Number.isNaN(Number(param)) ? Number(param) : undefined,
-        )
-        .filter((num): num is number => num !== undefined) ?? undefined
+        ? pipe(
+            seedParams,
+            map((param) => Number(param)),
+            filter((num): num is number => !Number.isNaN(num)),
+          )
+        : undefined
 
-    const filterParams = {
+    return {
       background: parseSeedParameter(traitFilter.background),
       body: parseSeedParameter(traitFilter.body),
       accessory: parseSeedParameter(traitFilter.accessory),
       head: parseSeedParameter(traitFilter.head),
       glasses: parseSeedParameter(traitFilter.glasses),
     }
+  }, [traitFilter])
 
-    const processSeeds = async () => {
-      let seedResults: PoolSeed[] = []
+  const [debouncedFilter, setDebouncedFilter] = useState(filterParams)
 
-      const newSeedResults = await Promise.all(
+  useDebounce(() => setDebouncedFilter(filterParams), 200, [filterParams])
+
+  const blockKeys = useMemo(
+    () => blocks?.map((block) => String(block.id)) ?? [],
+    [blocks],
+  )
+  const filterKey = useMemo(
+    () => JSON.stringify(debouncedFilter ?? {}),
+    [debouncedFilter],
+  )
+  const nounIdKey = nounId !== undefined ? nounId.toString() : 'unknown'
+
+  const seedQuery = useQuery<PoolSeed[]>({
+    queryKey: ['auction-seeds', nounIdKey, filterKey, blockKeys],
+    // Keep showing the previous data set while revalidating so the grid never flickers.
+    queryFn: async () => {
+      if (!blocks || nounId === undefined) return []
+
+      const seedResults = await Promise.all(
         blocks.map(async (block) => {
           try {
             const seed = getNounSeedFromBlockHash(Number(nounId), block.id)
-            const isMatching = Object.entries(filterParams).every(
+            const matchesFilter = Object.entries(debouncedFilter ?? {}).every(
               ([key, values]) => {
-                if (!values || values.length === 0) return true
+                if (!values?.length) return true
                 const seedValue = seed[key as keyof Seed]
-                return values.includes(seedValue)
+                return values.includes(seedValue as number)
               },
             )
-            return isMatching
-              ? { blockNumber: BigInt(block.number), nounId, seed }
-              : { blockNumber: BigInt(block.number), nounId, seed: undefined }
+
+            if (!matchesFilter) {
+              return undefined
+            }
+
+            return { blockNumber: BigInt(block.number), nounId, seed }
           } catch (error) {
             console.error(`Error generating seed for block ${block.id}:`, error)
-            return {
-              blockNumber: BigInt(block.number),
-              nounId,
-              seed: undefined,
-            }
+            return undefined
           }
         }),
       )
 
-      seedResults = [
-        ...seedResults,
-        ...newSeedResults.filter(
-          (result): result is PoolSeed => result.seed !== undefined,
-        ),
-      ]
-      setPoolSeeds(seedResults)
-    }
+      return pipe(seedResults, filter(isTruthy))
+    },
+    enabled: !isIdle && nounId !== undefined && blockKeys.length > 0,
+    placeholderData: (previousData) => previousData ?? ([] as PoolSeed[]),
+    staleTime: 30_000,
+    refetchOnWindowFocus: false,
+  })
 
-    processSeeds()
+  useEffect(() => {
+    setIsLoading(
+      !isIdle &&
+        (isValidatingBlocks || isLoadingBlocks || seedQuery.isFetching),
+    )
   }, [
-    blocks,
-    nounId,
-    traitFilter,
-    setPoolSeeds,
-    setIsLoading,
+    isIdle,
     isValidatingBlocks,
     isLoadingBlocks,
-    blocksError,
+    seedQuery.isFetching,
+    setIsLoading,
   ])
 
-  if (poolSeeds.length === 0) {
+  useEffect(() => {
+    if (seedQuery.error) {
+      console.error('Failed to build pool seeds:', seedQuery.error)
+    }
+  }, [seedQuery.error])
+
+  useEffect(() => {
+    if (seedQuery.data) {
+      setPoolSeeds(seedQuery.data)
+    }
+  }, [seedQuery.data, setPoolSeeds])
+
+  const seeds = poolSeeds.length > 0 ? poolSeeds : (seedQuery.data ?? [])
+  const showSkeleton = !seedQuery.isFetched && seeds.length === 0
+  const showEmpty = !seedQuery.isFetching && (seedQuery.data?.length ?? 0) === 0
+
+  if (showSkeleton) {
     return (
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
         {times(256, (index) => (
@@ -120,9 +160,17 @@ export function AuctionPreviewGrid() {
     )
   }
 
+  if (showEmpty) {
+    return (
+      <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">
+        No seeds match the current filters.
+      </div>
+    )
+  }
+
   return (
     <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
-      {poolSeeds.map((poolSeed) => (
+      {seeds.map((poolSeed) => (
         <AuctionSeedDialog
           key={`${poolSeed.nounId}-${poolSeed.blockNumber}`}
           poolSeed={poolSeed}
