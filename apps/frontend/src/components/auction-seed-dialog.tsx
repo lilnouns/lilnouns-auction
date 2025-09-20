@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogFooter,
+  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from '@repo/ui/components/dialog'
@@ -44,6 +45,7 @@ import Link from 'next/link'
 import { Trans } from '@lingui/react/macro'
 import { Loader2 } from 'lucide-react'
 import { round } from 'remeda'
+import { cn } from '@repo/ui/lib/utils'
 
 const { images, bgcolors } = imageData
 
@@ -56,7 +58,34 @@ export function AuctionSeedDialog({
   poolSeed,
   children,
 }: AuctionSeedDialogProps) {
-  const isDesktop = useMedia('(min-width: 768px)')
+  const isMobile = useMedia('(max-width: 767px)', false)
+
+  const Root = isMobile ? Drawer : Dialog
+  const Trigger = isMobile ? DrawerTrigger : DialogTrigger
+  const Content = isMobile ? DrawerContent : DialogContent
+  const Header = isMobile ? DrawerHeader : DialogHeader
+  const Title = isMobile ? DrawerTitle : DialogTitle
+  const Description = isMobile ? DrawerDescription : DialogDescription
+  const Footer = isMobile ? DrawerFooter : DialogFooter
+
+  const modalContentClassName = cn(
+    'flex max-h-[85vh] flex-col overflow-hidden gap-0 p-0',
+    isMobile ? 'mx-4 mt-5 rounded-t-lg border-none' : 'sm:max-w-2xl',
+  )
+  const headerClassName = cn(
+    'text-left',
+    isMobile ? 'px-4 pt-6 pb-4' : 'px-6 pt-6 pb-2',
+  )
+  const bodyClassName = cn(
+    'flex-1 overflow-y-auto',
+    isMobile ? 'px-4 pb-4' : 'px-6 pb-6',
+  )
+  const footerClassName = cn(
+    'gap-3 border-t border-border/40',
+    isMobile ? 'px-4 pb-4 pt-1' : 'px-6 pb-6 pt-3',
+  )
+
+  const actionButtonClassName = 'w-full sm:w-auto'
 
   const { isConnected, chainId } = useAccount()
 
@@ -85,9 +114,9 @@ export function AuctionSeedDialog({
 
   const { seed, blockNumber, nounId } = poolSeed
 
-  const content = (
-    <div className="grid gap-6 -grid-cols-1 md:grid-cols-2">
-      <div>
+  const traitsContent = (
+    <div className="grid gap-6 md:grid-cols-[minmax(0,1fr),minmax(0,1fr)] md:gap-8">
+      <div className="flex justify-center md:items-start">
         <AuctionSeedImage seed={seed} />
       </div>
       <Table>
@@ -139,7 +168,10 @@ export function AuctionSeedDialog({
   const renderActionButton = () => {
     if (!isConnected) {
       return (
-        <Button onClick={() => openDialog(walletOptions)} className="w-full">
+        <Button
+          onClick={() => openDialog(walletOptions)}
+          className={actionButtonClassName}
+        >
           <Trans>Connect Wallet</Trans>
         </Button>
       )
@@ -149,7 +181,7 @@ export function AuctionSeedDialog({
       return (
         <Button
           onClick={() => switchChain({ chainId: correctChainId })}
-          className="w-full"
+          className={actionButtonClassName}
           disabled={isSwitchChainPending}
         >
           {isSwitchChainPending && <Loader2 className="animate-spin" />}
@@ -159,26 +191,40 @@ export function AuctionSeedDialog({
     }
 
     if (isSuccessBuyNow && txHash) {
-      return (
-        <Link
-          href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${txHash}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full"
-        >
-          <Button className="w-full" disabled={isConfirming || !isConfirmed}>
-            {(isConfirming || !isConfirmed) && (
-              <Loader2 className="animate-spin" />
-            )}
-            {isConfirming ? (
-              <Trans>Confirming...</Trans>
-            ) : isConfirmed ? (
-              <Trans>View Transaction</Trans>
-            ) : (
-              <Trans>Pending...</Trans>
-            )}
+      const shouldDisable = isConfirming || !isConfirmed
+      const statusContent = (
+        <>
+          {(isConfirming || !isConfirmed) && (
+            <Loader2 className="animate-spin" />
+          )}
+          {isConfirming ? (
+            <Trans>Confirming...</Trans>
+          ) : isConfirmed ? (
+            <Trans>View Transaction</Trans>
+          ) : (
+            <Trans>Pending...</Trans>
+          )}
+        </>
+      )
+
+      if (shouldDisable) {
+        return (
+          <Button className={actionButtonClassName} disabled>
+            {statusContent}
           </Button>
-        </Link>
+        )
+      }
+
+      return (
+        <Button asChild className={actionButtonClassName}>
+          <Link
+            href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${txHash}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {statusContent}
+          </Link>
+        </Button>
       )
     }
 
@@ -186,7 +232,7 @@ export function AuctionSeedDialog({
       <Button
         onClick={() => buyNow(blockNumber, nounId)}
         disabled={isPendingBuyNow || isSuccessBuyNow}
-        className="w-full"
+        className={actionButtonClassName}
       >
         {isPendingBuyNow ? (
           <>
@@ -202,46 +248,30 @@ export function AuctionSeedDialog({
     )
   }
 
-  if (isDesktop) {
-    return (
-      <Dialog>
-        <DialogTrigger asChild>{children}</DialogTrigger>
-        <DialogContent>
-          <DialogTitle>
-            <Trans>Noun Details</Trans>
-          </DialogTitle>
-          <DialogDescription>
-            <Trans>View traits and pricing for this Noun</Trans>
-          </DialogDescription>
-          {content}
-          <DialogFooter>{renderActionButton()}</DialogFooter>
-        </DialogContent>
-      </Dialog>
-    )
-  }
-
   return (
-    <Drawer>
-      <DrawerTrigger asChild>{children}</DrawerTrigger>
-      <DrawerContent className="mx-4 max-h-[calc(100vh-20px)] mt-5">
-        <DrawerHeader>
-          <DrawerTitle>
+    <Root>
+      <Trigger asChild>{children}</Trigger>
+      <Content className={modalContentClassName}>
+        <Header className={headerClassName}>
+          <Title>
             <Trans>Noun Details</Trans>
-          </DrawerTitle>
-          <DrawerDescription>
-            <Trans>View traits and pricing</Trans>
-          </DrawerDescription>
-        </DrawerHeader>
-        <div className="p-4 overflow-y-auto">{content}</div>
-        <DrawerFooter>
+          </Title>
+          <Description>
+            <Trans>View traits and pricing for this Noun</Trans>
+          </Description>
+        </Header>
+        <div className={bodyClassName}>{traitsContent}</div>
+        <Footer className={footerClassName}>
           {renderActionButton()}
-          <DrawerClose asChild>
-            <Button variant="outline">
-              <Trans>Close</Trans>
-            </Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+          {isMobile && (
+            <DrawerClose asChild>
+              <Button variant="outline" className="w-full">
+                <Trans>Close</Trans>
+              </Button>
+            </DrawerClose>
+          )}
+        </Footer>
+      </Content>
+    </Root>
   )
 }
