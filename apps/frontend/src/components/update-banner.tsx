@@ -1,6 +1,7 @@
 import { Banner } from '@/components/banner'
 import { Trans } from '@lingui/react/macro'
 import { useEffect, useState } from 'react'
+import { Button } from '@repo/ui/components/button'
 
 export function UpdateBanner() {
   const [showBanner, setShowBanner] = useState(false)
@@ -77,9 +78,13 @@ export function UpdateBanner() {
       description={
         <span className="text-xs text-neutral-600 dark:text-neutral-400">
           <Trans>A new version is live. </Trans>{' '}
-          <button onClick={handleReload} className="font-semibold underline">
+          <Button
+            variant="link"
+            className="h-auto p-0 font-semibold align-baseline"
+            onClick={handleReload}
+          >
             <Trans>Reload</Trans>
-          </button>
+          </Button>
           .
         </span>
       }
