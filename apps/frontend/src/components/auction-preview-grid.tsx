@@ -77,6 +77,7 @@ export function AuctionPreviewGrid() {
 
   const seedQuery = useQuery<PoolSeed[]>({
     queryKey: ['auction-seeds', nounId, filterKey, blockKeys],
+    // Keep showing the previous data set while revalidating so the grid never flickers.
     queryFn: async () => {
       if (!blocks || nounId === undefined) return []
 
