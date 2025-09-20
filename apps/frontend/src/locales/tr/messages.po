@@ -71,15 +71,15 @@ msgstr "Yeni bir sürüm yayında. "
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Block"
-msgstr ""
+msgstr "Blok"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now"
-msgstr ""
+msgstr "Şimdi satın al"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {priceLabel}"
-msgstr ""
+msgstr "{priceLabel} karşılığında şimdi satın al"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
@@ -111,7 +111,7 @@ msgstr "Mevcut cüzdan sağlayıcılarımızdan biriyle bağlanın."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Current Price"
-msgstr ""
+msgstr "Güncel fiyat"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
@@ -188,7 +188,7 @@ msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr ""
+msgstr "Noun {nounId} | Lil Nouns Açık Artırması"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
@@ -253,11 +253,11 @@ msgstr "Temayı Değiştir"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "total traits"
-msgstr ""
+msgstr "toplam özellik"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Traits"
-msgstr ""
+msgstr "Özellikler"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."

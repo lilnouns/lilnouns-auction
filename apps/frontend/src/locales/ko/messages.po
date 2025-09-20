@@ -71,15 +71,15 @@ msgstr "새 버전이 지금 공개되었습니다. "
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Block"
-msgstr ""
+msgstr "블록"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now"
-msgstr ""
+msgstr "지금 구매"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {priceLabel}"
-msgstr ""
+msgstr "{priceLabel}에 지금 구매"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
@@ -111,7 +111,7 @@ msgstr "사용 가능한 지갑 공급자 중 하나에 연결하세요."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Current Price"
-msgstr ""
+msgstr "현재 가격"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
@@ -188,7 +188,7 @@ msgstr "나운"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr ""
+msgstr "Noun {nounId} | Lil Nouns 경매"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
@@ -253,11 +253,11 @@ msgstr "테마 전환"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "total traits"
-msgstr ""
+msgstr "총 특성"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Traits"
-msgstr ""
+msgstr "특성"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."

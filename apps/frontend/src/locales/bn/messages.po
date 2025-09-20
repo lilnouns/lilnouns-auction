@@ -71,15 +71,15 @@ msgstr "একটি নতুন সংস্করণ এখন লাইভ�
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Block"
-msgstr ""
+msgstr "ব্লক"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now"
-msgstr ""
+msgstr "এখনই কিনুন"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {priceLabel}"
-msgstr ""
+msgstr "{priceLabel} এ এখনই কিনুন"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
@@ -111,7 +111,7 @@ msgstr "আমাদের উপলব্ধ ওয়ালেট প্রদ
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Current Price"
-msgstr ""
+msgstr "বর্তমান মূল্য"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
@@ -188,7 +188,7 @@ msgstr "নাউন"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr ""
+msgstr "নাউন {nounId} | লিল নাউনস নিলাম"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
@@ -253,11 +253,11 @@ msgstr "থিম পরিবর্তন করুন"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "total traits"
-msgstr ""
+msgstr "মোট বৈশিষ্ট্য"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Traits"
-msgstr ""
+msgstr "বৈশিষ্ট্য"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."

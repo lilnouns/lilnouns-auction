@@ -71,15 +71,15 @@ msgstr "Доступна новая версия. "
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Block"
-msgstr ""
+msgstr "Блок"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now"
-msgstr ""
+msgstr "Купить сейчас"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {priceLabel}"
-msgstr ""
+msgstr "Купить за {priceLabel}"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
@@ -111,7 +111,7 @@ msgstr "Подключитесь к одному из доступных про�
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Current Price"
-msgstr ""
+msgstr "Текущая цена"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
@@ -188,7 +188,7 @@ msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr ""
+msgstr "Noun {nounId} | Аукцион Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
@@ -253,11 +253,11 @@ msgstr "Переключить тему"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "total traits"
-msgstr ""
+msgstr "всего характеристик"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Traits"
-msgstr ""
+msgstr "Характеристики"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."

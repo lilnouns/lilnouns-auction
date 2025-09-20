@@ -71,15 +71,15 @@ msgstr "Versi baru kini tersedia. "
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Block"
-msgstr ""
+msgstr "Blok"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now"
-msgstr ""
+msgstr "Beli sekarang"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {priceLabel}"
-msgstr ""
+msgstr "Beli sekarang seharga {priceLabel}"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
@@ -111,7 +111,7 @@ msgstr "Hubungkan dengan salah satu penyedia dompet yang tersedia."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Current Price"
-msgstr ""
+msgstr "Harga saat ini"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
@@ -188,7 +188,7 @@ msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr ""
+msgstr "Noun {nounId} | Lelang Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
@@ -253,11 +253,11 @@ msgstr "Ubah tema"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "total traits"
-msgstr ""
+msgstr "total atribut"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Traits"
-msgstr ""
+msgstr "Atribut"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."

@@ -67,9 +67,6 @@ msgstr "Glasses"
 msgid "A new version is live. "
 msgstr "A new version is live. "
 
-#: src/components/auction-seed-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
 msgid "Block"
 msgstr "Block"
 
