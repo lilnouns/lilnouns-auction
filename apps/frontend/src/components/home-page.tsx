@@ -41,7 +41,7 @@ export const HomePage: NextPage = () => {
         )
       }
     }
-  }, [nounId, t])
+  }, [nounId])
 
   useEffect(() => {
     setIsClient(true)
