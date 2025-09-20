@@ -83,6 +83,7 @@ msgstr "Haz clic en un Lil Noun para ver sus rasgos y el precio VRGDA actual. En
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Kapat"
 
@@ -174,9 +175,10 @@ msgstr "Las subastas de Lil Nouns han dejado atrás el formato tradicional de su
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Subasta de Lil Nouns"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Subasta de Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx

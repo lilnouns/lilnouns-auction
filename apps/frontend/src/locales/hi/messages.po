@@ -83,6 +83,7 @@ msgstr "किसी Lil Noun पर क्लिक करके उसके �
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "बंद करें"
 
@@ -174,9 +175,10 @@ msgstr "Lil Nouns की नीलामियों ने Nouns द्वा�
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Lil Nouns नीलामी"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Lil Nouns नीलामी"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx

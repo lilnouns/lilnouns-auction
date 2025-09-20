@@ -83,6 +83,7 @@ msgstr "Ƈŀīƈķ ǿƞ ȧ Ŀīŀ Ƞǿŭƞ ŧǿ ṽīḗẇ īŧş ŧřȧīŧş 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Ƈŀǿşḗ"
 
@@ -174,9 +175,10 @@ msgstr "Ŀīŀ Ƞǿŭƞş ȧŭƈŧīǿƞş ħȧş ṁǿṽḗḓ ƀḗẏǿƞḓ
 msgid "Noun"
 msgstr "Ƞǿŭƞ"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Ƞǿŭƞ {ƞǿŭƞĪḓ} | Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Ƞǿŭƞ {0} | Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx

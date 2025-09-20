@@ -83,6 +83,7 @@ msgstr "Clicca su un Lil Noun per vedere i suoi tratti e il prezzo VRGDA attuale
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Chiudi"
 
@@ -174,9 +175,10 @@ msgstr "Le aste di Lil Nouns hanno superato il formato tradizionale all'inglese 
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Asta Lil Nouns"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Asta Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx

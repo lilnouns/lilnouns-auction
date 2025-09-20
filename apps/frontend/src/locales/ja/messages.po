@@ -83,6 +83,7 @@ msgstr "Lil Noun をクリックして特性と現在の VRGDA 価格を確認�
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "閉じる"
 
@@ -174,9 +175,10 @@ msgstr "Lil Nouns のオークションは Nouns が採用していた従来の�
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Lil Nouns オークション"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Lil Nouns オークション"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx

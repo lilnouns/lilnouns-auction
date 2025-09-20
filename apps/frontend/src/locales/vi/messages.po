@@ -83,6 +83,7 @@ msgstr "Nhấp vào một Lil Noun để xem các thuộc tính và giá VRGDA h
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Đóng"
 
@@ -174,9 +175,10 @@ msgstr "Đấu giá Lil Nouns đã vượt ra ngoài hình thức đấu giá ki
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Đấu giá Lil Nouns"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Đấu giá Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
