@@ -175,10 +175,9 @@ msgstr "Lil Nouns নিলামগুলি Nouns-এ ব্যবহৃত �
 msgid "Noun"
 msgstr "নাউন"
 
-#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {0} | Lil Nouns Auction"
-msgstr "Noun {0} | Lil Nouns নিলাম"
+msgid "Noun {nounId} | Lil Nouns Auction"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx

@@ -175,10 +175,9 @@ msgstr "Lil Nouns 拍卖已经超越 Nouns 采用的传统英式拍卖，转而�
 msgid "Noun"
 msgstr "Noun"
 
-#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {0} | Lil Nouns Auction"
-msgstr "Noun {0} | Lil Nouns 拍卖"
+msgid "Noun {nounId} | Lil Nouns Auction"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx

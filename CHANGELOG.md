@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.1] - 2025-09-20
+
+### Bug Fixes
+
+- Remove unused dependency from `useEffect`
+- Update comments for clarity in components
+- Simplify `import` for `Trans` and `useLingui`
+- Update `nounId` placeholder in translations
+
+### Revert
+
+- Replace `useLingui` with `t` macro
+
 ## [1.3.0-alpha.0] - 2025-09-20
 
 ### Features

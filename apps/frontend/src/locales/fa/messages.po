@@ -175,10 +175,9 @@ msgstr "مزایده‌های Lil Nouns فراتر از قالب سنتی مزا
 msgid "Noun"
 msgstr " نان"
 
-#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {0} | Lil Nouns Auction"
-msgstr "Noun {0} | مزایده Lil Nouns"
+msgid "Noun {nounId} | Lil Nouns Auction"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx

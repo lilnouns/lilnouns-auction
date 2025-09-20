@@ -175,10 +175,9 @@ msgstr "Đấu giá Lil Nouns đã vượt ra ngoài hình thức đấu giá ki
 msgid "Noun"
 msgstr "Noun"
 
-#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {0} | Lil Nouns Auction"
-msgstr "Noun {0} | Đấu giá Lil Nouns"
+msgid "Noun {nounId} | Lil Nouns Auction"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
