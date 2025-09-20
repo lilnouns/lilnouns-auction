@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { Connector, useAccount, useConnect, useDisconnect } from 'wagmi'
 import { Button } from '@repo/ui/components/button'
 import {
@@ -23,7 +23,7 @@ import {
 } from '@repo/ui/components/drawer'
 import { WalletIcon } from 'lucide-react'
 import { useDialogStore } from '@/stores/dialog-store'
-import { useMedia } from 'react-use'
+import { useMedia, useUpdateEffect } from 'react-use'
 import { Trans, useLingui } from '@lingui/react/macro'
 import { defaultTo, find } from 'remeda'
 
@@ -62,7 +62,7 @@ export const WalletOptionsDialog = () => {
     status === 'pending'
 
   // Close dialog when wallet gets connected
-  useEffect(() => {
+  useUpdateEffect(() => {
     if (isConnected) {
       closeDialog(walletOptions)
     }
