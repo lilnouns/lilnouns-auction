@@ -14,7 +14,7 @@ import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
 import { filter, isTruthy, map, pipe, times } from 'remeda'
 import { useBlocks } from '@/hooks/use-blocks'
-import { useAsyncRetry } from 'react-use'
+import { useAsyncRetry, useToggle, useUpdateEffect } from 'react-use'
 import { useIdleState } from '@/contexts/idle-context'
 
 export function AuctionPreviewGrid() {
@@ -22,6 +22,7 @@ export function AuctionPreviewGrid() {
   const { traitFilter } = useTraitFilterStore()
   const { poolSeeds, setPoolSeeds, setIsLoading } = usePoolStore()
   const { isIdle } = useIdleState()
+  const [hasHydrated, setHasHydrated] = useToggle(poolSeeds.length > 0)
 
   const {
     data: blocks,
@@ -109,13 +110,25 @@ export function AuctionPreviewGrid() {
     }
   }, [seedState.error])
 
-  useEffect(() => {
+  useUpdateEffect(() => {
+    if (poolSeeds.length > 0) {
+      setHasHydrated(true)
+    }
+  }, [poolSeeds.length, setHasHydrated])
+
+  useUpdateEffect(() => {
+    if (!seedState.loading) {
+      setHasHydrated(true)
+    }
+  }, [seedState.loading, setHasHydrated])
+
+  useUpdateEffect(() => {
     if (!isIdle && seedState.value !== undefined) {
       setPoolSeeds(seedState.value)
     }
   }, [isIdle, seedState.value, setPoolSeeds])
 
-  if (poolSeeds.length === 0) {
+  if (!hasHydrated) {
     return (
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-9">
         {times(256, (index) => (
@@ -128,6 +141,14 @@ export function AuctionPreviewGrid() {
             </CardContent>
           </Card>
         ))}
+      </div>
+    )
+  }
+
+  if (poolSeeds.length === 0) {
+    return (
+      <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">
+        No seeds match the current filters.
       </div>
     )
   }
