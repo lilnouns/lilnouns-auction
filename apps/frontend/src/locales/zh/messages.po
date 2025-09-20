@@ -67,10 +67,19 @@ msgstr "眼镜"
 msgid "A new version is live. "
 msgstr "新版已上线。 "
 
-#. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
-msgid "Buy Now for {0} ETH"
-msgstr "立即购买 {0} ETH"
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "Block"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now for {priceLabel}"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
@@ -93,14 +102,16 @@ msgstr "确认中..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "连接钱包"
 
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
 msgstr "使用我们提供的钱包服务连接。"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Current Price"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
@@ -122,7 +133,6 @@ msgstr "错误"
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
 msgstr "每隔 12 秒就会有一只古灵精怪的 Lil Noun 上线，让你在觉得价格合适时再出手。"
 
-#: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr "筛选拍卖"
@@ -163,7 +173,6 @@ msgid "Lil Nouns Auction"
 msgstr "Lil Nouns 拍卖"
 
 #: src/components/user-guide-dialog.tsx
-#: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
 msgstr "Lil Nouns 拍卖指南"
 
@@ -171,6 +180,8 @@ msgstr "Lil Nouns 拍卖指南"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Lil Nouns 拍卖已经超越 Nouns 采用的传统英式拍卖，转而使用由 VRGDA（可变速率渐进式荷兰拍卖）驱动的荷兰式拍卖。"
 
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
 msgstr "Noun"
@@ -179,7 +190,6 @@ msgstr "Noun"
 msgid "Noun {nounId} | Lil Nouns Auction"
 msgstr ""
 
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
 msgstr "Noun 详情"
@@ -214,7 +224,6 @@ msgid "Select {0}"
 msgstr "选择 {0}"
 
 #: src/components/auction-filter-dialog.tsx
-#: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
 msgstr "选择特征以筛选拍卖列表"
 
@@ -242,18 +251,21 @@ msgstr "系统模式"
 msgid "Toggle theme"
 msgstr "切换主题"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "total traits"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Traits"
+msgstr ""
+
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
 msgstr "特征是根据当前的代币 ID 和选定的区块哈希通过算法生成的。探索最近的 256 个区块并铸造，找到适合你的氛围。"
 
 #: src/components/user-guide-dialog.tsx
-#: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "了解 Lil Nouns 的 VRGDA 拍卖如何运作，并发现铸造你最喜欢的 NFT 的方法。"
-
-#: src/components/auction-seed-dialog.tsx
-msgid "View traits and pricing"
-msgstr "查看特征和价格"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
@@ -268,11 +280,9 @@ msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting h
 msgstr "VRGDA 会根据时间和需求动态调整 NFT 价格，从高价开始并逐步降低直到完成铸造，在没有固定间隔的情况下平衡紧迫性与公平性。"
 
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "钱包已连接"
 
-#: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
 msgstr "您的钱包已连接，可在下方管理钱包连接。"

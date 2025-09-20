@@ -67,10 +67,19 @@ msgstr "Ɠŀȧşşḗş"
 msgid "A new version is live. "
 msgstr "Ȧ ƞḗẇ ṽḗřşīǿƞ īş ŀīṽḗ. "
 
-#. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
-msgid "Buy Now for {0} ETH"
-msgstr "Ɓŭẏ Ƞǿẇ ƒǿř {0} ḖŦĦ"
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "Block"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now for {priceLabel}"
+msgstr ""
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
@@ -93,14 +102,16 @@ msgstr "Ƈǿƞƒīřṁīƞɠ..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "Ƈǿƞƞḗƈŧ Ẇȧŀŀḗŧ"
 
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
 msgstr "Ƈǿƞƞḗƈŧ ẇīŧħ ǿƞḗ ǿƒ ǿŭř ȧṽȧīŀȧƀŀḗ ẇȧŀŀḗŧ ƥřǿṽīḓḗřş."
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Current Price"
+msgstr ""
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
@@ -122,7 +133,6 @@ msgstr "Ḗřřǿř"
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
 msgstr "Ḗṽḗřẏ 12 şḗƈǿƞḓş, ȧ ƞḗẇ ʠŭīřķẏ Ŀīŀ Ƞǿŭƞ ƀḗƈǿṁḗş ȧṽȧīŀȧƀŀḗ, ŀḗŧŧīƞɠ ẏǿŭ ƈħǿǿşḗ ẇħḗƞ ŧħḗ ƥřīƈḗ ƒḗḗŀş řīɠħŧ."
 
-#: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr "Ƒīŀŧḗř Ȧŭƈŧīǿƞş"
@@ -163,7 +173,6 @@ msgid "Lil Nouns Auction"
 msgstr "Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
 
 #: src/components/user-guide-dialog.tsx
-#: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
 msgstr "Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ Ɠŭīḓḗ"
 
@@ -171,6 +180,8 @@ msgstr "Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ Ɠŭīḓḗ"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Ŀīŀ Ƞǿŭƞş ȧŭƈŧīǿƞş ħȧş ṁǿṽḗḓ ƀḗẏǿƞḓ ŧħḗ ŧřȧḓīŧīǿƞȧŀ Ḗƞɠŀīşħ ȧŭƈŧīǿƞş ƒǿřṁȧŧ ŭşḗḓ ƀẏ Ƞǿŭƞş, ȧḓǿƥŧīƞɠ ȧ Ḓŭŧƈħ ȧŭƈŧīǿƞ ƥǿẇḗřḗḓ ƀẏ ṼȒƓḒȦ (Ṽȧřīȧƀŀḗ Ȓȧŧḗ Ɠřȧḓŭȧŀ Ḓŭŧƈħ Ȧŭƈŧīǿƞ)."
 
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
 msgstr "Ƞǿŭƞ"
@@ -179,7 +190,6 @@ msgstr "Ƞǿŭƞ"
 msgid "Noun {nounId} | Lil Nouns Auction"
 msgstr ""
 
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
 msgstr "Ƞǿŭƞ Ḓḗŧȧīŀş"
@@ -214,7 +224,6 @@ msgid "Select {0}"
 msgstr "Ṡḗŀḗƈŧ {0}"
 
 #: src/components/auction-filter-dialog.tsx
-#: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
 msgstr "Ṡḗŀḗƈŧ ŧřȧīŧş ŧǿ ƒīŀŧḗř ŧħḗ ȧŭƈŧīǿƞ ŀīşŧīƞɠş"
 
@@ -242,18 +251,21 @@ msgstr "Şẏşŧḗḿ"
 msgid "Toggle theme"
 msgstr "Ŧǿɠɠŀḗ ŧħḗḿḗ"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "total traits"
+msgstr ""
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Traits"
+msgstr ""
+
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
 msgstr "Ŧřȧīŧş ȧřḗ ȧŀɠǿřīŧħṁīƈȧŀŀẏ ɠḗƞḗřȧŧḗḓ ŭşīƞɠ ŧħḗ ƈŭřřḗƞŧ ŧǿķḗƞ ĪḒ ȧƞḓ ȧ ƈħǿşḗƞ ƀŀǿƈķ ħȧşħ. Ḗẋƥŀǿřḗ ȧƞḓ ṁīƞŧ ƒřǿṁ ŧħḗ ŀȧşŧ 256 ƀŀǿƈķş ŧǿ ƒīƞḓ ŧħḗ ṽīƀḗ ŧħȧŧ şŭīŧş ẏǿŭ."
 
 #: src/components/user-guide-dialog.tsx
-#: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Ŭƞḓḗřşŧȧƞḓ ħǿẇ ŧħḗ Ŀīŀ Ƞǿŭƞş ṼȒƓḒȦ ȧŭƈŧīǿƞş ẇǿřķ ȧƞḓ ḓīşƈǿṽḗř ħǿẇ ŧǿ ṁīƞŧ ẏǿŭř ƒȧṽǿřīŧḗ ȠƑŦş."
-
-#: src/components/auction-seed-dialog.tsx
-msgid "View traits and pricing"
-msgstr "Ṽīḗẇ ŧřȧīŧş ȧƞḓ ƥřīƈīƞɠ"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
@@ -268,11 +280,9 @@ msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting h
 msgstr "ṼȒƓḒȦ ḓẏƞȧṁīƈȧŀŀẏ ȧḓĵŭşŧş ȠƑŦ ƥřīƈḗş ƀȧşḗḓ ǿƞ ŧīṁḗ ȧƞḓ ḓḗṁȧƞḓ, şŧȧřŧīƞɠ ħīɠħ ȧƞḓ ɠřȧḓŭȧŀŀẏ ḓřǿƥƥīƞɠ ŭƞŧīŀ ṁīƞŧīƞɠ ǿƈƈŭřş, ƀȧŀȧƞƈīƞɠ ŭřɠḗƞƈẏ ȧƞḓ ƒȧīřƞḗşş ẇīŧħǿŭŧ ƒīẋḗḓ īƞŧḗřṽȧŀş."
 
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "Ẇȧŀŀḗŧ Ƈǿƞƞḗƈŧḗḓ"
 
-#: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
 msgstr "Ẏǿŭř ẇȧŀŀḗŧ īş ƈǿƞƞḗƈŧḗḓ. Ḿȧƞȧɠḗ ẏǿŭř ẇȧŀŀḗŧ ƈǿƞƞḗƈŧīǿƞ ƀḗŀǿẇ."
