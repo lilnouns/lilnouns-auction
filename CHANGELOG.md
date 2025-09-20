@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.3] - 2025-09-20
+
+### Revert
+
+- Update `@farcaster` package names
+
 ## [1.3.0-alpha.2] - 2025-09-20
 
 ### Features
