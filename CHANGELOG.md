@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.0] - 2025-09-20
+
+### Features
+
+- Add `canConnect` logic to wallet options
+- Add new translation entries for update banner
+- Add translations for multiple locales
+- Replace `t` with `Trans` in user guide
+- Replace `t` with `Trans` in components
+- Replace `useLingui` with `t` macro
+- Update translations with `nounId` placeholder
+
 ## [1.2.0-beta.8] - 2025-09-19
 
 ### Miscellaneous Tasks

@@ -63,6 +63,10 @@ msgstr "चश्मा"
 msgid "Glasses"
 msgstr "चश्मा"
 
+#: src/components/update-banner.tsx
+msgid "A new version is live. "
+msgstr "एक नया संस्करण अब लाइव है. "
+
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -74,21 +78,22 @@ msgstr "खरीदारी जारी..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "किसी Lil Noun पर क्लिक करके उसके गुण और वर्तमान VRGDA मूल्य देखें. जो आपको पसंद आए उसे चुनें."
 
-#: src/components/user-guide-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+#: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "बंद करें"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "पुष्टि की जा रही है..."
 
-#: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "वॉलेट कनेक्ट करें"
 
@@ -107,7 +112,7 @@ msgstr "वॉलेट डिस्कनेक्ट करें"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "अंग्रेज़ी"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -115,18 +120,18 @@ msgstr "त्रुटि"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "हर 12 सेकंड में एक नया, मज़ेदार Lil Noun उपलब्ध होता है, जिससे आप तब चुन सकते हैं जब कीमत सही लगे."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr "नीलामी फ़िल्टर करें"
 
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "अपना Lil Noun प्राप्त करें"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -134,45 +139,46 @@ msgstr "विवरण छिपाएँ"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "इतालवी"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "समुदाय से जुड़ें, अपने पसंदीदा मिंट करें और विकेंद्रीकृत रचनात्मकता की मनमोहक हलचल को अपनाएं."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
 msgstr "हल्का"
 
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
-#: src/components/home-page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/layout.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/layout.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
+#: src/components/home-page.tsx
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "लिल नाउन्स नीलामी"
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Lil Nouns नीलामी गाइड"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Lil Nouns की नीलामियों ने Nouns द्वारा उपयोग किए गए पारंपरिक अंग्रेज़ी नीलामी स्वरूप से आगे बढ़कर VRGDA (Variable Rate Gradual Dutch Auction) द्वारा संचालित डच नीलामी को अपनाया है."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | लिल नाउन्स नीलामी"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Lil Nouns नीलामी"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -181,23 +187,27 @@ msgstr "Noun विवरण"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "लंबित..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "कृपया पृष्ठ को पुनः लोड करने का प्रयास करें या यदि समस्या बनी रहती है तो समर्थन से संपर्क करें।"
+msgstr "कृपया पेज को रिफ्रेश करने का प्रयास करें या समस्या जारी रहने पर समर्थन से संपर्क करें."
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "पुर्तगाली"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "कीमतें हर 15 मिनट में घटती हैं लेकिन कभी भी 0.03 ETH के रिज़र्व मूल्य से नीचे नहीं जातीं."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "ताज़ा करें"
+
+#: src/components/update-banner.tsx
+msgid "Reload"
+msgstr "पुनः लोड करें"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -207,11 +217,11 @@ msgstr "{0} चुनें"
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "नीलामी सूची को फ़िल्टर करने के लिए विशेषताएँ चुनें"
+msgstr "नीलामी की सूचियों को फ़िल्टर करने के लिए गुण चुनें"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr "विवरण दिखाएँ"
+msgstr "विवरण दिखाएं"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
@@ -219,7 +229,7 @@ msgstr "कुछ गलत हो गया"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "स्पेनिश"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -235,12 +245,12 @@ msgstr "थीम बदलें"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "गुण वर्तमान टोकन आईडी और चुने हुए ब्लॉक हैश का उपयोग करके एल्गोरिदमिक रूप से उत्पन्न होते हैं. अंतिम 256 ब्लॉकों में खोजें और मिंट करें ताकि आपको उपयुक्त वाइब मिल सके."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "जानें कि Lil Nouns VRGDA नीलामियां कैसे काम करती हैं और अपने पसंदीदा NFT कैसे मिंट करें."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -256,7 +266,7 @@ msgstr "लेनदेन देखें"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "VRGDA समय और मांग के आधार पर NFT कीमतों को गतिशील रूप से समायोजित करता है, ऊंचे से शुरू होकर मिंट होने तक धीरे-धीरे घटता है, जिससे बिना निश्चित अंतराल के तात्कालिकता और निष्पक्षता का संतुलन बनता है."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

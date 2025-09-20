@@ -63,6 +63,10 @@ msgstr "眼镜"
 msgid "Glasses"
 msgstr "眼镜"
 
+#: src/components/update-banner.tsx
+msgid "A new version is live. "
+msgstr "新版已上线。 "
+
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -74,11 +78,12 @@ msgstr "购买中..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "点击任意 Lil Noun 查看其特征和当前的 VRGDA 价格，找到与你有共鸣的那一个。"
 
-#: src/components/user-guide-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+#: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "关闭"
 
@@ -86,9 +91,9 @@ msgstr "关闭"
 msgid "Confirming..."
 msgstr "确认中..."
 
-#: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "连接钱包"
 
@@ -107,7 +112,7 @@ msgstr "断开钱包"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "英语"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -115,18 +120,18 @@ msgstr "错误"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "每隔 12 秒就会有一只古灵精怪的 Lil Noun 上线，让你在觉得价格合适时再出手。"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr "筛选拍卖"
 
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "获取你的 Lil Noun"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -134,45 +139,46 @@ msgstr "隐藏详情"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "意大利语"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "加入社区，铸造你最喜欢的角色，拥抱去中心化创意的精彩混沌。"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
 msgstr "浅色模式"
 
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
-#: src/components/home-page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/layout.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/layout.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
+#: src/components/home-page.tsx
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns 拍卖"
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Lil Nouns 拍卖指南"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Lil Nouns 拍卖已经超越 Nouns 采用的传统英式拍卖，转而使用由 VRGDA（可变速率渐进式荷兰拍卖）驱动的荷兰式拍卖。"
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Lil Nouns 拍卖"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Lil Nouns 拍卖"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -185,19 +191,23 @@ msgstr "等待中..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "请尝试刷新页面，或在问题持续时联系支持。"
+msgstr "请尝试刷新页面，或在问题持续时联系支持团队。"
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "葡萄牙语"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "价格每 15 分钟下降一次，但永远不会低于 0.03 ETH 的底价。"
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "刷新"
+
+#: src/components/update-banner.tsx
+msgid "Reload"
+msgstr "重新加载"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -207,7 +217,7 @@ msgstr "选择 {0}"
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "选择特征来筛选拍卖列表"
+msgstr "选择特征以筛选拍卖列表"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
@@ -215,11 +225,11 @@ msgstr "显示详情"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr "出现问题"
+msgstr "出错了"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "西班牙语"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -235,12 +245,12 @@ msgstr "切换主题"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "特征是根据当前的代币 ID 和选定的区块哈希通过算法生成的。探索最近的 256 个区块并铸造，找到适合你的氛围。"
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "了解 Lil Nouns 的 VRGDA 拍卖如何运作，并发现铸造你最喜欢的 NFT 的方法。"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -256,7 +266,7 @@ msgstr "查看交易"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "VRGDA 会根据时间和需求动态调整 NFT 价格，从高价开始并逐步降低直到完成铸造，在没有固定间隔的情况下平衡紧迫性与公平性。"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

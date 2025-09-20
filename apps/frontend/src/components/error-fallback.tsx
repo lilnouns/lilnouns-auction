@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@repo/ui/components/card'
 import { Alert, AlertDescription, AlertTitle } from '@repo/ui/components/alert'
-import { Trans, useLingui } from '@lingui/react/macro'
+import { Trans } from '@lingui/react/macro'
 
 interface ErrorFallbackProps {
   error: Error
@@ -20,7 +20,6 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
   error,
   resetErrorBoundary,
 }) => {
-  const { t } = useLingui()
   const [showDetails, setShowDetails] = useState(false)
 
   return (
@@ -28,12 +27,14 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-red-600 dark:text-red-400">
-            {t`Something went wrong`}
+            <Trans>Something went wrong</Trans>
           </CardTitle>
         </CardHeader>
         <CardContent>
           <Alert variant="destructive" className="mb-4">
-            <AlertTitle>{t`Error`}</AlertTitle>
+            <AlertTitle>
+              <Trans>Error</Trans>
+            </AlertTitle>
             <AlertDescription>
               <Trans>
                 Please try refreshing the page or contact support if the issue
@@ -46,7 +47,11 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
             className="w-full mb-2"
             onClick={() => setShowDetails((prev) => !prev)}
           >
-            {showDetails ? t`Hide Details` : t`Show Details`}
+            {showDetails ? (
+              <Trans>Hide Details</Trans>
+            ) : (
+              <Trans>Show Details</Trans>
+            )}
           </Button>
           {showDetails && (
             <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm text-foreground">
@@ -57,7 +62,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({
             className="w-full bg-red-600 hover:bg-red-700"
             onClick={resetErrorBoundary}
           >
-            {t`Refresh`}
+            <Trans>Refresh</Trans>
           </Button>
         </CardContent>
       </Card>

@@ -41,7 +41,7 @@ import { useNextNoun } from '@/hooks/use-next-noun'
 import { formatEther } from 'viem'
 import React from 'react'
 import Link from 'next/link'
-import { useLingui } from '@lingui/react/macro'
+import { Trans } from '@lingui/react/macro'
 import { Loader2 } from 'lucide-react'
 import { round } from 'remeda'
 
@@ -56,7 +56,6 @@ export function AuctionSeedDialog({
   poolSeed,
   children,
 }: AuctionSeedDialogProps) {
-  const { t } = useLingui()
   const isDesktop = useMedia('(min-width: 768px)')
 
   const { isConnected, chainId } = useAccount()
@@ -141,7 +140,7 @@ export function AuctionSeedDialog({
     if (!isConnected) {
       return (
         <Button onClick={() => openDialog(walletOptions)} className="w-full">
-          {t`Connect Wallet`}
+          <Trans>Connect Wallet</Trans>
         </Button>
       )
     }
@@ -154,7 +153,7 @@ export function AuctionSeedDialog({
           disabled={isSwitchChainPending}
         >
           {isSwitchChainPending && <Loader2 className="animate-spin" />}
-          {t`Switch Network`}
+          <Trans>Switch Network</Trans>
         </Button>
       )
     }
@@ -171,11 +170,13 @@ export function AuctionSeedDialog({
             {(isConfirming || !isConfirmed) && (
               <Loader2 className="animate-spin" />
             )}
-            {isConfirming
-              ? t`Confirming...`
-              : isConfirmed
-                ? t`View Transaction`
-                : t`Pending...`}
+            {isConfirming ? (
+              <Trans>Confirming...</Trans>
+            ) : isConfirmed ? (
+              <Trans>View Transaction</Trans>
+            ) : (
+              <Trans>Pending...</Trans>
+            )}
           </Button>
         </Link>
       )
@@ -190,10 +191,12 @@ export function AuctionSeedDialog({
         {isPendingBuyNow ? (
           <>
             <Loader2 className="animate-spin" />
-            {t`Buying...`}
+            <Trans>Buying...</Trans>
           </>
         ) : (
-          t`Buy Now for ${round(Number(formatEther(price ?? 0n)), 5)} ETH`
+          <Trans>
+            Buy Now for {round(Number(formatEther(price ?? 0n)), 5)} ETH
+          </Trans>
         )}
       </Button>
     )
@@ -204,8 +207,12 @@ export function AuctionSeedDialog({
       <Dialog>
         <DialogTrigger asChild>{children}</DialogTrigger>
         <DialogContent>
-          <DialogTitle>{t`Noun Details`}</DialogTitle>
-          <DialogDescription>{t`View traits and pricing for this Noun`}</DialogDescription>
+          <DialogTitle>
+            <Trans>Noun Details</Trans>
+          </DialogTitle>
+          <DialogDescription>
+            <Trans>View traits and pricing for this Noun</Trans>
+          </DialogDescription>
           {content}
           <DialogFooter>{renderActionButton()}</DialogFooter>
         </DialogContent>
@@ -218,14 +225,20 @@ export function AuctionSeedDialog({
       <DrawerTrigger asChild>{children}</DrawerTrigger>
       <DrawerContent className="mx-4 max-h-[calc(100vh-20px)] mt-5">
         <DrawerHeader>
-          <DrawerTitle>{t`Noun Details`}</DrawerTitle>
-          <DrawerDescription>{t`View traits and pricing`}</DrawerDescription>
+          <DrawerTitle>
+            <Trans>Noun Details</Trans>
+          </DrawerTitle>
+          <DrawerDescription>
+            <Trans>View traits and pricing</Trans>
+          </DrawerDescription>
         </DrawerHeader>
         <div className="p-4 overflow-y-auto">{content}</div>
         <DrawerFooter>
           {renderActionButton()}
           <DrawerClose asChild>
-            <Button variant="outline">{t`Close`}</Button>
+            <Button variant="outline">
+              <Trans>Close</Trans>
+            </Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

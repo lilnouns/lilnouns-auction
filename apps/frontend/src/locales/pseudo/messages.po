@@ -63,6 +63,10 @@ msgstr "ɠŀȧşşḗş"
 msgid "Glasses"
 msgstr "Ɠŀȧşşḗş"
 
+#: src/components/update-banner.tsx
+msgid "A new version is live. "
+msgstr "Ȧ ƞḗẇ ṽḗřşīǿƞ īş ŀīṽḗ. "
+
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -74,21 +78,22 @@ msgstr "Ɓŭẏīƞɠ..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "Ƈŀīƈķ ǿƞ ȧ Ŀīŀ Ƞǿŭƞ ŧǿ ṽīḗẇ īŧş ŧřȧīŧş ȧƞḓ ƈŭřřḗƞŧ ṼȒƓḒȦ ƥřīƈḗ. Ƒīƞḓ ŧħḗ ǿƞḗ ŧħȧŧ şƥḗȧķş ŧǿ ẏǿŭ."
 
-#: src/components/user-guide-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+#: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Ƈŀǿşḗ"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "Ƈǿƞƒīřṁīƞɠ..."
 
-#: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "Ƈǿƞƞḗƈŧ Ẇȧŀŀḗŧ"
 
@@ -107,7 +112,7 @@ msgstr "Ḓīşƈǿƞƞḗƈŧ Ẇȧŀŀḗŧ"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "Ḗƞɠŀīşħ"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -115,18 +120,18 @@ msgstr "Ḗřřǿř"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "Ḗṽḗřẏ 12 şḗƈǿƞḓş, ȧ ƞḗẇ ʠŭīřķẏ Ŀīŀ Ƞǿŭƞ ƀḗƈǿṁḗş ȧṽȧīŀȧƀŀḗ, ŀḗŧŧīƞɠ ẏǿŭ ƈħǿǿşḗ ẇħḗƞ ŧħḗ ƥřīƈḗ ƒḗḗŀş řīɠħŧ."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr "Ƒīŀŧḗř Ȧŭƈŧīǿƞş"
 
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "Ɠḗŧ Ẏǿŭř Ŀīŀ Ƞǿŭƞ"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -134,45 +139,46 @@ msgstr "Ħīḓḗ Ḓḗŧȧīŀş"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "Īŧȧŀīȧƞ"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "Ĵǿīƞ ŧħḗ ƈǿṁṁŭƞīŧẏ, ṁīƞŧ ẏǿŭř ƒȧṽǿřīŧḗş, ȧƞḓ ḗṁƀřȧƈḗ ŧħḗ ḓḗŀīɠħŧƒŭŀ ƈħȧǿş ǿƒ ḓḗƈḗƞŧřȧŀīžḗḓ ƈřḗȧŧīṽīŧẏ."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
 msgstr "Ŀīɠħŧ"
 
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
-#: src/components/home-page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/layout.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/layout.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
+#: src/components/home-page.tsx
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ Ɠŭīḓḗ"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Ŀīŀ Ƞǿŭƞş ȧŭƈŧīǿƞş ħȧş ṁǿṽḗḓ ƀḗẏǿƞḓ ŧħḗ ŧřȧḓīŧīǿƞȧŀ Ḗƞɠŀīşħ ȧŭƈŧīǿƞş ƒǿřṁȧŧ ŭşḗḓ ƀẏ Ƞǿŭƞş, ȧḓǿƥŧīƞɠ ȧ Ḓŭŧƈħ ȧŭƈŧīǿƞ ƥǿẇḗřḗḓ ƀẏ ṼȒƓḒȦ (Ṽȧřīȧƀŀḗ Ȓȧŧḗ Ɠřȧḓŭȧŀ Ḓŭŧƈħ Ȧŭƈŧīǿƞ)."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
 msgstr "Ƞǿŭƞ"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Ƞǿŭƞ {ƞǿŭƞĪḓ} | Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Ƞǿŭƞ {0} | Ŀīŀ Ƞǿŭƞş Ȧŭƈŧīǿƞ"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -181,7 +187,7 @@ msgstr "Ƞǿŭƞ Ḓḗŧȧīŀş"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "Ƥḗƞḓīƞɠ..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
@@ -189,37 +195,41 @@ msgstr "Ƥŀḗȧşḗ ŧřẏ řḗƒřḗşħīƞɠ ŧħḗ ƥȧɠḗ ǿř ƈ�
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "Ƥǿřŧŭɠŭḗşḗ"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "Ƥřīƈḗş řḗḓŭƈḗ ḗṽḗřẏ 15 ṁīƞŭŧḗş ƀŭŧ ƞḗṽḗř ḓřǿƥ ƀḗŀǿẇ ŧħḗ řḗşḗřṽḗ ƥřīƈḗ ǿƒ 0.03 ḖŦĦ."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Řḗƒřḗşħ"
 
+#: src/components/update-banner.tsx
+msgid "Reload"
+msgstr "Ȓḗŀǿȧḓ"
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr "Şḗŀḗƈŧ {0}"
+msgstr "Ṡḗŀḗƈŧ {0}"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "Şḗŀḗƈŧ ŧřȧīŧş ŧǿ ƒīŀŧḗř ŧħḗ ȧŭƈŧīǿƞ ŀīşŧīƞɠş"
+msgstr "Ṡḗŀḗƈŧ ŧřȧīŧş ŧǿ ƒīŀŧḗř ŧħḗ ȧŭƈŧīǿƞ ŀīşŧīƞɠş"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr "Şħǿẇ Ḓḗŧȧīŀş"
+msgstr "Ṡħǿẇ Ḓḗŧȧīŀş"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr "Şǿḿḗŧħīƞɠ ẇḗƞŧ ẇřǿƞɠ"
+msgstr "Ṡǿṁḗŧħīƞɠ ẇḗƞŧ ẇřǿƞɠ"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "Ṡƥȧƞīşħ"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -235,12 +245,12 @@ msgstr "Ŧǿɠɠŀḗ ŧħḗḿḗ"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "Ŧřȧīŧş ȧřḗ ȧŀɠǿřīŧħṁīƈȧŀŀẏ ɠḗƞḗřȧŧḗḓ ŭşīƞɠ ŧħḗ ƈŭřřḗƞŧ ŧǿķḗƞ ĪḒ ȧƞḓ ȧ ƈħǿşḗƞ ƀŀǿƈķ ħȧşħ. Ḗẋƥŀǿřḗ ȧƞḓ ṁīƞŧ ƒřǿṁ ŧħḗ ŀȧşŧ 256 ƀŀǿƈķş ŧǿ ƒīƞḓ ŧħḗ ṽīƀḗ ŧħȧŧ şŭīŧş ẏǿŭ."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "Ŭƞḓḗřşŧȧƞḓ ħǿẇ ŧħḗ Ŀīŀ Ƞǿŭƞş ṼȒƓḒȦ ȧŭƈŧīǿƞş ẇǿřķ ȧƞḓ ḓīşƈǿṽḗř ħǿẇ ŧǿ ṁīƞŧ ẏǿŭř ƒȧṽǿřīŧḗ ȠƑŦş."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -256,7 +266,7 @@ msgstr "Ṽīḗẇ Ŧřȧƞşȧƈŧīǿƞ"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "ṼȒƓḒȦ ḓẏƞȧṁīƈȧŀŀẏ ȧḓĵŭşŧş ȠƑŦ ƥřīƈḗş ƀȧşḗḓ ǿƞ ŧīṁḗ ȧƞḓ ḓḗṁȧƞḓ, şŧȧřŧīƞɠ ħīɠħ ȧƞḓ ɠřȧḓŭȧŀŀẏ ḓřǿƥƥīƞɠ ŭƞŧīŀ ṁīƞŧīƞɠ ǿƈƈŭřş, ƀȧŀȧƞƈīƞɠ ŭřɠḗƞƈẏ ȧƞḓ ƒȧīřƞḗşş ẇīŧħǿŭŧ ƒīẋḗḓ īƞŧḗřṽȧŀş."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

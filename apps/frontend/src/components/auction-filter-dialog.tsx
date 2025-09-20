@@ -24,12 +24,11 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@repo/ui/components/drawer'
-import { useLingui } from '@lingui/react/macro'
+import { Trans } from '@lingui/react/macro'
 
 export const auctionFilter = 'auction-filter'
 
 export function AuctionFilterDialog() {
-  const { t } = useLingui()
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
   const isDesktop = useMedia('(min-width: 768px)')
@@ -49,9 +48,11 @@ export function AuctionFilterDialog() {
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>{t`Filter Auctions`}</DialogTitle>
+            <DialogTitle>
+              <Trans>Filter Auctions</Trans>
+            </DialogTitle>
             <DialogDescription>
-              {t`Select traits to filter the auction listings`}
+              <Trans>Select traits to filter the auction listings</Trans>
             </DialogDescription>
           </DialogHeader>
           <div className="">
@@ -76,9 +77,11 @@ export function AuctionFilterDialog() {
       </DrawerTrigger>
       <DrawerContent className="mx-4">
         <DrawerHeader>
-          <DrawerTitle>{t`Filter Auctions`}</DrawerTitle>
+          <DrawerTitle>
+            <Trans>Filter Auctions</Trans>
+          </DrawerTitle>
           <DrawerDescription>
-            {t`Select traits to filter the auction listings`}
+            <Trans>Select traits to filter the auction listings</Trans>
           </DrawerDescription>
         </DrawerHeader>
         <div className="p-4">
@@ -86,7 +89,9 @@ export function AuctionFilterDialog() {
         </div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
-            <Button variant="outline">{t`Close`}</Button>
+            <Button variant="outline">
+              <Trans>Close</Trans>
+            </Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

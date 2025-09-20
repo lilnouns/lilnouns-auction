@@ -63,6 +63,10 @@ msgstr "glasses"
 msgid "Glasses"
 msgstr "Glasses"
 
+#: src/components/update-banner.tsx
+msgid "A new version is live. "
+msgstr "A new version is live. "
+
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -76,9 +80,10 @@ msgstr "Buying..."
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 
-#: src/components/user-guide-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+#: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Close"
 
@@ -86,9 +91,9 @@ msgstr "Close"
 msgid "Confirming..."
 msgstr "Confirming..."
 
-#: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "Connect Wallet"
 
@@ -122,9 +127,9 @@ msgstr "Every 12 seconds, a new quirky Lil Noun becomes available, letting you c
 msgid "Filter Auctions"
 msgstr "Filter Auctions"
 
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
 msgstr "Get Your Lil Noun"
 
@@ -144,16 +149,16 @@ msgstr "Join the community, mint your favorites, and embrace the delightful chao
 msgid "Light"
 msgstr "Light"
 
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
-#: src/components/home-page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/layout.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/layout.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
+#: src/components/home-page.tsx
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns Auction"
 
@@ -170,9 +175,10 @@ msgstr "Lil Nouns auctions has moved beyond the traditional English auctions for
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Lil Nouns Auction"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Lil Nouns Auction"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -198,6 +204,10 @@ msgstr "Prices reduce every 15 minutes but never drop below the reserve price of
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Refresh"
+
+#: src/components/update-banner.tsx
+msgid "Reload"
+msgstr "Reload"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx

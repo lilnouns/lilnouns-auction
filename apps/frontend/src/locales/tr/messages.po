@@ -63,6 +63,10 @@ msgstr "gözlük"
 msgid "Glasses"
 msgstr "Gözlük"
 
+#: src/components/update-banner.tsx
+msgid "A new version is live. "
+msgstr "Yeni bir sürüm yayında. "
+
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -74,21 +78,22 @@ msgstr "Satın alınıyor..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "Bir Lil Noun'un özelliklerini ve mevcut VRGDA fiyatını görmek için üzerine tıklayın. Size hitap edeni bulun."
 
-#: src/components/user-guide-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+#: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Kapat"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "Onaylanıyor..."
 
-#: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "Cüzdanı Bağla"
 
@@ -107,7 +112,7 @@ msgstr "Cüzdan Bağlantısını Kes"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "İngilizce"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -115,18 +120,18 @@ msgstr "Hata"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "Her 12 saniyede yeni ve eğlenceli bir Lil Noun satışa çıkar, böylece fiyatın doğru geldiği anı seçebilirsiniz."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr "Açık Artırmaları Filtrele"
 
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "Lil Noun'unuzu alın"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -134,45 +139,46 @@ msgstr "Detayları Gizle"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "İtalyanca"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "Topluluğa katılın, favorilerinizi mint edin ve merkeziyetsiz yaratıcılığın keyifli kaosunu kucaklayın."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
 msgstr "Aydınlık"
 
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
-#: src/components/home-page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/layout.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/layout.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
+#: src/components/home-page.tsx
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "Lil Nouns Açık Artırması"
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Lil Nouns Açık Artırma Rehberi"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Lil Nouns açık artırmaları, Nouns'un kullandığı geleneksel İngiliz müzayede formatının ötesine geçerek VRGDA (Variable Rate Gradual Dutch Auction) ile desteklenen Hollanda usulü bir açık artırmayı benimsedi."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Lil Nouns Açık Artırması"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Lil Nouns Açık Artırması"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -181,22 +187,26 @@ msgstr "Noun Detayları"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "Beklemede..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "Lütfen sayfayı yenilemeyi deneyin veya sorun devam ederse destek ile iletişime geçin."
+msgstr "Lütfen sayfayı yenilemeyi deneyin veya sorun devam ederse destekle iletişime geçin."
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "Portekizce"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "Fiyatlar her 15 dakikada düşer ancak asla 0,03 ETH'lik taban fiyatın altına inmez."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
+msgstr "Yenile"
+
+#: src/components/update-banner.tsx
+msgid "Reload"
 msgstr "Yenile"
 
 #. placeholder {0}: label.toLowerCase()
@@ -211,7 +221,7 @@ msgstr "Açık artırma listelerini filtrelemek için özellikleri seçin"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr "Detayları Göster"
+msgstr "Detayları göster"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
@@ -219,7 +229,7 @@ msgstr "Bir şeyler ters gitti"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "İspanyolca"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -235,12 +245,12 @@ msgstr "Temayı Değiştir"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "Özellikler mevcut token kimliği ve seçilen blok karması kullanılarak algoritmik olarak oluşturulur. Size uygun hissi bulmak için son 256 bloğu keşfedin ve mint edin."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "Lil Nouns VRGDA açık artırmalarının nasıl çalıştığını anlayın ve favori NFT'lerinizi nasıl mint edeceğinizi keşfedin."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -256,7 +266,7 @@ msgstr "İşlemi Görüntüle"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "VRGDA, zamanı ve talebi baz alarak NFT fiyatlarını dinamik şekilde ayarlar; yüksekten başlayıp mint gerçekleşene kadar kademeli olarak düşürür ve sabit aralıklar olmadan aciliyeti ve adaleti dengeler."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

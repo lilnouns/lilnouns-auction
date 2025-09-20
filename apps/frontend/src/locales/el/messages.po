@@ -63,6 +63,10 @@ msgstr "γυαλιά"
 msgid "Glasses"
 msgstr "Γυαλιά"
 
+#: src/components/update-banner.tsx
+msgid "A new version is live. "
+msgstr "Μια νέα έκδοση είναι διαθέσιμη. "
+
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
 msgid "Buy Now for {0} ETH"
@@ -74,21 +78,22 @@ msgstr "Αγορά σε εξέλιξη..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "Κάνε κλικ σε ένα Lil Noun για να δεις τα χαρακτηριστικά του και την τρέχουσα τιμή VRGDA. Βρες αυτό που σου μιλάει."
 
-#: src/components/user-guide-dialog.tsx
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+#: src/components/user-guide-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Κλείσιμο"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "Γίνεται επιβεβαίωση..."
 
-#: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
+#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "Σύνδεση Πορτοφολιού"
 
@@ -107,7 +112,7 @@ msgstr "Αποσύνδεση Πορτοφολιού"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "Αγγλικά"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -115,18 +120,18 @@ msgstr "Σφάλμα"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "Κάθε 12 δευτερόλεπτα γίνεται διαθέσιμο ένα νέο ιδιαίτερο Lil Noun, επιτρέποντάς σου να επιλέξεις όταν η τιμή σου φαίνεται σωστή."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr "Φιλτράρισμα Δημοπρασιών"
 
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "Πάρε το Lil Noun σου"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -134,45 +139,46 @@ msgstr "Απόκρυψη Λεπτομερειών"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "Ιταλικά"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "Γίνε μέλος της κοινότητας, κόψε τα αγαπημένα σου και αγκάλιασε τη χαριτωμένη αταξία της αποκεντρωμένης δημιουργικότητας."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
 msgstr "Φωτεινό"
 
-#: src/components/navbar.tsx
-#: src/components/navbar.tsx
-#: src/components/home-page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/page.tsx
-#: src/app/[lang]/layout.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
-#: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/frames/page.tsx
+#: src/app/[lang]/layout.tsx
+#: src/app/[lang]/page.tsx
+#: src/app/[lang]/page.tsx
+#: src/components/home-page.tsx
+#: src/components/navbar.tsx
+#: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
 msgstr "Δημοπρασία Lil Nouns"
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Οδηγός δημοπρασίας Lil Nouns"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Οι δημοπρασίες Lil Nouns έχουν ξεπεράσει το παραδοσιακό αγγλικό μοντέλο που χρησιμοποιείται από τους Nouns, υιοθετώντας μια ολλανδική δημοπρασία με τη δύναμη της VRGDA (Variable Rate Gradual Dutch Auction)."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
 msgstr "Noun"
 
+#. placeholder {0}: nounId.toString()
 #: src/components/home-page.tsx
-msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Δημοπρασία Lil Nouns"
+msgid "Noun {0} | Lil Nouns Auction"
+msgstr "Noun {0} | Δημοπρασία Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -181,45 +187,49 @@ msgstr "Λεπτομέρειες Noun"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "Σε εκκρεμότητα..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "Δοκιμάστε να ανανεώσετε τη σελίδα ή επικοινωνήστε με την υποστήριξη αν το πρόβλημα παραμένει."
+msgstr "Δοκίμασε να ανανεώσεις τη σελίδα ή επικοινώνησε με την υποστήριξη αν το πρόβλημα συνεχιστεί."
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "Πορτογαλικά"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "Οι τιμές μειώνονται κάθε 15 λεπτά αλλά δεν πέφτουν ποτέ κάτω από την τιμή κράτησης των 0,03 ETH."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Ανανέωση"
 
+#: src/components/update-banner.tsx
+msgid "Reload"
+msgstr "Επαναφόρτωση"
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr ""
+msgstr "Επίλεξε {0}"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr ""
+msgstr "Επίλεξε χαρακτηριστικά για να φιλτράρεις τις καταχωρήσεις της δημοπρασίας"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr ""
+msgstr "Προβολή λεπτομερειών"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr ""
+msgstr "Κάτι πήγε στραβά"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "Ισπανικά"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -235,12 +245,12 @@ msgstr "Εναλλαγή Θέματος"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "Τα χαρακτηριστικά δημιουργούνται αλγοριθμικά χρησιμοποιώντας το τρέχον αναγνωριστικό token και ένα επιλεγμένο hash block. Εξερεύνησε και κόψε από τα τελευταία 256 blocks για να βρεις αυτό που σου ταιριάζει."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "Μάθε πώς λειτουργούν οι δημοπρασίες VRGDA των Lil Nouns και ανακάλυψε πώς να κόψεις τα αγαπημένα σου NFTs."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -256,7 +266,7 @@ msgstr "Προβολή Συναλλαγής"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "Η VRGDA προσαρμόζει δυναμικά τις τιμές των NFT με βάση τον χρόνο και τη ζήτηση, ξεκινώντας ψηλά και μειώνοντας σταδιακά μέχρι να γίνει το mint, εξισορροπώντας την αμεσότητα και τη δικαιοσύνη χωρίς σταθερά διαστήματα."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
