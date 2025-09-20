@@ -1,6 +1,7 @@
 import { Trans } from '@lingui/react/macro'
 import { useDialogStore } from '@/stores/dialog-store'
 import { useMedia } from 'react-use'
+import { usePathname } from 'next/navigation'
 import {
   Drawer,
   DrawerClose,
@@ -13,7 +14,7 @@ import {
 } from '@repo/ui/components/drawer'
 import { Button } from '@repo/ui/components/button'
 import { CircleHelpIcon } from 'lucide-react'
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -24,16 +25,58 @@ import {
 } from '@repo/ui/components/dialog'
 
 export const dialogReference = 'user-guide'
+const STORAGE_KEY = 'user-guide-last-opened-at'
+const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000
 
 export function UserGuideDialog() {
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
   const isDesktop = useMedia('(min-width: 768px)')
+  const pathname = usePathname()
+
+  const markGuideSeen = useCallback(() => {
+    if (typeof window === 'undefined') return
+    try {
+      localStorage.setItem(STORAGE_KEY, Date.now().toString())
+    } catch (error) {
+      console.error('Failed to persist user guide state', error)
+    }
+  }, [])
 
   const handleOpenChange = useCallback(
-    (open: boolean) =>
-      open ? openDialog(dialogReference) : closeDialog(dialogReference),
-    [openDialog, closeDialog],
+    (open: boolean) => {
+      if (open) {
+        openDialog(dialogReference)
+        markGuideSeen()
+      } else {
+        closeDialog(dialogReference)
+      }
+    },
+    [openDialog, closeDialog, markGuideSeen],
   )
+
+  useEffect(() => {
+    if (!pathname) return
+
+    const segments = pathname.split('/').filter(Boolean)
+    // Expect paths like `/en` for homepage; ignore other routes.
+    const isHomepage = segments.length <= 1
+    if (!isHomepage) return
+
+    if (typeof window === 'undefined') return
+
+    const lastOpenedAtRaw = localStorage.getItem(STORAGE_KEY)
+    const lastOpenedAt = lastOpenedAtRaw ? Number(lastOpenedAtRaw) : undefined
+    const now = Date.now()
+    const shouldOpenAutomatically =
+      !lastOpenedAt ||
+      Number.isNaN(lastOpenedAt) ||
+      now - lastOpenedAt > SEVEN_DAYS_MS
+
+    if (shouldOpenAutomatically) {
+      openDialog(dialogReference)
+      markGuideSeen()
+    }
+  }, [pathname, openDialog, markGuideSeen])
 
   const content = (
     <div className="flex flex-col gap-4 text-muted-foreground">
