@@ -3,6 +3,7 @@ import { useReadContract } from 'wagmi'
 import { Address } from 'viem'
 import { mainnet, sepolia } from 'wagmi/chains'
 import { prop } from 'remeda'
+import { useIdleState } from '@/contexts/idle-context'
 
 interface UseNextNounResult {
   nounId: bigint | undefined
@@ -92,10 +93,12 @@ const auctionContract = {
 }
 
 export function useNextNoun(): UseNextNounResult {
+  const { isIdle } = useIdleState()
+
   const { data, isLoading, isError, error } = useReadContract({
     ...auctionContract,
     functionName: 'fetchNextNoun',
-    query: { enabled: true },
+    query: { enabled: !isIdle },
   })
 
   const nounId = useMemo(() => (data ? data[0] : undefined), [data])
