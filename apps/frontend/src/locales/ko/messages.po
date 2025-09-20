@@ -65,7 +65,7 @@ msgstr "안경"
 
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
-msgstr ""
+msgstr "새 버전이 지금 공개되었습니다. "
 
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
@@ -78,7 +78,7 @@ msgstr "구매 중..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "Lil Noun을 클릭해 특성과 현재 VRGDA 가격을 확인하고, 마음에 드는 친구를 찾아보세요."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -88,7 +88,7 @@ msgstr "닫기"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "확인 중..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -111,7 +111,7 @@ msgstr "지갑 연결 해제"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "영어"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -119,7 +119,7 @@ msgstr "오류"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "12초마다 새로운 개성 넘치는 Lil Noun이 등장하므로, 가격이 적당하다고 느껴질 때 선택할 수 있습니다."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -130,7 +130,7 @@ msgstr "경매 필터"
 #: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "나만의 Lil Noun 받기"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -138,11 +138,11 @@ msgstr "세부 정보 숨기기"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "이탈리아어"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "커뮤니티에 참여해 마음에 드는 것을 민트하고, 탈중앙화 창작의 즐거운 혼돈을 만끽하세요."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -164,11 +164,11 @@ msgstr "릴 나운즈 경매"
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Lil Nouns 경매 가이드"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Lil Nouns 경매는 Nouns가 사용하던 전통적인 잉글리시 경매 형식을 넘어, VRGDA(Variable Rate Gradual Dutch Auction)가 구동하는 더치 경매를 채택했습니다."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -176,7 +176,7 @@ msgstr "나운"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "나운 {nounId} | 릴 나운즈 경매"
+msgstr "Noun {nounId} | Lil Nouns 경매"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -185,19 +185,19 @@ msgstr "나운 세부 정보"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "대기 중..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "페이지를 새로 고침하거나 문제가 지속되면 지원팀에 문의하세요."
+msgstr "페이지를 새로고침하거나 문제가 지속되면 지원 팀에 문의해 주세요."
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "포르투갈어"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "가격은 15분마다 내려가지만 0.03 ETH의 최저가보다 낮아지지는 않습니다."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
@@ -205,7 +205,7 @@ msgstr "새로 고침"
 
 #: src/components/update-banner.tsx
 msgid "Reload"
-msgstr ""
+msgstr "새로고침"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -215,7 +215,7 @@ msgstr "{0} 선택"
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "경매 목록을 필터링할 특성 선택"
+msgstr "경매 목록을 필터링하려면 특성을 선택하세요"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
@@ -227,7 +227,7 @@ msgstr "문제가 발생했습니다"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "스페인어"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -243,12 +243,12 @@ msgstr "테마 전환"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "특성은 현재 토큰 ID와 선택한 블록 해시를 사용해 알고리즘으로 생성됩니다. 당신에게 어울리는 분위기를 찾기 위해 최근 256개의 블록을 탐색하고 민트하세요."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "Lil Nouns VRGDA 경매가 어떻게 작동하는지 이해하고, 좋아하는 NFT를 민트하는 방법을 알아보세요."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -264,7 +264,7 @@ msgstr "거래 보기"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "VRGDA는 시간과 수요에 따라 NFT 가격을 동적으로 조정하며, 높은 가격에서 시작해 민트가 이루어질 때까지 점차 낮춰 고정 간격 없이 긴급성과 공정성을 균형 잡습니다."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

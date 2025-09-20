@@ -65,7 +65,7 @@ msgstr "Gözlük"
 
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
-msgstr ""
+msgstr "Hay una nueva versión disponible. "
 
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
@@ -78,7 +78,7 @@ msgstr "Satın alınıyor..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "Haz clic en un Lil Noun para ver sus rasgos y el precio VRGDA actual. Encuentra el que te hable."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -88,7 +88,7 @@ msgstr "Kapat"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "Confirmando..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -111,7 +111,7 @@ msgstr "Cüzdan Bağlantısını Kes"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -119,7 +119,7 @@ msgstr "Hata"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "Cada 12 segundos aparece un nuevo y peculiar Lil Noun, permitiéndote elegir cuando el precio se sienta correcto."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -130,7 +130,7 @@ msgstr "Açık Artırmaları Filtrele"
 #: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "Consigue tu Lil Noun"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -138,11 +138,11 @@ msgstr "Detayları Gizle"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "Únete a la comunidad, acuña tus favoritos y abraza el delicioso caos de la creatividad descentralizada."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -164,11 +164,11 @@ msgstr "Lil Nouns Açık Artırması"
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Guía de la subasta de Lil Nouns"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Las subastas de Lil Nouns han dejado atrás el formato tradicional de subastas inglesas usado por Nouns, adoptando una subasta holandesa impulsada por VRGDA (Variable Rate Gradual Dutch Auction)."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -176,7 +176,7 @@ msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr "Noun {nounId} | Lil Nouns Açık Artırması"
+msgstr "Noun {nounId} | Subasta de Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -185,19 +185,19 @@ msgstr "Noun Detayları"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "Pendiente..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "Lütfen sayfayı yenilemeyi deneyin veya sorun devam ederse destek ile iletişime geçin."
+msgstr "Prueba a actualizar la página o contacta con soporte si el problema persiste."
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugués"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "Los precios bajan cada 15 minutos pero nunca caen por debajo del precio de reserva de 0,03 ETH."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
@@ -205,29 +205,29 @@ msgstr "Yenile"
 
 #: src/components/update-banner.tsx
 msgid "Reload"
-msgstr ""
+msgstr "Recargar"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr "{0} seç"
+msgstr "Selecciona {0}"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "Açık artırma listelerini filtrelemek için özellikleri seçin"
+msgstr "Selecciona rasgos para filtrar los listados de la subasta"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr "Detayları Göster"
+msgstr "Mostrar detalles"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr "Bir şeyler ters gitti"
+msgstr "Algo salió mal"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -243,12 +243,12 @@ msgstr "Temayı Değiştir"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "Los rasgos se generan algorítmicamente usando el ID del token actual y un hash de bloque elegido. Explora y acuña de los últimos 256 bloques para encontrar la vibra que te convenga."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "Entiende cómo funcionan las subastas VRGDA de Lil Nouns y descubre cómo acuñar tus NFTs favoritos."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -264,7 +264,7 @@ msgstr "İşlemi Görüntüle"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "VRGDA ajusta dinámicamente los precios de los NFT según el tiempo y la demanda, comenzando alto y bajando gradualmente hasta que se realiza la acuñación, equilibrando la urgencia y la equidad sin intervalos fijos."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

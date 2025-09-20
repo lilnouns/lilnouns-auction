@@ -65,7 +65,7 @@ msgstr "Óculos"
 
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
-msgstr ""
+msgstr "Uma nova versão está no ar. "
 
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
@@ -78,7 +78,7 @@ msgstr "Comprando..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "Clique em um Lil Noun para ver seus traços e o preço VRGDA atual. Encontre aquele que fala com você."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -88,7 +88,7 @@ msgstr "Fechar"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "Confirmando..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -111,7 +111,7 @@ msgstr "Desconectar Carteira"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "Inglês"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -119,7 +119,7 @@ msgstr "Erro"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "A cada 12 segundos, um novo e peculiar Lil Noun fica disponível, permitindo que você escolha quando o preço parecer certo."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -130,7 +130,7 @@ msgstr "Filtrar Leilões"
 #: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "Garanta seu Lil Noun"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -138,11 +138,11 @@ msgstr "Ocultar Detalhes"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "Junte-se à comunidade, faça o mint dos seus favoritos e abrace o delicioso caos da criatividade descentralizada."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -164,11 +164,11 @@ msgstr "Leilão Lil Nouns"
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Guia do Leilão Lil Nouns"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Os leilões Lil Nouns deixaram o formato inglês tradicional usado pelos Nouns e adotaram um leilão holandês movido por VRGDA (Variable Rate Gradual Dutch Auction)."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -185,7 +185,7 @@ msgstr "Detalhes do Noun"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "Pendente..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
@@ -193,11 +193,11 @@ msgstr "Tente atualizar a página ou entre em contato com o suporte se o problem
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "Português"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "Os preços caem a cada 15 minutos, mas nunca ficam abaixo do valor de reserva de 0,03 ETH."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
@@ -205,7 +205,7 @@ msgstr "Atualizar"
 
 #: src/components/update-banner.tsx
 msgid "Reload"
-msgstr ""
+msgstr "Recarregar"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -215,11 +215,11 @@ msgstr "Selecionar {0}"
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "Selecione atributos para filtrar os leilões"
+msgstr "Selecione traços para filtrar os anúncios do leilão"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr "Mostrar Detalhes"
+msgstr "Mostrar detalhes"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
@@ -227,7 +227,7 @@ msgstr "Algo deu errado"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "Espanhol"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -243,12 +243,12 @@ msgstr "Alternar tema"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "Os traços são gerados algoritmicamente usando o ID de token atual e um hash de bloco escolhido. Explore e faça mint nos últimos 256 blocos para encontrar a vibe que combina com você."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "Entenda como funcionam os leilões VRGDA do Lil Nouns e descubra como fazer mint dos seus NFTs favoritos."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -264,7 +264,7 @@ msgstr "Ver Transação"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "A VRGDA ajusta dinamicamente os preços dos NFTs com base no tempo e na demanda, começando alto e diminuindo gradualmente até ocorrer o mint, equilibrando urgência e justiça sem intervalos fixos."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

@@ -65,7 +65,7 @@ msgstr "عینک"
 
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
-msgstr ""
+msgstr "نسخه‌ی جدیدی اکنون منتشر شده است. "
 
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
@@ -78,7 +78,7 @@ msgstr "در حال خرید..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "روی یک Lil Noun کلیک کنید تا ویژگی‌های آن و قیمت فعلی VRGDA را ببینید. آنی را پیدا کنید که با شما صحبت می‌کند."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -88,7 +88,7 @@ msgstr "بستن"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "در حال تأیید..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -111,7 +111,7 @@ msgstr "قطع اتصال کیف پول"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "انگلیسی"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -119,7 +119,7 @@ msgstr "خطا"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "هر ۱۲ ثانیه یک Lil Noun جدید و بانمک در دسترس می‌شود و به شما اجازه می‌دهد زمانی که قیمت مناسب به‌نظر می‌رسد انتخاب کنید."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -130,7 +130,7 @@ msgstr "فیلتر مزایده‌ها"
 #: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "Lil Noun خود را دریافت کنید"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -138,11 +138,11 @@ msgstr "مخفی کردن جزئیات"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "ایتالیایی"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "به جامعه بپیوندید، موردهای محبوب خود را مینت کنید و هرج‌ومرج دلنشین خلاقیت غیرمتمرکز را در آغوش بگیرید."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -164,11 +164,11 @@ msgstr "مزایده لیل  نانز"
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "راهنمای مزایده Lil Nouns"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "مزایده‌های Lil Nouns فراتر از قالب سنتی مزایده انگلیسی که توسط Nouns استفاده می‌شد رفته‌اند و اکنون مزایده‌ای هلندی با قدرت VRGDA (مزایده هلندی تدریجی با نرخ متغیر) را پذیرفته‌اند."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -176,7 +176,7 @@ msgstr " نان"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr " نان {nounId} | مزایده لیل  نانز"
+msgstr "Noun {nounId} | مزایده Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -185,19 +185,19 @@ msgstr "جزئیات  نان"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "در انتظار..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "لطفاً صفحه را بازنشانی کنید یا در صورت ادامه مشکل با پشتیبانی تماس بگیرید."
+msgstr "لطفاً صفحه را تازه‌سازی کنید یا در صورت تداوم مشکل با پشتیبانی تماس بگیرید."
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "پرتغالی"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "قیمت‌ها هر ۱۵ دقیقه کاهش می‌یابند اما هرگز زیر قیمت رزرو ۰٫۰۳ ETH نمی‌روند."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
@@ -205,7 +205,7 @@ msgstr "بازنشانی"
 
 #: src/components/update-banner.tsx
 msgid "Reload"
-msgstr ""
+msgstr "بارگذاری مجدد"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
@@ -215,7 +215,7 @@ msgstr "انتخاب {0}"
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "ویژگی‌های مورد نظر را برای فیلتر کردن مزایده‌ها انتخاب کنید"
+msgstr "برای فیلتر کردن فهرست‌های مزایده ویژگی‌ها را انتخاب کنید"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
@@ -223,11 +223,11 @@ msgstr "نمایش جزئیات"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr "مشکلی پیش آمد"
+msgstr "اشتباهی رخ داد"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "اسپانیایی"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -243,12 +243,12 @@ msgstr "تغییر تم"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "ویژگی‌ها به‌صورت الگوریتمی با استفاده از شناسه توکن فعلی و یک هش بلوک انتخابی تولید می‌شوند. برای یافتن حس مناسب، آخرین ۲۵۶ بلوک را جست‌وجو و مینت کنید."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "بفهمید مزایده‌های VRGDA در Lil Nouns چگونه کار می‌کنند و چگونه NFTهای مورد علاقه‌تان را مینت کنید."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -264,7 +264,7 @@ msgstr "مشاهده تراکنش"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "VRGDA قیمت NFT را بر اساس زمان و تقاضا به‌صورت پویا تنظیم می‌کند، از قیمت بالا شروع کرده و به‌تدریج تا زمان مینت کاهش می‌دهد تا بدون بازه‌های ثابت، فوریت و انصاف را متعادل کند."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

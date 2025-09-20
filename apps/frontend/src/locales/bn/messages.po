@@ -65,7 +65,7 @@ msgstr "চশমা"
 
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
-msgstr ""
+msgstr "একটি নতুন সংস্করণ এখন লাইভ। "
 
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
@@ -78,7 +78,7 @@ msgstr "কিনছেন..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "একটি Lil Noun-এ ক্লিক করে তার বৈশিষ্ট্য ও বর্তমান VRGDA মূল্য দেখুন। যে টি আপনার সঙ্গে কথা বলে সেটিই খুঁজে নিন।"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -88,7 +88,7 @@ msgstr "বন্ধ করুন"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "নিশ্চিত করা হচ্ছে..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -111,7 +111,7 @@ msgstr "ওয়ালেট সংযোগ বিচ্ছিন্ন কর
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "ইংরেজি"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -119,7 +119,7 @@ msgstr "ত্রুটি"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "প্রতি ১২ সেকেন্ডে একটি নতুন মজার Lil Noun উপলভ্য হয়, যাতে দাম যথাযথ মনে হলে আপনি নির্বাচন করতে পারেন।"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -130,7 +130,7 @@ msgstr "নিলাম ফিল্টার করুন"
 #: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "আপনার Lil Noun সংগ্রহ করুন"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -138,11 +138,11 @@ msgstr "বিবরণ লুকান"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "ইতালীয়"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "সম্প্রদায়ে যোগ দিন, আপনার পছন্দেরগুলো মিন্ট করুন এবং বিকেন্দ্রীকৃত সৃজনশীলতার মনোরম বিশৃঙ্খলাকে আলিঙ্গন করুন।"
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -164,11 +164,11 @@ msgstr "লিল নাউনস নিলাম"
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Lil Nouns নিলাম নির্দেশিকা"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Lil Nouns নিলামগুলি Nouns-এ ব্যবহৃত ঐতিহ্যবাহী ইংরেজি নিলামের ধরন থেকে সরে এসে VRGDA (Variable Rate Gradual Dutch Auction) দ্বারা চালিত একটি ডাচ নিলাম গ্রহণ করেছে।"
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -176,7 +176,7 @@ msgstr "নাউন"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr ""
+msgstr "Noun {nounId} | Lil Nouns নিলাম"
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -185,19 +185,19 @@ msgstr "নাউনের বিবরণ"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "অপেক্ষমাণ..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr ""
+msgstr "দয়া করে পেজটি রিফ্রেশ করে দেখুন অথবা সমস্যা থাকলে সহায়তায় যোগাযোগ করুন।"
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "পর্তুগিজ"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "প্রতি ১৫ মিনিটে দাম কমে কিন্তু কখনও ০.০৩ ETH রিজার্ভ দামের নিচে নেমে যায় না।"
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
@@ -205,29 +205,29 @@ msgstr "রিফ্রেশ করুন"
 
 #: src/components/update-banner.tsx
 msgid "Reload"
-msgstr ""
+msgstr "রিলোড"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr ""
+msgstr "{0} নির্বাচন করুন"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr ""
+msgstr "নিলামের তালিকা ফিল্টার করতে বৈশিষ্ট্য নির্বাচন করুন"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
-msgstr ""
+msgstr "বিস্তারিত দেখুন"
 
 #: src/components/error-fallback.tsx
 msgid "Something went wrong"
-msgstr ""
+msgstr "কিছু ভুল হয়েছে"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "স্প্যানিশ"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -243,12 +243,12 @@ msgstr "থিম পরিবর্তন করুন"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "বৈশিষ্ট্যগুলি বর্তমান টোকেন আইডি ও নির্বাচিত ব্লক হ্যাশ ব্যবহার করে অ্যালগরিদমিকভাবে তৈরি করা হয়। আপনার উপযুক্ত অনুভূতি খুঁজে পেতে শেষ ২৫৬ ব্লক থেকে অনুসন্ধান ও মিন্ট করুন।"
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "Lil Nouns VRGDA নিলাম কীভাবে কাজ করে তা বুঝুন এবং আপনার প্রিয় NFT কীভাবে মিন্ট করবেন তা জানুন।"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -264,7 +264,7 @@ msgstr "লেনদেন দেখুন"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "VRGDA সময় ও চাহিদার ভিত্তিতে NFT-র দাম গতিশীলভাবে সমন্বয় করে, উচ্চ দামে শুরু করে এবং মিন্ট হওয়া পর্যন্ত ধীরে ধীরে কমায়, স্থির ব্যবধান ছাড়াই জরুরিতা ও ন্যায্যতার ভারসাম্য রাখে।"
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx

@@ -65,7 +65,7 @@ msgstr "Brille"
 
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
-msgstr ""
+msgstr "Eine neue Version ist live. "
 
 #. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
@@ -78,7 +78,7 @@ msgstr "Wird gekauft..."
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
-msgstr ""
+msgstr "Klicke auf einen Lil Noun, um seine Merkmale und den aktuellen VRGDA-Preis zu sehen. Finde den, der zu dir spricht."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -88,7 +88,7 @@ msgstr "Schließen"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
-msgstr ""
+msgstr "Bestätigen..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
@@ -111,7 +111,7 @@ msgstr "Wallet trennen"
 
 #: src/components/language-switcher.tsx
 msgid "English"
-msgstr ""
+msgstr "Englisch"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
@@ -119,7 +119,7 @@ msgstr "Fehler"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
-msgstr ""
+msgstr "Alle 12 Sekunden wird ein neuer quirliger Lil Noun verfügbar, sodass du wählen kannst, wann sich der Preis richtig anfühlt."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
@@ -130,7 +130,7 @@ msgstr "Auktionen filtern"
 #: src/app/[lang]/frames/page.tsx
 #: src/app/[lang]/page.tsx
 msgid "Get Your Lil Noun"
-msgstr ""
+msgstr "Sichere dir deinen Lil Noun"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
@@ -138,11 +138,11 @@ msgstr "Details ausblenden"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
-msgstr ""
+msgstr "Italienisch"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Join the community, mint your favorites, and embrace the delightful chaos of decentralized creativity."
-msgstr ""
+msgstr "Schließe dich der Community an, präge deine Favoriten und genieße das herrliche Chaos dezentraler Kreativität."
 
 #: src/components/mode-toggle.tsx
 msgid "Light"
@@ -164,11 +164,11 @@ msgstr "Lil Nouns Auktion"
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
-msgstr ""
+msgstr "Lil Nouns Auktionsleitfaden"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
-msgstr ""
+msgstr "Die Lil Nouns Auktionen haben das traditionelle englische Auktionsformat von Nouns hinter sich gelassen und setzen nun auf eine von VRGDA (Variable Rate Gradual Dutch Auction) angetriebene holländische Auktion."
 
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
@@ -185,19 +185,19 @@ msgstr "Noun-Details"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
-msgstr ""
+msgstr "Ausstehend..."
 
 #: src/components/error-fallback.tsx
 msgid "Please try refreshing the page or contact support if the issue persists."
-msgstr "Bitte versuchen Sie, die Seite zu aktualisieren oder wenden Sie sich an den Support, falls das Problem weiterhin besteht."
+msgstr "Bitte lade die Seite neu oder kontaktiere den Support, falls das Problem weiterhin besteht."
 
 #: src/components/language-switcher.tsx
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugiesisch"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
-msgstr ""
+msgstr "Die Preise sinken alle 15 Minuten, fallen jedoch nie unter den Mindestpreis von 0,03 ETH."
 
 #: src/components/error-fallback.tsx
 msgid "Refresh"
@@ -205,17 +205,17 @@ msgstr "Aktualisieren"
 
 #: src/components/update-banner.tsx
 msgid "Reload"
-msgstr ""
+msgstr "Neu laden"
 
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
-msgstr "{0} auswählen"
+msgstr "Wähle {0}"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
-msgstr "Wählen Sie Merkmale, um die Auktionen zu filtern"
+msgstr "Wähle Merkmale, um die Auktionsangebote zu filtern"
 
 #: src/components/error-fallback.tsx
 msgid "Show Details"
@@ -227,7 +227,7 @@ msgstr "Etwas ist schiefgelaufen"
 
 #: src/components/language-switcher.tsx
 msgid "Spanish"
-msgstr ""
+msgstr "Spanisch"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
@@ -243,12 +243,12 @@ msgstr "Thema umschalten"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
-msgstr ""
+msgstr "Die Merkmale werden algorithmisch anhand der aktuellen Token-ID und eines ausgewählten Block-Hashs erzeugt. Durchsuche und präge aus den letzten 256 Blöcken, um den passenden Vibe zu finden."
 
 #: src/components/user-guide-dialog.tsx
 #: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
-msgstr ""
+msgstr "Verstehe, wie die Lil Nouns VRGDA Auktionen funktionieren, und finde heraus, wie du deine Lieblings-NFTs prägen kannst."
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing"
@@ -264,7 +264,7 @@ msgstr "Transaktion anzeigen"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
-msgstr ""
+msgstr "VRGDA passt die NFT-Preise dynamisch an Zeit und Nachfrage an, beginnt hoch und fällt schrittweise, bis geprägt wird, und balanciert so Dringlichkeit und Fairness ohne feste Intervalle."
 
 #: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
