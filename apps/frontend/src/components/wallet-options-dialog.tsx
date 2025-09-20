@@ -24,7 +24,7 @@ import {
 import { WalletIcon } from 'lucide-react'
 import { useDialogStore } from '@/stores/dialog-store'
 import { useMedia } from 'react-use'
-import { useLingui } from '@lingui/react/macro'
+import { Trans, useLingui } from '@lingui/react/macro'
 import { defaultTo, find } from 'remeda'
 
 interface Eip1193Provider {
@@ -34,10 +34,9 @@ interface Eip1193Provider {
 export const walletOptions = 'wallet-options'
 
 export const WalletOptionsDialog = () => {
-  const { t } = useLingui()
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
 
-  const { connectors, connect } = useConnect()
+  const { connectors, connect, status } = useConnect()
   const { isConnected, address } = useAccount()
   const { disconnect } = useDisconnect()
 
@@ -79,7 +78,7 @@ export const WalletOptionsDialog = () => {
             className="w-full"
             onClick={() => disconnect()}
           >
-            {t`Disconnect Wallet`}
+            <Trans>Disconnect Wallet</Trans>
           </Button>
         </div>
       ) : (
@@ -112,12 +111,22 @@ export const WalletOptionsDialog = () => {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>
-              {isConnected ? t`Wallet Connected` : t`Connect Wallet`}
+              {isConnected ? (
+                <Trans>Wallet Connected</Trans>
+              ) : (
+                <Trans>Connect Wallet</Trans>
+              )}
             </DialogTitle>
             <DialogDescription>
-              {isConnected
-                ? t`Your wallet is connected. Manage your wallet connection below.`
-                : t`Connect with one of our available wallet providers.`}
+              {isConnected ? (
+                <Trans>
+                  Your wallet is connected. Manage your wallet connection below.
+                </Trans>
+              ) : (
+                <Trans>
+                  Connect with one of our available wallet providers.
+                </Trans>
+              )}
             </DialogDescription>
           </DialogHeader>
           {content}
@@ -141,18 +150,28 @@ export const WalletOptionsDialog = () => {
       <DrawerContent className="mx-4">
         <DrawerHeader>
           <DrawerTitle>
-            {isConnected ? t`Wallet Connected` : t`Connect Wallet`}
+            {isConnected ? (
+              <Trans>Wallet Connected</Trans>
+            ) : (
+              <Trans>Connect Wallet</Trans>
+            )}
           </DrawerTitle>
           <DrawerDescription>
-            {isConnected
-              ? t`Your wallet is connected. Manage your wallet connection below.`
-              : t`Connect with one of our available wallet providers.`}
+            {isConnected ? (
+              <Trans>
+                Your wallet is connected. Manage your wallet connection below.
+              </Trans>
+            ) : (
+              <Trans>Connect with one of our available wallet providers.</Trans>
+            )}
           </DrawerDescription>
         </DrawerHeader>
         <div className="p-4 pb-0">{content}</div>
         <DrawerFooter>
           <DrawerClose asChild>
-            <Button variant="outline">Close</Button>
+            <Button variant="outline">
+              <Trans>Close</Trans>
+            </Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

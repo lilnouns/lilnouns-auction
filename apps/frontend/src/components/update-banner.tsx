@@ -1,9 +1,8 @@
 import { Banner } from '@/components/banner'
-import { useLingui } from '@lingui/react/macro'
+import { Trans } from '@lingui/react/macro'
 import { useEffect, useState } from 'react'
 
 export function UpdateBanner() {
-  const { t } = useLingui()
   const [showBanner, setShowBanner] = useState(false)
   const [currentBuildId, setCurrentBuildId] = useState<string | null>(null)
 
@@ -77,9 +76,9 @@ export function UpdateBanner() {
       title="🚨 Update Available"
       description={
         <span className="text-xs text-neutral-600 dark:text-neutral-400">
-          {t`A new version is live. `}{' '}
+          <Trans>A new version is live. </Trans>{' '}
           <button onClick={handleReload} className="font-semibold underline">
-            {t`Reload`}
+            <Trans>Reload</Trans>
           </button>
           .
         </span>
