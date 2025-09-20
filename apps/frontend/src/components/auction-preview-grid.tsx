@@ -3,7 +3,7 @@
 import { PoolSeed, Seed } from '@/types'
 
 import { usePoolStore } from '@/stores/pool-store'
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 
 import { getNounSeedFromBlockHash } from '@repo/assets/index'
 import { useTraitFilterStore } from '@/stores/trait-filter-store'
@@ -12,8 +12,9 @@ import { Card, CardContent } from '@repo/ui/components/card'
 import { Skeleton } from '@repo/ui/components/skeleton'
 import { AuctionSeedDialog } from '@/components/auction-seed-dialog'
 import { AuctionSeedImage } from '@/components/auction-seed-image'
-import { times } from 'remeda'
+import { filter, isTruthy, map, pipe, times } from 'remeda'
 import { useBlocks } from '@/hooks/use-blocks'
+import { useAsyncRetry } from 'react-use'
 
 export function AuctionPreviewGrid() {
   const { nounId } = useNextNoun()
@@ -31,77 +32,78 @@ export function AuctionPreviewGrid() {
     if (blocksError) {
       console.error('Blocks error:', blocksError)
     }
+  }, [blocksError])
 
+  useEffect(() => {
     if (nounId === undefined) {
       console.error('No Noun ID found. Please refresh the page.')
     }
+  }, [nounId])
 
-    setIsLoading(isValidatingBlocks || isLoadingBlocks)
-    if (!blocks || nounId === undefined) return
-
-    const parseSeedParameter = (seedParams?: string[]): number[] | undefined =>
+  const filterParams = useMemo(() => {
+    const parseSeedParameter = (seedParams?: string[]) =>
       seedParams
-        ?.map((param) =>
-          !Number.isNaN(Number(param)) ? Number(param) : undefined,
-        )
-        .filter((num): num is number => num !== undefined) ?? undefined
+        ? pipe(
+            seedParams,
+            map((param) => Number(param)),
+            filter((num): num is number => !Number.isNaN(num)),
+          )
+        : undefined
 
-    const filterParams = {
+    return {
       background: parseSeedParameter(traitFilter.background),
       body: parseSeedParameter(traitFilter.body),
       accessory: parseSeedParameter(traitFilter.accessory),
       head: parseSeedParameter(traitFilter.head),
       glasses: parseSeedParameter(traitFilter.glasses),
     }
+  }, [traitFilter])
 
-    const processSeeds = async () => {
-      let seedResults: PoolSeed[] = []
+  const seedState = useAsyncRetry<PoolSeed[]>(async () => {
+    if (!blocks || nounId === undefined) return []
 
-      const newSeedResults = await Promise.all(
-        blocks.map(async (block) => {
-          try {
-            const seed = getNounSeedFromBlockHash(Number(nounId), block.id)
-            const isMatching = Object.entries(filterParams).every(
-              ([key, values]) => {
-                if (!values || values.length === 0) return true
-                const seedValue = seed[key as keyof Seed]
-                return values.includes(seedValue)
-              },
-            )
-            return isMatching
-              ? { blockNumber: BigInt(block.number), nounId, seed }
-              : { blockNumber: BigInt(block.number), nounId, seed: undefined }
-          } catch (error) {
-            console.error(`Error generating seed for block ${block.id}:`, error)
-            return {
-              blockNumber: BigInt(block.number),
-              nounId,
-              seed: undefined,
-            }
+    const seedResults = await Promise.all(
+      blocks.map(async (block) => {
+        try {
+          const seed = getNounSeedFromBlockHash(Number(nounId), block.id)
+          const matchesFilter = Object.entries(filterParams).every(
+            ([key, values]) => {
+              if (!values?.length) return true
+              const seedValue = seed[key as keyof Seed]
+              return values.includes(seedValue)
+            },
+          )
+
+          if (!matchesFilter) {
+            return undefined
           }
-        }),
-      )
 
-      seedResults = [
-        ...seedResults,
-        ...newSeedResults.filter(
-          (result): result is PoolSeed => result.seed !== undefined,
-        ),
-      ]
-      setPoolSeeds(seedResults)
+          return { blockNumber: BigInt(block.number), nounId, seed }
+        } catch (error) {
+          console.error(`Error generating seed for block ${block.id}:`, error)
+          return undefined
+        }
+      }),
+    )
+
+    return pipe(seedResults, filter(isTruthy))
+  }, [blocks, filterParams, nounId])
+
+  useEffect(() => {
+    setIsLoading(isValidatingBlocks || isLoadingBlocks || seedState.loading)
+  }, [isValidatingBlocks, isLoadingBlocks, seedState.loading, setIsLoading])
+
+  useEffect(() => {
+    if (seedState.error) {
+      console.error('Failed to build pool seeds:', seedState.error)
     }
+  }, [seedState.error])
 
-    processSeeds()
-  }, [
-    blocks,
-    nounId,
-    traitFilter,
-    setPoolSeeds,
-    setIsLoading,
-    isValidatingBlocks,
-    isLoadingBlocks,
-    blocksError,
-  ])
+  useEffect(() => {
+    if (seedState.value !== undefined) {
+      setPoolSeeds(seedState.value)
+    }
+  }, [seedState.value, setPoolSeeds])
 
   if (poolSeeds.length === 0) {
     return (
