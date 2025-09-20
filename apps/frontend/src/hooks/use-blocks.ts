@@ -3,6 +3,7 @@ import { ClientError, gql, request } from 'graphql-request'
 import useSWR from 'swr'
 import { useWatchBlockNumber } from 'wagmi'
 import { useCallback, useState } from 'react'
+import { useIdleState } from '@/contexts/idle-context'
 
 const fetchBlocks = async (
   offset: number,
@@ -70,17 +71,17 @@ export const useBlocks = () => {
   const [currentBlockNumber, setCurrentBlockNumber] = useState<bigint | null>(
     null,
   )
+  const { isIdle } = useIdleState()
 
   const fetcher = useCallback(async () => {
-    if (!currentBlockNumber) return []
+    if (!currentBlockNumber || isIdle) return []
 
-    // Fetch blocks from (currentBlock - 256) to currentBlock
     const fromBlock = Number(currentBlockNumber) - blockLimit
     return fetchBlocks(0, blockLimit, fromBlock, Number(currentBlockNumber))
-  }, [currentBlockNumber, blockLimit])
+  }, [currentBlockNumber, blockLimit, isIdle])
 
   const { data, error, isValidating, isLoading } = useSWR(
-    currentBlockNumber
+    currentBlockNumber && !isIdle
       ? ['blocks', currentBlockNumber.toString(), blockLimit]
       : null,
     fetcher,
@@ -100,6 +101,7 @@ export const useBlocks = () => {
 
   // Watch for new block numbers and only update when block changes
   useWatchBlockNumber({
+    enabled: !isIdle,
     onBlockNumber: (blockNumber) => {
       // Only update if the block number has actually changed
       if (currentBlockNumber !== blockNumber) {
