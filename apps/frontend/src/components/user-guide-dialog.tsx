@@ -1,4 +1,4 @@
-import { Trans, useLingui } from '@lingui/react/macro'
+import { Trans } from '@lingui/react/macro'
 import { useDialogStore } from '@/stores/dialog-store'
 import { useMedia } from 'react-use'
 import {
@@ -26,7 +26,6 @@ import {
 export const dialogReference = 'user-guide'
 
 export function UserGuideDialog() {
-  const { t } = useLingui()
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
   const isDesktop = useMedia('(min-width: 768px)')
 
@@ -97,8 +96,15 @@ export function UserGuideDialog() {
       <DialogTrigger asChild>{TriggerButton}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{t`Lil Nouns Auction Guide`}</DialogTitle>
-          <DialogDescription>{t`Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs.`}</DialogDescription>
+          <DialogTitle>
+            <Trans>Lil Nouns Auction Guide</Trans>
+          </DialogTitle>
+          <DialogDescription>
+            <Trans>
+              Understand how the Lil Nouns VRGDA auctions work and discover how
+              to mint your favorite NFTs.
+            </Trans>
+          </DialogDescription>
         </DialogHeader>
         <div className="overflow-y-auto p-0">{content}</div>
       </DialogContent>
@@ -108,13 +114,22 @@ export function UserGuideDialog() {
       <DrawerTrigger asChild>{TriggerButton}</DrawerTrigger>
       <DrawerContent className="mx-4">
         <DrawerHeader>
-          <DrawerTitle>{t`Lil Nouns Auction Guide`}</DrawerTitle>
-          <DrawerDescription>{t`Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs.`}</DrawerDescription>
+          <DrawerTitle>
+            <Trans>Lil Nouns Auction Guide</Trans>
+          </DrawerTitle>
+          <DrawerDescription>
+            <Trans>
+              Understand how the Lil Nouns VRGDA auctions work and discover how
+              to mint your favorite NFTs.
+            </Trans>
+          </DrawerDescription>
         </DrawerHeader>
         <div className="overflow-y-auto p-4">{content}</div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
-            <Button variant="outline">{t`Close`}</Button>
+            <Button variant="outline">
+              <Trans>Close</Trans>
+            </Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
