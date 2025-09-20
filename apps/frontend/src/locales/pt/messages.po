@@ -67,10 +67,19 @@ msgstr "Óculos"
 msgid "A new version is live. "
 msgstr "Uma nova versão está no ar. "
 
-#. placeholder {0}: round(Number(formatEther(price ?? 0n)), 5)
 #: src/components/auction-seed-dialog.tsx
-msgid "Buy Now for {0} ETH"
-msgstr "Compre agora por {0} ETH"
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
+msgid "Block"
+msgstr "Bloco"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now"
+msgstr "Comprar agora"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Buy Now for {priceLabel}"
+msgstr "Comprar agora por {priceLabel}"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
@@ -93,14 +102,16 @@ msgstr "Confirmando..."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
 msgstr "Conectar Carteira"
 
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
 msgstr "Conecte-se com um dos nossos provedores de carteira disponíveis."
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Current Price"
+msgstr "Preço atual"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
@@ -122,7 +133,6 @@ msgstr "Erro"
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
 msgstr "A cada 12 segundos, um novo e peculiar Lil Noun fica disponível, permitindo que você escolha quando o preço parecer certo."
 
-#: src/components/auction-filter-dialog.tsx
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
 msgstr "Filtrar Leilões"
@@ -163,7 +173,6 @@ msgid "Lil Nouns Auction"
 msgstr "Leilão Lil Nouns"
 
 #: src/components/user-guide-dialog.tsx
-#: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
 msgstr "Guia do Leilão Lil Nouns"
 
@@ -171,15 +180,16 @@ msgstr "Guia do Leilão Lil Nouns"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Os leilões Lil Nouns deixaram o formato inglês tradicional usado pelos Nouns e adotaram um leilão holandês movido por VRGDA (Variable Rate Gradual Dutch Auction)."
 
+#: src/components/auction-seed-dialog.tsx
+#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
 msgid "Noun"
 msgstr "Noun"
 
 #: src/components/home-page.tsx
 msgid "Noun {nounId} | Lil Nouns Auction"
-msgstr ""
+msgstr "Noun {nounId} | Leilão Lil Nouns"
 
-#: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
 msgstr "Detalhes do Noun"
@@ -214,7 +224,6 @@ msgid "Select {0}"
 msgstr "Selecionar {0}"
 
 #: src/components/auction-filter-dialog.tsx
-#: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
 msgstr "Selecione traços para filtrar os anúncios do leilão"
 
@@ -242,18 +251,21 @@ msgstr "Sistema"
 msgid "Toggle theme"
 msgstr "Alternar tema"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "total traits"
+msgstr "total de características"
+
+#: src/components/auction-seed-dialog.tsx
+msgid "Traits"
+msgstr "Características"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Traits are algorithmically generated using the current token ID and a chosen block hash. Explore and mint from the last 256 blocks to find the vibe that suits you."
 msgstr "Os traços são gerados algoritmicamente usando o ID de token atual e um hash de bloco escolhido. Explore e faça mint nos últimos 256 blocos para encontrar a vibe que combina com você."
 
 #: src/components/user-guide-dialog.tsx
-#: src/components/user-guide-dialog.tsx
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Entenda como funcionam os leilões VRGDA do Lil Nouns e descubra como fazer mint dos seus NFTs favoritos."
-
-#: src/components/auction-seed-dialog.tsx
-msgid "View traits and pricing"
-msgstr "Ver atributos e preços"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
@@ -268,11 +280,9 @@ msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting h
 msgstr "A VRGDA ajusta dinamicamente os preços dos NFTs com base no tempo e na demanda, começando alto e diminuindo gradualmente até ocorrer o mint, equilibrando urgência e justiça sem intervalos fixos."
 
 #: src/components/wallet-options-dialog.tsx
-#: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "Carteira Conectada"
 
-#: src/components/wallet-options-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
 msgstr "Sua carteira está conectada. Gerencie sua conexão abaixo."
