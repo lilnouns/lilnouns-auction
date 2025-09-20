@@ -10,12 +10,6 @@ import {
   DialogTrigger,
 } from '@repo/ui/components/dialog'
 import { Button } from '@repo/ui/components/button'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from '@repo/ui/components/table'
 import { PoolSeed } from '@/types'
 
 import { useAccount, useSwitchChain, useWaitForTransactionReceipt } from 'wagmi'
@@ -40,10 +34,10 @@ import {
 } from '@repo/ui/components/drawer'
 import { useNextNoun } from '@/hooks/use-next-noun'
 import { formatEther } from 'viem'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import Link from 'next/link'
 import { Trans } from '@lingui/react/macro'
-import { ChevronDown, Loader2 } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { round } from 'remeda'
 import { cn } from '@repo/ui/lib/utils'
 import { Badge } from '@repo/ui/components/badge'
@@ -117,44 +111,6 @@ export function AuctionSeedDialog({
 
   const { seed, blockNumber, nounId } = poolSeed
 
-  const traitRows = useMemo(
-    () => {
-      const backgroundKey =
-        seed.background !== undefined ? bgcolors[seed.background] : undefined
-      const backgroundLabel = formatTraitName(
-        backgroundKey ? backgrounds[backgroundKey] ?? '' : '',
-      )
-
-      const bodyLabel = formatTraitName(
-        seed.body !== undefined ? images.bodies[seed.body]?.filename ?? '' : '',
-      )
-      const accessoryLabel = formatTraitName(
-        seed.accessory !== undefined
-          ? images.accessories[seed.accessory]?.filename ?? ''
-          : '',
-      )
-      const headLabel = formatTraitName(
-        seed.head !== undefined ? images.heads[seed.head]?.filename ?? '' : '',
-      )
-      const glassesSource =
-        seed.glasses !== undefined
-          ? images.glasses[seed.glasses]?.filename ?? ''
-          : ''
-      const glassesLabel = formatTraitName(
-        glassesSource ? glassesSource.replace(/square-/, '') : '',
-      )
-
-      return [
-        { label: 'Background', value: backgroundLabel || '—' },
-        { label: 'Body', value: bodyLabel || '—' },
-        { label: 'Accessory', value: accessoryLabel || '—' },
-        { label: 'Head', value: headLabel || '—' },
-        { label: 'Glasses', value: glassesLabel || '—' },
-      ]
-    },
-    [seed],
-  )
-
   const priceLabel = useMemo(() => {
     if (price === undefined) return '—'
     const formatted = Number.parseFloat(formatEther(price))
@@ -182,38 +138,46 @@ export function AuctionSeedDialog({
 
   const nounIdDisplay = nounIdLabel ? nounIdLabel.replace('#', '') : '—'
 
-  const tableRows = useMemo(
-    () => [...traitRows, { label: 'Noun ID', value: nounIdDisplay }],
-    [traitRows, nounIdDisplay],
-  )
+  const traitCards = useMemo(() => {
+    const backgroundKey =
+      seed.background !== undefined ? bgcolors[seed.background] : undefined
+    const backgroundLabel = formatTraitName(
+      backgroundKey ? (backgrounds[backgroundKey] ?? '') : '',
+    )
+
+    const bodyLabel = formatTraitName(
+      seed.body !== undefined ? (images.bodies[seed.body]?.filename ?? '') : '',
+    )
+    const accessoryLabel = formatTraitName(
+      seed.accessory !== undefined
+        ? (images.accessories[seed.accessory]?.filename ?? '')
+        : '',
+    )
+    const headLabel = formatTraitName(
+      seed.head !== undefined ? (images.heads[seed.head]?.filename ?? '') : '',
+    )
+    const glassesSource =
+      seed.glasses !== undefined
+        ? (images.glasses[seed.glasses]?.filename ?? '')
+        : ''
+    const glassesLabel = formatTraitName(
+      glassesSource ? glassesSource.replace(/square-/, '') : '',
+    )
+
+    return [
+      { label: 'Background', value: backgroundLabel || '—' },
+      { label: 'Body', value: bodyLabel || '—' },
+      { label: 'Accessory', value: accessoryLabel || '—' },
+      { label: 'Head', value: headLabel || '—' },
+      { label: 'Glasses', value: glassesLabel || '—' },
+      { label: 'Noun ID', value: nounIdDisplay },
+    ]
+  }, [seed, nounIdDisplay])
 
   const traitBadges = useMemo(
-    () => traitRows.filter((row) => row.value !== '—'),
-    [traitRows],
+    () => traitCards.filter((row) => row.value !== '—').slice(0, 3),
+    [traitCards],
   )
-
-  const traitTableContent = (
-    <Table>
-      <TableBody>
-        {tableRows.map((row) => (
-          <TableRow key={row.label}>
-            <TableCell className="font-medium text-sm text-muted-foreground">
-              {row.label}
-            </TableCell>
-            <TableCell className="text-right text-sm font-semibold">
-              {row.value}
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  )
-
-  const [traitsExpanded, setTraitsExpanded] = useState(!isMobile)
-
-  useEffect(() => {
-    setTraitsExpanded(!isMobile)
-  }, [isMobile])
 
   const renderActionButton = () => {
     if (!isConnected) {
@@ -317,19 +281,14 @@ export function AuctionSeedDialog({
             <Description>
               <Trans>View traits and pricing for this Noun</Trans>
             </Description>
-            <div className="mt-2 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-border/50 bg-muted/20 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  <Trans>Current Price</Trans>
-                </p>
-                <p className="text-2xl font-semibold">{priceLabel}</p>
-              </div>
-              <div className="rounded-xl border border-border/50 bg-muted/20 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  <Trans>Block Number</Trans>
-                </p>
-                <p className="text-lg font-semibold">{blockLabel}</p>
-              </div>
+            <div className="mt-3 grid gap-3 sm:grid-cols-3">
+              <StatCard
+                label={<Trans>Current Price</Trans>}
+                value={priceLabel}
+                emphasis
+                className="sm:col-span-2"
+              />
+              <StatCard label={<Trans>Block</Trans>} value={blockLabel} />
             </div>
             {traitBadges.length > 0 && (
               <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -347,46 +306,45 @@ export function AuctionSeedDialog({
           </div>
         </Header>
         <div className={bodyClassName}>
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:gap-10">
-              <div className="w-full max-w-[min(360px,80vw)] md:max-w-sm">
-                <div className="aspect-square w-full overflow-hidden rounded-2xl border border-border/50 bg-muted/20">
-                  <AuctionSeedImage seed={seed} />
-                </div>
+          <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-10">
+            <div className="space-y-4">
+              <div className="aspect-square w-full overflow-hidden rounded-2xl border border-border/50 bg-muted/20 shadow-sm">
+                <AuctionSeedImage seed={seed} />
               </div>
-              <div className="hidden w-full md:block">
-                <div className="rounded-xl border border-border/50 bg-muted/10 p-1">
-                  {traitTableContent}
-                </div>
+              <div className="grid grid-cols-2 gap-3 text-sm sm:hidden">
+                <StatCard label={<Trans>Block</Trans>} value={blockLabel} />
+                <StatCard label={<Trans>Noun</Trans>} value={nounIdDisplay} />
               </div>
             </div>
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setTraitsExpanded((prev) => !prev)}
-                aria-expanded={traitsExpanded}
-                className="flex w-full items-center justify-between rounded-lg border border-border/40 bg-muted/20 px-3 py-2 text-sm font-medium"
-              >
-                <span>
-                  {traitsExpanded ? (
-                    <Trans>Hide Traits</Trans>
-                  ) : (
-                    <Trans>Show Traits</Trans>
-                  )}
-                </span>
-                <ChevronDown
-                  className={cn(
-                    'size-4 transition-transform',
-                    traitsExpanded ? 'rotate-180' : 'rotate-0',
-                  )}
-                />
-              </Button>
-              {traitsExpanded && (
-                <div className="mt-3 rounded-xl border border-border/50 bg-muted/10 p-1">
-                  {traitTableContent}
+            <div className="space-y-4">
+              <section className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-medium">
+                    <Trans>Traits</Trans>
+                  </p>
+                  <Badge variant="outline" className="text-xs">
+                    {traitCards.length}
+                    <span className="sr-only">
+                      <Trans>total traits</Trans>
+                    </span>
+                  </Badge>
                 </div>
-              )}
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {traitCards.map((trait) => (
+                    <TraitCard
+                      key={trait.label}
+                      label={trait.label}
+                      value={trait.value}
+                    />
+                  ))}
+                </div>
+              </section>
+              <section className="hidden sm:block">
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <StatCard label={<Trans>Block</Trans>} value={blockLabel} />
+                  <StatCard label={<Trans>Noun</Trans>} value={nounIdDisplay} />
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -402,5 +360,50 @@ export function AuctionSeedDialog({
         </Footer>
       </Content>
     </Root>
+  )
+}
+
+function StatCard({
+  label,
+  value,
+  emphasis = false,
+  className,
+}: {
+  label: React.ReactNode
+  value: React.ReactNode
+  emphasis?: boolean
+  className?: string
+}) {
+  return (
+    <div
+      className={cn(
+        'rounded-xl border border-border/50 bg-muted/15 px-3 py-3 shadow-sm ring-1 ring-border/20',
+        emphasis ? 'sm:py-5' : 'sm:py-4',
+        className,
+      )}
+    >
+      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        {label}
+      </p>
+      <p
+        className={cn(
+          'font-semibold text-foreground',
+          emphasis ? 'text-2xl sm:text-3xl' : 'text-lg sm:text-xl',
+        )}
+      >
+        {value}
+      </p>
+    </div>
+  )
+}
+
+function TraitCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-lg border border-border/40 bg-muted/15 px-3 py-2 shadow-sm">
+      <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+        {label}
+      </p>
+      <p className="text-sm font-semibold text-foreground">{value}</p>
+    </div>
   )
 }
