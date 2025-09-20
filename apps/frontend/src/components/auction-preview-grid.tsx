@@ -67,16 +67,17 @@ export function AuctionPreviewGrid() {
   useDebounce(() => setDebouncedFilter(filterParams), 200, [filterParams])
 
   const blockKeys = useMemo(
-    () => blocks?.map((block) => block.id) ?? [],
+    () => blocks?.map((block) => String(block.id)) ?? [],
     [blocks],
   )
   const filterKey = useMemo(
     () => JSON.stringify(debouncedFilter ?? {}),
     [debouncedFilter],
   )
+  const nounIdKey = nounId !== undefined ? nounId.toString() : 'unknown'
 
   const seedQuery = useQuery<PoolSeed[]>({
-    queryKey: ['auction-seeds', nounId, filterKey, blockKeys],
+    queryKey: ['auction-seeds', nounIdKey, filterKey, blockKeys],
     // Keep showing the previous data set while revalidating so the grid never flickers.
     queryFn: async () => {
       if (!blocks || nounId === undefined) return []
