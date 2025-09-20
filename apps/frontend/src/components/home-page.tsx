@@ -8,11 +8,13 @@ import { useEffect, useState } from 'react'
 import Auction from '@/components/auction'
 import { useNextNoun } from '@/hooks/use-next-noun'
 import { Trans } from '@lingui/react/macro'
-import { t } from '@lingui/core/macro'
+import { useLingui } from '@lingui/react'
+import { msg } from '@lingui/core/macro'
 
 import { sdk as frameSdk } from '@farcaster/frame-sdk'
 
 export const HomePage: NextPage = () => {
+  const { t } = useLingui()
   const [isClient, setIsClient] = useState(false)
   const [isFrameSDKLoaded, setIsFrameSDKLoaded] = useState(false)
 
@@ -31,7 +33,7 @@ export const HomePage: NextPage = () => {
 
   useEffect(() => {
     if (nounId) {
-      document.title = t`Noun ${nounId.toString()} | Lil Nouns Auction`
+      document.title = t`Noun ${nounId} | Lil Nouns Auction`
 
       const metaDescription = document.querySelector('meta[name="description"]')
       if (metaDescription) {
