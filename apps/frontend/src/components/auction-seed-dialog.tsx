@@ -64,7 +64,7 @@ export function AuctionSeedDialog({
   const Description = isMobile ? DrawerDescription : DialogDescription
   const Footer = isMobile ? DrawerFooter : DialogFooter
   const modalContentClassName = cn(
-    'flex h-full max-h-[calc(100dvh-2rem)] flex-col overflow-hidden bg-background p-0 shadow-lg',
+    'flex h-auto max-h-[calc(100dvh-2rem)] flex-col overflow-hidden bg-background p-0 shadow-lg',
     isMobile
       ? 'mx-4 mt-5 rounded-t-[1.25rem] border-none'
       : 'sm:max-w-3xl sm:rounded-lg',
