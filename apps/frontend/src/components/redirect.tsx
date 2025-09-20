@@ -1,16 +1,14 @@
 'use client'
 
-import { useEffect } from 'react'
-
+import { useMount } from 'react-use'
 import { useRouter } from 'next/navigation'
 
 export function Redirect() {
   const router = useRouter()
 
-  useEffect(() => {
-    router.push('/') // Redirect to home page
-  }, [router])
+  useMount(() => {
+    router.push('/')
+  })
 
-  // Optional: Show loading state while redirecting
   return <div>Redirecting...</div>
 }
