@@ -7,12 +7,11 @@ import { AuctionFilterDialog } from '@/components/auction-filter-dialog'
 import { LanguageSwitcher } from '@/components/language-switcher'
 import { Icons } from '@/components/icons'
 
-import { Trans, useLingui } from '@lingui/react/macro'
+import { Trans } from '@lingui/react/macro'
 import { UserGuideDialog } from '@/components/user-guide-dialog'
+import { t } from '@lingui/core/macro'
 
 const Navbar = () => {
-  const { t } = useLingui()
-
   return (
     <nav className="border-grid sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between p-2">
