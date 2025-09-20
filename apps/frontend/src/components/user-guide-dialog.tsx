@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/react/macro'
 import { useDialogStore } from '@/stores/dialog-store'
-import { useMedia } from 'react-use'
+import { useLocalStorage, useMedia } from 'react-use'
 import { usePathname } from 'next/navigation'
 import {
   Drawer,
@@ -32,15 +32,14 @@ export function UserGuideDialog() {
   const { openDialogs, openDialog, closeDialog } = useDialogStore()
   const isDesktop = useMedia('(min-width: 768px)')
   const pathname = usePathname()
+  const [lastOpenedAt, setLastOpenedAt] = useLocalStorage<number | null>(
+    STORAGE_KEY,
+    null,
+  )
 
   const markGuideSeen = useCallback(() => {
-    if (typeof window === 'undefined') return
-    try {
-      localStorage.setItem(STORAGE_KEY, Date.now().toString())
-    } catch (error) {
-      console.error('Failed to persist user guide state', error)
-    }
-  }, [])
+    setLastOpenedAt(Date.now())
+  }, [setLastOpenedAt])
 
   const handleOpenChange = useCallback(
     (open: boolean) => {
@@ -62,21 +61,15 @@ export function UserGuideDialog() {
     const isHomepage = segments.length <= 1
     if (!isHomepage) return
 
-    if (typeof window === 'undefined') return
-
-    const lastOpenedAtRaw = localStorage.getItem(STORAGE_KEY)
-    const lastOpenedAt = lastOpenedAtRaw ? Number(lastOpenedAtRaw) : undefined
     const now = Date.now()
     const shouldOpenAutomatically =
-      !lastOpenedAt ||
-      Number.isNaN(lastOpenedAt) ||
-      now - lastOpenedAt > SEVEN_DAYS_MS
+      !lastOpenedAt || now - lastOpenedAt > SEVEN_DAYS_MS
 
     if (shouldOpenAutomatically) {
       openDialog(dialogReference)
       markGuideSeen()
     }
-  }, [pathname, openDialog, markGuideSeen])
+  }, [lastOpenedAt, pathname, openDialog, markGuideSeen])
 
   const content = (
     <div className="flex flex-col gap-4 text-muted-foreground">
