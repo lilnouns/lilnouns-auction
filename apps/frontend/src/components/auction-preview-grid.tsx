@@ -17,6 +17,7 @@ import { useBlocks } from '@/hooks/use-blocks'
 import { useDebounce } from 'react-use'
 import { useIdleState } from '@/contexts/idle-context'
 import { useQuery } from '@tanstack/react-query'
+import { Trans } from '@lingui/react/macro'
 
 export function AuctionPreviewGrid() {
   const { nounId } = useNextNoun()
@@ -163,7 +164,7 @@ export function AuctionPreviewGrid() {
   if (showEmpty) {
     return (
       <div className="flex min-h-[200px] items-center justify-center text-sm text-muted-foreground">
-        No seeds match the current filters.
+        <Trans>No seeds match the current filters.</Trans>
       </div>
     )
   }

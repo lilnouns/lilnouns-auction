@@ -1,6 +1,7 @@
 'use client'
 
 import { useMount } from 'react-use'
+import { Trans } from '@lingui/react/macro'
 import { useRouter } from 'next/navigation'
 
 export function Redirect() {
@@ -10,5 +11,9 @@ export function Redirect() {
     router.push('/')
   })
 
-  return <div>Redirecting...</div>
+  return (
+    <div>
+      <Trans>Redirecting...</Trans>
+    </div>
+  )
 }

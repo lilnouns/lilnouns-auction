@@ -63,6 +63,18 @@ msgstr "γυαλιά"
 msgid "Glasses"
 msgstr "Γυαλιά"
 
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "(Επιλογή όλων)"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "+ {extraCount} ακόμη"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 Διαθέσιμη ενημέρωση"
+
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
 msgstr "Μια νέα έκδοση είναι διαθέσιμη. "
@@ -85,16 +97,25 @@ msgstr "Αγορά τώρα για {priceLabel}"
 msgid "Buying..."
 msgstr "Αγορά σε εξέλιξη..."
 
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "Καθαρισμός"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "Κάνε κλικ σε ένα Lil Noun για να δεις τα χαρακτηριστικά του και την τρέχουσα τιμή VRGDA. Βρες αυτό που σου μιλάει."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Κλείσιμο"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "Κλείσιμο banner"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -180,6 +201,14 @@ msgstr "Οδηγός δημοπρασίας Lil Nouns"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Οι δημοπρασίες Lil Nouns έχουν ξεπεράσει το παραδοσιακό αγγλικό μοντέλο που χρησιμοποιείται από τους Nouns, υιοθετώντας μια ολλανδική δημοπρασία με τη δύναμη της VRGDA (Variable Rate Gradual Dutch Auction)."
 
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "Δεν βρέθηκαν αποτελέσματα."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "Κανένα seed δεν ταιριάζει με τα τρέχοντα φίλτρα."
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
@@ -210,6 +239,10 @@ msgstr "Πορτογαλικά"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "Οι τιμές μειώνονται κάθε 15 λεπτά αλλά δεν πέφτουν ποτέ κάτω από την τιμή κράτησης των 0,03 ETH."
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "Ανακατεύθυνση..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Ανανέωση"
@@ -218,10 +251,18 @@ msgstr "Ανανέωση"
 msgid "Reload"
 msgstr "Επαναφόρτωση"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "Αναζήτηση..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "Επίλεξε {0}"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "Επιλέξτε επιλογές"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -267,6 +308,10 @@ msgstr "Τα χαρακτηριστικά δημιουργούνται αλγο�
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Μάθε πώς λειτουργούν οι δημοπρασίες VRGDA των Lil Nouns και ανακάλυψε πώς να κόψεις τα αγαπημένα σου NFTs."
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "Οι ενημερώσεις έχουν τεθεί σε παύση"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
 msgstr "Δείτε τα χαρακτηριστικά και τις τιμές για αυτό το Noun"
@@ -282,6 +327,10 @@ msgstr "Η VRGDA προσαρμόζει δυναμικά τις τιμές τω�
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "Το πορτοφόλι είναι συνδεδεμένο"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "Διακόψαμε προσωρινά τα δεδομένα ζωντανών δημοπρασιών για εξοικονόμηση πόρων. Κινήστε το ποντίκι ή αγγίξτε την οθόνη για να συνεχίσουν οι ενημερώσεις."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."

@@ -1,15 +1,19 @@
+'use client'
+
 import { X } from 'lucide-react' // close icon
 import { Button } from '@repo/ui/components/button'
 import { Card, CardContent } from '@repo/ui/components/card'
 import { ReactNode, useState } from 'react'
+import { useLingui } from '@lingui/react/macro'
 
 interface BannerProps {
-  title: string
+  title: ReactNode
   description?: ReactNode
   onClose?: () => void
 }
 
 export function Banner({ title, description, onClose }: BannerProps) {
+  const { t } = useLingui()
   const [visible, setVisible] = useState(true)
   if (!visible) return null
 
@@ -33,7 +37,7 @@ export function Banner({ title, description, onClose }: BannerProps) {
           variant="ghost"
           size="icon"
           onClick={handleClose}
-          aria-label="Close banner"
+          aria-label={t`Close banner`}
         >
           <X className="h-4 w-4" />
         </Button>

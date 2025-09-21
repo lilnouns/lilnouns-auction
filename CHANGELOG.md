@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.6] - 2025-09-21
+
+### Features
+
+- Responsive Noun Details dialog and i18n sweep
+- Finalize i18n coverage and UI translations
+
 ## [1.3.0-alpha.5] - 2025-09-20
 
 ### Features

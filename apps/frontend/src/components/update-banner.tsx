@@ -79,7 +79,7 @@ export function UpdateBanner() {
 
   return (
     <Banner
-      title="🚨 Update Available"
+      title={<Trans>🚨 Update Available</Trans>}
       description={
         <span className="text-xs text-neutral-600 dark:text-neutral-400">
           <Trans>A new version is live. </Trans>{' '}

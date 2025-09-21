@@ -63,6 +63,18 @@ msgstr "عینک"
 msgid "Glasses"
 msgstr "عینک"
 
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "(انتخاب همه)"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "+ {extraCount} مورد دیگر"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 به‌روزرسانی در دسترس است"
+
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
 msgstr "نسخه‌ی جدیدی اکنون منتشر شده است. "
@@ -85,16 +97,25 @@ msgstr "خرید با {priceLabel}"
 msgid "Buying..."
 msgstr "در حال خرید..."
 
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "پاک کردن"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "روی یک Lil Noun کلیک کنید تا ویژگی‌های آن و قیمت فعلی VRGDA را ببینید. آنی را پیدا کنید که با شما صحبت می‌کند."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "بستن"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "بستن بنر"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -180,6 +201,14 @@ msgstr "راهنمای مزایده Lil Nouns"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "مزایده‌های Lil Nouns فراتر از قالب سنتی مزایده انگلیسی که توسط Nouns استفاده می‌شد رفته‌اند و اکنون مزایده‌ای هلندی با قدرت VRGDA (مزایده هلندی تدریجی با نرخ متغیر) را پذیرفته‌اند."
 
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "هیچ نتیجه‌ای یافت نشد."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "هیچ گزینه‌ای با فیلترهای فعلی مطابقت ندارد."
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
@@ -210,6 +239,10 @@ msgstr "پرتغالی"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "قیمت‌ها هر ۱۵ دقیقه کاهش می‌یابند اما هرگز زیر قیمت رزرو ۰٫۰۳ ETH نمی‌روند."
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "در حال انتقال..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "بازنشانی"
@@ -218,10 +251,18 @@ msgstr "بازنشانی"
 msgid "Reload"
 msgstr "بارگذاری مجدد"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "جستجو..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "انتخاب {0}"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "گزینه‌ها را انتخاب کنید"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -267,6 +308,10 @@ msgstr "ویژگی‌ها به‌صورت الگوریتمی با استفاده
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "بفهمید مزایده‌های VRGDA در Lil Nouns چگونه کار می‌کنند و چگونه NFTهای مورد علاقه‌تان را مینت کنید."
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "به‌روزرسانی‌ها متوقف شدند"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
 msgstr "مشاهده ویژگی‌ها و قیمت این  نان"
@@ -282,6 +327,10 @@ msgstr "VRGDA قیمت NFT را بر اساس زمان و تقاضا به‌صو
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "کیف پول متصل شد"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "برای صرفه‌جویی در منابع، داده‌های زنده مزایده را متوقف کردیم. برای ادامه به‌روزرسانی‌ها، موس را حرکت دهید یا روی صفحه ضربه بزنید."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."

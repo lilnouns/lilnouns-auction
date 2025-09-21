@@ -63,6 +63,18 @@ msgstr "kacamata"
 msgid "Glasses"
 msgstr "Kacamata"
 
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "(Pilih Semua)"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "+ {extraCount} lagi"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 Pembaruan tersedia"
+
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
 msgstr "Versi baru kini tersedia. "
@@ -85,16 +97,25 @@ msgstr "Beli sekarang seharga {priceLabel}"
 msgid "Buying..."
 msgstr "Membeli..."
 
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "Bersihkan"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "Klik Lil Noun untuk melihat atributnya dan harga VRGDA saat ini. Temukan yang paling cocok denganmu."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Tutup"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "Tutup banner"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -180,6 +201,14 @@ msgstr "Panduan Lelang Lil Nouns"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Lelang Lil Nouns telah meninggalkan format lelang Inggris tradisional yang digunakan oleh Nouns dan kini mengadopsi lelang Belanda yang didukung VRGDA (Variable Rate Gradual Dutch Auction)."
 
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "Tidak ada hasil."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "Tidak ada seed yang cocok dengan filter saat ini."
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
@@ -210,6 +239,10 @@ msgstr "Portugis"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "Harga turun setiap 15 menit tetapi tidak pernah lebih rendah dari harga cadangan 0,03 ETH."
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "Mengalihkan..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Segarkan"
@@ -218,10 +251,18 @@ msgstr "Segarkan"
 msgid "Reload"
 msgstr "Muat ulang"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "Cari..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "Pilih {0}"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "Pilih opsi"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -267,6 +308,10 @@ msgstr "Atribut dibuat secara algoritmis menggunakan ID token saat ini dan hash 
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Pahami cara kerja lelang VRGDA Lil Nouns dan temukan cara mint NFT favoritmu."
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "Pembaruan dijeda"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
 msgstr "Lihat sifat dan harga untuk Noun ini"
@@ -282,6 +327,10 @@ msgstr "VRGDA menyesuaikan harga NFT secara dinamis berdasarkan waktu dan permin
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "Dompet Terhubung"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "Kami menjeda data lelang langsung untuk menghemat sumber daya. Gerakkan mouse atau ketuk layar untuk melanjutkan pembaruan."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
