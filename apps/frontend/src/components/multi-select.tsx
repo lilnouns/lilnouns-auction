@@ -28,6 +28,7 @@ import {
   CommandList,
   CommandSeparator,
 } from '@repo/ui/components/command'
+import { Trans, useLingui } from '@lingui/react/macro'
 
 /**
  * Variants for the multi-select component to handle different styles.
@@ -129,7 +130,7 @@ export const MultiSelect = React.forwardRef<
       onValueChange,
       variant,
       defaultValue = [],
-      placeholder = 'Select options',
+      placeholder,
       animation = 0,
       maxCount = 3,
       modalPopover = false,
@@ -139,6 +140,8 @@ export const MultiSelect = React.forwardRef<
     },
     ref,
   ) => {
+    const { t } = useLingui()
+    const displayPlaceholder = placeholder ?? t`Select options`
     const [selectedValues, setSelectedValues] =
       React.useState<string[]>(defaultValue)
     const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
@@ -244,7 +247,10 @@ export const MultiSelect = React.forwardRef<
                       )}
                       style={{ animationDuration: `${animation}s` }}
                     >
-                      {`+ ${selectedValues.length - maxCount} more`}
+                      {(() => {
+                        const extraCount = selectedValues.length - maxCount
+                        return <Trans>+ {extraCount} more</Trans>
+                      })()}
                       <XCircle
                         className="ml-2 size-4 cursor-pointer"
                         onClick={(event) => {
@@ -273,7 +279,7 @@ export const MultiSelect = React.forwardRef<
             ) : (
               <div className="flex items-center justify-between w-full mx-auto">
                 <span className="text-sm text-muted-foreground mx-3">
-                  {placeholder}
+                  {displayPlaceholder}
                 </span>
                 <ChevronDown className="h-4 cursor-pointer text-muted-foreground mx-2" />
               </div>
@@ -287,11 +293,13 @@ export const MultiSelect = React.forwardRef<
         >
           <Command>
             <CommandInput
-              placeholder="Search..."
+              placeholder={t`Search...`}
               onKeyDown={handleInputKeyDown}
             />
             <CommandList>
-              <CommandEmpty>No results found.</CommandEmpty>
+              <CommandEmpty>
+                <Trans>No results found.</Trans>
+              </CommandEmpty>
               <CommandGroup>
                 <CommandItem
                   key="all"
@@ -308,7 +316,9 @@ export const MultiSelect = React.forwardRef<
                   >
                     <CheckIcon className="size-4" />
                   </div>
-                  <span>(Select All)</span>
+                  <span>
+                    <Trans>(Select All)</Trans>
+                  </span>
                 </CommandItem>
                 {options.map((option) => {
                   const isSelected = selectedValues.includes(option.value)
@@ -345,7 +355,7 @@ export const MultiSelect = React.forwardRef<
                         onSelect={handleClear}
                         className="flex-1 justify-center cursor-pointer"
                       >
-                        Clear
+                        <Trans>Clear</Trans>
                       </CommandItem>
                       <Separator
                         orientation="vertical"
@@ -357,7 +367,7 @@ export const MultiSelect = React.forwardRef<
                     onSelect={() => setIsPopoverOpen(false)}
                     className="flex-1 justify-center cursor-pointer max-w-full"
                   >
-                    Close
+                    <Trans>Close</Trans>
                   </CommandItem>
                 </div>
               </CommandGroup>
