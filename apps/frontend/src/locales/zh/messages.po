@@ -63,6 +63,18 @@ msgstr "眼镜"
 msgid "Glasses"
 msgstr "眼镜"
 
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "（全选）"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "＋{extraCount} 个更多"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 有可用更新"
+
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
 msgstr "新版已上线。 "
@@ -85,16 +97,25 @@ msgstr "以 {priceLabel} 立即购买"
 msgid "Buying..."
 msgstr "购买中..."
 
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "清除"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "点击任意 Lil Noun 查看其特征和当前的 VRGDA 价格，找到与你有共鸣的那一个。"
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "关闭"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "关闭横幅"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -180,6 +201,14 @@ msgstr "Lil Nouns 拍卖指南"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Lil Nouns 拍卖已经超越 Nouns 采用的传统英式拍卖，转而使用由 VRGDA（可变速率渐进式荷兰拍卖）驱动的荷兰式拍卖。"
 
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "未找到结果。"
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "没有与当前筛选条件匹配的种子。"
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
@@ -210,6 +239,10 @@ msgstr "葡萄牙语"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "价格每 15 分钟下降一次，但永远不会低于 0.03 ETH 的底价。"
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "正在重定向..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "刷新"
@@ -218,10 +251,18 @@ msgstr "刷新"
 msgid "Reload"
 msgstr "重新加载"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "搜索..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "选择 {0}"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "选择选项"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -267,6 +308,10 @@ msgstr "特征是根据当前的代币 ID 和选定的区块哈希通过算法�
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "了解 Lil Nouns 的 VRGDA 拍卖如何运作，并发现铸造你最喜欢的 NFT 的方法。"
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "更新已暂停"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
 msgstr "查看此 Noun 的特征和价格"
@@ -282,6 +327,10 @@ msgstr "VRGDA 会根据时间和需求动态调整 NFT 价格，从高价开始�
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "钱包已连接"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "为节省资源，我们已暂停实时拍卖数据。移动鼠标或点击屏幕以继续更新。"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."

@@ -63,6 +63,18 @@ msgstr "안경"
 msgid "Glasses"
 msgstr "안경"
 
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "(전체 선택)"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "+ {extraCount}개 더"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 업데이트가 있습니다"
+
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
 msgstr "새 버전이 지금 공개되었습니다. "
@@ -85,16 +97,25 @@ msgstr "{priceLabel}에 지금 구매"
 msgid "Buying..."
 msgstr "구매 중..."
 
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "지우기"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "Lil Noun을 클릭해 특성과 현재 VRGDA 가격을 확인하고, 마음에 드는 친구를 찾아보세요."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "닫기"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "배너 닫기"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -180,6 +201,14 @@ msgstr "Lil Nouns 경매 가이드"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Lil Nouns 경매는 Nouns가 사용하던 전통적인 잉글리시 경매 형식을 넘어, VRGDA(Variable Rate Gradual Dutch Auction)가 구동하는 더치 경매를 채택했습니다."
 
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "결과가 없습니다."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "현재 필터와 일치하는 시드가 없습니다."
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
@@ -210,6 +239,10 @@ msgstr "포르투갈어"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "가격은 15분마다 내려가지만 0.03 ETH의 최저가보다 낮아지지는 않습니다."
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "리디렉션 중..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "새로 고침"
@@ -218,10 +251,18 @@ msgstr "새로 고침"
 msgid "Reload"
 msgstr "새로고침"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "검색..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "{0} 선택"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "옵션 선택"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -267,6 +308,10 @@ msgstr "특성은 현재 토큰 ID와 선택한 블록 해시를 사용해 알�
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Lil Nouns VRGDA 경매가 어떻게 작동하는지 이해하고, 좋아하는 NFT를 민트하는 방법을 알아보세요."
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "업데이트 일시 중지됨"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
 msgstr "이 나운의 특성과 가격 보기"
@@ -282,6 +327,10 @@ msgstr "VRGDA는 시간과 수요에 따라 NFT 가격을 동적으로 조정하
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "지갑 연결됨"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "리소스를 절약하기 위해 라이브 경매 데이터를 일시 중지했습니다. 업데이트를 재개하려면 마우스를 움직이거나 화면을 탭하세요."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."

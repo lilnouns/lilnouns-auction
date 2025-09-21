@@ -63,6 +63,18 @@ msgstr "kính"
 msgid "Glasses"
 msgstr "Kính"
 
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "(Chọn tất cả)"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "+ {extraCount} nữa"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 Có bản cập nhật"
+
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
 msgstr "Một phiên bản mới đã được phát hành. "
@@ -85,16 +97,25 @@ msgstr "Mua ngay với giá {priceLabel}"
 msgid "Buying..."
 msgstr "Đang mua..."
 
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "Xóa"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "Nhấp vào một Lil Noun để xem các thuộc tính và giá VRGDA hiện tại của nó. Hãy tìm ra nhân vật khiến bạn rung động."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Đóng"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "Đóng banner"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -180,6 +201,14 @@ msgstr "Hướng dẫn đấu giá Lil Nouns"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Đấu giá Lil Nouns đã vượt ra ngoài hình thức đấu giá kiểu Anh truyền thống của Nouns và chuyển sang mô hình đấu giá Hà Lan do VRGDA (Variable Rate Gradual Dutch Auction) vận hành."
 
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "Không tìm thấy kết quả."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "Không có seed nào khớp với bộ lọc hiện tại."
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
@@ -210,6 +239,10 @@ msgstr "Tiếng Bồ Đào Nha"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "Giá giảm sau mỗi 15 phút nhưng không bao giờ thấp hơn mức giá dự trữ 0,03 ETH."
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "Đang chuyển hướng..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Làm mới"
@@ -218,10 +251,18 @@ msgstr "Làm mới"
 msgid "Reload"
 msgstr "Tải lại"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "Tìm kiếm..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "Chọn {0}"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "Chọn tùy chọn"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -267,6 +308,10 @@ msgstr "Các thuộc tính được tạo bằng thuật toán từ ID token hi�
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Tìm hiểu cách hoạt động của đấu giá VRGDA Lil Nouns và khám phá cách mint các NFT yêu thích của bạn."
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "Đã tạm dừng cập nhật"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
 msgstr "Xem đặc điểm và giá của Noun này"
@@ -282,6 +327,10 @@ msgstr "VRGDA điều chỉnh giá NFT một cách linh hoạt dựa trên thờ
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "Ví đã kết nối"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "Chúng tôi đã tạm dừng dữ liệu đấu giá trực tiếp để tiết kiệm tài nguyên. Di chuyển chuột hoặc chạm màn hình để tiếp tục cập nhật."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."

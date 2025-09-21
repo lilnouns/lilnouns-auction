@@ -63,6 +63,18 @@ msgstr "óculos"
 msgid "Glasses"
 msgstr "Óculos"
 
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "(Selecionar tudo)"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "+ {extraCount} a mais"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 Atualização disponível"
+
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
 msgstr "Uma nova versão está no ar. "
@@ -85,16 +97,25 @@ msgstr "Comprar agora por {priceLabel}"
 msgid "Buying..."
 msgstr "Comprando..."
 
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "Limpar"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "Clique em um Lil Noun para ver seus traços e o preço VRGDA atual. Encontre aquele que fala com você."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Fechar"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "Fechar banner"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -180,6 +201,14 @@ msgstr "Guia do Leilão Lil Nouns"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Os leilões Lil Nouns deixaram o formato inglês tradicional usado pelos Nouns e adotaram um leilão holandês movido por VRGDA (Variable Rate Gradual Dutch Auction)."
 
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "Nenhum resultado encontrado."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "Nenhuma seed corresponde aos filtros atuais."
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
@@ -210,6 +239,10 @@ msgstr "Português"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "Os preços caem a cada 15 minutos, mas nunca ficam abaixo do valor de reserva de 0,03 ETH."
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "Redirecionando..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Atualizar"
@@ -218,10 +251,18 @@ msgstr "Atualizar"
 msgid "Reload"
 msgstr "Recarregar"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "Pesquisar..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "Selecionar {0}"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "Selecionar opções"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -267,6 +308,10 @@ msgstr "Os traços são gerados algoritmicamente usando o ID de token atual e um
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Entenda como funcionam os leilões VRGDA do Lil Nouns e descubra como fazer mint dos seus NFTs favoritos."
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "Atualizações em pausa"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
 msgstr "Ver atributos e preços deste Noun"
@@ -282,6 +327,10 @@ msgstr "A VRGDA ajusta dinamicamente os preços dos NFTs com base no tempo e na 
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "Carteira Conectada"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "Pausamos os dados do leilão ao vivo para economizar recursos. Mova o mouse ou toque na tela para retomar as atualizações."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."

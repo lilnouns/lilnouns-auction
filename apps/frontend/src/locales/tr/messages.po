@@ -63,6 +63,18 @@ msgstr "gözlük"
 msgid "Glasses"
 msgstr "Gözlük"
 
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "(Tümünü Seç)"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "+ {extraCount} daha"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 Güncelleme mevcut"
+
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
 msgstr "Yeni bir sürüm yayında. "
@@ -85,16 +97,25 @@ msgstr "{priceLabel} karşılığında şimdi satın al"
 msgid "Buying..."
 msgstr "Satın alınıyor..."
 
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "Temizle"
+
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
 msgstr "Bir Lil Noun'un özelliklerini ve mevcut VRGDA fiyatını görmek için üzerine tıklayın. Size hitap edeni bulun."
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
 msgstr "Kapat"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "Afişi kapat"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -180,6 +201,14 @@ msgstr "Lil Nouns Açık Artırma Rehberi"
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Lil Nouns açık artırmaları, Nouns'un kullandığı geleneksel İngiliz müzayede formatının ötesine geçerek VRGDA (Variable Rate Gradual Dutch Auction) ile desteklenen Hollanda usulü bir açık artırmayı benimsedi."
 
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "Sonuç bulunamadı."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "Geçerli filtrelerle eşleşen tohum yok."
+
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-image.tsx
@@ -210,6 +239,10 @@ msgstr "Portekizce"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "Fiyatlar her 15 dakikada düşer ancak asla 0,03 ETH'lik taban fiyatın altına inmez."
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "Yönlendiriliyor..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
 msgstr "Yenile"
@@ -218,10 +251,18 @@ msgstr "Yenile"
 msgid "Reload"
 msgstr "Yenile"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "Ara..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "{0} seç"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "Seçenekleri seçin"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -267,6 +308,10 @@ msgstr "Özellikler mevcut token kimliği ve seçilen blok karması kullanılara
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Lil Nouns VRGDA açık artırmalarının nasıl çalıştığını anlayın ve favori NFT'lerinizi nasıl mint edeceğinizi keşfedin."
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "Güncellemeler duraklatıldı"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
 msgstr "Bu Noun için özellikleri ve fiyatlandırmayı görüntüle"
@@ -282,6 +327,10 @@ msgstr "VRGDA, zamanı ve talebi baz alarak NFT fiyatlarını dinamik şekilde a
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
 msgstr "Cüzdan Bağlandı"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "Kaynakları korumak için canlı açık artırma verilerini duraklattık. Güncellemeleri sürdürmek için fareyi hareket ettirin veya ekrana dokunun."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."

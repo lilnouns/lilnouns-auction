@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: tr\n"
+"Language: es\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -16,52 +16,64 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "background"
-msgstr "arka plan"
+msgstr "fondo"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Background"
-msgstr "Arka Plan"
+msgstr "Fondo"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "body"
-msgstr "gövde"
+msgstr "cuerpo"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Body"
-msgstr "Gövde"
+msgstr "Cuerpo"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "accessory"
-msgstr "aksesuar"
+msgstr "accesorio"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Accessory"
-msgstr "Aksesuar"
+msgstr "Accesorio"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "head"
-msgstr "baş"
+msgstr "cabeza"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Head"
-msgstr "Baş"
+msgstr "Cabeza"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "glasses"
-msgstr "gözlük"
+msgstr "gafas"
 
 #. js-lingui-explicit-id
 #: src/components/auction-trait-filter.tsx
 msgid "Glasses"
-msgstr "Gözlük"
+msgstr "Gafas"
+
+#: src/components/multi-select.tsx
+msgid "(Select All)"
+msgstr "(Seleccionar todo)"
+
+#: src/components/multi-select.tsx
+msgid "+ {extraCount} more"
+msgstr "+ {extraCount} más"
+
+#: src/components/update-banner.tsx
+msgid "🚨 Update Available"
+msgstr "🚨 Actualización disponible"
 
 #: src/components/update-banner.tsx
 msgid "A new version is live. "
@@ -83,7 +95,11 @@ msgstr "Comprar ahora por {priceLabel}"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Buying..."
-msgstr "Satın alınıyor..."
+msgstr "Comprando..."
+
+#: src/components/multi-select.tsx
+msgid "Clear"
+msgstr "Limpiar"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Click on a Lil Noun to view its traits and current VRGDA price. Find the one that speaks to you."
@@ -91,10 +107,15 @@ msgstr "Haz clic en un Lil Noun para ver sus rasgos y el precio VRGDA actual. En
 
 #: src/components/auction-filter-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
+#: src/components/multi-select.tsx
 #: src/components/user-guide-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Close"
-msgstr "Kapat"
+msgstr "Cerrar"
+
+#: src/components/banner.tsx
+msgid "Close banner"
+msgstr "Cerrar banner"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Confirming..."
@@ -103,7 +124,7 @@ msgstr "Confirmando..."
 #: src/components/auction-seed-dialog.tsx
 #: src/components/wallet-options-dialog.tsx
 msgid "Connect Wallet"
-msgstr "Cüzdanı Bağla"
+msgstr "Conectar cartera"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Connect with one of our available wallet providers."
@@ -115,11 +136,11 @@ msgstr "Precio actual"
 
 #: src/components/mode-toggle.tsx
 msgid "Dark"
-msgstr "Karanlık"
+msgstr "Oscuro"
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Disconnect Wallet"
-msgstr "Cüzdan Bağlantısını Kes"
+msgstr "Desconectar cartera"
 
 #: src/components/language-switcher.tsx
 msgid "English"
@@ -127,7 +148,7 @@ msgstr "Inglés"
 
 #: src/components/error-fallback.tsx
 msgid "Error"
-msgstr "Hata"
+msgstr "Error"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Every 12 seconds, a new quirky Lil Noun becomes available, letting you choose when the price feels right."
@@ -135,7 +156,7 @@ msgstr "Cada 12 segundos aparece un nuevo y peculiar Lil Noun, permitiéndote el
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Filter Auctions"
-msgstr "Açık Artırmaları Filtrele"
+msgstr "Filtrar subastas"
 
 #: src/app/[lang]/frames/auctions/[auctionId]/page.tsx
 #: src/app/[lang]/frames/page.tsx
@@ -145,7 +166,7 @@ msgstr "Consigue tu Lil Noun"
 
 #: src/components/error-fallback.tsx
 msgid "Hide Details"
-msgstr "Detayları Gizle"
+msgstr "Ocultar detalles"
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
@@ -170,7 +191,7 @@ msgstr "Aydınlık"
 #: src/components/navbar.tsx
 #: src/components/navbar.tsx
 msgid "Lil Nouns Auction"
-msgstr "Lil Nouns Açık Artırması"
+msgstr "Subasta de Lil Nouns"
 
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns Auction Guide"
@@ -179,6 +200,14 @@ msgstr "Guía de la subasta de Lil Nouns"
 #: src/components/user-guide-dialog.tsx
 msgid "Lil Nouns auctions has moved beyond the traditional English auctions format used by Nouns, adopting a Dutch auction powered by VRGDA (Variable Rate Gradual Dutch Auction)."
 msgstr "Las subastas de Lil Nouns han dejado atrás el formato tradicional de subastas inglesas usado por Nouns, adoptando una subasta holandesa impulsada por VRGDA (Variable Rate Gradual Dutch Auction)."
+
+#: src/components/multi-select.tsx
+msgid "No results found."
+msgstr "No se encontraron resultados."
+
+#: src/components/auction-preview-grid.tsx
+msgid "No seeds match the current filters."
+msgstr "Ninguna semilla coincide con los filtros actuales."
 
 #: src/components/auction-seed-dialog.tsx
 #: src/components/auction-seed-dialog.tsx
@@ -192,7 +221,7 @@ msgstr "Noun {nounId} | Subasta de Lil Nouns"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Noun Details"
-msgstr "Noun Detayları"
+msgstr "Detalles del Noun"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Pending..."
@@ -210,18 +239,30 @@ msgstr "Portugués"
 msgid "Prices reduce every 15 minutes but never drop below the reserve price of 0.03 ETH."
 msgstr "Los precios bajan cada 15 minutos pero nunca caen por debajo del precio de reserva de 0,03 ETH."
 
+#: src/components/redirect.tsx
+msgid "Redirecting..."
+msgstr "Redirigiendo..."
+
 #: src/components/error-fallback.tsx
 msgid "Refresh"
-msgstr "Yenile"
+msgstr "Actualizar"
 
 #: src/components/update-banner.tsx
 msgid "Reload"
 msgstr "Recargar"
 
+#: src/components/multi-select.tsx
+msgid "Search..."
+msgstr "Buscar..."
+
 #. placeholder {0}: label.toLowerCase()
 #: src/components/auction-trait-filter.tsx
 msgid "Select {0}"
 msgstr "Selecciona {0}"
+
+#: src/components/multi-select.tsx
+msgid "Select options"
+msgstr "Seleccionar opciones"
 
 #: src/components/auction-filter-dialog.tsx
 msgid "Select traits to filter the auction listings"
@@ -241,15 +282,15 @@ msgstr "Español"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
-msgstr "Ağı Değiştir"
+msgstr "Cambiar red"
 
 #: src/components/mode-toggle.tsx
 msgid "System"
-msgstr "Sistem"
+msgstr "Sistema"
 
 #: src/components/mode-toggle.tsx
 msgid "Toggle theme"
-msgstr "Temayı Değiştir"
+msgstr "Cambiar tema"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "total traits"
@@ -267,13 +308,17 @@ msgstr "Los rasgos se generan algorítmicamente usando el ID del token actual y 
 msgid "Understand how the Lil Nouns VRGDA auctions work and discover how to mint your favorite NFTs."
 msgstr "Entiende cómo funcionan las subastas VRGDA de Lil Nouns y descubre cómo acuñar tus NFTs favoritos."
 
+#: src/components/idle-overlay.tsx
+msgid "Updates paused"
+msgstr "Actualizaciones en pausa"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "View traits and pricing for this Noun"
-msgstr "Bu Noun için özellikleri ve fiyatlandırmayı görüntüle"
+msgstr "Ver rasgos y precio de este Noun"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "View Transaction"
-msgstr "İşlemi Görüntüle"
+msgstr "Ver transacción"
 
 #: src/components/user-guide-dialog.tsx
 msgid "VRGDA dynamically adjusts NFT prices based on time and demand, starting high and gradually dropping until minting occurs, balancing urgency and fairness without fixed intervals."
@@ -281,7 +326,11 @@ msgstr "VRGDA ajusta dinámicamente los precios de los NFT según el tiempo y la
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Wallet Connected"
-msgstr "Cüzdan Bağlandı"
+msgstr "Cartera conectada"
+
+#: src/components/idle-overlay.tsx
+msgid "We paused live auction data to save resources. Move your mouse or tap the screen to resume updates."
+msgstr "Hemos pausado los datos de la subasta en vivo para ahorrar recursos. Mueve el ratón o toca la pantalla para reanudar las actualizaciones."
 
 #: src/components/wallet-options-dialog.tsx
 msgid "Your wallet is connected. Manage your wallet connection below."
