@@ -168,6 +168,10 @@ msgstr "나만의 Lil Noun 받기"
 msgid "Hide Details"
 msgstr "세부 정보 숨기기"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Insufficient ETH balance. Price is {priceLabel}, your balance is {balanceLabel}."
+msgstr ""
+
 #: src/components/language-switcher.tsx
 msgid "Italian"
 msgstr "이탈리아어"

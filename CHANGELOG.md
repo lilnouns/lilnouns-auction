@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.9] - 2025-09-23
+
+### Features
+
+- Add translation for insufficient ETH balance
+
 ## [1.3.0-alpha.8] - 2025-09-23
 
 ### Features
