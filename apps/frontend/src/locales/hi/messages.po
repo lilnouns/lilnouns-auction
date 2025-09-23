@@ -168,6 +168,10 @@ msgstr "अपना Lil Noun प्राप्त करें"
 msgid "Hide Details"
 msgstr "विवरण छिपाएँ"
 
+#: src/components/auction-seed-dialog.tsx
+msgid "Insufficient ETH balance. Price is {priceLabel}, your balance is {balanceLabel}."
+msgstr ""
+
 #: src/components/language-switcher.tsx
 msgid "Italian"
 msgstr "इतालवी"
