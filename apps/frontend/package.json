@@ -32,7 +32,7 @@
     "@repo/assets": "workspace:*",
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "5.89.0",
-    "@wagmi/core": "2.21.0",
+    "@wagmi/core": "2.21.1",
     "autoprefixer": "10.4.21",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
@@ -102,7 +102,7 @@
     "tailwind-merge": "3.3.1",
     "tailwindcss": "4.1.13",
     "typescript": "5.9.2",
-    "vercel": "48.1.0",
+    "vercel": "48.1.1",
     "vitest": "3.2.4",
     "wrangler": "4.16.1"
   }

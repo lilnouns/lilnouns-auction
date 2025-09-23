@@ -12,7 +12,12 @@ import {
 import { Button } from '@repo/ui/components/button'
 import { PoolSeed } from '@/types'
 
-import { useAccount, useSwitchChain, useWaitForTransactionReceipt } from 'wagmi'
+import {
+  useAccount,
+  useBalance,
+  useSwitchChain,
+  useWaitForTransactionReceipt,
+} from 'wagmi'
 
 import { useDialogStore } from '@/stores/dialog-store'
 import { walletOptions } from '@/components/wallet-options-dialog'
@@ -84,7 +89,7 @@ export function AuctionSeedDialog({
 
   const actionButtonClassName = 'w-full sm:w-auto'
 
-  const { isConnected, chainId } = useAccount()
+  const { isConnected, chainId, address } = useAccount()
 
   const { switchChain, isPending: isSwitchChainPending } = useSwitchChain()
 
@@ -104,6 +109,14 @@ export function AuctionSeedDialog({
   const correctChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID)
   const isWrongChain = chainId !== correctChainId
 
+  // Fetch the connected wallet's native ETH balance on the active chain
+  const { data: balanceData } = useBalance({
+    address,
+    chainId: correctChainId,
+    // Only attempt to fetch when we have an address
+    query: { enabled: Boolean(address) },
+  })
+
   const backgrounds: { [key: string]: string } = {
     d5d7e1: 'cold',
     e1d7d5: 'warm',
@@ -117,6 +130,20 @@ export function AuctionSeedDialog({
     return `${round(formatted, 5)} ETH`
   }, [price])
   const hasPrice = price !== undefined
+
+  const balanceValue = balanceData?.value
+  const insufficientBalance = Boolean(
+    hasPrice &&
+      balanceValue !== undefined &&
+      price !== undefined &&
+      balanceValue < price,
+  )
+
+  const balanceLabel = useMemo(() => {
+    if (balanceValue === undefined) return null
+    const formatted = Number.parseFloat(formatEther(balanceValue))
+    return `${round(formatted, 5)} ETH`
+  }, [balanceValue])
 
   const blockLabel = useMemo(() => {
     if (blockNumber === undefined) return '—'
@@ -187,6 +214,9 @@ export function AuctionSeedDialog({
     [traitCards],
   )
 
+  const showInsufficientNotice =
+    isConnected && !isWrongChain && !isSuccessBuyNow && insufficientBalance
+
   const renderActionButton = () => {
     if (!isConnected) {
       return (
@@ -253,7 +283,7 @@ export function AuctionSeedDialog({
     return (
       <Button
         onClick={() => buyNow(blockNumber, nounId)}
-        disabled={isPendingBuyNow || isSuccessBuyNow}
+        disabled={isPendingBuyNow || isSuccessBuyNow || insufficientBalance}
         className={actionButtonClassName}
       >
         {isPendingBuyNow ? (
@@ -359,6 +389,14 @@ export function AuctionSeedDialog({
           </div>
         </div>
         <Footer className={footerClassName}>
+          {showInsufficientNotice && (
+            <p className="text-sm text-destructive sm:mr-auto">
+              <Trans>
+                Insufficient ETH balance. Price is {priceLabel}, your balance is{' '}
+                {balanceLabel}.
+              </Trans>
+            </p>
+          )}
           {renderActionButton()}
           {isMobile && (
             <DrawerClose asChild>
