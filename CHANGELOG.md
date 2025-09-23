@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.8] - 2025-09-23
+
+### Features
+
+- Add balance check and insufficient notice
+
 ## [1.3.0-alpha.7] - 2025-09-22
 
 ### Bug Fixes
