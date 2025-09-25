@@ -585,8 +585,8 @@ importers:
         specifier: 4.1.13
         version: 4.1.13
       '@turbo/gen':
-        specifier: 2.5.6
-        version: 2.5.6(@types/node@24.5.2)(typescript@5.9.2)
+        specifier: 2.5.8
+        version: 2.5.8(@types/node@24.5.2)(typescript@5.9.2)
       '@types/node':
         specifier: 24.5.2
         version: 24.5.2
@@ -2343,6 +2343,15 @@ packages:
       '@types/node':
         optional: true
 
+  '@inquirer/external-editor@1.0.2':
+    resolution: {integrity: sha512-yy9cOoBnx58TlsPrIxauKIFQTiyH+0MK4e97y4sV9ERbI+zDxw7i2hxHLCIEGIE/8PPvDxGhgzIOTSOWcs6/MQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
   '@inquirer/figures@1.0.13':
     resolution: {integrity: sha512-lGPVU3yO9ZNqA7vTYz26jny41lE7yoQansmqdMLBEfqaGsmdg7V3W9mK9Pvb5IL4EVZ9GnSDGMO/cJXud5dMaw==}
     engines: {node: '>=18'}
@@ -3867,12 +3876,12 @@ packages:
   '@tsconfig/node16@1.0.4':
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
 
-  '@turbo/gen@2.5.6':
-    resolution: {integrity: sha512-0ugshQQGJE/lVYHhkFsdAd6prM279Uyl+UVfylkNhrL21YML4/fGKPYb99G0bNJ+okp7bA++4/RDFh3MS0ZeRg==}
+  '@turbo/gen@2.5.8':
+    resolution: {integrity: sha512-PknlZnl4NzARv9p2KnRIA2q9cGWzrvv2G5moWLoZRTLspoE7jL2XtejzwbclS2iXGbXQWk27BfIugv98tS2s7w==}
     hasBin: true
 
-  '@turbo/workspaces@2.5.6':
-    resolution: {integrity: sha512-TmY25GmxzgX+395Fwl/F0te6S4RHdJtYl1QjZr+wlxVvKJ0IBOACpnpAvnLM3dpTgXuQukGtSWcRz7Zi9mZqcQ==}
+  '@turbo/workspaces@2.5.8':
+    resolution: {integrity: sha512-EE/27azLteK24It0B0IrjA7yWFC6jYZoTTUzL7R7HgiN0BWBPrTp6Ugpn0iE6+Bn9fFcjSp/IBBG8D8c7vXD1g==}
     hasBin: true
 
   '@tybys/wasm-util@0.10.1':
@@ -12675,6 +12684,13 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.5.2
 
+  '@inquirer/external-editor@1.0.2(@types/node@24.5.2)':
+    dependencies:
+      chardet: 2.1.0
+      iconv-lite: 0.7.0
+    optionalDependencies:
+      '@types/node': 24.5.2
+
   '@inquirer/figures@1.0.13': {}
 
   '@inquirer/input@4.2.2(@types/node@24.5.2)':
@@ -14534,9 +14550,9 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@turbo/gen@2.5.6(@types/node@24.5.2)(typescript@5.9.2)':
+  '@turbo/gen@2.5.8(@types/node@24.5.2)(typescript@5.9.2)':
     dependencies:
-      '@turbo/workspaces': 2.5.6(@types/node@24.5.2)
+      '@turbo/workspaces': 2.5.8(@types/node@24.5.2)
       commander: 10.0.1
       fs-extra: 10.1.0
       inquirer: 8.2.7(@types/node@24.5.2)
@@ -14554,7 +14570,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@turbo/workspaces@2.5.6(@types/node@24.5.2)':
+  '@turbo/workspaces@2.5.8(@types/node@24.5.2)':
     dependencies:
       commander: 10.0.1
       execa: 5.1.1
@@ -18689,7 +18705,7 @@ snapshots:
 
   inquirer@8.2.7(@types/node@24.5.2):
     dependencies:
-      '@inquirer/external-editor': 1.0.1(@types/node@24.5.2)
+      '@inquirer/external-editor': 1.0.2(@types/node@24.5.2)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       cli-cursor: 3.1.0
