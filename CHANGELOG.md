@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.12] - 2025-09-26
+
+### Documentation
+
+- Update README to remove warning and expand description
+
 ## [1.3.0-alpha.11] - 2025-09-25
 
 ### Bug Fixes

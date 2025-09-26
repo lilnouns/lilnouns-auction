@@ -7,10 +7,47 @@
 [![Farcaster (Warpcast) Follow](https://img.shields.io/badge/follow-%40nekofar-855DCD.svg?logo=farcaster&logoColor=f5f5f5&style=flat)](https://warpcast.com/nekofar)
 [![Donate](https://img.shields.io/badge/donate-nekofar.crypto-a2b9bc?logo=ethereum&logoColor=f5f5f5)](https://ud.me/nekofar.crypto)
 
-> [!WARNING]
-> Please note that the project is currently in an experimental phase, and it is subject to significant changes as it
-> progresses.
+## Description
 
-# Description
+This repository is a pnpm + Turbo monorepo for Lil Nouns Auction that provides:
 
-Lil Nouns Action is a client for Lil Nouns VRGDA.
+- A Next.js frontend (`apps/frontend`) for exploring Lil Nouns VRGDA auctions and related data.
+- A Farcaster worker (`apps/farcaster`) for auction-related casts/automation and integrations.
+- Shared UI, assets, and configuration packages under `packages/*`.
+
+This repo keeps feature code scoped to each app to avoid accidental coupling, with shared primitives exposed via the `@repo/*` namespace.
+
+## Monorepo Layout
+
+- `apps/frontend` – Next.js UI
+- `apps/farcaster` – Farcaster worker logic
+- `packages/ui`, `packages/assets` – shared primitives
+- `packages/*-config` – TypeScript, ESLint, and tooling configs
+
+## Quick Start
+
+- Install: `pnpm install`
+- Dev (all): `pnpm dev`
+- Dev (single app):
+  - Frontend: `pnpm --filter @repo/frontend dev`
+  - Farcaster: `pnpm --filter @repo/farcaster dev`
+
+## Configuration
+
+Do not commit secrets. Use environment files per app:
+
+- Frontend: `apps/frontend/.env.local`
+- Worker: `apps/farcaster/.dev.vars`
+
+Common variables to set:
+
+- `LILNOUNS_SUBGRAPH_URL`
+- `BLOCKS_SUBGRAPH_URL`
+- `NEXT_PUBLIC_SITE_URL`
+
+## Scripts
+
+- Lint: `pnpm lint`
+- Test: `pnpm test` or `pnpm --filter @repo/frontend test`
+- Build: `pnpm build`
+- Codegen (worker): `pnpm --filter @repo/farcaster codegen`
