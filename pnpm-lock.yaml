@@ -145,8 +145,8 @@ importers:
         specifier: 0.0.19
         version: 0.0.19(@farcaster/frame-sdk@0.1.10(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))(@wagmi/core@2.21.2(@tanstack/query-core@5.90.2)(@types/react@19.0.10)(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.4.0(react@19.1.1))(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11)))(viem@2.37.8(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.11))
       '@headlessui/react':
-        specifier: 2.2.8
-        version: 2.2.8(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 2.2.9
+        version: 2.2.9(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@heroicons/react':
         specifier: 2.2.0
         version: 2.2.0(react@19.1.1)
@@ -2134,8 +2134,8 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@headlessui/react@2.2.8':
-    resolution: {integrity: sha512-vkiZulDC0lFeTrZTbA4tHvhZHvkUb2PFh5xJ1BvWAZdRK0fayMKO1QEO4inWkXxK1i0I1rcwwu1d6mo0K7Pcbw==}
+  '@headlessui/react@2.2.9':
+    resolution: {integrity: sha512-Mb+Un58gwBn0/yWZfyrCh0TJyurtT+dETj7YHleylHk5od3dv2XqETPGWMyQ5/7sYN7oWdyM1u9MvC0OC8UmzQ==}
     engines: {node: '>=10'}
     peerDependencies:
       react: '>=19.0.0'
@@ -12474,7 +12474,7 @@ snapshots:
     dependencies:
       graphql: 16.11.0
 
-  '@headlessui/react@2.2.8(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@headlessui/react@2.2.9(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@floating-ui/react': 0.26.28(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@react-aria/focus': 3.21.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
