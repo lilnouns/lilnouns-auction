@@ -97,8 +97,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0(graphql-request@7.2.0(graphql@16.11.0))(graphql-tag@2.12.6(graphql@16.11.0))(graphql@16.11.0)
       '@graphql-codegen/typescript-operations':
-        specifier: 5.0.0
-        version: 5.0.0(graphql@16.11.0)
+        specifier: 5.0.1
+        version: 5.0.1(graphql@16.11.0)
       '@parcel/watcher':
         specifier: 2.5.1
         version: 2.5.1
@@ -1933,8 +1933,8 @@ packages:
       graphql-request: ^6.0.0 || ^7.0.0
       graphql-tag: ^2.0.0
 
-  '@graphql-codegen/typescript-operations@5.0.0':
-    resolution: {integrity: sha512-mqgp/lp5v7w+RYj5AJ/BVquP+sgje3EAgg++62ciolOB5zzWT8en09cRdNq4UZfszCYTOtlhCG7NQAAcSae37A==}
+  '@graphql-codegen/typescript-operations@5.0.1':
+    resolution: {integrity: sha512-uJwsOIqvXyxlOI1Mnoy8Mn3TiOHTzVTGDwqL9gHnpKqQZdFfvMgfDf/HyT7Mw3XCOfhSS99fe9ATW0bkMExBZg==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -12126,7 +12126,7 @@ snapshots:
       '@graphql-codegen/plugin-helpers': 6.0.0(graphql@16.11.0)
       '@graphql-codegen/typed-document-node': 6.0.0(graphql@16.11.0)
       '@graphql-codegen/typescript': 5.0.1(graphql@16.11.0)
-      '@graphql-codegen/typescript-operations': 5.0.0(graphql@16.11.0)
+      '@graphql-codegen/typescript-operations': 5.0.1(graphql@16.11.0)
       '@graphql-codegen/visitor-plugin-common': 6.0.0(graphql@16.11.0)
       '@graphql-tools/documents': 1.0.1(graphql@16.11.0)
       '@graphql-tools/utils': 10.9.1(graphql@16.11.0)
@@ -12206,11 +12206,11 @@ snapshots:
       - encoding
       - supports-color
 
-  '@graphql-codegen/typescript-operations@5.0.0(graphql@16.11.0)':
+  '@graphql-codegen/typescript-operations@5.0.1(graphql@16.11.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 6.0.0(graphql@16.11.0)
       '@graphql-codegen/typescript': 5.0.1(graphql@16.11.0)
-      '@graphql-codegen/visitor-plugin-common': 6.0.0(graphql@16.11.0)
+      '@graphql-codegen/visitor-plugin-common': 6.0.1(graphql@16.11.0)
       auto-bind: 4.0.0
       graphql: 16.11.0
       tslib: 2.6.3
