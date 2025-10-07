@@ -54,8 +54,8 @@ importers:
         specifier: 1.0.0-alpha.22
         version: 1.0.0-alpha.22(@tanstack/react-query@5.90.2(react@19.2.0))(@wagmi/core@2.21.2(@tanstack/query-core@5.90.2)(@types/react@19.0.10)(react@19.2.0)(typescript@5.9.3)(use-sync-external-store@1.5.0(react@19.2.0))(viem@2.37.11(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.11)))(graphql-request@7.2.0(graphql@16.11.0))(graphql-tag@2.12.6(graphql@16.11.0))(graphql@16.11.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3)(viem@2.37.11(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.11))(wagmi@2.17.5(@tanstack/query-core@5.90.2)(@tanstack/react-query@5.90.2(react@19.2.0))(@types/react@19.0.10)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(react@19.2.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.37.11(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.11))(zod@4.1.11))
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.66
-        version: 2.0.0-alpha.66(zod@4.1.11)
+        specifier: 2.0.0-alpha.72
+        version: 2.0.0-alpha.72(zod@4.1.11)
       graphql:
         specifier: 16.11.0
         version: 16.11.0
@@ -2711,8 +2711,8 @@ packages:
       viem: ^2.27.2
       wagmi: ^2.14.16
 
-  '@nekofar/warpcast@2.0.0-alpha.66':
-    resolution: {integrity: sha512-DwLNrxPaf5zRGxgVDKSECKc4eT5NR5P06JUACXMLj4aEAfZYhTzTNrVtVtKPeLz767E75q133+bA+jqE600izA==}
+  '@nekofar/warpcast@2.0.0-alpha.72':
+    resolution: {integrity: sha512-AEY02amkEnomwsD2ssz+M9ELgj2A1p7WUNA5zKHg6fStJ2LUpk8vxgyZo69SB3lJsFbGK1/OTj1Bhl3xT38DuQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       zod: ^4.0.10
@@ -13256,7 +13256,7 @@ snapshots:
       viem: 2.37.11(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.11)
       wagmi: 2.17.5(@tanstack/query-core@5.90.2)(@tanstack/react-query@5.90.2(react@19.2.0))(@types/react@19.0.10)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(react@19.2.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.37.11(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.11))(zod@4.1.11)
 
-  '@nekofar/warpcast@2.0.0-alpha.66(zod@4.1.11)':
+  '@nekofar/warpcast@2.0.0-alpha.72(zod@4.1.11)':
     dependencies:
       zod: 4.1.11
 
