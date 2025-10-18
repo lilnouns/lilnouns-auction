@@ -1,9 +1,13 @@
 packages:
-  - 'apps/*'
-  - 'packages/*'
+  - apps/*
+  - packages/*
 
-saveExact: true
-enablePrePostScripts: true
-preferSymlinkedExecutables: true
 autoInstallPeers: true
 
+enablePrePostScripts: true
+
+preferSymlinkedExecutables: true
+
+saveExact: true
+
+savePrefix: ''
