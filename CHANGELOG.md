@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.22] - 2025-10-20
+
+### Miscellaneous Tasks
+
+- Update pnpm workspace configuration
+
 ## [1.3.0-alpha.21] - 2025-10-17
 
 ### Bug Fixes
