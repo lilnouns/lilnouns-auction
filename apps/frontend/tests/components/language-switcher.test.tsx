@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/vitest'
 import { render, screen } from '@testing-library/react'
 import type { ReactNode } from 'react'
-import { describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { LanguageSwitcher } from '@/components/language-switcher'
 
@@ -54,9 +54,24 @@ vi.mock('@repo/ui/components/button', () => ({
 }))
 
 describe('LanguageSwitcher', () => {
+  beforeEach(() => {
+    pushMock.mockClear()
+  })
+
   it('includes the Chinese language option', () => {
     render(<LanguageSwitcher />)
 
     expect(screen.getByText('Chinese')).toBeInTheDocument()
+  })
+
+  it('includes the French language option and navigates to the locale route', () => {
+    render(<LanguageSwitcher />)
+
+    const frenchOption = screen.getAllByText('French')[0]
+    expect(frenchOption).toBeInTheDocument()
+
+    frenchOption.click()
+
+    expect(pushMock).toHaveBeenCalledWith('/fr/')
   })
 })
