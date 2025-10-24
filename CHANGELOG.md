@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.26] - 2025-10-24
+
+### Miscellaneous Tasks
+
+- Ignore major dependency upgrades
+
 ## [1.3.0-alpha.25] - 2025-10-23
 
 ### Bug Fixes
