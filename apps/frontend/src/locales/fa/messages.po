@@ -281,6 +281,10 @@ msgid "Something went wrong"
 msgstr "اشتباهی رخ داد"
 
 #: src/components/language-switcher.tsx
+msgid "Chinese"
+msgstr "چینی"
+
+#: src/components/language-switcher.tsx
 msgid "Spanish"
 msgstr "اسپانیایی"
 
