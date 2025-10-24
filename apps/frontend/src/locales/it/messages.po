@@ -284,6 +284,10 @@ msgstr "Qualcosa è andato storto"
 msgid "Spanish"
 msgstr "Spagnolo"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "Francese"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "Cambia rete"

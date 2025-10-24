@@ -284,6 +284,10 @@ msgstr "Algo salió mal"
 msgid "Spanish"
 msgstr "Español"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "Francés"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "Cambiar red"

@@ -284,6 +284,10 @@ msgstr "問題が発生しました"
 msgid "Spanish"
 msgstr "スペイン語"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "フランス語"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "ネットワークを切り替え"

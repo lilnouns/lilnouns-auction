@@ -284,6 +284,10 @@ msgstr "কিছু ভুল হয়েছে"
 msgid "Spanish"
 msgstr "স্প্যানিশ"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "ফরাসি"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "নেটওয়ার্ক পরিবর্তন করুন"

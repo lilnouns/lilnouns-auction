@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { msg } from '@lingui/core/macro'
+import type { MessageDescriptor } from '@lingui/core'
 import { useLingui } from '@lingui/react'
 import { usePathname, useRouter } from 'next/navigation'
 import {
@@ -12,23 +13,21 @@ import {
 } from '@repo/ui/components/dropdown-menu'
 import { GlobeIcon } from 'lucide-react'
 import { Button } from '@repo/ui/components/button'
+import { isIncludedIn } from 'remeda'
 
-type LOCALES = 'ar' | 'en' | 'tr' | 'pseudo'
+const supportedLocales = ['en', 'es', 'fr', 'it', 'pt'] as const
 
-const languages = {
+type SupportedLocale = (typeof supportedLocales)[number]
+
+const languageLabels = {
   en: msg`English`,
-  // ar: msg`Arabic`,
-  // de: msg`German`,
   es: msg`Spanish`,
-  // fr: msg`French`,
-  // id: msg`Indonesian`,
+  fr: msg`French`,
   it: msg`Italian`,
-  // ja: msg`Japanese`,
   pt: msg`Portuguese`,
-  // ru: msg`Russian`,
-  // tr: msg`Turkish`,
-  // zh: msg`Chinese`,
-} as const
+} satisfies Record<SupportedLocale, MessageDescriptor>
+
+const isSupportedLocale = isIncludedIn(supportedLocales)
 
 export function LanguageSwitcher() {
   const router = useRouter()
@@ -41,10 +40,12 @@ export function LanguageSwitcher() {
   // }
 
   function handleChange(newLocale: string) {
-    const locale = newLocale as LOCALES
+    if (!isSupportedLocale(newLocale)) {
+      return
+    }
 
     const pathNameWithoutLocale = pathname?.split('/')?.slice(2) ?? []
-    const newPath = `/${locale}/${pathNameWithoutLocale.join('/')}`
+    const newPath = `/${newLocale}/${pathNameWithoutLocale.join('/')}`
 
     router.push(newPath)
   }
@@ -57,10 +58,10 @@ export function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
-        {Object.keys(languages).map((locale) => {
+        {supportedLocales.map((locale) => {
           return (
             <DropdownMenuItem key={locale} onClick={() => handleChange(locale)}>
-              {i18n._(languages[locale as keyof typeof languages])}
+              {i18n._(languageLabels[locale])}
             </DropdownMenuItem>
           )
         })}

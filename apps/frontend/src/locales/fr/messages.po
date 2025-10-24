@@ -170,7 +170,7 @@ msgstr "Masquer les détails"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Insufficient ETH balance. Price is {priceLabel}, your balance is {balanceLabel}."
-msgstr ""
+msgstr "Solde ETH insuffisant. Le prix est {priceLabel}, votre solde est {balanceLabel}."
 
 #: src/components/language-switcher.tsx
 msgid "Italian"
@@ -283,6 +283,10 @@ msgstr "Un problème est survenu"
 #: src/components/language-switcher.tsx
 msgid "Spanish"
 msgstr "Espagnol"
+
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "Français"
 
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"

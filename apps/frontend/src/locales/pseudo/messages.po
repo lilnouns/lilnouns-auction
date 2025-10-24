@@ -284,6 +284,10 @@ msgstr "Ṡǿṁḗŧħīƞɠ ẇḗƞŧ ẇřǿƞɠ"
 msgid "Spanish"
 msgstr "Ṡƥȧƞīşħ"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "Ƒřḗƞƈħ"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "Şẇīŧƈħ Ƞḗŧẇǿřķ"

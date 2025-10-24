@@ -284,6 +284,10 @@ msgstr "Đã xảy ra lỗi"
 msgid "Spanish"
 msgstr "Tiếng Tây Ban Nha"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "Tiếng Pháp"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "Chuyển mạng"

@@ -284,6 +284,10 @@ msgstr "出错了"
 msgid "Spanish"
 msgstr "西班牙语"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "法语"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "切换网络"

@@ -284,6 +284,10 @@ msgstr "Bir şeyler ters gitti"
 msgid "Spanish"
 msgstr "İspanyolca"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "Fransızca"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "Ağı Değiştir"

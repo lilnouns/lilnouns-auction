@@ -284,6 +284,10 @@ msgstr "문제가 발생했습니다"
 msgid "Spanish"
 msgstr "스페인어"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "프랑스어"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "네트워크 전환"

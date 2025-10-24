@@ -284,6 +284,10 @@ msgstr "Κάτι πήγε στραβά"
 msgid "Spanish"
 msgstr "Ισπανικά"
 
+#: src/components/language-switcher.tsx
+msgid "French"
+msgstr "Γαλλικά"
+
 #: src/components/auction-seed-dialog.tsx
 msgid "Switch Network"
 msgstr "Αλλαγή Δικτύου"
