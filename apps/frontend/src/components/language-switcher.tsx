@@ -19,6 +19,7 @@ import type { Locale } from '@/utils/locales'
 const supportedLocales = [
   'en',
   'es',
+  'fr',
   'it',
   'pt',
   'zh',
@@ -31,7 +32,7 @@ const languages: Record<SupportedLocale, MessageDescriptor> = {
   // ar: msg`Arabic`,
   // de: msg`German`,
   es: msg`Spanish`,
-  // fr: msg`French`,
+  fr: msg`French`,
   // id: msg`Indonesian`,
   it: msg`Italian`,
   // ja: msg`Japanese`,
