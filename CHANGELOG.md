@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.27] - 2025-10-29
+
+### Features
+
+- Add chinese language option (#2011)
+- Enable french locale selection (#2013)
+
 ## [1.3.0-alpha.26] - 2025-10-24
 
 ### Miscellaneous Tasks
