@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { msg } from '@lingui/core/macro'
+import type { MessageDescriptor } from '@lingui/core'
 import { useLingui } from '@lingui/react'
 import { usePathname, useRouter } from 'next/navigation'
 import {
@@ -13,22 +14,33 @@ import {
 import { GlobeIcon } from 'lucide-react'
 import { Button } from '@repo/ui/components/button'
 
-type LOCALES = 'ar' | 'en' | 'tr' | 'pseudo'
+import type { Locale } from '@/utils/locales'
 
-const languages = {
+const supportedLocales = [
+  'en',
+  'es',
+  'fr',
+  'it',
+  'pt',
+  'zh',
+] as const satisfies readonly Locale[]
+
+type SupportedLocale = (typeof supportedLocales)[number]
+
+const languages: Record<SupportedLocale, MessageDescriptor> = {
   en: msg`English`,
   // ar: msg`Arabic`,
   // de: msg`German`,
   es: msg`Spanish`,
-  // fr: msg`French`,
+  fr: msg`French`,
   // id: msg`Indonesian`,
   it: msg`Italian`,
   // ja: msg`Japanese`,
   pt: msg`Portuguese`,
   // ru: msg`Russian`,
   // tr: msg`Turkish`,
-  // zh: msg`Chinese`,
-} as const
+  zh: msg`Chinese`,
+}
 
 export function LanguageSwitcher() {
   const router = useRouter()
@@ -40,11 +52,9 @@ export function LanguageSwitcher() {
   //   languages['pseudo'] = t`Pseudo`
   // }
 
-  function handleChange(newLocale: string) {
-    const locale = newLocale as LOCALES
-
+  function handleChange(newLocale: SupportedLocale) {
     const pathNameWithoutLocale = pathname?.split('/')?.slice(2) ?? []
-    const newPath = `/${locale}/${pathNameWithoutLocale.join('/')}`
+    const newPath = `/${newLocale}/${pathNameWithoutLocale.join('/')}`
 
     router.push(newPath)
   }
@@ -57,13 +67,11 @@ export function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
-        {Object.keys(languages).map((locale) => {
-          return (
-            <DropdownMenuItem key={locale} onClick={() => handleChange(locale)}>
-              {i18n._(languages[locale as keyof typeof languages])}
-            </DropdownMenuItem>
-          )
-        })}
+        {supportedLocales.map((locale) => (
+          <DropdownMenuItem key={locale} onClick={() => handleChange(locale)}>
+            {i18n._(languages[locale])}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )

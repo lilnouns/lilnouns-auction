@@ -281,6 +281,10 @@ msgid "Something went wrong"
 msgstr "문제가 발생했습니다"
 
 #: src/components/language-switcher.tsx
+msgid "Chinese"
+msgstr "중국어"
+
+#: src/components/language-switcher.tsx
 msgid "Spanish"
 msgstr "스페인어"
 
