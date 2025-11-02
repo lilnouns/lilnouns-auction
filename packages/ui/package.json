@@ -41,7 +41,7 @@
     "@repo/prettier-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "4.1.16",
-    "@turbo/gen": "2.5.8",
+    "@turbo/gen": "2.6.0",
     "@types/node": "24.9.2",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
