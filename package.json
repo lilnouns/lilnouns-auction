@@ -24,7 +24,7 @@
     "lint-staged": "16.2.6",
     "prettier": "3.6.2",
     "rimraf": "6.1.0",
-    "turbo": "2.5.8"
+    "turbo": "2.6.0"
   },
   "resolutions": {
     "@babel/traverse": ">=7.23.2",
