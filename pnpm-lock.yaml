@@ -50,8 +50,8 @@ importers:
         specifier: 1.0.0-alpha.36
         version: 1.0.0-alpha.36(@tanstack/react-query@5.90.6(react@19.2.0))(@wagmi/core@2.22.1(@tanstack/query-core@5.90.6)(@types/react@19.2.2)(react@19.2.0)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@19.2.0))(viem@2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12)))(graphql-request@7.3.1(graphql@16.12.0))(graphql-tag@2.12.6(graphql@16.12.0))(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3)(viem@2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(wagmi@2.19.2(@tanstack/query-core@5.90.6)(@tanstack/react-query@5.90.6(react@19.2.0))(@types/react@19.2.2)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.1.12))
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.83
-        version: 2.0.0-alpha.83(ofetch@1.5.1)(zod@4.1.12)
+        specifier: 2.0.0-alpha.85
+        version: 2.0.0-alpha.85(ofetch@1.5.1)(zod@4.1.12)
       graphql:
         specifier: 16.12.0
         version: 16.12.0
@@ -1842,10 +1842,6 @@ packages:
     resolution: {integrity: sha512-gtF186CXhIl1p4pJNGZw8Yc6RlshoePRvE0X91oPGb3vZ8pM3qOS9W9NGPat9LziaBV7XrJWGylNQXkGcnM3IQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/js@9.39.0':
-    resolution: {integrity: sha512-BIhe0sW91JGPiaF1mOuPy5v8NflqfjIcDNpC+LbW9f609WVRX1rArrhi6Z2ymvrAry9jw+5POTj4t2t62o8Bmw==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
   '@eslint/js@9.39.1':
     resolution: {integrity: sha512-S26Stp4zCy88tH94QbBv3XCuzRQiZ9yXofEILmglYTh/Ug/a9/umqvgFtYBAo3Lp0nsI/5/qH1CCrbdK3AP1Tw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -2859,8 +2855,8 @@ packages:
       viem: ^2.27.2
       wagmi: ^2.14.16
 
-  '@nekofar/warpcast@2.0.0-alpha.83':
-    resolution: {integrity: sha512-H2mOuvYaQZPc7kdCJnEoBk7lgtqdOISTHleWD3mhrJw5fwCSE+5Gl8oc/SNPmeyHRln3t+ywWciXvNipcIVKBw==}
+  '@nekofar/warpcast@2.0.0-alpha.85':
+    resolution: {integrity: sha512-YqQxhszMKwI47DKsjVwXwgxyLqfWkL7AVUdcwin95tYoZdsTqJJ1/SCJ/b09JkH3lGBedfv60I9lu3WY3lOD/g==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       ofetch: ^1.5.0
@@ -12271,8 +12267,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/js@9.39.0': {}
-
   '@eslint/js@9.39.1': {}
 
   '@eslint/object-schema@2.1.7': {}
@@ -13913,7 +13907,7 @@ snapshots:
       viem: 2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12)
       wagmi: 2.19.2(@tanstack/query-core@5.90.6)(@tanstack/react-query@5.90.6(react@19.2.0))(@types/react@19.2.2)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.1.12)
 
-  '@nekofar/warpcast@2.0.0-alpha.83(ofetch@1.5.1)(zod@4.1.12)':
+  '@nekofar/warpcast@2.0.0-alpha.85(ofetch@1.5.1)(zod@4.1.12)':
     dependencies:
       ofetch: 1.5.1
       zod: 4.1.12
