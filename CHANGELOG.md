@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-alpha.29] - 2025-11-05
+
+### Features
+
+- Add paper bag head
+
 ## [1.3.0-alpha.28] - 2025-11-01
 
 ### Bug Fixes
