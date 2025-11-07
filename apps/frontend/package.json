@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.10",
-    "@cloudflare/workers-types": "4.20251014.0",
+    "@cloudflare/workers-types": "4.20251106.1",
     "@eslint/eslintrc": "3.3.1",
     "@lingui/cli": "5.5.1",
     "@lingui/conf": "5.5.1",
