@@ -50,8 +50,8 @@ importers:
         specifier: 1.0.0-alpha.36
         version: 1.0.0-alpha.36(@tanstack/react-query@5.90.7(react@19.2.0))(@wagmi/core@2.22.1(@tanstack/query-core@5.90.7)(@types/react@19.2.2)(react@19.2.0)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@19.2.0))(viem@2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12)))(graphql-request@7.3.1(graphql@16.12.0))(graphql-tag@2.12.6(graphql@16.12.0))(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3)(viem@2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(wagmi@2.19.2(@tanstack/query-core@5.90.7)(@tanstack/react-query@5.90.7(react@19.2.0))(@types/react@19.2.2)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.1.12))
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.85
-        version: 2.0.0-alpha.85(ofetch@1.5.1)(zod@4.1.12)
+        specifier: 2.0.0-alpha.89
+        version: 2.0.0-alpha.89(ofetch@1.5.1)(zod@4.1.12)
       graphql:
         specifier: 16.12.0
         version: 16.12.0
@@ -75,8 +75,8 @@ importers:
         specifier: 1.15.0
         version: 1.15.0(graphql@16.12.0)(typescript@5.9.3)
       '@cloudflare/workers-types':
-        specifier: 4.20251106.1
-        version: 4.20251106.1
+        specifier: 4.20251109.0
+        version: 4.20251109.0
       '@graphprotocol/graph-ts':
         specifier: 0.38.2
         version: 0.38.2
@@ -121,7 +121,7 @@ importers:
         version: 5.9.3
       wrangler:
         specifier: 4.16.1
-        version: 4.16.1(@cloudflare/workers-types@4.20251106.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+        version: 4.16.1(@cloudflare/workers-types@4.20251109.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
 
   apps/frontend:
     dependencies:
@@ -252,8 +252,8 @@ importers:
         specifier: 2.3.6
         version: 2.3.6(react@19.2.0)
       tailwind-merge:
-        specifier: 3.3.1
-        version: 3.3.1
+        specifier: 3.4.0
+        version: 3.4.0
       viem:
         specifier: 2.38.6
         version: 2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12)
@@ -269,10 +269,10 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.10
-        version: 1.13.10(@cloudflare/workers-types@4.20251106.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@48.9.0(rollup@4.53.1)(typescript@5.9.3))(wrangler@4.16.1(@cloudflare/workers-types@4.20251106.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+        version: 1.13.10(@cloudflare/workers-types@4.20251109.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@48.9.0(rollup@4.53.1)(typescript@5.9.3))(wrangler@4.16.1(@cloudflare/workers-types@4.20251109.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
-        specifier: 4.20251106.1
-        version: 4.20251106.1
+        specifier: 4.20251109.0
+        version: 4.20251109.0
       '@eslint/eslintrc':
         specifier: 3.3.1
         version: 3.3.1
@@ -392,7 +392,7 @@ importers:
         version: 4.0.8(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@27.1.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(msw@2.11.6(@types/node@24.10.0)(typescript@5.9.3))(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)
       wrangler:
         specifier: 4.16.1
-        version: 4.16.1(@cloudflare/workers-types@4.20251106.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+        version: 4.16.1(@cloudflare/workers-types@4.20251109.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
 
   packages/assets:
     dependencies:
@@ -556,8 +556,8 @@ importers:
         specifier: 2.0.7
         version: 2.0.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       tailwind-merge:
-        specifier: 3.3.1
-        version: 3.3.1
+        specifier: 3.4.0
+        version: 3.4.0
       tailwindcss-animate:
         specifier: 1.0.7
         version: 1.0.7(tailwindcss@4.1.17)
@@ -1074,8 +1074,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20251106.1':
-    resolution: {integrity: sha512-+oD+w4K9VYMb1/d3lQ4A7GIV7Im6xpwaCRAXSUSeYKWw5LSQSpai1kJXh7LGIVE9HnJv9gXKpjaMSgcffW4Igw==}
+  '@cloudflare/workers-types@4.20251109.0':
+    resolution: {integrity: sha512-/wMfoS6NmoY0GgKVoRUp4x0yiZM0eNXwXTTzM7gFJKcm+0NtZmzUzgXj6xpShkfWSrmug0mX7BbyaFMAMHFlPA==}
 
   '@coinbase/cdp-sdk@1.38.4':
     resolution: {integrity: sha512-xVvfluaGt0NxNmjElP3C1yI6KnsGwihabdXj+qNtjjsSmd/Ha2V3gAiCyNrrYOqIORn4mpC2jgu2fUFEDaMpaw==}
@@ -2855,8 +2855,8 @@ packages:
       viem: ^2.27.2
       wagmi: ^2.14.16
 
-  '@nekofar/warpcast@2.0.0-alpha.85':
-    resolution: {integrity: sha512-YqQxhszMKwI47DKsjVwXwgxyLqfWkL7AVUdcwin95tYoZdsTqJJ1/SCJ/b09JkH3lGBedfv60I9lu3WY3lOD/g==}
+  '@nekofar/warpcast@2.0.0-alpha.89':
+    resolution: {integrity: sha512-nSq0vWgDZZNFRa5pmr7a3FyVs7Xug9fuIuHoRDn4C3jktY0MpRiGhDvcbydCprW5wI/uOt38OvsoQ4tvDqdYdw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       ofetch: ^1.5.0
@@ -10109,8 +10109,8 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
-  tailwind-merge@3.3.1:
-    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
+  tailwind-merge@3.4.0:
+    resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -11668,7 +11668,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20251106.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@48.9.0(rollup@4.53.1)(typescript@5.9.3))(wrangler@4.16.1(@cloudflare/workers-types@4.20251106.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20251109.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@48.9.0(rollup@4.53.1)(typescript@5.9.3))(wrangler@4.16.1(@cloudflare/workers-types@4.20251109.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.15.0
       ast-types: 0.14.2
@@ -11683,9 +11683,9 @@ snapshots:
       pcre-to-regexp: 1.1.0
       semver: 7.7.3
       vercel: 48.9.0(rollup@4.53.1)(typescript@5.9.3)
-      wrangler: 4.16.1(@cloudflare/workers-types@4.20251106.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      wrangler: 4.16.1(@cloudflare/workers-types@4.20251109.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20251106.1
+      '@cloudflare/workers-types': 4.20251109.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -11726,7 +11726,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20250718.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20251106.1': {}
+  '@cloudflare/workers-types@4.20251109.0': {}
 
   '@coinbase/cdp-sdk@1.38.4(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.9.3)(utf-8-validate@5.0.10)(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
@@ -13883,7 +13883,7 @@ snapshots:
       viem: 2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12)
       wagmi: 2.19.2(@tanstack/query-core@5.90.7)(@tanstack/react-query@5.90.7(react@19.2.0))(@types/react@19.2.2)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.38.6(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.12))(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.1.12)
 
-  '@nekofar/warpcast@2.0.0-alpha.85(ofetch@1.5.1)(zod@4.1.12)':
+  '@nekofar/warpcast@2.0.0-alpha.89(ofetch@1.5.1)(zod@4.1.12)':
     dependencies:
       ofetch: 1.5.1
       zod: 4.1.12
@@ -14054,7 +14054,7 @@ snapshots:
 
   '@prisma/adapter-d1@6.19.0':
     dependencies:
-      '@cloudflare/workers-types': 4.20251106.1
+      '@cloudflare/workers-types': 4.20251109.0
       '@prisma/driver-adapter-utils': 6.19.0
       ky: 1.7.5
 
@@ -22904,7 +22904,7 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwind-merge@3.3.1: {}
+  tailwind-merge@3.4.0: {}
 
   tailwindcss-animate@1.0.7(tailwindcss@4.1.17):
     dependencies:
@@ -23803,7 +23803,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250718.0
       '@cloudflare/workerd-windows-64': 1.20250718.0
 
-  wrangler@4.16.1(@cloudflare/workers-types@4.20251106.1)(bufferutil@4.0.9)(utf-8-validate@5.0.10):
+  wrangler@4.16.1(@cloudflare/workers-types@4.20251109.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.3.2(unenv@2.0.0-rc.17)(workerd@1.20250508.0)
@@ -23814,7 +23814,7 @@ snapshots:
       unenv: 2.0.0-rc.17
       workerd: 1.20250508.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20251106.1
+      '@cloudflare/workers-types': 4.20251109.0
       fsevents: 2.3.3
       sharp: 0.33.5
     transitivePeerDependencies:
