@@ -33,7 +33,7 @@
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "5.90.7",
     "@wagmi/core": "2.22.1",
-    "autoprefixer": "10.4.21",
+    "autoprefixer": "10.4.22",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cssnano": "7.1.2",
