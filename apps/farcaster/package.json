@@ -17,7 +17,7 @@
     "@nekofar/lilnouns": "1.0.0-alpha.40",
     "@nekofar/warpcast": "2.0.0-alpha.89",
     "graphql": "16.12.0",
-    "graphql-request": "7.3.3",
+    "graphql-request": "7.3.4",
     "graphql-tag": "2.12.6",
     "luxon": "3.7.2",
     "remeda": "2.32.0",
