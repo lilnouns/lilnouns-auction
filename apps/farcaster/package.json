@@ -21,11 +21,11 @@
     "graphql-tag": "2.12.6",
     "luxon": "3.7.2",
     "remeda": "2.32.0",
-    "viem": "2.39.3"
+    "viem": "2.40.2"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.15.1",
-    "@cloudflare/workers-types": "4.20251120.0",
+    "@cloudflare/workers-types": "4.20251121.0",
     "@graphprotocol/graph-ts": "0.38.2",
     "@graphql-codegen/cli": "6.1.0",
     "@graphql-codegen/schema-ast": "5.0.0",
