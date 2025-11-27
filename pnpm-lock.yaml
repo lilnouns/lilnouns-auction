@@ -269,7 +269,7 @@ importers:
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.10
-        version: 1.13.10(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@48.10.14(rollup@4.53.3)(typescript@5.9.3))(wrangler@4.16.1(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+        version: 1.13.10(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@48.11.0(rollup@4.53.3)(typescript@5.9.3))(wrangler@4.16.1(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
         specifier: 4.20251126.0
         version: 4.20251126.0
@@ -385,8 +385,8 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       vercel:
-        specifier: 48.10.14
-        version: 48.10.14(rollup@4.53.3)(typescript@5.9.3)
+        specifier: 48.11.0
+        version: 48.11.0(rollup@4.53.3)(typescript@5.9.3)
       vitest:
         specifier: 4.0.14
         version: 4.0.14(@edge-runtime/vm@3.2.0)(@types/node@24.10.1)(jiti@2.6.1)(jsdom@27.2.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.30.2)(msw@2.11.6(@types/node@24.10.1)(typescript@5.9.3))(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.1)
@@ -2404,6 +2404,9 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
+  '@iarna/toml@2.2.5':
+    resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -2826,8 +2829,8 @@ packages:
   '@lit/reactive-element@2.1.1':
     resolution: {integrity: sha512-N+dm5PAYdQ8e6UlywyyrgI2t++wFGXfHx+dSJ1oBrg6FAxUj40jId++EaRm80MKX5JnlH1sBsyZ5h0bcZKemCg==}
 
-  '@mapbox/node-pre-gyp@2.0.0':
-    resolution: {integrity: sha512-llMXd39jtP0HpQLVI37Bf1m2ADlEb35GYSh1SDSLsBhR+5iCxiNGlT31yqbNtVHygHAtMy6dWFERpU2JgufhPg==}
+  '@mapbox/node-pre-gyp@2.0.3':
+    resolution: {integrity: sha512-uwPAhccfFJlsfCxMYTwOdVfOz3xqyj8xYL3zJj8f0pb30tLohnnFPhLuqp4/qoEz8sNxe4SESZedcBojRefIzg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4766,6 +4769,9 @@ packages:
 
   '@vercel/ruby@2.2.2':
     resolution: {integrity: sha512-PgO3kVPPmYw914BQpgi2/NQSgaXe4xoLLdNhYuI7tJxwfZzVfYizNvhjREyoOvn96LeuB4gNS5P7nbeJjHqb/w==}
+
+  '@vercel/rust@1.0.3':
+    resolution: {integrity: sha512-u0kh2ZafuxTelXPRbv2/tR6cC9MBjgRhrzVuKxOZk7GyLnFwNTDuNwoP4iJ03yF1k5GqGYB0v+0Zvty67isAAQ==}
 
   '@vercel/static-build@2.8.11':
     resolution: {integrity: sha512-iR287qgXdN4cSzQxvJsYaZqfEZteLx/OsS32fwMhkjGthqqoHVyKwidKaeNyA7LS+bTWwdRRzETDW/PZHl/6uQ==}
@@ -10777,8 +10783,8 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0.0 || ^19.0.0-rc
 
-  vercel@48.10.14:
-    resolution: {integrity: sha512-uUukZtsRWF5nxOWkt7Rt0+IPu07rMmAC9vCCEbnatrfu1SLE+/9aZfverJjhUzCLdC9sm0JVxI+g7Er4A8yDqA==}
+  vercel@48.11.0:
+    resolution: {integrity: sha512-q9zVkONGB5KzuSQOUQ/U/ob0yIHieSkCBATQOn2gnCB7Gyz/rRyXaqaHR0J0DeOGun39DO2KlvcFhs05oH6OCA==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -11753,7 +11759,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@48.10.14(rollup@4.53.3)(typescript@5.9.3))(wrangler@4.16.1(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@48.11.0(rollup@4.53.3)(typescript@5.9.3))(wrangler@4.16.1(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.15.0
       ast-types: 0.14.2
@@ -11767,7 +11773,7 @@ snapshots:
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.7.3
-      vercel: 48.10.14(rollup@4.53.3)(typescript@5.9.3)
+      vercel: 48.11.0(rollup@4.53.3)(typescript@5.9.3)
       wrangler: 4.16.1(@cloudflare/workers-types@4.20251126.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     optionalDependencies:
       '@cloudflare/workers-types': 4.20251126.0
@@ -13402,6 +13408,8 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
+  '@iarna/toml@2.2.5': {}
+
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
       '@img/sharp-libvips-darwin-arm64': 1.0.4
@@ -13841,7 +13849,7 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.4.0
 
-  '@mapbox/node-pre-gyp@2.0.0':
+  '@mapbox/node-pre-gyp@2.0.3':
     dependencies:
       consola: 3.4.2
       detect-libc: 2.1.2
@@ -16380,7 +16388,7 @@ snapshots:
 
   '@vercel/nft@1.1.0(rollup@4.53.3)':
     dependencies:
-      '@mapbox/node-pre-gyp': 2.0.0
+      '@mapbox/node-pre-gyp': 2.0.3
       '@rollup/pluginutils': 5.3.0(rollup@4.53.3)
       acorn: 8.15.0
       acorn-import-attributes: 1.9.5(acorn@8.15.0)
@@ -16456,6 +16464,11 @@ snapshots:
       - supports-color
 
   '@vercel/ruby@2.2.2': {}
+
+  '@vercel/rust@1.0.3':
+    dependencies:
+      '@iarna/toml': 2.2.5
+      execa: 5.1.1
 
   '@vercel/static-build@2.8.11':
     dependencies:
@@ -23648,7 +23661,7 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
 
-  vercel@48.10.14(rollup@4.53.3)(typescript@5.9.3):
+  vercel@48.11.0(rollup@4.53.3)(typescript@5.9.3):
     dependencies:
       '@vercel/backends': 0.0.12(rollup@4.53.3)(typescript@5.9.3)
       '@vercel/blob': 1.0.2
@@ -23668,6 +23681,7 @@ snapshots:
       '@vercel/redwood': 2.4.3(rollup@4.53.3)
       '@vercel/remix-builder': 5.5.3(rollup@4.53.3)
       '@vercel/ruby': 2.2.2
+      '@vercel/rust': 1.0.3
       '@vercel/static-build': 2.8.11
       chokidar: 4.0.0
       jose: 5.9.6
