@@ -17,15 +17,15 @@
     "@nekofar/lilnouns": "1.0.0-alpha.43",
     "@nekofar/warpcast": "2.0.0-alpha.92",
     "graphql": "16.12.0",
-    "graphql-request": "7.3.4",
+    "graphql-request": "7.3.5",
     "graphql-tag": "2.12.6",
     "luxon": "3.7.2",
     "remeda": "2.32.0",
-    "viem": "2.40.2"
+    "viem": "2.40.3"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.15.1",
-    "@cloudflare/workers-types": "4.20251121.0",
+    "@cloudflare/workers-types": "4.20251128.0",
     "@graphprotocol/graph-ts": "0.38.2",
     "@graphql-codegen/cli": "6.1.0",
     "@graphql-codegen/schema-ast": "5.0.0",
