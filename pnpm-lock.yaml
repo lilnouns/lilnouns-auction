@@ -35,8 +35,8 @@ importers:
         specifier: 16.2.7
         version: 16.2.7
       prettier:
-        specifier: 3.7.1
-        version: 3.7.1
+        specifier: 3.7.3
+        version: 3.7.3
       rimraf:
         specifier: 6.1.2
         version: 6.1.2
@@ -50,8 +50,8 @@ importers:
         specifier: 1.0.0-alpha.43
         version: 1.0.0-alpha.43(@tanstack/react-query@5.90.11(react@19.2.0))(@wagmi/core@2.22.1(@tanstack/query-core@5.90.11)(@types/react@19.2.7)(react@19.2.0)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@19.2.0))(viem@2.40.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.13)))(graphql-request@7.3.5(graphql@16.12.0))(graphql-tag@2.12.6(graphql@16.12.0))(graphql@16.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.9.3)(viem@2.40.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.13))(wagmi@2.19.5(@tanstack/query-core@5.90.11)(@tanstack/react-query@5.90.11(react@19.2.0))(@types/react@19.2.7)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.40.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.13))(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.1.13))
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.92
-        version: 2.0.0-alpha.92(ofetch@1.5.1)(zod@4.1.13)
+        specifier: 2.0.0-alpha.97
+        version: 2.0.0-alpha.97(ofetch@1.5.1)(zod@4.1.13)
       graphql:
         specifier: 16.12.0
         version: 16.12.0
@@ -87,14 +87,14 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(graphql@16.12.0)
       '@graphql-codegen/typescript':
-        specifier: 5.0.5
-        version: 5.0.5(graphql@16.12.0)
+        specifier: 5.0.6
+        version: 5.0.6(graphql@16.12.0)
       '@graphql-codegen/typescript-graphql-request':
         specifier: 6.3.0
         version: 6.3.0(graphql-request@7.3.5(graphql@16.12.0))(graphql-tag@2.12.6(graphql@16.12.0))(graphql@16.12.0)
       '@graphql-codegen/typescript-operations':
-        specifier: 5.0.5
-        version: 5.0.5(graphql@16.12.0)
+        specifier: 5.0.6
+        version: 5.0.6(graphql@16.12.0)
       '@parcel/watcher':
         specifier: 2.5.1
         version: 2.5.1
@@ -249,8 +249,8 @@ importers:
         specifier: 2.0.7
         version: 2.0.7(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       swr:
-        specifier: 2.3.6
-        version: 2.3.6(react@19.2.0)
+        specifier: 2.3.7
+        version: 2.3.7(react@19.2.0)
       tailwind-merge:
         specifier: 3.4.0
         version: 3.4.0
@@ -264,8 +264,8 @@ importers:
         specifier: 4.1.13
         version: 4.1.13
       zustand:
-        specifier: 5.0.8
-        version: 5.0.8(@types/react@19.2.7)(react@19.2.0)(use-sync-external-store@1.4.0(react@19.2.0))
+        specifier: 5.0.9
+        version: 5.0.9(@types/react@19.2.7)(react@19.2.0)(use-sync-external-store@1.4.0(react@19.2.0))
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: 1.13.10
@@ -274,8 +274,8 @@ importers:
         specifier: 4.20251128.0
         version: 4.20251128.0
       '@eslint/eslintrc':
-        specifier: 3.3.1
-        version: 3.3.1
+        specifier: 3.3.3
+        version: 3.3.3
       '@lingui/cli':
         specifier: 5.5.1
         version: 5.5.1(typescript@5.9.3)
@@ -447,7 +447,7 @@ importers:
         version: 1.1.0
       eslint-plugin-prettier:
         specifier: 5.5.4
-        version: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.1(jiti@2.6.1)))(eslint@9.39.1(jiti@2.6.1))(prettier@3.7.1)
+        version: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.1(jiti@2.6.1)))(eslint@9.39.1(jiti@2.6.1))(prettier@3.7.3)
       eslint-plugin-react:
         specifier: 7.37.5
         version: 7.37.5(eslint@9.39.1(jiti@2.6.1))
@@ -480,28 +480,28 @@ importers:
     dependencies:
       prettier:
         specifier: '>=3.0.0'
-        version: 3.7.1
+        version: 3.7.3
       prettier-plugin-jsdoc:
-        specifier: 1.5.0
-        version: 1.5.0(prettier@3.7.1)
+        specifier: 1.7.0
+        version: 1.7.0(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3)
       prettier-plugin-organize-attributes:
         specifier: 1.0.0
-        version: 1.0.0(prettier@3.7.1)
+        version: 1.0.0(prettier@3.7.3)
       prettier-plugin-organize-imports:
         specifier: 4.3.0
-        version: 4.3.0(prettier@3.7.1)(typescript@5.9.3)
+        version: 4.3.0(prettier@3.7.3)(typescript@5.9.3)
       prettier-plugin-packagejson:
-        specifier: 2.5.19
-        version: 2.5.19(prettier@3.7.1)
+        specifier: 2.5.20
+        version: 2.5.20(prettier@3.7.3)
       prettier-plugin-prisma:
         specifier: 5.0.0
-        version: 5.0.0(prettier@3.7.1)
+        version: 5.0.0(prettier@3.7.3)
       prettier-plugin-tailwindcss:
         specifier: 0.7.1
-        version: 0.7.1(prettier-plugin-jsdoc@1.5.0(prettier@3.7.1))(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1)
+        version: 0.7.1(prettier-plugin-jsdoc@1.7.0(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3))(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3)
       prettier-plugin-toml:
         specifier: 2.0.6
-        version: 2.0.6(prettier@3.7.1)
+        version: 2.0.6(prettier@3.7.3)
 
   packages/typescript-config: {}
 
@@ -1838,8 +1838,8 @@ packages:
     resolution: {integrity: sha512-yL/sLrpmtDaFEiUj1osRP4TI2MDz1AddJL+jZ7KSqvBuliN4xqYY54IfdN8qD8Toa6g1iloph1fxQNkjOxrrpQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/eslintrc@3.3.1':
-    resolution: {integrity: sha512-gtF186CXhIl1p4pJNGZw8Yc6RlshoePRvE0X91oPGb3vZ8pM3qOS9W9NGPat9LziaBV7XrJWGylNQXkGcnM3IQ==}
+  '@eslint/eslintrc@3.3.3':
+    resolution: {integrity: sha512-Kr+LPIUVKz2qkx1HAMH8q1q6azbqBAsXJUxBl/ODDuVPX45Z9DfwB8tPjTi6nNZ8BuM3nbJxC5zCAg5elnBUTQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.39.1':
@@ -2123,8 +2123,8 @@ packages:
       graphql-request: ^6.0.0 || ^7.0.0
       graphql-tag: ^2.0.0
 
-  '@graphql-codegen/typescript-operations@5.0.5':
-    resolution: {integrity: sha512-4PpndN6teJ/mN/QxGYhaBwkpN+Q3/lOeM5sArZ5tiDDI4ItxjPRCEm/gOGv52nRHmB6xoQ5/9uqY52KWcf9AWA==}
+  '@graphql-codegen/typescript-operations@5.0.6':
+    resolution: {integrity: sha512-pkR/82qWO50OHWeV3BiDuVxNFxiJerpmNjFep71VlabADXiU3GIeSaDd6G9a1/SCniVTXZQk2ivCb0ZJiuwo1A==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2133,8 +2133,8 @@ packages:
       graphql-sock:
         optional: true
 
-  '@graphql-codegen/typescript@5.0.5':
-    resolution: {integrity: sha512-NwrUTjKALbeOrFyL/741DP/uRfcHKLD+kYL+e1de+X9b1wa1CfpMIdRIhGTuivuD5y6PYh3VePrE98Q5qz0+Ww==}
+  '@graphql-codegen/typescript@5.0.6':
+    resolution: {integrity: sha512-rKW3wYInAnmO/DmKjhW3/KLMxUauUCZuMEPQmuoHChnwIuMjn5kVXCdArGyQqv+vVtFj55aS+sJLN4MPNNjSNg==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2146,6 +2146,12 @@ packages:
 
   '@graphql-codegen/visitor-plugin-common@6.2.0':
     resolution: {integrity: sha512-8mx5uDDEwhP3G1jdeBdvVm4QhbEdkwXQa1hAXBWGofL87ePs5PUhz4IuQpwiS/CfFa4cqxcAWbe0k74x8iWfKw==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+
+  '@graphql-codegen/visitor-plugin-common@6.2.1':
+    resolution: {integrity: sha512-5QT1hCV3286mrmoIC7vlFXsTlwELMexhuFIkjh+oVGGL1E8hxkIPAU0kfH/lsPbQHKi8zKmic2pl3tAdyYxNyg==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2318,8 +2324,8 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/relay-operation-optimizer@7.0.25':
-    resolution: {integrity: sha512-1S7qq9eyO6ygPNWX2lZd+oxbpl63OhnTTw8+t5OWprM2Tzws9HEosLUpsMR85z1gbezeKtUDt9a2bsSyu4MMFg==}
+  '@graphql-tools/relay-operation-optimizer@7.0.26':
+    resolution: {integrity: sha512-cVdS2Hw4hg/WgPVV2wRIzZM975pW5k4vdih3hR4SvEDQVr6MmozmlTQSqzMyi9yg8LKTq540Oz3bYQa286yGmg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2344,6 +2350,12 @@ packages:
 
   '@graphql-tools/utils@10.10.3':
     resolution: {integrity: sha512-2EdYiefeLLxsoeZTukSNZJ0E/Z5NnWBUGK2VJa0DQj1scDhVd93HeT1eW9TszJOYmIh3eWAKLv58ri/1XUmdsQ==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+
+  '@graphql-tools/utils@10.11.0':
+    resolution: {integrity: sha512-iBFR9GXIs0gCD+yc3hoNswViL1O5josI33dUqiNStFI/MHLCEPduasceAcazRH77YONKNiviHBV8f7OgcT4o2Q==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2922,8 +2934,8 @@ packages:
       viem: ^2.27.2
       wagmi: ^2.14.16
 
-  '@nekofar/warpcast@2.0.0-alpha.92':
-    resolution: {integrity: sha512-QHwDAsabNvi+56ecPgiSCfGpYyehtKGV5DK0pRnTCOkVaTyZDF9wHI9O/XFgQKST02JYHEzfPcB8bdhJ0D2pXg==}
+  '@nekofar/warpcast@2.0.0-alpha.97':
+    resolution: {integrity: sha512-lKZkPgHzWNifJsLpcPHIRVsMeDRLa5XrVsBLAtv1E43Kv5Mp+/Il30nf2m10TGu2wswko/PmyUTY2bJl7SshYA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       ofetch: ^1.5.0
@@ -9159,8 +9171,8 @@ packages:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
     engines: {node: '>=6.0.0'}
 
-  prettier-plugin-jsdoc@1.5.0:
-    resolution: {integrity: sha512-Fehp5qkFQhNFcxUilDPEcqHX8AdP6oGyCRLatqRc0gLXv3qOtndTnnUxfHCYc26I4Lc1A4lVozAtWEE8o7ubUA==}
+  prettier-plugin-jsdoc@1.7.0:
+    resolution: {integrity: sha512-tvmMg1y9G7Hy5N2SnLsWsgJWtoSSpfphq+a7dAEoED+siiaBHDowI6N9HzhLA4/SRJhlRdHkDXwCPrXgzbRhng==}
     engines: {node: '>=14.13.1 || >=16.0.0'}
     peerDependencies:
       prettier: ^3.0.0
@@ -9181,8 +9193,8 @@ packages:
       vue-tsc:
         optional: true
 
-  prettier-plugin-packagejson@2.5.19:
-    resolution: {integrity: sha512-Qsqp4+jsZbKMpEGZB1UP1pxeAT8sCzne2IwnKkr+QhUe665EXUo3BAvTf1kAPCqyMv9kg3ZmO0+7eOni/C6Uag==}
+  prettier-plugin-packagejson@2.5.20:
+    resolution: {integrity: sha512-G8cowPh+QmJJECTZlrPDKWkVVcwrFjF2rGcw546w3N8blLoc4szSs8UUPfFVxHUNLUjiru71Ah83g1lZkeK9Bw==}
     peerDependencies:
       prettier: '>= 1.16.0'
     peerDependenciesMeta:
@@ -9256,8 +9268,8 @@ packages:
     peerDependencies:
       prettier: ^3.0.3
 
-  prettier@3.7.1:
-    resolution: {integrity: sha512-RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ==}
+  prettier@3.7.3:
+    resolution: {integrity: sha512-QgODejq9K3OzoBbuyobZlUhznP5SKwPqp+6Q6xw6o8gnhr4O85L2U915iM2IDcfF2NPXVaM9zlo9tdwipnYwzg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -9888,11 +9900,11 @@ packages:
       react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
-  sort-object-keys@1.1.3:
-    resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
+  sort-object-keys@2.0.1:
+    resolution: {integrity: sha512-R89fO+z3x7hiKPXX5P0qim+ge6Y60AjtlW+QQpRozrrNcR1lw9Pkpm5MLB56HoNvdcLHL4wbpq16OcvGpEDJIg==}
 
-  sort-package-json@3.4.0:
-    resolution: {integrity: sha512-97oFRRMM2/Js4oEA9LJhjyMlde+2ewpZQf53pgue27UkbEXfHJnDzHlUxQ/DWUkzqmp7DFwJp8D+wi/TYeQhpA==}
+  sort-package-json@3.5.0:
+    resolution: {integrity: sha512-moY4UtptUuP5sPuu9H9dp8xHNel7eP5/Kz/7+90jTvC0IOiPH2LigtRM/aSFSxreaWoToHUVUpEV4a2tAs2oKQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -10172,8 +10184,8 @@ packages:
   swap-case@2.0.2:
     resolution: {integrity: sha512-kc6S2YS/2yXbtkSMunBtKdah4VFETZ8Oh6ONSmSd9bRxhqTrtARUCBUiWXH3xVPpvR7tz2CSnkuXVE42EcGnMw==}
 
-  swr@2.3.6:
-    resolution: {integrity: sha512-wfHRmHWk/isGNMwlLGlZX5Gzz/uTgo0o2IRuTMcf4CPuPFJZlq0rDaKUx+ozB5nBOReNV1kiOyzMfj+MBMikLw==}
+  swr@2.3.7:
+    resolution: {integrity: sha512-ZEquQ82QvalqTxhBVv/DlAg2mbmUjF4UgpPg9wwk4ufb9rQnZXh1iKyyKBqV6bQGu1Ie7L1QwSYO07qFIa1p+g==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -11190,8 +11202,8 @@ packages:
       use-sync-external-store:
         optional: true
 
-  zustand@5.0.8:
-    resolution: {integrity: sha512-gyPKpIaxY9XcO2vSMrLbiER7QMAMGOQZVRdJ6Zi782jkbzZygq5GI9nG8g+sMgitRtndwaBSl7uiqC49o1SSiw==}
+  zustand@5.0.9:
+    resolution: {integrity: sha512-ALBtUj0AfjJt3uNRQoL1tL2tMvj6Gp/6e39dnfT6uzpelGru8v1tPOGBzayOWbPJvujM8JojDk3E1LxeFisBNg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -12313,7 +12325,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/eslintrc@3.3.1':
+  '@eslint/eslintrc@3.3.3':
     dependencies:
       ajv: 6.12.6
       debug: 4.4.3
@@ -12321,7 +12333,7 @@ snapshots:
       globals: 14.0.0
       ignore: 5.3.2
       import-fresh: 3.3.1
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       minimatch: 3.1.2
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
@@ -12847,9 +12859,9 @@ snapshots:
       '@graphql-codegen/gql-tag-operations': 5.1.0(graphql@16.12.0)
       '@graphql-codegen/plugin-helpers': 6.1.0(graphql@16.12.0)
       '@graphql-codegen/typed-document-node': 6.1.3(graphql@16.12.0)
-      '@graphql-codegen/typescript': 5.0.5(graphql@16.12.0)
-      '@graphql-codegen/typescript-operations': 5.0.5(graphql@16.12.0)
-      '@graphql-codegen/visitor-plugin-common': 6.2.0(graphql@16.12.0)
+      '@graphql-codegen/typescript': 5.0.6(graphql@16.12.0)
+      '@graphql-codegen/typescript-operations': 5.0.6(graphql@16.12.0)
+      '@graphql-codegen/visitor-plugin-common': 6.2.1(graphql@16.12.0)
       '@graphql-tools/documents': 1.0.1(graphql@16.12.0)
       '@graphql-tools/utils': 10.10.3(graphql@16.12.0)
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.12.0)
@@ -12899,7 +12911,7 @@ snapshots:
 
   '@graphql-codegen/plugin-helpers@6.1.0(graphql@16.12.0)':
     dependencies:
-      '@graphql-tools/utils': 10.10.3(graphql@16.12.0)
+      '@graphql-tools/utils': 10.11.0(graphql@16.12.0)
       change-case-all: 1.0.15
       common-tags: 1.8.2
       graphql: 16.12.0
@@ -12938,22 +12950,22 @@ snapshots:
       - encoding
       - supports-color
 
-  '@graphql-codegen/typescript-operations@5.0.5(graphql@16.12.0)':
+  '@graphql-codegen/typescript-operations@5.0.6(graphql@16.12.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 6.1.0(graphql@16.12.0)
-      '@graphql-codegen/typescript': 5.0.5(graphql@16.12.0)
-      '@graphql-codegen/visitor-plugin-common': 6.2.0(graphql@16.12.0)
+      '@graphql-codegen/typescript': 5.0.6(graphql@16.12.0)
+      '@graphql-codegen/visitor-plugin-common': 6.2.1(graphql@16.12.0)
       auto-bind: 4.0.0
       graphql: 16.12.0
       tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
 
-  '@graphql-codegen/typescript@5.0.5(graphql@16.12.0)':
+  '@graphql-codegen/typescript@5.0.6(graphql@16.12.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 6.1.0(graphql@16.12.0)
       '@graphql-codegen/schema-ast': 5.0.0(graphql@16.12.0)
-      '@graphql-codegen/visitor-plugin-common': 6.2.0(graphql@16.12.0)
+      '@graphql-codegen/visitor-plugin-common': 6.2.1(graphql@16.12.0)
       auto-bind: 4.0.0
       graphql: 16.12.0
       tslib: 2.6.3
@@ -12981,8 +12993,24 @@ snapshots:
     dependencies:
       '@graphql-codegen/plugin-helpers': 6.1.0(graphql@16.12.0)
       '@graphql-tools/optimize': 2.0.0(graphql@16.12.0)
-      '@graphql-tools/relay-operation-optimizer': 7.0.25(graphql@16.12.0)
+      '@graphql-tools/relay-operation-optimizer': 7.0.26(graphql@16.12.0)
       '@graphql-tools/utils': 10.10.3(graphql@16.12.0)
+      auto-bind: 4.0.0
+      change-case-all: 1.0.15
+      dependency-graph: 1.0.0
+      graphql: 16.12.0
+      graphql-tag: 2.12.6(graphql@16.12.0)
+      parse-filepath: 1.0.2
+      tslib: 2.6.3
+    transitivePeerDependencies:
+      - encoding
+
+  '@graphql-codegen/visitor-plugin-common@6.2.1(graphql@16.12.0)':
+    dependencies:
+      '@graphql-codegen/plugin-helpers': 6.1.0(graphql@16.12.0)
+      '@graphql-tools/optimize': 2.0.0(graphql@16.12.0)
+      '@graphql-tools/relay-operation-optimizer': 7.0.26(graphql@16.12.0)
+      '@graphql-tools/utils': 10.11.0(graphql@16.12.0)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       dependency-graph: 1.0.0
@@ -13257,7 +13285,7 @@ snapshots:
   '@graphql-tools/optimize@2.0.0(graphql@16.12.0)':
     dependencies:
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/relay-operation-optimizer@6.5.18(graphql@16.12.0)':
     dependencies:
@@ -13269,12 +13297,12 @@ snapshots:
       - encoding
       - supports-color
 
-  '@graphql-tools/relay-operation-optimizer@7.0.25(graphql@16.12.0)':
+  '@graphql-tools/relay-operation-optimizer@7.0.26(graphql@16.12.0)':
     dependencies:
       '@ardatan/relay-compiler': 12.0.3(graphql@16.12.0)
-      '@graphql-tools/utils': 10.10.3(graphql@16.12.0)
+      '@graphql-tools/utils': 10.11.0(graphql@16.12.0)
       graphql: 16.12.0
-      tslib: 2.6.3
+      tslib: 2.8.1
     transitivePeerDependencies:
       - encoding
 
@@ -13339,6 +13367,14 @@ snapshots:
       graphql: 16.12.0
       tslib: 2.8.1
 
+  '@graphql-tools/utils@10.11.0(graphql@16.12.0)':
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.12.0)
+      '@whatwg-node/promise-helpers': 1.3.2
+      cross-inspect: 1.0.1
+      graphql: 16.12.0
+      tslib: 2.8.1
+
   '@graphql-tools/utils@10.9.1(graphql@16.12.0)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.12.0)
@@ -13346,7 +13382,7 @@ snapshots:
       cross-inspect: 1.0.1
       dset: 3.1.4
       graphql: 16.12.0
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   '@graphql-tools/utils@9.2.1(graphql@16.12.0)':
     dependencies:
@@ -14080,7 +14116,7 @@ snapshots:
       viem: 2.40.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.13)
       wagmi: 2.19.5(@tanstack/query-core@5.90.11)(@tanstack/react-query@5.90.11(react@19.2.0))(@types/react@19.2.7)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.40.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.13))(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.1.13)
 
-  '@nekofar/warpcast@2.0.0-alpha.92(ofetch@1.5.1)(zod@4.1.13)':
+  '@nekofar/warpcast@2.0.0-alpha.97(ofetch@1.5.1)(zod@4.1.13)':
     dependencies:
       ofetch: 1.5.1
       zod: 4.1.13
@@ -18100,7 +18136,7 @@ snapshots:
   cosmiconfig@8.3.6(typescript@5.9.3):
     dependencies:
       import-fresh: 3.3.1
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
@@ -18996,10 +19032,10 @@ snapshots:
 
   eslint-plugin-only-warn@1.1.0: {}
 
-  eslint-plugin-prettier@5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.1(jiti@2.6.1)))(eslint@9.39.1(jiti@2.6.1))(prettier@3.7.1):
+  eslint-plugin-prettier@5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.39.1(jiti@2.6.1)))(eslint@9.39.1(jiti@2.6.1))(prettier@3.7.3):
     dependencies:
       eslint: 9.39.1(jiti@2.6.1)
-      prettier: 3.7.1
+      prettier: 3.7.3
       prettier-linter-helpers: 1.0.0
       synckit: 0.11.11
     optionalDependencies:
@@ -19110,7 +19146,7 @@ snapshots:
       '@eslint/config-array': 0.21.1
       '@eslint/config-helpers': 0.4.2
       '@eslint/core': 0.17.0
-      '@eslint/eslintrc': 3.3.1
+      '@eslint/eslintrc': 3.3.3
       '@eslint/js': 9.39.1
       '@eslint/plugin-kit': 0.4.1
       '@humanfs/node': 0.16.7
@@ -21720,7 +21756,7 @@ snapshots:
       ox: 0.9.17(typescript@5.9.3)(zod@4.1.13)
       viem: 2.40.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.1.13)
       zod: 4.1.13
-      zustand: 5.0.8(@types/react@19.2.7)(react@19.2.0)(use-sync-external-store@1.4.0(react@19.2.0))
+      zustand: 5.0.9(@types/react@19.2.7)(react@19.2.0)(use-sync-external-store@1.4.0(react@19.2.0))
     optionalDependencies:
       '@tanstack/react-query': 5.90.11(react@19.2.0)
       react: 19.2.0
@@ -21920,50 +21956,66 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-jsdoc@1.5.0(prettier@3.7.1):
+  prettier-plugin-jsdoc@1.7.0(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3):
     dependencies:
       binary-searching: 2.0.5
       comment-parser: 1.4.1
       mdast-util-from-markdown: 2.0.2
-      prettier: 3.7.1
+      prettier: 3.7.3
+      prettier-plugin-tailwindcss: 0.7.1(prettier-plugin-jsdoc@1.7.0(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3))(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3)
     transitivePeerDependencies:
+      - '@ianvs/prettier-plugin-sort-imports'
+      - '@prettier/plugin-hermes'
+      - '@prettier/plugin-oxc'
+      - '@prettier/plugin-pug'
+      - '@shopify/prettier-plugin-liquid'
+      - '@trivago/prettier-plugin-sort-imports'
+      - '@zackad/prettier-plugin-twig'
+      - prettier-plugin-astro
+      - prettier-plugin-css-order
+      - prettier-plugin-marko
+      - prettier-plugin-multiline-arrays
+      - prettier-plugin-organize-attributes
+      - prettier-plugin-organize-imports
+      - prettier-plugin-sort-imports
+      - prettier-plugin-svelte
       - supports-color
 
-  prettier-plugin-organize-attributes@1.0.0(prettier@3.7.1):
+  prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3):
     dependencies:
-      prettier: 3.7.1
+      prettier: 3.7.3
 
-  prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3):
+  prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3):
     dependencies:
-      prettier: 3.7.1
+      prettier: 3.7.3
       typescript: 5.9.3
 
-  prettier-plugin-packagejson@2.5.19(prettier@3.7.1):
+  prettier-plugin-packagejson@2.5.20(prettier@3.7.3):
     dependencies:
-      sort-package-json: 3.4.0
+      sort-package-json: 3.5.0
       synckit: 0.11.11
     optionalDependencies:
-      prettier: 3.7.1
+      prettier: 3.7.3
 
-  prettier-plugin-prisma@5.0.0(prettier@3.7.1):
+  prettier-plugin-prisma@5.0.0(prettier@3.7.3):
     dependencies:
       '@prisma/prisma-schema-wasm': 4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584
-      prettier: 3.7.1
+      prettier: 3.7.3
 
-  prettier-plugin-tailwindcss@0.7.1(prettier-plugin-jsdoc@1.5.0(prettier@3.7.1))(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.1))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.1)(typescript@5.9.3))(prettier@3.7.1):
+  prettier-plugin-tailwindcss@0.7.1(prettier-plugin-jsdoc@1.7.0(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3))(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3):
     dependencies:
-      prettier: 3.7.1
+      prettier: 3.7.3
     optionalDependencies:
-      prettier-plugin-jsdoc: 1.5.0(prettier@3.7.1)
-      prettier-plugin-organize-attributes: 1.0.0(prettier@3.7.1)
-      prettier-plugin-organize-imports: 4.3.0(prettier@3.7.1)(typescript@5.9.3)
+      prettier-plugin-jsdoc: 1.7.0(prettier-plugin-organize-attributes@1.0.0(prettier@3.7.3))(prettier-plugin-organize-imports@4.3.0(prettier@3.7.3)(typescript@5.9.3))(prettier@3.7.3)
+      prettier-plugin-organize-attributes: 1.0.0(prettier@3.7.3)
+      prettier-plugin-organize-imports: 4.3.0(prettier@3.7.3)(typescript@5.9.3)
 
-  prettier-plugin-toml@2.0.6(prettier@3.7.1):
+  prettier-plugin-toml@2.0.6(prettier@3.7.3):
     dependencies:
       '@taplo/lib': 0.5.0
-      prettier: 3.7.1
+      prettier: 3.7.3
 
-  prettier@3.7.1: {}
+  prettier@3.7.3: {}
 
   pretty-format@27.5.1:
     dependencies:
@@ -22803,16 +22855,16 @@ snapshots:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
 
-  sort-object-keys@1.1.3: {}
+  sort-object-keys@2.0.1: {}
 
-  sort-package-json@3.4.0:
+  sort-package-json@3.5.0:
     dependencies:
       detect-indent: 7.0.2
       detect-newline: 4.0.1
       git-hooks-list: 4.1.1
       is-plain-obj: 4.1.0
       semver: 7.7.3
-      sort-object-keys: 1.1.3
+      sort-object-keys: 2.0.1
       tinyglobby: 0.2.15
 
   source-map-js@1.2.1: {}
@@ -23094,7 +23146,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  swr@2.3.6(react@19.2.0):
+  swr@2.3.7(react@19.2.0):
     dependencies:
       dequal: 2.0.3
       react: 19.2.0
@@ -24187,7 +24239,7 @@ snapshots:
       react: 19.2.0
       use-sync-external-store: 1.4.0(react@19.2.0)
 
-  zustand@5.0.8(@types/react@19.2.7)(react@19.2.0)(use-sync-external-store@1.4.0(react@19.2.0)):
+  zustand@5.0.9(@types/react@19.2.7)(react@19.2.0)(use-sync-external-store@1.4.0(react@19.2.0)):
     optionalDependencies:
       '@types/react': 19.2.7
       react: 19.2.0
