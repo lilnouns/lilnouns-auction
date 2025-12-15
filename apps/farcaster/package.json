@@ -24,7 +24,7 @@
     "viem": "2.41.2"
   },
   "devDependencies": {
-    "@0no-co/graphqlsp": "1.15.1",
+    "@0no-co/graphqlsp": "1.15.2",
     "@cloudflare/workers-types": "4.20251209.0",
     "@graphprotocol/graph-ts": "0.38.2",
     "@graphql-codegen/cli": "6.1.0",
