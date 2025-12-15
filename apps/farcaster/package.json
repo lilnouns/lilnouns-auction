@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nekofar/lilnouns": "1.0.0-alpha.49",
-    "@nekofar/warpcast": "2.0.0-alpha.101",
+    "@nekofar/warpcast": "2.0.0-alpha.105",
     "graphql": "16.12.0",
     "graphql-request": "7.3.5",
     "graphql-tag": "2.12.6",
