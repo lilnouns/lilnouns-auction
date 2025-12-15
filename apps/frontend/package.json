@@ -37,7 +37,7 @@
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cssnano": "7.1.2",
-    "graphql-request": "7.3.5",
+    "graphql-request": "7.4.0",
     "langs": "2.0.0",
     "lucide-react": "0.561.0",
     "luxon": "3.7.2",
