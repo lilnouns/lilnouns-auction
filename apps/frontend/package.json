@@ -58,7 +58,7 @@
     "tailwind-merge": "3.4.0",
     "viem": "2.41.2",
     "wagmi": "2.19.5",
-    "zod": "4.1.13",
+    "zod": "4.2.0",
     "zustand": "5.0.9"
   },
   "devDependencies": {
