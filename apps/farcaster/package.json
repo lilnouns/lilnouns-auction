@@ -15,17 +15,17 @@
   },
   "dependencies": {
     "@nekofar/lilnouns": "1.0.0-alpha.49",
-    "@nekofar/warpcast": "2.0.0-alpha.101",
+    "@nekofar/warpcast": "2.0.0-alpha.105",
     "graphql": "16.12.0",
-    "graphql-request": "7.3.5",
+    "graphql-request": "7.4.0",
     "graphql-tag": "2.12.6",
     "luxon": "3.7.2",
     "remeda": "2.32.0",
-    "viem": "2.41.2"
+    "viem": "2.42.1"
   },
   "devDependencies": {
-    "@0no-co/graphqlsp": "1.15.1",
-    "@cloudflare/workers-types": "4.20251209.0",
+    "@0no-co/graphqlsp": "1.15.2",
+    "@cloudflare/workers-types": "4.20251216.0",
     "@graphprotocol/graph-ts": "0.38.2",
     "@graphql-codegen/cli": "6.1.0",
     "@graphql-codegen/schema-ast": "5.0.0",
@@ -36,7 +36,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "24.10.2",
+    "@types/node": "24.10.4",
     "dotenv": "17.2.3",
     "graphql-scalars": "1.25.0",
     "typescript": "5.9.3",
