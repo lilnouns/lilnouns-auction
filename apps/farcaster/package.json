@@ -29,7 +29,7 @@
     "@graphprotocol/graph-ts": "0.38.2",
     "@graphql-codegen/cli": "6.1.0",
     "@graphql-codegen/schema-ast": "5.0.0",
-    "@graphql-codegen/typescript": "5.0.6",
+    "@graphql-codegen/typescript": "5.0.7",
     "@graphql-codegen/typescript-graphql-request": "6.3.0",
     "@graphql-codegen/typescript-operations": "5.0.6",
     "@parcel/watcher": "2.5.1",
