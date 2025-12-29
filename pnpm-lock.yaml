@@ -50,8 +50,8 @@ importers:
         specifier: 1.0.0-alpha.49
         version: 1.0.0-alpha.49(@tanstack/react-query@5.90.14(react@19.2.3))(@wagmi/core@2.22.1(@tanstack/query-core@5.90.14)(@types/react@19.2.7)(react@19.2.3)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@19.2.3))(viem@2.43.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.2.1)))(graphql-request@7.4.0(graphql@16.12.0))(graphql-tag@2.12.6(graphql@16.12.0))(graphql@16.12.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)(viem@2.43.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.2.1))(wagmi@2.19.5(@tanstack/query-core@5.90.14)(@tanstack/react-query@5.90.14(react@19.2.3))(@types/react@19.2.7)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.3)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.43.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.2.1))(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.2.1))
       '@nekofar/warpcast':
-        specifier: 2.0.0-alpha.105
-        version: 2.0.0-alpha.105(ofetch@1.5.1)(zod@4.2.1)
+        specifier: 2.0.0-alpha.109
+        version: 2.0.0-alpha.109(ofetch@1.5.1)(zod@4.2.1)
       graphql:
         specifier: 16.12.0
         version: 16.12.0
@@ -2940,8 +2940,8 @@ packages:
       viem: ^2.27.2
       wagmi: ^2.14.16
 
-  '@nekofar/warpcast@2.0.0-alpha.105':
-    resolution: {integrity: sha512-OPMQIsJKh6iuI1ZYodKuMOaJntT+LspybnFk7Kf3yKGkaS2lJzg0tdA5l7/zjSL/yNkgH8wB5t/iqXCD1HTaqA==}
+  '@nekofar/warpcast@2.0.0-alpha.109':
+    resolution: {integrity: sha512-k/YAwSoYy4Q+iV15BSaP/txn99imS1HMFBl0Vs0rLbR1yoooeYfNtGun3DAGEyJ9TJX3tk6kP7tJ5jGwtXkUqA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       ofetch: ^1.5.0
@@ -14200,7 +14200,7 @@ snapshots:
       viem: 2.43.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.2.1)
       wagmi: 2.19.5(@tanstack/query-core@5.90.14)(@tanstack/react-query@5.90.14(react@19.2.3))(@types/react@19.2.7)(@vercel/blob@1.0.2)(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.3)(typescript@5.9.3)(utf-8-validate@5.0.10)(viem@2.43.3(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.2.1))(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.2.1)
 
-  '@nekofar/warpcast@2.0.0-alpha.105(ofetch@1.5.1)(zod@4.2.1)':
+  '@nekofar/warpcast@2.0.0-alpha.109(ofetch@1.5.1)(zod@4.2.1)':
     dependencies:
       ofetch: 1.5.1
       zod: 4.2.1
