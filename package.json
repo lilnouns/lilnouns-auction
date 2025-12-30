@@ -1,6 +1,6 @@
 {
   "name": "lilnouns-auction",
-  "version": "1.3.0-alpha.52",
+  "version": "1.3.0-alpha.53",
   "private": true,
   "scripts": {
     "clean": "turbo prune --scope=frontend && rimraf apps/**/.next apps/**/dist packages/**/dist",
@@ -50,7 +50,8 @@
     }
   ],
   "engines": {
-    "node": ">=22.0.0"
+    "node": "^24",
+    "pnpm": "^10"
   },
   "packageManager": "pnpm@10.26.2",
   "type": "module"
