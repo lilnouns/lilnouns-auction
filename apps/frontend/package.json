@@ -31,7 +31,7 @@
     "@prisma/client": "6.19.1",
     "@repo/assets": "workspace:*",
     "@repo/ui": "workspace:*",
-    "@tanstack/react-query": "5.90.15",
+    "@tanstack/react-query": "5.90.16",
     "@wagmi/core": "2.22.1",
     "autoprefixer": "10.4.23",
     "class-variance-authority": "0.7.1",
