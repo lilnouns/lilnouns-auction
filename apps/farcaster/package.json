@@ -14,7 +14,7 @@
     "type-check": "pnpm generate-types && tsc"
   },
   "dependencies": {
-    "@nekofar/lilnouns": "1.0.0-alpha.49",
+    "@nekofar/lilnouns": "1.0.0-alpha.52",
     "@nekofar/warpcast": "2.0.0-alpha.109",
     "graphql": "16.12.0",
     "graphql-request": "7.4.0",
