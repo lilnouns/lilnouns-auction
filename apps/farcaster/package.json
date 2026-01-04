@@ -14,18 +14,18 @@
     "type-check": "pnpm generate-types && tsc"
   },
   "dependencies": {
-    "@nekofar/lilnouns": "1.0.0-alpha.49",
+    "@nekofar/lilnouns": "1.0.0-alpha.52",
     "@nekofar/warpcast": "2.0.0-alpha.109",
     "graphql": "16.12.0",
     "graphql-request": "7.4.0",
     "graphql-tag": "2.12.6",
     "luxon": "3.7.2",
-    "remeda": "2.32.1",
-    "viem": "2.43.3"
+    "remeda": "2.33.0",
+    "viem": "2.43.4"
   },
   "devDependencies": {
     "@0no-co/graphqlsp": "1.15.2",
-    "@cloudflare/workers-types": "4.20251229.0",
+    "@cloudflare/workers-types": "4.20260101.0",
     "@graphprotocol/graph-ts": "0.38.2",
     "@graphql-codegen/cli": "6.1.0",
     "@graphql-codegen/schema-ast": "5.0.0",
