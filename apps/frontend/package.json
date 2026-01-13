@@ -59,7 +59,7 @@
     "viem": "2.43.5",
     "wagmi": "2.19.5",
     "zod": "4.3.5",
-    "zustand": "5.0.9"
+    "zustand": "5.0.10"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "1.13.10",
