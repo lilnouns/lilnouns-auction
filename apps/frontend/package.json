@@ -103,7 +103,7 @@
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
     "vercel": "48.12.1",
-    "vitest": "4.0.16",
+    "vitest": "4.0.18",
     "wrangler": "4.61.1"
   }
 }
