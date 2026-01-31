@@ -268,8 +268,8 @@ importers:
         version: 5.0.10(@types/react@19.2.10)(react@19.2.4)(use-sync-external-store@1.4.0(react@19.2.4))
     devDependencies:
       '@cloudflare/next-on-pages':
-        specifier: 1.13.16
-        version: 1.13.16(@cloudflare/workers-types@4.20260131.0)(bufferutil@4.0.9)(next@15.1.11(@babel/core@7.28.6)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(utf-8-validate@5.0.10)(vercel@50.9.6(rollup@4.57.1)(typescript@5.9.3))(wrangler@4.61.1(@cloudflare/workers-types@4.20260131.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+        specifier: 1.13.10
+        version: 1.13.10(@cloudflare/workers-types@4.20260131.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@50.9.6(rollup@4.57.1)(typescript@5.9.3))(wrangler@4.61.1(@cloudflare/workers-types@4.20260131.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@cloudflare/workers-types':
         specifier: 4.20260131.0
         version: 4.20260131.0
@@ -1025,14 +1025,12 @@ packages:
     resolution: {integrity: sha512-SIOD2DxrRRwQ+jgzlXCqoEFiKOFqaPjhnNTGKXSRLvp1HiOvapLaFG2kEr9dYQTYe8rKrd9uvDUzmAITeNyaHQ==}
     engines: {node: '>=18.0.0'}
 
-  '@cloudflare/next-on-pages@1.13.16':
-    resolution: {integrity: sha512-52h51WNcfmx3szTdTd+n/xgz4qNxFtjOGG0zwnUAhTg8cjPwSUYmZp0OPRNw2jYG9xHwRS2ttSPAS8tcGkQGsw==}
-    deprecated: 'Please use the OpenNext adapter instead: https://opennext.js.org/cloudflare'
+  '@cloudflare/next-on-pages@1.13.10':
+    resolution: {integrity: sha512-miboFA675/RzpHNe3nri1XO5cwtJCPfEZbL7mdlwwXqYw6DMlrppPaBNNjgbgXdLylHBV7h1+zfKdVDaQ20B8w==}
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20240208.0
-      next: '>=14.3.0 && <=15.5.2'
-      vercel: '>=30.0.0 && <=47.0.4'
+      vercel: '>=30.0.0'
       wrangler: ^3.28.2 || ^4.0.0
     peerDependenciesMeta:
       '@cloudflare/workers-types':
@@ -4668,7 +4666,6 @@ packages:
 
   '@types/minimatch@6.0.0':
     resolution: {integrity: sha512-zmPitbQ8+6zNutpwgcQuLcsEpn/Cj54Kbn7L5pX0Os5kdWplB7xPgEh/g+SWOB/qmows2gpuCaPyduq8ZZRnxA==}
-    deprecated: This is a stub types definition. minimatch provides its own type definitions, so you do not need this installed.
 
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
@@ -7229,7 +7226,6 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
@@ -7489,7 +7485,6 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
-    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -8095,7 +8090,6 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.memoize@4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
@@ -9761,7 +9755,6 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
-    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rimraf@6.1.2:
@@ -11953,7 +11946,7 @@ snapshots:
 
   '@cloudflare/kv-asset-handler@0.4.2': {}
 
-  '@cloudflare/next-on-pages@1.13.16(@cloudflare/workers-types@4.20260131.0)(bufferutil@4.0.9)(next@15.1.11(@babel/core@7.28.6)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(utf-8-validate@5.0.10)(vercel@50.9.6(rollup@4.57.1)(typescript@5.9.3))(wrangler@4.61.1(@cloudflare/workers-types@4.20260131.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
+  '@cloudflare/next-on-pages@1.13.10(@cloudflare/workers-types@4.20260131.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10)(vercel@50.9.6(rollup@4.57.1)(typescript@5.9.3))(wrangler@4.61.1(@cloudflare/workers-types@4.20260131.0)(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
       acorn: 8.15.0
       ast-types: 0.14.2
@@ -11964,7 +11957,6 @@ snapshots:
       esbuild: 0.15.18
       js-yaml: 4.1.1
       miniflare: 3.20250718.3(bufferutil@4.0.9)(utf-8-validate@5.0.10)
-      next: 15.1.11(@babel/core@7.28.6)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       package-manager-manager: 0.2.0
       pcre-to-regexp: 1.1.0
       semver: 7.7.3
@@ -21704,10 +21696,10 @@ snapshots:
   ox@0.6.7(typescript@5.9.3)(zod@4.3.6):
     dependencies:
       '@adraffy/ens-normalize': 1.11.1
-      '@noble/curves': 1.8.1
-      '@noble/hashes': 1.7.1
-      '@scure/bip32': 1.6.2
-      '@scure/bip39': 1.5.4
+      '@noble/curves': 1.9.7
+      '@noble/hashes': 1.8.0
+      '@scure/bip32': 1.7.0
+      '@scure/bip39': 1.6.0
       abitype: 1.0.8(typescript@5.9.3)(zod@4.3.6)
       eventemitter3: 5.0.1
     optionalDependencies:
