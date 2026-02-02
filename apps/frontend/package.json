@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@farcaster/auth-kit": "0.8.1",
-    "@farcaster/frame-core": "0.3.11",
+    "@farcaster/frame-core": "0.4.0",
     "@farcaster/frame-node": "0.1.11",
     "@farcaster/frame-sdk": "0.1.12",
     "@farcaster/frame-wagmi-connector": "0.0.53",
