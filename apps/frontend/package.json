@@ -86,7 +86,7 @@
     "@types/luxon": "3.7.1",
     "@types/negotiator": "0.6.4",
     "@types/node": "25.1.0",
-    "@types/react": "19.2.10",
+    "@types/react": "19.2.11",
     "@types/react-dom": "19.2.3",
     "@types/webpack": "5.28.5",
     "@vitejs/plugin-react": "5.1.2",
